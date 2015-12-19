@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PriceType1ComboModel"
+    },
+    "name": "MyModelPriceType1ComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-dws7h5fr99yw",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "priceType1Id"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-audid1m1q2yv"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "priceType1"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-cipsv61qn3nf"
+        }
+    ]
+}

@@ -1,0 +1,574 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "xxassociatepanel",
+        "designer|userClassName": "XxAssociatePanel",
+        "header": false,
+        "height": null,
+        "itemId": "associatePanel",
+        "layout": "hbox",
+        "title": "My Panel",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "0de7100b-5720-4229-8215-51faf5179765",
+    "viewControllerInstanceId": "4a4826f1-518b-4d17-88a6-4175f001f0d5",
+    "viewModelInstanceId": "59d04a4e-30f3-47f9-817b-c3e4ef3fc92e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "leftTreePanel"
+            },
+            "name": "xxlefttreepanel",
+            "designerId": "9de396ea-8da9-44a1-80e3-7f928557c853",
+            "masterInstanceId": "6273d61b-be44-4cfc-b347-e83391797b4c",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "treepanel"
+                        ],
+                        "fn": "onLeftTreePanelLeftTreeSelectEvent",
+                        "implHandler": [
+                            "this.getView().down('#leftBtn').setDisabled(true);",
+                            "this.getView().down('#allLeftBtn').setDisabled(true);",
+                            "this.getView().down('#rightBtn').setDisabled(false);",
+                            "this.getView().down('#allRightBtn').setDisabled(false);",
+                            "this.rightTree.getSelectionModel().deselectAll();"
+                        ],
+                        "name": "leftTreeSelectEvent",
+                        "scope": "me"
+                    },
+                    "name": "onLeftTreePanelLeftTreeSelectEvent",
+                    "designerId": "81b7721b-1de5-4e6f-b27a-f31fb82f642a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "layout": "vbox",
+                "layout|flex": null,
+                "width": 60
+            },
+            "name": "MyContainer",
+            "designerId": "3b34fde4-d5c0-47bc-b8a8-304ae90e1819",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-double-right",
+                        "itemId": "allRightBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton",
+                    "designerId": "f8aa75f1-d55d-44b3-bfff-06a17cf49a7e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAllRightBtnClick",
+                                "implHandler": [
+                                    "  var leftTree=this.leftTree;",
+                                    "        var rightTree=this.rightTree;",
+                                    "        Utility.tree.moveAll(rightTree,leftTree,this.leafRightArray);",
+                                    "",
+                                    "        this.getTreeMultiSelectPlugin().checkIfModifications(leftTree.getStore(),rightTree.getStore());",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAllRightBtnClick",
+                            "designerId": "d9ef3c40-b8cd-443d-abf2-9fe7b60414d0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "name": "MySpacer",
+                    "designerId": "eb23373c-e1a4-4881-a928-3cf7c69294a7"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-right",
+                        "itemId": "rightBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton1",
+                    "designerId": "bacb9725-80ba-46d2-9623-15c469136b8b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRightBtnClick",
+                                "implHandler": [
+                                    "var leftTree=this.leftTree;",
+                                    "var rightTree=this.rightTree;",
+                                    "Utility.tree.move(rightTree,leftTree,this.leafRightArray);",
+                                    "",
+                                    "this.getTreeMultiSelectPlugin().checkIfModifications(leftTree.getStore(),rightTree.getStore());"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRightBtnClick",
+                            "designerId": "6951a5e3-7d00-4440-8dfd-d6aa68383928"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "b121a147-2ee0-4f4f-b424-ae64e9de87e3"
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 30
+                    },
+                    "name": "MySpacer2",
+                    "designerId": "73d4c0d9-82ae-4f68-9099-2fb7023d07cd"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-left",
+                        "itemId": "leftBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton2",
+                    "designerId": "b40219b2-94ff-4631-aa2e-17a10905262c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLeftBtnClick",
+                                "implHandler": [
+                                    "var leftTree=this.leftTree;",
+                                    "var rightTree=this.rightTree;",
+                                    "Utility.tree.move(leftTree,rightTree,this.leafLeftArray);",
+                                    "this.getTreeMultiSelectPlugin().checkIfModifications(leftTree.getStore(),rightTree.getStore());"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onLeftBtnClick",
+                            "designerId": "207731c5-58b1-4782-9818-f82c749c613f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "name": "MySpacer3",
+                    "designerId": "8537a236-61e7-4cb4-b026-4ab6ec8cf6fd"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-double-left",
+                        "itemId": "allLeftBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton3",
+                    "designerId": "9b4596b7-b7e0-46a5-a578-f2b914fd743b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAllLeftBtnClick",
+                                "implHandler": [
+                                    "var leftTree=this.leftTree;",
+                                    "var rightTree=this.rightTree;",
+                                    "Utility.tree.moveAll(leftTree,rightTree,this.leafLeftArray);",
+                                    "this.getTreeMultiSelectPlugin().checkIfModifications(leftTree.getStore(),rightTree.getStore());",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAllLeftBtnClick",
+                            "designerId": "1b917133-3e25-443c-8f1e-4c7e5fad7b1c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "rightTreePanel"
+            },
+            "name": "xxrighttreepanel",
+            "designerId": "79f36a5d-7ccb-4f9e-8ae3-e482e257c5d2",
+            "masterInstanceId": "666224b7-7239-4552-9ded-955e67411d36",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "treepanel"
+                        ],
+                        "fn": "onRightTreePanelRightTreeSelectEvent",
+                        "implHandler": [
+                            "this.getView().down('#leftBtn').setDisabled(false);",
+                            "this.getView().down('#allLeftBtn').setDisabled(false);",
+                            "this.getView().down('#rightBtn').setDisabled(true);",
+                            "this.getView().down('#allRightBtn').setDisabled(true);",
+                            "this.leftTree.getSelectionModel().deselectAll();"
+                        ],
+                        "name": "rightTreeSelectEvent",
+                        "scope": "me"
+                    },
+                    "name": "onRightTreePanelRightTreeSelectEvent",
+                    "designerId": "605e80ce-0012-4ca6-8011-5396e4ba9c81"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelAfterRender",
+                "implHandler": [
+                    "  var refs=this.getReferences();",
+                    "  this.leftTree=refs.leftTreePanel;",
+                    "  this.rightTree=refs.rightTreePanel;",
+                    "",
+                    "this.rightStore=this.rightTree.getViewModel().getStore('RightTreeStore');",
+                    "this.leftStore=this.leftTree.getViewModel().getStore('LeftTreeStore');",
+                    "",
+                    " var userCanModify=false;",
+                    "           ",
+                    "// Check if user has authorizationn to modify using an rpc call",
+                    "userCanModify=true; // remove after implementing the ext.direct or ajax server call",
+                    "",
+                    "this.userCanModify=userCanModify;",
+                    "",
+                    "",
+                    "",
+                    "var associateComboDataArray=[{'id':1,'text':'Choice 1'},{'id':2,'text':'Choice 2'}",
+                    "                   ];",
+                    "var associateComboStore=this.getViewModel().getStore('AssociateComboStore');",
+                    "associateComboStore.loadData(associateComboDataArray);",
+                    "",
+                    " this.quitEdit();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelAfterRender",
+            "designerId": "d21cd2d6-0aa5-4acc-9d8c-e506ae96b9a5"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processXxAssociatePanel",
+                "implHandler": [
+                    "  ",
+                    " this.plugins=[];",
+                    "        this.plugins.push (",
+                    "                           new Plugins.panel.TreeMultiSelect({pluginId: 'treemultiselect'}));",
+                    "",
+                    "    "
+                ]
+            },
+            "name": "processXxAssociatePanel",
+            "designerId": "18844ba4-6f0e-4825-9a17-2725f1f31fc7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelQuitEdit",
+                "implHandler": [
+                    "var rightStore=this.rightStore;",
+                    " var leftStore=this.leftStore;",
+                    "",
+                    "        Utility.tree.loadTree(rightStore,this.parentsArray,this.leafRightArray);",
+                    "        Utility.tree.loadTree(leftStore,this.parentsArray,this.leafLeftArray);",
+                    " this.getTreeMultiSelectPlugin().quitEditMode();",
+                    "this.quitEdit();"
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelQuitEdit",
+            "designerId": "833e5d57-93c1-4d2a-ab73-a92fb4fca0cf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelResetEdit",
+                "implHandler": [
+                    "var rightStore=this.rightStore;",
+                    " var leftStore=this.leftStore;",
+                    "",
+                    "        Utility.tree.loadTree(rightStore,this.parentsArray,this.leafRightArray);",
+                    "        Utility.tree.loadTree(leftStore,this.parentsArray,this.leafLeftArray);"
+                ],
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelResetEdit",
+            "designerId": "c0b8dd52-f705-4a42-aa27-5b98b22e8bd3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "panel",
+                    "promptWin",
+                    "dataToBeAdded",
+                    "dataToBeDeleted",
+                    "comment"
+                ],
+                "fn": "onAssociatePanelSaveEdit",
+                "implHandler": [
+                    " var success=false;",
+                    "        // first save all data to the server side by calling ext.direct function or ajax query",
+                    "// remove next row after calling server side",
+                    "success=true;",
+                    "",
+                    "        if(success){",
+                    "             this.refreshView();",
+                    "             this.getTreeMultiSelectPlugin().quitEditMode();",
+                    "                Utility.loading.start(promptWin.query('button')[0]);",
+                    "            promptWin.close();",
+                    "            this.quitEdit();",
+                    "        }",
+                    "       else",
+                    "           {",
+                    "               Ext.MessageBox.alert(\"Error\",\"save Error\");",
+                    "           }",
+                    "",
+                    ""
+                ],
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelSaveEdit",
+            "designerId": "f5550e07-801e-4da4-b38d-8ec3d4f4facf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelInEdit",
+                "implHandler": [
+                    "this.inEdit();"
+                ],
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelInEdit",
+            "designerId": "93e1cc65-8d45-4aec-86fc-356326d25a52"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar2",
+            "designerId": "e018635d-5204-4577-8e08-e4b50a86ad28",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "xxComboLabel",
+                        "forceSelection": true,
+                        "itemId": "associateCombo",
+                        "layout|flex": null,
+                        "queryMode": "local",
+                        "store": [
+                            "{AssociateComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "4c96fe47-6539-47bb-b739-f7317c8f5eec",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAssociateComboChange",
+                                "implHandler": [
+                                    "this.initView(newValue);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onAssociateComboChange",
+                            "designerId": "ed966afc-cf84-4152-9aff-28285ac2a174"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

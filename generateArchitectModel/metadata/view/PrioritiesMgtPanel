@@ -1,0 +1,82 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "prioritiesmgtpanel",
+        "designer|userClassName": "PrioritiesMgtPanel",
+        "header": false,
+        "height": null,
+        "itemId": "propertiesMgtPanelItemId",
+        "layout": "border",
+        "scrollable": null,
+        "title": "My Panel",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "705cff67-402e-4c9b-850a-7161f185244a",
+    "viewControllerInstanceId": "d9533028-e8a8-41b7-afea-5d3e7a8f06eb",
+    "viewModelInstanceId": "0fb06b4a-d0b8-4b17-bb23-a8408ad9f608",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 2,
+                "layout|region": "center",
+                "layout|split": true
+            },
+            "name": "prioritygrid",
+            "designerId": "0c043219-055a-4a15-84d8-2bc9eca54726",
+            "masterInstanceId": "tm9ujpkw-8c41-4643-a8f8-iik1xfhrce3e"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "height": 195,
+                "layout|flex": null,
+                "layout|region": "north",
+                "layout|split": true,
+                "reference": "priorityFormRef",
+                "scrollable": null,
+                "title": null
+            },
+            "name": "priorityform",
+            "designerId": "3ec90245-5a07-4f82-bbde-fdd3f2cf645a",
+            "masterInstanceId": "af6447b8-8c41-4643-a8f8-kd54ab72a7a4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "  var refs=this.getReferences();",
+                    "  this.form=refs.priorityFormRef;",
+                    "  this.grid=refs.priorityGridRef;"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "6850032e-9009-40ca-b2af-80aca8792eb4"
+        }
+    ]
+}

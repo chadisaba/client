@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "prioritiesmgtpanel",
+        "designer|userClassName": "PrioritiesMgtPanelViewController"
+    },
+    "designerId": "d9533028-e8a8-41b7-afea-5d3e7a8f06eb"
+}

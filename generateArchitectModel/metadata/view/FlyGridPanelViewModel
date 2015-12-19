@@ -1,0 +1,45 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "flygridpanel",
+        "designer|userClassName": "FlyGridPanelViewModel"
+    },
+    "designerId": "f5d7dc86-c28e-4ee5-9b9c-49181269e194",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {",
+                    "        \"flyId\": \"consequatur\",",
+                    "        \"flyStart\": \"sint\",",
+                    "        \"flyDuration\": 211,",
+                    "        \"available\": true",
+                    "    },",
+                    "    {",
+                    "        \"flyId\": \"veniam\",",
+                    "        \"flyStart\": \"id\",",
+                    "        \"flyDuration\": 696,",
+                    "        \"available\": false",
+                    "    }",
+                    "]"
+                ],
+                "model": "FlyModel",
+                "name": "FlyGridStore"
+            },
+            "name": "MyStore",
+            "designerId": "eef56e6a-4879-408c-a6cd-22b8adde5081"
+        }
+    ]
+}

@@ -1,0 +1,186 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "prioritygrid",
+        "designer|userClassName": "PriorityGridViewModel"
+    },
+    "designerId": "9vntut6t-8a5d-4154-8917-3tdmjdvthdwm",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PriorityModel",
+                "name": "PriorityStore"
+            },
+            "name": "PriorityStore",
+            "designerId": "xfsbaluf-c056-4140-9039-pus6sp1y2n7f"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ClientComboModel",
+                "name": "ClientComboStore"
+            },
+            "name": "ClientComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-bgmhgqmi1nwu"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SubscriptionComboModel",
+                "name": "SubscriptionComboStore"
+            },
+            "name": "SubscriptionComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-w9k5ba1p66pq"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "LotComboModel",
+                "name": "LotComboStore"
+            },
+            "name": "LotComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-gqj2xqtel84s"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PortifilioComboModel",
+                "name": "PortifilioComboStore"
+            },
+            "name": "PortifilioComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-te893j49kbw8"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "GoAreaComboModel",
+                "name": "GoAreaComboStore"
+            },
+            "name": "GoAreaComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-rdtv91aa3u4i"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PriceTypeComboModel",
+                "name": "PriceTypeComboStore"
+            },
+            "name": "PriceTypeComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-i6cg6ji25a56"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "MarketCodificationComboModel",
+                "name": "MarketCodificationComboStore"
+            },
+            "name": "MarketCodificationComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-dsnfvn39ewjc"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "MarketCodeComboModel",
+                "name": "MarketCodeComboStore"
+            },
+            "name": "MarketCodeComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-rvgqwtnci167"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "FlowComboModel",
+                "name": "FlowComboStore"
+            },
+            "name": "FlowComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-k9ujmneeulha"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "MarketCode1ComboModel",
+                "name": "MarketCode1ComboStore"
+            },
+            "name": "MarketCode1ComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-acabn8w47ua4"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PriceType1ComboModel",
+                "name": "PriceType1ComboStore"
+            },
+            "name": "PriceType1ComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-licbveb17reh"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SecuritySubTypeComboModel",
+                "name": "SecuritySubTypeComboStore"
+            },
+            "name": "SecuritySubTypeComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-fuqqpaq5ah4j"
+        }
+    ]
+}

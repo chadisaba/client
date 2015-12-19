@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchsiteconfiggridpanel",
+        "designer|userClassName": "SearchSiteConfigGridPanelViewController"
+    },
+    "designerId": "e1dc141f-78a7-4066-ad59-9c7490f15109"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "siteconfigpanel",
+        "designer|userClassName": "SiteConfigPanelViewModel"
+    },
+    "designerId": "2569cd78-e7cd-45d2-9448-57957e218f20"
+}

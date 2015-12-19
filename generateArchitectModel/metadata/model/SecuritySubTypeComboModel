@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecuritySubTypeComboModel"
+    },
+    "name": "MyModelSecuritySubTypeComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-4db3jtahumsw",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "securitySubTypeId"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-h29h6abeydgi"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "securitySubType"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-cqte5es3nj7n"
+        }
+    ]
+}

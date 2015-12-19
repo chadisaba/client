@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "prioritygrid",
+        "designer|userClassName": "PriorityGridViewController"
+    },
+    "designerId": "4tnf3i3g-4ace-45f2-b4ee-pjgltik3svr5"
+}

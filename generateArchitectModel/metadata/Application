@@ -1,0 +1,49 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "TreePanelModel",
+            "XxAssociateComboModel",
+            "PriorityModel",
+            "ClientComboModel",
+            "SubscriptionComboModel",
+            "LotComboModel",
+            "PortifilioComboModel",
+            "GoAreaComboModel",
+            "PriceTypeComboModel",
+            "MarketCodificationComboModel",
+            "MarketCodeComboModel",
+            "FlowComboModel",
+            "MarketCode1ComboModel",
+            "PriceType1ComboModel",
+            "SecuritySubTypeComboModel",
+            "SiteConfigModel",
+            "SearchGridModel",
+            "FlyModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "XxAssociatePanel",
+            "XxLeftTreePanel",
+            "XxRightTreePanel",
+            "PriorityGrid",
+            "PriorityForm",
+            "PrioritiesMgtPanel",
+            "SiteConfigGrid",
+            "SiteConfigPanel",
+            "SearchSiteConfigGridPanel",
+            "FlyGridPanel",
+            "FlyWindow"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

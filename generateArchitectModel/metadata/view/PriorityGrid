@@ -1,0 +1,1208 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "prioritygrid",
+        "designer|userClassName": "PriorityGrid",
+        "forceFit": true,
+        "itemId": "priorityGridId",
+        "minWidth": null,
+        "reference": "priorityGridRef",
+        "resizable": [
+            "false"
+        ],
+        "scrollable": "true",
+        "store": [
+            "{PriorityStore}"
+        ],
+        "title": "",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "tm9ujpkw-8c41-4643-a8f8-iik1xfhrce3e",
+    "viewControllerInstanceId": "4tnf3i3g-4ace-45f2-b4ee-pjgltik3svr5",
+    "viewModelInstanceId": "9vntut6t-8a5d-4154-8917-3tdmjdvthdwm",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "client",
+                "flex": null,
+                "minWidth": 100,
+                "text": "Client"
+            },
+            "name": "MyclientCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-kw8477v5i68i",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "client",
+                        "forceSelection": true,
+                        "itemId": "clientComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{ClientComboStore}"
+                        ],
+                        "valueField": "client"
+                    },
+                    "name": "MyclientComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-73bb3jxyk1y9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "subscription",
+                "minWidth": 100,
+                "text": "Subscription",
+                "width": 200
+            },
+            "name": "MysubscriptionCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-iq6751k2r8e1",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "subscription",
+                        "forceSelection": true,
+                        "itemId": "subscriptionComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SubscriptionComboStore}"
+                        ],
+                        "valueField": "subscription"
+                    },
+                    "name": "MysubscriptionComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-kkg6wh38ljdm"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "lot",
+                "minWidth": 100,
+                "text": "Lot",
+                "width": null
+            },
+            "name": "MylotCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-nkc4fdmijfed",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "lot",
+                        "forceSelection": true,
+                        "itemId": "lotComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{LotComboStore}"
+                        ],
+                        "valueField": "lot"
+                    },
+                    "name": "MylotComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-iewivcjhb66r"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "portifilio",
+                "minWidth": 100,
+                "text": "Portifilio",
+                "width": null
+            },
+            "name": "MyportifilioCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-3md4gx15qchl",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "portifilio",
+                        "forceSelection": true,
+                        "itemId": "portifilioComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PortifilioComboStore}"
+                        ],
+                        "valueField": "portifilio"
+                    },
+                    "name": "MyportifilioComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-e17nxfmtm8w2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "goArea",
+                "minWidth": 100,
+                "text": "Go Area",
+                "width": null
+            },
+            "name": "MygoAreaCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ycs1xij942yy",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "goArea",
+                        "forceSelection": true,
+                        "itemId": "goAreaComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{GoAreaComboStore}"
+                        ],
+                        "valueField": "goArea"
+                    },
+                    "name": "MygoAreaComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-g5tdest27621"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "priceType",
+                "minWidth": 100,
+                "text": "Price Type",
+                "width": null
+            },
+            "name": "MypriceTypeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-34aiuwl8gdgq",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "priceType",
+                        "forceSelection": true,
+                        "itemId": "priceTypeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PriceTypeComboStore}"
+                        ],
+                        "valueField": "priceType"
+                    },
+                    "name": "MypriceTypeComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-2798g8719i5q"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "marketCodification",
+                "minWidth": 100,
+                "text": "Market Codification",
+                "width": null
+            },
+            "name": "MymarketCodificationCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-5k9wbmgrbwm9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "marketCodification",
+                        "forceSelection": true,
+                        "itemId": "marketCodificationComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{MarketCodificationComboStore}"
+                        ],
+                        "valueField": "marketCodification"
+                    },
+                    "name": "MymarketCodificationComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-6gsbeijetu65"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "marketCode",
+                "minWidth": 100,
+                "text": "Market Code",
+                "width": null
+            },
+            "name": "MymarketCodeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ux6mnfakkejf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "marketCode",
+                        "forceSelection": true,
+                        "itemId": "marketCodeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{MarketCodeComboStore}"
+                        ],
+                        "valueField": "marketCode"
+                    },
+                    "name": "MymarketCodeComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-i9ip7y6dwub2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "flow",
+                "minWidth": 100,
+                "text": "Flow",
+                "width": null
+            },
+            "name": "MyflowCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-h7y4e5i88xag",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "flow",
+                        "forceSelection": true,
+                        "itemId": "flowComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{FlowComboStore}"
+                        ],
+                        "valueField": "flow"
+                    },
+                    "name": "MyflowComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-mm9y1jf7ilfr"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "marketCode1",
+                "minWidth": 100,
+                "text": "Market Code",
+                "width": null
+            },
+            "name": "MymarketCode1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-1dqn9y5apyhj",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "marketCode1",
+                        "forceSelection": true,
+                        "itemId": "marketCode1ComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{MarketCode1ComboStore}"
+                        ],
+                        "valueField": "marketCode1"
+                    },
+                    "name": "MymarketCode1ComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-awn9xw8ijj34"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "priceType1",
+                "minWidth": 100,
+                "text": "Price Type",
+                "width": null
+            },
+            "name": "MypriceType1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-n685c796iy2s",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "priceType1",
+                        "forceSelection": true,
+                        "itemId": "priceType1ComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PriceType1ComboStore}"
+                        ],
+                        "valueField": "priceType1"
+                    },
+                    "name": "MypriceType1ComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-ernsw1wimksh"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "securitySubType",
+                "minWidth": 100,
+                "text": "security Sub-type",
+                "width": null
+            },
+            "name": "MysecuritySubTypeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ppr9uphv3wls",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "securitySubType",
+                        "forceSelection": true,
+                        "itemId": "securitySubTypeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SecuritySubTypeComboStore}"
+                        ],
+                        "valueField": "securitySubType"
+                    },
+                    "name": "MysecuritySubTypeComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-cbr2mmndqgsp"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "typeCoursRef",
+                "minWidth": 100,
+                "text": "Type Cours Ref",
+                "width": null
+            },
+            "name": "MytypeCoursRefCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-vqbyrxr4u2yr"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "issuerCountry",
+                "minWidth": 100,
+                "text": "Issuer Country",
+                "width": null
+            },
+            "name": "MyissuerCountryCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-33yj3ik5l73k"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "marketRef",
+                "minWidth": 100,
+                "text": "Market Ref",
+                "width": null
+            },
+            "name": "MymarketRefCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-mww6mdppxtn9"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "flow1",
+                "minWidth": 100,
+                "text": "Flow1",
+                "width": null
+            },
+            "name": "Myflow1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-aiuvi9dpbj7p"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "market1",
+                "minWidth": 100,
+                "text": "Market1",
+                "width": null
+            },
+            "name": "Mymarket1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-67m6hsurmu7j"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "priceType1",
+                "minWidth": 100,
+                "text": "Price Type1",
+                "width": 300
+            },
+            "name": "MypriceType1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-13qhkbrbaltb"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "flow2",
+                "minWidth": 100,
+                "text": "Flow2",
+                "width": null
+            },
+            "name": "Myflow2Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-l7gw8w4b85ih"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "market2",
+                "minWidth": 100,
+                "text": "Market2",
+                "width": null
+            },
+            "name": "Mymarket2Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-1k9rud9peigl"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "market2",
+                "minWidth": 100,
+                "text": "Price Type2",
+                "width": null
+            },
+            "name": "Mymarket2Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-n9rlj6ujr4fx"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "flow3",
+                "minWidth": 100,
+                "text": "Flow3",
+                "width": null
+            },
+            "name": "Myflow3Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-6q8spsiwim9g"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "market3",
+                "minWidth": 100,
+                "text": "Market3",
+                "width": null
+            },
+            "name": "Mymarket3Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-7xean41vgfi2"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "priceType3",
+                "minWidth": 100,
+                "text": "Price Type3",
+                "width": null
+            },
+            "name": "MypriceType3Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-nblm2v467m3y"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "creationDate",
+                "minWidth": 100,
+                "text": "Creation Date",
+                "width": null
+            },
+            "name": "MycreationDateCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-klk7ilhacuvs"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": null
+            },
+            "name": "MyTable",
+            "designerId": "vvau32bu-ccc7-232C-1245-aannn9ad9srk"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "9xn2d28b-f393-483a-8425-3n6m973hnsxw"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "uunsjxh1-ccc7-465c-8662-yh88mb1xtees"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processPriorityGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "//this.plugins=[];",
+                    "this.plugins.push (",
+                    "    new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processPriorityGrid",
+            "designerId": "dlvnsyxx-2054-459b-a4aa-6m4r8vlbemm5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdChHist",
+            "designerId": "ek73m9xi-1d4f-4fb9-9364-geq8qyrksm8l"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdAfterRender",
+            "designerId": "lk1g94hq-1f65-4972-a6e1-y4mgtp1pw4ng"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPriorityGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdInEdit",
+            "designerId": "9ck2g36f-1a08-4be0-b287-8lbnfsqtt9ke"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onPriorityGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdResetEdit",
+            "designerId": "kcf7shb2-2c80-456a-a5c5-hdmikvuitt71"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onPriorityGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdSaveEdit",
+            "designerId": "pnn4mrxk-f0d5-4d89-a1bb-x8jw632brjn3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onPriorityGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdAddItem",
+            "designerId": "km4mgkc7-ffc4-4ede-a9db-jvfwym1eh5pp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdDeleteItem",
+            "designerId": "jq5tny9p-ac56-469a-895f-yr51a2q9nniq"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdModifyItem",
+            "designerId": "r9t6t4qs-6b6f-4377-998f-syehsg31bvyd"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onPriorityGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdQuitEdit",
+            "designerId": "pnrem5d6-746f-4da4-9f4d-472gvwfesxkc"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-lg23uefbbi65"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPriorityGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdBeforeEdit",
+            "designerId": "ti2vj9lf-4019-4a61-8c79-8l6igw399bdp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPriorityGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdCanceledit",
+            "designerId": "reg6ch8v-6686-46dd-bfe7-5nvx69ugc6rd"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdContainerClick",
+            "designerId": "jsa5naya-3079-420b-87bf-7dueg8gjprwp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPriorityGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdEdit",
+            "designerId": "xtykh5f2-47bf-4b29-bb1d-8utfbgtk13km"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPriorityGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdBeforeCellClick",
+            "designerId": "$25sb7i7w-6a9c-488e-8122-q5vjb79ux9k7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPriorityGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onPriorityGridIdValidateedit",
+            "designerId": "3empp6jl-b2ec-4782-a56f-td2k669qhdmg"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "editingtoolbar"
+            },
+            "name": "MyToolbar3",
+            "designerId": "5abcf42c-f118-4f96-bc28-56cef93ac1ca",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa fa-times",
+                        "itemId": "resetSearchBtnId",
+                        "layout|flex": null,
+                        "text": "Reset"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "d51ac019-d7bc-4360-a4eb-1bfdc34150c6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onResetSearchBtnIdClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onResetSearchBtnIdClick",
+                            "designerId": "257cba24-9aae-4937-9d46-db005da0faad"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "glyph": null,
+                        "iconCls": "x-fa fa fa-search",
+                        "itemId": "applySearchBtnId",
+                        "layout|flex": null,
+                        "text": "Apply"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "c6999274-8348-4a3a-adf5-4e40947c91f0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onApplySearchBtnIdClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onApplySearchBtnIdClick",
+                            "designerId": "7861cbf4-c059-459b-b7a1-7d19a4e3a1ce"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator",
+                    "designerId": "8af16ffb-f076-4cfb-87e7-7c6841dd534f"
+                }
+            ]
+        }
+    ]
+}

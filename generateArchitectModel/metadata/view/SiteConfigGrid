@@ -1,0 +1,513 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "siteconfiggrid",
+        "designer|userClassName": "SiteConfigGrid",
+        "forceFit": true,
+        "itemId": "siteConfigGridId",
+        "reference": "siteConfigGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{SiteConfigStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "mdp5i2vd-8c41-4643-a8f8-mdp5i2vd59v5",
+    "viewControllerInstanceId": "mb6fgayx-4ace-45f2-b4ee-mb6fgayxu8gc",
+    "viewModelInstanceId": "5cxshmx6-8a5d-4154-8917-5cxshmx6y8n9",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteConfigStartHour",
+                "text": "Start Hour"
+            },
+            "name": "MysiteConfigStartHourCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-pk3kwhaqcw3j",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField4",
+                    "designerId": "d9fcf377-39d3-4e29-a6cc-0b832e0f3231"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteConfigEndHour",
+                "text": "End Hour"
+            },
+            "name": "MysiteConfigEndHourCol",
+            "designerId": "3660f6bf-50e5-4a2a-bc2b-f5cb786f445a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField5",
+                    "designerId": "901f921e-3f58-404a-aa41-ddeb9879ddcc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteConfigPyxMode",
+                "text": "Pyx Mode"
+            },
+            "name": "MysiteConfigPyxModeCol",
+            "designerId": "cb472610-e8b7-4244-a137-55bb6b0feb27",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField2",
+                    "designerId": "7b55e851-e445-44c1-bbc5-85e72522f303"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Check",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteConfigFseIsChecked",
+                "text": "Checked"
+            },
+            "name": "MyCheck",
+            "designerId": "7c6bec59-5c6a-4872-9cec-7ltxxv8xgwag",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyCheckbox",
+                    "designerId": "f81f602b-8054-464a-9bba-b45a19ee7572"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteId",
+                "text": "Site Id"
+            },
+            "name": "MysiteIdCol",
+            "designerId": "f3f3040c-2a22-4398-bfb8-74246b865bd5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField3",
+                    "designerId": "c27574bc-2eec-4cab-8186-3fded9729605"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "mg8ulrtt-f393-483a-8425-6h17n6r2jbit"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "6fghkeul-ccc7-465c-8662-mg8ulrtteabw"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processSiteConfigGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processSiteConfigGrid",
+            "designerId": "mg8ulrtt-2054-459b-a4aa-mg8ulrtteabw"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdChHist",
+            "designerId": "6h17n6r2-1d4f-4fb9-9364-njrjpiq9nbqp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdAfterRender",
+            "designerId": "njrjpiq9-1f65-4972-a6e1-njrjpiq9nbqp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteConfigGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdInEdit",
+            "designerId": "kghn6dqg-1a08-4be0-b287-kghn6dqgkp1g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onSiteConfigGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdResetEdit",
+            "designerId": "kghn6dqg-2c80-456a-a5c5-4i927qpnpq8c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onSiteConfigGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdSaveEdit",
+            "designerId": "kj1d94mw-f0d5-4d89-a1bb-kj1d94mwurf9"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onSiteConfigGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdAddItem",
+            "designerId": "kj1d94mw-ffc4-4ede-a9db-4ksqahl51rm5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdDeleteItem",
+            "designerId": "4ksqahl5-ac56-469a-895f-4ksqahl51rm5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdModifyItem",
+            "designerId": "lmj4bujc-6b6f-4377-998f-lmj4bujc5su2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onSiteConfigGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdQuitEdit",
+            "designerId": "lmj4bujc-746f-4da4-9f4d-5nbfd8ijas3w"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-6h17n6r2jbit"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteConfigGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdBeforeEdit",
+            "designerId": "5nbfd8ij-4019-4a61-8c79-lp3selgretat"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteConfigGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdCanceledit",
+            "designerId": "lp3selgr-6686-46dd-bfe7-lp3selgretat"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdContainerClick",
+            "designerId": "5ru6fyf1-3079-420b-87bf-5ru6fyf1jthp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteConfigGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdEdit",
+            "designerId": "5ru6fyf1-47bf-4b29-bb1d-mslhhce8nupl"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteConfigGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdBeforeCellClick",
+            "designerId": "$mslhhce8-6a9c-488e-8122-mslhhce8nupl"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteConfigGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onSiteConfigGridIdValidateedit",
+            "designerId": "5tduipcf-b2ec-4782-a56f-5tduipcftuwh"
+        }
+    ]
+}
