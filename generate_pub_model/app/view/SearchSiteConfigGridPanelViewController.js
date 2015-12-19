@@ -36,7 +36,7 @@ Ext.define('MyApp.view.SearchSiteConfigGridPanelViewController', {
     },
 
     onFlyBtnClick: function(button, e, eOpts) {
-        var fly= this.getViewModel().getWin('flyWindow');
+        var fly= create.
         fly.show();
     }
 

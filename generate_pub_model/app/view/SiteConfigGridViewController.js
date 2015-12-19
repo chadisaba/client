@@ -89,6 +89,10 @@ Ext.define('MyApp.view.SiteConfigGridViewController', {
 
     onSiteConfigGridIdValidateedit: function(editor, context) {
 
+    },
+
+    configBtnClick: function(view, rowIndex, colIndex, item, e, record, row) {
+        alert('test');
     }
 
 });

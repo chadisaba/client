@@ -24,7 +24,8 @@ Ext.define('MyApp.view.SiteConfigGrid', {
         'Ext.grid.column.Check',
         'Ext.form.field.Checkbox',
         'Ext.grid.plugin.RowEditing',
-        'Ext.selection.RowModel'
+        'Ext.selection.RowModel',
+        'Ext.grid.column.Action'
     ],
 
     controller: 'siteconfiggrid',
@@ -80,6 +81,14 @@ Ext.define('MyApp.view.SiteConfigGrid', {
             editor: {
                 xtype: 'textfield'
             }
+        },
+        {
+            xtype: 'actioncolumn',
+            items: [
+                {
+                    handler: 'configBtnClick'
+                }
+            ]
         }
     ],
     listeners: {

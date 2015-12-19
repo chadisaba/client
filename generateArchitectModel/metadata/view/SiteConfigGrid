@@ -508,6 +508,56 @@
             },
             "name": "onSiteConfigGridIdValidateedit",
             "designerId": "5tduipcf-b2ec-4782-a56f-5tduipcftuwh"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyActionColumn",
+            "designerId": "1436d261-f48e-479b-8757-32a4c1d75dba",
+            "cn": [
+                {
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyActionColumnItem",
+                    "designerId": "622b05f1-936d-4f76-9743-4793c82c9377",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "view",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "item",
+                                    "e",
+                                    "record",
+                                    "row"
+                                ],
+                                "designer|viewControllerFn": "configBtnClick",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "alert('test');"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "6a5b5bc4-1f23-4758-bbdd-270bf6062c19"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
