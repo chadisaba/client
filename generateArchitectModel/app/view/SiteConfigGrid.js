@@ -84,9 +84,12 @@ Ext.define('MyApp.view.SiteConfigGrid', {
         },
         {
             xtype: 'actioncolumn',
+            text: 'Config Id',
             items: [
                 {
-                    handler: 'configBtnClick'
+                    handler: 'configBtnClick',
+                    icon: '',
+                    iconCls: 'x-fa fa-folder-open '
                 }
             ]
         }

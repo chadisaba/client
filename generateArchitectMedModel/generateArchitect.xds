@@ -1,0 +1,71 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Large",
+                "builtIn": true,
+                "height": 1024,
+                "width": 1280
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_med_model/",
+        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client/generate_pub_med_model",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "drlkncjy-4ace-45f2-b4ee-mxvre6tuu53r",
+            "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
+            "6jnygfub-8c41-4643-a8f8-m5efipnesn2a",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "0de7100b-5720-4229-8215-51faf5179765",
+            "59d04a4e-30f3-47f9-817b-c3e4ef3fc92e",
+            "4a4826f1-518b-4d17-88a6-4175f001f0d5",
+            "6273d61b-be44-4cfc-b347-e83391797b4c",
+            "9cd9d664-62cb-4298-b63c-e2bf51024ec9",
+            "bc1702a0-802e-4d3a-8241-1c135b68accf",
+            "666224b7-7239-4552-9ded-955e67411d36",
+            "89a89778-1873-423d-bf99-d9487006156f",
+            "c61592b9-e4ba-4c1c-bd1c-faf1f052fbe8"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "040092bf-b6f4-441b-b581-9igk4vlwdiy7",
+            "040092bf-b6f4-441b-b581-g5rqmaw32rhy",
+            "5jbt8xe7-1d4f-4fb9-9364-5e5k7re89hgw",
+            "040092bf-b6f4-441b-b581-h2hwckhuykk7",
+            "19141f7c-1e0b-4444-b244-2241e8bd4e59",
+            "b1c711ea-159e-428a-b6e8-bbec9b94484a"
+        ],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

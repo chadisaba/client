@@ -41,7 +41,8 @@
             "SiteConfigPanel",
             "SearchSiteConfigGridPanel",
             "FlyGridPanel",
-            "FlyWindow"
+            "SiteConfigWindow",
+            "MyForm"
         ]
     },
     "name": "Application",

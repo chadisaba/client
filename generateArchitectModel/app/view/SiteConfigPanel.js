@@ -20,7 +20,6 @@ Ext.define('MyApp.view.SiteConfigPanel', {
     requires: [
         'MyApp.view.SiteConfigPanelViewModel',
         'MyApp.view.SiteConfigGrid',
-        'MyApp.view.SearchSiteConfigGridPanel',
         'Ext.grid.Panel'
     ],
 
@@ -33,13 +32,6 @@ Ext.define('MyApp.view.SiteConfigPanel', {
     items: [
         {
             xtype: 'siteconfiggrid'
-        }
-    ],
-    dockedItems: [
-        {
-            xtype: 'searchsiteconfiggridpanel',
-            height: 292,
-            dock: 'top'
         }
     ]
 

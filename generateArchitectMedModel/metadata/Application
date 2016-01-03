@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "TreePanelModel",
+            "XxAssociateComboModel",
+            "SiteCategoryComboModel",
+            "GroupIdComboModel",
+            "SiteCityIdComboModel",
+            "SiteModel"
+        ],
+        "name": "MyApp",
+        "requires": [
+            "MyApp.DirectAPI"
+        ],
+        "views": [
+            "XxAssociatePanel",
+            "XxLeftTreePanel",
+            "XxRightTreePanel",
+            "SiteGrid"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

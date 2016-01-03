@@ -19,21 +19,20 @@ Ext.define('MyApp.view.FlyWindow', {
 
     requires: [
         'MyApp.view.FlyWindowViewModel',
-        'MyApp.view.FlyGridPanel',
-        'Ext.grid.Panel'
+        'MyApp.view.SiteConfigForm',
+        'Ext.form.Panel'
     ],
 
     viewModel: {
         type: 'flywindow'
     },
-    height: 250,
-    width: 400,
+    bodyBorder: true,
     title: 'My Window',
+    titleAlign: 'center',
 
     items: [
         {
-            xtype: 'flygridpanel',
-            itemId: 'flyWindow'
+            xtype: 'siteconfigform'
         }
     ]
 

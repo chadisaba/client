@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GroupIdComboModel"
+    },
+    "name": "MyModelGroupIdComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-9igk4vlwdiy7",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupId"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-rlnyhstr34tl"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupName"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-7l1cqpiq87qg"
+        }
+    ]
+}

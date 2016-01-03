@@ -31,24 +31,6 @@
             "name": "siteconfiggrid",
             "designerId": "859f01e3-29ec-41f2-895a-aad8ccd2eef9",
             "masterInstanceId": "mdp5i2vd-8c41-4643-a8f8-mdp5i2vd59v5"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top",
-                "height": 292
-            },
-            "name": "searchsiteconfiggridpanel",
-            "configAlternates": {
-                "store": "binding"
-            },
-            "designerId": "210ee4c5-8443-4a67-bca9-adf7c789e79b",
-            "masterInstanceId": "41ace80e-6ce1-4d78-aa23-1cbaa70dc0e7"
         }
     ]
 }

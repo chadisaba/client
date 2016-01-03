@@ -9,6 +9,7 @@
         "designer|userAlias": "siteconfiggrid",
         "designer|userClassName": "SiteConfigGrid",
         "forceFit": true,
+        "icon": null,
         "itemId": "siteConfigGridId",
         "reference": "siteConfigGridRef",
         "resizable": [
@@ -516,6 +517,9 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "text": "Config Id"
+            },
             "name": "MyActionColumn",
             "designerId": "1436d261-f48e-479b-8757-32a4c1d75dba",
             "cn": [
@@ -526,6 +530,10 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "icon": "",
+                        "iconCls": "x-fa fa-folder-open "
+                    },
                     "name": "MyActionColumnItem",
                     "designerId": "622b05f1-936d-4f76-9743-4793c82c9377",
                     "cn": [
@@ -549,7 +557,11 @@
                                 "designer|viewControllerFn": "configBtnClick",
                                 "fn": "handler",
                                 "implHandler": [
-                                    "alert('test');"
+                                    "var grid=this.getView();",
+                                    "",
+                                    "var win= Ext.create('MyApp.view.SiteConfigWindow');",
+                                    "win.show();",
+                                    ""
                                 ]
                             },
                             "name": "handler",

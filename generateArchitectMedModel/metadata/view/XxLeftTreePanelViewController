@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "xxlefttreepanel",
+        "designer|userClassName": "XxLeftTreePanelViewController"
+    },
+    "designerId": "bc1702a0-802e-4d3a-8241-1c135b68accf"
+}

@@ -51,7 +51,8 @@ Ext.application({
         'SiteConfigPanel',
         'SearchSiteConfigGridPanel',
         'FlyGridPanel',
-        'FlyWindow'
+        'SiteConfigWindow',
+        'MyForm'
     ],
     controllers: [
         'MainController'

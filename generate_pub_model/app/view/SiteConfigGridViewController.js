@@ -92,7 +92,8 @@ Ext.define('MyApp.view.SiteConfigGridViewController', {
     },
 
     configBtnClick: function(view, rowIndex, colIndex, item, e, record, row) {
-        alert('test');
+        var win= Ext.create('MyApp.view.SiteConfigWindow');
+        win.show();
     }
 
 });
