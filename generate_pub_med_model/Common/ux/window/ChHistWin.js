@@ -1,4 +1,4 @@
-Ext.define('Ext.ux.bnp.mtm.window.ChHistWin', {
+Ext.define('Common.ux.window.ChHistWin', {
     	extend: 'Ext.window.Window',
     	alias: 'widget.chHistWin',
     	id: 'histWin',

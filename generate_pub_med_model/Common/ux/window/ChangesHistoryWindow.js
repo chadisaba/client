@@ -1,4 +1,4 @@
-Ext.define('Ext.ux.bnp.mtm.window.ChangesHistoryWindow', {
+Ext.define('Common.ux.window.ChangesHistoryWindow', {
     	extend: 'Ext.window.Window',
     	alias: 'widget.changesHistoryWindow',
     	id: 'historyWindow',
