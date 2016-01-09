@@ -103,9 +103,10 @@ westPanel.setWidth(new_width);
                     queryMode: 'local',
                     valueField: 'siteId',
                     fieldLabel:'User Location',
+                    forceSelection:'true',
                     store:Ext.create('Ext.data.Store',
                         {
-                            storeId:'SiteStore',
+                            storeId:'TopSiteStore',
                             model: Ext.create('Ext.data.Model',{
                                 fields: [
                                     {name: 'siteId', type: 'string'},
@@ -114,7 +115,7 @@ westPanel.setWidth(new_width);
                             })
                         }),
                     listeners: {
-                        afterrender: function()
+                        afterrender: function(comp)
                         {
                             var me=this;
                             var params={
@@ -127,8 +128,8 @@ westPanel.setWidth(new_width);
                                 function(res){
                                     if(res.success){
                                         groupData=res.data;
-                                        MyApp.app.getStore('SiteStore').loadData(groupData);
-                                        //groupComboStore.loadData(groupData);
+                                        comp.store.loadData(groupData);
+                                        comp.setValue(1);
                                     }
                                     else{
                                         console.log(res.msg);
