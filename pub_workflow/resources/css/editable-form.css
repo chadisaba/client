@@ -1,0 +1,8 @@
+.editFormPanel {
+    background-image:url(../images/editFormBg.png);
+    background-repeat:repeat;
+}
+.textfieldReadonly input{
+    border-style:none; 
+    background:none;
+}
