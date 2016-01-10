@@ -25,10 +25,14 @@ Ext.application({
         'MyApp.DirectAPI'
     ],
     models: [
-        'WorklistModel'
+        'WorklistModel',
+        'SiteComboModel'
     ],
     views: [
-        'WorklistGrid'
+        'WorklistGrid',
+        'WorklistPanel',
+        'SitesSelectionGrid',
+        'MyPanel'
     ],
     controllers: [
         'MainController'

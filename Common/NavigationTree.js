@@ -14,8 +14,8 @@ Ext.define('MyApp.store.NavigationTree', {
                 text: 'Worklist',
                 iconCls: 'x-fa fa-desktop',
                 rowCls: 'nav-tree-badge nav-tree-badge-new',
-                viewType: 'worklistgrid',
-                routeId: 'worklistgrid', // routeId defaults to viewType
+                viewType: 'worklistpanel',
+                routeId: 'worklistpanel', // routeId defaults to viewType
                 leaf: true
             },
             {

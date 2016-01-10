@@ -166,11 +166,6 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'patientFirstName',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
             dataIndex: 'patientBirthDay',
             text: ''
         },
@@ -252,16 +247,6 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'siteName',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'siteId',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'visitId',
             text: ''
         }
     ],

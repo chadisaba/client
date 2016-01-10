@@ -140,22 +140,10 @@ westPanel.setWidth(new_width);
                     }
                 },
                 {
-                    xtype: 'segmentedbutton',
-                    margin: '0 16 0 0',
+                    xtype: 'textfield',
+                    fieldLabel: 'Patient search',
+                    emptyText: 'Fname Lname Birthday',
 
-                    platformConfig: {
-                        ie9m: {
-                            hidden: true
-                        }
-                    },
-
-                    items: [{
-                        iconCls: 'x-fa fa-desktop',
-                        pressed: true
-                    }, {
-                        iconCls: 'x-fa fa-tablet',
-                        handler: 'onSwitchToModern'
-                    }]
                 },
                 {
                     iconCls:'x-fa fa-search',
@@ -263,65 +251,8 @@ westPanel.setWidth(new_width);
             border:0,
             weight:10000,
             items:[
-                {
-                    xtype:"button",
-					text:"Langue",
-                    iconCls:"icon-flag_",
-                    menu:{
-                        xtype:'menu',
-                        plain:true,
-                        items:[
-                            {
-                                text:"Français",
-                                iconCls:"icon-flag_fr",
-                                handler :function(el, value){
-                                    location.href="?lang=fr";
-                                }
-                            }, {
-                                text:"English",
-                                iconCls:"icon-flag_en",
-                                handler :function(el, value){
-                                    location.href="?lang=en";
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    xtype:"button",
-                    text:'<span style="color:red;"><b>Info user!&nbsp;</b>&nbsp;<span>',
-                    iconCls: 'icon-error',
-                    listeners: {
-                    	click : function (btn,e,eOpts){
-                    		btn.setText('<span style="color:red;"><b>Open alert window</b>&nbsp;<span>');
-                    		btn.setIconCls('icon-error');
-                    	}
-                    } 
-                },
-                {
-                    xtype:"button",
-                    text: 'screen size',
-                    menu:{
-                        xtype:'menu',
-                        plain:true,
-                        items:[
-                            {
-                                text:"16:9",
-                                handler :function(el, value){
-                                	el.up('button').setText('16:9');
-                                	var win = window.open(location.href,'_blank','width=1600,height=900,resizable,scrollbars,status,toolbar,menubar,titlebar,directories,location');
-                                }
-                            }, 
-                            {
-                                text:"4:3",
-                                handler :function(el, value){
-                                	el.up('button').setText('4:3');
-                                	var win = window.open(location.href,'_blank','width=1280,height=1024,resizable,scrollbars,status,toolbar,menubar,titlebar,directories,location');
-                                }
-                            }
-                        ]
-                    }
-                },
+
+
                 {xtype:"tbfill"},
                 {
                     xtype:"container",
