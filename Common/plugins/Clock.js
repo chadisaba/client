@@ -1,9 +1,5 @@
-/**
- * @class Ext.ux.bnp.mtm.Clock
- * @extends Ext.toolbar.TextItem
- * This class displays a clock on the menu toolbar.
- */
-Ext.define('Ext.ux.bnp.mtm.Clock', {
+
+Ext.define('Plugins.Clock', {
     extend: 'Ext.toolbar.TextItem',
 
     alias: 'widget.trayclock',

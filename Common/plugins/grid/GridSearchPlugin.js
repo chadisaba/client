@@ -56,7 +56,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				itemId: 'resetSearchBtn',
 				glyph: 'xf014@FontAwesome',
 				listeners: {
-					click: function (button, e, options){
+					click: function (){
 						me.grid.getStore().removeAll();
 					}
 				}    			
@@ -98,7 +98,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				text: '',
 				tooltip: 'Add Search Criteria',
 				listeners: {
-					click: function (button, e, options){
+					click: function (){
 
 						var gridStore=me.grid.getStore();
 						var model=gridStore.getModel();
@@ -126,7 +126,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				listeners: {
 					click: function (button, e, options){
 
-						me.grid.getStore().remove(me.grid.getSelectionModel().getSelection()[0]);
+						me.grid.getStore().remove(me.grid.getSelectionModel().getSelection());
 					}	
 				}    			
 			}

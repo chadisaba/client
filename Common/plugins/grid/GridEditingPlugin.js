@@ -44,7 +44,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	withValidation: false,
 	showConfirmationOnSave: true,
-	
+	liveSearch:true,
 	
 	
 	
@@ -156,7 +156,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.cancelBtnCtn.hide();
 			me.quitBtnCtn.hide();
 			me.chHistBtnCtn.show();
-			
+
 			me.editBtnCtn.down('#editBtn').setDisabled(false);
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			me.addBtnCtn.down('#addBtn').setDisabled(false);
@@ -240,6 +240,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);		
 		}
+		me.filterCheckBoxCtn.hide();
 	},
 	
 	createNewToolbar: function (){
@@ -250,6 +251,14 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
+
+		this.createFilterCheckboxCtn();
+
+		if(this.liveSearch){
+			this.createLiveSearchCtn();
+		this.tb.add(this.liveSearchCtn);
+		}
+
 		if (this.onlyADM===false 
 			&& this.onlyECSQ===false 
 			&& this.onlyModify === false
@@ -269,6 +278,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.addBtnCtn);
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add({xtype:'tbfill'});
+			this.tb.add(this.filterCheckBoxCtn);
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -291,6 +301,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.createQuitBtnCtn();
 			this.tb.add(this.editBtnCtn);
 			this.tb.add({xtype:'tbfill'});
+			this.tb.add(this.filterCheckBoxCtn);
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -305,6 +316,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.editBtnCtn);
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add({xtype:'tbfill'});
+			this.tb.add(this.filterCheckBoxCtn);
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -319,6 +331,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.editBtnCtn);
 			this.tb.add(this.deleteBtnCtn);
 			this.tb.add({xtype:'tbfill'});
+			this.tb.add(this.filterCheckBoxCtn);
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -343,14 +356,95 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.deleteBtnCtn);
 			this.tb.add(this.addBtnCtn);
 			this.tb.add({xtype:'tbfill'});
+			this.tb.add(this.filterCheckBoxCtn);
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
 		}
+
 		
 	},
-	
+
+	createFilterCheckboxCtn: function (){
+		var me = this;
+		this.filterCheckBoxCtn = Ext.create('Ext.container.Container', {
+			itemId: 'CheckBoxCtn',
+
+			hidden: true,
+			items:[{
+				xtype: 'checkbox',
+				fieldBodyCls: 'x-form-cb-wrap-default_toolbar',
+				boxLabel:'Only Modified Rows',
+				itemId: 'filterCheckbox',
+				listeners: {
+					change: function (field){
+						me.liveSearchCtn.setValue("");
+						var gridStore=me.grid.getStore();
+						var result;
+						gridStore.clearFilter();
+						if(field.getValue()){
+						gridStore.filterBy(function(rec)
+						{
+							result=false;
+							if(rec.get('added')||rec.get('modified')||rec.get('toDelete'))
+								result=true;
+							return result;
+						});
+						}
+
+					}
+				}
+			}
+			]
+		});
+	},
+
+	createLiveSearchCtn: function (){
+		var me = this;
+		this.liveSearchCtn = Ext.create('Ext.form.TextField',
+		{
+			fieldStyle : 'font-family: FontAwesome',
+			emptyText: '\uF002 Live Search',
+			listeners: {
+				specialkey: function (field,e){
+					var value=field.getValue();
+					if (e.getKey() === e.ENTER) {
+						var store = me.grid.getStore();
+
+						store.clearFilter();
+						if(!Ext.isEmpty(value)){
+						store.filterBy(function(rec)
+						{
+							var result=false;
+							var data=rec.getData();
+							for (var key in data) {
+								if(data[key]){
+								if (data[key].toString().indexOf(value.toString()) >= 0)
+									result=true;
+								}
+
+
+							}
+							return result;
+						})
+						}
+					}
+			}
+		},
+			triggers: {
+				mytrigger2: {
+					handler: function(field, trigger, e) {
+						field.setValue("");
+						me.grid.getStore().clearFilter();
+					},
+					cls: 'x-form-clear-trigger'
+				}
+
+			}
+		});
+	},
+
 	createEditBtnCtn: function (){
 		var me = this;
 		this.editBtnCtn = Ext.create('Ext.container.Container', {
@@ -624,6 +718,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		me.cancelBtnCtn.show();
 		me.saveBtnCtn.show();
 		me.quitBtnCtn.show();
+		me.filterCheckBoxCtn.show();
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		
