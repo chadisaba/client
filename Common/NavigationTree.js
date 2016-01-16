@@ -32,9 +32,11 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Screen 3',
+                text: 'Sites',
                 iconCls: 'x-fa fa-search',
-                viewType: 'searchresults',
+                viewType: 'sitegrid',
+                routeId: 'sitegrid', // routeId defaults to viewType
+
                 leaf: true
             },
             {
