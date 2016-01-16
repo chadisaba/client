@@ -31,6 +31,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     },
     reference: 'worklistGridRef',
     itemId: 'worklistGridId',
+    minWidth: 1600,
     resizable: false,
     title: '',
     forceFit: true,
@@ -41,212 +42,220 @@ Ext.define('MyApp.view.WorklistGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'worklistId',
-            text: 'ID'
+            minWidth: 100,
+            dataIndex: 'siteName',
+            text: 'Site'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
+            scrollable: true,
+            width: '',
             dataIndex: 'worklistDate',
-            text: ''
+            text: 'Date'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
+            dataIndex: 'patientLastName',
+            text: 'Patient'
+        },
+        {
+            xtype: 'gridcolumn',
+            minWidth: 100,
+            dataIndex: 'patientBirthDay',
+            text: 'Birthday'
+        },
+        {
+            xtype: 'gridcolumn',
+            minWidth: 150,
             dataIndex: 'worklistStudies',
-            text: ''
+            text: 'Studies'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistMedRef',
-            text: ''
+            text: 'Doctor'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistMedPresc',
-            text: ''
+            text: 'consultant Ph.'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistMedRecipient',
-            text: ''
+            text: 'Dr. Recipient'
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistDictationsNb',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistDictationsStatus',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistCrsNb',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistCrsStatus',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistCotationStatus',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistFTNum',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistPatientInfo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: '	worklistVisitInfo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistVisitComment',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'worklistPatientInfoAlertLevel',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'worklistVisitInfoAlertLevel',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'worklistPriseEnCharge',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistPatientDu',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'worklisPatientPaid',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklistFtDu',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'worklistFtPaid',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklisCrEmailedTo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'worklisCrMailedTo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'patientLastName',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'patientBirthDay',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'patientInfos',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitInfos',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitComment',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: '	visitIsBySocialCard',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsFree',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsHospitalized',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsUrgent',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitHospitVisitNumber',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsDone',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsAmo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitIsAmc',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitPds',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitInvoiceType',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitFtFor',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            minWidth: 100,
             dataIndex: 'visitPEC',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'siteName',
             text: ''
         }
     ],

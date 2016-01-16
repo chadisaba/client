@@ -175,7 +175,7 @@ westPanel.setWidth(new_width);
                 },
                 {
                     xtype: 'tbtext',
-                    text: 'Fadi SABA',
+                    text: 'Connected User',
                     cls: 'top-user-name'
                 },
                 {
@@ -184,7 +184,7 @@ westPanel.setWidth(new_width);
                     height: 35,
                     width: 35,
                     alt:'current user ',
-                    src: 'resources/images/personal.png'
+                    src: '../Common/resources/images/personal.png'
                 }
             ]
         }
