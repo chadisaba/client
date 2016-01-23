@@ -30,13 +30,17 @@ Ext.application({
         'SiteCategoryComboModel',
         'GroupIdComboModel',
         'SiteCityIdComboModel',
-        'SiteModel'
+        'SiteModel',
+        'SiteConfigModel',
+        'SiteGroupModel'
     ],
     views: [
         'XxAssociatePanel',
         'XxLeftTreePanel',
         'XxRightTreePanel',
-        'SiteGrid'
+        'SiteGrid',
+        'SiteConfigGrid',
+        'SiteGroupGrid'
     ],
     controllers: [
         'MainController'

@@ -15,7 +15,9 @@
             "SiteCategoryComboModel",
             "GroupIdComboModel",
             "SiteCityIdComboModel",
-            "SiteModel"
+            "SiteModel",
+            "SiteConfigModel",
+            "SiteGroupModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -25,7 +27,9 @@
             "XxAssociatePanel",
             "XxLeftTreePanel",
             "XxRightTreePanel",
-            "SiteGrid"
+            "SiteGrid",
+            "SiteConfigGrid",
+            "SiteGroupGrid"
         ]
     },
     "name": "Application",

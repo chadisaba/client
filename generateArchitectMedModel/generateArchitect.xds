@@ -12,8 +12,8 @@
                 "width": 1280
             }
         },
-        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_med_model/",
-        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client/generate_pub_med_model",
+        "urlPrefix": "http://localhost/nodejs_extjs_project/clientCh/generate_pub_med_model/",
+        "exportPath": "D:/wamp/www/nodejs_extjs_project/clientCh/generate_pub_med_model",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -31,6 +31,12 @@
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "exm5dgxh-8a5d-4154-8917-wyfgetvqexm5",
+            "exm5dgxh-4ace-45f2-b4ee-exm5dgxh9xf8",
+            "wyfgetvq-8c41-4643-a8f8-wyfgetvqexm5",
+            "lwng1fa4-8a5d-4154-8917-lwng1fa4wxsp",
+            "4vw4y3bu-4ace-45f2-b4ee-lwng1fa4wxsp",
+            "iuekgaab-8c41-4643-a8f8-iuekgaabsc3f",
             "drlkncjy-4ace-45f2-b4ee-mxvre6tuu53r",
             "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
             "6jnygfub-8c41-4643-a8f8-m5efipnesn2a",
@@ -52,6 +58,8 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "vtd39c3u-1d4f-4fb9-9364-vtd39c3uuvsj",
+            "iy6yfsjn-1d4f-4fb9-9364-2kw4kytlyif4",
             "040092bf-b6f4-441b-b581-9igk4vlwdiy7",
             "040092bf-b6f4-441b-b581-g5rqmaw32rhy",
             "5jbt8xe7-1d4f-4fb9-9364-5e5k7re89hgw",

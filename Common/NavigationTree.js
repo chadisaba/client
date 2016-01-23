@@ -40,9 +40,10 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Screen 4',
+                text: 'Associate',
                 iconCls: 'x-fa fa-question',
-                viewType: 'faq',
+                viewType: 'xxassociatepanel',
+                routeId: 'xxassociatepanel', // routeId defaults to viewType
                 leaf: true
             },
             {
