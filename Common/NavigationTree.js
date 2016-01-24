@@ -32,10 +32,10 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Sites',
+                text: 'Sites Groupe',
                 iconCls: 'x-fa fa-search',
-                viewType: 'sitegrid',
-                routeId: 'sitegrid', // routeId defaults to viewType
+                viewType: 'sitegroupgrid',
+                routeId: 'sitegroupgrid', // routeId defaults to viewType
 
                 leaf: true
             },
@@ -47,23 +47,24 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Menu 1',
+                text: 'Sites',
                 iconCls: 'x-fa fa-leanpub',
                 expanded: false,
                 selectable: false,
 
                 children: [
                     {
-                        text: 'Sub Menu 1',
+                        text: 'Sites',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
-                        leaf: true
+                        viewType: 'sitegrid',
+                        routeId: 'sitegrid', // routeId defaults to viewType
                     },
 
                     {
-                        text: 'Sub Menu 2',
+                        text: 'Groupes',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'sitegroupgrid',
+                        routeId: 'sitegroupgrid', // routeId defaults to viewType
                         leaf: true
                     },
                     {

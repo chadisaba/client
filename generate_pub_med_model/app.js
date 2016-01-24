@@ -40,7 +40,9 @@ Ext.application({
         'XxRightTreePanel',
         'SiteGrid',
         'SiteConfigGrid',
-        'SiteGroupGrid'
+        'SiteGroupGrid',
+        'SiteConfigWindow',
+        'SiteConfigForm'
     ],
     controllers: [
         'MainController'

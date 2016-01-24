@@ -29,7 +29,9 @@
             "XxRightTreePanel",
             "SiteGrid",
             "SiteConfigGrid",
-            "SiteGroupGrid"
+            "SiteGroupGrid",
+            "SiteConfigWindow",
+            "SiteConfigForm"
         ]
     },
     "name": "Application",

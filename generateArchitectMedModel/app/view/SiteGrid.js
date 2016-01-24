@@ -20,12 +20,12 @@ Ext.define('MyApp.view.SiteGrid', {
     requires: [
         'MyApp.view.SiteGridViewModel',
         'MyApp.view.SiteGridViewController',
-        'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
-        'Ext.selection.RowModel'
+        'Ext.selection.RowModel',
+        'Ext.grid.column.Action'
     ],
 
     controller: 'sitegrid',
@@ -181,6 +181,16 @@ Ext.define('MyApp.view.SiteGrid', {
             editor: {
                 xtype: 'checkboxfield'
             }
+        },
+        {
+            xtype: 'actioncolumn',
+            text: 'config',
+            items: [
+                {
+                    handler: 'openConfigHandler',
+                    icon: 'fdfsd'
+                }
+            ]
         }
     ],
     listeners: {

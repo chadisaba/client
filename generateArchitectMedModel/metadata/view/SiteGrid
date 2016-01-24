@@ -831,6 +831,60 @@
             },
             "name": "onSiteGridIdValidateedit",
             "designerId": "bu5rgcry-b2ec-4782-a56f-5prsil29p7dv"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "config"
+            },
+            "name": "MyActionColumn",
+            "designerId": "bbd33456-daf6-4b85-a426-340cec1058dd",
+            "cn": [
+                {
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "fdfsd"
+                    },
+                    "name": "MyActionColumnItem",
+                    "designerId": "52525ee1-ca67-4a3f-990c-fcc47bb34117",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "view",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "item",
+                                    "e",
+                                    "record",
+                                    "row"
+                                ],
+                                "designer|viewControllerFn": "openConfigHandler",
+                                "fn": "handler",
+                                "implHandler": null
+                            },
+                            "name": "handler",
+                            "designerId": "8e8dfc97-a025-4b8d-b88d-9634d1705c03"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

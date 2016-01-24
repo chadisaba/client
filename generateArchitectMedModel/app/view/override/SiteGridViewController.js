@@ -184,6 +184,11 @@ alert(combo.getValue());
             },me
         );
 
+    },
+    openConfigHandler: function(view, rowIndex, colIndex, item, e, record, row) {
+
+   var win= Ext.create('MyApp.view.SiteConfigWindow');
+        win.show();
     }
     
  

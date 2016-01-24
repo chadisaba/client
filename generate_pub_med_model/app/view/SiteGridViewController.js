@@ -93,6 +93,10 @@ Ext.define('MyApp.view.SiteGridViewController', {
 
     onSiteGridIdValidateedit: function(editor, context) {
 
+    },
+
+    openConfigHandler: function(view, rowIndex, colIndex, item, e, record, row) {
+
     }
 
 });
