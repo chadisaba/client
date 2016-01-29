@@ -77,15 +77,17 @@ Ext.define('MyApp.store.NavigationTree', {
                 ]
             },
             {
-                text: 'Screen 4',
+                text: 'User ',
                 iconCls: 'x-fa fa-flask',
-                viewType: 'widgets',
+                viewType: 'usergrid',
+                routeId: 'usergrid',
                 leaf: true
             },
             {
-                text: 'Screen 5',
+                text: 'Device',
                 iconCls: 'x-fa fa-edit',
-                viewType: 'forms',
+                viewType: 'devicegrid',
+                routeId: 'devicegrid',
                 leaf: true
             },
             {

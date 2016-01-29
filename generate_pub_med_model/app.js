@@ -32,7 +32,9 @@ Ext.application({
         'SiteCityIdComboModel',
         'SiteModel',
         'SiteConfigModel',
-        'SiteGroupModel'
+        'SiteGroupModel',
+        'UserGridModel',
+        'DeviceModel'
     ],
     views: [
         'XxAssociatePanel',
@@ -42,7 +44,9 @@ Ext.application({
         'SiteConfigGrid',
         'SiteGroupGrid',
         'SiteConfigWindow',
-        'SiteConfigForm'
+        'SiteConfigForm',
+        'UserGrid',
+        'DeviceGrid'
     ],
     controllers: [
         'MainController'

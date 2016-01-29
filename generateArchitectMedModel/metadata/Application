@@ -17,7 +17,9 @@
             "SiteCityIdComboModel",
             "SiteModel",
             "SiteConfigModel",
-            "SiteGroupModel"
+            "SiteGroupModel",
+			"UserGridModel",
+			"DeviceModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -31,7 +33,9 @@
             "SiteConfigGrid",
             "SiteGroupGrid",
             "SiteConfigWindow",
-            "SiteConfigForm"
+            "SiteConfigForm",
+			"UserGrid",
+			"DeviceGrid"
         ]
     },
     "name": "Application",
