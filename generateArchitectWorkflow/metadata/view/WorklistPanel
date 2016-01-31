@@ -1,0 +1,61 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "worklistpanel",
+        "designer|userClassName": "WorklistPanel",
+        "height": null,
+        "layout": "border",
+        "title": "WorkList",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "b68b3eb9-ea53-41e7-8584-0f9360c148ae",
+    "viewControllerInstanceId": "239f74c6-d872-450e-b62f-cb9b214522d5",
+    "viewModelInstanceId": "07b99d93-4fe6-42e6-bbb5-d4ebcb3d00dc",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": false,
+                "collapsed": true,
+                "collapsible": true,
+                "hideCollapseTool": false,
+                "layout|collapseMode": "header",
+                "layout|region": "west",
+                "layout|split": true,
+                "titleCollapse": false,
+                "width": 200
+            },
+            "name": "sitesselectiongrid",
+            "designerId": "20800b4f-9366-4f49-899f-a16f1ceb1b22",
+            "masterInstanceId": "21db76f7-aea9-404e-8f1a-3084d23c43e0"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "maxWidth": null,
+                "minWidth": null,
+                "scrollable": null
+            },
+            "name": "worklistgrid",
+            "designerId": "d46edd4c-a145-423c-94c3-63e4fb8f1a2c",
+            "masterInstanceId": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+        }
+    ]
+}

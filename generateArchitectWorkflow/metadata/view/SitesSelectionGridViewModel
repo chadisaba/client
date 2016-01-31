@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitesselectiongrid",
+        "designer|userClassName": "SitesSelectionGridViewModel"
+    },
+    "designerId": "0d069ca7-ea17-4818-92d1-c2fced6784a8",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SitesSelectionStore"
+            },
+            "name": "MyStore",
+            "designerId": "0f467296-d5c1-4b04-a81d-4cc61af39369"
+        }
+    ]
+}

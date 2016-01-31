@@ -1,0 +1,881 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "worklistgrid",
+        "designer|userClassName": "WorklistGrid",
+        "forceFit": true,
+        "itemId": "worklistGridId",
+        "minWidth": 1600,
+        "reference": "worklistGridRef",
+        "resizable": [
+            "false"
+        ],
+        "scrollable": null,
+        "store": [
+            "{WorklistStore}"
+        ],
+        "title": "",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding",
+        "scrollable": "boolean"
+    },
+    "designerId": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
+    "viewControllerInstanceId": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
+    "viewModelInstanceId": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteName",
+                "minWidth": 50,
+                "text": "Site"
+            },
+            "name": "MysiteNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistDate",
+                "minWidth": 100,
+                "scrollable": true,
+                "text": "Date",
+                "width": ""
+            },
+            "name": "MyworklistDateCol",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "patientLastName",
+                "minWidth": 100,
+                "text": "Patient"
+            },
+            "name": "MypatientLastNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "patientBirthDay",
+                "minWidth": 100,
+                "text": "Birthday"
+            },
+            "name": "MypatientBirthDayCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistStudies",
+                "minWidth": 150,
+                "text": "Studies",
+                "width": null
+            },
+            "name": "MyworklistStudiesCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistMedRef",
+                "minWidth": 100,
+                "text": "Doctor"
+            },
+            "name": "MyworklistMedRefCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistMedPresc",
+                "minWidth": 100,
+                "text": "consultant Ph."
+            },
+            "name": "MyworklistMedPrescCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistMedRecipient",
+                "minWidth": 100,
+                "text": "Dr. Recipient"
+            },
+            "name": "MyworklistMedRecipientCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistDictationsStatus",
+                "minWidth": 70,
+                "text": "Dictée"
+            },
+            "name": "MyColumn1",
+            "designerId": "7c6bec59-5c6a-4872-9cec-a884kx4gdafc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "var result;",
+                            "",
+                            "            if(!value)",
+                            "                value=0;",
+                            "switch(value)",
+                            "    {",
+                            "            ",
+                            "        case 1:",
+                            "               result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
+                            "        ",
+                            "            break;",
+                            "",
+                            "    }",
+                            "   result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
+                            "     ",
+                            "",
+                            "            return result;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "a7e4eb26-bc09-4ebf-8ee1-238033a6747f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistCrsStatus",
+                "minWidth": 50,
+                "text": "C.R"
+            },
+            "name": "MyworklistCrsStatusCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-udqxppjjuvmk",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "var result;",
+                            "",
+                            "            if(!value)",
+                            "                value=0;",
+                            "switch(value)",
+                            "    {",
+                            "            ",
+                            "        case 1:",
+                            "               result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
+                            "        ",
+                            "            break;",
+                            "",
+                            "    }",
+                            "   result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
+                            "     ",
+                            "",
+                            "            return result;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "dbfd0890-44df-4918-ad20-472ca9978902"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistCotationStatus",
+                "minWidth": 50,
+                "text": "Cot."
+            },
+            "name": "MyworklistCotationStatusCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-suh9qp59ml87",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "var result;",
+                            "switch(value)",
+                            "    {",
+                            "        case 1:",
+                            "            result='<i class=\"fa fa-hourglass-half\" color=\"#ff7043\"></i>';",
+                            "            break;",
+                            "",
+                            "    }",
+                            "result='<i class=\"fa fa-check-circle-o\" style=\"color:#66bb6a;font-size:17px\"></i>';",
+                            "",
+                            "            return result;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "06580145-25bc-4422-9943-e07139525855"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistFTNum",
+                "minWidth": 50,
+                "text": "F.T"
+            },
+            "name": "MyworklistFTNumCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ipy9kmhqkecb",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "if(!value) value=0;",
+                            "return'<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:\"blue\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "58cfb2dc-3ee2-4dc7-8be5-2bb381a5fd64"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistPatientInfo",
+                "minWidth": 100,
+                "text": "Pat. info"
+            },
+            "name": "MyworklistPatientInfoCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jc7rfiu7dyh7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '<i class=\"fa fa-info-circle\" style=\"font-size:17px;color:#31b0d5\"></i>';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "8f397736-797c-4aba-907d-8a52a926140e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "\tworklistVisitInfo",
+                "minWidth": 100,
+                "text": "Visite Info."
+            },
+            "name": "My\tworklistVisitInfoCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '<i class=\"fa fa-info-circle\" style=\"font-size:17px;color:#31b0d5\"></i>';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "34e0513f-fa8c-40a7-a317-d267b1c39cf1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistVisitComment",
+                "minWidth": 100,
+                "text": "Comment"
+            },
+            "name": "MyworklistVisitCommentCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-4w73tqb8g9j5"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistPatientDu",
+                "minWidth": 100,
+                "text": "Pat. Du"
+            },
+            "name": "MyworklistPatientDuCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklistFtDu",
+                "minWidth": 100,
+                "text": "Visite Du"
+            },
+            "name": "MyworklistFtDuCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsDone",
+                "minWidth": 100,
+                "text": "Cloturé"
+            },
+            "name": "MyvisitIsDoneCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "var result;",
+                            "switch(value)",
+                            "    {",
+                            "            case 0:",
+                            "            result='';",
+                            "            break;",
+                            "        case 1:",
+                            "            result='<i class=\"fa fa-check-circle-o\" style=\"color:#66bb6a;font-size:17px\"></i>';",
+                            "            break;",
+                            "",
+                            "    }",
+                            "",
+                            "",
+                            "            return result;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "592f88b3-0c88-4eb3-9f50-f5b743e3d489"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklisCrEmailedTo",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyworklisCrEmailedToCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-g1nftesgl979"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "worklisCrMailedTo",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyworklisCrMailedToCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-svcn8rv37l3s"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "patientInfos",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MypatientInfosCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-nrr898l4277u"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitInfos",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitInfosCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-t1lrcn9kuwde"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitComment",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitCommentCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-pnvlkxy3cm5d"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "\tvisitIsBySocialCard",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "My\tvisitIsBySocialCardCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsFree",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitIsFreeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-lutcy48v89gc"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsHospitalized",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitIsHospitalizedCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-w5fq41xd34jq"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsUrgent",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitIsUrgentCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitHospitVisitNumber",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitHospitVisitNumberCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jku13lsx7etv"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsAmo",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitIsAmoCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-hga7ui1gs7xd"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitIsAmc",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitIsAmcCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-df1pi8n1vr9n"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitPds",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitPdsCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-3u7n1b5jbar3"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitInvoiceType",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitInvoiceTypeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-9tvwdiexrk9b"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitFtFor",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitFtForCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-uk4ywppcem4f"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitPEC",
+                "minWidth": 100,
+                "text": ""
+            },
+            "name": "MyvisitPECCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": null
+            },
+            "name": "MyTable",
+            "designerId": "itqlgl94-ccc7-232C-1245-7q2pqifjnivb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "nfa3ar1v-f393-483a-8425-7mn8fnk3pdi1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorklistGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdChHist",
+            "designerId": "y7sj5at8-1d4f-4fb9-9364-pd7f4vqhps34"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorklistGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdAfterRender",
+            "designerId": "vlue87mv-1f65-4972-a6e1-g4fqnwt5pnb9"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-jfkb6aetghb5"
+        }
+    ]
+}

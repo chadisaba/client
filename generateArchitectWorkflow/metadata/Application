@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "WorklistModel",
+            "SiteComboModel"
+        ],
+        "name": "MyApp",
+        "requires": [
+            "MyApp.DirectAPI"
+        ],
+        "views": [
+            "WorklistGrid",
+            "WorklistPanel",
+            "SitesSelectionGrid",
+            "MyPanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

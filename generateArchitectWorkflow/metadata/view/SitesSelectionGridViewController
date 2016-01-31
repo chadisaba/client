@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitesselectiongrid",
+        "designer|userClassName": "SitesSelectionGridViewController"
+    },
+    "designerId": "2ee92070-302b-4657-bd13-72448db922c4"
+}

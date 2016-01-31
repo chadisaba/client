@@ -1,0 +1,67 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Large",
+                "builtIn": true,
+                "height": 1024,
+                "width": 1280
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client_ch/pub_workflow/",
+        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client_ch/pub_workflow/",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
+            "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
+            "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "b68b3eb9-ea53-41e7-8584-0f9360c148ae",
+            "07b99d93-4fe6-42e6-bbb5-d4ebcb3d00dc",
+            "239f74c6-d872-450e-b62f-cb9b214522d5",
+            "21db76f7-aea9-404e-8f1a-3084d23c43e0",
+            "0d069ca7-ea17-4818-92d1-c2fced6784a8",
+            "2ee92070-302b-4657-bd13-72448db922c4",
+            "387f02e7-c52d-4e89-819c-0e0df75df746",
+            "53681c2f-d038-4e42-ad25-fdcdd2627555",
+            "55f63529-4015-4053-8220-0505eb76e672"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "r8h3hui7-1d4f-4fb9-9364-xyhurc54yn3d",
+            "9d12509b-71be-4c74-8e94-8c832006b458"
+        ],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

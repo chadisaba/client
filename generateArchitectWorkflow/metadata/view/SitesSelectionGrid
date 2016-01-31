@@ -1,0 +1,96 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitesselectiongrid",
+        "designer|userClassName": "SitesSelectionGrid",
+        "height": 250,
+        "store": [
+            "{SitesSelectionStore}"
+        ],
+        "title": "Sites filter",
+        "width": 400
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "21db76f7-aea9-404e-8f1a-3084d23c43e0",
+    "viewControllerInstanceId": "2ee92070-302b-4657-bd13-72448db922c4",
+    "viewModelInstanceId": "0d069ca7-ea17-4818-92d1-c2fced6784a8",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCode",
+                "text": "Site"
+            },
+            "name": "MyColumn",
+            "designerId": "6551d52c-9409-4571-ab7c-ebc661c87726"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable1",
+            "designerId": "1255b97e-c05f-46b2-aa3e-331e1903addd"
+        },
+        {
+            "type": "Ext.selection.CheckboxModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyCheckboxSelectionModel",
+            "designerId": "ee9f90d7-23fc-4b81-9fe9-4d577243c586"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelAfterRender",
+                "implHandler": [
+                    "var me=this;",
+                    "var params={",
+                    "    id:50,",
+                    "    table:\"SITE\"",
+                    "};",
+                    "",
+                    "var groupData=[];",
+                    "Server.CommonQueries.read(params,",
+                    "                          function(res){",
+                    "                              if(res.success){",
+                    "                                  groupData=res.data;",
+                    "                                  component.store.loadData(groupData);",
+                    "                              }",
+                    "                              else{",
+                    "                                  console.log(res.msg);",
+                    "                              }",
+                    "                          },me",
+                    "                         );"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onGridpanelAfterRender",
+            "designerId": "6da17136-ca5f-4e5d-8a6c-c640ce0fa929"
+        }
+    ]
+}

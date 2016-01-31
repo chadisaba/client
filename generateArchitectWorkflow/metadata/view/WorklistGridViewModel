@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "worklistgrid",
+        "designer|userClassName": "WorklistGridViewModel"
+    },
+    "designerId": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "WorklistModel",
+                "name": "WorklistStore"
+            },
+            "name": "WorklistStore",
+            "designerId": "g44blag4-c056-4140-9039-83s6s9uhj9yg"
+        }
+        
+    ]
+}
