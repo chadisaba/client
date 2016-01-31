@@ -86,6 +86,8 @@ var params={};
        params.idName="siteId";
        params.dataToBeSaved=dataToBeSaved;
        params.comment=comment;
+       console.log(dataToBeSaved);
+
        var result=[];
        Server.CommonQueries.saveRecords(params,
            function(_result){

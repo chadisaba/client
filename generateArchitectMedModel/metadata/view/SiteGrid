@@ -35,7 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteName",
+                "dataIndex": "siteGroupId",
                 "text": "Name"
             },
             "name": "MysiteNameCol",

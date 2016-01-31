@@ -44,7 +44,7 @@ Ext.define('MyApp.view.SiteGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteName',
+            dataIndex: 'siteGroupId',
             text: 'Name',
             editor: {
                 xtype: 'textfield',
