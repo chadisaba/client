@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicegrid",
+        "designer|userClassName": "DeviceGridViewModel"
+    },
+    "designerId": "ruxiraj6-8a5d-4154-8917-ruxiraj62nyk",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceModel",
+                "name": "DeviceStore"
+            },
+            "name": "DeviceStore",
+            "designerId": "awpvsmid-c056-4140-9039-awpvsmid7n7g"
+        }
+        
+    ]
+}

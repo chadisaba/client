@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "siteconfiggrid",
+        "designer|userClassName": "SiteConfigGridViewController"
+    },
+    "designerId": "exm5dgxh-4ace-45f2-b4ee-exm5dgxh9xf8"
+}

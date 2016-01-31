@@ -1,0 +1,534 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicegrid",
+        "designer|userClassName": "DeviceGrid",
+        "forceFit": true,
+        "itemId": "deviceGridId",
+        "reference": "deviceGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{DeviceStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "ruxiraj6-8c41-4643-a8f8-ruxiraj62nyk",
+    "viewControllerInstanceId": "ruxiraj6-4ace-45f2-b4ee-ruxiraj62nyk",
+    "viewModelInstanceId": "ruxiraj6-8a5d-4154-8917-ruxiraj62nyk",
+    "cn": [
+  
+     
+     
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceName",
+                "text": "Device Name"
+        
+            },
+            "name": "MydeviceNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-b2mg296rf2hk"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceNameTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceNameTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-b2mg296rf2hk"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceModel",
+                "text": "Device Model"
+        
+            },
+            "name": "MydeviceModelCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-b2mg296rf2hk"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceModelTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceModelTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-b2mg296rf2hk"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceAET",
+                "text": "Device AET"
+        
+            },
+            "name": "MydeviceAETCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-b2mg296rf2hk"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceAETTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceAETTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-t4fs3l5yj2ng"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": "Active"
+        
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-t4fs3l5yj2ng"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-t4fs3l5yj2ng"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-t4fs3l5yj2ng"
+                }
+            ]  },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "awpvsmid-f393-483a-8425-awpvsmid7n7g"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "awpvsmid-ccc7-465c-8662-awpvsmid7n7g"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processDeviceGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processDeviceGrid",
+            "designerId": "awpvsmid-2054-459b-a4aa-awpvsmid7n7g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdChHist",
+            "designerId": "awpvsmid-1d4f-4fb9-9364-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdAfterRender",
+            "designerId": "8tfy9hik-1f65-4972-a6e1-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdInEdit",
+            "designerId": "8tfy9hik-1a08-4be0-b287-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onDeviceGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdResetEdit",
+            "designerId": "8tfy9hik-2c80-456a-a5c5-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onDeviceGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdSaveEdit",
+            "designerId": "8tfy9hik-f0d5-4d89-a1bb-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onDeviceGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdAddItem",
+            "designerId": "8tfy9hik-ffc4-4ede-a9db-8tfy9hik34g8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdDeleteItem",
+            "designerId": "pv7cauhs-ac56-469a-895f-pv7cauhs84n4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdModifyItem",
+            "designerId": "pv7cauhs-6b6f-4377-998f-pv7cauhs84n4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onDeviceGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdQuitEdit",
+            "designerId": "pv7cauhs-746f-4da4-9f4d-pv7cauhs84n4"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-awpvsmid7n7g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdBeforeEdit",
+            "designerId": "pv7cauhs-4019-4a61-8c79-pv7cauhs84n4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdCanceledit",
+            "designerId": "pv7cauhs-6686-46dd-bfe7-pv7cauhs84n4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdContainerClick",
+            "designerId": "pv7cauhs-3079-420b-87bf-pv7cauhs84n4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdEdit",
+            "designerId": "8wxpc8f1-47bf-4b29-bb1d-8wxpc8f1c5u1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdBeforeCellClick",
+            "designerId": "$8wxpc8f1-6a9c-488e-8122-8wxpc8f1c5u1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdValidateedit",
+            "designerId": "8wxpc8f1-b2ec-4782-a56f-8wxpc8f1c5u1"
+        }
+    ]
+}

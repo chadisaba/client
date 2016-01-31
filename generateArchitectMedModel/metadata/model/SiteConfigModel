@@ -1,0 +1,227 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SiteConfigModel",
+        "validators": [
+            "[{",
+            "            type: 'presence',",
+            "            field: 'xxFieldNameRequired'",
+            "        }]"
+        ]
+    },
+    "name": "AuthorizationGridModel1",
+    "designerId": "vtd39c3u-1d4f-4fb9-9364-vtd39c3uuvsj",
+    "cn": [
+       
+        {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigId",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigId",
+                "designerId": "e96f8d89-803f-419a-a346-du5eap13yv1f"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteId",
+                 "type": "auto"
+                },
+                "name": "MysiteId",
+                "designerId": "e96f8d89-803f-419a-a346-du5eap13yv1f"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigStartHour",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigStartHour",
+                "designerId": "e96f8d89-803f-419a-a346-du5eap13yv1f"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigEndHour",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigEndHour",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigPyxMode",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigPyxMode",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigFseIsChecked",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigFseIsChecked",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigUidSenolog",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigUidSenolog",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "siteConfigSenologType",
+                 "type": "auto"
+                },
+                "name": "MysiteConfigSenologType",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "created",
+                 "type": "auto"
+                },
+                "name": "Mycreated",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "lastupdated",
+                 "type": "auto"
+                },
+                "name": "Mylastupdated",
+                "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
+            },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "toDelete"
+            },
+            "name": "MyField27",
+            "designerId": "vtd39c3u-1f65-4972-a6e1-vtd39c3uuvsj"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "name": "MyField28",
+            "designerId": "vtd39c3u-1a08-4be0-b287-du5eap13yv1f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "name": "MyField29",
+            "designerId": "du5eap13-2c80-456a-a5c5-du5eap13yv1f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "notValid"
+            },
+            "name": "MyField30",
+            "designerId": "du5eap13-f0d5-4d89-a1bb-du5eap13yv1f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "addedAndValidated"
+            },
+            "name": "MyField31",
+            "designerId": "du5eap13-ac56-469a-895f-du5eap13yv1f"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "siteconfiggrid",
+        "designer|userClassName": "SiteConfigGridViewModel"
+    },
+    "designerId": "exm5dgxh-8a5d-4154-8917-wyfgetvqexm5",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteConfigModel",
+                "name": "SiteConfigStore"
+            },
+            "name": "SiteConfigStore",
+            "designerId": "wyfgetvq-c056-4140-9039-wyfgetvqexm5"
+        }
+        
+    ]
+}

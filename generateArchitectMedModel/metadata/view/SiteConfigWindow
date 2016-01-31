@@ -1,0 +1,38 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "siteconfigwindow",
+        "designer|userClassName": "SiteConfigWindow",
+        "height": 400,
+        "iconCls": "fx-fa-list-alt",
+        "modal": true,
+        "title": "Site config",
+        "width": 500
+    },
+    "name": "MyWindow",
+    "designerId": "c45a1122-89d6-42ea-9b08-9762d6da56e8",
+    "viewControllerInstanceId": "d62e6046-a95b-4d47-b1d0-31fe58418f23",
+    "viewModelInstanceId": "04dcbd37-926a-4032-86ff-662aa37b1f4d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "left",
+                "height": 400
+            },
+            "name": "siteconfigform",
+            "designerId": "ca8f78ef-4b8a-49ef-adc8-ec3d1f3c98bc",
+            "masterInstanceId": "6c4c0da8-2f8d-4a3d-8218-2ec089ab1286"
+        }
+    ]
+}

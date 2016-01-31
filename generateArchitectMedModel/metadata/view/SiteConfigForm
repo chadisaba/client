@@ -1,0 +1,167 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "center",
+        "designer|userAlias": "siteconfigform",
+        "designer|userClassName": "SiteConfigForm",
+        "height": 315,
+        "layout": "vbox",
+        "title": "Site config Form",
+        "width": 500
+    },
+    "name": "MyForm",
+    "designerId": "6c4c0da8-2f8d-4a3d-8218-2ec089ab1286",
+    "viewControllerInstanceId": "77cec713-d607-4b50-97df-bf459164ac1a",
+    "viewModelInstanceId": "70a796ac-0912-44e3-a79f-141a9e312e55",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Site Id     ",
+                "labelWidth": null
+            },
+            "name": "MyTextField4",
+            "designerId": "c5309559-c3de-4e3b-bac6-4169e955810c"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Start Hour",
+                "inputType": "time",
+                "labelWidth": null
+            },
+            "name": "MyTextField5",
+            "designerId": "effcabe5-f536-485c-9171-a13d03bba2c8"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "End Hour",
+                "inputType": "time",
+                "labelWidth": null
+            },
+            "name": "MyTextField6",
+            "designerId": "add78e05-931e-47a7-97a9-674545ea36ef"
+        },
+        {
+            "type": "Ext.form.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "boxLabel": "Box Label",
+                "fieldLabel": "FSE is Checked",
+                "labelWidth": null
+            },
+            "name": "MyCheckbox1",
+            "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Uid Senolog",
+                "labelWidth": null
+            },
+            "name": "MyTextField7",
+            "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Senolog Type",
+                "labelWidth": null
+            },
+            "name": "MyComboBox",
+            "designerId": "3760c99a-5296-48bc-b78e-ba62e33577b2"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "right"
+            },
+            "name": "MyToolbar3",
+            "designerId": "56473833-a5da-4177-b13a-64c034234233",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Edit"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "5cff5d14-1f69-424a-ae67-346e6ca37638"
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator",
+                    "designerId": "d50a790c-0af8-41b4-9d10-233dd983972a"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "f7fb161b-40bd-4a05-9d02-5dd02af3c673"
+                }
+            ]
+        }
+    ]
+}

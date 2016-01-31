@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usergrid",
+        "designer|userClassName": "UserGridViewModel"
+    },
+    "designerId": "mttdgf93-8a5d-4154-8917-mttdgf93leq8",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "UserGridModel",
+                "name": "UserGridStore"
+            },
+            "name": "UserGridStore",
+            "designerId": "mttdgf93-c056-4140-9039-mttdgf93leq8"
+        }
+        
+    ]
+}
