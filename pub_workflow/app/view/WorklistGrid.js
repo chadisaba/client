@@ -42,7 +42,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'siteName',
             text: 'Site'
         },
@@ -92,69 +92,140 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'worklistDictationsNb',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var result;
+
+                if(!value)
+                value=0;
+                switch(value)
+                {
+
+                    case 1:
+                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+
+                    break;
+
+                }
+                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+
+
+                return result;
+            },
+            minWidth: 70,
             dataIndex: 'worklistDictationsStatus',
-            text: ''
+            text: 'Dictée'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'worklistCrsNb',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var result;
+
+                if(!value)
+                value=0;
+                switch(value)
+                {
+
+                    case 1:
+                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+
+                    break;
+
+                }
+                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+
+
+                return result;
+            },
+            minWidth: 50,
             dataIndex: 'worklistCrsStatus',
-            text: ''
+            text: 'C.R'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var result;
+                switch(value)
+                {
+                    case 1:
+                    result='<i class="fa fa-hourglass-half" color="#ff7043"></i>';
+                    break;
+
+                }
+                result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
+
+                return result;
+            },
+            minWidth: 50,
             dataIndex: 'worklistCotationStatus',
-            text: ''
+            text: 'Cot.'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                if(!value) value=0;
+                return'<span class="fa-stack fa-lg" style="font-size:10px;color:"blue"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+            },
+            minWidth: 50,
             dataIndex: 'worklistFTNum',
-            text: ''
+            text: 'F.T'
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
+            },
             minWidth: 100,
             dataIndex: 'worklistPatientInfo',
-            text: ''
+            text: 'Pat. info'
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
+            },
             minWidth: 100,
             dataIndex: '	worklistVisitInfo',
-            text: ''
+            text: 'Visite Info.'
         },
         {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'worklistVisitComment',
-            text: ''
+            text: 'Comment'
         },
         {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'worklistPatientDu',
-            text: ''
+            text: 'Pat. Du'
         },
         {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'worklistFtDu',
-            text: ''
+            text: 'Visite Du'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var result;
+                switch(value)
+                {
+                    case 0:
+                    result='';
+                    break;
+                    case 1:
+                    result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
+                    break;
+
+                }
+
+
+                return result;
+            },
+            minWidth: 100,
+            dataIndex: 'visitIsDone',
+            text: 'Cloturé'
         },
         {
             xtype: 'gridcolumn',
@@ -214,12 +285,6 @@ Ext.define('MyApp.view.WorklistGrid', {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'visitHospitVisitNumber',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitIsDone',
             text: ''
         },
         {

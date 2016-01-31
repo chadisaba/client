@@ -33,15 +33,14 @@ Ext.define('MyApp.view.WorklistPanel', {
     items: [
         {
             xtype: 'sitesselectiongrid',
-            collapseMode: 'header',
-            region: 'west',
-            split: true,
             width: 200,
             animCollapse: false,
             collapsed: true,
             collapsible: true,
-            hideCollapseTool: false,
-            titleCollapse: false
+            titleCollapse: false,
+            collapseMode: 'header',
+            region: 'west',
+            split: true
         },
         {
             xtype: 'worklistgrid',
