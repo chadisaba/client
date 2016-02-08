@@ -50,16 +50,13 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'worklistDictationsNb'
         },
         {
-            name: 'worklistDictationsStatus'
-        },
-        {
             name: 'worklistCrsNb'
         },
         {
-            name: 'worklistCrsStatus'
+            name: 'worklistLastCrStatus'
         },
         {
-            name: 'worklistCotationStatus'
+            name: 'worklistLastDictationStatus'
         },
         {
             name: 'worklistFTNum'
@@ -68,7 +65,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'worklistPatientInfo'
         },
         {
-            name: '	worklistVisitInfo'
+            name: 'worklistVisitInfo'
         },
         {
             name: 'worklistVisitComment'
@@ -107,7 +104,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'patientFirstName'
         },
         {
-            name: 'patientBirthDay'
+            name: 'patientBirthday'
         },
         {
             name: 'patientInfos'

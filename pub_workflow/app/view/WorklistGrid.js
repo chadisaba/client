@@ -56,14 +56,17 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return record.get('patientLName')+' '+record.get('pateintFName');
+            },
             minWidth: 100,
-            dataIndex: 'patientLastName',
+            dataIndex: 'patientLName',
             text: 'Patient'
         },
         {
             xtype: 'gridcolumn',
             minWidth: 100,
-            dataIndex: 'patientBirthDay',
+            dataIndex: 'patientBirthday',
             text: 'Birthday'
         },
         {
@@ -97,73 +100,139 @@ Ext.define('MyApp.view.WorklistGrid', {
 
                 if(!value)
                 value=0;
-                switch(value)
-                {
-
-                    case 1:
-                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-                    break;
-
-                }
-                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-
+                result='<span style="color:#27b6af">'+record.get('worklistDictationsNb')+'&nbsp;<span/><a href="#" onclick="return;" style="color:#27b6af;font-size:17px;"><i class="fa fa-bullhorn"></i></a>';
                 return result;
             },
-            minWidth: 70,
+            minWidth: 60,
             dataIndex: 'worklistDictationsStatus',
-            text: 'Dictée'
+            text: 'Dict.'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                /*
+                0 : no report
+                1 :Report  in typing
+                2: waiting for validation
+                3- validated
+                4- wainting for approuval
+                5-approved
+                6- printed.
+                */
                 var result;
-
-                if(!value)
-                value=0;
+                var color;
+                var icon;
+                var tooltip;
                 switch(value)
                 {
+                    case 0:
+                    color="#204d74";
+                    icon="fa fa-file-o";
+                    tooltip="Aucun compte rendu disponible";
 
+                    break;
                     case 1:
-                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+                    color="#ec971f";
+                    icon="fa fa-spinner fa-spin";
+                    tooltip="En cours de frappe";
 
+                    break;
+                    case 2:
+                    color="#ec971f";
+                    icon="fa fa-hourglass-half";
+                    tooltip="En attente de validation";
+
+                    break;
+                    case 3:
+                    color="#66bb6a";
+                    icon="fa fa-file-word-o";
+                    tooltip="Validé";
+                    break;
+                    case 4:
+                    color="#ec971f";
+                    icon="fa fa-hourglass-half";
+                    tooltip="En attente d'approbation";
+                    break;
+                    case 5:
+                    color="#66bb6a";
+                    icon="fa fa-file-word-o";
+                    tooltip="Approuvé";
+                    break;
+                    case 6:
+                    color="#66bb6a";
+                    icon="fa fa-print";
+                    tooltip="Imprimé";
                     break;
 
                 }
-                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
+                metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+                result='<span style="color:'+color+'">'+record.get('worklistCrsNb')+'&nbsp;<span/><a href="#" onclick="return;" style="color:'+color+
+                ';font-size:17px;"><i class="'+icon+'"></i></a>';
 
                 return result;
             },
             minWidth: 50,
-            dataIndex: 'worklistCrsStatus',
+            dataIndex: 'worklistLastCrStatus',
             text: 'C.R'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                /*
+                0 no quotation
+                1 quotation saved
+                2 quotation disapproved
+                3 quotation approved
+                4 waiting
+                */
                 var result;
+                var color;
+                var icon;
+                var tooltip;
                 switch(value)
                 {
+                    case 0:
+                    color="#204d74";
+                    icon="fa fa-file-o";
+                    tooltip="Aucune cotation";
+                    break;
                     case 1:
-                    result='<i class="fa fa-hourglass-half" color="#ff7043"></i>';
+                    color="#ec971f";
+                    icon="fa fa-eur";
+                    tooltip="Cotation enregistrée";
+                    break;
+                    case 2:
+                    color="#ec971f";
+                    icon="fa fa-eur";
+                    tooltip="Cotation dévalidée";
+                    break;
+                    case 3:
+                    color="#66bb6a";
+                    icon="fa fa-eur";
+                    tooltip="Cotation validée";
+                    break;
+                    case 4:
+                    color="#ec971f";
+                    icon="fa fa-spinner fa-spin";
+                    tooltip="En cours de cotation";
                     break;
 
                 }
-                result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
+                metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+                result='<a href="#" onclick="return;" style="color:'+color+
+                ';font-size:17px;"><i class="'+icon+'"></i></a>';
 
                 return result;
             },
             minWidth: 50,
-            dataIndex: 'worklistCotationStatus',
+            dataIndex: 'worklistLastDictationStatus',
             text: 'Cot.'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 if(!value) value=0;
-                return'<span class="fa-stack fa-lg" style="font-size:10px;color:"blue"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+                return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
             },
             minWidth: 50,
             dataIndex: 'worklistFTNum',
@@ -172,38 +241,113 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
+                var infoAlertLevel=record.get("worklistPatientInfoAlertLevel");
+                var color;
+                var icon;
+
+                metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
+                switch(infoAlertLevel)
+                {
+                    case 0:
+                    color="#204d74";
+                    icon="fa fa-info-circle";
+
+                    break;
+                    case 1:
+                    color="#ec971f";
+                    icon="fa fa-exclamation-triangle";
+
+                    break;
+                    case 2:
+                    color="#d43f3a";
+                    icon="fa fa-exclamation-triangle";
+
+                    break;
+
+                }
+                result='<a href="#" onclick="return;" style="color:'+color+
+                ';font-size:17px;"><i class="'+icon+'"></i></a>';
+
+                return result;
+
             },
-            minWidth: 100,
+            minWidth: 40,
             dataIndex: 'worklistPatientInfo',
-            text: 'Pat. info'
+            text: 'Pat.'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
+                var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
+                var color;
+                var icon;
+
+                metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
+                switch(infoAlertLevel)
+                {
+                    case 0:
+                    color="#204d74";
+                    icon="fa fa-info-circle";
+
+                    break;
+                    case 1:
+                    color="#ec971f";
+                    icon="fa fa-exclamation-triangle";
+
+                    break;
+                    case 2:
+                    color="#d43f3a";
+                    icon="fa fa-exclamation-triangle";
+
+                    break;
+
+                }
+                result='<a href="#" onclick="return;" style="color:'+color+
+                ';font-size:17px;"><i class="'+icon+'"></i></a>';
+
+                return result;
+
             },
-            minWidth: 100,
-            dataIndex: '	worklistVisitInfo',
-            text: 'Visite Info.'
+            minWidth: 40,
+            dataIndex: 'worklistVisitInfo',
+            text: 'Visite.'
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var icon;
+                if(!Ext.isEmpty(value)){
+                    metaData.tdAttr = 'data-qtip="' + value + '"';
+                    icon='fa fa-commenting-o';
+
+
+                }
+                else{
+                    icon='fa fa-comment-o';
+
+
+                }
+                result='<a href="#" onclick="return;" style="color:'+'#204d74'+
+                ';font-size:17px;"><i class="'+icon+'"></i></a>';
+                return result;
+
+
+            },
             minWidth: 100,
             dataIndex: 'worklistVisitComment',
             text: 'Comment'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklistPatientDu',
-            text: 'Pat. Du'
+            text: 'Du .P'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklistFtDu',
-            text: 'Visite Du'
+            text: 'Du. V'
         },
         {
             xtype: 'gridcolumn',
@@ -237,24 +381,6 @@ Ext.define('MyApp.view.WorklistGrid', {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'worklisCrMailedTo',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'patientInfos',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitInfos',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitComment',
             text: ''
         },
         {
