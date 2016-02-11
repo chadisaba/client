@@ -155,6 +155,9 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'siteName'
         },
         {
+            name: 'siteCode'
+        },
+        {
             name: 'siteId'
         },
         {

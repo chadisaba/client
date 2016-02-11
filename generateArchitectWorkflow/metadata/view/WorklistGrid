@@ -39,7 +39,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteName",
+                "dataIndex": "siteCode",
                 "minWidth": 50,
                 "text": "Site"
             },
@@ -605,8 +605,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitIsDone",
-                "minWidth": 100,
-                "text": "Cloturé"
+                "minWidth": 50,
+                "text": "<i class=\"fa fa-lock\"></i>"
             },
             "name": "MyvisitIsDoneCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
@@ -648,8 +648,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklisCrEmailedTo",
-                "minWidth": 100,
-                "text": ""
+                "minWidth": 50,
+                "text": "<i class=\"fa fa-at\"></i>"
             },
             "name": "MyworklisCrEmailedToCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-g1nftesgl979",
@@ -689,8 +689,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklisCrMailedTo",
-                "minWidth": 100,
-                "text": ""
+                "minWidth": 50,
+                "text": "<i class=\"fa fa-envelope-o\"></i>"
             },
             "name": "MyworklisCrMailedToCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-svcn8rv37l3s",

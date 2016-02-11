@@ -571,6 +571,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "siteCode"
+            },
+            "name": "MysiteName1",
+            "designerId": "432e396a-c6cb-4526-a46c-3dc5bdfaf807"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "siteId"
             },
             "name": "MysiteId",

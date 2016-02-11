@@ -246,21 +246,17 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
     },
 
-    isDoneRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-        var result;
-        switch(value)
+    isDoneRenderer: function(value, metaData) {
+        var icon="fa fa-lock";
+        var   color="#d1d1d1";
+       var  tooltip="Cliquer pour cloturer";
+        if(value)
         {
-            case 0:
-            result='';
-            break;
-            case 1:
-            result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
-            break;
-
+            color="#31b0d5";
+            tooltip="Cloturée";
         }
-
-
-        return result;
+        metaData.tdAttr = 'data-qtip="' + tooltip + '"';
+        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;"><i class="'+icon+'"></i></a>';
     },
      dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
         /* var val = Ext.Date.parse(value, 'Y-m-d\\TH:i:s.uuu\\Z');
@@ -278,21 +274,37 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         }
     },
     studiesRenderer:function(value,metadata){
-        var res=Utility.renderer.listRenderer(value,'|',"fa fa-at","Aucun Examen");
+        var res=Utility.renderer.listRenderer(value,"fa fa-at","Aucun Examen");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
-       return '<a href="#" onclick="return;" style="color:#31b0d5;font-size:13px;">Examens...</a>';
+        var color='#d1d1d1';
+        var examen="Examens...";
+        if (value){
+            color='#31b0d5';
+            examen=value.split("|")[0]+"...";
+        }
+       return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
+    },
+    prescRenderer:function(value,metadata){
+        var res=Utility.renderer.listRenderer(value,"fa fa-at","Aucun Examen");
+        metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
+        var color='#d1d1d1';
+        var examen="Examens...";
+        if (value){
+            color='#31b0d5';
+            examen=value.split("|")[0]+"...";
+        }
+        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
     },
     emailRenderer:function(value,metadata){
-        var res=Utility.renderer.listRenderer(value,'|',"fa fa-at","");
+        var res=Utility.renderer.listRenderer(value,"fa fa-at","");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
         return res.renderer;
     },
     mailRenderer:function(value,metadata){
-        var res=Utility.renderer.listRenderer(value,'|',"fa fa-envelope-o","");
+        var res=Utility.renderer.listRenderer(value,"fa fa-envelope-o","");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
         return res.renderer;
     }
-
 
 
 });

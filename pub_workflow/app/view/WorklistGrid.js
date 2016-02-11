@@ -43,7 +43,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             minWidth: 50,
-            dataIndex: 'siteName',
+            dataIndex: 'siteCode',
             text: 'Site'
         },
         {
@@ -158,23 +158,23 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'isDoneRenderer',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'visitIsDone',
-            text: 'Cloturé'
+            text: '<i class="fa fa-lock"></i>'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'emailRenderer',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklisCrEmailedTo',
-            text: ''
+            text: '<i class="fa fa-at"></i>'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'mailRenderer',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklisCrMailedTo',
-            text: ''
+            text: '<i class="fa fa-envelope-o"></i>'
         },
         {
             xtype: 'gridcolumn',

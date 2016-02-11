@@ -6,12 +6,12 @@ Ext.define('Utility.renderer', {
 				else
 				return '<span><img src="resources/images/green_checkbox.png"/><span>';
 		},
-		listRenderer:function(value,separator,img,messageVide)
+		listRenderer:function(value,img,messageVide)
 		{
 			var tooltip,color;
 			if(value){
-				tooltip=value.replace(separator,"</li><li>");
-				tooltip= "<ul><li>"+html+"</li></ul>";
+				tooltip=value.replace(/\|/g,"</li><li>");
+				tooltip= "<ul><li>"+tooltip+"</li></ul>";
 				color='#31b0d5';
 			}
 			else
