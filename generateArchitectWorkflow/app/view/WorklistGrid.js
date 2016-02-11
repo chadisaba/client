@@ -48,6 +48,14 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'infoVisitRenderer',
+            minWidth: 40,
+            dataIndex: 'worklistVisitInfo',
+            text: 'Visite.'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: 'dateRenderer',
             minWidth: 100,
             scrollable: true,
             width: '',
@@ -56,18 +64,28 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'infoPatientRenderer',
+            minWidth: 40,
+            dataIndex: 'worklistPatientInfo',
+            text: 'Pat.'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: 'patientRenderer',
             minWidth: 100,
-            dataIndex: 'patientLastName',
+            dataIndex: 'patientLName',
             text: 'Patient'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'dateRenderer',
             minWidth: 100,
-            dataIndex: 'patientBirthDay',
+            dataIndex: 'patientBirthday',
             text: 'Birthday'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'studiesRenderer',
             minWidth: 150,
             dataIndex: 'worklistStudies',
             text: 'Studies'
@@ -92,169 +110,70 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                var result;
-
-                if(!value)
-                value=0;
-                switch(value)
-                {
-
-                    case 1:
-                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-                    break;
-
-                }
-                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-
-                return result;
-            },
-            minWidth: 70,
+            renderer: 'dictationRenderer',
+            minWidth: 60,
             dataIndex: 'worklistDictationsStatus',
-            text: 'Dictée'
+            text: 'Dict.'
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                var result;
-
-                if(!value)
-                value=0;
-                switch(value)
-                {
-
-                    case 1:
-                    result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-                    break;
-
-                }
-                result='<span class="fa-stack fa-lg" style="font-size:10px;color:#ff7043;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-
-
-                return result;
-            },
+            renderer: 'CRRenderer',
             minWidth: 50,
-            dataIndex: 'worklistCrsStatus',
+            dataIndex: 'worklistLastCrStatus',
             text: 'C.R'
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                var result;
-                switch(value)
-                {
-                    case 1:
-                    result='<i class="fa fa-hourglass-half" color="#ff7043"></i>';
-                    break;
-
-                }
-                result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
-
-                return result;
-            },
+            renderer: 'quotationRenderer',
             minWidth: 50,
-            dataIndex: 'worklistCotationStatus',
+            dataIndex: 'worklistLastDictationStatus',
             text: 'Cot.'
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                if(!value) value=0;
-                return'<span class="fa-stack fa-lg" style="font-size:10px;color:"blue"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
-            },
+            renderer: 'FTRenderer',
             minWidth: 50,
             dataIndex: 'worklistFTNum',
             text: 'F.T'
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
-            },
-            minWidth: 100,
-            dataIndex: 'worklistPatientInfo',
-            text: 'Pat. info'
-        },
-        {
-            xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return '<i class="fa fa-info-circle" style="font-size:17px;color:#31b0d5"></i>';
-            },
-            minWidth: 100,
-            dataIndex: '	worklistVisitInfo',
-            text: 'Visite Info.'
-        },
-        {
-            xtype: 'gridcolumn',
+            renderer: 'commentRenderer',
             minWidth: 100,
             dataIndex: 'worklistVisitComment',
             text: 'Comment'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklistPatientDu',
-            text: 'Pat. Du'
+            text: 'Du .P'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 50,
             dataIndex: 'worklistFtDu',
-            text: 'Visite Du'
+            text: 'Du. V'
         },
         {
             xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                var result;
-                switch(value)
-                {
-                    case 0:
-                    result='';
-                    break;
-                    case 1:
-                    result='<i class="fa fa-check-circle-o" style="color:#66bb6a;font-size:17px"></i>';
-                    break;
-
-                }
-
-
-                return result;
-            },
+            renderer: 'isDoneRenderer',
             minWidth: 100,
             dataIndex: 'visitIsDone',
             text: 'Cloturé'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'emailRenderer',
             minWidth: 100,
             dataIndex: 'worklisCrEmailedTo',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'mailRenderer',
             minWidth: 100,
             dataIndex: 'worklisCrMailedTo',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'patientInfos',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitInfos',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitComment',
             text: ''
         },
         {

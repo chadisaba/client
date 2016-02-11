@@ -54,6 +54,49 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "worklistVisitInfo",
+                "minWidth": 40,
+                "text": "Visite."
+            },
+            "name": "My\tworklistVisitInfoCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "infoVisitRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "c5a876f3-1200-46fd-959b-478b19e80c9f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "worklistDate",
                 "minWidth": 100,
                 "scrollable": true,
@@ -64,7 +107,35 @@
             "configAlternates": {
                 "scrollable": "boolean"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194"
+            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "dateRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "16365acb-4b22-4f55-ad1b-958e9c1be855"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -74,12 +145,83 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "patientLastName",
+                "dataIndex": "worklistPatientInfo",
+                "minWidth": 40,
+                "text": "Pat."
+            },
+            "name": "MyworklistPatientInfoCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jc7rfiu7dyh7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "infoPatientRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "8f397736-797c-4aba-907d-8a52a926140e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "patientLName",
                 "minWidth": 100,
                 "text": "Patient"
             },
             "name": "MypatientLastNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi"
+            "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "patientRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "49d38fdb-d314-4b03-befc-43bbd1abbc9e"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -89,12 +231,38 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "patientBirthDay",
+                "dataIndex": "patientBirthday",
                 "minWidth": 100,
                 "text": "Birthday"
             },
             "name": "MypatientBirthDayCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe"
+            "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "dateRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "8cf3aad1-7515-4357-be64-405ef21605a8"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -110,7 +278,33 @@
                 "width": null
             },
             "name": "MyworklistStudiesCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej"
+            "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "studiesRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "ab95b0c7-7fb7-4bd7-a811-aaf00f41a93e"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -166,8 +360,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistDictationsStatus",
-                "minWidth": 70,
-                "text": "Dictée"
+                "minWidth": 60,
+                "text": "Dict."
             },
             "name": "MyColumn1",
             "designerId": "7c6bec59-5c6a-4872-9cec-a884kx4gdafc",
@@ -189,25 +383,10 @@
                             "store",
                             "view"
                         ],
+                        "designer|viewControllerFn": "dictationRenderer",
                         "fn": "renderer",
                         "implHandler": [
-                            "var result;",
-                            "",
-                            "            if(!value)",
-                            "                value=0;",
-                            "switch(value)",
-                            "    {",
-                            "            ",
-                            "        case 1:",
-                            "               result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
-                            "        ",
-                            "            break;",
-                            "",
-                            "    }",
-                            "   result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
-                            "     ",
-                            "",
-                            "            return result;"
+                            ""
                         ]
                     },
                     "name": "renderer",
@@ -223,7 +402,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistCrsStatus",
+                "dataIndex": "worklistLastCrStatus",
                 "minWidth": 50,
                 "text": "C.R"
             },
@@ -247,25 +426,10 @@
                             "store",
                             "view"
                         ],
+                        "designer|viewControllerFn": "CRRenderer",
                         "fn": "renderer",
                         "implHandler": [
-                            "var result;",
-                            "",
-                            "            if(!value)",
-                            "                value=0;",
-                            "switch(value)",
-                            "    {",
-                            "            ",
-                            "        case 1:",
-                            "               result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
-                            "        ",
-                            "            break;",
-                            "",
-                            "    }",
-                            "   result='<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#ff7043;\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';",
-                            "     ",
-                            "",
-                            "            return result;"
+                            ""
                         ]
                     },
                     "name": "renderer",
@@ -281,7 +445,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistCotationStatus",
+                "dataIndex": "worklistLastDictationStatus",
                 "minWidth": 50,
                 "text": "Cot."
             },
@@ -305,19 +469,10 @@
                             "store",
                             "view"
                         ],
+                        "designer|viewControllerFn": "quotationRenderer",
                         "fn": "renderer",
                         "implHandler": [
-                            "var result;",
-                            "switch(value)",
-                            "    {",
-                            "        case 1:",
-                            "            result='<i class=\"fa fa-hourglass-half\" color=\"#ff7043\"></i>';",
-                            "            break;",
-                            "",
-                            "    }",
-                            "result='<i class=\"fa fa-check-circle-o\" style=\"color:#66bb6a;font-size:17px\"></i>';",
-                            "",
-                            "            return result;"
+                            ""
                         ]
                     },
                     "name": "renderer",
@@ -357,98 +512,14 @@
                             "store",
                             "view"
                         ],
+                        "designer|viewControllerFn": "FTRenderer",
                         "fn": "renderer",
                         "implHandler": [
-                            "if(!value) value=0;",
-                            "return'<span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:\"blue\"><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">'+value+'</i></span>';"
+                            ""
                         ]
                     },
                     "name": "renderer",
                     "designerId": "58cfb2dc-3ee2-4dc7-8be5-2bb381a5fd64"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "worklistPatientInfo",
-                "minWidth": 100,
-                "text": "Pat. info"
-            },
-            "name": "MyworklistPatientInfoCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-jc7rfiu7dyh7",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "fn": "renderer",
-                        "implHandler": [
-                            "return '<i class=\"fa fa-info-circle\" style=\"font-size:17px;color:#31b0d5\"></i>';"
-                        ]
-                    },
-                    "name": "renderer",
-                    "designerId": "8f397736-797c-4aba-907d-8a52a926140e"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "\tworklistVisitInfo",
-                "minWidth": 100,
-                "text": "Visite Info."
-            },
-            "name": "My\tworklistVisitInfoCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "fn": "renderer",
-                        "implHandler": [
-                            "return '<i class=\"fa fa-info-circle\" style=\"font-size:17px;color:#31b0d5\"></i>';"
-                        ]
-                    },
-                    "name": "renderer",
-                    "designerId": "34e0513f-fa8c-40a7-a317-d267b1c39cf1"
                 }
             ]
         },
@@ -465,7 +536,35 @@
                 "text": "Comment"
             },
             "name": "MyworklistVisitCommentCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-4w73tqb8g9j5"
+            "designerId": "7c6bec59-5c6a-4872-9cec-4w73tqb8g9j5",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "commentRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "a3b25347-c3e2-461f-94cd-43542ee5fb7c"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -476,8 +575,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistPatientDu",
-                "minWidth": 100,
-                "text": "Pat. Du"
+                "minWidth": 50,
+                "text": "Du .P"
             },
             "name": "MyworklistPatientDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7"
@@ -491,8 +590,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFtDu",
-                "minWidth": 100,
-                "text": "Visite Du"
+                "minWidth": 50,
+                "text": "Du. V"
             },
             "name": "MyworklistFtDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju"
@@ -529,22 +628,10 @@
                             "store",
                             "view"
                         ],
+                        "designer|viewControllerFn": "isDoneRenderer",
                         "fn": "renderer",
                         "implHandler": [
-                            "var result;",
-                            "switch(value)",
-                            "    {",
-                            "            case 0:",
-                            "            result='';",
-                            "            break;",
-                            "        case 1:",
-                            "            result='<i class=\"fa fa-check-circle-o\" style=\"color:#66bb6a;font-size:17px\"></i>';",
-                            "            break;",
-                            "",
-                            "    }",
-                            "",
-                            "",
-                            "            return result;"
+                            ""
                         ]
                     },
                     "name": "renderer",
@@ -565,7 +652,33 @@
                 "text": ""
             },
             "name": "MyworklisCrEmailedToCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-g1nftesgl979"
+            "designerId": "7c6bec59-5c6a-4872-9cec-g1nftesgl979",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "emailRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "4f4bda14-3d4d-4e83-9248-1d5f39e6e263"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -580,52 +693,33 @@
                 "text": ""
             },
             "name": "MyworklisCrMailedToCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-svcn8rv37l3s"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "patientInfos",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MypatientInfosCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-nrr898l4277u"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "visitInfos",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MyvisitInfosCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-t1lrcn9kuwde"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "visitComment",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MyvisitCommentCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-pnvlkxy3cm5d"
+            "designerId": "7c6bec59-5c6a-4872-9cec-svcn8rv37l3s",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "mailRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "fe8cf579-2552-4a5d-a63f-ee77906571b0"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",

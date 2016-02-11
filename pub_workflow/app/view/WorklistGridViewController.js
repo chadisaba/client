@@ -21,6 +21,62 @@ Ext.define('MyApp.view.WorklistGridViewController', {
         'MyApp.view.override.WorklistGridViewController'
     ],
 
+    infoVisitRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    infoPatientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    patientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    studiesRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    dictationRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    CRRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    quotationRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    FTRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    commentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    isDoneRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    emailRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    mailRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

@@ -17,637 +17,578 @@
     "name": "WorklistModel",
     "designerId": "r8h3hui7-1d4f-4fb9-9364-xyhurc54yn3d",
     "cn": [
-       
         {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistId",
-                 "type": "auto"
-                },
-                "name": "MyworklistId",
-                "designerId": "e96f8d89-803f-419a-a346-258ck2wymxgc"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistId"
+            },
+            "name": "MyworklistId",
+            "designerId": "e96f8d89-803f-419a-a346-258ck2wymxgc"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistDate",
-                 "type": "auto"
-                },
-                "name": "MyworklistDate",
-                "designerId": "e96f8d89-803f-419a-a346-1nt5y4bpp1mw"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistDate"
+            },
+            "name": "MyworklistDate",
+            "designerId": "e96f8d89-803f-419a-a346-1nt5y4bpp1mw"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistStudies",
-                 "type": "auto"
-                },
-                "name": "MyworklistStudies",
-                "designerId": "e96f8d89-803f-419a-a346-fgysws5bj7dg"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistStudies"
+            },
+            "name": "MyworklistStudies",
+            "designerId": "e96f8d89-803f-419a-a346-fgysws5bj7dg"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistMedRef",
-                 "type": "auto"
-                },
-                "name": "MyworklistMedRef",
-                "designerId": "e96f8d89-803f-419a-a346-fes2pi7fra46"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistMedRef"
+            },
+            "name": "MyworklistMedRef",
+            "designerId": "e96f8d89-803f-419a-a346-fes2pi7fra46"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistMedPresc",
-                 "type": "auto"
-                },
-                "name": "MyworklistMedPresc",
-                "designerId": "e96f8d89-803f-419a-a346-m339q18s3y66"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistMedPresc"
+            },
+            "name": "MyworklistMedPresc",
+            "designerId": "e96f8d89-803f-419a-a346-m339q18s3y66"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistMedRecipient",
-                 "type": "auto"
-                },
-                "name": "MyworklistMedRecipient",
-                "designerId": "e96f8d89-803f-419a-a346-xp3vlbcir4t3"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistMedRecipient"
+            },
+            "name": "MyworklistMedRecipient",
+            "designerId": "e96f8d89-803f-419a-a346-xp3vlbcir4t3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistDictationsNb",
-                 "type": "auto"
-                },
-                "name": "MyworklistDictationsNb",
-                "designerId": "e96f8d89-803f-419a-a346-l2e26k514ddw"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistDictationsNb"
+            },
+            "name": "MyworklistDictationsNb",
+            "designerId": "e96f8d89-803f-419a-a346-l2e26k514ddw"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistDictationsStatus",
-                 "type": "auto"
-                },
-                "name": "MyworklistDictationsStatus",
-                "designerId": "e96f8d89-803f-419a-a346-fu4gewjkry7x"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistCrsNb"
+            },
+            "name": "MyworklistCrsNb",
+            "designerId": "e96f8d89-803f-419a-a346-hf78q86ba5h1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistCrsNb",
-                 "type": "auto"
-                },
-                "name": "MyworklistCrsNb",
-                "designerId": "e96f8d89-803f-419a-a346-hf78q86ba5h1"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistLastCrStatus"
+            },
+            "name": "MyworklistCrsStatus",
+            "designerId": "e96f8d89-803f-419a-a346-lpef6y6mak6b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistCrsStatus",
-                 "type": "auto"
-                },
-                "name": "MyworklistCrsStatus",
-                "designerId": "e96f8d89-803f-419a-a346-lpef6y6mak6b"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistLastDictationStatus"
+            },
+            "name": "MyworklistCotationStatus",
+            "designerId": "e96f8d89-803f-419a-a346-avwq21kx3ips"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistCotationStatus",
-                 "type": "auto"
-                },
-                "name": "MyworklistCotationStatus",
-                "designerId": "e96f8d89-803f-419a-a346-avwq21kx3ips"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistFTNum"
+            },
+            "name": "MyworklistFTNum",
+            "designerId": "e96f8d89-803f-419a-a346-1983gerbxqhq"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistFTNum",
-                 "type": "auto"
-                },
-                "name": "MyworklistFTNum",
-                "designerId": "e96f8d89-803f-419a-a346-1983gerbxqhq"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistPatientInfo"
+            },
+            "name": "MyworklistPatientInfo",
+            "designerId": "e96f8d89-803f-419a-a346-qlxqhanj9gfp"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistPatientInfo",
-                 "type": "auto"
-                },
-                "name": "MyworklistPatientInfo",
-                "designerId": "e96f8d89-803f-419a-a346-qlxqhanj9gfp"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistVisitInfo"
+            },
+            "name": "My\tworklistVisitInfo",
+            "designerId": "e96f8d89-803f-419a-a346-ux1pihp9u3xg"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "	worklistVisitInfo",
-                 "type": "auto"
-                },
-                "name": "My	worklistVisitInfo",
-                "designerId": "e96f8d89-803f-419a-a346-ux1pihp9u3xg"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistVisitComment"
+            },
+            "name": "MyworklistVisitComment",
+            "designerId": "e96f8d89-803f-419a-a346-r4j1itb6uapx"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistVisitComment",
-                 "type": "auto"
-                },
-                "name": "MyworklistVisitComment",
-                "designerId": "e96f8d89-803f-419a-a346-r4j1itb6uapx"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistPatientInfoAlertLevel"
+            },
+            "name": "MyworklistPatientInfoAlertLevel",
+            "designerId": "e96f8d89-803f-419a-a346-27nq3fmumk9l"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistPatientInfoAlertLevel",
-                 "type": "auto"
-                },
-                "name": "MyworklistPatientInfoAlertLevel",
-                "designerId": "e96f8d89-803f-419a-a346-27nq3fmumk9l"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistVisitInfoAlertLevel"
+            },
+            "name": "MyworklistVisitInfoAlertLevel",
+            "designerId": "e96f8d89-803f-419a-a346-upeyl6p2wd52"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistVisitInfoAlertLevel",
-                 "type": "auto"
-                },
-                "name": "MyworklistVisitInfoAlertLevel",
-                "designerId": "e96f8d89-803f-419a-a346-upeyl6p2wd52"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistPriseEnCharge"
+            },
+            "name": "MyworklistPriseEnCharge",
+            "designerId": "e96f8d89-803f-419a-a346-jtdd6qtb39gi"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistPriseEnCharge",
-                 "type": "auto"
-                },
-                "name": "MyworklistPriseEnCharge",
-                "designerId": "e96f8d89-803f-419a-a346-jtdd6qtb39gi"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistPatientDu"
+            },
+            "name": "MyworklistPatientDu",
+            "designerId": "e96f8d89-803f-419a-a346-5bh111i7tq5a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistPatientDu",
-                 "type": "auto"
-                },
-                "name": "MyworklistPatientDu",
-                "designerId": "e96f8d89-803f-419a-a346-5bh111i7tq5a"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklisPatientPaid"
+            },
+            "name": "MyworklisPatientPaid",
+            "designerId": "e96f8d89-803f-419a-a346-ddfeyhi1ji5m"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklisPatientPaid",
-                 "type": "auto"
-                },
-                "name": "MyworklisPatientPaid",
-                "designerId": "e96f8d89-803f-419a-a346-ddfeyhi1ji5m"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistFtDu"
+            },
+            "name": "MyworklistFtDu",
+            "designerId": "e96f8d89-803f-419a-a346-cnm1pdlenyv8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistFtDu",
-                 "type": "auto"
-                },
-                "name": "MyworklistFtDu",
-                "designerId": "e96f8d89-803f-419a-a346-cnm1pdlenyv8"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklistFtPaid"
+            },
+            "name": "MyworklistFtPaid",
+            "designerId": "e96f8d89-803f-419a-a346-8ihk2y3eqxe1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklistFtPaid",
-                 "type": "auto"
-                },
-                "name": "MyworklistFtPaid",
-                "designerId": "e96f8d89-803f-419a-a346-8ihk2y3eqxe1"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklisCrEmailedTo"
+            },
+            "name": "MyworklisCrEmailedTo",
+            "designerId": "e96f8d89-803f-419a-a346-5bw652dwlvum"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklisCrEmailedTo",
-                 "type": "auto"
-                },
-                "name": "MyworklisCrEmailedTo",
-                "designerId": "e96f8d89-803f-419a-a346-5bw652dwlvum"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "worklisCrMailedTo"
+            },
+            "name": "MyworklisCrMailedTo",
+            "designerId": "e96f8d89-803f-419a-a346-u1g2ckmbngan"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "worklisCrMailedTo",
-                 "type": "auto"
-                },
-                "name": "MyworklisCrMailedTo",
-                "designerId": "e96f8d89-803f-419a-a346-u1g2ckmbngan"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientLastName"
+            },
+            "name": "MypatientLastName",
+            "designerId": "e96f8d89-803f-419a-a346-jmne438epe4p"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientLastName",
-                 "type": "auto"
-                },
-                "name": "MypatientLastName",
-                "designerId": "e96f8d89-803f-419a-a346-jmne438epe4p"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientFirstName"
+            },
+            "name": "MypatientFirstName",
+            "designerId": "e96f8d89-803f-419a-a346-9k1a4qcrm4s6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientFirstName",
-                 "type": "auto"
-                },
-                "name": "MypatientFirstName",
-                "designerId": "e96f8d89-803f-419a-a346-9k1a4qcrm4s6"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientBirthday"
+            },
+            "name": "MypatientBirthDay",
+            "designerId": "e96f8d89-803f-419a-a346-kr3rhf4ab5ur"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientBirthDay",
-                 "type": "auto"
-                },
-                "name": "MypatientBirthDay",
-                "designerId": "e96f8d89-803f-419a-a346-kr3rhf4ab5ur"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientInfos"
+            },
+            "name": "MypatientInfos",
+            "designerId": "e96f8d89-803f-419a-a346-dnwp3vbm718u"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientInfos",
-                 "type": "auto"
-                },
-                "name": "MypatientInfos",
-                "designerId": "e96f8d89-803f-419a-a346-dnwp3vbm718u"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitInfos"
+            },
+            "name": "MyvisitInfos",
+            "designerId": "e96f8d89-803f-419a-a346-7941vye17b86"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitInfos",
-                 "type": "auto"
-                },
-                "name": "MyvisitInfos",
-                "designerId": "e96f8d89-803f-419a-a346-7941vye17b86"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitComment"
+            },
+            "name": "MyvisitComment",
+            "designerId": "e96f8d89-803f-419a-a346-dsjdrh4a4dly"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitComment",
-                 "type": "auto"
-                },
-                "name": "MyvisitComment",
-                "designerId": "e96f8d89-803f-419a-a346-dsjdrh4a4dly"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "\tvisitIsBySocialCard"
+            },
+            "name": "My\tvisitIsBySocialCard",
+            "designerId": "e96f8d89-803f-419a-a346-79fypic84mkq"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "	visitIsBySocialCard",
-                 "type": "auto"
-                },
-                "name": "My	visitIsBySocialCard",
-                "designerId": "e96f8d89-803f-419a-a346-79fypic84mkq"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsFree"
+            },
+            "name": "MyvisitIsFree",
+            "designerId": "e96f8d89-803f-419a-a346-grv1i95qgcgf"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsFree",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsFree",
-                "designerId": "e96f8d89-803f-419a-a346-grv1i95qgcgf"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsHospitalized"
+            },
+            "name": "MyvisitIsHospitalized",
+            "designerId": "e96f8d89-803f-419a-a346-x56fjjpb8uvw"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsHospitalized",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsHospitalized",
-                "designerId": "e96f8d89-803f-419a-a346-x56fjjpb8uvw"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsUrgent"
+            },
+            "name": "MyvisitIsUrgent",
+            "designerId": "e96f8d89-803f-419a-a346-59qk95s5y21m"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsUrgent",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsUrgent",
-                "designerId": "e96f8d89-803f-419a-a346-59qk95s5y21m"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitHospitVisitNumber"
+            },
+            "name": "MyvisitHospitVisitNumber",
+            "designerId": "e96f8d89-803f-419a-a346-19k4ycnirghe"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitHospitVisitNumber",
-                 "type": "auto"
-                },
-                "name": "MyvisitHospitVisitNumber",
-                "designerId": "e96f8d89-803f-419a-a346-19k4ycnirghe"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsDone"
+            },
+            "name": "MyvisitIsDone",
+            "designerId": "e96f8d89-803f-419a-a346-9j11u6ddvb3s"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsDone",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsDone",
-                "designerId": "e96f8d89-803f-419a-a346-9j11u6ddvb3s"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsAmo"
+            },
+            "name": "MyvisitIsAmo",
+            "designerId": "e96f8d89-803f-419a-a346-a8mup79n9j4u"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsAmo",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsAmo",
-                "designerId": "e96f8d89-803f-419a-a346-a8mup79n9j4u"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitIsAmc"
+            },
+            "name": "MyvisitIsAmc",
+            "designerId": "e96f8d89-803f-419a-a346-4b2hefcxmt6v"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitIsAmc",
-                 "type": "auto"
-                },
-                "name": "MyvisitIsAmc",
-                "designerId": "e96f8d89-803f-419a-a346-4b2hefcxmt6v"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitPds"
+            },
+            "name": "MyvisitPds",
+            "designerId": "e96f8d89-803f-419a-a346-5ip7bgg8nhts"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitPds",
-                 "type": "auto"
-                },
-                "name": "MyvisitPds",
-                "designerId": "e96f8d89-803f-419a-a346-5ip7bgg8nhts"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitInvoiceType"
+            },
+            "name": "MyvisitInvoiceType",
+            "designerId": "e96f8d89-803f-419a-a346-9abqt2jq8mie"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitInvoiceType",
-                 "type": "auto"
-                },
-                "name": "MyvisitInvoiceType",
-                "designerId": "e96f8d89-803f-419a-a346-9abqt2jq8mie"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitFtFor"
+            },
+            "name": "MyvisitFtFor",
+            "designerId": "e96f8d89-803f-419a-a346-yn4h7ajd2qvy"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitFtFor",
-                 "type": "auto"
-                },
-                "name": "MyvisitFtFor",
-                "designerId": "e96f8d89-803f-419a-a346-yn4h7ajd2qvy"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitPEC"
+            },
+            "name": "MyvisitPEC",
+            "designerId": "e96f8d89-803f-419a-a346-7ihe4sj23d5h"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitPEC",
-                 "type": "auto"
-                },
-                "name": "MyvisitPEC",
-                "designerId": "e96f8d89-803f-419a-a346-7ihe4sj23d5h"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteName"
+            },
+            "name": "MysiteName",
+            "designerId": "e96f8d89-803f-419a-a346-n9jsxbf9atke"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "siteName",
-                 "type": "auto"
-                },
-                "name": "MysiteName",
-                "designerId": "e96f8d89-803f-419a-a346-n9jsxbf9atke"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteId"
+            },
+            "name": "MysiteId",
+            "designerId": "e96f8d89-803f-419a-a346-2sty13ltjfnt"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "siteId",
-                 "type": "auto"
-                },
-                "name": "MysiteId",
-                "designerId": "e96f8d89-803f-419a-a346-2sty13ltjfnt"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
-                "name": "fields",
-                "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitId",
-                 "type": "auto"
-                },
-                "name": "MyvisitId",
-                "designerId": "e96f8d89-803f-419a-a346-xl1dvle3vs5e"
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitId"
             },
+            "name": "MyvisitId",
+            "designerId": "e96f8d89-803f-419a-a346-xl1dvle3vs5e"
+        },
         {
             "type": "Ext.data.field.Field",
             "reference": {
