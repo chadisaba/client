@@ -34,6 +34,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     },
     
+    /***********************Renderers*********************************/
       infoVisitRenderer: function(value, metaData, record) {
     var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
                 var color;
@@ -304,6 +305,14 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         var res=Utility.renderer.listRenderer(value,"fa fa-envelope-o","");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
         return res.renderer;
+    },
+    duRenderer:function(value,metadata)
+    {
+        var color="#d43f3a";
+        if(value>=0)
+            color="#27b6af";
+            
+        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+Math.abs(value)+'</a>';
     }
 
 
