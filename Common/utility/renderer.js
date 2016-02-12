@@ -22,7 +22,16 @@ Ext.define('Utility.renderer', {
 			var result='<a href="#" onclick="return;" style="color:'+color+
 				';font-size:17px;"><i class="'+img+'"></i></a>';
 			return {renderer:result,tooltip:tooltip}
+		},
+		positiveNegativeRenderer(value,htmlTagType)
+		{
+		      var color="#d43f3a";
+		      var htmlTag="a href='#'"||htmlTagType;
+        		if(value>=0)
+            			color="#27b6af";
+			return '<'+htmlTag+' onclick="return;" style="color:'+color+';font-size:13px;">'+Math.abs(value)+'</'+htmlTag+'>';
 		}
+			
 
 
 
