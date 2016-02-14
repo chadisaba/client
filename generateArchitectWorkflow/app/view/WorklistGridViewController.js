@@ -45,6 +45,14 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
+    rendererPrescPhysician: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    rendererRecipientPhysician: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     dictationRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
@@ -62,6 +70,14 @@ Ext.define('MyApp.view.WorklistGridViewController', {
     },
 
     commentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    duRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    duRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
 

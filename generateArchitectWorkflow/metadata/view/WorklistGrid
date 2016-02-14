@@ -314,7 +314,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistMedRef",
+                "dataIndex": "worklistDoctor",
                 "minWidth": 100,
                 "text": "Doctor"
             },
@@ -334,7 +334,33 @@
                 "text": "consultant Ph."
             },
             "name": "MyworklistMedPrescCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v"
+            "designerId": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "rendererPrescPhysician",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "2271779b-d457-42be-b19d-269a1b693a33"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -349,7 +375,33 @@
                 "text": "Dr. Recipient"
             },
             "name": "MyworklistMedRecipientCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8"
+            "designerId": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "rendererRecipientPhysician",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "753386ed-1916-424e-8077-35de611562ca"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -575,11 +627,37 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistPatientDu",
-                "minWidth": 50,
+                "minWidth": 70,
                 "text": "Du .P"
             },
             "name": "MyworklistPatientDuCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7"
+            "designerId": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "duRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "3d2eda6e-284f-441b-a76b-49ce65c35632"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -590,11 +668,37 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFtDu",
-                "minWidth": 50,
+                "minWidth": 70,
                 "text": "Du. V"
             },
             "name": "MyworklistFtDuCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju"
+            "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "duRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "855daf04-737c-4b5d-9009-9ec7a354bf15"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",

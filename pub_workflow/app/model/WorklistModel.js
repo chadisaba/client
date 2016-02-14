@@ -38,7 +38,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'worklistStudies'
         },
         {
-            name: 'worklistMedRef'
+            name: 'worklistDoctor'
         },
         {
             name: 'worklistMedPresc'

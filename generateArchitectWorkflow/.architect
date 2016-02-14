@@ -60,10 +60,20 @@
                     "id": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq"
                 },
                 {
-                    "id": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v"
+                    "id": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v",
+                    "cn": [
+                        {
+                            "id": "2271779b-d457-42be-b19d-269a1b693a33"
+                        }
+                    ]
                 },
                 {
-                    "id": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8"
+                    "id": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8",
+                    "cn": [
+                        {
+                            "id": "753386ed-1916-424e-8077-35de611562ca"
+                        }
+                    ]
                 },
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-a884kx4gdafc",
@@ -106,10 +116,20 @@
                     ]
                 },
                 {
-                    "id": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7"
+                    "id": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7",
+                    "cn": [
+                        {
+                            "id": "3d2eda6e-284f-441b-a76b-49ce65c35632"
+                        }
+                    ]
                 },
                 {
-                    "id": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju"
+                    "id": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju",
+                    "cn": [
+                        {
+                            "id": "855daf04-737c-4b5d-9009-9ec7a354bf15"
+                        }
+                    ]
                 },
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
@@ -485,13 +505,13 @@
         ]
     },
     "canvasState": {
-        "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
-        "selectedInstance": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a"
+        "selectedInstance": "753386ed-1916-424e-8077-35de611562ca"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": true
     }

@@ -33,8 +33,11 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                                                 );
 
     },
-    
-    /***********************Renderers*********************************/
+
+
+
+        /***********************Renderers*********************************/
+
       infoVisitRenderer: function(value, metaData, record) {
     var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
                 var color;
@@ -130,7 +133,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
             break;
             case 1:
-            color="#d1d1d1";
+            color="#ec971f";
             icon="fa fa-spinner fa-spin";
             tooltip="En cours de frappe";
 
@@ -164,8 +167,9 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        result='<span style="color:'+color+'">'+record.get('worklistCrsNb')+'&nbsp;<span/><a href="#" onclick="return;" style="color:'+color+
-        ';font-size:17px;"><i class="'+icon+'"></i></a>';
+        var result='<span style="color:'+color+'">'+record.get('worklistCrsNb')+'&nbsp;<span/> <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
+            ' </button>';
 
         return result;
     },
@@ -212,15 +216,19 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        result='<a href="#" onclick="return;" style="color:'+color+
-        ';font-size:17px;"><i class="'+icon+'"></i></a>';
-
+        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
+            ' </button>';
         return result;
     },
 
     FTRenderer: function(value, metaData, record) {
         if(!value) value=0;
-        return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">'+value+'</i></span>';
+        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+            '<i style="color:#31b0d5;font-size:14px;">'+value+'</i>' +
+            ' </button>';
+
+        return result;
     },
 
     commentRenderer: function(value, metaData, record) {
@@ -228,11 +236,9 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         var color;
         var tooltip;
         if(!Ext.isEmpty(value)){
-
             icon='fa fa-commenting-o';
             color="#31b0d5";
             tooltip=value;
-
         }
         else{
             icon='fa fa-comment-o';
@@ -240,8 +246,10 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
             tooltip="Cliquer pour saisir un commentaire";
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        var result='<a href="#" onclick="return;" style="color:'+color+
-        ';font-size:17px;"><i class="'+icon+'"></i></a>';
+        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+        '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
+        ' </button>';
+
         return result;
 
 
@@ -249,7 +257,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
     isDoneRenderer: function(value, metaData) {
         var icon="fa fa-lock";
-        var   color="#d1d1d1";
+        var color="#d1d1d1";
        var  tooltip="Cliquer pour cloturer";
         if(value)
         {
@@ -259,7 +267,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
         return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;"><i class="'+icon+'"></i></a>';
     },
-     dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+     dateRenderer: function(value,metaData) {
         /* var val = Ext.Date.parse(value, 'Y-m-d\\TH:i:s.uuu\\Z');
          return Ext.Date.format(val,"d/m/Y");*/
 
@@ -285,17 +293,6 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         }
        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
     },
-    prescRenderer:function(value,metadata){
-        var res=Utility.renderer.listRenderer(value,"fa fa-at","Aucun Examen");
-        metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
-        var color='#d1d1d1';
-        var examen="Examens...";
-        if (value){
-            color='#31b0d5';
-            examen=value.split("|")[0]+"...";
-        }
-        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
-    },
     emailRenderer:function(value,metadata){
         var res=Utility.renderer.listRenderer(value,"fa fa-at","");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
@@ -305,14 +302,39 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         var res=Utility.renderer.listRenderer(value,"fa fa-envelope-o","");
         metadata.tdAttr = 'data-qtip="' + res.tooltip + '"';
         return res.renderer;
+
     },
     duRenderer:function(value,metadata)
     {
-        var color="#d43f3a";
-        if(value>=0)
-            color="#27b6af";
-            
-        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+Math.abs(value)+'</a>';
+       var tagType="";
+        if(value<0)
+            tagType="div";
+
+        return Utility.renderer.positiveNegativeRenderer(value,tagType);
+    },
+    rendererPrescPhysician: function(value, metaData) {
+
+        metaData.tdAttr = 'data-qtip="' + value + '"';
+        var color='#d1d1d1';
+        if (value){
+            color='#31b0d5';
+            return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
+        }
+
+    },
+
+    rendererRecipientPhysician: function(value, metaData) {
+        var res=Utility.renderer.listRenderer(value,"","Aucun Correspondant");
+        metaData.tdAttr = 'data-qtip="' + res.tooltip + '"';
+        var color='#d1d1d1';
+        var recip="";
+        if (value){
+            color='#31b0d5';
+            recip=value.split("|")[0]+"...";
+            return '<div style="cursor: help;pointer:'+color+';font-size:13px;">'+recip+'</div>';
+        }
+
+
     }
 
 

@@ -19,11 +19,14 @@ Ext.define('Utility.renderer', {
 				color='#d1d1d1';
 				tooltip=messageVide ||"";
 			}
-			var result='<a href="#" onclick="return;" style="color:'+color+
-				';font-size:17px;"><i class="'+img+'"></i></a>';
+			/*var result='<a href="#" onclick="return;" style="color:'+color+
+				';font-size:17px;"><i class="'+img+'"></i></a>';*/
+			var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+			'<i class="'+img+'" style="color:'+color+ ';font-size:14px;"></i>' +
+			' </button>';
 			return {renderer:result,tooltip:tooltip}
 		},
-		positiveNegativeRenderer(value,htmlTagType)
+		positiveNegativeRenderer:function(value,htmlTagType)
 		{
 		      var color="#d43f3a";
 		      var htmlTag="a href='#'"||htmlTagType;

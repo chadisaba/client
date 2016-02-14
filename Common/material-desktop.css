@@ -1,0 +1,11 @@
+.mdl-button--fab.mdl-button--colored {
+    background: #35baf6;
+    color: rgb(66,66,66);
+    line-height: 10%;
+}
+.mdl-button--fab.mdl-button--mini-fab {
+    height: 24px;
+    min-width: 24px;
+    width: 24px;
+    line-height: 10%;
+}

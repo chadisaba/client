@@ -93,17 +93,19 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             minWidth: 100,
-            dataIndex: 'worklistMedRef',
+            dataIndex: 'worklistDoctor',
             text: 'Doctor'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'rendererPrescPhysician',
             minWidth: 100,
             dataIndex: 'worklistMedPresc',
             text: 'consultant Ph.'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'rendererRecipientPhysician',
             minWidth: 100,
             dataIndex: 'worklistMedRecipient',
             text: 'Dr. Recipient'
@@ -145,13 +147,15 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 50,
+            renderer: 'duRenderer',
+            minWidth: 70,
             dataIndex: 'worklistPatientDu',
             text: 'Du .P'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 50,
+            renderer: 'duRenderer',
+            minWidth: 70,
             dataIndex: 'worklistFtDu',
             text: 'Du. V'
         },
