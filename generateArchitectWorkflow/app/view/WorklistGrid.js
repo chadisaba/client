@@ -22,7 +22,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         'MyApp.view.WorklistGridViewController',
         'Ext.grid.column.Column',
         'Ext.view.Table',
-        'Ext.selection.RowModel'
+        'Ext.selection.RowModel',
+        'Ext.toolbar.Toolbar'
     ],
 
     controller: 'worklistgrid',
@@ -92,9 +93,9 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
+            minWidth: 70,
             dataIndex: 'worklistDoctor',
-            text: 'Doctor'
+            text: 'Méd.'
         },
         {
             xtype: 'gridcolumn',
@@ -182,24 +183,28 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'socialCardRenderer',
             minWidth: 100,
             dataIndex: '	visitIsBySocialCard',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'visitIsFreeRenderer',
             minWidth: 100,
             dataIndex: 'visitIsFree',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'hospitalizedRenderer',
             minWidth: 100,
             dataIndex: 'visitIsHospitalized',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'visitIsUrgentRenderer',
             minWidth: 100,
             dataIndex: 'visitIsUrgent',
             text: ''
@@ -208,7 +213,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             xtype: 'gridcolumn',
             minWidth: 100,
             dataIndex: 'visitHospitVisitNumber',
-            text: ''
+            text: 'N.Visite'
         },
         {
             xtype: 'gridcolumn',
@@ -242,6 +247,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'visitPECRenderer',
             minWidth: 100,
             dataIndex: 'visitPEC',
             text: ''
@@ -255,6 +261,18 @@ Ext.define('MyApp.view.WorklistGrid', {
     selModel: {
         selType: 'rowmodel',
         mode: 'MULTI'
-    }
+    },
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [
+                {
+                    xtype: 'component',
+                    cls: 'fa fa-at'
+                }
+            ]
+        }
+    ]
 
 });

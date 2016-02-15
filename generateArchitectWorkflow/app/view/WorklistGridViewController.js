@@ -93,6 +93,26 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
+    socialCardRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    visitIsFreeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    hospitalizedRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    visitIsUrgentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    visitPECRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

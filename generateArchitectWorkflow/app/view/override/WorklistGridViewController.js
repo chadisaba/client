@@ -38,43 +38,39 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     /***********************Renderers*********************************/
 
-     hrefRenderer:function(color,icon)
-    {
-    return '<a href="#" onclick="return;" style="color:'+color+
-        ';font-size:17px;"><i class="'+icon+'"></i></a>';
-    },
-    btnRenderer:function(color,icon)
-    {
-        return '<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
-            ' </button>';
-    },
+
     infoVisitRenderer: function(value, metaData, record) {
         var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
         var color;
         var icon;
-
-        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
+var tooltip;
+        tooltip=value||"";
         switch(infoAlertLevel)
         {
             case 0:
+                color="#d1d1d1";
+                icon="fa fa-info-circle";
+                tooltip="Cliquer pour ajouter une information sur la consultation";
+                break;
+            case 1:
                 color="#31b0d5";
                 icon="fa fa-info-circle";
 
                 break;
-            case 1:
+            case 2:
                 color="#ec971f";
                 icon="fa fa-exclamation-triangle";
 
                 break;
-            case 2:
+            case 3:
                 color="#d43f3a";
                 icon="fa fa-exclamation-triangle";
 
                 break;
 
         }
-        return hrefRenderer(color,icon);
+        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+        return Utility.renderer.btnRenderer(color,icon);
 
 
     },
@@ -83,31 +79,35 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         var infoAlertLevel=record.get("worklistPatientInfoAlertLevel");
         var color;
         var icon;
+       var  tooltip=value||"";
 
-        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         switch(infoAlertLevel)
         {
             case 0:
+                color="#d1d1d1";
+                icon="fa fa-info-circle";
+                tooltip="Cliquer pour ajouter une information sur la consultation";
+                break;
+            case 1:
                 color="#31b0d5";
                 icon="fa fa-info-circle";
 
                 break;
-            case 1:
+            case 2:
                 color="#ec971f";
                 icon="fa fa-exclamation-triangle";
 
                 break;
-            case 2:
+            case 3:
                 color="#d43f3a";
                 icon="fa fa-exclamation-triangle";
 
                 break;
 
         }
-        var result='<a href="#" onclick="return;" style="color:'+color+
-            ';font-size:17px;"><i class="'+icon+'"></i></a>';
+        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+        return Utility.renderer.btnRenderer(color,icon);
 
-        return result;
 
     },
     patientRenderer: function(value, metaData, record) {
@@ -177,7 +177,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result=this.btnRenderer(color,icon);
+        var result=Utility.renderer.btnRenderer(color,icon);
 
         return result;
     },
@@ -224,17 +224,13 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
-            ' </button>';
+        var result=Utility.renderer.btnRenderer(color,icon);
         return result;
     },
 
     FTRenderer: function(value, metaData, record) {
         if(!value) value=0;
-        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i style="color:#31b0d5;font-size:14px;">'+value+'</i>' +
-            ' </button>';
+        var result=Utility.renderer.textHrefRenderer('#31b0d5',value);
 
         return result;
     },
@@ -243,7 +239,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         var icon;
         var color;
         var tooltip;
-        if(!Ext.isEmpty(value)){
+        if(value){
             icon='fa fa-commenting-o';
             color="#31b0d5";
             tooltip=value;
@@ -254,7 +250,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
             tooltip="Cliquer pour saisir un commentaire";
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        var result=this.btnRenderer(color,icon);
+        var result=Utility.renderer.btnRenderer(color,icon);
 
         return result;
 
@@ -271,7 +267,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
             tooltip="Cloturée";
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        return this.hrefRenderer(color,icon);
+        return Utility.renderer.btnRenderer(color,icon);
     },
     dateRenderer: function(value,metaData) {
         /* var val = Ext.Date.parse(value, 'Y-m-d\\TH:i:s.uuu\\Z');
@@ -284,8 +280,10 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         if(value)
         {
             metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode('Consultation gratuite') + '"';
-            return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74">' +
+            return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >' +
                 '<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">G</i></span>';
+            //Utility.renderer.textHtmlTagRenderer()
+
         }
     },
     studiesRenderer:function(value,metadata){
@@ -297,7 +295,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
             color='#31b0d5';
             examen=value.split("|")[0]+"...";
         }
-        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
+        return Utility.renderer.textHrefRenderer(color,examen);
+        //return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
     },
     emailRenderer:function(value,metadata){
         var res=Utility.renderer.listRenderer(value,"fa fa-at","");
@@ -324,7 +323,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         var color='#d1d1d1';
         if (value){
             color='#31b0d5';
-            return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
+            return Utility.renderer.textHtmlTagRenderer('div',color,value);
+           // return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
         }
 
     },
@@ -337,11 +337,37 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         if (value){
             color='#31b0d5';
             recip=value.split("|")[0]+"...";
-            return '<div style="cursor: help;pointer:'+color+';font-size:13px;">'+recip+'</div>';
+            return Utility.renderer.textHtmlTagRenderer('div',color,recip);
+            //return '<div style="cursor: help;pointer:'+color+';font-size:13px;">'+recip+'</div>';
         }
 
 
+    },
+    visitIsUrgentRenderer: function(value, metaData) {
+
+    },
+    socialCardRenderer: function(value, metaData) {
+
+    },
+    hospitalizedRenderer: function(value, metaData) {
+        var icon;
+        var color;
+        var tooltip;
+        if(value){
+            icon='fa fa-hospital-o';
+            color="#31b0d5";
+            tooltip='Patient hospitalisé';
+            metaData.tdAttr = 'data-qtip="' + tooltip + '"';
+            return Utility.renderer.htmlTagRenderer('div',color,icon);
+        }
+        else{
+          return '';
+        }
+    },
+    visitPECRenderer: function(value, metaData) {
+
     }
+
 
 
 });

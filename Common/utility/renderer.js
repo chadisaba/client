@@ -33,6 +33,33 @@ Ext.define('Utility.renderer', {
         		if(value>=0)
             			color="#27b6af";
 			return '<'+htmlTag+' onclick="return;" style="color:'+color+';font-size:13px;">'+Math.abs(value)+'</'+htmlTag+'>';
+		},
+		hrefRenderer:function(color,icon)
+		{
+			return '<a href="#" onclick="return;" style="color:'+color+
+				';font-size:17px;"><i class="'+icon+'"></i></a>';
+		},
+		textHrefRenderer:function(color,value)
+		{
+			return '<a href="#" onclick="return;" style="color:'+color+
+				';font-size:13px;">'+value+'</a>';
+		},
+		btnRenderer:function(color,icon)
+		{
+			return '<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+				'<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
+				' </button>';
+		},
+		htmlTagRenderer:function(htmlTag,color,icon)
+		{
+			return '<'+htmlTag+' style="cursor:help;color:'+color+
+				';font-size:17px;"><i class="'+icon+'"></i></'+htmlTag+'>';
+		},
+		textHtmlTagRenderer:function(htmlTag,color,value)
+		{
+			 var htmlTagType=htmlTag||"div";
+			return '<'+htmlTagType+' style="cursor:help;color:'+color+
+				';font-size:13px;">'+value+'</i></'+htmlTagType+'>';
 		}
 			
 

@@ -7,9 +7,9 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     onWorklistGridIdAfterRender: function(component) {
         this.getResultArray(function(result)
-                            {
-                                component.getViewModel().getStore('WorklistStore').loadData(result);  
-                            });
+        {
+            component.getViewModel().getStore('WorklistStore').loadData(result);
+        });
 
 
     },
@@ -22,85 +22,95 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         };
         // Server.Settings.Site.createDescribe(params,
         Server.Worklist.Worklist.getWorklistInfo(params,
-                                                 function(res){
-                                                     if(res.success){
-                                                         callback (res.data);
-                                                     }
-                                                     else{
-                                                         console.log(res.msg);
-                                                     }
-                                                 },me
-                                                );
-
-    },
-
-
-
-        /***********************Renderers*********************************/
-
-      infoVisitRenderer: function(value, metaData, record) {
-    var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
-                var color;
-                var icon;
-
-                metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
-                switch(infoAlertLevel)
-                {
-                    case 0:
-                    color="#31b0d5";
-                    icon="fa fa-info-circle";
-
-                    break;
-                    case 1:
-                    color="#ec971f";
-                    icon="fa fa-exclamation-triangle";
-
-                    break;
-                    case 2:
-                    color="#d43f3a";
-                    icon="fa fa-exclamation-triangle";
-
-                    break;
-
+            function(res){
+                if(res.success){
+                    callback (res.data);
                 }
-                return '<a href="#" onclick="return;" style="color:'+color+
-                ';font-size:17px;"><i class="'+icon+'"></i></a>';
-
-
-    },
-       infoPatientRenderer: function(value, metaData, record) {
-
-var infoAlertLevel=record.get("worklistPatientInfoAlertLevel");
-var color;
-var icon;
-
-metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
- switch(infoAlertLevel)
-                {
-                    case 0:
-                    color="#31b0d5";
-                    icon="fa fa-info-circle";
-
-                    break;
-                    case 1:
-                    color="#ec971f";
-                    icon="fa fa-exclamation-triangle";
-
-                    break;
-                    case 2:
-                    color="#d43f3a";
-                    icon="fa fa-exclamation-triangle";
-
-                    break;
-
+                else{
+                    console.log(res.msg);
                 }
-              var result='<a href="#" onclick="return;" style="color:'+color+
-                ';font-size:17px;"><i class="'+icon+'"></i></a>';
-
-                return result;
+            },me
+        );
 
     },
-  patientRenderer: function(value, metaData, record) {
+
+
+
+    /***********************Renderers*********************************/
+
+
+    infoVisitRenderer: function(value, metaData, record) {
+        var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
+        var color;
+        var icon;
+var tooltip;
+        tooltip=value||"";
+        switch(infoAlertLevel)
+        {
+            case 0:
+                color="#d1d1d1";
+                icon="fa fa-info-circle";
+                tooltip="Cliquer pour ajouter une information sur la consultation";
+                break;
+            case 1:
+                color="#31b0d5";
+                icon="fa fa-info-circle";
+
+                break;
+            case 2:
+                color="#ec971f";
+                icon="fa fa-exclamation-triangle";
+
+                break;
+            case 3:
+                color="#d43f3a";
+                icon="fa fa-exclamation-triangle";
+
+                break;
+
+        }
+        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+        return Utility.renderer.btnRenderer(color,icon);
+
+
+    },
+    infoPatientRenderer: function(value, metaData, record) {
+
+        var infoAlertLevel=record.get("worklistPatientInfoAlertLevel");
+        var color;
+        var icon;
+       var  tooltip=value||"";
+
+        switch(infoAlertLevel)
+        {
+            case 0:
+                color="#d1d1d1";
+                icon="fa fa-info-circle";
+                tooltip="Cliquer pour ajouter une information sur la consultation";
+                break;
+            case 1:
+                color="#31b0d5";
+                icon="fa fa-info-circle";
+
+                break;
+            case 2:
+                color="#ec971f";
+                icon="fa fa-exclamation-triangle";
+
+                break;
+            case 3:
+                color="#d43f3a";
+                icon="fa fa-exclamation-triangle";
+
+                break;
+
+        }
+        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
+        return Utility.renderer.btnRenderer(color,icon);
+
+
+    },
+    patientRenderer: function(value, metaData, record) {
         return record.get('patientLName')+' '+record.get('patientFName');
     },
 
@@ -112,14 +122,14 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
 
     CRRenderer: function(value, metaData, record) {
         /*
-        0 : no report
-        1 :Report  in typing
-        2: waiting for validation
-        3- validated
-        4- wainting for approuval
-        5-approved
-        6- printed.
-        */
+         0 : no report
+         1 :Report  in typing
+         2: waiting for validation
+         3- validated
+         4- wainting for approuval
+         5-approved
+         6- printed.
+         */
         var result;
         var color;
         var icon;
@@ -127,61 +137,59 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         switch(value)
         {
             case 0:
-            color="#d1d1d1";
-            icon="fa fa-file-o";
-            tooltip="Aucun compte rendu disponible";
+                color="#d1d1d1";
+                icon="fa fa-file-o";
+                tooltip="Aucun compte rendu disponible";
 
-            break;
+                break;
             case 1:
-            color="#ec971f";
-            icon="fa fa-spinner fa-spin";
-            tooltip="En cours de frappe";
+                color="#ec971f";
+                icon="fa fa-spinner fa-spin";
+                tooltip="En cours de frappe";
 
-            break;
+                break;
             case 2:
-            color="#ec971f";
-            icon="fa fa-hourglass-half";
-            tooltip="En attente de validation";
+                color="#ec971f";
+                icon="fa fa-hourglass-half";
+                tooltip="En attente de validation";
 
-            break;
+                break;
             case 3:
-            color="#27b6af";
-            icon="fa fa-file-word-o";
-            tooltip="Validé";
-            break;
+                color="#27b6af";
+                icon="fa fa-file-word-o";
+                tooltip="Validé";
+                break;
             case 4:
-            color="#ec971f";
-            icon="fa fa-hourglass-half";
-            tooltip="En attente d'approbation";
-            break;
+                color="#ec971f";
+                icon="fa fa-hourglass-half";
+                tooltip="En attente d'approbation";
+                break;
             case 5:
-            color="#27b6af";
-            icon="fa fa-file-word-o";
-            tooltip="Approuvé";
-            break;
+                color="#27b6af";
+                icon="fa fa-file-word-o";
+                tooltip="Approuvé";
+                break;
             case 6:
-            color="#27b6af";
-            icon="fa fa-print";
-            tooltip="Imprimé";
-            break;
+                color="#27b6af";
+                icon="fa fa-print";
+                tooltip="Imprimé";
+                break;
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result='<span style="color:'+color+'">'+record.get('worklistCrsNb')+'&nbsp;<span/> <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
-            ' </button>';
+        var result=Utility.renderer.btnRenderer(color,icon);
 
         return result;
     },
 
     quotationRenderer: function(value, metaData,record) {
         /*
-        0 no quotation
-        1 quotation saved
-        2 quotation disapproved
-        3 quotation approved
-        4 waiting
-        */
+         0 no quotation
+         1 quotation saved
+         2 quotation disapproved
+         3 quotation approved
+         4 waiting
+         */
         var result;
         var color;
         var icon;
@@ -189,44 +197,40 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         switch(value)
         {
             case 0:
-            color="#d1d1d1";
-            icon="fa fa-file-o";
-            tooltip="Aucune cotation";
-            break;
+                color="#d1d1d1";
+                icon="fa fa-file-o";
+                tooltip="Aucune cotation";
+                break;
             case 1:
-            color="#ec971f";
-            icon="fa fa-eur";
-            tooltip="Cotation enregistrée";
-            break;
+                color="#ec971f";
+                icon="fa fa-eur";
+                tooltip="Cotation enregistrée";
+                break;
             case 2:
-            color="#ec971f";
-            icon="fa fa-eur";
-            tooltip="Cotation dévalidée";
-            break;
+                color="#ec971f";
+                icon="fa fa-eur";
+                tooltip="Cotation dévalidée";
+                break;
             case 3:
-            color="#27b6af";
-            icon="fa fa-eur";
-            tooltip="Cotation validée";
-            break;
+                color="#27b6af";
+                icon="fa fa-eur";
+                tooltip="Cotation validée";
+                break;
             case 4:
-            color="#d1d1d1";
-            icon="fa fa-spinner fa-spin";
-            tooltip="En cours de cotation";
-            break;
+                color="#d1d1d1";
+                icon="fa fa-spinner fa-spin";
+                tooltip="En cours de cotation";
+                break;
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
-            ' </button>';
+        var result=Utility.renderer.btnRenderer(color,icon);
         return result;
     },
 
     FTRenderer: function(value, metaData, record) {
         if(!value) value=0;
-        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-            '<i style="color:#31b0d5;font-size:14px;">'+value+'</i>' +
-            ' </button>';
+        var result=Utility.renderer.textHrefRenderer('#31b0d5',value);
 
         return result;
     },
@@ -235,7 +239,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         var icon;
         var color;
         var tooltip;
-        if(!Ext.isEmpty(value)){
+        if(value){
             icon='fa fa-commenting-o';
             color="#31b0d5";
             tooltip=value;
@@ -246,9 +250,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
             tooltip="Cliquer pour saisir un commentaire";
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        var result='<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
-        '<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
-        ' </button>';
+        var result=Utility.renderer.btnRenderer(color,icon);
 
         return result;
 
@@ -258,28 +260,30 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
     isDoneRenderer: function(value, metaData) {
         var icon="fa fa-lock";
         var color="#d1d1d1";
-       var  tooltip="Cliquer pour cloturer";
+        var  tooltip="Cliquer pour cloturer";
         if(value)
         {
             color="#31b0d5";
             tooltip="Cloturée";
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;"><i class="'+icon+'"></i></a>';
+        return Utility.renderer.btnRenderer(color,icon);
     },
-     dateRenderer: function(value,metaData) {
+    dateRenderer: function(value,metaData) {
         /* var val = Ext.Date.parse(value, 'Y-m-d\\TH:i:s.uuu\\Z');
          return Ext.Date.format(val,"d/m/Y");*/
 
-         var val = Ext.Date.parse(value, 'Y-m-d');
-          return Ext.Date.format(val,"d/m/Y");
+        var val = Ext.Date.parse(value, 'Y-m-d');
+        return Ext.Date.format(val,"d/m/Y");
     },
     visitIsFreeRenderer: function(value, metaData) {
         if(value)
         {
             metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode('Consultation gratuite') + '"';
-            return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74">' +
+            return'<span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >' +
                 '<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">G</i></span>';
+            //Utility.renderer.textHtmlTagRenderer()
+
         }
     },
     studiesRenderer:function(value,metadata){
@@ -291,7 +295,8 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
             color='#31b0d5';
             examen=value.split("|")[0]+"...";
         }
-       return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
+        return Utility.renderer.textHrefRenderer(color,examen);
+        //return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
     },
     emailRenderer:function(value,metadata){
         var res=Utility.renderer.listRenderer(value,"fa fa-at","");
@@ -306,7 +311,7 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
     },
     duRenderer:function(value,metadata)
     {
-       var tagType="";
+        var tagType="";
         if(value<0)
             tagType="div";
 
@@ -318,7 +323,8 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         var color='#d1d1d1';
         if (value){
             color='#31b0d5';
-            return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
+            return Utility.renderer.textHtmlTagRenderer('div',color,value);
+           // return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
         }
 
     },
@@ -331,11 +337,37 @@ metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(value) + '"';
         if (value){
             color='#31b0d5';
             recip=value.split("|")[0]+"...";
-            return '<div style="cursor: help;pointer:'+color+';font-size:13px;">'+recip+'</div>';
+            return Utility.renderer.textHtmlTagRenderer('div',color,recip);
+            //return '<div style="cursor: help;pointer:'+color+';font-size:13px;">'+recip+'</div>';
         }
 
 
+    },
+    visitIsUrgentRenderer: function(value, metaData) {
+
+    },
+    socialCardRenderer: function(value, metaData) {
+
+    },
+    hospitalizedRenderer: function(value, metaData) {
+        var icon;
+        var color;
+        var tooltip;
+        if(value){
+            icon='fa fa-hospital-o';
+            color="#31b0d5";
+            tooltip='Patient hospitalisé';
+            metaData.tdAttr = 'data-qtip="' + tooltip + '"';
+            return Utility.renderer.htmlTagRenderer('div',color,icon);
+        }
+        else{
+          return '';
+        }
+    },
+    visitPECRenderer: function(value, metaData) {
+
     }
+
 
 
 });

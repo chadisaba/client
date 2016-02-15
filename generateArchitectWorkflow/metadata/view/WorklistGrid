@@ -315,8 +315,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistDoctor",
-                "minWidth": 100,
-                "text": "Doctor"
+                "minWidth": 70,
+                "text": "Méd."
             },
             "name": "MyworklistMedRefCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq"
@@ -838,7 +838,33 @@
                 "text": ""
             },
             "name": "My\tvisitIsBySocialCardCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp"
+            "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "socialCardRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "f27cf00c-c949-48d3-a64a-1e88a9622467"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -853,7 +879,33 @@
                 "text": ""
             },
             "name": "MyvisitIsFreeCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-lutcy48v89gc"
+            "designerId": "7c6bec59-5c6a-4872-9cec-lutcy48v89gc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "visitIsFreeRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "de97b6e7-a114-479d-ace6-2c1d8b3fccd1"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -868,7 +920,33 @@
                 "text": ""
             },
             "name": "MyvisitIsHospitalizedCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-w5fq41xd34jq"
+            "designerId": "7c6bec59-5c6a-4872-9cec-w5fq41xd34jq",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "hospitalizedRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "7ab1369c-1561-45ed-b1fc-43c38eba79b8"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -883,7 +961,33 @@
                 "text": ""
             },
             "name": "MyvisitIsUrgentCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by"
+            "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "visitIsUrgentRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "dc0be72c-d156-4ccb-bcfb-c7e7278610f9"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -895,7 +999,7 @@
             "userConfig": {
                 "dataIndex": "visitHospitVisitNumber",
                 "minWidth": 100,
-                "text": ""
+                "text": "N.Visite"
             },
             "name": "MyvisitHospitVisitNumberCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-jku13lsx7etv"
@@ -988,7 +1092,33 @@
                 "text": ""
             },
             "name": "MyvisitPECCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1"
+            "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "visitPECRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "1e66a354-8df0-45fd-a77a-a651e828bdcc"
+                }
+            ]
         },
         {
             "type": "Ext.view.Table",
@@ -1074,6 +1204,37 @@
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-jfkb6aetghb5"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "a043d579-af23-4d9d-896a-5e1b4704821e",
+            "cn": [
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "fa fa-at"
+                        ],
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent",
+                    "designerId": "77220502-c254-4267-8a58-7a6e185b75d1"
+                }
+            ]
         }
     ]
 }
