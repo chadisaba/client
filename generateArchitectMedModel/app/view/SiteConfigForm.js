@@ -22,6 +22,7 @@ Ext.define('MyApp.view.SiteConfigForm', {
         'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
+        'Ext.toolbar.Fill',
         'Ext.button.Button',
         'Ext.toolbar.Separator'
     ],
@@ -41,47 +42,60 @@ Ext.define('MyApp.view.SiteConfigForm', {
     items: [
         {
             xtype: 'textfield',
-            fieldLabel: 'Site Id     '
+            fieldLabel: 'Site Id     ',
+            name: 'siteId'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Start Hour',
+            name: 'siteConfigStartHour',
             inputType: 'time'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'End Hour',
+            name: 'siteConfigEndHour',
             inputType: 'time'
         },
         {
             xtype: 'checkboxfield',
             fieldLabel: 'FSE is Checked',
+            name: 'siteConfigFseIsChecked',
             boxLabel: 'Box Label'
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Uid Senolog'
+            fieldLabel: 'Uid Senolog',
+            name: 'siteConfigUidSenolog'
         },
         {
             xtype: 'combobox',
-            fieldLabel: 'Senolog Type'
+            fieldLabel: 'Senolog Type',
+            name: 'siteConfigSenologType'
         }
     ],
     dockedItems: [
         {
             xtype: 'toolbar',
-            dock: 'right',
+            dock: 'bottom',
             items: [
                 {
+                    xtype: 'tbfill'
+                },
+                {
                     xtype: 'button',
-                    text: 'Edit'
+                    style: 'color:red',
+                    iconCls: 'fa fa-times',
+                    text: 'Annuler'
                 },
                 {
                     xtype: 'tbseparator'
                 },
                 {
                     xtype: 'button',
-                    text: 'Save'
+                    style: 'color:green',
+                    iconCls: 'fa fa-check',
+                    text: 'Valier'
                 }
             ]
         }

@@ -840,6 +840,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "fa fa-pencil fa-2x",
                 "text": "config"
             },
             "name": "MyActionColumn",
@@ -853,7 +854,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "fdfsd"
+                        "icon": null,
+                        "iconCls": "fa fa-cogs"
                     },
                     "name": "MyActionColumnItem",
                     "designerId": "52525ee1-ca67-4a3f-990c-fcc47bb34117",

@@ -10,30 +10,30 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
 
 
-      /*  var me=this;
-        var params={
-            id:50,
-            table:"GROUP"
-        };
-        var result=[];
-        Server.Settings.StudyCat.read1(params,
-            function(res){
-                if(res.success)
-                    result=res.data;
-                me.getViewModel().getStore('StudiesCatGridStore').loadData(result);
+        /*  var me=this;
+         var params={
+         id:50,
+         table:"GROUP"
+         };
+         var result=[];
+         Server.Settings.StudyCat.read1(params,
+         function(res){
+         if(res.success)
+         result=res.data;
+         me.getViewModel().getStore('StudiesCatGridStore').loadData(result);
 
-            },me
-        );
+         },me
+         );
 
-                           var typeResult=[
-                               {'typeId':'5','type':'break'},
-                               {'typeId':'6','type':'berline'}
-                           ];
+         var typeResult=[
+         {'typeId':'5','type':'break'},
+         {'typeId':'6','type':'berline'}
+         ];
 
-        var groupComboStore=this.getViewModel().getStore('GroupIdComboStore');
-        var catComboStore=this.getViewModel().getStore('SiteCategoryComboStore');
-        var siteCityComboStore=this.getViewModel().getStore('SiteCityIdComboStore');
-*/
+         var groupComboStore=this.getViewModel().getStore('GroupIdComboStore');
+         var catComboStore=this.getViewModel().getStore('SiteCategoryComboStore');
+         var siteCityComboStore=this.getViewModel().getStore('SiteCityIdComboStore');
+         */
         var me=this;
         var params={
             id:50,
@@ -75,34 +75,34 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
 
 
-   onSiteGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
+    onSiteGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
-     var success=false;
+        var success=false;
         // first save all data to the server side by calling ext.direct function or ajax query
 
-       var me=this;
-var params={};
-       params.table="SITE";
-       params.idName="siteId";
-       params.dataToBeSaved=dataToBeSaved;
-       params.comment=comment;
-       console.log(dataToBeSaved);
+        var me=this;
+        var params={};
+        params.table="SITE";
+        params.idName="siteId";
+        params.dataToBeSaved=dataToBeSaved;
+        params.comment=comment;
+        console.log(dataToBeSaved);
 
-       var result=[];
-       Server.CommonQueries.saveRecords(params,
-           function(_result){
-               if(_result.success){
-                   var resultArray=[];
-                   this.getResultArray(function(data){
-                       Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
-                   },this);
-               }
-               else{
-                   console.error(_result.msg);
-                   Ext.MessageBox.alert("Error","save Error "+_result.msg);
-               }
-           },me
-       );
+        var result=[];
+        Server.CommonQueries.saveRecords(params,
+            function(_result){
+                if(_result.success){
+                    var resultArray=[];
+                    this.getResultArray(function(data){
+                        Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
+                    },this);
+                }
+                else{
+                    console.error(_result.msg);
+                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
+                }
+            },me
+        );
     },
 
     onSiteGridIdAddItem: function() {
@@ -131,7 +131,7 @@ var params={};
         return (Utility.grid.beforeEdit(editor,context));
     },
 
- 
+
 
     onSiteGridIdCanceledit: function(editor,context) {
         return(Utility.grid.cancelEdit(editor,context));
@@ -142,28 +142,28 @@ var params={};
     },
 
     onSiteGridIdEdit: function(editor,context) {
- // var columnsName=['name','text'];
-    	
-    	var columnsName=['siteName','siteCode','sitePhone','siteFax','siteGroupName','siteCategory','siteAddress1','siteAddress2','siteZipCode','siteCityId','siteIsVirtual','active'];
+        // var columnsName=['name','text'];
+
+        var columnsName=['siteName','siteCode','sitePhone','siteFax','siteGroupName','siteCategory','siteAddress1','siteAddress2','siteZipCode','siteCityId','siteIsVirtual','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
     onSiteGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
         Utility.grid.viewBeforeCellClick(this.getView());
     },
-    
+
 
     onSiteGridIdValidateedit: function(editor, context) {
-        
+
         var check;
         check=true;
         // check= checkFunction(); check if all required data in the form editor
-        
+
         return(Utility.grid.validateedit(editor,context,check));
     },
 
     onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
-alert(combo.getValue());
+        alert(combo.getValue());
     },
 
     getResultArray:function(callback)
@@ -174,11 +174,14 @@ alert(combo.getValue());
             id:50
         };
         var result=[];
-       // Server.Settings.Site.createDescribe(params,
-        Server.Settings.Site.getSiteAndGroup(params,
+        // Server.Settings.Site.createDescribe(params,
+        Server.Settings.SiteDirect.getSiteAndGroup(params,
             function(res){
                 if(res.success){
-                    callback(res.data);
+                    callback(res.data[0]);
+                    if(res.data[1].length>0)
+                        me.getViewModel().getStore('SiteConfigStore').loadData(res.data[1]);
+
                 }
                 else{
                     console.log(res.msg);
@@ -189,11 +192,35 @@ alert(combo.getValue());
     },
     openConfigHandler: function(view, rowIndex, colIndex, item, e, record, row) {
 
-   var win= Ext.create('MyApp.view.SiteConfigWindow');
+        var me=this;
+        var selectedSiteConfig;
+
+        var siteConfigStore=me.getViewModel().getStore('SiteConfigStore');
+
+        selectedSiteConfig =Ext.create('MyApp.model.SiteConfigModel',
+            {
+                siteId:record.get('siteId')
+
+            });
+
+        siteConfigStore.each(function(siteConfig)
+        {
+            if(siteConfig.get('siteId')==record.get('siteId')){
+                selectedSiteConfig=siteConfig;
+            }
+
+        });
+
+
+        var win= Ext.create('MyApp.view.SiteConfigWindow',{
+            siteConfig:selectedSiteConfig,
+            title: "Configuration du  site "+record.get('siteCode')
+        });
         win.show();
+
     }
-    
- 
-    
+
+
+
 
 });

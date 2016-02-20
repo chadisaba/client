@@ -18,8 +18,8 @@
             "SiteModel",
             "SiteConfigModel",
             "SiteGroupModel",
-			"UserGridModel",
-			"DeviceModel"
+            "UserGridModel",
+            "DeviceModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -30,12 +30,11 @@
             "XxLeftTreePanel",
             "XxRightTreePanel",
             "SiteGrid",
-            "SiteConfigGrid",
             "SiteGroupGrid",
             "SiteConfigWindow",
             "SiteConfigForm",
-			"UserGrid",
-			"DeviceGrid"
+            "UserGrid",
+            "DeviceGrid"
         ]
     },
     "name": "Application",

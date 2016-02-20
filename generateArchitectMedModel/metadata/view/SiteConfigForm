@@ -29,7 +29,8 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Site Id     ",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteId"
             },
             "name": "MyTextField4",
             "designerId": "c5309559-c3de-4e3b-bac6-4169e955810c"
@@ -44,7 +45,8 @@
             "userConfig": {
                 "fieldLabel": "Start Hour",
                 "inputType": "time",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteConfigStartHour"
             },
             "name": "MyTextField5",
             "designerId": "effcabe5-f536-485c-9171-a13d03bba2c8"
@@ -59,7 +61,8 @@
             "userConfig": {
                 "fieldLabel": "End Hour",
                 "inputType": "time",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteConfigEndHour"
             },
             "name": "MyTextField6",
             "designerId": "add78e05-931e-47a7-97a9-674545ea36ef"
@@ -74,7 +77,8 @@
             "userConfig": {
                 "boxLabel": "Box Label",
                 "fieldLabel": "FSE is Checked",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteConfigFseIsChecked"
             },
             "name": "MyCheckbox1",
             "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
@@ -88,7 +92,8 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Uid Senolog",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteConfigUidSenolog"
             },
             "name": "MyTextField7",
             "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
@@ -102,7 +107,8 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Senolog Type",
-                "labelWidth": null
+                "labelWidth": null,
+                "name": "siteConfigSenologType"
             },
             "name": "MyComboBox",
             "designerId": "3760c99a-5296-48bc-b78e-ba62e33577b2"
@@ -115,11 +121,24 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "right"
+                "dock": "bottom"
             },
             "name": "MyToolbar3",
             "designerId": "56473833-a5da-4177-b13a-64c034234233",
             "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "8b7e163f-892a-42a0-8a51-d1a4decfcc42"
+                },
                 {
                     "type": "Ext.button.Button",
                     "reference": {
@@ -128,10 +147,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "fa fa-times",
                         "layout|flex": null,
-                        "text": "Edit"
+                        "style": "color:red",
+                        "text": "Annuler"
                     },
                     "name": "MyButton4",
+                    "configAlternates": {
+                        "style": "string"
+                    },
                     "designerId": "5cff5d14-1f69-424a-ae67-346e6ca37638"
                 },
                 {
@@ -155,10 +179,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "fa fa-check",
                         "layout|flex": null,
-                        "text": "Save"
+                        "style": "color:green",
+                        "text": "Valier"
                     },
                     "name": "MyButton5",
+                    "configAlternates": {
+                        "style": "string"
+                    },
                     "designerId": "f7fb161b-40bd-4a05-9d02-5dd02af3c673"
                 }
             ]

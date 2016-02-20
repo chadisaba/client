@@ -19,10 +19,12 @@ Ext.define('MyApp.view.SiteConfigWindow', {
 
     requires: [
         'MyApp.view.SiteConfigWindowViewModel',
+        'MyApp.view.SiteConfigWindowViewController',
         'MyApp.view.SiteConfigForm',
         'Ext.form.Panel'
     ],
 
+    controller: 'siteconfigwindow',
     viewModel: {
         type: 'siteconfigwindow'
     },
@@ -36,7 +38,12 @@ Ext.define('MyApp.view.SiteConfigWindow', {
         {
             xtype: 'siteconfigform',
             height: 400,
-            dock: 'left'
+            itemId: 'siteConfigForm',
+            header: false,
+            dock: 'left',
+            listeners: {
+                afterrender: 'onFormAfterRender'
+            }
         }
     ]
 

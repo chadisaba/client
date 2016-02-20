@@ -24,8 +24,22 @@
             },
             "name": "SiteStore",
             "designerId": "7bkfly7q-c056-4140-9039-y39whdqerd4k"
-        }
-        ,{
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteConfigModel",
+                "name": "SiteConfigStore"
+            },
+            "name": "SiteStore1",
+            "designerId": "7b99e360-f609-414c-86e2-8d87f8b97f8e"
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -38,7 +52,8 @@
             },
             "name": "GroupIdComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-7cvwwbfbxfwx"
-        },{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -51,7 +66,8 @@
             },
             "name": "SiteCategoryComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-qc7xta9qipfp"
-        },{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",

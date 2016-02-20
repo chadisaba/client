@@ -41,7 +41,6 @@ Ext.application({
         'XxLeftTreePanel',
         'XxRightTreePanel',
         'SiteGrid',
-        'SiteConfigGrid',
         'SiteGroupGrid',
         'SiteConfigWindow',
         'SiteConfigForm',
