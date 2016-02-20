@@ -15,5 +15,16 @@
 
 Ext.define('MyApp.view.SiteConfigWindowViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.siteconfigwindow'
+    alias: 'controller.siteconfigwindow',
+
+    requires: [
+        'MyApp.view.override.SiteConfigWindowViewController'
+    ],
+
+    onFormAfterRender: function(component, eOpts) {
+        var siteConfig=this.getView().siteConfig;
+
+        component.loadRecord(siteConfig);
+    }
+
 });

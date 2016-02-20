@@ -185,10 +185,11 @@ Ext.define('MyApp.view.SiteGrid', {
         {
             xtype: 'actioncolumn',
             text: 'config',
+            iconCls: 'fa fa-pencil fa-2x',
             items: [
                 {
                     handler: 'openConfigHandler',
-                    icon: 'fdfsd'
+                    iconCls: 'fa fa-cogs'
                 }
             ]
         }

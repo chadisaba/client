@@ -25,6 +25,9 @@ Ext.define('MyApp.view.SiteGridViewModel', {
         SiteStore: {
             model: 'MyApp.model.SiteModel'
         },
+        SiteConfigStore: {
+            model: 'MyApp.model.SiteConfigModel'
+        },
         GroupIdComboStore: {
             model: 'MyApp.model.GroupIdComboModel'
         },
