@@ -23,7 +23,11 @@ Ext.define('MyApp.view.WorklistGrid', {
         'Ext.grid.column.Column',
         'Ext.view.Table',
         'Ext.selection.RowModel',
-        'Ext.toolbar.Toolbar'
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Split',
+        'Ext.menu.Menu',
+        'Ext.menu.Item',
+        'Ext.toolbar.Separator'
     ],
 
     controller: 'worklistgrid',
@@ -32,7 +36,6 @@ Ext.define('MyApp.view.WorklistGrid', {
     },
     reference: 'worklistGridRef',
     itemId: 'worklistGridId',
-    minWidth: 1600,
     resizable: false,
     title: '',
     forceFit: true,
@@ -44,20 +47,25 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             minWidth: 50,
+            width: 50,
             dataIndex: 'siteCode',
             text: 'Site'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'socialCardRenderer',
+            dataIndex: 'visitIsBySocialCard',
+            text: 'Vitale'
+        },
+        {
+            xtype: 'gridcolumn',
             renderer: 'infoVisitRenderer',
-            minWidth: 40,
             dataIndex: 'worklistVisitInfo',
             text: 'Visite.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dateRenderer',
-            minWidth: 100,
             scrollable: true,
             width: '',
             dataIndex: 'worklistDate',
@@ -66,189 +74,142 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'infoPatientRenderer',
-            minWidth: 40,
             dataIndex: 'worklistPatientInfo',
             text: 'Pat.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'patientRenderer',
-            minWidth: 100,
+            width: 150,
             dataIndex: 'patientLName',
             text: 'Patient'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dateRenderer',
-            minWidth: 100,
             dataIndex: 'patientBirthday',
-            text: 'Birthday'
+            text: 'Naissance'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'studiesRenderer',
-            minWidth: 150,
             dataIndex: 'worklistStudies',
             text: 'Studies'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 70,
             dataIndex: 'worklistDoctor',
             text: 'Méd.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererPrescPhysician',
-            minWidth: 100,
             dataIndex: 'worklistMedPresc',
             text: 'consultant Ph.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererRecipientPhysician',
-            minWidth: 100,
             dataIndex: 'worklistMedRecipient',
             text: 'Dr. Recipient'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dictationRenderer',
-            minWidth: 60,
             dataIndex: 'worklistDictationsStatus',
             text: 'Dict.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'CRRenderer',
-            minWidth: 50,
             dataIndex: 'worklistLastCrStatus',
             text: 'C.R'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'quotationRenderer',
-            minWidth: 50,
             dataIndex: 'worklistLastDictationStatus',
             text: 'Cot.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'FTRenderer',
-            minWidth: 50,
             dataIndex: 'worklistFTNum',
             text: 'F.T'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'commentRenderer',
-            minWidth: 100,
             dataIndex: 'worklistVisitComment',
             text: 'Comment'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
-            minWidth: 70,
             dataIndex: 'worklistPatientDu',
             text: 'Du .P'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
-            minWidth: 70,
             dataIndex: 'worklistFtDu',
             text: 'Du. V'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'isDoneRenderer',
-            minWidth: 50,
             dataIndex: 'visitIsDone',
             text: '<i class="fa fa-lock"></i>'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'emailRenderer',
-            minWidth: 50,
             dataIndex: 'worklisCrEmailedTo',
             text: '<i class="fa fa-at"></i>'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'mailRenderer',
-            minWidth: 50,
             dataIndex: 'worklisCrMailedTo',
             text: '<i class="fa fa-envelope-o"></i>'
         },
         {
             xtype: 'gridcolumn',
-            renderer: 'socialCardRenderer',
-            minWidth: 100,
-            dataIndex: '	visitIsBySocialCard',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
             renderer: 'visitIsFreeRenderer',
-            minWidth: 100,
             dataIndex: 'visitIsFree',
             text: ''
         },
         {
             xtype: 'gridcolumn',
             renderer: 'hospitalizedRenderer',
-            minWidth: 100,
             dataIndex: 'visitIsHospitalized',
             text: ''
         },
         {
             xtype: 'gridcolumn',
             renderer: 'visitIsUrgentRenderer',
-            minWidth: 100,
             dataIndex: 'visitIsUrgent',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
             dataIndex: 'visitHospitVisitNumber',
             text: 'N.Visite'
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitIsAmo',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitIsAmc',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
-            dataIndex: 'visitPds',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            minWidth: 100,
+            renderer: 'invoiceTypeRenderer',
             dataIndex: 'visitInvoiceType',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 100,
             dataIndex: 'visitFtFor',
             text: ''
         },
         {
             xtype: 'gridcolumn',
             renderer: 'visitPECRenderer',
-            minWidth: 100,
             dataIndex: 'visitPEC',
             text: ''
         }
@@ -256,7 +217,17 @@ Ext.define('MyApp.view.WorklistGrid', {
     listeners: {
         select: 'select',
         chHist: 'onWorklistGridIdChHist',
-        afterrender: 'onWorklistGridIdAfterRender'
+        _afterrender0: 'onWorklistGridIdAfterRender',
+        _afterrender1: 'onWorklistGridIdAfterRender',
+        afterrender: function() {
+            var me = this,
+                args = Ext.toArray(arguments, 0, -1);
+            args.unshift('_afterrender0');
+            me.fireEvent.apply(me, args);
+            args[0] = '_afterrender1';
+            me.fireEvent.apply(me, args);
+        },
+        selectionchange: 'onWorklistGridIdSelectionChange'
     },
     selModel: {
         selType: 'rowmodel',
@@ -266,10 +237,105 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'toolbar',
             dock: 'top',
+            height: 40,
             items: [
                 {
+                    xtype: 'splitbutton',
+                    itemId: 'actionsBtnMenu',
+                    text: 'Actions',
+                    menu: {
+                        xtype: 'menu',
+                        items: [
+                            {
+                                xtype: 'menuitem',
+                                text: 'F.S Cerfa'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'F.T Cerfa'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Etiquette'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Fiche suiveuse'
+                            }
+                        ]
+                    }
+                },
+                {
+                    xtype: 'splitbutton',
+                    itemId: 'printBtnMenu',
+                    text: 'Imprimer',
+                    menu: {
+                        xtype: 'menu',
+                        items: [
+                            {
+                                xtype: 'menuitem',
+                                text: 'F.S Cerfa'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'F.T Cerfa'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Etiquette'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Fiche suiveuse'
+                            }
+                        ]
+                    }
+                },
+                {
+                    xtype: 'tbseparator'
+                },
+                {
                     xtype: 'component',
-                    cls: 'fa fa-at'
+                    html: ' <span title="Hospitalisé" class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">H</i></span>',
+                    itemId: 'hospitIcon',
+                    style: 'color:\'red\''
+                },
+                {
+                    xtype: 'component',
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">G</i></span>',
+                    itemId: 'freeIcon'
+                },
+                {
+                    xtype: 'component',
+                    shadow: true,
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">AO</i></span>',
+                    itemId: 'amoIcon'
+                },
+                {
+                    xtype: 'component',
+                    shadow: true,
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">AC</i></span>',
+                    itemId: 'amcIcon'
+                },
+                {
+                    xtype: 'component',
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">F.T</i></span>',
+                    itemId: 'ftIcon'
+                },
+                {
+                    xtype: 'component',
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">FS</i></span>',
+                    itemId: 'fsIcon'
+                },
+                {
+                    xtype: 'component',
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">FSE</i></span>',
+                    itemId: 'fseIcon'
+                },
+                {
+                    xtype: 'component',
+                    html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">U</i></span>',
+                    itemId: 'urgentIcon'
                 }
             ]
         }

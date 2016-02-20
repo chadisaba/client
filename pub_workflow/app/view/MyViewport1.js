@@ -35,6 +35,7 @@ Ext.define('MyApp.view.MyViewport1', {
             region: 'center',
             split: true,
             reference: 'display',
+            scrollable: 'true',
             layout: 'card',
             bodyBorder: true
         }

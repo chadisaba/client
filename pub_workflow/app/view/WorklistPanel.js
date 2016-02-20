@@ -27,6 +27,7 @@ Ext.define('MyApp.view.WorklistPanel', {
     viewModel: {
         type: 'worklistpanel'
     },
+    minWidth: 1500,
     layout: 'border',
     title: 'WorkList',
 
@@ -44,6 +45,7 @@ Ext.define('MyApp.view.WorklistPanel', {
         },
         {
             xtype: 'worklistgrid',
+            scrollable: true,
             region: 'center'
         }
     ]
