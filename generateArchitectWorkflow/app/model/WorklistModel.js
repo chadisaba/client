@@ -116,7 +116,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'visitComment'
         },
         {
-            name: '	visitIsBySocialCard'
+            name: 'visitIsBySocialCard'
         },
         {
             name: 'visitIsFree'
@@ -164,19 +164,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'visitId'
         },
         {
-            name: 'toDelete'
-        },
-        {
-            name: 'added'
-        },
-        {
-            name: 'modified'
-        },
-        {
-            name: 'notValid'
-        },
-        {
-            name: 'addedAndValidated'
+            name: 'lastUpdate'
         }
     ]
 });

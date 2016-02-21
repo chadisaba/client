@@ -9,12 +9,12 @@
         "designer|userAlias": "siteconfigwindow",
         "designer|userClassName": "SiteConfigWindow",
         "fdfdf": null,
-        "height": 400,
+        "height": 389,
         "iconCls": "fx-fa-list-alt",
         "modal": true,
         "siteConfig": null,
         "title": "Site config",
-        "width": 500
+        "width": 373
     },
     "name": "MyWindow",
     "configAlternates": {
@@ -39,17 +39,19 @@
         {
             "type": "linkedinstance",
             "reference": {
-                "name": "dockedItems",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "left",
+                "dock": null,
                 "header": false,
-                "height": 400,
-                "itemId": "siteConfigForm"
+                "height": null,
+                "itemId": "siteConfigForm",
+                "layout": "auto",
+                "width": null
             },
-            "name": "siteconfigform",
+            "name": "siteconfigform1",
             "designerId": "ca8f78ef-4b8a-49ef-adc8-ec3d1f3c98bc",
             "masterInstanceId": "6c4c0da8-2f8d-4a3d-8218-2ec089ab1286",
             "cn": [
@@ -72,6 +74,48 @@
                     },
                     "name": "onFormAfterRender",
                     "designerId": "7f4b1756-059c-4ccd-ab26-667ed1e49418"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form",
+                            "values"
+                        ],
+                        "fn": "onFormValidateEvent",
+                        "implHandler": [
+                            "var siteConfig=this.getView().siteConfig;",
+                            "siteConfigModel=Ext.create('MyApp.model.SiteConfigModel',values);",
+                            "this.fireViewEvent('validateEvent',siteConfigModel);"
+                        ],
+                        "name": "validateEvent",
+                        "scope": "me"
+                    },
+                    "name": "onFormValidateEvent",
+                    "designerId": "8ceb402c-d9b0-4cff-9ce1-76af99436a24"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form"
+                        ],
+                        "fn": "onFormCancelEvent",
+                        "name": "cancelEvent",
+                        "scope": "me"
+                    },
+                    "name": "onFormCancelEvent",
+                    "designerId": "8771813d-fae3-42e1-b413-0b7b4e3a18c4"
                 }
             ]
         }

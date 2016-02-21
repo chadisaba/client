@@ -48,6 +48,7 @@
                 "layout|region": "center",
                 "layout|split": true,
                 "reference": "display",
+                "scrollable": "true",
                 "title": null
             },
             "name": "MyPanel3",

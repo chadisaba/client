@@ -28,21 +28,22 @@ Ext.define('MyApp.view.SiteConfigWindow', {
     viewModel: {
         type: 'siteconfigwindow'
     },
-    height: 400,
-    width: 500,
+    height: 389,
+    width: 373,
     iconCls: 'fx-fa-list-alt',
     title: 'Site config',
     modal: true,
 
-    dockedItems: [
+    items: [
         {
             xtype: 'siteconfigform',
-            height: 400,
             itemId: 'siteConfigForm',
+            layout: 'auto',
             header: false,
-            dock: 'left',
             listeners: {
-                afterrender: 'onFormAfterRender'
+                afterrender: 'onFormAfterRender',
+                validateEvent: 'onFormValidateEvent',
+                cancelEvent: 'onFormCancelEvent'
             }
         }
     ]

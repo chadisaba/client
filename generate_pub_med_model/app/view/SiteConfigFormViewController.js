@@ -15,5 +15,21 @@
 
 Ext.define('MyApp.view.SiteConfigFormViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.siteconfigform'
+    alias: 'controller.siteconfigform',
+
+    onCancelBtnClick: function(button, e, eOpts) {
+        this.fireViewEvent('cancelEvent');
+    },
+
+    onValidateBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var form=me.getView();
+        var valuesObject=form.getValues();
+
+        if(form.isDirty( ))// un élement a été changé
+        valuesObject.modified=true;
+
+        this.fireViewEvent('validateEvent',valuesObject);
+    }
+
 });

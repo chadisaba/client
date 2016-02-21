@@ -10,6 +10,8 @@
         "designer|userClassName": "WorklistPanel",
         "height": null,
         "layout": "border",
+        "minWidth": 1500,
+        "scrollable": null,
         "title": "WorkList",
         "width": null
     },
@@ -29,7 +31,6 @@
                 "animCollapse": false,
                 "collapsed": true,
                 "collapsible": true,
-                "hideCollapseTool": false,
                 "layout|collapseMode": "header",
                 "layout|region": "west",
                 "layout|split": true,
@@ -51,7 +52,8 @@
                 "layout|region": "center",
                 "maxWidth": null,
                 "minWidth": null,
-                "scrollable": null
+                "scrollable": true,
+                "width": null
             },
             "name": "worklistgrid",
             "designerId": "d46edd4c-a145-423c-94c3-63e4fb8f1a2c",

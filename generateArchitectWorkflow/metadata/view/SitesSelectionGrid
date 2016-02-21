@@ -12,7 +12,7 @@
         "store": [
             "{SitesSelectionStore}"
         ],
-        "title": "Sites filter",
+        "title": "Filtre des sites",
         "width": 400
     },
     "name": "MyGridPanel",
@@ -32,7 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "siteCode",
-                "text": "Site"
+                "text": "Tous"
             },
             "name": "MyColumn",
             "designerId": "6551d52c-9409-4571-ab7c-ebc661c87726"

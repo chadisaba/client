@@ -31,7 +31,7 @@ Ext.define('MyApp.view.SitesSelectionGrid', {
     },
     height: 250,
     width: 400,
-    title: 'Sites filter',
+    title: 'Filtre des sites',
 
     bind: {
         store: '{SitesSelectionStore}'
@@ -40,7 +40,7 @@ Ext.define('MyApp.view.SitesSelectionGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'siteCode',
-            text: 'Site'
+            text: 'Tous'
         }
     ],
     selModel: {

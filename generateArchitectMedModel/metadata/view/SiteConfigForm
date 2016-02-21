@@ -10,10 +10,10 @@
         "container|align": "center",
         "designer|userAlias": "siteconfigform",
         "designer|userClassName": "SiteConfigForm",
-        "height": 315,
+        "height": null,
         "layout": "vbox",
         "title": "Site config Form",
-        "width": 500
+        "width": null
     },
     "name": "MyForm",
     "designerId": "6c4c0da8-2f8d-4a3d-8218-2ec089ab1286",
@@ -148,6 +148,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "iconCls": "fa fa-times",
+                        "itemId": "cancelBtn",
                         "layout|flex": null,
                         "style": "color:red",
                         "text": "Annuler"
@@ -156,20 +157,27 @@
                     "configAlternates": {
                         "style": "string"
                     },
-                    "designerId": "5cff5d14-1f69-424a-ae67-346e6ca37638"
-                },
-                {
-                    "type": "Ext.toolbar.Separator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
-                    },
-                    "name": "MySeparator",
-                    "designerId": "d50a790c-0af8-41b4-9d10-233dd983972a"
+                    "designerId": "5cff5d14-1f69-424a-ae67-346e6ca37638",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCancelBtnClick",
+                                "implHandler": [
+                                    "this.fireViewEvent('cancelEvent');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onCancelBtnClick",
+                            "designerId": "dcd349f3-0e21-4995-b03c-cbfc656c31d5"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -180,6 +188,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "iconCls": "fa fa-check",
+                        "itemId": "validateBtn",
                         "layout|flex": null,
                         "style": "color:green",
                         "text": "Valier"
@@ -188,7 +197,34 @@
                     "configAlternates": {
                         "style": "string"
                     },
-                    "designerId": "f7fb161b-40bd-4a05-9d02-5dd02af3c673"
+                    "designerId": "f7fb161b-40bd-4a05-9d02-5dd02af3c673",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onValidateBtnClick",
+                                "implHandler": [
+                                    "var me=this;",
+                                    "var form=me.getView();",
+                                    "var valuesObject=form.getValues();",
+                                    "",
+                                    "if(form.isDirty( ))// un élement a été changé",
+                                    "    valuesObject.modified=true;",
+                                    "    ",
+                                    "this.fireViewEvent('validateEvent',valuesObject);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onValidateBtnClick",
+                            "designerId": "3b20351c-c4c8-454a-9b38-3d3b3828ad1f"
+                        }
+                    ]
                 }
             ]
         }

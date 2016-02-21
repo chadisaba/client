@@ -21,6 +21,10 @@ Ext.define('MyApp.view.WorklistGridViewController', {
         'MyApp.view.override.WorklistGridViewController'
     ],
 
+    socialCardRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     infoVisitRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
@@ -93,10 +97,6 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
-    socialCardRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-    },
-
     visitIsFreeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
@@ -106,6 +106,10 @@ Ext.define('MyApp.view.WorklistGridViewController', {
     },
 
     visitIsUrgentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    invoiceTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
 
@@ -127,6 +131,14 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     onWorklistGridIdAfterRender: function(component, eOpts) {
 
+
+    },
+
+    onWorklistGridIdSelectionChange: function(model, selected, eOpts) {
+
+    },
+
+    onWorklistGridIdAfterRender: function(component, eOpts) {
 
     }
 

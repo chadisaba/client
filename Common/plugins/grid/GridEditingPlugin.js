@@ -540,8 +540,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		
 							if(errors.length > 0){   
 							    Ext.MessageBox.show({
-							        title : '${saveError}',
-							        msg : '${saveErrorMsg}'+errors,
+							        title : 'Erreur',
+							        msg : errors,
 							        icon : Ext.MessageBox.WARNING,
 							        buttons : Ext.MessageBox.OK
 							    });

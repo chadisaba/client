@@ -71,6 +71,9 @@ Ext.define('MyApp.model.SiteConfigModel', {
             name: 'notValid'
         },
         {
+            name: 'notValidTip'
+        },
+        {
             name: 'addedAndValidated'
         }
     ]

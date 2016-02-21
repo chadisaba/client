@@ -88,6 +88,8 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         params.comment=comment;
         console.log(dataToBeSaved);
 
+
+
         var result=[];
         Server.CommonQueries.saveRecords(params,
             function(_result){
@@ -107,17 +109,40 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
     onSiteGridIdAddItem: function() {
 
+        // get the last siteId
+        var lastSiteId=0;
+        var siteStore=this.getViewModel().getStore('SiteStore');
+        siteStore.each(function(siteRec){
+           if(siteRec.get('siteId')>lastSiteId)
+               lastSiteId=siteRec.get('siteId');
+        });
         var rec = new MyApp.model.SiteModel({
+            siteId: lastSiteId+1,
             added: true,
             modified: false,
             addedAndValidated:false,
-            toDelete: false
+            toDelete: false,
+            notValid: true,
+            notValidTip:'conigurer le sitef'
+
         });
         Utility.grid.addItem(this.getView(),rec);
     },
 
     onSiteGridIdDeleteItem: function() {
         Utility.grid.deleteItem(this.getView());
+        // delete siteConfig record corresponding to the deleted sites
+        var siteConfigStore=this.getViewModel().getStore('SiteConfigStore');
+        var siteStore=this.getViewModel().getStore('SiteStore');
+        var rec;
+        siteConfigStore.each(function(siteConfigRec)
+        {
+            rec=siteStore.find('siteId',siteConfigRec.get('siteId'));
+            if(!rec)
+                siteConfigStore.remove(siteConfigRec);
+        })
+        var selectedSiteConfig=siteConfigStore.findRecord('siteId', record.get('siteId'));
+
     },
 
     onSiteGridIdModifyItem: function() {
@@ -181,10 +206,9 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                     callback(res.data[0]);
                     if(res.data[1].length>0)
                         me.getViewModel().getStore('SiteConfigStore').loadData(res.data[1]);
-
                 }
                 else{
-                    console.log(res.msg);
+                    console.error(res.msg);
                 }
             },me
         );
@@ -194,27 +218,39 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
         var me=this;
         var selectedSiteConfig;
-
+        var selectedSite;
+        selectedSite=record;
         var siteConfigStore=me.getViewModel().getStore('SiteConfigStore');
 
-        selectedSiteConfig =Ext.create('MyApp.model.SiteConfigModel',
-            {
-                siteId:record.get('siteId')
+        selectedSiteConfig=siteConfigStore.findRecord('siteId', record.get('siteId'));
+        if(!selectedSiteConfig){
+            selectedSiteConfig =Ext.create('MyApp.model.SiteConfigModel',
+                {
+                    siteId:record.get('siteId')
 
-            });
-
-        siteConfigStore.each(function(siteConfig)
-        {
-            if(siteConfig.get('siteId')==record.get('siteId')){
-                selectedSiteConfig=siteConfig;
-            }
-
-        });
-
+                });
+            siteConfigStore.add(selectedSiteConfig);
+        }
 
         var win= Ext.create('MyApp.view.SiteConfigWindow',{
             siteConfig:selectedSiteConfig,
-            title: "Configuration du  site "+record.get('siteCode')
+            title: "Configuration du  site "+record.get('siteCode'),
+            listeners: {
+                validateEvent:function (comp,record)
+                {
+                    siteConfigStore.each(function(siteConfig){
+                        if(siteConfig.get('siteId')==record.get('siteId')){
+                            siteConfigStore.remove(siteConfig);
+                            siteConfigStore.add(record);
+                            selectedSite.set('notValid',false);
+                            //console.log(siteConfigStore.getCount());
+                        }
+
+                    });
+
+                    win.close();
+                }
+            }
         });
         win.show();
 

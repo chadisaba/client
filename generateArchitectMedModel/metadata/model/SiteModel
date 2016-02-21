@@ -285,6 +285,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "siteConfigIsModified"
+            },
+            "name": "MyField11",
+            "designerId": "57fd037f-e689-49c9-86d7-e7ace4e0de8e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "notValidTip"
+            },
+            "name": "MyField10",
+            "designerId": "6752144e-8efd-454e-ae9b-41ce42a95dea"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "addedAndValidated"
             },
             "name": "MyField31",

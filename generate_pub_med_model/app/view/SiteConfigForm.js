@@ -19,19 +19,18 @@ Ext.define('MyApp.view.SiteConfigForm', {
 
     requires: [
         'MyApp.view.SiteConfigFormViewModel',
+        'MyApp.view.SiteConfigFormViewController',
         'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
-        'Ext.button.Button',
-        'Ext.toolbar.Separator'
+        'Ext.button.Button'
     ],
 
+    controller: 'siteconfigform',
     viewModel: {
         type: 'siteconfigform'
     },
-    height: 315,
-    width: 500,
     bodyPadding: 10,
     title: 'Site config Form',
 
@@ -84,18 +83,23 @@ Ext.define('MyApp.view.SiteConfigForm', {
                 },
                 {
                     xtype: 'button',
+                    itemId: 'cancelBtn',
                     style: 'color:red',
                     iconCls: 'fa fa-times',
-                    text: 'Annuler'
-                },
-                {
-                    xtype: 'tbseparator'
+                    text: 'Annuler',
+                    listeners: {
+                        click: 'onCancelBtnClick'
+                    }
                 },
                 {
                     xtype: 'button',
+                    itemId: 'validateBtn',
                     style: 'color:green',
                     iconCls: 'fa fa-check',
-                    text: 'Valier'
+                    text: 'Valier',
+                    listeners: {
+                        click: 'onValidateBtnClick'
+                    }
                 }
             ]
         }

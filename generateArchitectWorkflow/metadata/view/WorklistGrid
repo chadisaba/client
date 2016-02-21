@@ -10,7 +10,7 @@
         "designer|userClassName": "WorklistGrid",
         "forceFit": true,
         "itemId": "worklistGridId",
-        "minWidth": 1600,
+        "minWidth": null,
         "reference": "worklistGridRef",
         "resizable": [
             "false"
@@ -41,7 +41,8 @@
             "userConfig": {
                 "dataIndex": "siteCode",
                 "minWidth": 50,
-                "text": "Site"
+                "text": "Site",
+                "width": 50
             },
             "name": "MysiteNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik"
@@ -54,8 +55,49 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "visitIsBySocialCard",
+                "minWidth": null,
+                "text": "Vitale"
+            },
+            "name": "My\tvisitIsBySocialCardCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "socialCardRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "f27cf00c-c949-48d3-a64a-1e88a9622467"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "worklistVisitInfo",
-                "minWidth": 40,
+                "minWidth": null,
                 "text": "Visite."
             },
             "name": "My\tworklistVisitInfoCol",
@@ -98,7 +140,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistDate",
-                "minWidth": 100,
+                "minWidth": null,
                 "scrollable": true,
                 "text": "Date",
                 "width": ""
@@ -146,7 +188,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistPatientInfo",
-                "minWidth": 40,
+                "minWidth": null,
                 "text": "Pat."
             },
             "name": "MyworklistPatientInfoCol",
@@ -189,8 +231,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "patientLName",
-                "minWidth": 100,
-                "text": "Patient"
+                "minWidth": null,
+                "text": "Patient",
+                "width": 150
             },
             "name": "MypatientLastNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi",
@@ -232,8 +275,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "patientBirthday",
-                "minWidth": 100,
-                "text": "Birthday"
+                "minWidth": null,
+                "text": "Naissance"
             },
             "name": "MypatientBirthDayCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe",
@@ -273,7 +316,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistStudies",
-                "minWidth": 150,
+                "minWidth": null,
                 "text": "Studies",
                 "width": null
             },
@@ -315,7 +358,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistDoctor",
-                "minWidth": 70,
+                "minWidth": null,
                 "text": "Méd."
             },
             "name": "MyworklistMedRefCol",
@@ -330,7 +373,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistMedPresc",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": "consultant Ph."
             },
             "name": "MyworklistMedPrescCol",
@@ -371,7 +414,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistMedRecipient",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": "Dr. Recipient"
             },
             "name": "MyworklistMedRecipientCol",
@@ -412,7 +455,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistDictationsStatus",
-                "minWidth": 60,
+                "minWidth": null,
                 "text": "Dict."
             },
             "name": "MyColumn1",
@@ -455,7 +498,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistLastCrStatus",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "C.R"
             },
             "name": "MyworklistCrsStatusCol",
@@ -498,7 +541,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistLastDictationStatus",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "Cot."
             },
             "name": "MyworklistCotationStatusCol",
@@ -541,7 +584,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFTNum",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "F.T"
             },
             "name": "MyworklistFTNumCol",
@@ -584,7 +627,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistVisitComment",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": "Comment"
             },
             "name": "MyworklistVisitCommentCol",
@@ -627,7 +670,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistPatientDu",
-                "minWidth": 70,
+                "minWidth": null,
                 "text": "Du .P"
             },
             "name": "MyworklistPatientDuCol",
@@ -668,7 +711,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFtDu",
-                "minWidth": 70,
+                "minWidth": null,
                 "text": "Du. V"
             },
             "name": "MyworklistFtDuCol",
@@ -709,7 +752,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitIsDone",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "<i class=\"fa fa-lock\"></i>"
             },
             "name": "MyvisitIsDoneCol",
@@ -752,7 +795,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklisCrEmailedTo",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "<i class=\"fa fa-at\"></i>"
             },
             "name": "MyworklisCrEmailedToCol",
@@ -793,7 +836,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklisCrMailedTo",
-                "minWidth": 50,
+                "minWidth": null,
                 "text": "<i class=\"fa fa-envelope-o\"></i>"
             },
             "name": "MyworklisCrMailedToCol",
@@ -833,49 +876,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "\tvisitIsBySocialCard",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "My\tvisitIsBySocialCardCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "socialCardRenderer",
-                        "fn": "renderer",
-                        "implHandler": null
-                    },
-                    "name": "renderer",
-                    "designerId": "f27cf00c-c949-48d3-a64a-1e88a9622467"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "visitIsFree",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitIsFreeCol",
@@ -916,7 +918,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitIsHospitalized",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitIsHospitalizedCol",
@@ -957,7 +959,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitIsUrgent",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitIsUrgentCol",
@@ -998,7 +1000,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitHospitVisitNumber",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": "N.Visite"
             },
             "name": "MyvisitHospitVisitNumberCol",
@@ -1012,57 +1014,38 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "visitIsAmo",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MyvisitIsAmoCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-hga7ui1gs7xd"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "visitIsAmc",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MyvisitIsAmcCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-df1pi8n1vr9n"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "visitPds",
-                "minWidth": 100,
-                "text": ""
-            },
-            "name": "MyvisitPdsCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-3u7n1b5jbar3"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "visitInvoiceType",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitInvoiceTypeCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-9tvwdiexrk9b"
+            "designerId": "7c6bec59-5c6a-4872-9cec-9tvwdiexrk9b",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "invoiceTypeRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "518ca361-f295-4237-8412-5f471ca4cec6"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -1073,7 +1056,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitFtFor",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitFtForCol",
@@ -1088,7 +1071,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitPEC",
-                "minWidth": 100,
+                "minWidth": null,
                 "text": ""
             },
             "name": "MyvisitPECCol",
@@ -1213,11 +1196,193 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top"
+                "dock": "top",
+                "height": 40
             },
             "name": "MyToolbar",
             "designerId": "a043d579-af23-4d9d-896a-5e1b4704821e",
             "cn": [
+                {
+                    "type": "Ext.button.Split",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "actionsBtnMenu",
+                        "layout|flex": null,
+                        "text": "Actions"
+                    },
+                    "name": "MySplitButton",
+                    "designerId": "0970033b-8ebf-44ca-aa2b-6a125440bd5a",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null
+                            },
+                            "name": "MyMenu",
+                            "designerId": "4422ee9e-fec7-4209-b8f5-3ddae0389352",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "F.S Cerfa"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "ac5e8516-e8bf-44f3-a8cd-09bda751ae2e"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "F.T Cerfa"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "43b33cfe-329d-4c15-98da-7f2010c1ee0e"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Etiquette"
+                                    },
+                                    "name": "MyMenuItem2",
+                                    "designerId": "2a4aa723-aea7-45d7-94fb-ecb9aa4dffef"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Fiche suiveuse"
+                                    },
+                                    "name": "MyMenuItem3",
+                                    "designerId": "5a64b136-573d-496f-abf3-ad9c72583278"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Split",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "printBtnMenu",
+                        "layout|flex": null,
+                        "text": "Imprimer"
+                    },
+                    "name": "MySplitButton1",
+                    "designerId": "75927fc8-ffd0-4d9a-b1fd-3955f448ebad",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null
+                            },
+                            "name": "MyMenu",
+                            "designerId": "7d38168c-481d-4997-a50d-33e21b835c43",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "F.S Cerfa"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "dc188fbc-b7de-4036-924a-42dd4e732288"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "F.T Cerfa"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "ac4389b5-3b1f-429d-a590-b9c8411189ed"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Etiquette"
+                                    },
+                                    "name": "MyMenuItem2",
+                                    "designerId": "d3943736-ae01-4fb9-99d7-207c45ae40eb"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Fiche suiveuse"
+                                    },
+                                    "name": "MyMenuItem3",
+                                    "designerId": "587e7c50-b768-4ca2-a2dc-2aa3b186b74b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator",
+                    "designerId": "a7372db5-7fca-45a0-a10f-781c7890cd98"
+                },
                 {
                     "type": "Ext.Component",
                     "reference": {
@@ -1226,15 +1391,177 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "cls": [
-                            "fa fa-at"
-                        ],
-                        "layout|flex": null
+                        "html": " <span title=\"Hospitalisé\" class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">H</i></span>",
+                        "itemId": "hospitIcon",
+                        "layout|flex": null,
+                        "style": "color:'red'"
                     },
                     "name": "MyComponent",
+                    "configAlternates": {
+                        "style": "string",
+                        "html": "string"
+                    },
                     "designerId": "77220502-c254-4267-8a58-7a6e185b75d1"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">G</i></span>",
+                        "itemId": "freeIcon",
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent1",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "2e190d29-1146-4007-929b-44eb1bb84825"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">AO</i></span>",
+                        "itemId": "amoIcon",
+                        "layout|flex": null,
+                        "shadow": true
+                    },
+                    "name": "MyComponent2",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "6d5cc0cb-25f8-47dc-90b9-9081230591aa"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">AC</i></span>",
+                        "itemId": "amcIcon",
+                        "layout|flex": null,
+                        "shadow": true
+                    },
+                    "name": "MyComponent3",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "c7bd8bc0-7d8b-4e3c-a385-d5d5bb09a429"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">F.T</i></span>",
+                        "itemId": "ftIcon",
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent4",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "18fa6a0f-0c0d-4cd0-9239-1502f44b0fa1"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">FS</i></span>",
+                        "itemId": "fsIcon",
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent5",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "eb130e9e-71cc-4581-aade-1d8c80cbe701"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">FSE</i></span>",
+                        "itemId": "fseIcon",
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent6",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "c45a6cdd-b33d-4a85-bebf-5a9fbd068411"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": " <span class=\"fa-stack fa-lg\" style=\"font-size:10px;color:#204d74;cursor: help;\" >             <i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-inverse fa-stack-1x\">U</i></span>",
+                        "itemId": "urgentIcon",
+                        "layout|flex": null
+                    },
+                    "name": "MyComponent7",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "ce884174-9b24-40ef-b370-4961190279da"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorklistGridIdSelectionChange",
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdSelectionChange",
+            "designerId": "78f21e61-9408-4a11-b2e9-bccbeefa5156"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorklistGridIdAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdAfterRender",
+            "designerId": "fd1b6892-a2a2-4ae3-a524-5964f4f08860"
         }
     ]
 }

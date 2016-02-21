@@ -25,6 +25,16 @@ Ext.define('MyApp.view.SiteConfigWindowViewController', {
         var siteConfig=this.getView().siteConfig;
 
         component.loadRecord(siteConfig);
+    },
+
+    onFormValidateEvent: function(form, values) {
+        var siteConfig=this.getView().siteConfig;
+        siteConfigModel=Ext.create('MyApp.model.SiteConfigModel',values);
+        this.fireViewEvent('validateEvent',siteConfigModel);
+    },
+
+    onFormCancelEvent: function(form) {
+
     }
 
 });

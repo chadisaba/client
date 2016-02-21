@@ -10,7 +10,7 @@ Ext.define('MyApp.DirectAPI', {
 
 
     //Loading API
-    Loader.loadScriptsSync(['http://localhost:3000/directapi']);
+    Loader.loadScriptsSync([Connection.directApi]);
 
     var ns = Server.API;
 

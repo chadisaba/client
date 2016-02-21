@@ -18,8 +18,8 @@ Ext.define('Utility.grid', {
             }
         },
         beforeEdit: function (editor, context) {
-            editor.editor.floatingButtons.items.items[0].hide();
-            editor.editor.floatingButtons.items.items[1].hide();
+            /*editor.editor.floatingButtons.items.items[0].hide();
+            editor.editor.floatingButtons.items.items[1].hide();*/
 
             // Remove all added lines that are not valid if the editor moves to a line with added=false
             Ext.each(context.grid.store.query('added', true).items, function (record) {
