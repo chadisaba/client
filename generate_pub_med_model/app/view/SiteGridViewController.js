@@ -21,10 +21,6 @@ Ext.define('MyApp.view.SiteGridViewController', {
         'MyApp.view.override.SiteGridViewController'
     ],
 
-    onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
-
-    },
-
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

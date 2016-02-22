@@ -85,12 +85,12 @@
                     "userConfig": {
                         "designer|params": [
                             "form",
-                            "values"
+                            "rec"
                         ],
                         "fn": "onFormValidateEvent",
                         "implHandler": [
                             "var siteConfig=this.getView().siteConfig;",
-                            "siteConfigModel=Ext.create('MyApp.model.SiteConfigModel',values);",
+                            "siteConfigModel=rec;",
                             "this.fireViewEvent('validateEvent',siteConfigModel);"
                         ],
                         "name": "validateEvent",

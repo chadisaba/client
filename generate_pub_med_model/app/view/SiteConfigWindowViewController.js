@@ -27,9 +27,9 @@ Ext.define('MyApp.view.SiteConfigWindowViewController', {
         component.loadRecord(siteConfig);
     },
 
-    onFormValidateEvent: function(form, values) {
+    onFormValidateEvent: function(form, rec) {
         var siteConfig=this.getView().siteConfig;
-        siteConfigModel=Ext.create('MyApp.model.SiteConfigModel',values);
+        siteConfigModel=rec;
         this.fireViewEvent('validateEvent',siteConfigModel);
     },
 

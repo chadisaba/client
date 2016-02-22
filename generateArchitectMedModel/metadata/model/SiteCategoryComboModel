@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteCategoryId"
+                "name": "siteCategoryName"
             },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-cy85sb9nld6x"

@@ -22,10 +22,10 @@ Ext.define('MyApp.model.SiteCityIdComboModel', {
 
     fields: [
         {
-            name: 'siteCityIdId'
+            name: 'cityId'
         },
         {
-            name: 'siteCityId'
+            name: 'cityName'
         }
     ]
 });

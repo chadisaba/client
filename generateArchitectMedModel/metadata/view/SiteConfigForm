@@ -43,6 +43,51 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fieldLabel": "added",
+                "labelWidth": null,
+                "name": "added"
+            },
+            "name": "MyTextField9",
+            "designerId": "9fdf6d3d-84b8-4c1e-9b84-5e3a75a234c8"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "modified",
+                "labelWidth": null,
+                "name": "modified"
+            },
+            "name": "MyTextField10",
+            "designerId": "7734dda3-2177-4907-aeba-5b85048c5bc3"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Site config id",
+                "labelWidth": null,
+                "name": "siteConfigId"
+            },
+            "name": "MyTextField8",
+            "designerId": "87815a5d-1e80-46ba-8583-208febebf38a"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fieldLabel": "Start Hour",
                 "inputType": "time",
                 "labelWidth": null,
@@ -211,12 +256,13 @@
                                 "implHandler": [
                                     "var me=this;",
                                     "var form=me.getView();",
-                                    "var valuesObject=form.getValues();",
+                                    "form.updateRecord();",
+                                    "var record=form.getRecord();",
+                                    "   if(form.isDirty( ))// un élement a été changé",
+                                    "        record.set('modified',true);",
                                     "",
-                                    "if(form.isDirty( ))// un élement a été changé",
-                                    "    valuesObject.modified=true;",
-                                    "    ",
-                                    "this.fireViewEvent('validateEvent',valuesObject);"
+                                    "//var valuesObject=form.getValues();",
+                                    "this.fireViewEvent('validateEvent',record);"
                                 ],
                                 "name": "click",
                                 "scope": "me"

@@ -44,19 +44,22 @@ Ext.define('Utility.grid', {
         },
 
         edit: function (editor, context, columnsName) {
+            var record=context.record;
+            if(!record.get('added'))
+            {
+                var isModified = false;
+                columnsName.forEach(function (value) {
+                    if (record.isModified(value)) {
+                        isModified = true;
+                    }
+                });
+                if (isModified)
+                    record.set("modified", true);
+                else
+                    record.set("modified", false);
 
-            var isModified = false;
-            columnsName.forEach(function (value) {
-                if (context.record.isModified(value)) {
-                    isModified = true;
-                }
-            });
-            if (isModified)
-                context.record.set("modified", true);
-            else
-                context.record.set("modified", false);
-
-            context.grid.getPlugin('gridediting').checkIfModifications(context.grid);
+                context.grid.getPlugin('gridediting').checkIfModifications(context.grid);
+            }
         },
 
         cancelEdit: function (editor, context) {

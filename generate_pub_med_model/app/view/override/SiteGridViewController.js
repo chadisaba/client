@@ -8,38 +8,17 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
     onSiteGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
 
-
-
-        /*  var me=this;
-         var params={
-         id:50,
-         table:"GROUP"
-         };
-         var result=[];
-         Server.Settings.StudyCat.read1(params,
-         function(res){
-         if(res.success)
-         result=res.data;
-         me.getViewModel().getStore('StudiesCatGridStore').loadData(result);
-
-         },me
-         );
-
-         var typeResult=[
-         {'typeId':'5','type':'break'},
-         {'typeId':'6','type':'berline'}
-         ];
-
-         var groupComboStore=this.getViewModel().getStore('GroupIdComboStore');
-         var catComboStore=this.getViewModel().getStore('SiteCategoryComboStore');
-         var siteCityComboStore=this.getViewModel().getStore('SiteCityIdComboStore');
-         */
         var me=this;
+        var viewModel = me.getViewModel();
+
+        // site group store
+
         var params={
             id:50,
             table:"SITE_GROUP"
         };
-        var groupComboStore=this.getViewModel().getStore('GroupIdComboStore');
+
+        var groupComboStore=viewModel.getStore('GroupIdComboStore');
         var groupData=[];
         Server.CommonQueries.read(params,
             function(res){
@@ -53,6 +32,31 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
             },me
         );
 
+
+        // categorie store
+        var categorieStore=viewModel.getStore('SiteCategoryComboStore');
+        categorieStore.loadData(ComboData.categorieSite);
+
+
+        // City store
+        var params={
+            id:50,
+            table:"CITY"
+        };
+
+        var cityData=[];
+        var cityStore=viewModel.getStore('SiteCityIdComboStore');
+        Server.CommonQueries.read(params,
+            function(res){
+                if(res.success){
+                    cityData=res.data;
+                    cityStore.loadData(cityData);
+                }
+                else{
+                    console.log(res.msg);
+                }
+            },me
+        );
 
         this.getResultArray(function(data){
             Utility.grid.loadGrid(component,data,component.getViewModel().getStore('SiteStore'));
@@ -188,7 +192,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
     },
 
     onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
-        alert(combo.getValue());
+       // alert(combo.getValue());
     },
 
     getResultArray:function(callback)
@@ -243,17 +247,14 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                     siteConfigStore.each(function(siteConfig){
                         if(siteConfig.get('siteId')==record.get('siteId')){
                             siteConfigStore.remove(siteConfig);
-
-                            if(!record.get('added'))
-                                record.set('modified',true);
-
                             siteConfigStore.add(record);
-                            selectedSite.set('notValid',false);
-                            selectedSite.set('modified',true);
-                            selectedSite.set('siteConfigIsModified',true);
-                            me.getView().getPlugin('gridediting').checkIfModifications();
                             //console.log(siteConfigStore.getCount());
                         }
+                        selectedSite.set('notValid',false);
+                        selectedSite.set('siteConfigIsModified',true);
+                        if(!selectedSite.get('added'))
+                            selectedSite.set('modified',true);
+                        me.getView().getPlugin('gridediting').checkIfModifications();
 
                     });
 

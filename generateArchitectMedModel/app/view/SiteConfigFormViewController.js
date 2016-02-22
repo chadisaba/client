@@ -24,12 +24,13 @@ Ext.define('MyApp.view.SiteConfigFormViewController', {
     onValidateBtnClick: function(button, e, eOpts) {
         var me=this;
         var form=me.getView();
-        var valuesObject=form.getValues();
-
+        form.updateRecord();
+        var record=form.getRecord();
         if(form.isDirty( ))// un élement a été changé
-        valuesObject.modified=true;
+        record.set('modified',true);
 
-        this.fireViewEvent('validateEvent',valuesObject);
+        //var valuesObject=form.getValues();
+        this.fireViewEvent('validateEvent',record);
     }
 
 });

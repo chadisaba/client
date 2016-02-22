@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteCityIdId"
+                "name": "cityId"
             },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-vmuqfhpisuyl"
@@ -32,7 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteCityId"
+                "name": "cityName"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-xmdqfn4jvlk7"

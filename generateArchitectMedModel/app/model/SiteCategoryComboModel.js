@@ -22,7 +22,7 @@ Ext.define('MyApp.model.SiteCategoryComboModel', {
 
     fields: [
         {
-            name: 'siteCategoryId'
+            name: 'siteCategoryName'
         },
         {
             name: 'siteCategory'

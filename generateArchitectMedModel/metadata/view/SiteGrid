@@ -35,7 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteGroupId",
+                "dataIndex": "siteName",
                 "text": "Name"
             },
             "name": "MysiteNameCol",
@@ -151,7 +151,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteGroupName",
+                "dataIndex": "siteGroupId",
                 "text": "Group"
             },
             "name": "MygroupIdCol",
@@ -174,30 +174,13 @@
                         "store": [
                             "{GroupIdComboStore}"
                         ],
-                        "valueField": "siteGroupName"
+                        "valueField": "siteGroupId"
                     },
                     "name": "MygroupIdComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-td96vegb155k",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onGroupIdComboBoxEditorItemIdSelect",
-                                "name": "select",
-                                "scope": "me"
-                            },
-                            "name": "onGroupIdComboBoxEditorItemIdSelect",
-                            "designerId": "809406f6-fd43-40a5-9de6-1b0b7926a403"
-                        }
-                    ]
+                    "designerId": "ade60fcf-b3b2-4bae-td96vegb155k"
                 }
             ]
         },
@@ -223,7 +206,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "siteCategory",
+                        "allowBlank": false,
+                        "displayField": "siteCategoryName",
                         "forceSelection": true,
                         "itemId": "siteCategoryComboBoxEditorItemId",
                         "queryMode": "local",
@@ -256,7 +240,7 @@
             "designerId": "7c6bec59-5c6a-4872-9cec-v49bnrv817tv",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.TextArea",
                     "reference": {
                         "name": "editor",
                         "type": "object"
@@ -265,7 +249,7 @@
                     "userConfig": {
                         "itemId": "siteAddress1TextFieldItemId"
                     },
-                    "name": "MysiteAddress1TextField",
+                    "name": "MyTextArea",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-2pjtget6b3jf"
                 }
             ]
@@ -285,7 +269,7 @@
             "designerId": "7c6bec59-5c6a-4872-9cec-7dbw12eskaw5",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.TextArea",
                     "reference": {
                         "name": "editor",
                         "type": "object"
@@ -294,7 +278,7 @@
                     "userConfig": {
                         "itemId": "siteAddress2TextFieldItemId"
                     },
-                    "name": "MysiteAddress2TextField",
+                    "name": "MyTextArea1",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-eeph7ja2v6p3"
                 }
             ]
@@ -350,7 +334,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "siteCityId",
+                        "displayField": "cityName",
                         "forceSelection": true,
                         "itemId": "siteCityIdComboBoxEditorItemId",
                         "queryMode": "local",
@@ -358,7 +342,7 @@
                         "store": [
                             "{SiteCityIdComboStore}"
                         ],
-                        "valueField": "siteCityId"
+                        "valueField": "cityId"
                     },
                     "name": "MysiteCityIdComboBox",
                     "configAlternates": {

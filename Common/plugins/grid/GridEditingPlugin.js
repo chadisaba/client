@@ -549,15 +549,15 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 							    //Reporter Comment pop-up
 							    var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false, closable:false});
 							    if (me.withValidation){
-								    promptWin.setTitle('${gridEdit.submitTitle}');
+								    promptWin.setTitle('Commentaire');
 								    promptWin.down('#confirmMsg').setText('${gridEdit.submitMsg}');
 							    } else {
 							    	promptWin.setTitle('${gridEdit.applyChTitle}');
-								    promptWin.down('#confirmMsg').setText('${gridEdit.applyChMsg}');
+								    promptWin.down('#confirmMsg').setText('Appliquer les modifications?');
 							    }
 							    
-							    promptWin.query('button')[0].setText('${yes}');
-							    promptWin.query('button')[1].setText('${no}');
+							    promptWin.query('button')[0].setText('Oui');
+							    promptWin.query('button')[1].setText('Non');
 							    
 							    promptWin.down('#description').setText('${gridEdit.comment}');
 							    promptWin.callbackFunction = function (choice,comment){

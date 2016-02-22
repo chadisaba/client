@@ -46,6 +46,21 @@ Ext.define('MyApp.view.SiteConfigForm', {
         },
         {
             xtype: 'textfield',
+            fieldLabel: 'added',
+            name: 'added'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'modified',
+            name: 'modified'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Site config id',
+            name: 'siteConfigId'
+        },
+        {
+            xtype: 'textfield',
             fieldLabel: 'Start Hour',
             name: 'siteConfigStartHour',
             inputType: 'time'

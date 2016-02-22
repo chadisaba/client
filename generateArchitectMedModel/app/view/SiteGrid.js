@@ -21,6 +21,7 @@ Ext.define('MyApp.view.SiteGrid', {
         'MyApp.view.SiteGridViewModel',
         'MyApp.view.SiteGridViewController',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.TextArea',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
@@ -44,7 +45,7 @@ Ext.define('MyApp.view.SiteGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteGroupId',
+            dataIndex: 'siteName',
             text: 'Name',
             editor: {
                 xtype: 'textfield',
@@ -80,7 +81,7 @@ Ext.define('MyApp.view.SiteGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteGroupName',
+            dataIndex: 'siteGroupId',
             text: 'Group',
             editor: {
                 xtype: 'combobox',
@@ -90,12 +91,9 @@ Ext.define('MyApp.view.SiteGrid', {
                 displayField: 'siteGroupName',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'siteGroupName',
+                valueField: 'siteGroupId',
                 bind: {
                     store: '{GroupIdComboStore}'
-                },
-                listeners: {
-                    select: 'onGroupIdComboBoxEditorItemIdSelect'
                 }
             }
         },
@@ -106,8 +104,9 @@ Ext.define('MyApp.view.SiteGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteCategoryComboBoxEditorItemId',
+                allowBlank: false,
                 selectOnFocus: true,
-                displayField: 'siteCategory',
+                displayField: 'siteCategoryName',
                 forceSelection: true,
                 queryMode: 'local',
                 valueField: 'siteCategory',
@@ -121,7 +120,7 @@ Ext.define('MyApp.view.SiteGrid', {
             dataIndex: 'siteAddress1',
             text: 'Address 1',
             editor: {
-                xtype: 'textfield',
+                xtype: 'textareafield',
                 itemId: 'siteAddress1TextFieldItemId'
             }
         },
@@ -130,7 +129,7 @@ Ext.define('MyApp.view.SiteGrid', {
             dataIndex: 'siteAddress2',
             text: 'Address 2',
             editor: {
-                xtype: 'textfield',
+                xtype: 'textareafield',
                 itemId: 'siteAddress2TextFieldItemId'
             }
         },
@@ -151,10 +150,10 @@ Ext.define('MyApp.view.SiteGrid', {
                 xtype: 'combobox',
                 itemId: 'siteCityIdComboBoxEditorItemId',
                 selectOnFocus: true,
-                displayField: 'siteCityId',
+                displayField: 'cityName',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'siteCityId',
+                valueField: 'cityId',
                 bind: {
                     store: '{SiteCityIdComboStore}'
                 }
