@@ -17,8 +17,6 @@
 Ext.Loader.setConfig({
 
 });
-
-
 Ext.application({
 
     requires: [
@@ -40,6 +38,7 @@ Ext.application({
     name: 'MyApp',
 
     launch: function() {
+        Ext.state.Manager.setProvider(Ext.create('Ext.state.LocalStorageProvider'));
         Ext.create('MyApp.view.MyViewport1');
     }
 
