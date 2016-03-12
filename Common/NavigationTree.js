@@ -19,111 +19,92 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Test Association generator',
-                iconCls: 'x-fa fa-search',
+                iconCls: 'x-fa fa-cogs',
+                expanded: false,
+                selectable: false,
+                text: 'Paramétrage',
+                children: [
+                    {
+                        text: 'Sites',
+                        iconCls: 'x-fa fa-leanpub',
+                        expanded: false,
+                        selectable: false,
 
-                viewType: 'associateviewassociatepanel',
-                leaf: true
+                        children: [
+                            {
+                                text: 'Sites',
+                                iconCls: 'x-fa fa-building',
+                                viewType: 'sitegrid',
+                                routeId: 'sitegrid', // routeId defaults to viewType
+                                leaf: true
+                            },
+
+                            {
+                                text: 'Groupes',
+                                iconCls: 'x-fa fa-building',
+                                viewType: 'sitegroupgrid',
+                                routeId: 'sitegroupgrid', // routeId defaults to viewType
+                                leaf: true
+                            }
+
+
+                        ]
+                    },
+                    {
+                        text: 'Appareils',
+                        iconCls: 'x-fa fa-leanpub',
+                        expanded: false,
+                        selectable: false,
+
+                        children: [
+                            {
+                                text: 'Appareils',
+                                iconCls: 'x-fa fa fa-plug',
+                                viewType: 'devicegrid',
+                                routeId: 'devicegrid', // routeId defaults to viewType
+                                leaf: true
+                            },
+
+                            {
+                                text: 'Types',
+                                iconCls: 'x-fa fa-file-o',
+                                viewType: 'sitegroupgrid',
+                                routeId: 'sitegroupgrid', // routeId defaults to viewType
+                                leaf: true
+                            },
+                            {
+                                text: 'Modalité',
+                                iconCls: 'x-fa fa-file-o',
+                                viewType: 'sitegroupgrid',
+                                routeId: 'sitegroupgrid', // routeId defaults to viewType
+                                leaf: true
+                            }
+
+                        ]
+                    }
+
+                    ]
+
             },
+
             {
-                text: 'Recherche Dossier',
+                text: 'Recherche Patient',
                 iconCls: 'x-fa fa-search',
 
                 viewType: 'screen2',
                 leaf: true
             },
             {
-                text: 'Recherche Patient',
-                iconCls: 'x-fa fa-user',
-                viewType: 'profile',
-                leaf: true
-            },
-            {
-                text: 'Sites Groupe',
-                iconCls: 'x-fa fa-search',
-                viewType: 'sitegroupgrid',
-                routeId: 'sitegroupgrid', // routeId defaults to viewType
-
-                leaf: true
-            },
-            {
-                text: 'Associate',
-                iconCls: 'x-fa fa-question',
-                viewType: 'xxassociatepanel',
-                routeId: 'xxassociatepanel', // routeId defaults to viewType
-                leaf: true
-            },
-            {
-                text: 'Sites',
-                iconCls: 'x-fa fa-leanpub',
-                expanded: false,
-                selectable: false,
-
-                children: [
-                    {
-                        text: 'Sites',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'sitegrid',
-                        routeId: 'sitegrid', // routeId defaults to viewType
-                    },
-
-                    {
-                        text: 'Groupes',
-                        iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'sitegroupgrid',
-                        routeId: 'sitegroupgrid', // routeId defaults to viewType
-                        leaf: true
-                    },
-                    {
-                        text: 'Sub Menu 3',
-                        iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
-                        leaf: true
-                    }
-
-                ]
-            },
-            {
-                text: 'User ',
-                iconCls: 'x-fa fa-flask',
+                text: 'Utilisateurs ',
+                iconCls: 'x-fa fa-users',
                 viewType: 'usergrid',
                 routeId: 'usergrid',
                 leaf: true
             },
+
             {
-                text: 'Appareils',
-                iconCls: 'x-fa fa-leanpub',
-                expanded: false,
-                selectable: false,
-
-                children: [
-                    {
-                        text: 'Appareils',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'devicegrid',
-                        routeId: 'devicegrid', // routeId defaults to viewType
-                    },
-
-                    {
-                        text: 'Types',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'sitegroupgrid',
-                        routeId: 'sitegroupgrid', // routeId defaults to viewType
-                        leaf: true
-                    },
-                    {
-                        text: 'Modalité',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'sitegroupgrid',
-                        routeId: 'sitegroupgrid', // routeId defaults to viewType
-                        leaf: true
-                    }
-
-                ]
-            },
-            {
-                text: 'Screen 6',
-                iconCls: 'x-fa fa-pie-chart',
+                text: 'Favoris',
+                iconCls: 'x-fa fa-star',
                 viewType: 'charts',
                 leaf: true
             }
