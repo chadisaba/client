@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceSupportComboModel"
+    },
+    "name": "MyModelDeviceSupportComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-y62k1gdbjlgg",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceSupportId"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-a1rc78wrk1qi"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceSupport"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-yqfusfi8es4f"
+        }
+    ]
+}

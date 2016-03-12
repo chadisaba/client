@@ -1,0 +1,872 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicegrid",
+        "designer|userClassName": "DeviceGrid",
+        "forceFit": true,
+        "itemId": "deviceGridId",
+        "reference": "deviceGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{DeviceStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "vxwuqtxg-8c41-4643-a8f8-h7lqblg3vx5g",
+    "viewControllerInstanceId": "wbxteydm-4ace-45f2-b4ee-tedg5hepcbk8",
+    "viewModelInstanceId": "mngeqcsp-8a5d-4154-8917-789c6lc11urj",
+    "cn": [
+  
+     
+     
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceTypeId",
+                "text": "Type"
+        
+            },
+            "name": "MydeviceTypeIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-43wgcefabp19"
+                , "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+   
+                        "displayField": "deviceTypeCode",
+                        "forceSelection": true,
+                        "itemId": "deviceTypeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "valueField": "deviceTypeId"
+                         ,"allowBlank": false
+                          ,"store": [
+                            "{DeviceTypeComboStore}"
+                        ]   
+                            
+   
+                    },
+                    "name": "MydeviceTypeComboBox",
+                         "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-hrsi3b7bh7eq"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "modalityId",
+                "text": "Modalité"
+        
+            },
+            "name": "MymodalityIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-b6b8mca3sp62"
+                , "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+   
+                        "displayField": "modalityCode",
+                        "forceSelection": true,
+                        "itemId": "modalityComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "valueField": "modalityId"
+                         ,"allowBlank": false
+                          ,"store": [
+                            "{ModalityComboStore}"
+                        ]   
+                            
+   
+                    },
+                    "name": "MymodalityComboBox",
+                         "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-41r9fpsjaeru"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceName",
+                "text": "Libellé"
+        
+            },
+            "name": "MydeviceNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-dh6yj9sse1su"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceNameTextFieldItemId"
+                           ,"allowBlank": false
+                    },
+                    "name": "MydeviceNameTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-xeht1sq6ihjr"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceModel",
+                "text": "Modèle"
+        
+            },
+            "name": "MydeviceModelCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-d4r6bbsj7rff"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceModelTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceModelTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-j569ddnxjv4h"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceAET",
+                "text": "AET"
+        
+            },
+            "name": "MydeviceAETCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-53h3uxmbnduf"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceAETTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceAETTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-9n5cumar9ja8"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceAgreementNumber",
+                "text": "N Agrément"
+        
+            },
+            "name": "MydeviceAgreementNumberCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-mcdp55c5vt5u"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceAgreementNumberTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceAgreementNumberTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-rx1y6uyjg1im"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceAgreementDate",
+                "text": "Date Agr."
+        
+            },
+            "name": "MydeviceAgreementDateCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-rrbk2vyxcvcf"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceAgreementDateTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceAgreementDateTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-vdwu2kldw3r7"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceTrademark",
+                "text": "Marque"
+        
+            },
+            "name": "MydeviceTrademarkCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-a378c3nqjblu"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceTrademarkTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceTrademarkTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-tjr9r9d6vv3g"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceInstallationDate",
+                "text": "Installation"
+        
+            },
+            "name": "MydeviceInstallationDateCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-eg438tbj1dte"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceInstallationDateTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceInstallationDateTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-i3qd8ixykj97"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "devicePower",
+                "text": "Puissance"
+        
+            },
+            "name": "MydevicePowerCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-iv2x4jxcgf2y"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "devicePowerTextFieldItemId"
+                          
+                    },
+                    "name": "MydevicePowerTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-sprqbahsiuc2"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceIsSenolog",
+                "text": "Senolog?"
+        
+            },
+            "name": "MydeviceIsSenologCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-8e13ksj6657n"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "deviceIsSenologTextFieldItemId"
+                          
+                    },
+                    "name": "MydeviceIsSenologTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-c1mdkh7lqblg"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceSupportId",
+                "text": "Support"
+        
+            },
+            "name": "MydeviceSupportIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-qpvpv19ydjg4"
+                , "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+   
+                        "displayField": "deviceSupport",
+                        "forceSelection": true,
+                        "itemId": "deviceSupportComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "valueField": "deviceSupportId"
+                        
+                          ,"store": [
+                            "{DeviceSupportComboStore}"
+                        ]   
+                            
+   
+                    },
+                    "name": "MydeviceSupportComboBox",
+                         "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-gn3l8cdeege2"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceLecture",
+                "text": "Lecture?"
+        
+            },
+            "name": "MydeviceLectureCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-elypty9pcljh"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MydeviceLectureCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-xx3859sdhmti"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-dhu2avp1ycjk"
+                }
+            ]  },
+       {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "gguuyfvk-ccc7-232C-1245-4pjqi8e7s8iy"
+        },
+        
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "y38ixkvs-f393-483a-8425-bah78ltcmmqa"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "ynbqbhvm-ccc7-465c-8662-kw1lu9da5iq6"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processDeviceGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processDeviceGrid",
+            "designerId": "gvrmmivq-2054-459b-a4aa-45gh7bdcguxc"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdChHist",
+            "designerId": "3718r7t9-1d4f-4fb9-9364-ngp4bxbu916m"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdAfterRender",
+            "designerId": "jeg438tb-1f65-4972-a6e1-7m6ymybwlbet"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdInEdit",
+            "designerId": "3lwyeasd-1a08-4be0-b287-nulux2byxml1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onDeviceGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdResetEdit",
+            "designerId": "jtdvqbsf-2c80-456a-a5c5-kx1hpjc22cw3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onDeviceGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdSaveEdit",
+            "designerId": "31tr3dsh-f0d5-4d89-a1bb-sv5wltxj6gg6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onDeviceGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdAddItem",
+            "designerId": "j2k8afsx-ffc4-4ede-a9db-nkyma2kiesgi"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdDeleteItem",
+            "designerId": "dbn6va7x-ac56-469a-895f-4evljs7hvrf2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdModifyItem",
+            "designerId": "93qrikns-6b6f-4377-998f-qi4xynicrhaf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onDeviceGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdQuitEdit",
+            "designerId": "lguxqx1s-746f-4da4-9f4d-nlhkp7jeu8jh"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-7998ywbswnxg"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdBeforeEdit",
+            "designerId": "xf8cvx5u-4019-4a61-8c79-kpw8fqlgxwuj"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdCanceledit",
+            "designerId": "uil1lg6w-6686-46dd-bfe7-wn9lkppit17f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdContainerClick",
+            "designerId": "7iyerg9x-3079-420b-87bf-trn9b9rjwpgh"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdEdit",
+            "designerId": "ihcswgc1-47bf-4b29-bb1d-5q2mg8ulrtte"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeviceGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdBeforeCellClick",
+            "designerId": "$1nsn9ic3-6a9c-488e-8122-3tfa7rvnvi4g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onDeviceGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onDeviceGridIdValidateedit",
+            "designerId": "iv9jjjc5-b2ec-4782-a56f-a1g183cn3bvd"
+        }
+    ]
+}

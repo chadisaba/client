@@ -1,0 +1,69 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicegrid",
+        "designer|userClassName": "DeviceGridViewModel"
+    },
+    "designerId": "mngeqcsp-8a5d-4154-8917-789c6lc11urj",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceModel",
+                "name": "DeviceStore"
+            },
+            "name": "DeviceStore",
+            "designerId": "y9eynevi-c056-4140-9039-ki4u86e5gvar"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceTypeComboModel",
+                "name": "DeviceTypeComboStore"
+            },
+            "name": "DeviceTypeComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-ep8n9s4qywf8"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ModalityComboModel",
+                "name": "ModalityComboStore"
+            },
+            "name": "ModalityComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-vtqjeddk4l1w"
+        },{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceSupportComboModel",
+                "name": "DeviceSupportComboStore"
+            },
+            "name": "DeviceSupportComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-ntkdtiti5u41"
+        }
+    ]
+}

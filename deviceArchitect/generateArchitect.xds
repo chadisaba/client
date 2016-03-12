@@ -1,0 +1,52 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
+        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client_ch/device_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 320,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

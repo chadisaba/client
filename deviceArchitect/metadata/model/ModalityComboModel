@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ModalityComboModel"
+    },
+    "name": "MyModelModalityComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-idjsmqjww3xk",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modalityId"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-849b9x6dquah"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modalityCode"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-cpul9nssa2n9"
+        }
+    ]
+}

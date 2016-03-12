@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+           "DeviceModel",
+                       "DeviceTypeComboModel",
+                       "ModalityComboModel",
+                       "DeviceSupportComboModel"
+        ],
+        "name": "MyApp",
+        
+        "views": [
+           "DeviceGrid"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}
