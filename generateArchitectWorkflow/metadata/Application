@@ -11,7 +11,10 @@
         ],
         "models": [
             "WorklistModel",
-            "SiteComboModel"
+            "SiteComboModel",
+			"AssociateViewAssociateComboModel",
+			"AssociateViewTreeModel"
+			
         ],
         "name": "MyApp",
         "requires": [
@@ -21,9 +24,29 @@
             "WorklistGrid",
             "WorklistPanel",
             "SitesSelectionGrid",
-            "MyPanel"
+            "MyPanel",
+			"AssociateViewAssociatePanel",
+			"AssociateViewLeftTreePanel",
+			"AssociateViewRightTreePanel"
+			
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": null
+            },
+            "name": "launch",
+            "designerId": "031d32a2-5475-4136-8387-c5d66d538904"
+        }
+    ]
 }

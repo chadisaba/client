@@ -17,6 +17,8 @@
 Ext.Loader.setConfig({
 
 });
+
+
 Ext.application({
 
     requires: [
@@ -24,13 +26,18 @@ Ext.application({
     ],
     models: [
         'WorklistModel',
-        'SiteComboModel'
+        'SiteComboModel',
+		'AssociateViewAssociateComboModel',
+			'AssociateViewTreeModel'
     ],
     views: [
         'WorklistGrid',
         'WorklistPanel',
         'SitesSelectionGrid',
-        'MyPanel'
+        'MyPanel',
+		'AssociateViewAssociatePanel',
+			'AssociateViewLeftTreePanel',
+			'AssociateViewRightTreePanel'
     ],
     controllers: [
         'MainController'
@@ -38,7 +45,6 @@ Ext.application({
     name: 'MyApp',
 
     launch: function() {
-        Ext.state.Manager.setProvider(Ext.create('Ext.state.LocalStorageProvider'));
         Ext.create('MyApp.view.MyViewport1');
     }
 

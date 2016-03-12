@@ -35,6 +35,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         type: 'worklistgrid'
     },
     reference: 'worklistGridRef',
+    stateId: 'woklist-grid',
+    stateful: true,
     itemId: 'worklistGridId',
     resizable: false,
     title: '',
@@ -46,6 +48,8 @@ Ext.define('MyApp.view.WorklistGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            stateId: 'worklistSiteCol',
+            stateful: true,
             minWidth: 50,
             width: 50,
             dataIndex: 'siteCode',

@@ -19,6 +19,13 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
+                text: 'Test Association generator',
+                iconCls: 'x-fa fa-search',
+
+                viewType: 'associateviewassociatepanel',
+                leaf: true
+            },
+            {
                 text: 'Recherche Dossier',
                 iconCls: 'x-fa fa-search',
 
@@ -84,11 +91,35 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Device',
-                iconCls: 'x-fa fa-edit',
-                viewType: 'devicegrid',
-                routeId: 'devicegrid',
-                leaf: true
+                text: 'Appareils',
+                iconCls: 'x-fa fa-leanpub',
+                expanded: false,
+                selectable: false,
+
+                children: [
+                    {
+                        text: 'Appareils',
+                        iconCls: 'x-fa fa-file-o',
+                        viewType: 'devicegrid',
+                        routeId: 'devicegrid', // routeId defaults to viewType
+                    },
+
+                    {
+                        text: 'Types',
+                        iconCls: 'x-fa fa-file-o',
+                        viewType: 'sitegroupgrid',
+                        routeId: 'sitegroupgrid', // routeId defaults to viewType
+                        leaf: true
+                    },
+                    {
+                        text: 'Modalité',
+                        iconCls: 'x-fa fa-file-o',
+                        viewType: 'sitegroupgrid',
+                        routeId: 'sitegroupgrid', // routeId defaults to viewType
+                        leaf: true
+                    }
+
+                ]
             },
             {
                 text: 'Screen 6',

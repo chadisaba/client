@@ -16,6 +16,8 @@
             "false"
         ],
         "scrollable": null,
+        "stateId": "woklist-grid",
+        "stateful": true,
         "store": [
             "{WorklistStore}"
         ],
@@ -41,6 +43,8 @@
             "userConfig": {
                 "dataIndex": "siteCode",
                 "minWidth": 50,
+                "stateId": "worklistSiteCol",
+                "stateful": true,
                 "text": "Site",
                 "width": 50
             },
