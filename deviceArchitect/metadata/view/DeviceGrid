@@ -27,10 +27,7 @@
     "viewControllerInstanceId": "wbxteydm-4ace-45f2-b4ee-tedg5hepcbk8",
     "viewModelInstanceId": "mngeqcsp-8a5d-4154-8917-789c6lc11urj",
     "cn": [
-  
-     
-     
-             {
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -40,11 +37,10 @@
             "userConfig": {
                 "dataIndex": "deviceTypeId",
                 "text": "Type"
-        
             },
             "name": "MydeviceTypeIdCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-43wgcefabp19"
-                , "cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-43wgcefabp19",
+            "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
@@ -53,29 +49,52 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-   
+                        "allowBlank": false,
                         "displayField": "deviceTypeCode",
                         "forceSelection": true,
                         "itemId": "deviceTypeComboBoxEditorItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
-                        "valueField": "deviceTypeId"
-                         ,"allowBlank": false
-                          ,"store": [
+                        "store": [
                             "{DeviceTypeComboStore}"
-                        ]   
-                            
-   
+                        ],
+                        "valueField": "deviceTypeId"
                     },
                     "name": "MydeviceTypeComboBox",
-                         "configAlternates": {
+                    "configAlternates": {
                         "store": "binding"
                     },
                     "designerId": "ade60fcf-b3b2-4bae-hrsi3b7bh7eq"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "deviceTypeRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "46346dae-4154-47e4-a8f4-bf71cbc55c5d"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -85,11 +104,10 @@
             "userConfig": {
                 "dataIndex": "modalityId",
                 "text": "Modalité"
-        
             },
             "name": "MymodalityIdCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-b6b8mca3sp62"
-                , "cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-b6b8mca3sp62",
+            "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
@@ -98,29 +116,50 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-   
+                        "allowBlank": false,
                         "displayField": "modalityCode",
                         "forceSelection": true,
                         "itemId": "modalityComboBoxEditorItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
-                        "valueField": "modalityId"
-                         ,"allowBlank": false
-                          ,"store": [
+                        "store": [
                             "{ModalityComboStore}"
-                        ]   
-                            
-   
+                        ],
+                        "valueField": "modalityId"
                     },
                     "name": "MymodalityComboBox",
-                         "configAlternates": {
+                    "configAlternates": {
                         "store": "binding"
                     },
                     "designerId": "ade60fcf-b3b2-4bae-41r9fpsjaeru"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "modalityRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "9b21376e-8c3e-4ff7-98ec-8dbf10405c2b"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -130,11 +169,10 @@
             "userConfig": {
                 "dataIndex": "deviceName",
                 "text": "Libellé"
-        
             },
             "name": "MydeviceNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-dh6yj9sse1su"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-dh6yj9sse1su",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -143,16 +181,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceNameTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "deviceNameTextFieldItemId"
                     },
                     "name": "MydeviceNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-xeht1sq6ihjr"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -162,11 +199,10 @@
             "userConfig": {
                 "dataIndex": "deviceModel",
                 "text": "Modèle"
-        
             },
             "name": "MydeviceModelCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-d4r6bbsj7rff"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-d4r6bbsj7rff",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -175,16 +211,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceModelTextFieldItemId"
-                          
+                        "itemId": "deviceModelTextFieldItemId"
                     },
                     "name": "MydeviceModelTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-j569ddnxjv4h"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -194,11 +228,10 @@
             "userConfig": {
                 "dataIndex": "deviceAET",
                 "text": "AET"
-        
             },
             "name": "MydeviceAETCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-53h3uxmbnduf"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-53h3uxmbnduf",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -207,16 +240,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceAETTextFieldItemId"
-                          
+                        "itemId": "deviceAETTextFieldItemId"
                     },
                     "name": "MydeviceAETTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-9n5cumar9ja8"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -226,11 +257,10 @@
             "userConfig": {
                 "dataIndex": "deviceAgreementNumber",
                 "text": "N Agrément"
-        
             },
             "name": "MydeviceAgreementNumberCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-mcdp55c5vt5u"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-mcdp55c5vt5u",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -239,16 +269,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceAgreementNumberTextFieldItemId"
-                          
+                        "itemId": "deviceAgreementNumberTextFieldItemId"
                     },
                     "name": "MydeviceAgreementNumberTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-rx1y6uyjg1im"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -257,30 +285,29 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceAgreementDate",
+                "formatter": "date('d/m/Y')",
                 "text": "Date Agr."
-        
             },
-            "name": "MydeviceAgreementDateCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-rrbk2vyxcvcf"
-                 ,"cn": [
+            "name": "MyColumn2",
+            "designerId": "7c6bec59-5c6a-4872-9cec-rrbk2vyxcvcf",
+            "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Date",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceAgreementDateTextFieldItemId"
-                          
+                        "format": "d/m/Y",
+                        "itemId": "deviceAgreementDateTextFieldItemId"
                     },
-                    "name": "MydeviceAgreementDateTextField",
+                    "name": "MyDateField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-vdwu2kldw3r7"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -290,11 +317,10 @@
             "userConfig": {
                 "dataIndex": "deviceTrademark",
                 "text": "Marque"
-        
             },
             "name": "MydeviceTrademarkCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-a378c3nqjblu"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-a378c3nqjblu",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -303,16 +329,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceTrademarkTextFieldItemId"
-                          
+                        "itemId": "deviceTrademarkTextFieldItemId"
                     },
                     "name": "MydeviceTrademarkTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-tjr9r9d6vv3g"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -321,31 +345,30 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceInstallationDate",
+                "formatter": "date('d/m/Y')",
                 "text": "Installation"
-        
             },
-            "name": "MydeviceInstallationDateCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-eg438tbj1dte"
-                 ,"cn": [
+            "name": "MyColumn1",
+            "designerId": "7c6bec59-5c6a-4872-9cec-eg438tbj1dte",
+            "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Date",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceInstallationDateTextFieldItemId"
-                          
+                        "format": "d/m/Y",
+                        "itemId": "deviceInstallationDateTextFieldItemId"
                     },
-                    "name": "MydeviceInstallationDateTextField",
+                    "name": "MyDateField2",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-i3qd8ixykj97"
                 }
-            ]  },
-                   
-             {
-            "type": "Ext.grid.column.Column",
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Number",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -354,29 +377,26 @@
             "userConfig": {
                 "dataIndex": "devicePower",
                 "text": "Puissance"
-        
             },
-            "name": "MydevicePowerCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-iv2x4jxcgf2y"
-                 ,"cn": [
+            "name": "MyNumberColumn",
+            "designerId": "7c6bec59-5c6a-4872-9cec-iv2x4jxcgf2y",
+            "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Number",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "devicePowerTextFieldItemId"
-                          
+                        "itemId": "devicePowerTextFieldItemId"
                     },
-                    "name": "MydevicePowerTextField",
+                    "name": "MyNumberField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-sprqbahsiuc2"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -386,29 +406,51 @@
             "userConfig": {
                 "dataIndex": "deviceIsSenolog",
                 "text": "Senolog?"
-        
             },
             "name": "MydeviceIsSenologCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-8e13ksj6657n"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-8e13ksj6657n",
+            "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "17bf73cf-aa1e-414a-8445-38ea1af1fa80"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "deviceIsSenologTextFieldItemId"
-                          
+                        "itemId": "deviceIsSenologTextFieldItemId"
                     },
-                    "name": "MydeviceIsSenologTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-c1mdkh7lqblg"
+                    "name": "MyCheckbox",
+                    "designerId": "b31b971d-f141-4e30-a954-ea98919adb02"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -416,13 +458,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "deviceSupportId",
+                "dataIndex": "deviceSupport",
                 "text": "Support"
-        
             },
             "name": "MydeviceSupportIdCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-qpvpv19ydjg4"
-                , "cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-qpvpv19ydjg4",
+            "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
@@ -431,29 +472,51 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-   
-                        "displayField": "deviceSupport",
+                        "displayField": "deviceSupportDisplay",
                         "forceSelection": true,
                         "itemId": "deviceSupportComboBoxEditorItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
-                        "valueField": "deviceSupportId"
-                        
-                          ,"store": [
+                        "store": [
                             "{DeviceSupportComboStore}"
-                        ]   
-                            
-   
+                        ],
+                        "valueField": "deviceSupport"
                     },
                     "name": "MydeviceSupportComboBox",
-                         "configAlternates": {
+                    "configAlternates": {
                         "store": "binding"
                     },
                     "designerId": "ade60fcf-b3b2-4bae-gn3l8cdeege2"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "supportRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            ""
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "ea568eaf-6ed6-47d8-985f-f45f5399fbd0"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -463,11 +526,10 @@
             "userConfig": {
                 "dataIndex": "deviceLecture",
                 "text": "Lecture?"
-        
             },
             "name": "MydeviceLectureCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-elypty9pcljh"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-elypty9pcljh",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -475,11 +537,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MydeviceLectureCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-xx3859sdhmti"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -504,8 +565,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-dhu2avp1ycjk"
                 }
-            ]  },
-       {
+            ]
+        },
+        {
             "type": "Ext.view.Table",
             "reference": {
                 "name": "viewConfig",
@@ -515,7 +577,6 @@
             "name": "MyTable",
             "designerId": "gguuyfvk-ccc7-232C-1245-4pjqi8e7s8iy"
         },
-        
         {
             "type": "viewcontrollereventbinding",
             "reference": {

@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "deviceSupportId"
+                "name": "deviceSupport"
             },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-a1rc78wrk1qi"
@@ -32,7 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "deviceSupport"
+                "name": "deviceSupportDisplay"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-yqfusfi8es4f"

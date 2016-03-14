@@ -17,203 +17,192 @@
     "name": "DeviceModel",
     "designerId": "kii2576p-1d4f-4fb9-9364-qip97789qudu",
     "cn": [
-       
         {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceId",
-                 "type": "auto"
-                },
-                "name": "MydeviceId",
-                "designerId": "e96f8d89-803f-419a-a346-mig5srngwnrx"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceId"
+            },
+            "name": "MydeviceId",
+            "designerId": "e96f8d89-803f-419a-a346-mig5srngwnrx"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceTypeId",
-                 "type": "auto"
-                },
-                "name": "MydeviceTypeId",
-                "designerId": "e96f8d89-803f-419a-a346-8ftyablu27iv"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceTypeId"
+            },
+            "name": "MydeviceTypeId",
+            "designerId": "e96f8d89-803f-419a-a346-8ftyablu27iv"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "modalityId",
-                 "type": "auto"
-                },
-                "name": "MymodalityId",
-                "designerId": "e96f8d89-803f-419a-a346-6scr4yda552d"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "modalityId"
+            },
+            "name": "MymodalityId",
+            "designerId": "e96f8d89-803f-419a-a346-6scr4yda552d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceName",
-                 "type": "auto"
-                },
-                "name": "MydeviceName",
-                "designerId": "e96f8d89-803f-419a-a346-47vkwl5n84jv"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceName"
+            },
+            "name": "MydeviceName",
+            "designerId": "e96f8d89-803f-419a-a346-47vkwl5n84jv"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceModel",
-                 "type": "auto"
-                },
-                "name": "MydeviceModel",
-                "designerId": "e96f8d89-803f-419a-a346-2jedrau4b23d"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceModel"
+            },
+            "name": "MydeviceModel",
+            "designerId": "e96f8d89-803f-419a-a346-2jedrau4b23d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceAET",
-                 "type": "auto"
-                },
-                "name": "MydeviceAET",
-                "designerId": "e96f8d89-803f-419a-a346-f9np2rwgxbx1"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceAET"
+            },
+            "name": "MydeviceAET",
+            "designerId": "e96f8d89-803f-419a-a346-f9np2rwgxbx1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceAgreementNumber",
-                 "type": "auto"
-                },
-                "name": "MydeviceAgreementNumber",
-                "designerId": "e96f8d89-803f-419a-a346-si6aawpvsmid"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceAgreementNumber"
+            },
+            "name": "MydeviceAgreementNumber",
+            "designerId": "e96f8d89-803f-419a-a346-si6aawpvsmid"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceAgreementDate",
-                 "type": "auto"
-                },
-                "name": "MydeviceAgreementDate",
-                "designerId": "e96f8d89-803f-419a-a346-6rmti2hamy4p"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": null,
+                "name": "deviceAgreementDate"
+            },
+            "name": "MyDate1",
+            "designerId": "e96f8d89-803f-419a-a346-6rmti2hamy4p"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceTrademark",
-                 "type": "auto"
-                },
-                "name": "MydeviceTrademark",
-                "designerId": "e96f8d89-803f-419a-a346-367mcn9pqwl8"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceTrademark"
+            },
+            "name": "MydeviceTrademark",
+            "designerId": "e96f8d89-803f-419a-a346-367mcn9pqwl8"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceInstallationDate",
-                 "type": "auto"
-                },
-                "name": "MydeviceInstallationDate",
-                "designerId": "e96f8d89-803f-419a-a346-97kper6442ba"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": null,
+                "dateReadFormat": null,
+                "dateWriteFormat": null,
+                "name": "deviceInstallationDate"
+            },
+            "name": "MyDate",
+            "designerId": "e96f8d89-803f-419a-a346-97kper6442ba"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "devicePower",
-                 "type": "auto"
-                },
-                "name": "MydevicePower",
-                "designerId": "e96f8d89-803f-419a-a346-7j4i9fvi7ytr"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "devicePower"
+            },
+            "name": "MydevicePower",
+            "designerId": "e96f8d89-803f-419a-a346-7j4i9fvi7ytr"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceIsSenolog",
-                 "type": "auto"
-                },
-                "name": "MydeviceIsSenolog",
-                "designerId": "e96f8d89-803f-419a-a346-5xmb33mwaxca"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceIsSenolog"
+            },
+            "name": "MyBoolean1",
+            "designerId": "e96f8d89-803f-419a-a346-5xmb33mwaxca"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceSupportId",
-                 "type": "auto"
-                },
-                "name": "MydeviceSupportId",
-                "designerId": "e96f8d89-803f-419a-a346-nf8dh9cckisv"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceSupport"
+            },
+            "name": "MydeviceSupportId",
+            "designerId": "e96f8d89-803f-419a-a346-nf8dh9cckisv"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "deviceLecture",
-                 "type": "auto"
-                },
-                "name": "MydeviceLecture",
-                "designerId": "e96f8d89-803f-419a-a346-7wsewf2rw39i"
             },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceLecture"
+            },
+            "name": "MyBoolean",
+            "designerId": "e96f8d89-803f-419a-a346-7wsewf2rw39i"
+        },
         {
             "type": "Ext.data.field.Field",
             "reference": {

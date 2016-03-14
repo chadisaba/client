@@ -20,19 +20,17 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+    models: [
+        'DeviceModel',
+        'DeviceTypeComboModel',
+        'ModalityComboModel',
+        'DeviceSupportComboModel'
+    ],
+    views: [
+        'DeviceGrid'
+    ],
     controllers: [
         'MainController'
-    ],
-	 models: [
-             'DeviceModel',
-                       'DeviceTypeComboModel',
-                       'ModalityComboModel',
-                       'DeviceSupportComboModel'
-    ],
-  
-    views: [
-            'DeviceGrid'
-        
     ],
     name: 'MyApp',
 

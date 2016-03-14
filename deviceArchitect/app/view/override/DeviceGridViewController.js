@@ -8,7 +8,8 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     onDeviceGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
 
-        var params;params={
+        var params;
+        params={
             id:50,
             table:"DEVICE_TYPE"
         };
@@ -41,22 +42,24 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
                 else{
                     console.log(res.msg);
                 }
-            },me
+            }
         );
 
 
         var deviceSupportComboStore=this.getViewModel().getStore('DeviceSupportComboStore');
         var deviceSupportComboStoreData=[
-            {'deviceSupportId':1,'deviceSupport':'Lecture'},
-            {'deviceSupportId':2,'deviceSupport':'Support'}
+            {'deviceSupport':0,'deviceSupportDisplay':'Aucun'},
+            {'deviceSupport':1,'deviceSupportDisplay':'Lecture'},
+            {'deviceSupport':2,'deviceSupportDisplay':'Support'}
         ];
         deviceSupportComboStore.loadData(deviceSupportComboStoreData);
 
 
 
-
-        Utility.grid.loadGrid(component,this.getResultArray(),component.getViewModel().getStore('DeviceStore'));
-
+        this.getResultArray(
+            function(data){
+                Utility.grid.loadGrid(component,data,component.getViewModel().getStore('DeviceStore'));
+            });
     },
 
     onDeviceGridIdInEdit: function() {
@@ -70,19 +73,26 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
 
     onDeviceGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
-        var success=false;
-        // first save all data to the server side by calling ext.direct function or ajax query
-
-        if(success){
-            var resultArray=[];
-            // retrieve the result from the ext.direct ou ajax call
-
-            Utility.grid.saveEdit(this.getView(),resultArray,this.getView().getViewModel().getStore('DeviceStore'),promptWin);
-        }
-        else
-        {
-            Ext.MessageBox.alert("Error","save Error");
-        }
+        var me=this;
+        var params={};
+        params.table="DEVICE";
+        params.idName="deviceId";
+        params.dataToBeSaved=dataToBeSaved;
+        params.comment=comment;
+        var result=[];
+        Server.CommonQueries.saveRecords(params,
+            function(_result){
+                if(_result.success){
+                    this.getResultArray(function(data){
+                        Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('DeviceStore'),promptWin);
+                    },this);
+                }
+                else{
+                    console.error(_result.msg);
+                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
+                }
+            },me
+        );
 
 
     },
@@ -149,7 +159,6 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
         var params={
             table:"DEVICE"
         };
-        var result=[];
         Server.CommonQueries.read(params,
             function(res){
                 if(res.success){
@@ -159,10 +168,18 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
                     console.error(res.msg);
                     callback(res.msg);
                 }
-            });
+            },me);
+    },
+    /*********************** renderers****************************************************/
+    deviceTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+        return Utility.renderer.retreiveTextFromStore(value,'deviceTypeId','deviceTypeCode','DeviceTypeComboStore',this);
+    },
+    supportRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+        return Utility.renderer.retreiveTextFromStore(value,'deviceSupport','deviceSupportDisaplay',this);
+    },
+    modalityRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+        return Utility.renderer.retreiveTextFromStore(value,'modalityId','modalityCode','ModalityComboStore',this);
     }
-
-
 
 
 });
