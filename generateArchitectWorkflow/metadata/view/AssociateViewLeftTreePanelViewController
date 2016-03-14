@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "associateviewlefttreepanel",
+        "designer|userClassName": "AssociateViewLeftTreePanelViewController"
+    },
+    "designerId": "xa8vcwy8-1d4f-9fb9-9364-ebt9pmksuqqp"
+}
