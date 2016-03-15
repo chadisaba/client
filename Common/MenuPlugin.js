@@ -1,3 +1,13 @@
+
+Ext.define("Patient", {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'patientId'},
+        {name: 'patientLName'},
+        {name: 'lastupdated'}
+    ]
+});
+
 /**
  * Applies on the main Viewport.
  */
@@ -102,7 +112,7 @@ westPanel.setWidth(new_width);
                     displayField: 'siteCode',
                     queryMode: 'local',
                     valueField: 'siteId',
-                    fieldLabel:'User Location',
+
                     forceSelection:'true',
                     store:Ext.create('Ext.data.Store',
                         {
@@ -140,23 +150,66 @@ westPanel.setWidth(new_width);
                     }
                 },
                 {
-                    xtype: 'textfield',
-                    fieldLabel: 'Patient search',
-                    emptyText: 'Fname Lname Birthday',
+                    xtype: 'combobox',
+                    emptyText: 'Recherche patient : Nom &  Prénom ou Date Naissance',
+                    typeAhead: false,
+                    hideLabel: true,
+                    hideTrigger:true,
+                    displayField:'patientLName',
+                    valueField:'patientId',
+width:400,
+                    store: {
+                        model: Patient,
+                        remoteSort: true,
+
+                        sorters: [{
+                            property: 'patientLName',
+                            direction: 'ASC'
+                        }],
+                        proxy: {
+                            type: 'direct',
+                            directFn: 'Server.Patients.Patient.searchPatient',
+                            reader: {
+                                type: 'json',
+                                rootProperty: 'data'
+                            }
+                        }
+
+                    },
+                    pageSize: 10,
+                    listConfig: {
+                        loadingText: 'Recherche patient en cours...',
+                        emptyText: 'Aucun résultat trouvé',
+
+                        // Custom rendering template for each item
+                        getInnerTpl: function() {
+                            return '<h8 ><span style="font-weight:bold">{patientLTitle}{patientLName} {patientFname} {patientBirthday}' +
+                                '</span><br />Adresse {author}{title}</h8>' +
+                                '{patientLName}'
+
+                        }
+                    },
+                    listeners:{
+                        change:function()
+                        {
+                            //alert('test');
+                        }
+                    }
 
                 },
                 {
                     iconCls:'x-fa fa-search',
                     ui: 'header',
-                    href: '#searchresults',
+                    href: '#patientsearch',
                     hrefTarget: '_self',
-                    tooltip: 'See latest search'
+                    tooltip: 'Lancer la recherche patient'
+
                 },
                 {
                     iconCls:'x-fa fa-envelope',
                     ui: 'header',
                     href: '#email',
-                    hrefTarget: '_self',
+                    hrefTarget: '_blank',
                     tooltip: 'Check your email'
                 },
                 {
