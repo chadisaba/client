@@ -183,9 +183,10 @@ width:400,
 
                         // Custom rendering template for each item
                         getInnerTpl: function() {
-                            return '<h8 ><span style="font-weight:bold">{patientLTitle}{patientLName} {patientFname} {patientBirthday}' +
-                                '</span><br />Adresse {author}{title}</h8>' +
-                                '{patientLName}'
+                            return '<h8 ><span style="font-weight:bold">{patientLTitle} {patientLName} {patientFname} {patientBirthday}' +
+                                '</span><br />Adresse </h8>' +
+                                '{addressText}<br/>' +
+                                '{addressZipCode} {cityName}'
 
                         }
                     },
