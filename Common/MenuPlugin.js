@@ -4,6 +4,8 @@ Ext.define("Patient", {
     fields: [
         {name: 'patientId'},
         {name: 'patientLName'},
+        {name: 'patientFName'},
+        {name: 'patientBirthday',type:'date'},
         {name: 'lastupdated'}
     ]
 });
@@ -159,7 +161,7 @@ westPanel.setWidth(new_width);
                     valueField:'patientId',
 width:400,
                     store: {
-                        model: Patient,
+                        model: 'Patient',
                         remoteSort: true,
 
                         sorters: [{
@@ -183,8 +185,9 @@ width:400,
 
                         // Custom rendering template for each item
                         getInnerTpl: function() {
-                            return '<h8 ><span style="font-weight:bold">{patientLTitle} {patientLName} {patientFname} {patientBirthday}' +
-                                '</span><br />Adresse </h8>' +
+                            return '<img src="../Common/resources/images/{patientGender}.png"/> <span style="font-weight:bold"> {patientLName} {patientFname} ' +
+                                '{[Ext.Date.format(values.patientBirthday, "d/m/Y")]}' +
+                                '</span><br />Adresse : ' +
                                 '{addressText}<br/>' +
                                 '{addressZipCode} {cityName}'
 

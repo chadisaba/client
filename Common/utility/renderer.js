@@ -14,6 +14,14 @@ Ext.define('Utility.renderer', {
 				return rec.get(fieldDisplayName);
 			}
 		},
+		retreiveValueFieldByTextFromStore: function (value,valueFieldName,displayFieldName,storeName,me){
+			if(value)
+			{
+				var store=me.getViewModel().getStore(storeName);
+				var rec=store.findRecord(displayFieldName,value);
+				return rec.get(valueFieldName);
+			}
+		},
 		listRenderer:function(value,img,messageVide)
 		{
 			var tooltip,color;
