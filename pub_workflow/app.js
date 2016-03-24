@@ -27,17 +27,15 @@ Ext.application({
     models: [
         'WorklistModel',
         'SiteComboModel',
-		'AssociateViewAssociateComboModel',
-			'AssociateViewTreeModel'
+        'PatientHistoryModel'
     ],
     views: [
         'WorklistGrid',
         'WorklistPanel',
         'SitesSelectionGrid',
-        'MyPanel',
-		'AssociateViewAssociatePanel',
-			'AssociateViewLeftTreePanel',
-			'AssociateViewRightTreePanel'
+        'PatientHistoryPanel',
+        'PatientHistoryGrid',
+        'MyWindow'
     ],
     controllers: [
         'MainController'

@@ -17,7 +17,7 @@ Ext.define('MyApp.model.WorklistModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Field'
+        'Ext.data.field.Date'
     ],
 
     validators: [
@@ -32,6 +32,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'worklistId'
         },
         {
+            type: 'date',
             name: 'worklistDate'
         },
         {
