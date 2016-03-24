@@ -12,9 +12,7 @@
         "models": [
             "WorklistModel",
             "SiteComboModel",
-			"AssociateViewAssociateComboModel",
-			"AssociateViewTreeModel"
-			
+            "PatientHistoryModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -24,11 +22,9 @@
             "WorklistGrid",
             "WorklistPanel",
             "SitesSelectionGrid",
-            "MyPanel",
-			"AssociateViewAssociatePanel",
-			"AssociateViewLeftTreePanel",
-			"AssociateViewRightTreePanel"
-			
+            "PatientHistoryPanel",
+            "PatientHistoryGrid",
+            "MyWindow"
         ]
     },
     "name": "Application",

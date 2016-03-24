@@ -1,0 +1,127 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patienthistorygrid",
+        "designer|userClassName": "PatientHistoryGrid",
+        "header": false,
+        "height": null,
+        "store": [
+            "{PatientHistoryStore}"
+        ],
+        "title": "My Grid Panel",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
+    "viewControllerInstanceId": "aac31181-09fc-4522-852d-05c72b1059da",
+    "viewModelInstanceId": "ccbdb707-6f9a-4a65-87a6-8c4e2cbdfbdb",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "path",
+                "text": "String"
+            },
+            "name": "MyColumn2",
+            "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "docDate",
+                "format": "d/m/Y",
+                "text": "String"
+            },
+            "name": "MyDateColumn",
+            "designerId": "2c65edce-97a3-4c4a-9b56-e20640757dc4"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "path",
+                "text": "String"
+            },
+            "name": "MyColumn4",
+            "designerId": "e133221a-9980-453e-bfef-4e437089bfaa"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "ba20ba72-063f-457c-b7cd-d5cb659dbe79"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature",
+            "designerId": "a74feab3-9928-451d-90d3-ef5a38d2fad3",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            "{name}: {docDate}"
+                        ]
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "32b98ebb-5eb7-4fd4-aa94-b9329861fc1a"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onGridpanelAfterRender",
+            "designerId": "c43c4e97-a464-448a-9d7f-5a6f2051b496"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patienthistorygrid",
+        "designer|userClassName": "PatientHistoryGridViewController"
+    },
+    "designerId": "aac31181-09fc-4522-852d-05c72b1059da"
+}

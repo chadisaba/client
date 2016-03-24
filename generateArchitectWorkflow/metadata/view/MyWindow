@@ -1,0 +1,20 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "animateTarget": "test",
+        "designer|userAlias": "mywindow",
+        "designer|userClassName": "MyWindow",
+        "height": 250,
+        "title": "My Window",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "b1fa3e1a-7839-4c7f-8b99-41d06d98647f",
+    "viewControllerInstanceId": "22f69cff-87c8-4d72-97c2-7c1127b39527",
+    "viewModelInstanceId": "63bf4c29-e3d2-4e45-a750-2ac2c17f67d2"
+}

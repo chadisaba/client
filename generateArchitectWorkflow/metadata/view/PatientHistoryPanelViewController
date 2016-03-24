@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "mypanel",
-        "designer|userClassName": "MyPanelViewController"
+        "designer|userAlias": "patienthistorypanel",
+        "designer|userClassName": "PatientHistoryPanelViewController"
     },
     "designerId": "55f63529-4015-4053-8220-0505eb76e672"
 }

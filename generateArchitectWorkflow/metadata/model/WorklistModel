@@ -31,7 +31,7 @@
             "designerId": "e96f8d89-803f-419a-a346-258ck2wymxgc"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -40,7 +40,7 @@
             "userConfig": {
                 "name": "worklistDate"
             },
-            "name": "MyworklistDate",
+            "name": "MyDate",
             "designerId": "e96f8d89-803f-419a-a346-1nt5y4bpp1mw"
         },
         {
