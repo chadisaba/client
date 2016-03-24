@@ -15,5 +15,18 @@
 
 Ext.define('MyApp.view.PatientHistoryPanelViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.patienthistorypanel'
+    alias: 'controller.patienthistorypanel',
+
+    requires: [
+        'MyApp.view.override.PatientHistoryPanelViewController'
+    ],
+
+    onGridpanelDisplayFileContentEvent: function(gridpanel, fileContent) {
+
+    },
+
+    onPanelAfterRender: function(component, eOpts) {
+
+    }
+
 });

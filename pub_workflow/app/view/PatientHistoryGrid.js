@@ -30,28 +30,35 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     viewModel: {
         type: 'patienthistorygrid'
     },
-    header: false,
-    title: 'My Grid Panel',
+    title: 'Historique ',
+    hideHeaders: true,
 
     bind: {
         store: '{PatientHistoryStore}'
     },
     columns: [
         {
-            xtype: 'gridcolumn',
-            dataIndex: 'path',
-            text: 'String'
-        },
-        {
             xtype: 'datecolumn',
             dataIndex: 'docDate',
-            text: 'String',
+            hidden: true,
+            text: 'Date',
             format: 'd/m/Y'
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return '';
+            },
             dataIndex: 'path',
-            text: 'String'
+            text: 'Path',
+            flex: 1
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: 'typeDocumentRenderer',
+            dataIndex: 'type',
+            text: 'Type',
+            flex: 3
         }
     ],
     features: [
@@ -63,7 +70,8 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
         }
     ],
     listeners: {
-        afterrender: 'onGridpanelAfterRender'
+        afterrender: 'onGridpanelAfterRender',
+        itemdblclick: 'onGridpanelItemDblClick'
     }
 
 });

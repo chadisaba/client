@@ -21,7 +21,15 @@ Ext.define('MyApp.view.PatientHistoryGridViewController', {
         'MyApp.view.override.PatientHistoryGridViewController'
     ],
 
+    typeDocumentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     onGridpanelAfterRender: function(component, eOpts) {
+
+    },
+
+    onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
     }
 
