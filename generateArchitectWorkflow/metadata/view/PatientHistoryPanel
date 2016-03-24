@@ -8,12 +8,8 @@
     "userConfig": {
         "designer|userAlias": "patienthistorypanel",
         "designer|userClassName": "PatientHistoryPanel",
-        "height": null,
-        "layout": "border",
-        "title": "My Panel",
-        "width": null
+        "layout": "border"
     },
-    "name": "MyPanel",
     "designerId": "387f02e7-c52d-4e89-819c-0e0df75df746",
     "viewControllerInstanceId": "55f63529-4015-4053-8220-0505eb76e672",
     "viewModelInstanceId": "53681c2f-d038-4e42-ad25-fdcdd2627555",
@@ -26,28 +22,89 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "patientHistoryGrid",
                 "layout|flex": 1,
                 "layout|region": "center",
-                "width": 640
+                "width": null
             },
-            "name": "patienthistorygrid",
+            "name": "patienthistorygrid2",
             "designerId": "28dcdcb3-4f05-4f0c-ad53-9cb2628e14b3",
-            "masterInstanceId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520"
+            "masterInstanceId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel",
+                            "fileContent"
+                        ],
+                        "fn": "onGridpanelDisplayFileContentEvent",
+                        "name": "displayFileContentEvent",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelDisplayFileContentEvent",
+                    "designerId": "5ead78c6-098c-4f44-9d1d-15c73c03dd6f"
+                }
+            ]
         },
         {
-            "type": "Ext.Component",
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "0b398db6-0b41-4cf3-beeb-e13fc773bfbc"
+        },
+        {
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "html": null,
+                "itemId": "displayFileContentPanelItemId",
+                "layout": "fit",
                 "layout|flex": 3,
                 "layout|region": "east",
-                "width": 150
+                "layout|split": true,
+                "title": "Contenu",
+                "width": null
             },
-            "name": "MyComponent8",
-            "designerId": "e404dc41-b35f-4eb8-a115-c4ea1d380aa6"
+            "name": "MyPanel",
+            "designerId": "14278470-6efc-45c2-8036-91a2a6ff5df9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 10,
+                        "fieldLabel": "",
+                        "height": null,
+                        "itemId": "displayContentTextAreaItemId",
+                        "width": null
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "1d9ee087-299b-4162-8ca4-425d51088e16"
+                }
+            ]
         }
     ]
 }

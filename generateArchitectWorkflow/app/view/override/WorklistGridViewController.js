@@ -432,7 +432,7 @@ var tooltip;
                 break;
         }
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        var result=Utility.renderer.textHtmlTagRenderer('div',color,value)
+        var result=Utility.renderer.textHtmlTagRenderer('div',color,value);
 
         return result;
     }

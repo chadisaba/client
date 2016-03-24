@@ -19,29 +19,48 @@ Ext.define('MyApp.view.PatientHistoryPanel', {
 
     requires: [
         'MyApp.view.PatientHistoryPanelViewModel',
+        'MyApp.view.PatientHistoryPanelViewController',
         'MyApp.view.PatientHistoryGrid',
-        'Ext.grid.Panel'
+        'Ext.grid.Panel',
+        'Ext.form.field.TextArea'
     ],
 
+    controller: 'patienthistorypanel',
     viewModel: {
         type: 'patienthistorypanel'
     },
     layout: 'border',
-    title: 'My Panel',
 
     items: [
         {
             xtype: 'patienthistorygrid',
+            itemId: 'patientHistoryGrid',
             flex: 1,
             region: 'center',
-            width: 640
+            listeners: {
+                displayFileContentEvent: 'onGridpanelDisplayFileContentEvent'
+            }
         },
         {
-            xtype: 'component',
+            xtype: 'panel',
             flex: 3,
             region: 'east',
-            width: 150
+            split: true,
+            itemId: 'displayFileContentPanelItemId',
+            layout: 'fit',
+            title: 'Contenu',
+            items: [
+                {
+                    xtype: 'textareafield',
+                    border: 10,
+                    itemId: 'displayContentTextAreaItemId',
+                    fieldLabel: ''
+                }
+            ]
         }
-    ]
+    ],
+    listeners: {
+        afterrender: 'onPanelAfterRender'
+    }
 
 });

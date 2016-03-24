@@ -8,12 +8,12 @@
     "userConfig": {
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGrid",
-        "header": false,
         "height": null,
+        "hideHeaders": true,
         "store": [
             "{PatientHistoryStore}"
         ],
-        "title": "My Grid Panel",
+        "title": "Historique ",
         "width": null
     },
     "name": "MyGridPanel",
@@ -25,20 +25,6 @@
     "viewModelInstanceId": "ccbdb707-6f9a-4a65-87a6-8c4e2cbdfbdb",
     "cn": [
         {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "path",
-                "text": "String"
-            },
-            "name": "MyColumn2",
-            "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7"
-        },
-        {
             "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
@@ -48,7 +34,8 @@
             "userConfig": {
                 "dataIndex": "docDate",
                 "format": "d/m/Y",
-                "text": "String"
+                "hidden": true,
+                "text": "Date"
             },
             "name": "MyDateColumn",
             "designerId": "2c65edce-97a3-4c4a-9b56-e20640757dc4"
@@ -62,10 +49,80 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "path",
-                "text": "String"
+                "flex": 1,
+                "text": "Path",
+                "width": null
+            },
+            "name": "MyColumn2",
+            "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "1e1ac822-6e36-4146-bfa7-244cd1376876"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "type",
+                "flex": 3,
+                "text": "Type"
             },
             "name": "MyColumn4",
-            "designerId": "e133221a-9980-453e-bfef-4e437089bfaa"
+            "designerId": "e133221a-9980-453e-bfef-4e437089bfaa",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "typeDocumentRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "dbf78030-b7df-4817-bbfc-25eafb648512"
+                }
+            ]
         },
         {
             "type": "Ext.view.Table",
@@ -122,6 +179,21 @@
             },
             "name": "onGridpanelAfterRender",
             "designerId": "c43c4e97-a464-448a-9d7f-5a6f2051b496"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemDblClick",
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "name": "onGridpanelItemDblClick",
+            "designerId": "dbf4b188-e7de-4783-9847-d36ae2a35e48"
         }
     ]
 }
