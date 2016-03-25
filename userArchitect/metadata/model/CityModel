@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CityModel"
+    },
+    "name": "MyModel",
+    "designerId": "8a445cc5-bc9e-4d45-973c-351f68e2122a",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cityId"
+            },
+            "name": "MyInteger1",
+            "designerId": "a41e63f0-c29c-4a14-b138-8352716b96af"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cityName"
+            },
+            "name": "MyString10",
+            "designerId": "e16cc4b2-c60e-4ee9-98bb-28a147f4001f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cityZipCode"
+            },
+            "name": "MyString9",
+            "designerId": "42c42b2b-a546-4755-bae1-2d04d7a3fc89"
+        }
+    ]
+}

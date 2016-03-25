@@ -1,0 +1,61 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:8888/clientch/user_pub/",
+        "exportPath": "/Applications/MAMP/htdocs/clientch/user_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
+            "rc79fthj-4ace-45f2-b4ee-479wnghcsd31",
+            "xbn4eshu-8a5d-4154-8917-u9v5cbi5iicn",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "f089c0bc-f8b4-4431-8e81-2d71ce61bdf9",
+            "021a81bf-53ab-4438-a138-72179c6df68c",
+            "008a66d3-f4d6-49db-af08-8e4500612791"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "g4anqjce-1d4f-4fb9-9364-34117gmwg69s",
+            "8a445cc5-bc9e-4d45-973c-351f68e2122a"
+        ],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

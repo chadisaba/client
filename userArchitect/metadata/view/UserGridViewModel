@@ -1,0 +1,43 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usergrid",
+        "designer|userClassName": "UserGridViewModel"
+    },
+    "designerId": "xbn4eshu-8a5d-4154-8917-u9v5cbi5iicn",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "UserModel",
+                "name": "UserStore"
+            },
+            "name": "UserStore",
+            "designerId": "rtnkqprw-c056-4140-9039-hs4p1fwhlyl9"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CityModel",
+                "name": "CityComboStore"
+            },
+            "name": "MyStore",
+            "designerId": "fa9dc01d-c2b8-4eb2-84c3-291ecdafff25"
+        }
+    ]
+}
