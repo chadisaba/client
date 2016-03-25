@@ -21,6 +21,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         'MyApp.view.DeviceGridViewModel',
         'MyApp.view.DeviceGridViewController',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.Hidden',
         'Ext.form.field.Date',
         'Ext.grid.column.Number',
         'Ext.form.field.Number',
@@ -46,8 +47,7 @@ Ext.define('MyApp.view.DeviceGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            renderer: 'deviceTypeRenderer',
-            dataIndex: 'deviceTypeId',
+            dataIndex: 'deviceTypeCode',
             text: 'Type',
             editor: {
                 xtype: 'combobox',
@@ -57,16 +57,18 @@ Ext.define('MyApp.view.DeviceGrid', {
                 displayField: 'deviceTypeCode',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'deviceTypeId',
+                valueField: 'deviceTypeCode',
                 bind: {
                     store: '{DeviceTypeComboStore}'
+                },
+                listeners: {
+                    select: 'onDeviceTypeComboBoxEditorItemIdSelect'
                 }
             }
         },
         {
             xtype: 'gridcolumn',
-            renderer: 'modalityRenderer',
-            dataIndex: 'modalityId',
+            dataIndex: 'modalityCode',
             text: 'Modalité',
             editor: {
                 xtype: 'combobox',
@@ -76,9 +78,12 @@ Ext.define('MyApp.view.DeviceGrid', {
                 displayField: 'modalityCode',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'modalityId',
+                valueField: 'modalityCode',
                 bind: {
                     store: '{ModalityComboStore}'
+                },
+                listeners: {
+                    select: 'onModalityComboBoxEditorItemIdSelect'
                 }
             }
         },
@@ -112,6 +117,27 @@ Ext.define('MyApp.view.DeviceGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'deviceTypeId',
+            text: 'deviceTypeId',
+            editor: {
+                xtype: 'hiddenfield',
+                itemId: 'deviceTypeIdFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            itemId: 'modalityId',
+            dataIndex: 'modalityId',
+            text: 'deviceTypeId',
+            editor: {
+                xtype: 'hiddenfield',
+                itemId: 'modalityIdFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             dataIndex: 'deviceAgreementNumber',
             text: 'N Agrément',
             editor: {
@@ -121,6 +147,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 110,
             dataIndex: 'deviceAgreementDate',
             formatter: 'date(\'d/m/Y\')',
             text: 'Date Agr.',
@@ -141,6 +168,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 110,
             dataIndex: 'deviceInstallationDate',
             formatter: 'date(\'d/m/Y\')',
             text: 'Installation',

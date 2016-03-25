@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "cls": [
+            "custom-grid"
+        ],
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGrid",
         "height": null,
@@ -154,7 +157,7 @@
                     "userConfig": {
                         "designer|displayName": "groupHeaderTpl",
                         "implHandler": [
-                            "{name}: {docDate}"
+                            "Consultation du {name}"
                         ]
                     },
                     "name": "groupHeaderTpl",

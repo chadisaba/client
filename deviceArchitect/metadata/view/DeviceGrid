@@ -17,7 +17,8 @@
         "store": [
             "{DeviceStore}"
         ],
-        "title": ""
+        "title": "",
+        "width": null
     },
     "name": "MyGridPanel",
     "configAlternates": {
@@ -35,7 +36,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "deviceTypeId",
+                "dataIndex": "deviceTypeCode",
                 "text": "Type"
             },
             "name": "MydeviceTypeIdCol",
@@ -58,39 +59,30 @@
                         "store": [
                             "{DeviceTypeComboStore}"
                         ],
-                        "valueField": "deviceTypeId"
+                        "valueField": "deviceTypeCode"
                     },
                     "name": "MydeviceTypeComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-hrsi3b7bh7eq"
-                },
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "deviceTypeRenderer",
-                        "fn": "renderer",
-                        "implHandler": [
-                            ""
-                        ]
-                    },
-                    "name": "renderer",
-                    "designerId": "46346dae-4154-47e4-a8f4-bf71cbc55c5d"
+                    "designerId": "ade60fcf-b3b2-4bae-hrsi3b7bh7eq",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeviceTypeComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onDeviceTypeComboBoxEditorItemIdSelect",
+                            "designerId": "7367b772-6950-4c36-a72a-0ab048e7830c"
+                        }
+                    ]
                 }
             ]
         },
@@ -102,7 +94,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "modalityId",
+                "dataIndex": "modalityCode",
                 "text": "Modalité"
             },
             "name": "MymodalityIdCol",
@@ -125,37 +117,30 @@
                         "store": [
                             "{ModalityComboStore}"
                         ],
-                        "valueField": "modalityId"
+                        "valueField": "modalityCode"
                     },
                     "name": "MymodalityComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-41r9fpsjaeru"
-                },
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "modalityRenderer",
-                        "fn": "renderer",
-                        "implHandler": null
-                    },
-                    "name": "renderer",
-                    "designerId": "9b21376e-8c3e-4ff7-98ec-8dbf10405c2b"
+                    "designerId": "ade60fcf-b3b2-4bae-41r9fpsjaeru",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onModalityComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onModalityComboBoxEditorItemIdSelect",
+                            "designerId": "21665c8e-b3ec-4efd-84e2-92373e19adcd"
+                        }
+                    ]
                 }
             ]
         },
@@ -255,6 +240,67 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "deviceTypeId",
+                "hidden": true,
+                "text": "deviceTypeId"
+            },
+            "name": "MydeviceAETCol1",
+            "designerId": "ce3daf8c-42d7-454c-ac56-1b58953ea224",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deviceTypeIdFieldItemId"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "1a14e939-a6fa-4ad7-b982-2d0a3541617d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "modalityId",
+                "hidden": true,
+                "itemId": "modalityId",
+                "text": "deviceTypeId"
+            },
+            "name": "MydeviceAETCol2",
+            "designerId": "4af91e7d-d865-4cbe-aee2-034538d3f3c0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "modalityIdFieldItemId"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "8306a335-6404-4aff-83ae-3f9e50f0bd01"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "deviceAgreementNumber",
                 "text": "N Agrément"
             },
@@ -286,7 +332,8 @@
             "userConfig": {
                 "dataIndex": "deviceAgreementDate",
                 "formatter": "date('d/m/Y')",
-                "text": "Date Agr."
+                "text": "Date Agr.",
+                "width": 110
             },
             "name": "MyColumn2",
             "designerId": "7c6bec59-5c6a-4872-9cec-rrbk2vyxcvcf",
@@ -346,7 +393,8 @@
             "userConfig": {
                 "dataIndex": "deviceInstallationDate",
                 "formatter": "date('d/m/Y')",
-                "text": "Installation"
+                "text": "Installation",
+                "width": 110
             },
             "name": "MyColumn1",
             "designerId": "7c6bec59-5c6a-4872-9cec-eg438tbj1dte",

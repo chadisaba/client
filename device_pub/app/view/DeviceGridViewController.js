@@ -21,11 +21,11 @@ Ext.define('MyApp.view.DeviceGridViewController', {
         'MyApp.view.override.DeviceGridViewController'
     ],
 
-    deviceTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+    onDeviceTypeComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 
-    modalityRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+    onModalityComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 

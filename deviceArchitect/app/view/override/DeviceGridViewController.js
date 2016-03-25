@@ -15,7 +15,9 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
         };
         var deviceTypeComboStore=this.getViewModel().getStore('DeviceTypeComboStore');
         var deviceTypeComboStoreData=[];
-        Server.CommonQueries.read(params,
+
+
+           Server.CommonQueries.read(params,
             function(res){
                 if(res.success){
                     deviceTypeComboStoreData=res.data;
@@ -136,7 +138,7 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     onDeviceGridIdEdit: function(editor,context) {
         // var columnsName=['name','text'];
 
-        var columnsName=['deviceTypeId','modalityId','deviceName','deviceModel','deviceAET','deviceAgreementNumber','deviceAgreementDate','deviceTrademark','deviceInstallationDate','devicePower','deviceIsSenolog','deviceSupportId','deviceLecture'];
+        var columnsName=['deviceTypeId','modalityId','deviceName','deviceModel','deviceAET','deviceAgreementNumber','deviceAgreementDate','deviceTrademark','deviceInstallationDate','devicePower','deviceIsSenolog','deviceSupport','deviceLecture'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -157,9 +159,11 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     {
         var me=this;
         var params={
-            table:"DEVICE"
-        };
-        Server.CommonQueries.read(params,
+
+            tablesArray:["DEVICE",'DEVICE_TYPE','MODALITY'],
+            keysArray:['deviceTypeId','modalityId']
+    };
+        Server.CommonQueries.readJoin(params,
             function(res){
                 if(res.success){
                     callback(res.data);
@@ -170,16 +174,21 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
                 }
             },me);
     },
-    /*********************** renderers****************************************************/
-    deviceTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-        return Utility.renderer.retreiveTextFromStore(value,'deviceTypeId','deviceTypeCode','DeviceTypeComboStore',this);
-    },
-    supportRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-        return Utility.renderer.retreiveTextFromStore(value,'deviceSupport','deviceSupportDisaplay',this);
-    },
-    modalityRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-        return Utility.renderer.retreiveTextFromStore(value,'modalityId','modalityCode','ModalityComboStore',this);
-    }
 
+    onDeviceTypeComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var deviceTypeIdField=combo.up('roweditor').down('#deviceTypeIdFieldItemId');
+        deviceTypeIdField.setValue(record.get('deviceTypeId'));
+    },
+
+    onModalityComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var modalityIdField=combo.up('roweditor').down('#modalityIdFieldItemId');
+        modalityIdField.setValue(record.get('modalityId'));
+    },
+
+    /*********************** renderers****************************************************/
+
+    supportRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+        return Utility.renderer.retreiveTextFromStore(value,'deviceSupport','deviceSupportDisplay','DeviceSupportComboStore',this);
+    }
 
 });

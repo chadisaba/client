@@ -160,6 +160,7 @@ westPanel.setWidth(new_width);
                     displayField:'patientLName',
                     valueField:'patientId',
 width:400,
+                    id:'comboSearchPatient',
                     store: {
                         model: 'Patient',
                         remoteSort: true,
@@ -185,7 +186,8 @@ width:400,
 
                         // Custom rendering template for each item
                         getInnerTpl: function() {
-                            return '<img src="../Common/resources/images/{patientGender}.png"/> <span style="font-weight:bold"> {patientLName} {patientFname} ' +
+                            return '<img src="../Common/resources/images/{patientGender}.png"/> ' +
+                                '<span style="font-weight:bold"> {patientLName} {patientFname} ' +
                                 '{[Ext.Date.format(values.patientBirthday, "d/m/Y")]}' +
                                 '</span><br />Adresse : ' +
                                 '{addressText}<br/>' +
@@ -194,9 +196,34 @@ width:400,
                         }
                     },
                     listeners:{
-                        change:function()
+                        select:function(combo, record)
                         {
-                            //alert('test');
+                          //  alert('fadi');
+                            Ext.create('Ext.window.Window', {
+
+                                animateTarget:'comboSearchPatient',
+                                title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
+                               /* minimizable: true,
+                                maximizable: true,*/
+                                height:Ext.getBody().getViewSize().height,
+                                width:Ext.getBody().getViewSize().width,//*0.8, //80%
+                                anim: {
+                                    endOpacity: 1,
+                                    easing: 'easeIn',
+                                    duration: .9
+                                },
+                                listeners: {
+                                    show: function(w){
+                                        w.getEl().fadeIn(w.anim);
+                                        w.getEl().shadow.el.fadeIn(w.anim);
+                                    }
+                                },
+                                    items:{
+                                        xtype:'patienthistorypanel',
+                                        patientId:record.get('patientId'),
+                                        height:Ext.getBody().getViewSize().height
+                                    }
+                                }).show();
                         }
                     }
 

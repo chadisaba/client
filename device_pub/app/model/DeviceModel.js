@@ -36,7 +36,13 @@ Ext.define('MyApp.model.DeviceModel', {
             name: 'deviceTypeId'
         },
         {
+            name: 'deviceTypeCode'
+        },
+        {
             name: 'modalityId'
+        },
+        {
+            name: 'modalityCode'
         },
         {
             name: 'deviceName'

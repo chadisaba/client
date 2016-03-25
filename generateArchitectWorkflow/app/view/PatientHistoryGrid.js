@@ -30,6 +30,7 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     viewModel: {
         type: 'patienthistorygrid'
     },
+    cls: 'custom-grid',
     title: 'Historique ',
     hideHeaders: true,
 
@@ -65,7 +66,7 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
         {
             ftype: 'grouping',
             groupHeaderTpl: [
-                '{name}: {docDate}'
+                'Consultation du {name}'
             ]
         }
     ],

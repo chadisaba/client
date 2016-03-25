@@ -27,8 +27,9 @@ Ext.define('MyApp.view.override.PatientHistoryGridViewController', {
 
     /*******************Renderers******************************************/
     typeDocumentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-    var rend= Utility.renderer.textHrefRenderer("#31b0d5",'<i class="fa fa-file-text-o">'+'&nbsp;&nbsp; '+value);
-    return rend;
+        return '<i class="fa fa-file-text-o"> <div style="border: 1px dotted #999;color:#428bca;' +
+            'border-radius: 5px;display: inline-block;padding: 3px 8px;text-decoration: none;">'+value+'</div>';
+
 }
     
 });

@@ -51,10 +51,36 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "deviceTypeCode"
+            },
+            "name": "MydeviceTypeId1",
+            "designerId": "07d69b5e-1af8-4712-9bef-c53ec4e9cd5e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "modalityId"
             },
             "name": "MymodalityId",
             "designerId": "e96f8d89-803f-419a-a346-6scr4yda552d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modalityCode"
+            },
+            "name": "MymodalityId1",
+            "designerId": "e586cd1c-a0ab-482d-8999-2d3c12845584"
         },
         {
             "type": "Ext.data.field.Field",
