@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StudyTypeComboModel"
+    },
+    "name": "MyModelStudyTypeComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-278jd32dnp1n",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyTypeId"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-ty9l8gk6s61a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyTypeCode"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-ag22eww9fbnl"
+        }
+    ]
+}

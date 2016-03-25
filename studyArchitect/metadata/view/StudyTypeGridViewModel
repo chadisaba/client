@@ -1,0 +1,43 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studytypegrid",
+        "designer|userClassName": "StudyTypeGridViewModel"
+    },
+    "designerId": "r2gfmyh4-8a5d-4154-8917-q18yd6613th1",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyTypeModel",
+                "name": "StudyTypeStore"
+            },
+            "name": "StudyTypeStore",
+            "designerId": "udpjkuxb-c056-4140-9039-3tu1p5yfbx8d"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyCatComboModel",
+                "name": "StudyCatComboStore"
+            },
+            "name": "StudyCatComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-ytde2q791yix"
+        }
+    ]
+}

@@ -1,0 +1,898 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studygrid",
+        "designer|userClassName": "StudyGrid",
+        "forceFit": true,
+        "itemId": "studyGridId",
+        "reference": "studyGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{StudyStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "v94d1euu-8c41-4643-a8f8-p3lbcbqd24t7",
+    "viewControllerInstanceId": "wsqjeyie-4ace-45f2-b4ee-juc9l67k7jlm",
+    "viewModelInstanceId": "gpwdu53k-8a5d-4154-8917-ylwhsses23h5",
+    "cn": [
+  
+     
+     
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyTypeId",
+                "text": "Type"
+        
+            },
+            "name": "MystudyTypeIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-94n4ns8qppqv"
+                , "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+   
+                        "displayField": "studyTypeCode",
+                        "forceSelection": true,
+                        "itemId": "studyTypeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "valueField": "studyTypeId"
+                         ,"allowBlank": false
+                          ,"store": [
+                            "{StudyTypeComboStore}"
+                        ]   
+                            
+   
+                    },
+                    "name": "MystudyTypeComboBox",
+                         "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-aamqlqkdpvqa"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyCode",
+                "text": "Code"
+        
+            },
+            "name": "MystudyCodeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-5b2upw2x3fbs"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyCodeTextFieldItemId"
+                           ,"allowBlank": false
+                    },
+                    "name": "MystudyCodeTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-ri5cccij245p"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyName",
+                "text": "Name"
+        
+            },
+            "name": "MystudyNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-u1f13k4v91wp"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyNameTextFieldItemId"
+                           ,"allowBlank": false
+                    },
+                    "name": "MystudyNameTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-lvn3ywmwwkqs"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyFtNumber",
+                "text": "Number FT"
+        
+            },
+            "name": "MystudyFtNumberCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-pi6hceygbvey"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyFtNumberTextFieldItemId"
+                          
+                    },
+                    "name": "MystudyFtNumberTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-u949uf5iwhgc"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyDuration",
+                "text": "Duration"
+        
+            },
+            "name": "MystudyDurationCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jm1mai1fetm6"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyDurationTextFieldItemId"
+                          
+                    },
+                    "name": "MystudyDurationTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-eapmeaut5j1u"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyDaysNbToSendSms",
+                "text": "Days to send SMS"
+        
+            },
+            "name": "MystudyDaysNbToSendSmsCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-hur2i6k93b7s"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyDaysNbToSendSmsTextFieldItemId"
+                          
+                    },
+                    "name": "MystudyDaysNbToSendSmsTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-28geeq796c44"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyIsDosimetry",
+                "text": "Dosimetry"
+        
+            },
+            "name": "MystudyIsDosimetryCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-w6sg2bydix1t"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MystudyIsDosimetryCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-yxgapr5iqbk9"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-8ym6vqmedym9"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyIsInjected",
+                "text": "Injected"
+        
+            },
+            "name": "MystudyIsInjectedCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-gawawlwsw3b3"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MystudyIsInjectedCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-98sqsug5vxf2"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-l5w3n4rcvexk"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyGenerateDicomWL",
+                "text": "Generte DicomSegement"
+        
+            },
+            "name": "MystudyGenerateDicomWLCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-axwyqa3486i2"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MystudyGenerateDicomWLCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-6pgkgbamcwh5"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-fui41mbd8gba"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyMultiSegment",
+                "text": "Multi segment"
+        
+            },
+            "name": "MystudyMultiSegmentCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-sa6p2gvr1icx"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MystudyMultiSegmentCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-e7ur4s3xyj45"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-umeimdlqmtxn"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": "Active"
+        
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-y62x5uamf12h"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+        
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-9ma6py3ejcu3"
+                },
+                           {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-cr4bpnj2qsnv"
+                }
+            ]  },
+                   
+             {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyInvoiceCat",
+                "text": "Invoice Cat"
+        
+            },
+            "name": "MystudyInvoiceCatCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-lq559dsk1fd4"
+                 ,"cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+        
+                         "itemId": "studyInvoiceCatTextFieldItemId"
+                           ,"allowBlank": false
+                    },
+                    "name": "MystudyInvoiceCatTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-jr2jm7meh9lh"
+                }
+            ]  },
+       {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "q5yf69n8-ccc7-232C-1245-pdmcu986dcp8"
+        },
+        
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "exqkqgwk-f393-483a-8425-6grt85c7jun6"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "i1kcrukr-ccc7-465c-8662-4g3h32tfvu53"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processStudyGrid",
+            "designerId": "gqabcrpq-2054-459b-a4aa-enwmmgbmehur"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdChHist",
+            "designerId": "t9kmx5ul-1d4f-4fb9-9364-awpgyb2bsy4g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdAfterRender",
+            "designerId": "wjv43wp5-1f65-4972-a6e1-lh2lvu3ev8th"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdInEdit",
+            "designerId": "43wcl89m-1a08-4be0-b287-pe7n4sc5b15g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdResetEdit",
+            "designerId": "uxbuv4ue-2c80-456a-a5c5-kmui8tk42e5b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onStudyGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdSaveEdit",
+            "designerId": "ekxw5l58-f0d5-4d89-a1bb-eq4unfklqxr5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onStudyGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdAddItem",
+            "designerId": "jlqwdrau-ffc4-4ede-a9db-js4rfqlskbrm"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdDeleteItem",
+            "designerId": "r26tdawr-ac56-469a-895f-mytwlvktnwt9"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdModifyItem",
+            "designerId": "pdp2a4ib-6b6f-4377-998f-uf5xpikqe6rp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdQuitEdit",
+            "designerId": "ah4d9hc3-746f-4da4-9f4d-amkmrw5pwf92"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-7w7dlvfiw71v"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdBeforeEdit",
+            "designerId": "gr58y8tu-4019-4a61-8c79-2gxuelsbmqu1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdCanceledit",
+            "designerId": "e7bigu2f-6686-46dd-bfe7-9l5bici5gur2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdContainerClick",
+            "designerId": "uevkjkuc-3079-420b-87bf-8sa82h3eruks"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdEdit",
+            "designerId": "6bygvmii-47bf-4b29-bb1d-v4hja9e7kra5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdBeforeCellClick",
+            "designerId": "$ql18jpgy-6a9c-488e-8122-4e3enrx17afu"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onStudyGridIdValidateedit",
+            "designerId": "yalgpuep-b2ec-4782-a56f-cpjkhw41aflp"
+        }
+    ]
+}

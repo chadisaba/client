@@ -1,0 +1,63 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:8888/clientch/study_pub/",
+        "exportPath": "/Applications/MAMP/htdocs/clientch/study_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "v94d1euu-8c41-4643-a8f8-p3lbcbqd24t7",
+            "wsqjeyie-4ace-45f2-b4ee-juc9l67k7jlm",
+            "gpwdu53k-8a5d-4154-8917-ylwhsses23h5",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
+            "jl4lpbe4-4ace-45f2-b4ee-i3xtau7vi94k",
+            "r2gfmyh4-8a5d-4154-8917-q18yd6613th1"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "ebxkj6jp-1d4f-4fb9-9364-38hsi3f9u58x",
+            "040092bf-b6f4-441b-b581-278jd32dnp1n",
+            "040092bf-b6f4-441b-b581-i19st3q4ya8e",
+            "1s6wn9wi-1d4f-4fb9-9364-g1levi7463va"
+        ],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
