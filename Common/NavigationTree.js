@@ -25,7 +25,7 @@ Ext.define('MyApp.store.NavigationTree', {
                 text: 'Paramétrage',
                 children: [
                     {
-                        text: 'Sites',
+                        text: 'Sites11',
                         iconCls: 'x-fa fa-leanpub',
                         expanded: false,
                         selectable: false,
@@ -81,6 +81,13 @@ Ext.define('MyApp.store.NavigationTree', {
                             }
 
                         ]
+                    },
+                    {
+                        text: 'Study',
+                        iconCls: 'x-fa fa-search',
+                        viewType: 'studygrid',
+                        routeId: 'studygrid', // routeId defaults to viewType
+                        leaf: true
                     }
 
                     ]
