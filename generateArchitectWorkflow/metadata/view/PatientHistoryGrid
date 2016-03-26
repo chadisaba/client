@@ -52,9 +52,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "path",
-                "flex": 1,
+                "flex": null,
                 "text": "Path",
-                "width": null
+                "width": 40
             },
             "name": "MyColumn2",
             "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7",
@@ -78,7 +78,7 @@
                         ],
                         "fn": "renderer",
                         "implHandler": [
-                            "return '';"
+                            "return '<i class=\"fa fa-file-text-o\" style=\"color:#428bca;font-size: 16px\"/> ';"
                         ]
                     },
                     "name": "renderer",
@@ -191,11 +191,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onGridpanelItemDblClick",
-                "name": "itemdblclick",
+                "fn": "onGridpanelItemClick",
+                "name": "itemclick",
                 "scope": "me"
             },
-            "name": "onGridpanelItemDblClick",
+            "name": "onGridpanelItemClick",
             "designerId": "dbf4b188-e7de-4783-9847-d36ae2a35e48"
         }
     ]

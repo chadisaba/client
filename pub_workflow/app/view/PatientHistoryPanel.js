@@ -35,6 +35,10 @@ Ext.define('MyApp.view.PatientHistoryPanel', {
         {
             xtype: 'patienthistorygrid',
             itemId: 'patientHistoryGrid',
+            animCollapse: true,
+            collapseDirection: 'left',
+            collapsible: true,
+            titleCollapse: false,
             flex: 1,
             region: 'center',
             listeners: {
@@ -48,6 +52,8 @@ Ext.define('MyApp.view.PatientHistoryPanel', {
             split: true,
             itemId: 'displayFileContentPanelItemId',
             layout: 'fit',
+            animCollapse: true,
+            collapsible: true,
             title: 'Contenu',
             items: [
                 {

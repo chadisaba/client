@@ -24,7 +24,8 @@ Ext.application({
         'DeviceModel',
         'DeviceTypeComboModel',
         'ModalityComboModel',
-        'DeviceSupportComboModel'
+        'DeviceSupportComboModel',
+        'MyModel'
     ],
     views: [
         'DeviceGrid'

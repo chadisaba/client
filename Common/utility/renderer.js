@@ -2,9 +2,9 @@ Ext.define('Utility.renderer', {
 	statics:{
 		checkBoxRenderer: function (value){
 			if(!value)
-				return '<span><img src="resources/images/green_checkbox_empty.png"/><span>';
+				return '<span><img src="../Common/resources/images/green_checkbox_empty.png"/><span>';
 				else
-				return '<span><img src="resources/images/green_checkbox.png"/><span>';
+				return '<span><img src="../Common/resources/images/green_checkbox.png"/><span>';
 		},
 		retreiveTextFromStore: function (value,fieldValue,fieldDisplayName,storeName,me){
 			if(value)

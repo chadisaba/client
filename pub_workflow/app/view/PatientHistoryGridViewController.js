@@ -29,7 +29,7 @@ Ext.define('MyApp.view.PatientHistoryGridViewController', {
 
     },
 
-    onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
+    onGridpanelItemClick: function(dataview, record, item, index, e, eOpts) {
 
     }
 

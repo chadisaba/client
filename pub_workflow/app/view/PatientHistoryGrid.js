@@ -40,19 +40,19 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     columns: [
         {
             xtype: 'datecolumn',
-            dataIndex: 'docDate',
             hidden: true,
+            dataIndex: 'docDate',
             text: 'Date',
             format: 'd/m/Y'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return '';
+                return '<i class="fa fa-file-text-o" style="color:#428bca;font-size: 16px"/> ';
             },
+            width: 40,
             dataIndex: 'path',
-            text: 'Path',
-            flex: 1
+            text: 'Path'
         },
         {
             xtype: 'gridcolumn',
@@ -72,7 +72,7 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     ],
     listeners: {
         afterrender: 'onGridpanelAfterRender',
-        itemdblclick: 'onGridpanelItemDblClick'
+        itemclick: 'onGridpanelItemClick'
     }
 
 });
