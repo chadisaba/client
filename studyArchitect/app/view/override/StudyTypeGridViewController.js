@@ -7,6 +7,15 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
 
     onStudyTypeGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
+        component.down('#rdvColorColItemId').setEditor({
+            xtype:'textfield',
+            allowBlank: false,
+            width:200,
+            itemId:'bicEditor',
+            maxLength:8,
+            enableKeyEvents:true
+        });
+
 
     var params;
             params={

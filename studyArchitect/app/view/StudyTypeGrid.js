@@ -20,7 +20,6 @@ Ext.define('MyApp.view.StudyTypeGrid', {
     requires: [
         'MyApp.view.StudyTypeGridViewModel',
         'MyApp.view.StudyTypeGridViewController',
-        'MyApp.view.override.StudyTypeGrid',
         'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Checkbox',
@@ -82,11 +81,8 @@ Ext.define('MyApp.view.StudyTypeGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyTypeRdvColor',
-            text: 'RDV color',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyTypeRdvColorTextFieldItemId'
-            }
+            itemId: 'rdvColorColItemId',
+            text: 'RDV color'
         },
         {
             xtype: 'gridcolumn',
