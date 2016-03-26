@@ -20,16 +20,6 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
-    models: [
-        'StudyModel',
-        'StudyTypeComboModel',
-        'StudyTypeModel',
-        'StudyCatComboModel'
-    ],
-    views: [
-        'StudyGrid',
-        'StudyTypeGrid'
-    ],
     name: 'MyApp',
 
     launch: function() {
