@@ -160,7 +160,7 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
         var me=this;
         var params={
 
-            tablesArray:["DEVICE",'DEVICE_TYPE','MODALITY'],
+            tablesArray:['DEVICE_TYPE',"DEVICE",'MODALITY'],
             keysArray:['deviceTypeId','modalityId']
     };
         Server.CommonQueries.readJoin(params,

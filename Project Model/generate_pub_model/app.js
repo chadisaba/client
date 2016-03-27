@@ -20,14 +20,31 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+
+    requires: [
+        'MyApp.DirectAPI'
+    ],
     models: [
-        'DeviceModel',
-        'DeviceTypeComboModel',
-        'ModalityComboModel',
-        'DeviceSupportComboModel',
-        'MyModel'
+        'TreePanelModel',
+        'XxAssociateComboModel',
+        'SiteCategoryComboModel',
+        'GroupIdComboModel',
+        'SiteCityIdComboModel',
+        'SiteModel',
+        'SiteConfigModel',
+        'SiteGroupModel',
+        'UserGridModel',
+        'DeviceModel'
     ],
     views: [
+        'XxAssociatePanel',
+        'XxLeftTreePanel',
+        'XxRightTreePanel',
+        'SiteGrid',
+        'SiteGroupGrid',
+        'SiteConfigWindow',
+        'SiteConfigForm',
+        'UserGrid',
         'DeviceGrid'
     ],
     controllers: [

@@ -33,6 +33,9 @@ Ext.define('MyApp.model.PatientHistoryModel', {
         },
         {
             name: 'path'
+        },
+        {
+            name: 'name'
         }
     ]
 });
