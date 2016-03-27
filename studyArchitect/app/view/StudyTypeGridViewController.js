@@ -21,6 +21,10 @@ Ext.define('MyApp.view.StudyTypeGridViewController', {
         'MyApp.view.override.StudyTypeGridViewController'
     ],
 
+    studyCatRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

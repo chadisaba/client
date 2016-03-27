@@ -44,6 +44,7 @@ Ext.define('MyApp.view.StudyTypeGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            renderer: 'studyCatRenderer',
             dataIndex: 'studyCatId',
             text: 'Catégorie',
             editor: {
@@ -80,8 +81,8 @@ Ext.define('MyApp.view.StudyTypeGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyTypeRdvColor',
             itemId: 'rdvColorColItemId',
+            dataIndex: 'studyTypeRdvColor',
             text: 'RDV color'
         },
         {

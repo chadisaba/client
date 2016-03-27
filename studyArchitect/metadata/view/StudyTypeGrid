@@ -65,6 +65,30 @@
                         "store": "binding"
                     },
                     "designerId": "ade60fcf-b3b2-4bae-5hvas6p3jr61"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "studyCatRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "b77a0803-f967-4c1b-a0d1-b9007dd7d8c4"
                 }
             ]
         },

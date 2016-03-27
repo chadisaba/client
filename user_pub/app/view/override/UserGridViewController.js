@@ -43,7 +43,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
 
 
         }else{
-            combo.setDisabled(true);
+            userCombo.setDisabled(true);
 
         }
 

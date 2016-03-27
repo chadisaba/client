@@ -88,6 +88,13 @@ Ext.define('MyApp.store.NavigationTree', {
                         viewType: 'studygrid',
                         routeId: 'studygrid', // routeId defaults to viewType
                         leaf: true
+                    },
+                    {
+                        text: 'Study type',
+                        iconCls: 'x-fa fa-search',
+                        viewType: 'studytypegrid',
+                        routeId: 'studytypegrid', // routeId defaults to viewType
+                        leaf: true
                     }
 
                     ]

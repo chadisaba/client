@@ -20,7 +20,7 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
     var params;
             params={
             id:50,
-            table:"xxTableName"
+            table:"study_cat"
             };
             var studyCatComboStore=this.getViewModel().getStore('StudyCatComboStore');
             var studyCatComboStoreData=[];
@@ -56,8 +56,8 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
 
 	     var me=this;
 	     var params={};
-	            params.table="xxTableName";
-	            params.idName="xxTableId";
+	            params.table="study_type";
+	            params.idName="studyTypeId";
 	            params.dataToBeSaved=dataToBeSaved;
 	            params.comment=comment;
 	            var result=[];
@@ -125,6 +125,17 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
     onStudyTypeGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
         Utility.grid.viewBeforeCellClick(this.getView());
     },
+
+
+    studyCatRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+        if(value)
+        {
+            var store=me.getViewModel().getStore('StudyCatComboStore');
+            var rec=store.findRecord('studyCatId',value);
+            return rec.get('studyCatName');
+        }
+    },
     
 
     onStudyTypeGridIdValidateedit: function(editor, context) {
@@ -139,7 +150,7 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
     {
         var me=this;
         var params={
-        		table:"xxTableName"
+        		table:"study_type"
         };
         var result=[];
         Server.CommonQueries.read(params,
