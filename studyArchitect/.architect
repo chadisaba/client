@@ -222,6 +222,9 @@
                     "cn": [
                         {
                             "id": "ade60fcf-b3b2-4bae-5hvas6p3jr61"
+                        },
+                        {
+                            "id": "b77a0803-f967-4c1b-a0d1-b9007dd7d8c4"
                         }
                     ]
                 },
@@ -482,7 +485,7 @@
     },
     "inspectorState": {
         "topInstance": "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
-        "selectedInstance": "7c6bec59-5c6a-4872-9cec-swij985xy3vt"
+        "selectedInstance": "b77a0803-f967-4c1b-a0d1-b9007dd7d8c4"
     },
     "editMode": "code",
     "userSettings": {
