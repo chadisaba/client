@@ -6,13 +6,11 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     },
 
 
-    onUserZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+    onUserZipCodeTextFieldItemIdChange: function(field, newValue) {
 
         var me=this;
         var viewModel = me.getViewModel();
         var cityComboStore=viewModel.getStore('CityComboStore');
-
-        var result;
         var userCombo=field.up('roweditor').down('#userCityComboBoxItemId');
         userCombo.setValue(null);
         if (newValue.length==5){
@@ -59,7 +57,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         }
     },
 
-    onUserGridIdAfterRender: function(component, eOpts) {
+    onUserGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
         var me=this;
         var viewModel = me.getViewModel();
@@ -81,7 +79,6 @@ Ext.define('MyApp.view.override.UserGridViewController', {
 
    onUserGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
-       var success=false;
        // first save all data to the server side by calling ext.direct function or ajax query
 
        var me=this;
@@ -91,17 +88,11 @@ Ext.define('MyApp.view.override.UserGridViewController', {
        params.dataToBeSaved=dataToBeSaved;
        params.comment=comment;
 
-
-       dataType = ['added','modified'];
-
        console.log(dataToBeSaved);
-
-
-       var result=[];
        Server.CommonQueries.saveRecords(params,
            function(_result){
                if(_result.success){
-                   var resultArray=[];
+
                    this.getResultArray(function(data){
                        Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('UserStore'),promptWin);
                    },this);
@@ -191,7 +182,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         return(Utility.grid.cancelEdit(editor,context));
     },
 
-    onUserGridIdContainerClick: function(dataview, e, eOpts) {
+    onUserGridIdContainerClick: function() {
         return(Utility.grid.gridContainerClick(this.getView()));
     },
 
@@ -202,7 +193,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         Utility.grid.edit(editor, context, columnsName);
     },
 
-    onUserGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+    onUserGridIdBeforeCellClick: function() {
         Utility.grid.viewBeforeCellClick(this.getView());
     },
     
