@@ -8,7 +8,6 @@ Ext.define('MyApp.view.override.PatientHistoryGridViewController', {
     onGridpanelCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
         var me=this;
         var fieldName = me.getView().getColumns()[cellIndex].dataIndex;
-        alert(fieldName);
         switch (fieldName)
         {
             case 'name':
@@ -33,6 +32,7 @@ Ext.define('MyApp.view.override.PatientHistoryGridViewController', {
                 break;
             case 'htmlPath': // open the report into PDF format
                 var pdfPath=record.get('htmlPath').replace('.html','.pdf');
+                window.open(StaticData.SERVER_DOCS_PATH+"/"+pdfPath);
                 break;
         }
     },

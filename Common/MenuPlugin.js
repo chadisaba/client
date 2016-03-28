@@ -219,7 +219,7 @@ width:400,
                                     }
                                 },
                                     items:{
-                                        xtype:'patienthistorypanel',
+                                        xtype:'patienthistorytabpanel',
                                         patientId:record.get('patientId'),
                                         height:Ext.getBody().getViewSize().height
                                     }

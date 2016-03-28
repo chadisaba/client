@@ -6,6 +6,15 @@ Ext.define('Utility.renderer', {
 				else
 				return '<span><img src="../Common/resources/images/green_checkbox.png"/><span>';
 		},
+		 imageBtnRenderer:function(imgName)
+		{
+			return '<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+				'<img src="../Common/resources/images/'+imgName+'.png"/>' +
+				' </button>';
+		},
+		imgRenderer: function (imgName){
+				return '<span><img src="../Common/resources/images/"+imgName+".png"/><span>';
+		},
 		retreiveTextFromStore: function (value,fieldValue,fieldDisplayName,storeName,me){
 			if(value)
 			{
