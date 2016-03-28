@@ -326,13 +326,13 @@
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "xebr98pu-8c41-4643-a8f8-l1ptryirq122"
     },
     "inspectorState": {
         "topInstance": "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
-        "selectedInstance": "7c6bec59-5c6a-4872-9cec-cvrl9rv26493"
+        "selectedInstance": "7c6bec59-5c6a-4872-9cec-jljl9ni6ngdb"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

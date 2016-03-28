@@ -198,7 +198,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     onUserGridIdEdit: function(editor,context) {
 
     	
-    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','siteCityId','cityName','userAddress','userPhone','userFax','active'];
+    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','ityId','cityName','userAddress','userPhone','userFax','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -215,31 +215,29 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
-    getResultArray:function(callback)
-    {
+    getResultArray:function(callback) {
+
         var me = this;
-        var filters=[];
-        var filter= {name:'del',value:'0'};
-        filters.push(filter);
-        var params={
-            id:50,
-            table:"USER",
-            filters:filters
+        var params = {
+
+            tablesArray: ['USER', "CITY"],
+            keysArray: ['cityId']
+
         };
-
-
-        var result = [];
-        Server.User.User.getUserInfo(params,
-            function(res){
-                if(res.success){
-                    callback (res.data);
+        Server.CommonQueries.readLeftJoin(params,
+            function (res) {
+                if (res.success) {
+                    callback(res.data);
                 }
-                else{
-                    console.log(res.msg);
+                else {
+                    console.error(res.msg);
+                    callback(res.msg);
                 }
-            },me
-        );
+            }, me);
     }
+
+
+
     
  
     

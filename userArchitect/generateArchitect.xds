@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/user_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/user_pub",
+        "exportPath": "../user_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,

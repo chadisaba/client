@@ -13,11 +13,11 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 						if (record.data.notValid && !record.data.toDelete && grid.inEdition===true){
 		                    return '<div class="fa fa-exclamation-triangle" style="height:16px !important;" data-qtip="${gridEdit.notValid}<br>'+record.data.notValidTip+'">&nbsp;</div>';
 		                } else if (record.data.toDelete && grid.inEdition===true){
-		                    return '<div class="fa fa-trash-o" style="height:16px !important;" data-qtip="${gridEdit.toDelete}">&nbsp;</div>';
+		                    return '<div class="fa fa-trash-o" style="height:16px !important;" data-qtip="A supprimer">&nbsp;</div>';
 		                }else if (record.data.added && grid.inEdition===true){
-		                    return '<div class="fa fa-plus" style="height:16px !important;" data-qtip="${gridEdit.added}">&nbsp;</div>';
+		                    return '<div class="fa fa-plus" style="height:16px !important;" data-qtip="Ajouté">&nbsp;</div>';
 		                }else if (record.data.modified && grid.inEdition===true){
-		                    return '<div class="fa fa-pencil" style="height:16px !important;" data-qtip="${gridEdit.modified}">&nbsp;</div>';
+		                    return '<div class="fa fa-pencil" style="height:16px !important;" data-qtip="Modifié">&nbsp;</div>';
 		                } else if (record.data.locked){
 		                    return '<div class="fa fa-lock" style="height:16px !important;" data-qtip="' + record.data.userID + " " + record.data.userName + '">&nbsp;</div>';
 		                } else return '';
@@ -375,7 +375,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 				xtype: 'checkbox',
 				fieldBodyCls: 'x-form-cb-wrap-default_toolbar',
-				boxLabel:'Only Modified Rows',
+				boxLabel:'Afficher lignes modifiées',
 				itemId: 'filterCheckbox',
 				listeners: {
 					change: function (field){
@@ -405,7 +405,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		this.liveSearchCtn = Ext.create('Ext.form.TextField',
 		{
 			fieldStyle : 'font-family: FontAwesome',
-			emptyText: '\uF002 Live Search',
+			emptyText: '\uF002 Recherche rapide',
 			listeners: {
 				specialkey: function (field,e){
 					var value=field.getValue();
@@ -452,8 +452,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			hidden: true,
 			items:[{
 				xtype: 'button',
-				text: '${edit}',
-				tooltip: '${gridEdit.editTip}',
+				text: 'Editer',
+				tooltip: 'Cliquer ici pour passer en mode édition',
 				itemId: 'editBtn',
 				glyph: 'xf040@FontAwesome',
 				listeners: {
@@ -475,10 +475,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 					xtype: 'button',
 					itemId: 'cancelBtn',
-					text: '${cancel}',
+					text: 'Annuler',
 					glyph: 'xf0e2@FontAwesome',
 					disabled: true,
-					tooltip: '${gridEdit.cancelTip}',
+					tooltip: 'Cliquer ici pour annuler les modifications',
 					listeners: {
 						click: function (button, e, options){										
 							//Confirm quitting edition mode
@@ -514,10 +514,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 				xtype: 'button',
 				itemId: 'saveBtn',
-				text: '${save}',
+				text: 'Sauvegarder',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
-				tooltip: '${gridEdit.saveTip}',
+				tooltip: 'Cliquer ici pour enregistrer toutes les modifications',
 				listeners: {
 					click: function (button, e, options){
 						// Show confirmation pop-up before save action
@@ -590,7 +590,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'chHistBtn',
 				glyph: 'xf073@FontAwesome',
-				tooltip: '${chHist}',
+				tooltip: 'Historique des modifications',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('chHist', me.grid);										
@@ -610,8 +610,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'addBtn',
 				glyph: 'xf067@FontAwesome',
-				text: '${add}',
-				tooltip: '${gridEdit.addTip}',
+				text: 'Ajuter',
+				tooltip: 'Cliquer ici pour ajouter une nouvelle ligne',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('addItem', me.grid);										
@@ -632,8 +632,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'deleteBtn',
 				glyph: 'xf014@FontAwesome',
 				disabled: true,
-				text: '${delete}',
-				tooltip: '${gridEdit.deleteTip}',
+				text: 'Supprimer',
+				tooltip: 'Cliquer pour supprimer',
 				listeners: {
 					click: function (button, e, options){
 						if(me.onlyDelete === false && me.onlyAD === false && me.noModif === false)
@@ -657,9 +657,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'modifyBtn',
 				disabled: true,
-				text: '${modify}',
+				text: 'Modifier',
                 glyph: 'xf044@FontAwesome',
-				tooltip: '${gridEdit.modifyTip}',
+				tooltip: 'Cliquer ici pour modifier la ligne sélectionnée',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('modifyItem', me.grid);										
@@ -679,8 +679,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				text: '${quit}',
-				tooltip: '${gridEdit.quitTip}',
+				text: 'Quitter',
+				tooltip: 'Quitter',
 				listeners: {
 					click: function (button, e, options){					
 						var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});

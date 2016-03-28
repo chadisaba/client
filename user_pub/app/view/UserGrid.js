@@ -22,6 +22,7 @@ Ext.define('MyApp.view.UserGrid', {
         'MyApp.view.UserGridViewController',
         'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.TextArea',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
@@ -45,7 +46,7 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userFName',
-            text: 'First name',
+            text: 'Prénom',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userFNameTextFieldItemId',
@@ -55,7 +56,7 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userLName',
-            text: 'Last name',
+            text: 'Nom',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userLNameTextFieldItemId',
@@ -75,7 +76,7 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userPass',
-            text: 'Pass',
+            text: 'Mot de passe',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userPassTextFieldItemId',
@@ -84,6 +85,7 @@ Ext.define('MyApp.view.UserGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 70,
             dataIndex: 'userInitiales',
             text: 'Initiales',
             editor: {
@@ -94,8 +96,9 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             itemId: 'myuserzipcodecol',
+            width: 70,
             dataIndex: 'userZipCode',
-            text: 'Code postal',
+            text: 'C.P',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userZipCodeTextFieldItemId',
@@ -107,8 +110,9 @@ Ext.define('MyApp.view.UserGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 150,
             dataIndex: 'cityName',
-            text: 'City',
+            text: 'Ville',
             editor: {
                 xtype: 'combobox',
                 itemId: 'userCityComboBoxItemId',
@@ -127,16 +131,17 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userAddress',
-            text: 'Address',
+            width: 200,
+            text: 'Adresse',
             editor: {
-                xtype: 'textfield',
+                xtype: 'textareafield',
                 itemId: 'userAddressTextFieldItemId'
             }
         },
         {
             xtype: 'gridcolumn',
             dataIndex: 'userPhone',
-            text: 'Phone',
+            text: 'Tél',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userPhoneTextFieldItemId'
@@ -156,6 +161,7 @@ Ext.define('MyApp.view.UserGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            width: 40,
             dataIndex: 'active',
             text: 'Active',
             editor: {
@@ -165,7 +171,7 @@ Ext.define('MyApp.view.UserGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
-            dataIndex: 'siteCityId',
+            dataIndex: 'cityId',
             text: 'city Id',
             editor: {
                 xtype: 'textfield',

@@ -59,7 +59,7 @@ Ext.define('MyApp.model.UserModel', {
         },
         {
             type: 'int',
-            name: 'siteCityId'
+            name: 'cityId'
         },
         {
             type: 'string',
