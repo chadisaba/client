@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/study_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/study_pub",
+        "exportPath": "../study_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -39,7 +39,10 @@
             "fae57581-31ab-468c-9676-c119bb73d702",
             "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
             "jl4lpbe4-4ace-45f2-b4ee-i3xtau7vi94k",
-            "r2gfmyh4-8a5d-4154-8917-q18yd6613th1"
+            "r2gfmyh4-8a5d-4154-8917-q18yd6613th1",
+            "f481c70a-d98c-4a87-beb8-b1922498d86a",
+            "f15fd268-99d6-461e-8ffc-e0e2dd7b492e",
+            "bb09ecb1-7c48-40e5-8c0f-b27ee98c2ad6"
         ],
         "store": [],
         "controller": [

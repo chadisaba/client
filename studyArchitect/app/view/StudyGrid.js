@@ -22,6 +22,7 @@ Ext.define('MyApp.view.StudyGrid', {
         'MyApp.view.StudyGridViewController',
         'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
@@ -73,7 +74,7 @@ Ext.define('MyApp.view.StudyGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyName',
-            text: 'Name',
+            text: 'Nom',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyNameTextFieldItemId',
@@ -83,7 +84,7 @@ Ext.define('MyApp.view.StudyGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyFtNumber',
-            text: 'Number FT',
+            text: 'Nb.<br/> FT',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyFtNumberTextFieldItemId'
@@ -92,16 +93,18 @@ Ext.define('MyApp.view.StudyGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyDuration',
-            text: 'Duration',
+            text: 'Durée<br/> en minutes)',
             editor: {
-                xtype: 'textfield',
-                itemId: 'studyDurationTextFieldItemId'
+                xtype: 'numberfield',
+                itemId: 'studyDurationTextFieldItemId',
+                width: 50
             }
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'studyDaysNbToSendSms',
-            text: 'Days to send SMS',
+            text: 'Nb. jours pour<br/> envoyer SMS',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyDaysNbToSendSmsTextFieldItemId'
@@ -113,7 +116,7 @@ Ext.define('MyApp.view.StudyGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'studyIsDosimetry',
-            text: 'Dosimetry',
+            text: 'Dosim-<br/>ètrie',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -124,7 +127,7 @@ Ext.define('MyApp.view.StudyGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'studyIsInjected',
-            text: 'Injected',
+            text: 'Injecté?',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -135,7 +138,7 @@ Ext.define('MyApp.view.StudyGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'studyGenerateDicomWL',
-            text: 'Generte DicomSegement',
+            text: 'Génère <br/>Worklist',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -146,7 +149,7 @@ Ext.define('MyApp.view.StudyGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'studyMultiSegment',
-            text: 'Multi segment',
+            text: 'Multi <br/>segment',
             editor: {
                 xtype: 'checkboxfield'
             }

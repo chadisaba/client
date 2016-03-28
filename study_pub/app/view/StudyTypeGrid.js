@@ -25,7 +25,8 @@ Ext.define('MyApp.view.StudyTypeGrid', {
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
-        'Ext.selection.RowModel'
+        'Ext.selection.RowModel',
+        'Ext.ux.colorpick.Field'
     ],
 
     controller: 'studytypegrid',
@@ -63,6 +64,15 @@ Ext.define('MyApp.view.StudyTypeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            dataIndex: 'studyTypeName',
+            text: 'Nom',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyTypeNameTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             dataIndex: 'studyTypeCode',
             text: 'Code',
             editor: {
@@ -72,24 +82,17 @@ Ext.define('MyApp.view.StudyTypeGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyTypeName',
-            text: 'Name',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyTypeNameTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
+            renderer: 'rdvColorRenderer',
             itemId: 'rdvColorColItemId',
             dataIndex: 'studyTypeRdvColor',
-            text: 'RDV color'
+            text: 'Couleur R.D.V'
         },
         {
             xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            width: 50,
             dataIndex: 'active',
             text: 'Active',
             editor: {

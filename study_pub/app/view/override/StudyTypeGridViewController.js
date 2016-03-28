@@ -5,15 +5,17 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
 
     },
 
-    onStudyTypeGridIdAfterRender: function(component, eOpts) {
+    onStudyTypeGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
+
         component.down('#rdvColorColItemId').setEditor({
-            xtype:'textfield',
+            xtype:'colorfield',
             allowBlank: false,
             width:200,
             itemId:'bicEditor',
             maxLength:8,
             enableKeyEvents:true
+
         });
 
 
@@ -85,7 +87,8 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
             added: true,
             modified: false,
             addedAndValidated:false,
-            toDelete: false
+            toDelete: false,
+            studyTypeRdvColor: '#0f0'
         });
         Utility.grid.addItem(this.getView(),rec);
     },
@@ -129,6 +132,7 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
 
     studyCatRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
+        var me=this;
         if(value)
         {
             var store=me.getViewModel().getStore('StudyCatComboStore');
@@ -166,8 +170,11 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
     },
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
-    
- 
-    
+  rdvColorRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+return '<div style="line-height:30px;background-color:#'+value+';height:30px;width:100%;float:left;padding:5px;"></div>';
+  }
+
+
+
 
 });

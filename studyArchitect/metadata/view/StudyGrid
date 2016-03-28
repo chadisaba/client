@@ -27,10 +27,7 @@
     "viewControllerInstanceId": "wsqjeyie-4ace-45f2-b4ee-juc9l67k7jlm",
     "viewModelInstanceId": "gpwdu53k-8a5d-4154-8917-ylwhsses23h5",
     "cn": [
-  
-     
-     
-             {
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -40,11 +37,10 @@
             "userConfig": {
                 "dataIndex": "studyTypeId",
                 "text": "Type"
-        
             },
             "name": "MystudyTypeIdCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-94n4ns8qppqv"
-                , "cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-94n4ns8qppqv",
+            "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
@@ -53,29 +49,26 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-   
+                        "allowBlank": false,
                         "displayField": "studyTypeCode",
                         "forceSelection": true,
                         "itemId": "studyTypeComboBoxEditorItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
-                        "valueField": "studyTypeId"
-                         ,"allowBlank": false
-                          ,"store": [
+                        "store": [
                             "{StudyTypeComboStore}"
-                        ]   
-                            
-   
+                        ],
+                        "valueField": "studyTypeId"
                     },
                     "name": "MystudyTypeComboBox",
-                         "configAlternates": {
+                    "configAlternates": {
                         "store": "binding"
                     },
                     "designerId": "ade60fcf-b3b2-4bae-aamqlqkdpvqa"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -85,11 +78,10 @@
             "userConfig": {
                 "dataIndex": "studyCode",
                 "text": "Code"
-        
             },
             "name": "MystudyCodeCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-5b2upw2x3fbs"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-5b2upw2x3fbs",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -98,16 +90,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyCodeTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "studyCodeTextFieldItemId"
                     },
                     "name": "MystudyCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-ri5cccij245p"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -116,12 +107,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyName",
-                "text": "Name"
-        
+                "text": "Nom"
             },
             "name": "MystudyNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-u1f13k4v91wp"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-u1f13k4v91wp",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -130,16 +120,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyNameTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "studyNameTextFieldItemId"
                     },
                     "name": "MystudyNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-lvn3ywmwwkqs"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -148,12 +137,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyFtNumber",
-                "text": "Number FT"
-        
+                "text": "Nb.<br/> FT"
             },
             "name": "MystudyFtNumberCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-pi6hceygbvey"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-pi6hceygbvey",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -162,16 +150,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyFtNumberTextFieldItemId"
-                          
+                        "itemId": "studyFtNumberTextFieldItemId"
                     },
                     "name": "MystudyFtNumberTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-u949uf5iwhgc"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -180,30 +166,28 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyDuration",
-                "text": "Duration"
-        
+                "text": "Durée<br/> en minutes)"
             },
             "name": "MystudyDurationCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-jm1mai1fetm6"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-jm1mai1fetm6",
+            "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Number",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyDurationTextFieldItemId"
-                          
+                        "itemId": "studyDurationTextFieldItemId",
+                        "width": 50
                     },
-                    "name": "MystudyDurationTextField",
+                    "name": "MyNumberField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-eapmeaut5j1u"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -212,12 +196,12 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyDaysNbToSendSms",
-                "text": "Days to send SMS"
-        
+                "text": "Nb. jours pour<br/> envoyer SMS",
+                "width": 120
             },
             "name": "MystudyDaysNbToSendSmsCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-hur2i6k93b7s"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-hur2i6k93b7s",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -226,16 +210,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyDaysNbToSendSmsTextFieldItemId"
-                          
+                        "itemId": "studyDaysNbToSendSmsTextFieldItemId"
                     },
                     "name": "MystudyDaysNbToSendSmsTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-28geeq796c44"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -244,12 +226,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyIsDosimetry",
-                "text": "Dosimetry"
-        
+                "text": "Dosim-<br/>ètrie"
             },
             "name": "MystudyIsDosimetryCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-w6sg2bydix1t"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-w6sg2bydix1t",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -257,11 +238,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MystudyIsDosimetryCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-yxgapr5iqbk9"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -286,9 +266,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-8ym6vqmedym9"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -297,12 +277,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyIsInjected",
-                "text": "Injected"
-        
+                "text": "Injecté?"
             },
             "name": "MystudyIsInjectedCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-gawawlwsw3b3"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-gawawlwsw3b3",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -310,11 +289,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MystudyIsInjectedCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-98sqsug5vxf2"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -339,9 +317,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-l5w3n4rcvexk"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -350,12 +328,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyGenerateDicomWL",
-                "text": "Generte DicomSegement"
-        
+                "text": "Génère <br/>Worklist"
             },
             "name": "MystudyGenerateDicomWLCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-axwyqa3486i2"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-axwyqa3486i2",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -363,11 +340,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MystudyGenerateDicomWLCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-6pgkgbamcwh5"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -392,9 +368,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-fui41mbd8gba"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -403,12 +379,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyMultiSegment",
-                "text": "Multi segment"
-        
+                "text": "Multi <br/>segment"
             },
             "name": "MystudyMultiSegmentCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-sa6p2gvr1icx"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-sa6p2gvr1icx",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -416,11 +391,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MystudyMultiSegmentCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-e7ur4s3xyj45"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -445,9 +419,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-umeimdlqmtxn"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -457,11 +431,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
-        
             },
             "name": "MyactiveCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-y62x5uamf12h"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-y62x5uamf12h",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -469,11 +442,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MyactiveCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-9ma6py3ejcu3"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -498,9 +470,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-cr4bpnj2qsnv"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -510,11 +482,10 @@
             "userConfig": {
                 "dataIndex": "studyInvoiceCat",
                 "text": "Invoice Cat"
-        
             },
             "name": "MystudyInvoiceCatCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-lq559dsk1fd4"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-lq559dsk1fd4",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -523,15 +494,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "studyInvoiceCatTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "studyInvoiceCatTextFieldItemId"
                     },
                     "name": "MystudyInvoiceCatTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-jr2jm7meh9lh"
                 }
-            ]  },
-       {
+            ]
+        },
+        {
             "type": "Ext.view.Table",
             "reference": {
                 "name": "viewConfig",
@@ -541,7 +512,6 @@
             "name": "MyTable",
             "designerId": "q5yf69n8-ccc7-232C-1245-pdmcu986dcp8"
         },
-        
         {
             "type": "viewcontrollereventbinding",
             "reference": {

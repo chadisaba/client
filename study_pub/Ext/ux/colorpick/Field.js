@@ -16,7 +16,7 @@
  *          }
  *      });
  */
-Ext.define('Ext.ux.colorpick.Field', {
+    Ext.define('Ext.ux.colorpick.Field', {
     extend: 'Ext.form.field.Picker',
     xtype: 'colorfield',
 

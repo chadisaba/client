@@ -20,17 +20,19 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
-    name: 'MyApp',
     models: [
-        'StudyModel',
-        'StudyTypeComboModel',
         'StudyTypeModel',
-        'StudyCatComboModel'
+        'StudyCatComboModel',
+        'StudyModel',
+        'StudyTypeComboModel'
     ],
     views: [
-        'StudyGrid',
-        'StudyTypeGrid'
+        'StudySettingsTabPanel',
+        'StudyTypeGrid',
+        'StudyGrid'
     ],
+    name: 'MyApp',
+
     launch: function() {
         Ext.create('MyApp.view.MyViewport1');
     }
