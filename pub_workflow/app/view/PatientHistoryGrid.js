@@ -56,10 +56,24 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'nameDocumentRenderer',
+            dataIndex: 'name',
+            text: 'Nom',
+            flex: 1
+        },
+        {
+            xtype: 'gridcolumn',
             renderer: 'typeDocumentRenderer',
+            width: 50,
             dataIndex: 'type',
-            text: 'Type',
-            flex: 3
+            text: 'Type'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: 'pdfRenderer',
+            width: 50,
+            dataIndex: 'htmlPath',
+            text: 'PDF'
         }
     ],
     features: [
@@ -72,7 +86,7 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     ],
     listeners: {
         afterrender: 'onGridpanelAfterRender',
-        itemclick: 'onGridpanelItemClick'
+        cellclick: 'onGridpanelCellClick'
     }
 
 });

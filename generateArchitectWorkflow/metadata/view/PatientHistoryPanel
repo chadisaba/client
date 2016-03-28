@@ -31,7 +31,7 @@
                 "titleCollapse": false,
                 "width": null
             },
-            "name": "patienthistorygrid6",
+            "name": "patienthistorygrid",
             "designerId": "28dcdcb3-4f05-4f0c-ad53-9cb2628e14b3",
             "masterInstanceId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
             "cn": [
@@ -84,7 +84,7 @@
                 "html": null,
                 "itemId": "displayFileContentPanelItemId",
                 "layout": "fit",
-                "layout|flex": 3,
+                "layout|flex": 2,
                 "layout|region": "east",
                 "layout|split": true,
                 "title": "Contenu",

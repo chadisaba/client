@@ -94,9 +94,51 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "Nom"
+            },
+            "name": "MyColumn5",
+            "designerId": "080e54df-f635-48a0-a055-b2119c75a5cc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "nameDocumentRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "00d1b457-d46a-4c11-adec-9e12223de341"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "type",
-                "flex": 3,
-                "text": "Type"
+                "flex": null,
+                "text": "Type",
+                "width": 50
             },
             "name": "MyColumn4",
             "designerId": "e133221a-9980-453e-bfef-4e437089bfaa",
@@ -124,6 +166,47 @@
                     },
                     "name": "renderer",
                     "designerId": "dbf78030-b7df-4817-bbfc-25eafb648512"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "htmlPath",
+                "text": "PDF",
+                "width": 50
+            },
+            "name": "MyColumn6",
+            "designerId": "e41d7873-f226-4964-96ea-30c4859e48ff",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "pdfRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "22cba5c4-de34-4185-bd80-93635f718709"
                 }
             ]
         },
@@ -191,12 +274,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onGridpanelItemClick",
-                "name": "itemclick",
+                "fn": "onGridpanelCellClick",
+                "name": "cellclick",
                 "scope": "me"
             },
-            "name": "onGridpanelItemClick",
-            "designerId": "dbf4b188-e7de-4783-9847-d36ae2a35e48"
+            "name": "onGridpanelCellClick",
+            "designerId": "fe58d742-a348-4da9-a248-c4a0e5c3d949"
         }
     ]
 }
