@@ -21,7 +21,15 @@ Ext.define('MyApp.view.PatientHistoryGridViewController', {
         'MyApp.view.override.PatientHistoryGridViewController'
     ],
 
+    nameDocumentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     typeDocumentRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    pdfRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
 
@@ -29,7 +37,7 @@ Ext.define('MyApp.view.PatientHistoryGridViewController', {
 
     },
 
-    onGridpanelItemClick: function(dataview, record, item, index, e, eOpts) {
+    onGridpanelCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
     }
 

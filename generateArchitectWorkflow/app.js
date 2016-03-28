@@ -35,7 +35,7 @@ Ext.application({
         'SitesSelectionGrid',
         'PatientHistoryPanel',
         'PatientHistoryGrid',
-        'MyWindow'
+        'PatientHistoryTabPanel'
     ],
     controllers: [
         'MainController'

@@ -47,7 +47,7 @@ Ext.define('MyApp.view.PatientHistoryPanel', {
         },
         {
             xtype: 'panel',
-            flex: 3,
+            flex: 2,
             region: 'east',
             split: true,
             itemId: 'displayFileContentPanelItemId',

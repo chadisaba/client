@@ -24,7 +24,7 @@
             "SitesSelectionGrid",
             "PatientHistoryPanel",
             "PatientHistoryGrid",
-            "MyWindow"
+            "PatientHistoryTabPanel"
         ]
     },
     "name": "Application",
