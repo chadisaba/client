@@ -1,0 +1,259 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "infoform",
+        "designer|userClassName": "InfoForm",
+        "header": false,
+        "height": null,
+        "itemId": "infoFormId",
+        "title": "My Form",
+        "width": null
+    },
+    "name": "MyForm",
+    "designerId": "af6447b8-8c41-4643-a8f8-p52htqgjc9ff",
+    "viewControllerInstanceId": "9fe5f93a-4ace-45f2-b4ee-gny7elv44vth",
+    "viewModelInstanceId": "0f511f8c-8a5d-4154-8917-3pln91bd687s",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processInfoForm",
+                "implHandler": [
+                    "  config.plugins = new Plugins.form.FormEditingPlugin({",
+                    "            withValidation: false,",
+                    "            showConfirmationOnSave: false,",
+                    "      showConfirmationOnQuit:false,",
+                    "      showCancelBtn:false,",
+                    "      showHistoryBtn:false",
+                    "        });",
+                    "",
+                    "        return config;"
+                ]
+            },
+            "name": "processInfoForm",
+            "designerId": "rdnbay8d-e849-4215-886f-cpk8fuee9yjm"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onInfoFormItemIdAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdAfterRender",
+            "designerId": "4qm32frs-09ae-45ae-bebe-xc2yvpmxs1tq"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onInfoFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdInEdit",
+            "designerId": "pucaw6ml-4ef8-4a15-b5fb-5qfjipvbqx1m"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onInfoFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdSaveEdit",
+            "designerId": "$meyvn658-b535-417d-9248-1vie1dvicryk"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onInfoFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdResetEdit",
+            "designerId": "dgf57g6c-423e-4417-b19e-txwme252my2q"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onInfoFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdChHist",
+            "designerId": "pbaecybx-80c8-4c53-a419-1ali5edbh29c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onInfoFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onInfoFormItemIdQuitEdit",
+            "designerId": "lbfda5j9-a31a-4de9-a530-cweu6ggc9mdn"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Saisie de l'information"
+            },
+            "name": "MyFieldSet",
+            "designerId": "m2a4qt6u-7399-4b87-b85c-aq63lcqa35n3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|anchor": "100%",
+                        "name": "infoText"
+                    },
+                    "name": "MyinfoTextTextArea",
+                    "designerId": "73y1ef6a-05cb-5aa6-aacc-18pbmftpng3h"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "defaults": [
+                            "{name:'infoAlertLevel'}"
+                        ],
+                        "fieldLabel": "Importance"
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "b2c4137d-9a49-42a0-9031-b20a82dcbe6d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "<div style=\"color:green\"><i class=\"fa fa-circle\"></i></div>",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "labelCls": null,
+                                "labelPad": null,
+                                "labelStyle": null
+                            },
+                            "name": "MyRadio",
+                            "designerId": "3c32a0fc-3090-4a4b-9f3f-df42b5b0417f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "<div style=\"color:orange\"><i class=\"fa fa-circle\"></i></div>",
+                                "fieldLabel": null,
+                                "inputValue": "2"
+                            },
+                            "name": "MyRadio1",
+                            "designerId": "7f5a340e-ff4e-4de0-81de-4d28644e4c75"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "<div style=\"color:red\"><i class=\"fa fa-circle\"></i></div>",
+                                "fieldLabel": null,
+                                "inputValue": "3"
+                            },
+                            "name": "MyRadio2",
+                            "designerId": "8a1c432e-0587-4ed1-a5b0-50ae06ddc0b1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

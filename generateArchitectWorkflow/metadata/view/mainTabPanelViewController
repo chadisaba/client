@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "maintabpanel",
+        "designer|userClassName": "mainTabPanelViewController"
+    },
+    "designerId": "21b13316-4486-4869-8fe6-d00b04a31608"
+}

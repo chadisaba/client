@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "infoform",
+        "designer|userClassName": "InfoFormViewController"
+    },
+    "designerId": "9fe5f93a-4ace-45f2-b4ee-gny7elv44vth"
+ 
+}

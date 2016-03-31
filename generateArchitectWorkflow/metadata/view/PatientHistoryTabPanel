@@ -1,0 +1,107 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patienthistorytabpanel",
+        "designer|userClassName": "PatientHistoryTabPanel",
+        "height": null,
+        "itemId": "patientHistoryTabPanelItemId",
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "5a81f144-2a84-45fb-a6b0-e601c7a09a74",
+    "viewControllerInstanceId": "d675c38e-ec78-469f-b621-7bccddd827c0",
+    "viewModelInstanceId": "b8ed1b6c-3f72-4208-baa3-e46c342fd1a2",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Historique C.R"
+            },
+            "name": "patienthistorypanel",
+            "configAlternates": {
+                "patientId": "number"
+            },
+            "designerId": "d18a5851-9f08-41fa-a2dc-eb8c3d4799e9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "patientId",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "387f02e7-c52d-4e89-819c-0e0df75df746",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "0106d64a-ef12-44f4-8eda-a8f7bd6313ee"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Historique consultations"
+            },
+            "name": "MyPanel2",
+            "designerId": "8429cf75-45bc-4954-ad11-3634efb77981",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "22dd145c-6592-4f29-99b2-64e650ee3542"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Fiche patient"
+            },
+            "name": "MyPanel4",
+            "designerId": "00f82438-44ee-4c08-89f8-6d38c0bfec29",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig2",
+                    "designerId": "24ee9262-5368-47f5-b1c1-c8226ed561b3"
+                }
+            ]
+        }
+    ]
+}

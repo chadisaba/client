@@ -1,0 +1,97 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "designer|userAlias": "maintabpanel",
+        "designer|userClassName": "mainTabPanel",
+        "height": null,
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "d2513b3b-aa92-42b6-b39c-5e2481a58f40",
+    "viewControllerInstanceId": "21b13316-4486-4869-8fe6-d00b04a31608",
+    "viewModelInstanceId": "740892d8-4bdb-4ad9-bbf3-160c554ae31b",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Salle attente"
+            },
+            "name": "worklistpanel",
+            "designerId": "21b3def1-3975-4a95-8a8b-5fc5f8366e13",
+            "masterInstanceId": "b68b3eb9-ea53-41e7-8584-0f9360c148ae",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig6",
+                    "designerId": "3532efda-1eb0-4503-ac2f-c1793216347f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Accueil R.D.V & hospitalisés"
+            },
+            "name": "MyPanel1",
+            "designerId": "42885a0e-03f5-4cd0-b917-f2628c005657",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "248fedaa-98ad-4794-a584-9cec7eb6bc72"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Tableau de bord"
+            },
+            "name": "MyPanel6",
+            "designerId": "08472587-3bb6-4987-a57e-cff94818c0b9",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig5",
+                    "designerId": "62026528-5405-4272-ba6e-6fddf4d7f7a6"
+                }
+            ]
+        }
+    ]
+}
