@@ -7,7 +7,10 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 	},
 	
 	withValidation: false,
+	showHistoryBtn: true,
+	showCancelBtn: true,
 	showConfirmationOnSave: true,
+	showConfirmationOnQuit: true,
 	
 	pluginId: 'formediting',
 	
@@ -37,7 +40,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		} 
 
 		// Add toolbar with Add, Modify, Delete and ChHist actions to grids in form
-		grids = form.query('grid[blocked=false]');		
+		var grids = form.query('grid[blocked=false]');
 		for (var i=0; i <grids.length; i++){
 			if (grids[i].query('#grideditingTb').length<1)
 				plugin.addTb(grids[i]);
@@ -57,15 +60,19 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 				
 		me.editBtnCtn.show();
 		me.saveBtnCtn.hide();
-		me.cancelBtnCtn.hide();
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.hide();
 		me.quitBtnCtn.hide();
-		me.chHistBtnCtn.show();
+		if(me.showHistoryBtn)
+			me.chHistBtnCtn.show();
 		
 		me.editBtnCtn.down('#editBtn').setDisabled(false);
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-		me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+		if(me.showHistoryBtn)
+			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
 	},
 	
 	createNewToolbar: function (){
@@ -78,16 +85,21 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 	
 	fillToolbar: function (){
 		this.createEditBtnCtn();
-		this.createCancelBtnCtn();
+		if(this.showCancelBtn)
+			this.createCancelBtnCtn();
 		this.createSaveBtnCtn();
 		this.createQuitBtnCtn();
-		this.createChHistBtnCtn();
+		if(this.showHistoryBtn)
+			this.createChHistBtnCtn();
+
 		this.tb.add(this.editBtnCtn);
 		this.tb.add({xtype:'tbfill'});
 		this.tb.add(this.saveBtnCtn);
-		this.tb.add(this.cancelBtnCtn);
+		if(this.showCancelBtn)
+			this.tb.add(this.cancelBtnCtn);
 		this.tb.add(this.quitBtnCtn);
-		this.tb.add(this.chHistBtnCtn);
+		if(this.showHistoryBtn)
+			this.tb.add(this.chHistBtnCtn);
 	},
 	
 	createEditBtnCtn: function (){
@@ -120,10 +132,10 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			items:[{
 				xtype: 'button',
 				itemId: 'cancelBtn',
-				text: '${cancel}',
+				text: 'Annuler',
 				glyph: 'xf0e2@FontAwesome',
 				disabled: true,
-				tooltip: '${gridEdit.cancelTip}',
+				tooltip: 'Annuler les modifications',
 				listeners: {
 					click: function (button, e, options){										
 						//Confirm quitting edition mode
@@ -132,8 +144,8 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 						promptWin.down('#confirmMsg').setText('${gridEdit.cancelMsg}');
 						promptWin.down('#description').hide();
 						promptWin.down('#inputText').hide();
-						promptWin.query('button')[0].setText('${yes}');
-						promptWin.query('button')[1].setText('${no}');
+						promptWin.query('button')[0].setText('Oui');
+						promptWin.query('button')[1].setText('Non');
 						promptWin.callbackFunction = function (choice,comment){
 						    if(choice==='ok'){
 						    	// Loading artifact on save btn
@@ -159,13 +171,13 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			items:[{
 				xtype: 'button',
 				itemId: 'saveBtn',
-				text: '${save}',
+				text: 'Enregistrer',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
-				tooltip: '${gridEdit.saveTip}',
+				tooltip: 'Enregistrer les modifications',
 				listeners: {
 					click: function (button, e, options){
-						//me.form.fireEvent('save', me.form);
+
 						// Show confirmation pop-up before save action
 						if (me.showConfirmationOnSave){
 							    //Reporter Comment pop-up
@@ -178,14 +190,14 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 								    promptWin.down('#confirmMsg').setText('${gridEdit.applyChMsg}');
 							    }
 							    
-							    promptWin.query('button')[0].setText('${yes}');
-							    promptWin.query('button')[1].setText('${no}');
+							    promptWin.query('button')[0].setText('Oui');
+							    promptWin.query('button')[1].setText('Non');
 							    
 							    promptWin.down('#description').setText('${gridEdit.comment}');
 							    promptWin.callbackFunction = function (choice,comment){
 							        if(choice==='ok'){
 							            // Loading artifact on yes btn
-							            Utility.loading.start(promptWin.query('button')[0]);       
+							            Utility.loading.start(promptWin.query('button')[0]);
 							            me.form.fireEvent('saveEdit', me.form,promptWin,comment);
 							        } else {
 							            promptWin.close();
@@ -194,7 +206,8 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 							    promptWin.show();
 						} else {
 							// Confirmation pop-up is handled outside the plugin
-							me.form.fireEvent('saveEdit', me.form);
+							Utility.loading.start(this);// Loading artifact on yes btn
+							me.form.fireEvent('saveEdit', me.form,this);
 						}
 					}	
 				}    			
@@ -231,27 +244,32 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				text: '${quit}',
+				text: 'Quitter',
 				tooltip: '${gridEdit.quitTip}',
 				listeners: {
-					click: function (button, e, options){					
-						var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
-					    promptWin.setTitle('${gridEdit.quitEditionTitle}');
-					    promptWin.down('#confirmMsg').setText('${gridEdit.quitEditionMsg}');
-					    promptWin.down('#description').hide();
-					    promptWin.down('#inputText').hide();
-					    promptWin.query('button')[0].setText('${yes}');
-					    promptWin.query('button')[1].setText('${no}');
-					    promptWin.callbackFunction = function (choice,comment){
-					        if(choice==='ok'){
-					            // Loading artifact on yes btn
-					            Utility.loading.start(promptWin.query('button')[0]);       
-					            me.form.fireEvent('quitEdit',me.form,promptWin);
-					        } else {
-					            promptWin.close();
-					        }
-					    };
-					    promptWin.show();
+					click: function (button, e, options){
+						if(me.showConfirmationOnQuit){
+							var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
+							promptWin.setTitle('${gridEdit.quitEditionTitle}');
+							promptWin.down('#confirmMsg').setText('${gridEdit.quitEditionMsg}');
+							promptWin.down('#description').hide();
+							promptWin.down('#inputText').hide();
+							promptWin.query('button')[0].setText('Oui');
+							promptWin.query('button')[1].setText('Non');
+							promptWin.callbackFunction = function (choice,comment){
+								if(choice==='ok'){
+									// Loading artifact on yes btn
+									Utility.loading.start(promptWin.query('button')[0]);
+									me.form.fireEvent('quitEdit',me.form,promptWin);
+								} else {
+									promptWin.close();
+								}
+							};
+							promptWin.show();
+						}
+						else
+							me.form.fireEvent('quitEdit',me.form);
+
 					}	
 				}    			
 			}
@@ -267,11 +285,14 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		
 		// Btns control
 		me.editBtnCtn.hide();
-		me.cancelBtnCtn.show();
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.show();
+
 		me.saveBtnCtn.show();
 		me.quitBtnCtn.show();
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		
 		
 		var elements = me.form.query('[readOnly=true]');
@@ -298,7 +319,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		}
 		
 		// All not blocked grids with Add, Modify, Delete & ChHist actions
-		grids = me.form.query('grid[blocked=false]');		
+		var grids = me.form.query('grid[blocked=false]');
 		for (var i=0; i <grids.length; i++){
 			grids[i].query('#grideditingTb')[0].down('#gridAddBtnCtn').show();
 			grids[i].query('#grideditingTb')[0].down('#gridDeleteBtnCtn').show();
@@ -464,7 +485,8 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		|| grid.getStore().query('added',true).items.length > 0 
 		|| grid.getStore().query('modified',true).items.length > 0){
 			me.saveBtnCtn.down('#saveBtn').setDisabled(false);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
+			if(me.showCancelBtn)
+				me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
 		}
 		
 	},
@@ -477,15 +499,19 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		// Btns control
 		me.editBtnCtn.show();
 		me.saveBtnCtn.hide();
-		me.cancelBtnCtn.hide();
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.hide();
 		me.quitBtnCtn.hide();
-		me.chHistBtnCtn.show();
+		if(me.showHistoryBtn)
+			me.chHistBtnCtn.show();
 		
 		me.editBtnCtn.down('#editBtn').setDisabled(false);
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-		me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+		if(me.showHistoryBtn)
+			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
 		
 		var elements = me.form.query('[readOnly=false]');
 		var fieldsets = me.form.query('fieldset');
@@ -522,7 +548,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		}
 		
 		// All editing grids with Add and Delete actions
-		grids = me.form.query('gridpanel');
+		var grids = me.form.query('gridpanel');
 		for (var i=0; i < grids.length; i++){
 			if (!grids[i].blocked){
 				grids[i].query('#grideditingTb')[0].down('#gridAddBtnCtn').hide();
@@ -541,7 +567,8 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 	
 	cancelEdit: function () {
 		var me = this;
-		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
+		if(me.showCancelBtn)
+			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.editBtnCtn.hide();
 		me.form.recordValues = me.form.getForm().getValues();
@@ -570,14 +597,17 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			if (JSON.stringify(oldValues) != JSON.stringify(currentValues)){
 				if (me.form.isValid()){
 					me.saveBtnCtn.down('button').setDisabled(false);
-					me.cancelBtnCtn.down('button').setDisabled(false);
+					if(me.showCancelBtn)
+						me.cancelBtnCtn.down('button').setDisabled(false);
 				} else {
 					me.saveBtnCtn.down('button').setDisabled(true);
-					me.cancelBtnCtn.down('button').setDisabled(true);
+					if(me.showCancelBtn)
+						me.cancelBtnCtn.down('button').setDisabled(true);
 				}
 			} else {
 				me.saveBtnCtn.down('button').setDisabled(true);
-				me.cancelBtnCtn.down('button').setDisabled(true);
+				if(me.showCancelBtn)
+					me.cancelBtnCtn.down('button').setDisabled(true);
 			}
 			
 			// Highlight modified field			

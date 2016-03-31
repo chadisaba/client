@@ -140,6 +140,10 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     onWorklistGridIdAfterRender: function(component, eOpts) {
 
+    },
+
+    onWorklistGridIdCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
     }
 
 });

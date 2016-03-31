@@ -67,8 +67,8 @@ background: #f5f5f5;
 }
 .x-window-header-default {
     font-size: 14px;
-    border: 1px solid #2c3845;
-    background-color: #2c3845;
+    border: 1px solid #27B6AF;
+    background-color: #27B6AF;
 
 }
 .x-window-body-default {
@@ -82,7 +82,7 @@ background: #f5f5f5;
     font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
 }
 .x-window-header-title-default {
-    color:#A9A6A6;  font-weight: bold;
+    color:#FFFFFF;  font-weight: bold;
 
     font-size: 14px;
 
@@ -90,7 +90,20 @@ background: #f5f5f5;
     line-height: 20px;
 }
 
+.sencha-logo .main-logo {
+    line-height: 0px;
+}
 
+.sencha-logo .main-logo img {
+    margin-left: 22px;
+    margin-right: 5px;
+    top: 0px;
+    position: relative;
+}
+
+.x-tab-bar-default {
+    background-color: #27B6AF;
+}
 
 .x-colorpicker{overflow:visible}
 .x-colorpicker >.x-box-inner{overflow:visible}

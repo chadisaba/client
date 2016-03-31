@@ -12,7 +12,8 @@
         "models": [
             "WorklistModel",
             "SiteComboModel",
-            "PatientHistoryModel"
+            "PatientHistoryModel",
+            "InfoModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -24,7 +25,9 @@
             "SitesSelectionGrid",
             "PatientHistoryPanel",
             "PatientHistoryGrid",
-            "PatientHistoryTabPanel"
+            "PatientHistoryTabPanel",
+            "InfoForm",
+            "mainTabPanel"
         ]
     },
     "name": "Application",

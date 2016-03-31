@@ -5,7 +5,7 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
 
     },
 
-    onDeviceGridIdAfterRender: function(component, eOpts) {
+    onDeviceGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
 
         var params;

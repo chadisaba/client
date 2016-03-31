@@ -1566,6 +1566,21 @@
             },
             "name": "onWorklistGridIdAfterRender",
             "designerId": "fd1b6892-a2a2-4ae3-a524-5964f4f08860"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorklistGridIdCellClick",
+                "name": "cellclick",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdCellClick",
+            "designerId": "74390b28-172a-45cf-ad43-3ebe759c2500"
         }
     ]
 }

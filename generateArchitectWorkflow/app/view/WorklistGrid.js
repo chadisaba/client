@@ -231,7 +231,8 @@ Ext.define('MyApp.view.WorklistGrid', {
             args[0] = '_afterrender1';
             me.fireEvent.apply(me, args);
         },
-        selectionchange: 'onWorklistGridIdSelectionChange'
+        selectionchange: 'onWorklistGridIdSelectionChange',
+        cellclick: 'onWorklistGridIdCellClick'
     },
     selModel: {
         selType: 'rowmodel',

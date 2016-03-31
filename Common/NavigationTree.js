@@ -11,11 +11,11 @@ Ext.define('MyApp.store.NavigationTree', {
         expanded: true,
         children: [
             {
-                text: 'Worklist',
-                iconCls: 'x-fa fa-desktop',
+                text: 'Accueil',
+                iconCls: 'x-fa fa-home',
                 rowCls: 'nav-tree-badge nav-tree-badge-new',
-                viewType: 'worklistpanel',
-                routeId: 'worklistpanel', // routeId defaults to viewType
+                viewType: 'maintabpanel',
+                routeId: 'maintabpanel', // routeId defaults to viewType
                 leaf: true
             },
             {

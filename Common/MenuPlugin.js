@@ -41,11 +41,11 @@ Ext.define('menu.MenuPlugin', {
                     xtype: 'component',
                     itemId: 'amandaLogo',
 
-                    html: '<div class="main-logo"> &nbsp;&nbsp;&nbsp;Smart Med</div>',
+                    html: '<div class="main-logo"><img src="../Common/resources/images/logo-small.png" width="62"  height="48">Smart Med</div>',
                     width: 250
                 },
                 {
-                    margin: '0 0 0 8',
+                    margin: '0 0 0 0',
                     ui: 'header',
 
                     iconCls:'x-fa fa-navicon',
@@ -108,8 +108,9 @@ westPanel.setWidth(new_width);
         }
     }
                 },
-                '->',
-                {
+
+
+                /*{
                   xtype:'combobox',
                     displayField: 'siteCode',
                     queryMode: 'local',
@@ -150,7 +151,30 @@ westPanel.setWidth(new_width);
                             );
                         }
                     }
+                },*/
+                { xtype: 'tbseparator',
+                    width:50},
+                {
+
+
+                    href: '#patientsearch',
+                    hrefTarget: '_self',
+                    tooltip: 'Accueillir par la carte vitale',
+                    html: '<img src="../Common/resources/images/vitale.png" height="24" width="24"/>'
+
                 },
+                { xtype: 'tbseparator',
+                    width:5},
+                {
+
+
+                    href: '#appointementScheduler',
+                    hrefTarget: '_blank',
+                    tooltip: 'Accéder à la prise de  rendez-vous',
+                    html: '<img src="../Common/resources/images/calendar.png" height="24" width="24"/>'
+
+                },
+                '->',
                 {
                     xtype: 'combobox',
                     emptyText: 'Recherche patient : Nom &  Prénom ou Date Naissance',
@@ -201,27 +225,55 @@ width:400,
                           //  alert('fadi');
                             Ext.create('Ext.window.Window', {
 
-                                animateTarget:'comboSearchPatient',
+                               // animateTarget:'comboSearchPatient',
                                 title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
-                               /* minimizable: true,
-                                maximizable: true,*/
-                                height:Ext.getBody().getViewSize().height,
-                                width:Ext.getBody().getViewSize().width,//*0.8, //80%
-                                anim: {
+
+                                layout: {
+                                    type: 'border',
+                                    padding: 5
+                                },
+                                tools:[{
+                                    type:'refresh',
+                                    tooltip: 'Refresh form Data',
+                                    // hidden:true,
+                                    handler: function(event, toolEl, panelHeader) {
+                                        // refresh logic
+                                    }
+                                },
+                                    {
+                                        type:'help',
+                                        tooltip: 'Get Help',
+                                        callback: function(panel, tool, event) {
+                                            // show help here
+                                        }
+                                    }],
+                                maximizable: true,
+                                maximized:true,
+                                height:500,
+                                width:500,
+
+                                /*anim: {
                                     endOpacity: 1,
                                     easing: 'easeIn',
                                     duration: .9
-                                },
+                                },*/
                                 listeners: {
-                                    show: function(w){
+                                   /* show: function(w){
                                         w.getEl().fadeIn(w.anim);
                                         w.getEl().shadow.el.fadeIn(w.anim);
+                                    },*/
+                                    minimize: function (window, opts) {
+
+                                      /*  window.collapse();
+                                        window.setWidth(150);
+                                        window.alignTo(Ext.getBody(), 'bl-bl');*/
                                     }
                                 },
                                     items:{
+                                        region: 'center',
                                         xtype:'patienthistorytabpanel',
-                                        patientId:record.get('patientId'),
-                                        height:Ext.getBody().getViewSize().height
+                                        patientId:record.get('patientId')
+
                                     }
                                 }).show();
                         }
@@ -229,13 +281,14 @@ width:400,
 
                 },
                 {
-                    iconCls:'x-fa fa-search',
-                    ui: 'header',
-                    href: '#patientsearch',
-                    hrefTarget: '_self',
-                    tooltip: 'Lancer la recherche patient'
-
+                    xtype: 'checkbox'
                 },
+                {
+                    xtype: 'tbtext',
+                    text: 'Accueillir',
+                    cls: 'top-user-name'
+                },
+                { xtype: 'tbseparator'},
                 {
                     iconCls:'x-fa fa-envelope',
                     ui: 'header',

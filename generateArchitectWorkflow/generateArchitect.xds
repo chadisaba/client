@@ -31,6 +31,9 @@
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "9fe5f93a-4ace-45f2-b4ee-gny7elv44vth",
+            "0f511f8c-8a5d-4154-8917-3pln91bd687s",
+            "af6447b8-8c41-4643-a8f8-p52htqgjc9ff",
             "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
             "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
             "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
@@ -51,13 +54,17 @@
             "aac31181-09fc-4522-852d-05c72b1059da",
             "5a81f144-2a84-45fb-a6b0-e601c7a09a74",
             "b8ed1b6c-3f72-4208-baa3-e46c342fd1a2",
-            "d675c38e-ec78-469f-b621-7bccddd827c0"
+            "d675c38e-ec78-469f-b621-7bccddd827c0",
+            "d2513b3b-aa92-42b6-b39c-5e2481a58f40",
+            "740892d8-4bdb-4ad9-bbf3-160c554ae31b",
+            "21b13316-4486-4869-8fe6-d00b04a31608"
         ],
         "store": [],
         "controller": [
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "sa8ubty5-1d4f-4fb9-9364-uddlnqeakqnp",
             "r8h3hui7-1d4f-4fb9-9364-xyhurc54yn3d",
             "9d12509b-71be-4c74-8e94-8c832006b458",
             "31119146-7002-4b82-a0a8-477db96a9d1d"

@@ -66,6 +66,83 @@ if(selected.length>0){
 
 
     },
+    onWorklistGridIdCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
+        var fieldName=this.getView().columns[cellIndex].dataIndex;
+        switch (fieldName)
+        {
+            case 'worklistVisitInfo':
+
+                Ext.create('Ext.window.Window', {
+
+                    //animateTarget:'comboSearchPatient',
+                    title:"Info consultation "+record.get('patientLName')+" "+record.get('patientFname'),
+                    /* minimizable: true,
+                     maximizable: true,*/
+                    height:400,
+                    width:500,//*0.8, //80%
+                    modal:true,
+
+                    anim: {
+                        endOpacity: 1,
+                        easing: 'easeIn',
+                        duration: .9
+                    },
+                    listeners: {
+                        show: function(w){
+                            w.getEl().fadeIn(w.anim);
+                            w.getEl().shadow.el.fadeIn(w.anim);
+                        }
+                    },
+                    items:{
+                        xtype:'infoform',
+                        visitId:record.get('visitId'),
+                        listeners: {
+                            closeInfoWinEvent: function(){
+                                this.up().close();
+                            }
+                        }
+
+                    }
+                }).show();
+                break;
+            case 'worklistPatientInfo':
+
+                Ext.create('Ext.window.Window', {
+
+                    //animateTarget:'comboSearchPatient',
+                    title:"Info patient "+record.get('patientLName')+" "+record.get('patientFname'),
+                    /* minimizable: true,
+                     maximizable: true,*/
+                    height:400,
+                    width:500,//*0.8, //80%
+                    modal:true,
+
+                    anim: {
+                        endOpacity: 1,
+                        easing: 'easeIn',
+                        duration: .9
+                    },
+                    listeners: {
+                        show: function(w){
+                            w.getEl().fadeIn(w.anim);
+                            w.getEl().shadow.el.fadeIn(w.anim);
+                        }
+                    },
+                    items:{
+                        xtype:'infoform',
+                        patientId:record.get('patientId'),
+                        listeners: {
+                            closeInfoWinEvent: function(){
+                                this.up().close();
+                            }
+                        }
+
+                    }
+                }).show();
+                break;
+        }
+    },
 
 
     /***********************Renderers*********************************/
@@ -301,7 +378,7 @@ var tooltip;
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
         return Utility.renderer.btnRenderer(color,icon);
     },
-    dateRenderer: function(value,metaData) {
+    dateRenderer: function(value) {
         /* var val = Ext.Date.parse(value, 'Y-m-d\\TH:i:s.uuu\\Z');
          return Ext.Date.format(val,"d/m/Y");*/
 
