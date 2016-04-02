@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studysettingstabpanel",
+        "designer|userClassName": "StudySettingsTabPanelViewModel"
+    },
+    "designerId": "f15fd268-99d6-461e-8ffc-e0e2dd7b492e"
+}
