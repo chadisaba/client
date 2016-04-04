@@ -1,0 +1,27 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController",
+		
+        ],
+		 "models": [
+           "StudyQuestionModel",
+		   	"DoctorModel",
+             "UserInitialComboModel"
+        ],
+        "name": "MyApp",
+		 "views": [
+           "StudyQuestionGrid",
+		   "DoctorGrid"
+        ]
+		
+    },
+    "name": "Application",
+    "designerId": "application"
+}

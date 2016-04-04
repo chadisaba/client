@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "doctorgrid",
+        "designer|userClassName": "DoctorGridViewController"
+    },
+    "designerId": "4ygqabtd-4ace-45f2-b4ee-5kexw9c67jh7"
+}

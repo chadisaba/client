@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyquestiongrid",
+        "designer|userClassName": "StudyQuestionGridViewModel"
+    },
+    "designerId": "fdrhhkdr-8a5d-4154-8917-eqyb95rj7tiu",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyQuestionModel",
+                "name": "StudyQuestionStore"
+            },
+            "name": "StudyQuestionStore",
+            "designerId": "dq7qpmeu-c056-4140-9039-whlilh5g7lsk"
+        }
+        
+    ]
+}
