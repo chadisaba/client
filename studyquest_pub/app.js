@@ -27,7 +27,8 @@ Ext.application({
     ],
     views: [
         'StudyQuestionGrid',
-        'DoctorGrid'
+        'DoctorGrid',
+        'MyViewport'
     ],
     controllers: [
         'MainController'

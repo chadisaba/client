@@ -4,7 +4,7 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     onDoctorGridIdChHist: function() {
 
     },
-   
+
 
     onDoctorGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
@@ -12,7 +12,7 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     var params;
             params={
             id:50,
-            table:"user"
+            table:"USER"
             };
             var userInitialComboStore=this.getViewModel().getStore('UserInitialComboStore');
             var userInitialComboStoreData=[];
@@ -48,15 +48,13 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
 
 	     var me=this;
 	     var params={};
-	            params.table="doctor";
+	            params.table="DOCTOR";
 	            params.idName="doctorId";
 	            params.dataToBeSaved=dataToBeSaved;
 	            params.comment=comment;
-	            var result=[];
 	            Server.CommonQueries.saveRecords(params,
 	                function(_result){
 	                    if(_result.success){
-	                        var resultArray=[];
 	                        this.getResultArray(function(data){
 	                            Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('DoctorStore'),promptWin);
 	                        },this);
@@ -130,8 +128,8 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     onUserInitialComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
 
-        var deviceTypeIdField=combo.up('roweditor').down('#userIdTextFieldItemId');
-        deviceTypeIdField.setValue(record.get('userId'));
+        var userIdField=combo.up('roweditor').down('#userIdTextFieldItemId');
+        userIdField.setValue(record.get('userId'));
 
     },
 
@@ -170,7 +168,7 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
         var me = this;
         var params = {
 
-            tablesArray: ['USER', "doctor"],
+            tablesArray: ['USER', "DOCTOR"],
             keysArray: ['userId']
 
         };

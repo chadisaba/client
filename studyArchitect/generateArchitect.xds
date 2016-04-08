@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/study_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/study_pub",
+        "exportPath": "../study_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,

@@ -7,20 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "MainController",
-		
+            "MainController"
         ],
-		 "models": [
-           "StudyQuestionModel",
-		   	"DoctorModel",
-             "UserInitialComboModel"
+        "models": [
+            "StudyQuestionModel",
+            "DoctorModel",
+            "UserInitialComboModel"
         ],
         "name": "MyApp",
-		 "views": [
-           "StudyQuestionGrid",
-		   "DoctorGrid"
+        "views": [
+            "StudyQuestionGrid",
+            "DoctorGrid",
+            "MyViewport"
         ]
-		
     },
     "name": "Application",
     "designerId": "application"
