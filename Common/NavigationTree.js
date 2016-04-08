@@ -104,10 +104,11 @@ Ext.define('MyApp.store.NavigationTree', {
             {
                 text: 'Utilisateurs ',
                 iconCls: 'x-fa fa-users',
-                viewType: 'usergrid',
-                routeId: 'usergrid',
+                viewType: 'usertabpanel',
+                routeId: 'usertabpanel',
                 leaf: true
             },
+
 
             {
                 text: 'Favoris',

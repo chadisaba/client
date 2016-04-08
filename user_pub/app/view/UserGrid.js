@@ -130,8 +130,8 @@ Ext.define('MyApp.view.UserGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'userAddress',
             width: 200,
+            dataIndex: 'userAddress',
             text: 'Adresse',
             editor: {
                 xtype: 'textareafield',

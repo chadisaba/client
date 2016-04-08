@@ -1,0 +1,73 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "designer|userAlias": "usertabpanel",
+        "designer|userClassName": "UserTabPanel",
+        "height": null,
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "b0d0fcbe-2b35-4387-88d3-68c6dce65e3d",
+    "viewControllerInstanceId": "a6f6bb49-038c-4c0c-960e-e45df84423c9",
+    "viewModelInstanceId": "07108e83-8b48-4f5b-97f7-4337ec8a8292",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Utilisateurs"
+            },
+            "name": "usergrid",
+            "designerId": "d72614ce-c4fb-427a-83ee-37a434f70f4a",
+            "masterInstanceId": "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "5913fc9b-9b15-4de4-837f-f27f5f159bd1"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Médecins"
+            },
+            "name": "doctorgrid",
+            "designerId": "2d4ab6b2-1a90-4f19-98e5-54c404e174e5",
+            "masterInstanceId": "mjsgfsku-8c41-4643-a8f8-b1tfwisw8te4",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "0c5ea8ca-b3e8-44b5-9146-1bdb104af66c"
+                }
+            ]
+        }
+    ]
+}

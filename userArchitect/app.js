@@ -22,10 +22,14 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'UserModel',
-        'CityModel'
+        'CityModel',
+        'DoctorModel',
+        'UserInitialComboModel'
     ],
     views: [
-        'UserGrid'
+        'UserGrid',
+        'UserTabPanel',
+        'DoctorGrid'
     ],
     controllers: [
         'MainController'
