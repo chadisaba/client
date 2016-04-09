@@ -13,11 +13,11 @@
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/studyquest_pub/",
-        "exportPath": "D:/wamp/www/nodejs_extjs_project/clientCh/studyquest_pub/",
+        "exportPath": "../studyquest_pub/",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
-        "generateArchitectVersion": true,
+        "generateArchitectVersion": false,
         "spacesToIndent": 4,
         "lineEnding": "CRLF",
         "genTimestamps": false,
@@ -42,7 +42,10 @@
             "fdrhhkdr-8a5d-4154-8917-eqyb95rj7tiu",
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "e4c81814-a7a1-4d7e-953c-ca2804168436",
-            "fae57581-31ab-468c-9676-c119bb73d702"
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "36ce645a-33e4-4693-a197-e9b26e79d177",
+            "999602bf-cb96-4e7f-b3d9-f6d84cbf33ec",
+            "f5c84004-f96a-4096-9193-748a6717b4ae"
         ],
         "store": [],
         "controller": [

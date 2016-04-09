@@ -11,11 +11,15 @@
         ],
         "models": [
             "UserModel",
-            "CityModel"
+            "CityModel",
+            "DoctorModel",
+            "UserInitialComboModel"
         ],
         "name": "MyApp",
         "views": [
-            "UserGrid"
+            "UserGrid",
+            "UserTabPanel",
+            "DoctorGrid"
         ]
     },
     "name": "Application",

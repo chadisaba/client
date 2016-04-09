@@ -19,22 +19,6 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'U Catégorie ',
-                iconCls: 'x-fa fa-users',
-                viewType: 'usercatgrid',
-                routeId: 'usercatgrid',
-                leaf: true
-            },
-
-            {
-                text: 'ddddddd',
-                iconCls: 'x-fa fa-home',
-                rowCls: 'nav-tree-badge nav-tree-badge-new',
-                viewType: 'doctorgrid',
-                routeId: 'doctorgrid', // routeId defaults to viewType
-                leaf: true
-            },
-            {
                 iconCls: 'x-fa fa-cogs',
                 expanded: false,
                 selectable: false,
@@ -117,18 +101,19 @@ Ext.define('MyApp.store.NavigationTree', {
                 viewType: 'screen2',
                 leaf: true
             },
+            {
+                text: 'Utilisateurs ',
+                iconCls: 'x-fa fa-users',
+                viewType: 'usertabpanel',
+                routeId: 'usertabpanel',
+                leaf: true
+            },
+
 
             {
                 text: 'Favoris',
                 iconCls: 'x-fa fa-star',
                 viewType: 'charts',
-                leaf: true
-            },
-            {
-                text: 'Study question',
-                iconCls: 'x-fa fa-leanpub',
-                viewType: 'studyquestiongrid',
-                routeId: 'studyquestiongrid', // routeId defaults to viewType
                 leaf: true
             }
         ]

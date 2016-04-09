@@ -23,13 +23,12 @@ Ext.application({
     models: [
         'StudyQuestionModel',
         'DoctorModel',
-        'UserInitialComboModel',
-        'UserCatModel'
+        'UserInitialComboModel'
     ],
     views: [
         'StudyQuestionGrid',
         'DoctorGrid',
-        'UserCatGrid'
+        'MyViewport'
     ],
     controllers: [
         'MainController'

@@ -36,6 +36,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyQuestText",
+                "flex": 1,
                 "text": "Questions"
             },
             "name": "MystudyQuestTextCol",
@@ -66,7 +67,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
-                "text": "Activé"
+                "text": "Activé",
+                "width": 75
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-yw58wchbjhif",
