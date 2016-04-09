@@ -191,7 +191,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     onUserGridIdEdit: function(editor,context) {
 
     	
-    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','ityId','cityName','userAddress','userPhone','userFax','active'];
+    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','cityId','cityName','userAddress','userPhone','userFax','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
