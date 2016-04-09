@@ -13,12 +13,14 @@
 		 "models": [
            "StudyQuestionModel",
 		   	"DoctorModel",
-             "UserInitialComboModel"
+             "UserInitialComboModel",
+			 "UserCatModel"
         ],
         "name": "MyApp",
 		 "views": [
            "StudyQuestionGrid",
-		   "DoctorGrid"
+		   "DoctorGrid",
+		   "UserCatGrid"
         ]
 		
     },

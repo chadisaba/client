@@ -57,6 +57,8 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         }
     },
 
+
+
     onUserGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
         var me=this;

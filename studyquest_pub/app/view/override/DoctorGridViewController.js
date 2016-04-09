@@ -4,7 +4,7 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     onDoctorGridIdChHist: function() {
 
     },
-   
+
 
     onDoctorGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
