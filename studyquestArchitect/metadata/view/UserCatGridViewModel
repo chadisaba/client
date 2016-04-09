@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usercatgrid",
+        "designer|userClassName": "UserCatGridViewModel"
+    },
+    "designerId": "t8b73ccq-8a5d-4154-8917-p51vh5xk6t8v",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "UserCatModel",
+                "name": "UserCatStore"
+            },
+            "name": "UserCatStore",
+            "designerId": "5rlv24uq-c056-4140-9039-diqudrjedguj"
+        }
+        
+    ]
+}
