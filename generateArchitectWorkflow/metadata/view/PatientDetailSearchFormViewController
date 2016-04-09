@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patientdetailsearchform",
+        "designer|userClassName": "PatientDetailSearchFormViewController"
+    },
+    "designerId": "9fe5f93a-4ace-45f2-b4ee-8w4m5cwv6kfg"
+ 
+}

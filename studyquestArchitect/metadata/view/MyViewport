@@ -1,0 +1,29 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport"
+    },
+    "name": "MyViewport",
+    "designerId": "36ce645a-33e4-4693-a197-e9b26e79d177",
+    "viewControllerInstanceId": "f5c84004-f96a-4096-9193-748a6717b4ae",
+    "viewModelInstanceId": "999602bf-cb96-4e7f-b3d9-f6d84cbf33ec",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "studyquestiongrid",
+            "designerId": "cb208daa-85a2-4485-bb2c-529268909b07",
+            "masterInstanceId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a"
+        }
+    ]
+}
