@@ -24,13 +24,13 @@ Ext.application({
         'StudyTypeModel',
         'StudyCatComboModel',
         'StudyModel',
-'StudyQuestionModel',
+        'StudyQuestionModel',
         'StudyTypeComboModel'
     ],
     views: [
         'StudySettingsTabPanel',
         'StudyTypeGrid',
- 'StudyQuestionGrid',
+        'StudyQuestionGrid',
         'StudyGrid'
     ],
     name: 'MyApp',

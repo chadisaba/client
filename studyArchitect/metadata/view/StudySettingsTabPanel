@@ -68,6 +68,32 @@
                     "designerId": "36102b3c-d24d-4f15-b9ea-dad29c31eec3"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Questions"
+            },
+            "name": "studyquestiongrid",
+            "designerId": "016b2abb-9c05-4dc2-b4d9-3563cf2e4dc4",
+            "masterInstanceId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "379bd2c0-3939-41f7-90c3-432fe62c46e4"
+                }
+            ]
         }
     ]
 }

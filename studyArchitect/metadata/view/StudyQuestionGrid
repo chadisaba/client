@@ -1,0 +1,476 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyquestiongrid",
+        "designer|userClassName": "StudyQuestionGrid",
+        "forceFit": true,
+        "itemId": "studyQuestionGridId",
+        "reference": "studyQuestionGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{StudyQuestionStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a",
+    "viewControllerInstanceId": "tq8n245u-4ace-45f2-b4ee-ck35w9pgu4bk",
+    "viewModelInstanceId": "fdrhhkdr-8a5d-4154-8917-eqyb95rj7tiu",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyQuestText",
+                "flex": 1,
+                "text": "Questions"
+            },
+            "name": "MystudyQuestTextCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-tb9sjqfgaa6k",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyQuestTextTextFieldItemId"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-1ktqkb1knuys"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": "Activé",
+                "width": 75
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-yw58wchbjhif",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-46nrvlb5fbsr"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-fey7p45ufrt2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "4x5q1ejb-ccc7-232C-1245-5t1etf8mwa4g"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "gggsnjf8-f393-483a-8425-9b8rfigwr6rx"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "mbqph2s4-ccc7-465c-8662-v2vmm2xs6v1u"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyQuestionGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processStudyQuestionGrid",
+            "designerId": "9jr7ahaa-2054-459b-a4aa-eqyk6ff8ih9b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdChHist",
+            "designerId": "py7r4g35-1d4f-4fb9-9364-1m646mbvw798"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdAfterRender",
+            "designerId": "fa8elg81-1f65-4972-a6e1-1nmutn3nmmsg"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyQuestionGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdInEdit",
+            "designerId": "msdr5a7n-1a08-4be0-b287-bdepmwmlng88"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyQuestionGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdResetEdit",
+            "designerId": "2yy2ubtd-2c80-456a-a5c5-7mnrnhdjat5s"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onStudyQuestionGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdSaveEdit",
+            "designerId": "mirbn4ik-f0d5-4d89-a1bb-yg2fu1jhslpw"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onStudyQuestionGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdAddItem",
+            "designerId": "y74jxi1m-ffc4-4ede-a9db-bxavg2n7u1db"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdDeleteItem",
+            "designerId": "iap9w3ed-ac56-469a-895f-pur3yfr2tvv5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdModifyItem",
+            "designerId": "4n66t3fc-6b6f-4377-998f-iuqtisduyv4h"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyQuestionGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdQuitEdit",
+            "designerId": "5hhh14e6-746f-4da4-9f4d-vgjp3yf8lsr1"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-lte24wj6s9qh"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyQuestionGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdBeforeEdit",
+            "designerId": "wj5qmadf-4019-4a61-8c79-vudnnhfm4q6w"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyQuestionGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdCanceledit",
+            "designerId": "fkgcnslk-6686-46dd-bfe7-v9wturayvhkt"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdContainerClick",
+            "designerId": "u8q79d87-3079-420b-87bf-92qhu2f82sqk"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyQuestionGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdEdit",
+            "designerId": "11xtis8p-47bf-4b29-bb1d-ctv5kjnjshec"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyQuestionGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdBeforeCellClick",
+            "designerId": "$g9d4wmr2-6a9c-488e-8122-y3yd9phdb7ha"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyQuestionGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onStudyQuestionGridIdValidateedit",
+            "designerId": "l7ep88j9-b2ec-4782-a56f-fwjvqbim4tlb"
+        }
+    ]
+}
