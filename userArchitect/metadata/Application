@@ -13,12 +13,14 @@
             "UserModel",
             "CityModel",
             "DoctorModel",
+"UserCatModel",
             "UserInitialComboModel"
         ],
         "name": "MyApp",
         "views": [
             "UserGrid",
             "UserTabPanel",
+"UserCatGrid",
             "DoctorGrid"
         ]
     },

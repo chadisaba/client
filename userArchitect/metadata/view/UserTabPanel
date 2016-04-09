@@ -68,6 +68,32 @@
                     "designerId": "0c5ea8ca-b3e8-44b5-9146-1bdb104af66c"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Catégorie"
+            },
+            "name": "usercatgrid",
+            "designerId": "212ddfda-b1d3-4b3f-9b5b-4341021d77db",
+            "masterInstanceId": "i4x5yc8q-8c41-4643-a8f8-x84rrvapxjja",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "55b2e720-44be-4fa5-9ac1-25885826593b"
+                }
+            ]
         }
     ]
 }

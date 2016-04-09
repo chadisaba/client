@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usercatgrid",
+        "designer|userClassName": "UserCatGridViewController"
+    },
+    "designerId": "bdcl8n1e-4ace-45f2-b4ee-ehhdfsnmjkrx"
+}

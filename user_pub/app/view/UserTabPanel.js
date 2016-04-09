@@ -21,6 +21,7 @@ Ext.define('MyApp.view.UserTabPanel', {
         'MyApp.view.UserTabPanelViewModel',
         'MyApp.view.UserGrid',
         'MyApp.view.DoctorGrid',
+        'MyApp.view.UserCatGrid',
         'Ext.grid.Panel',
         'Ext.tab.Tab'
     ],
@@ -38,6 +39,10 @@ Ext.define('MyApp.view.UserTabPanel', {
         {
             xtype: 'doctorgrid',
             title: 'Médecins'
+        },
+        {
+            xtype: 'usercatgrid',
+            title: 'Catégorie'
         }
     ]
 

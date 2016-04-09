@@ -10,12 +10,14 @@
             "StudyTypeModel",
             "StudyCatComboModel",
             "StudyModel",
+"StudyQuestionModel",
             "StudyTypeComboModel"
         ],
         "name": "MyApp",
         "views": [
             "StudySettingsTabPanel",
             "StudyTypeGrid",
+"StudyQuestionGrid",
             "StudyGrid"
         ]
     },

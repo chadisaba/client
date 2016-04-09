@@ -24,11 +24,13 @@ Ext.application({
         'UserModel',
         'CityModel',
         'DoctorModel',
+        'UserCatModel',
         'UserInitialComboModel'
     ],
     views: [
         'UserGrid',
         'UserTabPanel',
+        'UserCatGrid',
         'DoctorGrid'
     ],
     controllers: [
