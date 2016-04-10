@@ -157,6 +157,37 @@ Ext.define('Utility.tree', {
 
             return result;
 
+        },
+        inEdit:function(view){
+            view.down('#leftBtn').setDisabled(false);
+            view.down('#allLeftBtn').setDisabled(false);
+            view.down('#rightBtn').setDisabled(false);
+            view.down('#allRightBtn').setDisabled(false);
+        },
+        quitEdit: function(view) {
+            view.down('#leftBtn').setDisabled(true);
+            view.down('#allLeftBtn').setDisabled(true);
+            view.down('#rightBtn').setDisabled(true);
+            view.down('#allRightBtn').setDisabled(true);
+        },
+        onRightTreePanelRightTreeSelectEvent: function(view,leftTree) {
+            if(view.inEdition){
+                view.down('#leftBtn').setDisabled(true);
+                view.down('#allLeftBtn').setDisabled(true);
+                view.down('#rightBtn').setDisabled(false);
+                view.down('#allRightBtn').setDisabled(false);
+                leftTree.getSelectionModel().deselectAll();
+            }
+        },
+        onLeftTreePanelLeftTreeSelectEvent: function(view,rightTree) {
+            if(view.inEdition){
+                view.down('#leftBtn').setDisabled(false);
+                view.down('#allLeftBtn').setDisabled(false);
+                view.down('#rightBtn').setDisabled(true);
+                view.down('#allRightBtn').setDisabled(true);
+                rightTree.getSelectionModel().deselectAll();
+            }
         }
+
     }
 });

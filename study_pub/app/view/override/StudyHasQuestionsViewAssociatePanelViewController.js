@@ -1,20 +1,37 @@
 Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewController', {
     override: 'MyApp.view.StudyHasQuestionsViewAssociatePanelViewController',
      initView: function(associateId) {
-        this.associateId=associateId;
 
-         var rightStore=this.rightStore;
-         var leftStore=this.leftStore;
+
+         var me=this;
+         me.rightTree.unmask();
+         me.leftTree.unmask();
+         me.associateId=associateId;
+
+         var rightStore=me.rightStore;
+         var leftStore=me.leftStore;
 
         // retreive parents and leaf nodes from server side
+
+         var parentsArray=[
+             {
+                 'id':1,
+                 'name':'Questions',
+                 'leaf':false,
+                 'children': []
+
+             }
+         ];
 
          var params;
                  params={
                    associationIdValue:associateId,
-                   associationIdName:"studyQuestId",
+                   associationIdName:"studyId",
                    associationTable:"STUDY_HAS_QUEST",
                    availablesTable:"STUDY_QUEST",
-                     nameField:"studyQuestText"
+                     nameField:"studyQuestText",
+                     parentIdValue:1,
+                     availableIdName:"studyQuestId"
                  };
                 var availableLeafArray=[];
                 var associatedLeafArray=[];
@@ -22,35 +39,26 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
                     Server.CommonQueries.getAssociatedAndAvailable(params,
                      function(res){
                          if(res.success){
-                             availableLeafArray=res.data;
-                             associatedLeafArray=res.associated;
+                             availableLeafArray=res.data.available;
+                             associatedLeafArray=res.data.associated;
 
-                             this.leafRightArray=associatedLeafArray;
-                             this.leafLeftArray=availableLeafArray;
-                             this.parentsArray=parentsArray;
+                             me.leafRightArray=associatedLeafArray;
+                             me.leafLeftArray=availableLeafArray;
+                             me.parentsArray=parentsArray;
 
-                             Utility.tree.loadTree(rightStore,parentsArray,leafRightArray);
-                             Utility.tree.loadTree(leftStore,parentsArray,leafLeftArray);
+                             Utility.tree.loadTree(rightStore,parentsArray,associatedLeafArray);
+                             Utility.tree.loadTree(leftStore,parentsArray,availableLeafArray);
 
-                             if(this.userCanModify)
-                                 this.getTreeMultiSelectPlugin().lockPanel(false);
-                             this.quitEdit();
+                             if(me.userCanModify)
+                                 me.getTreeMultiSelectPlugin().lockPanel(false);
+                             me.quitEdit();
                          }
                          else{
                              console.log(res.msg);
                          }
                      }
                  );
-        // delete the following after implementing the Ext.Direct call
-          var parentsArray=[
-                {
-                    'id':1,
-                    'name':'Questions',
-                    'leaf':false,
-                    'children': []
 
-                }
-                ];
               /*  var availableLeafArray=[
                 {
                     'id':6,
@@ -97,17 +105,11 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
     },
 
     inEdit: function() {
-                this.getView().down('#leftBtn').setDisabled(false);
-                this.getView().down('#allLeftBtn').setDisabled(false);
-                this.getView().down('#rightBtn').setDisabled(false);
-                this.getView().down('#allRightBtn').setDisabled(false);
+        Utility.tree.inEdit(this.getView());
     },
 
     quitEdit: function() {
-         this.getView().down('#leftBtn').setDisabled(true);
-                this.getView().down('#allLeftBtn').setDisabled(true);
-                this.getView().down('#rightBtn').setDisabled(true);
-                this.getView().down('#allRightBtn').setDisabled(true);
+        Utility.tree.quitEdit(this.getView());
     },
 
     refreshView: function() {
@@ -115,13 +117,7 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
     },
 
     onRightTreePanelRightTreeSelectEvent: function(treepanel) {
-        if(this.getView().inEdition){
-            this.getView().down('#leftBtn').setDisabled(true);
-            this.getView().down('#allLeftBtn').setDisabled(true);
-            this.getView().down('#rightBtn').setDisabled(false);
-            this.getView().down('#allRightBtn').setDisabled(false);
-            this.leftTree.getSelectionModel().deselectAll();
-       }
+        Utility.tree.onRightTreePanelRightTreeSelectEvent(this.getView(),this.leftTree);
     },
 
     onAllLeftBtnClick: function(button, e, eOpts) {
@@ -157,13 +153,7 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
     },
 
     onLeftTreePanelLeftTreeSelectEvent: function(treepanel) {
-        if(this.getView().inEdition){
-        this.getView().down('#leftBtn').setDisabled(false);
-        this.getView().down('#allLeftBtn').setDisabled(false);
-        this.getView().down('#rightBtn').setDisabled(true);
-        this.getView().down('#allRightBtn').setDisabled(true);
-        this.rightTree.getSelectionModel().deselectAll();
-        }
+        Utility.tree.onRightTreePanelRightTreeSelectEvent(this.getView(),this.rightTree);
     },
 
     onAssociatePanelAfterRender: function(component, eOpts) {
@@ -171,16 +161,16 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
         this.leftTree=refs.leftTreePanel;
         this.rightTree=refs.rightTreePanel;
 
+        this.leftTree.mask();
+        this.rightTree.mask();
+
         this.rightStore=this.rightTree.getViewModel().getStore('RightTreeStore');
         this.leftStore=this.leftTree.getViewModel().getStore('LeftTreeStore');
         var userCanModify=false;
         // Check if user has authorizationn to modify using an rpc call
         userCanModify=true; // remove after implementing the ext.direct or ajax server call
         this.userCanModify=userCanModify;
-
-
-        var associateComboDataArray=[{'id':1,'text':'Choice 1'},{'id':2,'text':'Choice 2'}];
-
+       var  associateComboDataArray=[];
         var me=this;
                 var params={
                     table:"STUDY"
@@ -219,24 +209,29 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
         Utility.tree.loadTree(leftStore,this.parentsArray,this.leafLeftArray);
     },
 
-    onAssociatePanelSaveEdit: function(panel, promptWin, dataToBeAdded, dataToBeDeleted, comment) {
-        var success=false;
-        // first save all data to the server side by calling ext.direct function or ajax query
-        // remove next row after calling server side
-        success=true;
+    onAssociatePanelSaveEdit: function(panel, promptWin, dataToBeSaved, comment) {
 
-        if(success){
-            this.refreshView();
-            this.getTreeMultiSelectPlugin().quitEditMode();
-            Utility.loading.start(promptWin.query('button')[0]);
-            promptWin.close();
-            this.quitEdit();
-        }
-        else
-        {
-            Ext.MessageBox.alert("Error","save Error");
-        }
-
+        var me=this;
+        var params={};
+        params.table="STUDY_HAS_QUEST";
+        params.idName="studyHasQuestionId";
+        params.dataToBeSaved=dataToBeSaved;
+        params.comment=comment;
+        Server.CommonQueries.saveRecords(params,
+            function(_result){
+                if(_result.success){
+                    me.refreshView();
+                    me.getTreeMultiSelectPlugin().quitEditMode();
+                    Utility.loading.start(promptWin.query('button')[0]);
+                    promptWin.close();
+                    me.quitEdit();
+                }
+                else{
+                    console.error(_result.msg);
+                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
+                }
+            },me
+        );
 
     },
 
@@ -246,6 +241,7 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
 
     onAssociateComboChange: function(field, newValue, oldValue, eOpts) {
         this.initView(newValue);
+
     }
     
 });

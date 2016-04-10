@@ -77,7 +77,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			hidden: true,
 			items:[{
 				xtype: 'button',
-				text: '${edit}',
+				text: 'Editer',
 				tooltip: '${panelEdit.editTip}',
 				itemId: 'editBtn',
 				glyph: 'xf040@FontAwesome',
@@ -100,7 +100,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			items:[{
 					xtype: 'button',
 					itemId: 'cancelBtn',
-					text: '${cancel}',
+					text: 'Annuler',
 					glyph: 'xf0e2@FontAwesome',
 					disabled: true,
 					tooltip: '${panelEdit.cancelTip}',
@@ -139,7 +139,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			items:[{
 				xtype: 'button',
 				itemId: 'saveBtn',
-				text: '${save}',
+				text: 'Sauvegarder',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
 				tooltip: '${panelEdit.saveTip}',
@@ -231,7 +231,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				text: '${quit}',
+				text: 'Quitter',
 				tooltip: '${panelEdit.quitTip}',
 				listeners: {
 					click: function (button, e, options){					

@@ -36,6 +36,7 @@ Ext.define('MyApp.view.StudyHasQuestionsViewRightTreePanel', {
     itemId: 'rightTreePanel',
     width: 400,
     title: 'Les questions associées à l\'examen',
+    hideHeaders: true,
     root: {
         text: 'Root',
         expanded: true,
@@ -43,6 +44,7 @@ Ext.define('MyApp.view.StudyHasQuestionsViewRightTreePanel', {
             
         ]
     },
+    rootVisible: false,
 
     bind: {
         store: '{RightTreeStore}'

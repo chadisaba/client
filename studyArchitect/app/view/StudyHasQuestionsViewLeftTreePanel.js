@@ -36,6 +36,7 @@ Ext.define('MyApp.view.StudyHasQuestionsViewLeftTreePanel', {
     itemId: 'leftTreePanel',
     width: 400,
     title: 'Toutes les questions',
+    hideHeaders: true,
     root: {
         text: 'Root',
         expanded: true,
@@ -43,6 +44,7 @@ Ext.define('MyApp.view.StudyHasQuestionsViewLeftTreePanel', {
             
         ]
     },
+    rootVisible: false,
 
     bind: {
         store: '{LeftTreeStore}'

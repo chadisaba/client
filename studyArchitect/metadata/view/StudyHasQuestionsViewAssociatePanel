@@ -469,6 +469,7 @@
                         "fieldLabel": "Choisir l'examen",
                         "forceSelection": true,
                         "itemId": "associateCombo",
+                        "labelWidth": 150,
                         "layout|flex": null,
                         "queryMode": "local",
                         "store": [

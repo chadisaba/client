@@ -9,6 +9,7 @@
         "designer|userAlias": "studyhasquestionsviewlefttreepanel",
         "designer|userClassName": "StudyHasQuestionsViewLeftTreePanel",
         "height": 250,
+        "hideHeaders": true,
         "itemId": "leftTreePanel",
         "root": [
             " {",
@@ -17,6 +18,7 @@
             "                children: []",
             "                }"
         ],
+        "rootVisible": false,
         "store": [
             "{LeftTreeStore}"
         ],

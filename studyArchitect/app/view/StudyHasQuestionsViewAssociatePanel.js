@@ -143,6 +143,7 @@ Ext.define('MyApp.view.StudyHasQuestionsViewAssociatePanel', {
                     xtype: 'combobox',
                     itemId: 'associateCombo',
                     fieldLabel: 'Choisir l\'examen',
+                    labelWidth: 150,
                     displayField: 'studyCode',
                     forceSelection: true,
                     queryMode: 'local',
