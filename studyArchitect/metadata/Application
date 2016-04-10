@@ -10,15 +10,20 @@
             "StudyTypeModel",
             "StudyCatComboModel",
             "StudyModel",
-"StudyQuestionModel",
-            "StudyTypeComboModel"
+            "StudyQuestionModel",
+            "StudyTypeComboModel",
+            "StudyHasQuestionsViewAssociateComboModel",
+            "StudyHasQuestionsViewTreeModel"
         ],
         "name": "MyApp",
         "views": [
             "StudySettingsTabPanel",
             "StudyTypeGrid",
-"StudyQuestionGrid",
-            "StudyGrid"
+            "StudyQuestionGrid",
+            "StudyGrid",
+            "StudyHasQuestionsViewAssociatePanel",
+            "StudyHasQuestionsViewLeftTreePanel",
+            "StudyHasQuestionsViewRightTreePanel"
         ]
     },
     "name": "Application",

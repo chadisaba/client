@@ -1,0 +1,226 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyhasquestionsviewlefttreepanel",
+        "designer|userClassName": "StudyHasQuestionsViewLeftTreePanel",
+        "height": 250,
+        "itemId": "leftTreePanel",
+        "root": [
+            " {",
+            " text: 'Root',",
+            "                expanded: true,",
+            "                children: []",
+            "                }"
+        ],
+        "store": [
+            "{LeftTreeStore}"
+        ],
+        "title": "Toutes les questions",
+        "width": 400
+    },
+    "name": "MyTreePanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "kx5325mg-1d4f-4ft9-9364-3cuvjchc3a7h",
+    "viewControllerInstanceId": "ev96w3he-1d4f-9fb9-9364-61tha1c23xds",
+    "viewModelInstanceId": "iseakbvs-1d4f-4ft9-9364-rgkgijmkx1df",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTreeView",
+            "designerId": "4cb535a2-fcc1-4564-9a6c-17g9qupiqtea"
+        },
+        {
+            "type": "Ext.tree.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "MyTreeColumn"
+            },
+            "name": "MyTreeColumn",
+            "designerId": "45461d4c-0a53-463e-86f4-17g9qupiqtea"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "duration",
+                "text": "MyColumn"
+            },
+            "name": "MyColumn",
+            "designerId": "4f46b797-6b9d-491f-9319-17g9qupiqtea"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "9d350cf7-95be-480d-a637-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLeftTreePanelSelect",
+                "implHandler": [
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onLeftTreePanelSelect",
+            "designerId": "5dcc703c-1c7e-4146-acfb-17g9qupiqtea"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "da00c0a0-9c06-4f90-997a-17g9qupiqtea",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Filter",
+                        "itemId": "filterField",
+                        "layout|flex": null
+                    },
+                    "name": "MyTextField",
+                    "designerId": "87e3c12c-68ec-4d86-ab7b-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "Ext.form.trigger.Trigger",
+                            "reference": {
+                                "name": "triggers",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "x-form-clear-trigger",
+                                "name": "mytrigger"
+                            },
+                            "name": "MyTrigger",
+                            "designerId": "574c75d6-f66d-4371-a372-17g9qupiqtea",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "field",
+                                            "trigger",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "field.setValue('');"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "7ff30b3f-c85d-4480-b523-17g9qupiqtea"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFilterFieldChange",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onFilterFieldChange",
+                            "designerId": "a984a622-a270-4f76-afc2-17g9qupiqtea"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyHasQuestionsViewLeftTreePanel",
+                "implHandler": [
+                    "Utility.grid.addInfoCol(this);"
+                ]
+            },
+            "name": "processStudyHasQuestionsViewLeftTreePanel",
+            "designerId": "66f24a49-854b-4654-813f-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLeftTreePanelLeftTreeSelectEvent",
+                "name": "leftTreeSelectEvent",
+                "scope": "me"
+            },
+            "name": "onLeftTreePanelLeftTreeSelectEvent",
+            "designerId": "86c36a73-c2bb-489b-ae91-17g9qupiqtea"
+        }
+    ]
+}

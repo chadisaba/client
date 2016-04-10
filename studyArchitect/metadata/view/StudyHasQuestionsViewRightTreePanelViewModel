@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyhasquestionsviewrighttreepanel",
+        "designer|userClassName": "StudyHasQuestionsViewRightTreePanelViewModel"
+    },
+    "designerId": "3g77udty-1873-423d-bf99-fi1n4sscw5ut",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyHasQuestionsViewTreeModel",
+                "name": "RightTreeStore"
+            },
+            "name": "MyTreeStore1",
+            "designerId": "78bbf289-8469-410f-9714-17g9qupiqtea"
+        }
+    ]
+}

@@ -27,7 +27,7 @@
             "userConfig": {
                 "title": "Examens"
             },
-            "name": "studygrid",
+            "name": "studygrid1",
             "designerId": "fbdac91c-db2b-40e3-abba-42c720a53045",
             "masterInstanceId": "v94d1euu-8c41-4643-a8f8-p3lbcbqd24t7",
             "cn": [
@@ -53,7 +53,7 @@
             "userConfig": {
                 "title": "Type"
             },
-            "name": "studytypegrid",
+            "name": "studytypegrid1",
             "designerId": "90b2f489-f880-496d-bf38-8dca90681240",
             "masterInstanceId": "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
             "cn": [
@@ -79,7 +79,7 @@
             "userConfig": {
                 "title": "Questions"
             },
-            "name": "studyquestiongrid",
+            "name": "studyquestiongrid1",
             "designerId": "016b2abb-9c05-4dc2-b4d9-3563cf2e4dc4",
             "masterInstanceId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a",
             "cn": [
@@ -92,6 +92,32 @@
                     "codeClass": null,
                     "name": "TabConfig1",
                     "designerId": "379bd2c0-3939-41f7-90c3-432fe62c46e4"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Examen &Questions"
+            },
+            "name": "studyhasquestionsviewassociatepanel",
+            "designerId": "79791448-a478-4f22-905d-5c373ec241d3",
+            "masterInstanceId": "0de7100b-5720-4229-8215-17g9qupiqtea",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig2",
+                    "designerId": "d1e0c905-1dfe-43c8-82c4-076e9d198eed"
                 }
             ]
         }

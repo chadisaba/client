@@ -1,0 +1,509 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "studyhasquestionsviewassociatepanel",
+        "designer|userClassName": "StudyHasQuestionsViewAssociatePanel",
+        "header": false,
+        "height": null,
+        "itemId": "associatePanel",
+        "layout": "hbox",
+        "title": "My Panel",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "0de7100b-5720-4229-8215-17g9qupiqtea",
+    "viewControllerInstanceId": "xfugykbm-518b-4d17-88a6-iguhae4e7tfy",
+    "viewModelInstanceId": "9mncvu2e-30f3-47f9-817b-7ikhwqculvwb",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "rightTreePanel"
+            },
+            "name": "studyhasquestionsviewrighttreepanel1",
+            "designerId": "79f36a5d-7ccb-4f9e-8ae3-17g9qupiqtea",
+            "masterInstanceId": "37qxh5g6-1d4f-423d-9364-3rduhk5hd9wl",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "treepanel"
+                        ],
+                        "fn": "onRightTreePanelRightTreeSelectEvent",
+                        "implHandler": [
+                            ""
+                        ],
+                        "name": "rightTreeSelectEvent",
+                        "scope": "me"
+                    },
+                    "name": "onRightTreePanelRightTreeSelectEvent",
+                    "designerId": "605e80ce-0012-4ca6-8011-17g9qupiqtea"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "layout": "vbox",
+                "layout|flex": null,
+                "width": 60
+            },
+            "name": "MyContainer",
+            "designerId": "3b34fde4-d5c0-47bc-b8a8-17g9qupiqtea",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-double-right",
+                        "itemId": "allRightBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton",
+                    "designerId": "f8aa75f1-d55d-44b3-bfff-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAllRightBtnClick",
+                                "implHandler": [
+                                    "",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAllRightBtnClick",
+                            "designerId": "d9ef3c40-b8cd-443d-abf2-17g9qupiqtea"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10,
+                        "layout|flex": null
+                    },
+                    "name": "MySpacer3",
+                    "designerId": "8537a236-61e7-4cb4-b026-17g9qupiqtea"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-right",
+                        "itemId": "rightBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton1",
+                    "designerId": "bacb9725-80ba-46d2-9623-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRightBtnClick",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRightBtnClick",
+                            "designerId": "6951a5e3-7d00-4440-8dfd-17g9qupiqtea"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10,
+                        "layout|flex": null
+                    },
+                    "name": "MySpacer",
+                    "designerId": "eb23373c-e1a4-4881-a928-17g9qupiqtea"
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 30,
+                        "layout|flex": null
+                    },
+                    "name": "MySpacer2",
+                    "designerId": "73d4c0d9-82ae-4f68-9099-17g9qupiqtea"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-left",
+                        "itemId": "leftBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton2",
+                    "designerId": "b40219b2-94ff-4631-aa2e-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLeftBtnClick",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onLeftBtnClick",
+                            "designerId": "207731c5-58b1-4782-9818-17g9qupiqtea"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10,
+                        "layout|flex": null
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "b121a147-2ee0-4f4f-b424-17g9qupiqtea"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-angle-double-left",
+                        "itemId": "allLeftBtn",
+                        "maxWidth": 50,
+                        "text": null,
+                        "width": 50
+                    },
+                    "name": "MyButton3",
+                    "designerId": "9b4596b7-b7e0-46a5-a578-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAllLeftBtnClick",
+                                "implHandler": [
+                                    "",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAllLeftBtnClick",
+                            "designerId": "1b917133-3e25-443c-8f1e-17g9qupiqtea"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "leftTreePanel"
+            },
+            "name": "studyhasquestionsviewlefttreepanel1",
+            "designerId": "9de396ea-8da9-44a1-80e3-17g9qupiqtea",
+            "masterInstanceId": "kx5325mg-1d4f-4ft9-9364-3cuvjchc3a7h",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "treepanel"
+                        ],
+                        "fn": "onLeftTreePanelLeftTreeSelectEvent",
+                        "implHandler": [
+                            ""
+                        ],
+                        "name": "leftTreeSelectEvent",
+                        "scope": "me"
+                    },
+                    "name": "onLeftTreePanelLeftTreeSelectEvent",
+                    "designerId": "81b7721b-1de5-4e6f-b27a-17g9qupiqtea"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelAfterRender",
+            "designerId": "d21cd2d6-0aa5-4acc-9d8c-17g9qupiqtea"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyHasQuestionsViewAssociatePanel",
+                "implHandler": [
+                    "  ",
+                    " this.plugins=[];",
+                    "        this.plugins.push (",
+                    "                           new Plugins.panel.TreeMultiSelect({pluginId: 'treemultiselect'}));",
+                    "",
+                    "    "
+                ]
+            },
+            "name": "processStudyHasQuestionsViewAssociatePanel",
+            "designerId": "18844ba4-6f0e-4825-9a17-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelQuitEdit",
+            "designerId": "833e5d57-93c1-4d2a-ab73-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelResetEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelResetEdit",
+            "designerId": "c0b8dd52-f705-4a42-aa27-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "panel",
+                    "promptWin",
+                    "dataToBeAdded",
+                    "dataToBeDeleted",
+                    "comment"
+                ],
+                "fn": "onAssociatePanelSaveEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelSaveEdit",
+            "designerId": "f5550e07-801e-4da4-b38d-17g9qupiqtea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssociatePanelInEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onAssociatePanelInEdit",
+            "designerId": "93e1cc65-8d45-4aec-86fc-17g9qupiqtea"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar2",
+            "designerId": "e018635d-5204-4577-8e08-17g9qupiqtea",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "studyCode",
+                        "fieldLabel": "Choisir l'examen",
+                        "forceSelection": true,
+                        "itemId": "associateCombo",
+                        "layout|flex": null,
+                        "queryMode": "local",
+                        "store": [
+                            "{AssociateComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "studyId"
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "4c96fe47-6539-47bb-b739-17g9qupiqtea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAssociateComboChange",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onAssociateComboChange",
+                            "designerId": "ed966afc-cf84-4152-9aff-17g9qupiqtea"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
