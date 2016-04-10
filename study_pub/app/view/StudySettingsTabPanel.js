@@ -22,6 +22,7 @@ Ext.define('MyApp.view.StudySettingsTabPanel', {
         'MyApp.view.StudyGrid',
         'MyApp.view.StudyTypeGrid',
         'MyApp.view.StudyQuestionGrid',
+        'MyApp.view.StudyHasQuestionsViewAssociatePanel',
         'Ext.grid.Panel',
         'Ext.tab.Tab'
     ],
@@ -43,6 +44,10 @@ Ext.define('MyApp.view.StudySettingsTabPanel', {
         {
             xtype: 'studyquestiongrid',
             title: 'Questions'
+        },
+        {
+            xtype: 'studyhasquestionsviewassociatepanel',
+            title: 'Examen &Questions'
         }
     ]
 
