@@ -42,10 +42,6 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
         if(e.getKey()== e.ENTER)
            this.onPatientSearchBtnItemIdClick()
 
-    },
-    onDatefieldSpecialkey: function(field, e, eOpts) {
-        if(e.getKey()== e.ENTER)
-            this.onPatientSearchBtnItemIdClick();
     }
     
 });

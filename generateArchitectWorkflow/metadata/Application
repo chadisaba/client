@@ -14,7 +14,7 @@
             "SiteComboModel",
             "PatientHistoryModel",
             "InfoModel",
-			"PatientSearchDetailModel"
+            "PatientSearchDetailModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -29,7 +29,7 @@
             "PatientHistoryTabPanel",
             "InfoForm",
             "mainTabPanel",
-			"PatientDetailSearchForm"
+            "PatientDetailSearchForm"
         ]
     },
     "name": "Application",

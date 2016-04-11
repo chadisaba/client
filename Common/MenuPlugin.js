@@ -281,6 +281,57 @@ width:400,
 
                 },
                 {
+                    iconCls:'x-fa fa-search-plus',
+                    ui: 'header',
+                    tooltip: 'Recherche patient détaillée',
+                    listeners: {
+                        click: function () {
+                            // affichage de la recherche détaillé du patient
+                            Ext.create('Ext.window.Window', {
+
+                                // animateTarget:'comboSearchPatient',
+                                title:"Recherche patient",
+
+                                layout: {
+                                    type: 'border',
+                                    padding: 5
+                                },
+                                tools:[{
+                                    type:'refresh',
+                                    tooltip: 'Refresh form Data',
+                                    // hidden:true,
+                                    handler: function(event, toolEl, panelHeader) {
+                                        // refresh logic
+                                    }
+                                },
+                                    {
+                                        type:'help',
+                                        tooltip: 'Get Help',
+                                        callback: function(panel, tool, event) {
+                                            // show help here
+                                        }
+                                    }],
+                                maximizable: true,
+                                maximized:true,
+                                height:500,
+                                width:500,
+
+
+                                listeners: {
+
+                                    minimize: function (window, opts) {
+                                    }
+                                },
+                                items:{
+                                    region: 'center',
+                                    xtype:'patientdetailsearchform'
+                                }
+                            }).show();
+
+                        }
+                    }
+                },
+                {
                     xtype: 'checkbox'
                 },
                 {

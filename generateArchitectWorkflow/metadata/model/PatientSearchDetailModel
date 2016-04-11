@@ -17,91 +17,86 @@
     "name": "PatientSearchDetailModel",
     "designerId": "jc1x9d3m-1d4f-4fb9-9364-g7t7s7pc65f8",
     "cn": [
-       
         {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "id",
-                 "type": "auto"
-                },
-                "name": "Myid",
-                "designerId": "e96f8d89-803f-419a-a346-rqknkdq74lke"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "Myid",
+            "designerId": "e96f8d89-803f-419a-a346-rqknkdq74lke"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientLName",
-                 "type": "auto"
-                },
-                "name": "MypatientLName",
-                "designerId": "e96f8d89-803f-419a-a346-dx1umjq7xaj6"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientLName"
+            },
+            "name": "MypatientLName",
+            "designerId": "e96f8d89-803f-419a-a346-dx1umjq7xaj6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientFname",
-                 "type": "auto"
-                },
-                "name": "MypatientFname",
-                "designerId": "e96f8d89-803f-419a-a346-12jjl6xu5as2"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientFname"
+            },
+            "name": "MypatientFname",
+            "designerId": "e96f8d89-803f-419a-a346-12jjl6xu5as2"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientBirthday",
-                 "type": "auto"
-                },
-                "name": "MypatientBirthday",
-                "designerId": "e96f8d89-803f-419a-a346-anfr9qsaf24s"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": null,
+                "dateReadFormat": null,
+                "name": "patientBirthday"
+            },
+            "name": "MyDate2",
+            "designerId": "e96f8d89-803f-419a-a346-anfr9qsaf24s"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientSocialNumber",
-                 "type": "auto"
-                },
-                "name": "MypatientSocialNumber",
-                "designerId": "e96f8d89-803f-419a-a346-f9h824l8vb7g"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientSocialNumber"
+            },
+            "name": "MypatientSocialNumber",
+            "designerId": "e96f8d89-803f-419a-a346-f9h824l8vb7g"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "patientSocialKey",
-                 "type": "auto"
-                },
-                "name": "MypatientSocialKey",
-                "designerId": "e96f8d89-803f-419a-a346-lys7r75p6kqr"
             },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientSocialKey"
+            },
+            "name": "MypatientSocialKey",
+            "designerId": "e96f8d89-803f-419a-a346-lys7r75p6kqr"
+        },
         {
             "type": "Ext.data.field.Field",
             "reference": {
