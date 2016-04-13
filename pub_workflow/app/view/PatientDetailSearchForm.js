@@ -21,14 +21,17 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
         'MyApp.view.PatientDetailSearchFormViewModel',
         'MyApp.view.PatientDetailSearchFormViewController',
         'Ext.form.FieldSet',
+        'Ext.toolbar.Spacer',
         'Ext.form.field.Date',
-        'Ext.toolbar.Toolbar',
-        'Ext.toolbar.Fill',
         'Ext.button.Button',
+        'Ext.form.RadioGroup',
+        'Ext.form.field.Radio',
         'Ext.grid.Panel',
         'Ext.view.Table',
         'Ext.grid.column.Template',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.toolbar.Toolbar',
+        'Ext.toolbar.Fill'
     ],
 
     controller: 'patientdetailsearchform',
@@ -48,39 +51,44 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
         {
             xtype: 'fieldset',
             collapsible: true,
-            title: 'Critères de recherche',
+            title: 'Cliquer sur la touche "Entrée" pour lancer la recherche',
             items: [
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: '',
-                    name: 'patientLName',
-                    emptyText: 'Nom',
-                    listeners: {
-                        specialkey: 'onTextfieldSpecialkey'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            flex: 1,
+                            fieldLabel: '',
+                            name: 'patientLName',
+                            emptyText: 'Nom',
+                            listeners: {
+                                specialkey: 'onTextfieldSpecialkey'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'textfield',
+                            flex: 1,
+                            fieldLabel: '',
+                            name: 'patientFname',
+                            emptyText: 'Prenom',
+                            listeners: {
+                                specialkey: 'onTextfieldSpecialkey'
+                            }
+                        }
+                    ]
                 },
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: '',
-                    name: 'patientFname',
-                    emptyText: 'Prenom',
-                    listeners: {
-                        specialkey: 'onTextfieldSpecialkey'
-                    }
-                },
-                {
-                    xtype: 'datefield',
-                    anchor: '100%',
-                    fieldLabel: '',
-                    name: 'patientBirthday',
-                    emptyText: 'Date de naissance',
-                    format: 'd/m/Y',
-                    submitFormat: 'Y-m-d',
-                    listeners: {
-                        specialkey: 'onDatefieldSpecialkey'
-                    }
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
                     xtype: 'container',
@@ -89,6 +97,22 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
                         align: 'stretch'
                     },
                     items: [
+                        {
+                            xtype: 'datefield',
+                            flex: 1,
+                            fieldLabel: '',
+                            name: 'patientBirthday',
+                            emptyText: 'Date de naissance',
+                            format: 'd/m/Y',
+                            submitFormat: 'Y-m-d',
+                            listeners: {
+                                specialkey: 'onDatefieldSpecialkey'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
                         {
                             xtype: 'textfield',
                             flex: 1,
@@ -110,6 +134,53 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
                             }
                         }
                     ]
+                },
+                {
+                    xtype: 'tbspacer',
+                    height: 10
+                },
+                {
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'tbspacer',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'patientSearchBtnItemId',
+                            icon: '',
+                            iconCls: 'fa fa-search',
+                            text: 'Rechercher',
+                            listeners: {
+                                click: 'onPatientSearchBtnItemIdClick'
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            xtype: 'radiogroup',
+            defaults: {
+                name: 'typeSearch'
+            },
+            fieldLabel: 'Double-cliquer sur le patient pour ',
+            labelWidth: 220,
+            items: [
+                {
+                    xtype: 'radiofield',
+                    boxLabel: 'L\'accueillir',
+                    inputValue: 'accueil'
+                },
+                {
+                    xtype: 'radiofield',
+                    boxLabel: 'Accéder à son historique',
+                    inputValue: 'histo'
                 }
             ]
         },
@@ -119,6 +190,7 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
             itemId: 'patientSearchGridItemId',
             scrollable: true,
             title: '',
+            hideHeaders: true,
             bind: {
                 store: '{PatientSearchDetailStore}'
             },
@@ -136,26 +208,20 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
                     text: 'Résultats de la recherche',
                     flex: 1
                 }
-            ]
+            ],
+            listeners: {
+                itemdblclick: 'onPatientSearchGridItemIdItemDblClick'
+            }
         }
     ],
     dockedItems: [
         {
             xtype: 'toolbar',
+            flex: 1,
             dock: 'top',
             items: [
                 {
                     xtype: 'tbfill'
-                },
-                {
-                    xtype: 'button',
-                    itemId: 'patientSearchBtnItemId',
-                    icon: '',
-                    iconCls: 'fa fa-search',
-                    text: 'Rechercher',
-                    listeners: {
-                        click: 'onPatientSearchBtnItemIdClick'
-                    }
                 }
             ]
         }

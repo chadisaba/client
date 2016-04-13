@@ -32,111 +32,120 @@
             "userConfig": {
                 "collapsible": true,
                 "height": null,
-                "title": "Critères de recherche"
+                "layout": null,
+                "title": "Cliquer sur la touche \"Entrée\" pour lancer la recherche"
             },
             "name": "MyFieldSet",
             "designerId": "11gcsm3p-7399-4b87-b85c-vvbf2k1ym8nf",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "emptyText": "Nom",
-                        "fieldLabel": "",
-                        "layout|anchor": "100%",
-                        "name": "patientLName"
+                        "container|align": "stretch",
+                        "layout": "hbox"
                     },
-                    "name": "MypatientLNameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-lnswv64enlwv",
+                    "name": "MyContainer1",
+                    "designerId": "f848311c-8472-4a7e-9ba8-bd15af288a0c",
                     "cn": [
                         {
-                            "type": "viewcontrollereventbinding",
+                            "type": "Ext.form.field.Text",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onTextfieldSpecialkey",
-                                "name": "specialkey",
-                                "scope": "me"
+                                "emptyText": "Nom",
+                                "fieldLabel": "",
+                                "layout|flex": 1,
+                                "name": "patientLName"
                             },
-                            "name": "onTextfieldSpecialkey",
-                            "designerId": "6911acf9-3335-4375-9fa4-fe148b855cab"
+                            "name": "MypatientLNameTextField",
+                            "designerId": "73e1ef6a-05cb-4aa6-aacc-lnswv64enlwv",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey",
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldSpecialkey",
+                                    "designerId": "6911acf9-3335-4375-9fa4-fe148b855cab"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer3",
+                            "designerId": "aecdc326-6904-431f-92f8-dd3bd03776c1"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Prenom",
+                                "fieldLabel": "",
+                                "layout|flex": 1,
+                                "name": "patientFname"
+                            },
+                            "name": "MypatientFnameTextField",
+                            "designerId": "73e1ef6a-05cb-4aa6-aacc-j92xtxrny3pn",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey",
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldSpecialkey",
+                                    "designerId": "7dce533a-6092-4b9a-a5eb-1971ed5f45b7"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "emptyText": "Prenom",
-                        "fieldLabel": "",
-                        "layout|anchor": "100%",
-                        "name": "patientFname"
+                        "height": 5
                     },
-                    "name": "MypatientFnameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-j92xtxrny3pn",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onTextfieldSpecialkey",
-                                "name": "specialkey",
-                                "scope": "me"
-                            },
-                            "name": "onTextfieldSpecialkey",
-                            "designerId": "7dce533a-6092-4b9a-a5eb-1971ed5f45b7"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.form.field.Date",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "emptyText": "Date de naissance",
-                        "fieldLabel": "",
-                        "format": "d/m/Y",
-                        "layout|anchor": "100%",
-                        "name": "patientBirthday",
-                        "submitFormat": "Y-m-d"
-                    },
-                    "name": "MyDateField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-3lbu3jy5fcn5",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onDatefieldSpecialkey",
-                                "name": "specialkey",
-                                "scope": "me"
-                            },
-                            "name": "onDatefieldSpecialkey",
-                            "designerId": "44f93969-d304-4fe1-92e8-e1839a0ce5a8"
-                        }
-                    ]
+                    "name": "MySpacer2",
+                    "designerId": "08eddd40-8ff2-47f1-a84b-594dda8335ec"
                 },
                 {
                     "type": "Ext.container.Container",
@@ -152,6 +161,55 @@
                     "name": "MyContainer",
                     "designerId": "0c3bedb0-dbf8-4b96-8d66-ccaea1becd2f",
                     "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Date de naissance",
+                                "fieldLabel": "",
+                                "format": "d/m/Y",
+                                "layout|flex": 1,
+                                "name": "patientBirthday",
+                                "submitFormat": "Y-m-d"
+                            },
+                            "name": "MyDateField",
+                            "designerId": "73e1ef6a-05cb-4aa6-aacc-3lbu3jy5fcn5",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDatefieldSpecialkey",
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDatefieldSpecialkey",
+                                    "designerId": "44f93969-d304-4fe1-92e8-e1839a0ce5a8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer4",
+                            "designerId": "a66925d9-7805-4543-974d-e785fa518e47"
+                        },
                         {
                             "type": "Ext.form.field.Text",
                             "reference": {
@@ -220,68 +278,134 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.toolbar.Toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top"
-            },
-            "name": "MyToolbar1",
-            "designerId": "659e95af-9d26-4cb6-b09d-3509b6eca648",
-            "cn": [
-                {
-                    "type": "Ext.toolbar.Fill",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
-                    },
-                    "name": "MyFill",
-                    "designerId": "f38cee1f-dc7a-4602-9e8d-35af210ac1a5"
                 },
                 {
-                    "type": "Ext.button.Button",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "",
-                        "iconCls": "fa fa-search",
-                        "itemId": "patientSearchBtnItemId",
-                        "layout|flex": null,
-                        "text": "Rechercher"
+                        "height": 10
                     },
-                    "name": "MyButton",
-                    "designerId": "7769a3e2-fa4b-4b22-b5e6-24ed9cd35c17",
+                    "name": "MySpacer",
+                    "designerId": "6fd9ea0d-f371-43a6-9183-0686fd7951cc"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "458660e7-9c1f-488a-964a-799c427ab1fd",
                     "cn": [
                         {
-                            "type": "viewcontrollereventbinding",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onPatientSearchBtnItemIdClick",
-                                "name": "click",
-                                "scope": "me"
+                                "layout|flex": 1
                             },
-                            "name": "onPatientSearchBtnItemIdClick",
-                            "designerId": "20fe066c-d985-4379-bfeb-d60b2c7a5177"
+                            "name": "MySpacer1",
+                            "designerId": "964ed324-f893-4c67-9915-0e9a877d8349"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "",
+                                "iconCls": "fa fa-search",
+                                "itemId": "patientSearchBtnItemId",
+                                "layout|flex": null,
+                                "text": "Rechercher"
+                            },
+                            "name": "MyButton",
+                            "designerId": "7769a3e2-fa4b-4b22-b5e6-24ed9cd35c17",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPatientSearchBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPatientSearchBtnItemIdClick",
+                                    "designerId": "20fe066c-d985-4379-bfeb-d60b2c7a5177"
+                                }
+                            ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.RadioGroup",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "blankText": null,
+                "defaults": [
+                    "{name:'typeSearch'}"
+                ],
+                "fieldLabel": "Double-cliquer sur le patient pour ",
+                "labelWidth": 220,
+                "layout|flex": null,
+                "width": null
+            },
+            "name": "MyRadioGroup1",
+            "designerId": "01004451-2f71-4d57-8791-47d8ad7a157e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "L'accueillir",
+                        "fieldLabel": null,
+                        "inputValue": "accueil"
+                    },
+                    "name": "MyRadio3",
+                    "designerId": "260f5fbf-110f-4bc4-911d-2cb5b664263d"
+                },
+                {
+                    "type": "Ext.form.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "Accéder à son historique",
+                        "fieldLabel": null,
+                        "inputValue": "histo"
+                    },
+                    "name": "MyRadio4",
+                    "designerId": "420c9039-3905-48ce-849a-4eef993f216c"
                 }
             ]
         },
@@ -293,6 +417,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "hideHeaders": true,
                 "itemId": "patientSearchGridItemId",
                 "layout|flex": 1,
                 "scrollable": true,
@@ -354,6 +479,50 @@
                             "designerId": "96c40b3a-bff0-46d9-a5b9-5d51f8e34b4e"
                         }
                     ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPatientSearchGridItemIdItemDblClick",
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "name": "onPatientSearchGridItemIdItemDblClick",
+                    "designerId": "31813bab-61a1-4f9a-90da-606a6e85ca70"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar1",
+            "designerId": "659e95af-9d26-4cb6-b09d-3509b6eca648",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "f38cee1f-dc7a-4602-9e8d-35af210ac1a5"
                 }
             ]
         }

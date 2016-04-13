@@ -313,7 +313,7 @@ width:400,
                                     }],
                                 maximizable: true,
                                 maximized:true,
-                                height:500,
+                                height:30,
                                 width:500,
 
 
