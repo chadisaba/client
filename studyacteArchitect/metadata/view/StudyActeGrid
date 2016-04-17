@@ -1,0 +1,845 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyactegrid",
+        "designer|userClassName": "StudyActeGrid",
+        "forceFit": true,
+        "itemId": "studyActeGridId",
+        "reference": "studyActeGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{StudyActeStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx",
+    "viewControllerInstanceId": "4iuyiwcs-4ace-45f2-b4ee-32aetnbkydhs",
+    "viewModelInstanceId": "wxfmctti-8a5d-4154-8917-kxagub8py2vg",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeCode",
+                "text": "Code"
+            },
+            "name": "MystudyActeCodeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-puvui56vflpp",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeCodeTextFieldItemId"
+                    },
+                    "name": "MystudyActeCodeTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-xd4sgluci14f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeType",
+                "text": "Type"
+            },
+            "name": "MystudyActeTypeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-nxjnxjy2jf59",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyActeTypeTextFieldItemId"
+                    },
+                    "name": "MystudyActeTypeTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-p63cajkab5sh"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeAmount",
+                "text": "Montant"
+            },
+            "name": "MystudyActeAmountCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-laskspdynveq",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyActeAmountTextFieldItemId"
+                    },
+                    "name": "MystudyActeAmountTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-tduh4dmphhq3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeAmountDepassement",
+                "text": "Mt. dépassement"
+            },
+            "name": "MystudyActeAmountDepassementCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-utlmgdqmyfeh",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeAmountDepassementTextFieldItemId"
+                    },
+                    "name": "MystudyActeAmountDepassementTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-fh46h1lkxdgs"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeAssociationNonPrevu",
+                "text": "A.N.P."
+            },
+            "name": "MystudyActeAssociationNonPrevuCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-d4xuiskepfpv",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeAssociationNonPrevuTextFieldItemId"
+                    },
+                    "name": "MystudyActeAssociationNonPrevuTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-1e1weeef14cq"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeModificators",
+                "text": "Modificateurs"
+            },
+            "name": "MystudyActeModificatorsCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-vk2q1f3w3paw",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeModificatorsTextFieldItemId"
+                    },
+                    "name": "MystudyActeModificatorsTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-7dtfmq8iwumx"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeDepense",
+                "text": "Qalificatif"
+            },
+            "name": "MystudyActeDepenseCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-wxtcnq7eipb7",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeDepenseTextFieldItemId"
+                    },
+                    "name": "MystudyActeDepenseTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-37xv29l8xkdc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeQuantity",
+                "text": "Quantité"
+            },
+            "name": "MystudyActeQuantityCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-asfauyh7e2jb",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeQuantityTextFieldItemId"
+                    },
+                    "name": "MystudyActeQuantityTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-rvhilujwe24p"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeAdditionalAmount",
+                "text": "Dép"
+            },
+            "name": "MystudyActeAdditionalAmountCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-w1l267buub55",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeAdditionalAmountTextFieldItemId"
+                    },
+                    "name": "MystudyActeAdditionalAmountTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-gpgp6jnd6c26"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeAcceptedModificators",
+                "text": "Modificateurs"
+            },
+            "name": "MystudyActeAcceptedModificatorsCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-mw8d3skujxi3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeAcceptedModificatorsTextFieldItemId"
+                    },
+                    "name": "MystudyActeAcceptedModificatorsTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-4xdybq1vvu4y"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeCoefficient",
+                "text": "Coefficient"
+            },
+            "name": "MystudyActeCoefficientCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-gd9i6rc4nss9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeCoefficientTextFieldItemId"
+                    },
+                    "name": "MystudyActeCoefficientTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-e2pns8ppsiyp"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeEntentePrealable",
+                "text": "E.P."
+            },
+            "name": "MystudyActeEntentePrealableCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-eq65evt68nue",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MystudyActeEntentePrealableCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-ebbiehx5w4p5"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-9qb16gk6gwxv"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyActeRefundable",
+                "text": "Refundable"
+            },
+            "name": "MystudyActeRefundableCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-9rq5ksmhhfvc",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyActeRefundableTextFieldItemId"
+                    },
+                    "name": "MystudyActeRefundableTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-9vrx37jsawxt"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": ""
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-umx1phhxa3gs",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-42c9nk5fxscp"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-u85n9rkib7xv"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "jkxc5pug-ccc7-232C-1245-7acp5mbpsvnx"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "4d24wlcl-f393-483a-8425-3etp65ds31pm"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "xxif3huv-ccc7-465c-8662-yj2emm7x7p96"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyActeGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processStudyActeGrid",
+            "designerId": "gwq4tg85-2054-459b-a4aa-g4ap5bbeys1f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdChHist",
+            "designerId": "wikjlvys-1d4f-4fb9-9364-s6cdaykemxt2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdAfterRender",
+            "designerId": "fgv5b6d7-1f65-4972-a6e1-x4vljfhs5898"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyActeGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdInEdit",
+            "designerId": "hgbvkfd2-1a08-4be0-b287-7fdg2bvdjphw"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyActeGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdResetEdit",
+            "designerId": "gehaakql-2c80-456a-a5c5-99em6rui655r"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onStudyActeGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdSaveEdit",
+            "designerId": "s92fl6ki-f0d5-4d89-a1bb-8yyc4d469esa"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onStudyActeGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdAddItem",
+            "designerId": "trdl9c5m-ffc4-4ede-a9db-sey24a62q7fm"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdDeleteItem",
+            "designerId": "aabjehax-ac56-469a-895f-5gsy7knhqjfl"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdModifyItem",
+            "designerId": "39sy1gye-6b6f-4377-998f-59ycgbst4k7v"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onStudyActeGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdQuitEdit",
+            "designerId": "hptbq4ky-746f-4da4-9f4d-un4vv6ghpf4p"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-gy1id6aagpvv"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyActeGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdBeforeEdit",
+            "designerId": "6mljhsjb-4019-4a61-8c79-sh6b9822dmdg"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyActeGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdCanceledit",
+            "designerId": "ssvfpu3w-6686-46dd-bfe7-xvnwulqrkux1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdContainerClick",
+            "designerId": "5twb5hye-3079-420b-87bf-63jbsmyythlp"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyActeGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdEdit",
+            "designerId": "tvw5dwc5-47bf-4b29-bb1d-k5q4tqymcigb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyActeGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdBeforeCellClick",
+            "designerId": "$ee8fqild-6a9c-488e-8122-39ful23pqkxy"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onStudyActeGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onStudyActeGridIdValidateedit",
+            "designerId": "l9qaajea-b2ec-4782-a56f-ij8dgd619xew"
+        }
+    ]
+}

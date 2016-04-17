@@ -1,0 +1,62 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:8888/clientch/studyacte_pub/",
+        "exportPath": "/Applications/MAMP/htdocs/clientch/studyacte_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "wxfmctti-8a5d-4154-8917-kxagub8py2vg",
+            "4iuyiwcs-4ace-45f2-b4ee-32aetnbkydhs",
+            "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2",
+            "2fwimhrd-4ace-45f2-b4ee-tl9529lryii4",
+            "kthnpp32-8a5d-4154-8917-x479hs3tettf",
+            "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "727e1b21-2264-4c8f-9763-dc072cc5e3fc",
+            "53ea3c2f-879c-43b3-a8c5-4e000d45ba71",
+            "71de6392-b415-455f-9928-2390bd0b1434"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "4pic2ec3-1d4f-4fb9-9364-aiub6enn6gdp",
+            "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286"
+        ],
+        "resource": [
+            "bffb51b3-5880-4871-9d0d-48adfc49c721"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

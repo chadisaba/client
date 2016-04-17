@@ -1,0 +1,25 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "ActeModel",
+            "StudyActeModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "StudyActeGrid",
+            "ActeGrid",
+            "StudyActePanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

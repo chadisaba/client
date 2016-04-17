@@ -1,0 +1,83 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "studyactepanel",
+        "designer|userClassName": "StudyActePanel",
+        "height": null,
+        "layout": "hbox",
+        "title": "Study actes",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "727e1b21-2264-4c8f-9763-dc072cc5e3fc",
+    "viewControllerInstanceId": "71de6392-b415-455f-9928-2390bd0b1434",
+    "viewModelInstanceId": "53ea3c2f-879c-43b3-a8c5-4e000d45ba71",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 9
+            },
+            "name": "studyactegrid1",
+            "designerId": "0dd06622-1fed-4463-9c52-6579b0a4d44e",
+            "masterInstanceId": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "addActeButton",
+                "layout|flex": 1,
+                "text": "<-"
+            },
+            "name": "MyButton",
+            "designerId": "728db4ef-dbc4-4ce5-bbb9-d69e7900d5b5",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAddActeButtonClick",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onAddActeButtonClick",
+                    "designerId": "ed716714-14c5-480d-a928-dee7b4fd3d57"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 6
+            },
+            "name": "actegrid1",
+            "designerId": "3371eda6-f0f0-4bc6-82cb-cb976e563d22",
+            "masterInstanceId": "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2"
+        }
+    ]
+}

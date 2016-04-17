@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyactepanel",
+        "designer|userClassName": "StudyActePanelViewModel"
+    },
+    "designerId": "53ea3c2f-879c-43b3-a8c5-4e000d45ba71"
+}

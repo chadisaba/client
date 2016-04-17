@@ -107,6 +107,12 @@ Ext.define('MyApp.store.NavigationTree', {
                 viewType: 'usertabpanel',
                 routeId: 'usertabpanel',
                 leaf: true
+            },{
+                text: 'actes ',
+                iconCls: 'x-fa fa-users',
+                viewType: 'studyactepanel',
+                routeId: 'studyactepanel',
+                leaf: true
             },
 
 
