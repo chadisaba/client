@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SiteGroupNaComboModel"
+    },
+    "name": "MyModelSiteGroupNaComboModel",
+    "designerId": "040092bf-b6f4-441b-b581-na9w1tuv7yvn",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupName"
+            },
+            "name": "MyField1",
+            "designerId": "215t5e3d-c576-4ff2-l38wfr45cmxj"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupName"
+            },
+            "name": "MyField2",
+            "designerId": "7a63r0f2-8de7-4e76-b5a2-km86xjrej4hw"
+        }
+    ]
+}

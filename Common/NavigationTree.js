@@ -17,6 +17,14 @@ Ext.define('MyApp.store.NavigationTree', {
                 href:'../pub_workflow/#maintabpanel'
             },
             {
+                text: 'Fscal',
+                iconCls: 'x-fa fa-home',
+                rowCls: 'nav-tree-badge nav-tree-badge-new',
+                viewType: 'fiscalyeargrid',
+                routeId: 'fiscalyeargrid', // routeId defaults to viewType
+                leaf: true
+            },
+            {
                 iconCls: 'x-fa fa-cogs',
                 expanded: false,
                 selectable: false,

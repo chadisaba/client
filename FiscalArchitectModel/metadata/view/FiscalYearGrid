@@ -1,0 +1,672 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fiscalyeargrid",
+        "designer|userClassName": "FiscalYearGrid",
+        "forceFit": true,
+        "itemId": "fiscalYearGridId",
+        "reference": "fiscalYearGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{FiscalYearStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "v2ewm9t4-8c41-4643-a8f8-u3xxhikpvccm",
+    "viewControllerInstanceId": "ucvf5r13-4ace-45f2-b4ee-be9c12wjiwf6",
+    "viewModelInstanceId": "nsp473qc-8a5d-4154-8917-p22ycgrl4t2a",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteGroupName",
+                "text": "Site Group"
+            },
+            "name": "MysiteGroupNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-sg7ebsd7pb3p",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteGroupName",
+                        "forceSelection": true,
+                        "itemId": "siteGroupNaComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SiteGroupNaComboStore}"
+                        ],
+                        "valueField": "siteGroupName"
+                    },
+                    "name": "MysiteGroupNaComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-4rurx7xhvfrr",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteGroupNaComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onSiteGroupNaComboBoxEditorItemIdSelect",
+                            "designerId": "ed6b56ad-8c5a-4652-a497-ef3f18aecf1e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteGroupId",
+                "hidden": true,
+                "text": "SiteGroup"
+            },
+            "name": "MysiteGroupIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-y7f188qj5xnm",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "siteGroupIdTextFieldItemId"
+                    },
+                    "name": "MysiteGroupIdTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-led2s83rfpy9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fiscalYearName",
+                "text": "Name"
+            },
+            "name": "MyfiscalYearNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-excxwvcdw3ym",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "fiscalYearNameTextFieldItemId"
+                    },
+                    "name": "MyfiscalYearNameTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-ycf8l4jjj8i8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fiscalYearStartDate",
+                "text": "Start Date"
+            },
+            "name": "MyfiscalYearStartDateCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-b399x6upipta",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "fiscalYearStartDateTextFieldItemId"
+                    },
+                    "name": "MyDateField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-n1kivts427qr"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fiscalYearEndDate",
+                "text": "End Date"
+            },
+            "name": "MyfiscalYearEndDateCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-wapdaeqnq1wk",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "fiscalYearEndDateTextFieldItemId"
+                    },
+                    "name": "MyDateField1",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-h5wktxcd5gfv"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fiscalYearClosed",
+                "text": "Closed"
+            },
+            "name": "MyfiscalYearClosedCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-wr3k55nhcf7r",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyfiscalYearClosedCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-hw1jl64ncgni"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-tsmlw1cuj8rj"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": "Active",
+                "width": ""
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ke34nhpsd1xp",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-6vhv3mjnnk4j"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-56grvirhvn9e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "yix4dghy-ccc7-232C-1245-5atww2gwbkhg"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "81l8w8uf-f393-483a-8425-8r2x1rlwy8e2"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "a12eap84-ccc7-465c-8662-lltpqj6wbxk9"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processFiscalYearGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processFiscalYearGrid",
+            "designerId": "7r2ris7h-2054-459b-a4aa-wbl4i5f8xwcd"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdChHist",
+            "designerId": "xbx57cij-1d4f-4fb9-9364-ldnp6mjj6r5h"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdAfterRender",
+            "designerId": "dvnyqw57-1f65-4972-a6e1-pbpdmrp8q72q"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onFiscalYearGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdInEdit",
+            "designerId": "ws38ugis-1a08-4be0-b287-gjymuanemy36"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onFiscalYearGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdResetEdit",
+            "designerId": "j7n7xt8l-2c80-456a-a5c5-qppaf31faati"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onFiscalYearGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdSaveEdit",
+            "designerId": "n8s92pic-f0d5-4d89-a1bb-7chlr56gt74k"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onFiscalYearGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdAddItem",
+            "designerId": "v31briby-ffc4-4ede-a9db-pkuj28i47unj"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdDeleteItem",
+            "designerId": "v8glqysi-ac56-469a-895f-nnbi2vyfpql1"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdModifyItem",
+            "designerId": "r295qj17-6b6f-4377-998f-it5rc3ur6qs6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onFiscalYearGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdQuitEdit",
+            "designerId": "s24xwdnx-746f-4da4-9f4d-4qjjplbqyr39"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-kfnsrtaeu7wj"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onFiscalYearGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdBeforeEdit",
+            "designerId": "1bs7m3bp-4019-4a61-8c79-dflb5bf36te3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onFiscalYearGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdCanceledit",
+            "designerId": "qc2a41u8-6686-46dd-bfe7-yjxbf98fauia"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdContainerClick",
+            "designerId": "b77nikbv-3079-420b-87bf-9alf7by4k5s6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onFiscalYearGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdEdit",
+            "designerId": "baj98cq8-47bf-4b29-bb1d-ybt3pwyj1xn9"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiscalYearGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdBeforeCellClick",
+            "designerId": "$8au88r9a-6a9c-488e-8122-4ujvhsi6n3ig"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onFiscalYearGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onFiscalYearGridIdValidateedit",
+            "designerId": "pqysqnwh-b2ec-4782-a56f-scxsm62r61w9"
+        }
+    ]
+}

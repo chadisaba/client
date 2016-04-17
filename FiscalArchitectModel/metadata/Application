@@ -1,0 +1,25 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+		 "models": [
+           "FiscalYearModel",
+                       "SiteGroupNaComboModel"
+					    ],
+						
+        "name": "MyApp",
+		
+		   "views": [
+           "FiscalYearGrid"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

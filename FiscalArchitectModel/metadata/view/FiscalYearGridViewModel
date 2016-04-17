@@ -1,0 +1,43 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fiscalyeargrid",
+        "designer|userClassName": "FiscalYearGridViewModel"
+    },
+    "designerId": "nsp473qc-8a5d-4154-8917-p22ycgrl4t2a",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "FiscalYearModel",
+                "name": "FiscalYearStore"
+            },
+            "name": "FiscalYearStore",
+            "designerId": "jvchsl2f-c056-4140-9039-e1xu7n2whsdj"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteGroupNaComboModel",
+                "name": "SiteGroupNaComboStore"
+            },
+            "name": "SiteGroupNaComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-cb7casmcudyj"
+        }
+    ]
+}

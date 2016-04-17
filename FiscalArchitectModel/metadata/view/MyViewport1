@@ -1,0 +1,57 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport1",
+        "designer|userClassName": "MyViewport1",
+        "layout": "border"
+    },
+    "name": "MyViewport1",
+    "designerId": "4702aeb1-429b-45af-b394-40a06bf904db",
+    "viewControllerInstanceId": "fae57581-31ab-468c-9676-c119bb73d702",
+    "viewModelInstanceId": "e4c81814-a7a1-4d7e-953c-ca2804168436",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processMyViewport1",
+                "implHandler": [
+                    "this.plugins = [\"smartmenu\"];"
+                ]
+            },
+            "name": "processMyViewport1",
+            "designerId": "c6196def-8916-40d8-86ba-89c6e89a4004"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "display",
+                "title": null
+            },
+            "name": "MyPanel3",
+            "designerId": "aa6d4549-6ab8-4a35-a31a-d898e2487ff0"
+        }
+    ]
+}

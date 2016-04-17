@@ -1,0 +1,190 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "FiscalYearModel",
+        "validators": [
+            "[{",
+            "            type: 'presence',",
+            "            field: 'xxFieldNameRequired'",
+            "        }]"
+        ]
+    },
+    "name": "FiscalYearModel",
+    "designerId": "9ry7r12f-1d4f-4fb9-9364-8x8iydpraq7d",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fiscalYearId"
+            },
+            "name": "MyInteger",
+            "designerId": "e96f8d89-803f-419a-a346-ifc68v68cg5q"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupId"
+            },
+            "name": "MyInteger1",
+            "designerId": "e96f8d89-803f-419a-a346-eryj18rifsqp"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fiscalYearName"
+            },
+            "name": "MyfiscalYearName",
+            "designerId": "e96f8d89-803f-419a-a346-bsvcsdtsr5td"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fiscalYearStartDate"
+            },
+            "name": "MyDate",
+            "designerId": "e96f8d89-803f-419a-a346-xc8rl63lt1e3"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fiscalYearEndDate"
+            },
+            "name": "MyDate1",
+            "designerId": "e96f8d89-803f-419a-a346-hlcn4jvw2wbd"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fiscalYearClosed"
+            },
+            "name": "MyBoolean",
+            "designerId": "e96f8d89-803f-419a-a346-lr86ieey4x5v"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "active"
+            },
+            "name": "MyBoolean1",
+            "designerId": "e96f8d89-803f-419a-a346-6b6pngvxpi53"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteGroupName"
+            },
+            "name": "MyString",
+            "designerId": "e96f8d89-803f-419a-a346-pn8naxecyk77"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "toDelete"
+            },
+            "name": "MyField27",
+            "designerId": "32hl35x1-1f65-4972-a6e1-wmw3b2b26l2q"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "name": "MyField28",
+            "designerId": "ltqmrngp-1a08-4be0-b287-6yptgn4rah7v"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "name": "MyField29",
+            "designerId": "uyh67rp5-2c80-456a-a5c5-wcy4eyuqyejl"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "notValid"
+            },
+            "name": "MyField30",
+            "designerId": "e8i6i9ss-f0d5-4d89-a1bb-ep6xehkikpe1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "addedAndValidated"
+            },
+            "name": "MyField31",
+            "designerId": "m6lan5a6-ac56-469a-895f-cr6h72aedc39"
+        }
+    ]
+}
