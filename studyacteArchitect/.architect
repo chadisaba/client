@@ -14,6 +14,7 @@
         },
         "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2": {
             "id": "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2",
+            "expanded": false,
             "cn": [
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-72r9vrsqvrk1",
@@ -49,6 +50,7 @@
                 },
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-cvv8gkci5qey",
+                    "expanded": false,
                     "cn": [
                         {
                             "id": "73e1ef6a-05cb-4aa6-aacc-u1u4yc6ng5sl"
@@ -87,52 +89,10 @@
                     "id": "kms3twb5-2054-459b-a4aa-34q9hkqkv525"
                 },
                 {
-                    "id": "hmh3il9f-1d4f-4fb9-9364-4vrg7ifw738s"
-                },
-                {
                     "id": "era12vyn-1f65-4972-a6e1-xuw7fnvjukqp"
                 },
                 {
-                    "id": "xsw7pvxx-1a08-4be0-b287-bcrhytksg3hr"
-                },
-                {
-                    "id": "ngk6wm1y-2c80-456a-a5c5-hteegwjppyp1"
-                },
-                {
-                    "id": "37wxq13x-f0d5-4d89-a1bb-59cnimq7i7ed"
-                },
-                {
-                    "id": "5hib4srg-ffc4-4ede-a9db-d3tr2gk6jjug"
-                },
-                {
-                    "id": "ntbrwlnh-ac56-469a-895f-pvs31i41yyf5"
-                },
-                {
-                    "id": "9lttn1k2-6b6f-4377-998f-6ix9p9misaif"
-                },
-                {
-                    "id": "fwrl65cc-746f-4da4-9f4d-c2wbu8x6tims"
-                },
-                {
                     "id": "87956724-4a21-42c1-agqm7knaxf1u"
-                },
-                {
-                    "id": "i91bfgdv-4019-4a61-8c79-ildmkilbc7cy"
-                },
-                {
-                    "id": "vcp571k2-6686-46dd-bfe7-v4br7le7tkt2"
-                },
-                {
-                    "id": "jqaw3a7e-3079-420b-87bf-4ytwdwdr7m9x"
-                },
-                {
-                    "id": "tv2vab9l-47bf-4b29-bb1d-hnxy17x1pdar"
-                },
-                {
-                    "id": "$2srv1nx9-6a9c-488e-8122-x485d8qh289r"
-                },
-                {
-                    "id": "kf3sl4eg-b2ec-4782-a56f-gnhrui14c74e"
                 }
             ]
         },
@@ -149,6 +109,7 @@
         },
         "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx": {
             "id": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx",
+            "expanded": false,
             "cn": [
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-puvui56vflpp",
@@ -296,9 +257,6 @@
                     "id": "s92fl6ki-f0d5-4d89-a1bb-8yyc4d469esa"
                 },
                 {
-                    "id": "trdl9c5m-ffc4-4ede-a9db-sey24a62q7fm"
-                },
-                {
                     "id": "aabjehax-ac56-469a-895f-5gsy7knhqjfl"
                 },
                 {
@@ -360,10 +318,15 @@
                     "id": "0dd06622-1fed-4463-9c52-6579b0a4d44e"
                 },
                 {
-                    "id": "728db4ef-dbc4-4ce5-bbb9-d69e7900d5b5",
+                    "id": "afcfe651-c21e-47ad-a4f1-9c6133c80a5d",
                     "cn": [
                         {
-                            "id": "ed716714-14c5-480d-a928-dee7b4fd3d57"
+                            "id": "728db4ef-dbc4-4ce5-bbb9-d69e7900d5b5",
+                            "cn": [
+                                {
+                                    "id": "ed716714-14c5-480d-a928-dee7b4fd3d57"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -497,8 +460,8 @@
             "id": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         },
         "resource": false,
-        "bffb51b3-5880-4871-9d0d-48adfc49c721": {
-            "id": "bffb51b3-5880-4871-9d0d-48adfc49c721"
+        "fabad4b9-376a-420a-9a9b-c7f42cfb33eb": {
+            "id": "fabad4b9-376a-420a-9a9b-c7f42cfb33eb"
         }
     },
     "tabState": {
@@ -511,13 +474,13 @@
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx"
     },
     "inspectorState": {
         "topInstance": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx",
         "selectedInstance": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

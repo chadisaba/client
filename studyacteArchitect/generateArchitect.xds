@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/studyacte_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/studyacte_pub",
+        "exportPath": "../studyacte_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -53,7 +53,7 @@
             "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286"
         ],
         "resource": [
-            "bffb51b3-5880-4871-9d0d-48adfc49c721"
+            "fabad4b9-376a-420a-9a9b-c7f42cfb33eb"
         ],
         "app": [
             "application"

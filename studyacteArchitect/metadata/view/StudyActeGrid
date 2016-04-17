@@ -653,28 +653,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|params": [
-                    "grid"
-                ],
-                "fn": "onStudyActeGridIdAddItem",
-                "implHandler": [
-                    "",
-                    ""
-                ],
-                "name": "addItem",
-                "scope": "me"
-            },
-            "name": "onStudyActeGridIdAddItem",
-            "designerId": "trdl9c5m-ffc4-4ede-a9db-sey24a62q7fm"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onStudyActeGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"

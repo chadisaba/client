@@ -30,29 +30,44 @@ Ext.define('MyApp.view.StudyActePanel', {
     viewModel: {
         type: 'studyactepanel'
     },
-    title: 'Study actes',
+    layout: 'border',
+    title: 'Les Actes',
 
-    layout: {
-        type: 'hbox',
-        align: 'stretch'
-    },
     items: [
         {
             xtype: 'studyactegrid',
-            flex: 9
+            collapsible: false,
+            header: false,
+            flex: 2,
+            region: 'center',
+            split: true
         },
         {
-            xtype: 'button',
-            flex: 1,
-            itemId: 'addActeButton',
-            text: '<-',
-            listeners: {
-                click: 'onAddActeButtonClick'
-            }
+            xtype: 'container',
+            region: 'east',
+            width: 50,
+            layout: {
+                type: 'hbox',
+                align: 'middle'
+            },
+            items: [
+                {
+                    xtype: 'button',
+                    flex: 1,
+                    itemId: 'addActeButton',
+                    text: '<-',
+                    listeners: {
+                        click: 'onAddActeButtonClick'
+                    }
+                }
+            ]
         },
         {
             xtype: 'actegrid',
-            flex: 6
+            width: 150,
+            header: false,
+            flex: 1,
+            region: 'east'
         }
     ]
 

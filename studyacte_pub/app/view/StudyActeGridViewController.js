@@ -50,11 +50,6 @@ Ext.define('MyApp.view.StudyActeGridViewController', {
 
     },
 
-    onStudyActeGridIdAddItem: function(grid) {
-
-
-    },
-
     onStudyActeGridIdDeleteItem: function() {
 
     },
