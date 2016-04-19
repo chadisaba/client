@@ -29,65 +29,8 @@ Ext.define('MyApp.view.ActeGridViewController', {
         //this.showView('details');
     },
 
-    onActeGridIdChHist: function() {
-
-    },
-
     onActeGridIdAfterRender: function(component, eOpts) {
 
-
-    },
-
-    onActeGridIdInEdit: function(editor, context) {
-
-    },
-
-    onActeGridIdResetEdit: function(gridpanel, promptWin) {
-
-    },
-
-    onActeGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-
-    },
-
-    onActeGridIdAddItem: function(grid) {
-
-
-    },
-
-    onActeGridIdDeleteItem: function() {
-
-    },
-
-    onActeGridIdModifyItem: function() {
-
-    },
-
-    onActeGridIdQuitEdit: function(gridpanel, promptWin) {
-
-    },
-
-    onActeGridIdBeforeEdit: function(editor, context) {
-
-    },
-
-    onActeGridIdCanceledit: function(editor, context) {
-
-    },
-
-    onActeGridIdContainerClick: function(dataview, e, eOpts) {
-
-    },
-
-    onActeGridIdEdit: function(editor, context) {
-
-    },
-
-    onActeGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-
-    },
-
-    onActeGridIdValidateedit: function(editor, context) {
 
     }
 

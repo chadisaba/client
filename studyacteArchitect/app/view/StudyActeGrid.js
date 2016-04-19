@@ -182,7 +182,6 @@ Ext.define('MyApp.view.StudyActeGrid', {
         inEdit: 'onStudyActeGridIdInEdit',
         resetEdit: 'onStudyActeGridIdResetEdit',
         saveEdit: 'onStudyActeGridIdSaveEdit',
-        addItem: 'onStudyActeGridIdAddItem',
         deleteItem: 'onStudyActeGridIdDeleteItem',
         modifyItem: 'onStudyActeGridIdModifyItem',
         quitEdit: 'onStudyActeGridIdQuitEdit',

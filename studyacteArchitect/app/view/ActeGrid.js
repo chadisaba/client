@@ -111,21 +111,7 @@ Ext.define('MyApp.view.ActeGrid', {
     ],
     listeners: {
         select: 'select',
-        chHist: 'onActeGridIdChHist',
-        afterrender: 'onActeGridIdAfterRender',
-        inEdit: 'onActeGridIdInEdit',
-        resetEdit: 'onActeGridIdResetEdit',
-        saveEdit: 'onActeGridIdSaveEdit',
-        addItem: 'onActeGridIdAddItem',
-        deleteItem: 'onActeGridIdDeleteItem',
-        modifyItem: 'onActeGridIdModifyItem',
-        quitEdit: 'onActeGridIdQuitEdit',
-        beforeedit: 'onActeGridIdBeforeEdit',
-        canceledit: 'onActeGridIdCanceledit',
-        containerclick: 'onActeGridIdContainerClick',
-        edit: 'onActeGridIdEdit',
-        beforecellclick: 'onActeGridIdBeforeCellClick',
-        validateedit: 'onActeGridIdValidateedit'
+        afterrender: 'onActeGridIdAfterRender'
     },
     plugins: [
         {
