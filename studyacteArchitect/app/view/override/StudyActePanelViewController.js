@@ -6,11 +6,17 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
 
         var me=this;
 
-        var actePanel=me.lookupReference('acteGridRef');
+        var actePanel=me.lookupReference('actePanetRef');
+
+        var acteGrid=me.lookupReference('acteGridReference');
+
+        var activeTab = actePanel.getActiveTab();
+
+
 
         var studyActePanel=me.lookupReference('studyActeGridRef');
 
-        var selectedRecordArray=actePanel.getSelection();
+        var selectedRecordArray=activeTab.getSelection();
 
         var studyActeRec=new MyApp.model.StudyActeModel();
 
@@ -20,6 +26,7 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
 
         {
 
+            if(activeTab.itemId=='acteGridId'){
             studyActeRec.set('studyActeCode',recActe.get('acteCode'));
             studyActeRec.set('studyId',1);
             studyActeRec.set('studyActeType',1);
@@ -27,6 +34,23 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
             studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
             studyActeRec.set('added',true);
             studyActeRec.set('modified',false);
+            }else{
+
+                studyActeRec.set('studyActeCode',recActe.get('acteOtherCode'));
+                studyActeRec.set('studyId',1);
+               // if(recActe.get('acteOtherIsNgap'))
+
+                studyActeRec.set('studyActeType',2);
+                studyActeRec.set('studyActeAmount',recActe.get('acteOtherAmount'));
+              //  studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
+                studyActeRec.set('added',true);
+                studyActeRec.set('modified',false);
+
+
+
+
+
+            }
 
         /*    studyActeRec.set('studyActeDepense',recActe.get('acteCode'));
          //  studyActeRec.set('studyActeAmountDepassement',recActe.get('acteCode'));

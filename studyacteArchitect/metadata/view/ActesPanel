@@ -1,0 +1,75 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "designer|userAlias": "actespanel",
+        "designer|userClassName": "ActesPanel",
+        "height": null,
+        "reference": "actePanetRef",
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "b3a739cc-f2f8-407f-866f-b7c6c8be1872",
+    "viewControllerInstanceId": "e25d1717-d758-4230-b9c8-83dbcddfaae0",
+    "viewModelInstanceId": "cb128949-be46-4c40-92c7-8a9ce18059d6",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "reference": "acteGridReference",
+                "title": "CCAM"
+            },
+            "name": "actegrid3",
+            "designerId": "f0168699-2cce-4cbc-b5ba-995cbfb74273",
+            "masterInstanceId": "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig4",
+                    "designerId": "2bac17fa-9782-439d-b100-c78d614408b6"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Others"
+            },
+            "name": "acteothergrid1",
+            "designerId": "2b91c992-7219-4e14-a665-60f30791de70",
+            "masterInstanceId": "gb5lm884-8c41-4643-a8f8-71l93wftpm8s",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "42c90f58-b1a2-4d06-b62e-5387512107cd"
+                }
+            ]
+        }
+    ]
+}

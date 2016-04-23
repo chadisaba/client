@@ -21,15 +21,17 @@ Ext.define('MyApp.view.StudyActePanel', {
         'MyApp.view.StudyActePanelViewModel',
         'MyApp.view.StudyActePanelViewController',
         'MyApp.view.StudyActeGrid',
-        'MyApp.view.ActeGrid',
+        'MyApp.view.ActesPanel',
         'Ext.grid.Panel',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.tab.Panel'
     ],
 
     controller: 'studyactepanel',
     viewModel: {
         type: 'studyactepanel'
     },
+    reference: '',
     layout: 'border',
     title: 'Les Actes',
 
@@ -37,8 +39,7 @@ Ext.define('MyApp.view.StudyActePanel', {
         {
             xtype: 'studyactegrid',
             collapsible: false,
-            header: false,
-            flex: 2,
+            flex: 5,
             region: 'center',
             split: true
         },
@@ -63,11 +64,10 @@ Ext.define('MyApp.view.StudyActePanel', {
             ]
         },
         {
-            xtype: 'actegrid',
-            width: 150,
-            header: false,
-            flex: 1,
-            region: 'east'
+            xtype: 'actespanel',
+            flex: 3,
+            region: 'east',
+            header: false
         }
     ]
 

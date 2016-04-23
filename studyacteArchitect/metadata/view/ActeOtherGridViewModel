@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "acteothergrid",
+        "designer|userClassName": "ActeOtherGridViewModel"
+    },
+    "designerId": "1uymc3vu-8a5d-4154-8917-swlrprkwduf9",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ActeOtherModel",
+                "name": "ActeOtherStore"
+            },
+            "name": "ActeOtherStore",
+            "designerId": "mx6cnixw-c056-4140-9039-khsmj765hfp4"
+        }
+        
+    ]
+}

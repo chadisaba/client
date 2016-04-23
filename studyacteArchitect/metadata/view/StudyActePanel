@@ -10,6 +10,7 @@
         "designer|userClassName": "StudyActePanel",
         "height": null,
         "layout": "border",
+        "reference": "",
         "title": "Les Actes",
         "width": null
     },
@@ -27,11 +28,11 @@
             "codeClass": null,
             "userConfig": {
                 "collapsible": false,
-                "layout|flex": 2,
+                "layout|flex": 5,
                 "layout|region": "center",
                 "layout|split": true
             },
-            "name": "studyactegrid",
+            "name": "studyactegrid1",
             "designerId": "0dd06622-1fed-4463-9c52-6579b0a4d44e",
             "masterInstanceId": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx"
         },
@@ -95,13 +96,12 @@
             "codeClass": null,
             "userConfig": {
                 "header": false,
-                "layout|flex": 1,
-                "layout|region": "east",
-                "width": 150
+                "layout|flex": 3,
+                "layout|region": "east"
             },
-            "name": "actegrid",
-            "designerId": "3371eda6-f0f0-4bc6-82cb-cb976e563d22",
-            "masterInstanceId": "td6kjcnt-8c41-4643-a8f8-6vau6ybctit2"
+            "name": "actespanel",
+            "designerId": "ff35008d-4574-46b1-8e0d-0cb2f7833616",
+            "masterInstanceId": "b3a739cc-f2f8-407f-866f-b7c6c8be1872"
         }
     ]
 }

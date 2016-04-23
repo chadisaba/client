@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/studyacte_pub/",
-        "exportPath": "../studyacte_pub",
+        "exportPath": "/Applications/MAMP/htdocs/clientch/studyacte_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -42,7 +42,13 @@
             "fae57581-31ab-468c-9676-c119bb73d702",
             "727e1b21-2264-4c8f-9763-dc072cc5e3fc",
             "53ea3c2f-879c-43b3-a8c5-4e000d45ba71",
-            "71de6392-b415-455f-9928-2390bd0b1434"
+            "71de6392-b415-455f-9928-2390bd0b1434",
+            "gb5lm884-8c41-4643-a8f8-71l93wftpm8s",
+            "2bhgxcxj-4ace-45f2-b4ee-9rujlv2s4v1b",
+            "1uymc3vu-8a5d-4154-8917-swlrprkwduf9",
+            "b3a739cc-f2f8-407f-866f-b7c6c8be1872",
+            "cb128949-be46-4c40-92c7-8a9ce18059d6",
+            "e25d1717-d758-4230-b9c8-83dbcddfaae0"
         ],
         "store": [],
         "controller": [
@@ -50,10 +56,11 @@
         ],
         "model": [
             "4pic2ec3-1d4f-4fb9-9364-aiub6enn6gdp",
-            "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286"
+            "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286",
+            "vfq6p39h-1d4f-4fb9-9364-pnlec12av7l9"
         ],
         "resource": [
-            "fabad4b9-376a-420a-9a9b-c7f42cfb33eb"
+            "bffb51b3-5880-4871-9d0d-48adfc49c721"
         ],
         "app": [
             "application"

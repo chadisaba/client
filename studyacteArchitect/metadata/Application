@@ -11,13 +11,16 @@
         ],
         "models": [
             "ActeModel",
+            "ActeOtherModel",
             "StudyActeModel"
         ],
         "name": "MyApp",
         "views": [
             "StudyActeGrid",
+            "ActeOtherGrid",
             "ActeGrid",
-            "StudyActePanel"
+            "StudyActePanel",
+            "ActesPanel"
         ]
     },
     "name": "Application",

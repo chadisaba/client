@@ -22,12 +22,15 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'ActeModel',
+        'ActeOtherModel',
         'StudyActeModel'
     ],
     views: [
         'StudyActeGrid',
+        'ActeOtherGrid',
         'ActeGrid',
-        'StudyActePanel'
+        'StudyActePanel',
+        'ActesPanel'
     ],
     controllers: [
         'MainController'

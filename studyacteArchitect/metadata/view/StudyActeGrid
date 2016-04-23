@@ -299,6 +299,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeAcceptedModificators",
+                "hidden": true,
                 "text": "Modificateurs"
             },
             "name": "MystudyActeAcceptedModificatorsCol",
@@ -408,6 +409,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeRefundable",
+                "hidden": true,
                 "text": "Refundable"
             },
             "name": "MystudyActeRefundableCol",

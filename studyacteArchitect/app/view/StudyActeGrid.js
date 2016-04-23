@@ -127,6 +127,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeAcceptedModificators',
             text: 'Modificateurs',
             editor: {
@@ -156,6 +157,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeRefundable',
             text: 'Refundable',
             editor: {
