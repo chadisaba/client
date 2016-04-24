@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "DoctorHasExamensViewAssociateComboModel",
+            "DoctorHasExamensViewTreeModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "DoctorHasExamensViewAssociatePanel",
+            "DoctorHasExamensViewAvailableTreePanel",
+            "DoctorHasExamensViewSelectedTreePanel",
+            "MyViewport"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "doctorhasexamensviewavailabletreepanel",
+        "designer|userClassName": "DoctorHasExamensViewAvailableTreePanelViewController"
+    },
+    "designerId": "1d74758e-ebdd-4568-a57b-659a8a4e3220"
+}

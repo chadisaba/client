@@ -1,0 +1,68 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "",
+            "cmdVersion": "",
+            "frameworkVersion": ""
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/generateArchitect/",
+        "exportPath": "../doctor_study_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "sdkPath": ""
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "1d74758e-ebdd-4568-a57b-659a8a4e3220",
+            "65bd0acb-a66f-4a8a-abfe-a98f05124899",
+            "79f36a5d-5720-4229-8215-1767e8438ff0",
+            "87dde4c1-1493-4d79-82fd-b3fe7f551540",
+            "c6ddc81f-f8c4-49e4-8032-93d8f0fe8161",
+            "0ea51cfd-b671-47d3-b202-7da889bdbecf",
+            "f5aef5a2-7a4f-4de8-8ab8-79e2e2662615",
+            "05cb0f40-8271-4d2e-94fe-111d12193da6",
+            "baf58a92-8a7e-4810-943c-c3a9287fd228",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "0a67a540-fdb0-46ac-a754-4978e527e829",
+            "fd284df1-633a-4cd1-a1af-1c6608f020dd",
+            "10073dfa-8c85-4568-94a9-2afbec6baea2"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "06450da057ae-159e-428a-b6e8-1767e8438ff0",
+            "06450da057ae-1e0b-4444-b244-1767e8438ff0"
+        ],
+        "resource": [
+            "d343d1e7-138d-4074-93b9-3a5cd8f51dbd"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
