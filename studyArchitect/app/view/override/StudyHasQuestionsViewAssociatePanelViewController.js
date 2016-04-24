@@ -7,12 +7,10 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
          me.rightTree.unmask();
          me.leftTree.unmask();
          me.associateId=associateId;
-
          var rightStore=me.rightStore;
          var leftStore=me.leftStore;
 
         // retreive parents and leaf nodes from server side
-
          var parentsArray=[
              {
                  'id':1,
@@ -153,7 +151,7 @@ Ext.define('MyApp.view.override.StudyHasQuestionsViewAssociatePanelViewControlle
     },
 
     onLeftTreePanelLeftTreeSelectEvent: function(treepanel) {
-        Utility.tree.onRightTreePanelRightTreeSelectEvent(this.getView(),this.rightTree);
+        Utility.tree.onLeftTreePanelLeftTreeSelectEvent(this.getView(),this.rightTree);
     },
 
     onAssociatePanelAfterRender: function(component, eOpts) {

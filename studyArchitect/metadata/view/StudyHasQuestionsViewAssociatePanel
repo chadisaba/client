@@ -32,7 +32,7 @@
                 "layout|flex": 1,
                 "reference": "rightTreePanel"
             },
-            "name": "studyhasquestionsviewrighttreepanel1",
+            "name": "studyhasquestionsviewrighttreepanel",
             "designerId": "79f36a5d-7ccb-4f9e-8ae3-17g9qupiqtea",
             "masterInstanceId": "37qxh5g6-1d4f-423d-9364-3rduhk5hd9wl",
             "cn": [
@@ -295,7 +295,7 @@
                 "layout|flex": 1,
                 "reference": "leftTreePanel"
             },
-            "name": "studyhasquestionsviewlefttreepanel1",
+            "name": "studyhasquestionsviewlefttreepanel",
             "designerId": "9de396ea-8da9-44a1-80e3-17g9qupiqtea",
             "masterInstanceId": "kx5325mg-1d4f-4ft9-9364-3cuvjchc3a7h",
             "cn": [

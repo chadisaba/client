@@ -159,32 +159,32 @@ Ext.define('Utility.tree', {
 
         },
         inEdit:function(view){
-            view.down('#leftBtn').setDisabled(false);
-            view.down('#allLeftBtn').setDisabled(false);
-            view.down('#rightBtn').setDisabled(false);
-            view.down('#allRightBtn').setDisabled(false);
+            view.down('#availableBtn').setDisabled(false);
+            view.down('#allAvailableBtn').setDisabled(false);
+            view.down('#selectedBtn').setDisabled(false);
+            view.down('#allSelectedBtn').setDisabled(false);
         },
         quitEdit: function(view) {
-            view.down('#leftBtn').setDisabled(true);
-            view.down('#allLeftBtn').setDisabled(true);
-            view.down('#rightBtn').setDisabled(true);
-            view.down('#allRightBtn').setDisabled(true);
+            view.down('#availableBtn').setDisabled(true);
+            view.down('#allAvailableBtn').setDisabled(true);
+            view.down('#selectedBtn').setDisabled(true);
+            view.down('#allSelectedBtn').setDisabled(true);
         },
         onRightTreePanelRightTreeSelectEvent: function(view,leftTree) {
             if(view.inEdition){
-                view.down('#leftBtn').setDisabled(true);
-                view.down('#allLeftBtn').setDisabled(true);
-                view.down('#rightBtn').setDisabled(false);
-                view.down('#allRightBtn').setDisabled(false);
+                view.down('#availableBtn').setDisabled(true);
+                view.down('#allAvailableBtn').setDisabled(true);
+                view.down('#selectedBtn').setDisabled(false);
+                view.down('#allSelectedBtn').setDisabled(false);
                 leftTree.getSelectionModel().deselectAll();
             }
         },
         onLeftTreePanelLeftTreeSelectEvent: function(view,rightTree) {
             if(view.inEdition){
-                view.down('#leftBtn').setDisabled(false);
-                view.down('#allLeftBtn').setDisabled(false);
-                view.down('#rightBtn').setDisabled(true);
-                view.down('#allRightBtn').setDisabled(true);
+                view.down('#availableBtn').setDisabled(false);
+                view.down('#allAvailableBtn').setDisabled(false);
+                view.down('#selectedBtn').setDisabled(true);
+                view.down('#allSelectedBtn').setDisabled(true);
                 rightTree.getSelectionModel().deselectAll();
             }
         }

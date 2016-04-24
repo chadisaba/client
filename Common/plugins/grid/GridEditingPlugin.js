@@ -475,7 +475,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 					xtype: 'button',
 					itemId: 'cancelBtn',
-					text: 'Annuler',
+
 					glyph: 'xf0e2@FontAwesome',
 					disabled: true,
 					tooltip: 'Cliquer ici pour annuler les modifications',
@@ -514,7 +514,6 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 				xtype: 'button',
 				itemId: 'saveBtn',
-				text: 'Sauvegarder',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
 				tooltip: 'Cliquer ici pour enregistrer toutes les modifications',
@@ -610,7 +609,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'addBtn',
 				glyph: 'xf067@FontAwesome',
-				text: 'Ajuter',
+
 				tooltip: 'Cliquer ici pour ajouter une nouvelle ligne',
 				listeners: {
 					click: function (button, e, options){
@@ -632,8 +631,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'deleteBtn',
 				glyph: 'xf014@FontAwesome',
 				disabled: true,
-				text: 'Supprimer',
-				tooltip: 'Cliquer pour supprimer',
+
+				tooltip: 'Cliquer pour supprimer la sélection',
 				listeners: {
 					click: function (button, e, options){
 						if(me.onlyDelete === false && me.onlyAD === false && me.noModif === false)
@@ -657,7 +656,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'modifyBtn',
 				disabled: true,
-				text: 'Modifier',
+
                 glyph: 'xf044@FontAwesome',
 				tooltip: 'Cliquer ici pour modifier la ligne sélectionnée',
 				listeners: {
@@ -669,7 +668,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			]
 		});
 	},
-	
+
 	createQuitBtnCtn: function (){
 		var me = this;
 		this.quitBtnCtn = Ext.create('Ext.container.Container', {
@@ -679,7 +678,6 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				text: 'Quitter',
 				tooltip: 'Quitter',
 				listeners: {
 					click: function (button, e, options){					
