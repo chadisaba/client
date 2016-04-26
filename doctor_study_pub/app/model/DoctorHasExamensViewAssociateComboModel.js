@@ -22,10 +22,13 @@ Ext.define('MyApp.model.DoctorHasExamensViewAssociateComboModel', {
 
     fields: [
         {
-            name: 'xxAssosComboValueField'
+            name: 'doctorId'
         },
         {
-            name: 'xxAssosComboDisplayField'
+            name: 'userLName'
+        },
+        {
+            name: 'userFName'
         }
     ]
 });

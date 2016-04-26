@@ -45,6 +45,10 @@ Ext.define('MyApp.model.DoctorHasExamensViewTreeModel', {
         },
         {
             type: 'boolean',
+            name: 'modified'
+        },
+        {
+            type: 'boolean',
             defaultValue: true,
             name: 'expanded'
         }

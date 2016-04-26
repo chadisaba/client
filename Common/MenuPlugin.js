@@ -223,57 +223,14 @@ width:400,
                         select:function(combo, record)
                         {
                           //  alert('fadi');
-                            Ext.create('Ext.window.Window', {
+                            Ext.create('Common.ux.window.FullScreenWindow', {
 
                                // animateTarget:'comboSearchPatient',
                                 title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
-
-                                layout: {
-                                    type: 'border',
-                                    padding: 5
-                                },
-                                tools:[{
-                                    type:'refresh',
-                                    tooltip: 'Refresh form Data',
-                                    // hidden:true,
-                                    handler: function(event, toolEl, panelHeader) {
-                                        // refresh logic
-                                    }
-                                },
-                                    {
-                                        type:'help',
-                                        tooltip: 'Get Help',
-                                        callback: function(panel, tool, event) {
-                                            // show help here
-                                        }
-                                    }],
-                                maximizable: true,
-                                maximized:true,
-                                height:500,
-                                width:500,
-
-                                /*anim: {
-                                    endOpacity: 1,
-                                    easing: 'easeIn',
-                                    duration: .9
-                                },*/
-                                listeners: {
-                                   /* show: function(w){
-                                        w.getEl().fadeIn(w.anim);
-                                        w.getEl().shadow.el.fadeIn(w.anim);
-                                    },*/
-                                    minimize: function (window, opts) {
-
-                                      /*  window.collapse();
-                                        window.setWidth(150);
-                                        window.alignTo(Ext.getBody(), 'bl-bl');*/
-                                    }
-                                },
                                     items:{
                                         region: 'center',
                                         xtype:'patienthistorytabpanel',
                                         patientId:record.get('patientId')
-
                                     }
                                 }).show();
                         }

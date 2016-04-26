@@ -35,7 +35,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAvailableTreePanel', {
     height: 250,
     itemId: 'availableTreePanel',
     width: 400,
-    title: 'Title',
+    title: 'Tous les examens',
     hideHeaders: true,
     root: {
         text: 'Root',
@@ -55,11 +55,6 @@ Ext.define('MyApp.view.DoctorHasExamensViewAvailableTreePanel', {
             dataIndex: 'name',
             text: 'MyTreeColumn',
             flex: 1
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'xXfields',
-            text: 'MyColumn'
         }
     ],
     selModel: {
@@ -67,8 +62,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAvailableTreePanel', {
         mode: 'MULTI'
     },
     listeners: {
-        select: 'onAvailableTreePanelSelect',
-        availableTreeSelectEvent: 'onAvailableTreePanelAvailableTreeSelectEvent'
+        select: 'onAvailableTreePanelSelect'
     },
     dockedItems: [
         {

@@ -26,7 +26,9 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
         'Ext.button.Button',
         'Ext.toolbar.Spacer',
         'Ext.toolbar.Toolbar',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
+        'Ext.XTemplate'
     ],
 
     controller: 'doctorhasexamensviewassociatepanel',
@@ -64,7 +66,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
                     itemId: 'allSelectedBtn',
                     maxWidth: 50,
                     width: 50,
-                    iconCls: 'fa fa-angle-double-selected',
+                    iconCls: 'fa fa-angle-double-right',
                     listeners: {
                         click: 'onAllSelectedBtnClick'
                     }
@@ -78,7 +80,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
                     itemId: 'selectedBtn',
                     maxWidth: 50,
                     width: 50,
-                    iconCls: 'fa fa-angle-selected',
+                    iconCls: 'fa fa-angle-right',
                     listeners: {
                         click: 'onSelectedBtnClick'
                     }
@@ -96,7 +98,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
                     itemId: 'availableBtn',
                     maxWidth: 50,
                     width: 50,
-                    iconCls: 'fa fa-angle-available',
+                    iconCls: 'fa fa-angle-left',
                     listeners: {
                         click: 'onAvailableBtnClick'
                     }
@@ -110,7 +112,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
                     itemId: 'allAvailableBtn',
                     maxWidth: 50,
                     width: 50,
-                    iconCls: 'fa fa-angle-double-available',
+                    iconCls: 'fa fa-angle-double-left',
                     listeners: {
                         click: 'onAllAvailableBtnClick'
                     }
@@ -144,16 +146,23 @@ Ext.define('MyApp.view.DoctorHasExamensViewAssociatePanel', {
                     itemId: 'associateCombo',
                     fieldLabel: 'Choisir le médecin',
                     labelWidth: 150,
-                    displayField: 'xxAssosComboDisplayField',
+                    displayField: 'userFName',
                     forceSelection: true,
                     queryMode: 'local',
                     typeAhead: true,
-                    valueField: 'xxAssosComboValueField',
+                    valueField: 'doctorId',
                     bind: {
                         store: '{AssociateComboStore}'
                     },
                     listeners: {
                         change: 'onAssociateComboChange'
+                    },
+                    listConfig: {
+                        xtype: 'boundlist',
+                        itemSelector: 'div',
+                        itemTpl: [
+                            ' {userFName} {userLName}'
+                        ]
                     }
                 }
             ]

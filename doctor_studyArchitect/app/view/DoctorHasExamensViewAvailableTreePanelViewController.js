@@ -27,10 +27,6 @@ Ext.define('MyApp.view.DoctorHasExamensViewAvailableTreePanelViewController', {
 
     onFilterFieldChange: function(field, newValue, oldValue, eOpts) {
 
-    },
-
-    onAvailableTreePanelAvailableTreeSelectEvent: function() {
-
     }
 
 });

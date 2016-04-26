@@ -17,7 +17,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		                }else if (record.data.added && grid.inEdition===true){
 		                    return '<div class="fa fa-plus" style="height:16px !important;" data-qtip="Ajouté">&nbsp;</div>';
 		                }else if (record.data.modified && grid.inEdition===true){
-		                    return '<div class="fa fa-pencil" style="height:16px !important;" data-qtip="Modifié">&nbsp;</div>';
+		                    return '<div class="fa fa-edit" style="height:16px !important;" data-qtip="Modifié">&nbsp;</div>';
 		                } else if (record.data.locked){
 		                    return '<div class="fa fa-lock" style="height:16px !important;" data-qtip="' + record.data.userID + " " + record.data.userName + '">&nbsp;</div>';
 		                } else return '';
@@ -719,15 +719,6 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		me.filterCheckBoxCtn.show();
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		
-		//Restore column positions if the grid has been re-ordered by the user
-		//console.log('me.grid.headerCt.initialConfig.items',me.grid.headerCt,me.grid,me.grid.initialConfig.columns);
-		/*me.grid.enableColumnMove = false;
-		
-		console.log('me.grid.initialConfig',me.grid.initialConfig);*/
-		
-		//me.grid.reconfigure(me.grid.store,me.grid.initialConfig.columns);
-		
 		if (this.onlyECSQ === false && this.onlyModify === false && this.onlyDelete === false && this.onlyAD === false && this.noModif === false){
 			
 			me.deleteBtnCtn.show();

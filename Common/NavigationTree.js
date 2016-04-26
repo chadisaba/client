@@ -88,7 +88,14 @@ Ext.define('MyApp.store.NavigationTree', {
                         viewType: 'studysettingstabpanel',
                         routeId: 'studysettingstabpanel', // routeId defaults to viewType
                         leaf: true
-                    }
+                    },
+                    {
+                        text: 'Médecins & Examens',
+                        iconCls: 'x-fa fa-leanpub',
+                        viewType: 'doctorhasexamensviewassociatepanel',
+                        routeId: 'doctorhasexamensviewassociatepanel', // routeId defaults to viewType
+                        leaf: true
+                    },
 
                     ]
 

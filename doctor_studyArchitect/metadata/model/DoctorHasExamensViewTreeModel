@@ -11,7 +11,6 @@
     "name": "DoctorHasExamensViewTreeModel",
     "designerId": "06450da057ae-1e0b-4444-b244-1767e8438ff0",
     "cn": [
-    
         {
             "type": "Ext.data.field.Field",
             "reference": {
@@ -51,19 +50,19 @@
             "name": "MyField2",
             "designerId": "06450da057ae-5075-4b31-a626-1767e8438ff0"
         },
-          {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "duration"
-                },
-                "name": "Myduration",
-                "designerId": "adc621ee-176e-406e-a244-57e2f28d259c"
             },
+            "codeClass": null,
+            "userConfig": {
+                "name": "duration"
+            },
+            "name": "Myduration",
+            "designerId": "adc621ee-176e-406e-a244-57e2f28d259c"
+        },
         {
             "type": "Ext.data.field.Boolean",
             "reference": {
@@ -89,6 +88,19 @@
             },
             "name": "MyBoolean1",
             "designerId": "06450da057ae-eecd-4faf-b7fd-1767e8438ff0"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "name": "MyBoolean3",
+            "designerId": "f92dd844-0d3f-41cc-9624-0bcf4db420f0"
         },
         {
             "type": "Ext.data.field.Boolean",

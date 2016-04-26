@@ -14,10 +14,6 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAvailableTreePanelViewContro
     onFilterFieldChange: function(field, newValue, oldValue, eOpts) {
         var store=this.getViewModel().getStore('AvailableTreeStore');
         Utility.tree.filter(store,newValue);
-    },
-
-    onAvailableTreePanelavailableTreeSelectEvent: function() {
-
     }
 
 

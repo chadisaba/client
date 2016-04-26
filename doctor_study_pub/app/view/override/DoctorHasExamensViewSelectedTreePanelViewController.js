@@ -11,6 +11,15 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewSelectedTreePanelViewControl
 
         Utility.tree.select(tree,record);
         this.fireViewEvent('selectedTreeSelectEvent');
+    },
+    onSelectedTreePanelEdit: function(editor,  context) {
+       this.fireViewEvent("selectedTreeEditEvent",editor,context);
+    },
+    onSelectedTreePanelBeforeEdit: function(editor, context) {
+        if(!this.getView().up().inEdition)
+            return false;
+
+
     }
     
 });

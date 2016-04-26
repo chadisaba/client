@@ -10,11 +10,10 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 	pluginId: 'treemultiselect',
 	
 	init:function (panel) {
-		
 		var plugin = this;
 		this.panel = panel;
-		this.rightTree=this.panel.down('#rightTreePanel');
-		this.leftTree=this.panel.down('#leftTreePanel');
+		this.selectedTree=this.panel.down('#selectedTreePanel');
+		this.availableTree=this.panel.down('#availableTreePanel');
 		
 		//init edit mode boolean
 		panel.inEdition=false;
@@ -77,8 +76,8 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			hidden: true,
 			items:[{
 				xtype: 'button',
-				text: 'Editer',
-				tooltip: '${panelEdit.editTip}',
+
+				tooltip: '${Editer}',
 				itemId: 'editBtn',
 				glyph: 'xf040@FontAwesome',
 				listeners: {
@@ -100,10 +99,10 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			items:[{
 					xtype: 'button',
 					itemId: 'cancelBtn',
-					text: 'Annuler',
+
 					glyph: 'xf0e2@FontAwesome',
 					disabled: true,
-					tooltip: '${panelEdit.cancelTip}',
+					tooltip: '${Cancel}',
 					listeners: {
 						click: function (button, e, options){										
 							//Confirm quitting edition mode
@@ -139,7 +138,6 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 			items:[{
 				xtype: 'button',
 				itemId: 'saveBtn',
-				text: 'Sauvegarder',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
 				tooltip: 'Enregistrer les modifications',
@@ -149,7 +147,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 						if (me.showConfirmationOnSave){
 							var dataToBeSaved = [],
 						    errors= [];
-							    Ext.each(me.rightTree.getStore().query('added',true).items,function(record){
+							    Ext.each(me.selectedTree.getStore().query('added',true).items,function(record){
 							        if(record.validate().isValid()){
 										dataToBeSaved.push(record.data);
 							        } else {
@@ -160,7 +158,7 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 							    });
 
 							var deleteRec;
-							Ext.each(me.leftTree.getStore().query('added',true).items,function(record){
+							Ext.each(me.availableTree.getStore().query('added',true).items,function(record){
 								deleteRec=record;
 								deleteRec.set('toDelete',true);
 								deleteRec.set('added',false);
@@ -235,8 +233,8 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				text: 'Quitter',
-				tooltip: '${panelEdit.quitTip}',
+
+				tooltip: '${Quitter}',
 				listeners: {
 					click: function (button, e, options){					
 						var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
@@ -289,10 +287,11 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.editBtnCtn.hide();
 	},
-	checkIfModifications: function (leftTreeStore,rightTreeStore) {
-		var me = this,
-		panel = me.panel;
-		if(leftTreeStore.query('added',true).items.length > 0||rightTreeStore.query('added',true).items.length > 0) {
+	checkIfModifications: function (availableTreeStore,selectedTreeStore) {
+		var me = this;
+		if(availableTreeStore.query('added',true).items.length > 0||selectedTreeStore.query('added',true).items.length > 0
+			|| selectedTreeStore.query('modified',true).items.length > 0
+		) {
 			me.saveBtnCtn.down('#saveBtn').setDisabled(false);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
 		}

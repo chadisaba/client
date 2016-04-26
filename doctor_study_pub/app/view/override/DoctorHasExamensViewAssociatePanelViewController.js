@@ -10,25 +10,44 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
          var selectedStore=me.selectedStore;
          var availableStore=me.availableStore;
         // retreive parents and leaf nodes from server side
-         var parentsArray=[
+
+          /**
+           *  if we don't need to retrieve parents node form server side
+           */
+
+        /* var parentsArray=[
              {
                  'id':1,
-                 'name':'Questions',
+                 'name':'Examens',
                  'leaf':false,
                  'children': []
 
              }
-         ];
+         ];*/
+          /**
+           *  end
+           */
+
+          /**
+           *  if we  need to retrieve parents node form server side
+           */
+
+          var parentsArray=[];
+          /**
+           *  end
+           */
 
          var params;
                  params={
                    associationIdValue:associateId,
-                   associationIdName:"xxAssociationFieldIdName", // studyId
-                   associationTable:"xxSelectedTableName",
-                   availablesTable:"xxAvailableTableName",
-                     nameField:"xxNameFieldName", // studyQuestionText
-                     parentIdValue:1,
-                     availableIdName:"availableIdName"//studyQuestId
+                   associationIdName:"doctorId", // studyId
+                   associationTable:"DOC_HAS_STUDY",
+                   availablesTable:"STUDY",
+                     nameField:"studyName", // studyQuestionText
+                      parentTable:"STUDY_TYPE", // the table for parents nodes
+                     availableIdName:"studyId",//studyQuestId
+                     parentIdName:"studyTypeId",
+                     parentNameField:'studyTypeName'
                  };
                 var availableLeafArray=[];
                 var associatedLeafArray=[];
@@ -38,6 +57,9 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
                          if(res.success){
                              availableLeafArray=res.data.available;
                              associatedLeafArray=res.data.associated;
+
+                             if(res.data.parentNodes.length>0)
+                                 parentsArray=res.data.parentNodes;
 
                              me.leafSelectedArray=associatedLeafArray;
                              me.leafAvailableArray=availableLeafArray;
@@ -113,8 +135,8 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
          this.initView(this.associateId);
     },
 
-    onselectedTreePanelselectedTreeSelectEvent: function(treepanel) {
-        Utility.tree.onselectedTreePanelselectedTreeSelectEvent(this.getView(),this.availableTree);
+    onSelectedTreePanelSelectedTreeSelectEvent: function(treepanel) {
+        Utility.tree.onSelectSelectedTreePanelEvent(this.getView(),this.availableTree);
     },
 
     onAllAvailableBtnClick: function(button, e, eOpts) {
@@ -149,30 +171,39 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
 
     },
 
-    onavailableTreePanelavailableTreeSelectEvent: function(treepanel) {
-        Utility.tree.onavailableTreePanelavailableTreeSelectEvent(this.getView(),this.selectedTree);
+    onAvailableTreePanelAvailableTreeSelectEvent: function(treepanel) {
+        Utility.tree.onSelectAvailableTreeEvent(this.getView(),this.selectedTree);
     },
 
+    onSelectedTreeEditEvent:function(selectedGrid,editor,context)
+    {
+        var columnsNameArray=["duration"];
+
+        Utility.tree.edit(editor,context,columnsNameArray);
+        this.getTreeMultiSelectPlugin().checkIfModifications(this.availableTree.getStore(),this.selectedTree.getStore());
+    },
     onAssociatePanelAfterRender: function(component, eOpts) {
         var refs=this.getReferences();
         this.availableTree=refs.availableTreePanel;
         this.selectedTree=refs.selectedTreePanel;
 
+        this.selectedTree.on('selectedTreeEditEvent',this.onSelectedTreeEditEvent,this);
         this.availableTree.mask();
         this.selectedTree.mask();
 
         this.selectedStore=this.selectedTree.getViewModel().getStore('SelectedTreeStore');
         this.availableStore=this.availableTree.getViewModel().getStore('AvailableTreeStore');
         var userCanModify=false;
-        // Check if user has authorizationn to modify using an rpc call
+        // Check if user has authorization to modify using an rpc call
         userCanModify=true; // remove after implementing the ext.direct or ajax server call
         this.userCanModify=userCanModify;
        var  associateComboDataArray=[];
         var me=this;
                 var params={
-                    table:"STUDY"
+                    tablesArray:['USER','DOCTOR'],
+                    keysArray:['userId']
             };
-                Server.CommonQueries.read(params,
+                Server.CommonQueries.readJoin(params,
                     function(res){
                         if(res.success){
                             associateComboDataArray=res.data;
@@ -182,7 +213,6 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
                         }
                         else{
                             console.error(res.msg);
-
                         }
                     },me);
 
@@ -210,8 +240,8 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
 
         var me=this;
         var params={};
-        params.table="STUDY_HAS_QUEST";
-        params.idName="studyHasQuestionId";
+        params.table="DOC_HAS_STUDY";
+        params.idName="docHasStudyId";
         params.dataToBeSaved=dataToBeSaved;
         params.comment=comment;
         Server.CommonQueries.saveRecords(params,

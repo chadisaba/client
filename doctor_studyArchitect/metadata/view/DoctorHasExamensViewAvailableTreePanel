@@ -22,7 +22,7 @@
         "store": [
             "{AvailableTreeStore}"
         ],
-        "title": "Title",
+        "title": "Tous les examens",
         "width": 400
     },
     "name": "MyTreePanel",
@@ -57,20 +57,6 @@
             },
             "name": "MyTreeColumn",
             "designerId": "45461d4c-0a53-463e-86f4-1767e8438ff0"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "xXfields",
-                "text": "MyColumn"
-            },
-            "name": "MyColumn",
-            "designerId": "4f46b797-6b9d-491f-9319-1767e8438ff0"
         },
         {
             "type": "Ext.selection.RowModel",
@@ -208,21 +194,6 @@
             },
             "name": "processDoctorHasExamensViewAvailableTreePanel",
             "designerId": "66f24a49-854b-4654-813f-1767e8438ff0"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onAvailableTreePanelAvailableTreeSelectEvent",
-                "name": "availableTreeSelectEvent",
-                "scope": "me"
-            },
-            "name": "onAvailableTreePanelAvailableTreeSelectEvent",
-            "designerId": "86c36a73-c2bb-489b-ae91-1767e8438ff0"
         }
     ]
 }

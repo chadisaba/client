@@ -24,6 +24,22 @@ Ext.define('Utility.tree', {
 
             }
         },
+        edit: function (editor, context, columnsName) {
+            var record=context.record;
+            if(!record.get('added'))
+            {
+                var isModified = false;
+                columnsName.forEach(function (value) {
+                    if (record.isModified(value)) {
+                        isModified = true;
+                    }
+                });
+                if (isModified)
+                    record.set("modified", true);
+                else
+                    record.set("modified", false);
+            }
+        },
         filter: function (store, filterValue) {
 
             store.clearFilter();
@@ -170,7 +186,7 @@ Ext.define('Utility.tree', {
             view.down('#selectedBtn').setDisabled(true);
             view.down('#allSelectedBtn').setDisabled(true);
         },
-        onRightTreePanelRightTreeSelectEvent: function(view,leftTree) {
+        onSelectSelectedTreePanelEvent: function(view,leftTree) {
             if(view.inEdition){
                 view.down('#availableBtn').setDisabled(true);
                 view.down('#allAvailableBtn').setDisabled(true);
@@ -179,7 +195,7 @@ Ext.define('Utility.tree', {
                 leftTree.getSelectionModel().deselectAll();
             }
         },
-        onLeftTreePanelLeftTreeSelectEvent: function(view,rightTree) {
+        onSelectAvailableTreeEvent: function(view,rightTree) {
             if(view.inEdition){
                 view.down('#availableBtn').setDisabled(false);
                 view.down('#allAvailableBtn').setDisabled(false);

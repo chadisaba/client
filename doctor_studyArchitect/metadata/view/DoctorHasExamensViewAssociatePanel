@@ -84,7 +84,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "fa fa-angle-double-selected",
+                        "iconCls": "fa fa-angle-double-right",
                         "itemId": "allSelectedBtn",
                         "maxWidth": 50,
                         "text": null,
@@ -136,7 +136,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "fa fa-angle-selected",
+                        "iconCls": "fa fa-angle-right",
                         "itemId": "selectedBtn",
                         "maxWidth": 50,
                         "text": null,
@@ -201,7 +201,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "fa fa-angle-available",
+                        "iconCls": "fa fa-angle-left",
                         "itemId": "availableBtn",
                         "maxWidth": 50,
                         "text": null,
@@ -252,7 +252,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "fa fa-angle-double-available",
+                        "iconCls": "fa fa-angle-double-left",
                         "itemId": "allAvailableBtn",
                         "maxWidth": 50,
                         "text": null,
@@ -465,7 +465,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "xxAssosComboDisplayField",
+                        "displayField": "userFName",
                         "fieldLabel": "Choisir le médecin",
                         "forceSelection": true,
                         "itemId": "associateCombo",
@@ -476,7 +476,7 @@
                             "{AssociateComboStore}"
                         ],
                         "typeAhead": true,
-                        "valueField": "xxAssosComboValueField"
+                        "valueField": "doctorId"
                     },
                     "name": "MyComboBox",
                     "configAlternates": {
@@ -501,6 +501,37 @@
                             },
                             "name": "onAssociateComboChange",
                             "designerId": "ed966afc-cf84-4152-9aff-1767e8438ff0"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList",
+                            "designerId": "0810b030-c66a-4f8a-8f8b-b4a35d2dbab4",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            " {userFName} {userLName}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "58cb5934-f34c-4dfd-9d3d-04f1a9bcccc2"
+                                }
+                            ]
                         }
                     ]
                 }

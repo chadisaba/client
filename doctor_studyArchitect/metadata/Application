@@ -17,8 +17,7 @@
         "views": [
             "DoctorHasExamensViewAssociatePanel",
             "DoctorHasExamensViewAvailableTreePanel",
-            "DoctorHasExamensViewSelectedTreePanel",
-            "MyViewport"
+            "DoctorHasExamensViewSelectedTreePanel"
         ]
     },
     "name": "Application",

@@ -204,7 +204,11 @@ Ext.define('Utility.grid', {
                     if (view !== undefined && view !== null) {
                         if (record.get('added')) {
                             return '<div class="fa fa-plus" style="height:16px !important;">&nbsp;</div>';
-                        } else return '';
+                        }
+                        else if (record.get('modified')) {
+                            return '<div class="fa fa-edit" style="height:16px !important;">&nbsp;</div>';
+                        }
+                        else return '';
                     } else {
                         return '';
                     }

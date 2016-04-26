@@ -28,6 +28,14 @@ Ext.define('MyApp.view.DoctorHasExamensViewSelectedTreePanelViewController', {
 
     onSelectedTreePanelSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onSelectedTreePanelEdit: function(editor,  context) {
+
+    },
+
+    onSelectedTreePanelBeforeEdit: function(editor, context) {
+
     }
 
 });

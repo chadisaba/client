@@ -27,8 +27,7 @@ Ext.application({
     views: [
         'DoctorHasExamensViewAssociatePanel',
         'DoctorHasExamensViewAvailableTreePanel',
-        'DoctorHasExamensViewSelectedTreePanel',
-        'MyViewport'
+        'DoctorHasExamensViewSelectedTreePanel'
     ],
     controllers: [
         'MainController'

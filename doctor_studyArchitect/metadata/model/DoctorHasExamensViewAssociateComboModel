@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "xxAssosComboValueField"
+                "name": "doctorId"
             },
             "name": "MyField4",
             "designerId": "06450da057ae-572b-4376-bd2b-1767e8438ff0"
@@ -32,10 +32,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "xxAssosComboDisplayField"
+                "name": "userLName"
             },
             "name": "MyField5",
             "designerId": "06450da057ae-6de0-4b46-b8cd-1767e8438ff0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userFName"
+            },
+            "name": "MyField3",
+            "designerId": "315643fa-a2ed-4838-a552-cbffa2769143"
         }
     ]
 }

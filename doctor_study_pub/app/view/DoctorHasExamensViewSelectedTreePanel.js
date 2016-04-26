@@ -25,7 +25,8 @@ Ext.define('MyApp.view.DoctorHasExamensViewSelectedTreePanel', {
         'Ext.form.field.Text',
         'Ext.selection.RowModel',
         'Ext.toolbar.Toolbar',
-        'Ext.form.trigger.Trigger'
+        'Ext.form.trigger.Trigger',
+        'Ext.grid.plugin.CellEditing'
     ],
 
     controller: 'doctorhasexamensviewselectedtreepanel',
@@ -35,8 +36,8 @@ Ext.define('MyApp.view.DoctorHasExamensViewSelectedTreePanel', {
     height: 250,
     itemId: 'selectedTreePanel',
     width: 400,
-    title: 'Title',
-    hideHeaders: true,
+    title: 'Examens associés au médecin sélectionné',
+    hideHeaders: false,
     root: {
         text: 'Root',
         expanded: true,
@@ -53,7 +54,7 @@ Ext.define('MyApp.view.DoctorHasExamensViewSelectedTreePanel', {
         {
             xtype: 'treecolumn',
             dataIndex: 'name',
-            text: 'MyTreeColumn1',
+            text: 'Examens par type',
             flex: 1
         },
         {
@@ -95,8 +96,15 @@ Ext.define('MyApp.view.DoctorHasExamensViewSelectedTreePanel', {
         }
     ],
     listeners: {
-        select: 'onSelectedTreePanelSelect'
+        select: 'onSelectedTreePanelSelect',
+        edit: 'onSelectedTreePanelEdit',
+        beforeedit: 'onSelectedTreePanelBeforeEdit'
     },
+    plugins: [
+        {
+            ptype: 'cellediting'
+        }
+    ],
 
     initConfig: function(instanceConfig) {
         var me = this,

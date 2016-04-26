@@ -9,7 +9,7 @@
         "designer|userAlias": "doctorhasexamensviewselectedtreepanel",
         "designer|userClassName": "DoctorHasExamensViewSelectedTreePanel",
         "height": 250,
-        "hideHeaders": true,
+        "hideHeaders": false,
         "itemId": "selectedTreePanel",
         "root": [
             " {text: 'Root',",
@@ -21,7 +21,7 @@
         "store": [
             "{SelectedTreeStore}"
         ],
-        "title": "Title",
+        "title": "Examens associés au médecin sélectionné",
         "width": 400
     },
     "name": "MyTreePanel",
@@ -52,7 +52,7 @@
             "userConfig": {
                 "dataIndex": "name",
                 "flex": 1,
-                "text": "MyTreeColumn1"
+                "text": "Examens par type"
             },
             "name": "MyTreeColumn1",
             "designerId": "1e603175-03ec-4a1d-a866-1767e8438ff0"
@@ -223,6 +223,54 @@
             },
             "name": "processDoctorHasExamensViewSelectedTreePanel",
             "designerId": "b814da48-215d-4860-8e29-1767e8438ff0"
+        },
+        {
+            "type": "Ext.grid.plugin.CellEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyCellEditingPlugin",
+            "designerId": "865babf2-35b2-4102-9f11-8024399aa677"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    " context"
+                ],
+                "fn": "onSelectedTreePanelEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onSelectedTreePanelEdit",
+            "designerId": "ffe04aac-05c2-4efd-b1f2-ede22a323d86"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSelectedTreePanelBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onSelectedTreePanelBeforeEdit",
+            "designerId": "c4a89395-9f27-4518-83c9-bf0805ce75ad"
         }
     ]
 }
