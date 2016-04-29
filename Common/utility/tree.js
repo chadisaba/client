@@ -157,8 +157,8 @@ Ext.define('Utility.tree', {
 
 
 // adding the leaf nodes to the tree
-
-            leafArray.forEach(function (leafObject) {
+            var leafArrayTemp=Ext.clone(leafArray);
+            leafArrayTemp.forEach(function (leafObject) {
                 store.getNodeById(leafObject.parentId).appendChild(leafObject);
             }, this);
 
