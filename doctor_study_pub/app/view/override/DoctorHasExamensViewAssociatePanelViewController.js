@@ -187,14 +187,14 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         this.availableTree=refs.availableTreePanel;
         this.selectedTree=refs.selectedTreePanel;
 
-        this.selectedTree.on('selectedTreeEditEvent',this.onSelectedTreeEditEvent,this);
         this.availableTree.mask();
         this.selectedTree.mask();
+        this.selectedTree.on('selectedTreeEditEvent',this.onSelectedTreeEditEvent,this);
 
         this.selectedStore=this.selectedTree.getViewModel().getStore('SelectedTreeStore');
         this.availableStore=this.availableTree.getViewModel().getStore('AvailableTreeStore');
         var userCanModify=false;
-        // Check if user has authorization to modify using an rpc call
+        // Check if user has authorizationn to modify using an rpc call
         userCanModify=true; // remove after implementing the ext.direct or ajax server call
         this.userCanModify=userCanModify;
        var  associateComboDataArray=[];
