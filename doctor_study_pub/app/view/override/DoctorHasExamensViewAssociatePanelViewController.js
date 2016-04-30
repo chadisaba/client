@@ -138,7 +138,6 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
     onSelectedTreePanelSelectedTreeSelectEvent: function(treepanel) {
         Utility.tree.onSelectSelectedTreePanelEvent(this.getView(),this.availableTree);
     },
-
     onAllAvailableBtnClick: function(button, e, eOpts) {
         var availableTree=this.availableTree;
         var selectedTree=this.selectedTree;
@@ -148,6 +147,7 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
 
     },
 
+    // move from available to selected tree
     onAvailableBtnClick: function(button, e, eOpts) {
         var availableTree=this.availableTree;
         var selectedTree=this.selectedTree;
@@ -156,6 +156,7 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         this.getTreeMultiSelectPlugin().checkIfModifications(availableTree.getStore(),selectedTree.getStore());
     },
 
+    // move from selected to available tree
     onSelectedBtnClick: function(button, e, eOpts) {
         var availableTree=this.availableTree;
         var selectedTree=this.selectedTree;
@@ -163,6 +164,7 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         this.getTreeMultiSelectPlugin().checkIfModifications(availableTree.getStore(),selectedTree.getStore());
     },
 
+    // move from selected to available tree
     onAllSelectedBtnClick: function(button, e, eOpts) {
         var availableTree=this.availableTree;
         var selectedTree=this.selectedTree;
@@ -270,5 +272,5 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         this.initView(newValue);
 
     }
-    
+
 });

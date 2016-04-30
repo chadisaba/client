@@ -157,6 +157,22 @@ Ext.define('Plugins.panel.TreeMultiSelect', {
 							        } 
 							    });
 
+							Ext.each(me.selectedTree.getStore().query('modified',true).items,
+								function(record){
+									if(!record.get('added')){
+
+										if(record.validate().isValid()){
+											dataToBeSaved.push(record.data);
+										} else {
+											var index = me.panel.store.indexOf(record);
+											index++;
+											errors.push(index);
+										}
+
+									}
+
+							});
+
 							var deleteRec;
 							Ext.each(me.availableTree.getStore().query('added',true).items,function(record){
 								deleteRec=record;

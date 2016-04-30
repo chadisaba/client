@@ -16,6 +16,8 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewSelectedTreePanelViewControl
        this.fireViewEvent("selectedTreeEditEvent",editor,context);
     },
     onSelectedTreePanelBeforeEdit: function(editor, context) {
+        if(!context.record.get('leaf'))
+            return false;
         if(!this.getView().up().inEdition)
             return false;
 

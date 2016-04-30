@@ -103,7 +103,7 @@ Ext.define('Utility.tree', {
                 selectedNode.remove();
             }
         },
-        move: function (targetTree, sourceTree, targetInitialArray) {
+        move: function (targetTree,sourceTree,targetInitialArray) {
             var targetTree = targetTree;
             var targetStore = targetTree.getStore();
             var sourceTree = sourceTree;
@@ -164,7 +164,7 @@ Ext.define('Utility.tree', {
 
 
         },
-        checkIfChange: function (leafArray, node) {
+            checkIfChange: function (leafArray, node) {
             var result = true;
             leafArray.forEach(function (leafObject) {
                 if (leafObject.id === node.get('id'))
