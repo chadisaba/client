@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
-        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client_ch/device_pub",
+        "exportPath": "../device_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,

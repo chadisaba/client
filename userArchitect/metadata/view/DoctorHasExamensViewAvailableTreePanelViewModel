@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "doctorhasexamensviewavailabletreepanel",
+        "designer|userClassName": "DoctorHasExamensViewAvailableTreePanelViewModel"
+    },
+    "designerId": "f5aef5a2-7a4f-4de8-8ab8-79e2e2662615",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorHasExamensViewTreeModel",
+                "name": "AvailableTreeStore"
+            },
+            "name": "MyTreeStore",
+            "designerId": "0bc53a3c-9fa3-4e8a-a37d-1767e8438ff0"
+        }
+    ]
+}

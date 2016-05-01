@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "activeTab": 0,
+        "activeTab": 1,
         "designer|userAlias": "usertabpanel",
         "designer|userClassName": "UserTabPanel",
         "height": null,
@@ -17,6 +17,32 @@
     "viewControllerInstanceId": "a6f6bb49-038c-4c0c-960e-e45df84423c9",
     "viewModelInstanceId": "07108e83-8b48-4f5b-97f7-4337ec8a8292",
     "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Types utilisateur"
+            },
+            "name": "usercatgrid",
+            "designerId": "212ddfda-b1d3-4b3f-9b5b-4341021d77db",
+            "masterInstanceId": "i4x5yc8q-8c41-4643-a8f8-x84rrvapxjja",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "55b2e720-44be-4fa5-9ac1-25885826593b"
+                }
+            ]
+        },
         {
             "type": "linkedinstance",
             "reference": {
@@ -77,11 +103,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Catégorie"
+                "title": "Médecins & Examens"
             },
-            "name": "usercatgrid",
-            "designerId": "212ddfda-b1d3-4b3f-9b5b-4341021d77db",
-            "masterInstanceId": "i4x5yc8q-8c41-4643-a8f8-x84rrvapxjja",
+            "name": "doctorhasexamensviewassociatepanel",
+            "designerId": "0ba13ed5-71ec-43f2-8457-db1edc087147",
+            "masterInstanceId": "79f36a5d-5720-4229-8215-1767e8438ff0",
             "cn": [
                 {
                     "type": "Ext.tab.Tab",
@@ -90,8 +116,8 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "name": "TabConfig1",
-                    "designerId": "55b2e720-44be-4fa5-9ac1-25885826593b"
+                    "name": "TabConfig2",
+                    "designerId": "e20819d3-8e55-4b42-8ec7-086beac57a57"
                 }
             ]
         }

@@ -360,8 +360,14 @@ width:400,
 
 								if (to) {
 									MyApp.getApplication().getController('MainController').redirectTo(to);
+
 								}
-							}
+
+							},
+                        itemClick: function (tree, item) {
+                            if(item.node.get('href'))
+                                window.open(item.node.get('href'),'_self');
+                        }
                     }
                 }
             ]

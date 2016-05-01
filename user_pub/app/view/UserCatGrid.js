@@ -45,7 +45,7 @@ Ext.define('MyApp.view.UserCatGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userCatName',
-            text: 'Name',
+            text: 'Nom',
             editor: {
                 xtype: 'textfield',
                 itemId: 'userCatNameTextFieldItemId',
@@ -58,7 +58,7 @@ Ext.define('MyApp.view.UserCatGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'userCatReadOnly',
-            text: 'Read Only',
+            text: 'En lecture seulement',
             editor: {
                 xtype: 'checkboxfield'
             }

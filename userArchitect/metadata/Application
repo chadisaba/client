@@ -13,15 +13,20 @@
             "UserModel",
             "CityModel",
             "DoctorModel",
-"UserCatModel",
-            "UserInitialComboModel"
+			"UserCatModel",
+            "UserInitialComboModel",
+			"DoctorHasExamensViewAssociateComboModel",
+            "DoctorHasExamensViewTreeModel"
         ],
         "name": "MyApp",
         "views": [
             "UserGrid",
             "UserTabPanel",
-"UserCatGrid",
-            "DoctorGrid"
+			"UserCatGrid",
+            "DoctorGrid",
+			 "DoctorHasExamensViewAssociatePanel",
+            "DoctorHasExamensViewAvailableTreePanel",
+            "DoctorHasExamensViewSelectedTreePanel"
         ]
     },
     "name": "Application",

@@ -13,8 +13,7 @@
             "DeviceModel",
             "DeviceTypeComboModel",
             "ModalityComboModel",
-            "DeviceSupportComboModel",
-            "MyModel",
+            "DeviceSupportComboModel"
 			
         ],
         "name": "MyApp",

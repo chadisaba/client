@@ -27,10 +27,7 @@
     "viewControllerInstanceId": "bdcl8n1e-4ace-45f2-b4ee-ehhdfsnmjkrx",
     "viewModelInstanceId": "t8b73ccq-8a5d-4154-8917-p51vh5xk6t8v",
     "cn": [
-  
-     
-     
-             {
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -39,12 +36,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userCatName",
-                "text": "Name"
-        
+                "text": "Nom"
             },
             "name": "MyuserCatNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-m6kuybhrxtey"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-m6kuybhrxtey",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -53,16 +49,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "userCatNameTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "userCatNameTextFieldItemId"
                     },
                     "name": "MyuserCatNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-bu7tgbgkq3ex"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -71,12 +66,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userCatReadOnly",
-                "text": "Read Only"
-        
+                "text": "En lecture seulement"
             },
             "name": "MyuserCatReadOnlyCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-gi9d5c8xtljl"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-gi9d5c8xtljl",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -84,11 +78,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MyuserCatReadOnlyCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-8edmk1ccbc38"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -113,9 +106,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-fj659ds4iru6"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -125,11 +118,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
-        
             },
             "name": "MyactiveCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-h8k5qnsm11k4"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-h8k5qnsm11k4",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -137,11 +129,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MyactiveCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-rffddylbbibn"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -166,8 +157,9 @@
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-q2q1ievi31cr"
                 }
-            ]  },
-       {
+            ]
+        },
+        {
             "type": "Ext.view.Table",
             "reference": {
                 "name": "viewConfig",
@@ -177,7 +169,6 @@
             "name": "MyTable",
             "designerId": "6v22q3ts-ccc7-232C-1245-ah5cxity1nm6"
         },
-        
         {
             "type": "viewcontrollereventbinding",
             "reference": {

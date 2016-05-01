@@ -32,7 +32,7 @@
                 "layout|flex": 1,
                 "reference": "selectedTreePanel"
             },
-            "name": "doctorhasexamensviewselectedtreepanel",
+            "name": "doctorhasexamensviewselectedtreepanel1",
             "designerId": "79f36a5d-7ccb-4f9e-8ae3-1767e8438ff0",
             "masterInstanceId": "05cb0f40-8271-4d2e-94fe-111d12193da6",
             "cn": [
@@ -295,7 +295,7 @@
                 "layout|flex": 1,
                 "reference": "availableTreePanel"
             },
-            "name": "doctorhasexamensviewavailabletreepanel",
+            "name": "doctorhasexamensviewavailabletreepanel1",
             "designerId": "9de396ea-8da9-44a1-80e3-1767e8438ff0",
             "masterInstanceId": "0ea51cfd-b671-47d3-b202-7da889bdbecf",
             "cn": [

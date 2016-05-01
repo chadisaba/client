@@ -25,13 +25,18 @@ Ext.application({
         'CityModel',
         'DoctorModel',
         'UserCatModel',
-        'UserInitialComboModel'
+        'UserInitialComboModel',
+        'DoctorHasExamensViewAssociateComboModel',
+        'DoctorHasExamensViewTreeModel'
     ],
     views: [
         'UserGrid',
         'UserTabPanel',
         'UserCatGrid',
-        'DoctorGrid'
+        'DoctorGrid',
+        'DoctorHasExamensViewAssociatePanel',
+        'DoctorHasExamensViewAvailableTreePanel',
+        'DoctorHasExamensViewSelectedTreePanel'
     ],
     controllers: [
         'MainController'

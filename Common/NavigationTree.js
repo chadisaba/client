@@ -1,12 +1,9 @@
 Ext.define('MyApp.store.NavigationTree', {
     extend: 'Ext.data.TreeStore',
-
     storeId: 'NavigationTree',
-
     fields: [{
         name: 'text'
     }],
-
     root: {
         expanded: true,
         children: [
@@ -16,7 +13,8 @@ Ext.define('MyApp.store.NavigationTree', {
                 rowCls: 'nav-tree-badge nav-tree-badge-new',
                 viewType: 'maintabpanel',
                 routeId: 'maintabpanel', // routeId defaults to viewType
-                leaf: true
+                leaf: true,
+                href:'../pub_workflow/#maintabpanel'
             },
             {
                 iconCls: 'x-fa fa-cogs',
@@ -37,6 +35,7 @@ Ext.define('MyApp.store.NavigationTree', {
                                 viewType: 'sitegrid',
                                 routeId: 'sitegrid', // routeId defaults to viewType
                                 leaf: true
+
                             },
 
                             {
@@ -62,7 +61,9 @@ Ext.define('MyApp.store.NavigationTree', {
                                 iconCls: 'x-fa fa fa-plug',
                                 viewType: 'devicegrid',
                                 routeId: 'devicegrid', // routeId defaults to viewType
-                                leaf: true
+                                leaf: true,
+                                href:'../device_pub/#devicegrid'
+
                             },
 
                             {
@@ -87,33 +88,20 @@ Ext.define('MyApp.store.NavigationTree', {
                         iconCls: 'x-fa fa-leanpub',
                         viewType: 'studysettingstabpanel',
                         routeId: 'studysettingstabpanel', // routeId defaults to viewType
-                        leaf: true
-                    },
-                    {
-                        text: 'Médecins & Examens',
-                        iconCls: 'x-fa fa-leanpub',
-                        viewType: 'doctorhasexamensviewassociatepanel',
-                        routeId: 'doctorhasexamensviewassociatepanel', // routeId defaults to viewType
-                        leaf: true
-                    },
+                        leaf: true,
+                        href:'../study_pub/#studysettingstabpanel'
+                    }
 
                     ]
 
-            },
-
-            {
-                text: 'Recherche Patient',
-                iconCls: 'x-fa fa-search',
-
-                viewType: 'screen2',
-                leaf: true
             },
             {
                 text: 'Utilisateurs ',
                 iconCls: 'x-fa fa-users',
                 viewType: 'usertabpanel',
                 routeId: 'usertabpanel',
-                leaf: true
+                leaf: true,
+                href:'../user_pub/#usertabpanel'
             },{
                 text: 'actes ',
                 iconCls: 'x-fa fa-users',

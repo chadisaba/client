@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "doctorhasexamensviewassociatepanel",
+        "designer|userClassName": "DoctorHasExamensViewAssociatePanelViewController"
+    },
+    "designerId": "87dde4c1-1493-4d79-82fd-b3fe7f551540"
+}
