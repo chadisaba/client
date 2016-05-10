@@ -17,79 +17,36 @@ Ext.define('MyApp.store.NavigationTree', {
                 href:'../pub_workflow/#maintabpanel'
             },
             {
-                text: 'Fscal',
-                iconCls: 'x-fa fa-home',
-                rowCls: 'nav-tree-badge nav-tree-badge-new',
-                viewType: 'fiscalyeargrid',
-                routeId: 'fiscalyeargrid', // routeId defaults to viewType
-                leaf: true
-            },
-            {
                 iconCls: 'x-fa fa-cogs',
                 expanded: false,
                 selectable: false,
                 text: 'Paramétrage',
                 children: [
                     {
-                        text: 'Sites11',
-                        iconCls: 'x-fa fa-leanpub',
-                        expanded: false,
-                        selectable: false,
-
-                        children: [
-                            {
-                                text: 'Sites',
-                                iconCls: 'x-fa fa-building',
-                                viewType: 'sitegrid',
-                                routeId: 'sitegrid', // routeId defaults to viewType
-                                leaf: true
-
-                            },
-
-                            {
-                                text: 'Groupes',
-                                iconCls: 'x-fa fa-building',
-                                viewType: 'sitegroupgrid',
-                                routeId: 'sitegroupgrid', // routeId defaults to viewType
-                                leaf: true
-                            }
-
-
-                        ]
+                        text: 'Sites',
+                        iconCls: 'x-fa fa-building',
+                        viewType: 'sitesconfigtabpanel',
+                        routeId: 'sitesconfigtabpanel', // routeId defaults to viewType
+                        leaf: true,
+                        href:'../site_pub/#sitesconfigtabpanel'
                     },
                     {
+                        text: 'Utilisateurs ',
+                        iconCls: 'x-fa fa-users',
+                        viewType: 'usertabpanel',
+                        routeId: 'usertabpanel',
+                        leaf: true,
+                        href:'../user_pub/#usertabpanel'
+                    },
+
+                    {
                         text: 'Appareils',
-                        iconCls: 'x-fa fa-leanpub',
-                        expanded: false,
-                        selectable: false,
+                        iconCls: 'x-fa fa fa-plug',
+                        viewType: 'devicegrid',
+                        routeId: 'devicegrid', // routeId defaults to viewType
+                        leaf: true,
+                        href:'../device_pub/#devicegrid'
 
-                        children: [
-                            {
-                                text: 'Appareils',
-                                iconCls: 'x-fa fa fa-plug',
-                                viewType: 'devicegrid',
-                                routeId: 'devicegrid', // routeId defaults to viewType
-                                leaf: true,
-                                href:'../device_pub/#devicegrid'
-
-                            },
-
-                            {
-                                text: 'Types',
-                                iconCls: 'x-fa fa-file-o',
-                                viewType: 'sitegroupgrid',
-                                routeId: 'sitegroupgrid', // routeId defaults to viewType
-                                leaf: true
-                            },
-                            {
-                                text: 'Modalité',
-                                iconCls: 'x-fa fa-file-o',
-                                viewType: 'sitegroupgrid',
-                                routeId: 'sitegroupgrid', // routeId defaults to viewType
-                                leaf: true
-                            }
-
-                        ]
                     },
                     {
                         text: 'Examens',
@@ -98,27 +55,25 @@ Ext.define('MyApp.store.NavigationTree', {
                         routeId: 'studysettingstabpanel', // routeId defaults to viewType
                         leaf: true,
                         href:'../study_pub/#studysettingstabpanel'
+                    },
+                    {
+                        text: 'Exercices fiscal',
+                        iconCls: 'x-fa fa-home',
+                        rowCls: 'nav-tree-badge nav-tree-badge-new',
+                        viewType: 'fiscalyeargrid',
+                        routeId: 'fiscalyeargrid', // routeId defaults to viewType
+                        leaf: true
                     }
-
                     ]
 
             },
-            {
-                text: 'Utilisateurs ',
-                iconCls: 'x-fa fa-users',
-                viewType: 'usertabpanel',
-                routeId: 'usertabpanel',
-                leaf: true,
-                href:'../user_pub/#usertabpanel'
-            },{
+          {
                 text: 'actes ',
                 iconCls: 'x-fa fa-users',
                 viewType: 'studyactepanel',
                 routeId: 'studyactepanel',
                 leaf: true
             },
-
-
             {
                 text: 'Favoris',
                 iconCls: 'x-fa fa-star',

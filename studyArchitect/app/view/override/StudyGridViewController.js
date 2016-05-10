@@ -25,9 +25,6 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
                     console.error(res.msg);
                 }
             });
-            
-        
-   
         this.getResultArray(
         	    function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyStore'));

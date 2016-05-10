@@ -201,23 +201,33 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         this.userCanModify=userCanModify;
        var  associateComboDataArray=[];
         var me=this;
-                var params={
-                    tablesArray:['USER','DOCTOR'],
-                    keysArray:['userId']
-            };
-                Server.CommonQueries.readJoin(params,
-                    function(res){
-                        if(res.success){
-                            associateComboDataArray=res.data;
-                            var associateComboStore=this.getViewModel().getStore('AssociateComboStore');
-                            associateComboStore.loadData(associateComboDataArray);
-                            this.quitEdit();
-                        }
-                        else{
-                            console.error(res.msg);
-                        }
-                    },me);
 
+
+        var mainTableObject={};
+        mainTableObject.tableName='DOCTOR';
+        var joinTablesArray=[];
+        joinTablesArray.push({tableName:'USER'});
+        var params = {
+            mainTableObject: mainTableObject,
+            joinTablesArray: joinTablesArray
+
+        };
+        Server.CommonQueries.readJoin(params,
+            function (res) {
+                if (res.success) {
+                    res.data[0].userFName=res.data[0].User.userFName;
+                    res.data[0].userLName=res.data[0].User.userLName;
+                    associateComboDataArray=res.data;
+                    var associateComboStore=this.getViewModel().getStore('AssociateComboStore');
+                    associateComboStore.loadData(associateComboDataArray);
+                    this.quitEdit();
+
+
+                }
+                else {
+                    console.error(res.msg);
+                }
+            }, me);
     },
 
     onAssociatePanelQuitEdit: function() {

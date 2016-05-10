@@ -1,0 +1,38 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myviewport1",
+        "designer|userClassName": "MyViewport1ViewController"
+    },
+    "designerId": "fae57581-31ab-468c-9676-c119bb73d702",
+    "cn": [
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "node"
+                ],
+                "fn": "onChangeView",
+                "implHandler": [
+                    "//alert('on change view');",
+                    "var mainCardView = this.getReferences().display;",
+                    "var navigationTreeList=this.getView().down('#navigationTreeList');",
+                    "Utility.routes.setCurrentView(node,mainCardView,navigationTreeList);"
+                ],
+                "url": ":node"
+            },
+            "name": "onChangeView",
+            "designerId": "aaf3202f-d6ad-4dc1-817c-0b54a6bab001"
+        }
+    ]
+}

@@ -26,9 +26,6 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
                     console.error(res.msg);
                 }
             });
-            
-        
-   
         this.getResultArray(
         	    function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('DoctorStore'));
@@ -163,20 +160,20 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
 
     getResultArray:function(callback)
     {
-
-
-
-
         var me = this;
+        var mainTableObject={};
+        mainTableObject.tableName='DOCTOR';
+        var joinTablesArray=[];
+        joinTablesArray.push({tableName:'USER'});
         var params = {
-
-            tablesArray: ['USER', "doctor"],
-            keysArray: ['userId']
+            mainTableObject: mainTableObject,
+            joinTablesArray: joinTablesArray
 
         };
         Server.CommonQueries.readJoin(params,
             function (res) {
                 if (res.success) {
+                    res.data[0].userInitiales=res.data[0].User.userInitiales;
                     callback(res.data);
                 }
                 else {

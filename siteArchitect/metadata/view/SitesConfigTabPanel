@@ -1,0 +1,73 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "designer|userAlias": "sitesconfigtabpanel",
+        "designer|userClassName": "SitesConfigTabPanel",
+        "height": null,
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "b060a73a-4c24-4c50-a009-2119467f541b",
+    "viewControllerInstanceId": "1bb8288b-0b45-4196-a375-2ed211e6f2bc",
+    "viewModelInstanceId": "39e2fcf0-402b-4993-8cbe-ed9fe7452f1d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Groupes de sites"
+            },
+            "name": "sitegroupgrid",
+            "designerId": "c6683401-4da7-4756-9b93-bc783214fc3c",
+            "masterInstanceId": "iuekgaab-8c41-4643-a8f8-iuekgaabsc3f",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "5a711912-7086-4d5b-80f0-4f1a84c40ce4"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Sites"
+            },
+            "name": "sitegrid",
+            "designerId": "634f0051-23bc-401c-9ca0-484724c19a9c",
+            "masterInstanceId": "6jnygfub-8c41-4643-a8f8-m5efipnesn2a",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "0353d2ed-03f9-42f3-ae36-41ed61357649"
+                }
+            ]
+        }
+    ]
+}

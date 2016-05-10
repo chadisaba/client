@@ -1,0 +1,85 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitegrid",
+        "designer|userClassName": "SiteGridViewModel"
+    },
+    "designerId": "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteModel",
+                "name": "SiteStore"
+            },
+            "name": "SiteStore",
+            "designerId": "7bkfly7q-c056-4140-9039-y39whdqerd4k"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteConfigModel",
+                "name": "SiteConfigStore"
+            },
+            "name": "SiteStore1",
+            "designerId": "7b99e360-f609-414c-86e2-8d87f8b97f8e"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "GroupIdComboModel",
+                "name": "GroupIdComboStore"
+            },
+            "name": "GroupIdComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-7cvwwbfbxfwx"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteCategoryComboModel",
+                "name": "SiteCategoryComboStore"
+            },
+            "name": "SiteCategoryComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-qc7xta9qipfp"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteCityIdComboModel",
+                "name": "SiteCityIdComboStore"
+            },
+            "name": "SiteCityIdComboStore",
+            "designerId": "325a5ff4-f9a4-480d-9ccb-p7jx2p55jwb7"
+        }
+    ]
+}

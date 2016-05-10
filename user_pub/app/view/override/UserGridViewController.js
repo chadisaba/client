@@ -191,7 +191,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     onUserGridIdEdit: function(editor,context) {
 
     	
-    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','ityId','cityName','userAddress','userPhone','userFax','active'];
+    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','cityId','cityName','userAddress','userPhone','userFax','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -211,15 +211,20 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     getResultArray:function(callback) {
 
         var me = this;
-        var params = {
+        var mainTableObject={};
+        mainTableObject.tableName='USER';
+        var joinTablesArray=[];
+        joinTablesArray.push({tableName:'CITY',required:false});
 
-            tablesArray: ['USER', "CITY"],
-            keysArray: ['cityId']
+        var params = {
+            mainTableObject: mainTableObject,
+            joinTablesArray: joinTablesArray
 
         };
-        Server.CommonQueries.readLeftJoin(params,
+        Server.CommonQueries.readJoin(params,
             function (res) {
                 if (res.success) {
+                    res.data[0].cityName=res.data[0].City.cityName;
                     callback(res.data);
                 }
                 else {

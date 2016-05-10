@@ -373,7 +373,6 @@ width:400,
             ]
         }
     ];
-     
         this.tb = viewport.add({
             xtype:'panel',
             region:"north",

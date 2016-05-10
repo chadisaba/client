@@ -1,0 +1,876 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitegrid",
+        "designer|userClassName": "SiteGrid",
+        "forceFit": true,
+        "itemId": "siteGridId",
+        "reference": "siteGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{SiteStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "6jnygfub-8c41-4643-a8f8-m5efipnesn2a",
+    "viewControllerInstanceId": "drlkncjy-4ace-45f2-b4ee-mxvre6tuu53r",
+    "viewModelInstanceId": "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteName",
+                "text": "Name"
+            },
+            "name": "MysiteNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-umpux8c2151b",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteNameTextFieldItemId"
+                    },
+                    "name": "MysiteNameTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-4swi9xmvkp35"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCode",
+                "text": "Code"
+            },
+            "name": "MysiteCodeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-h6hunlswfglu",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteCodeTextFieldItemId"
+                    },
+                    "name": "MysiteCodeTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-db4qwrkplmjs"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "sitePhone",
+                "text": "Phone"
+            },
+            "name": "MysitePhoneCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-k1rqjcutfga1",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sitePhoneTextFieldItemId"
+                    },
+                    "name": "MysitePhoneTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-ux8cgyp45nf9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteFax",
+                "text": "Fax"
+            },
+            "name": "MysiteFaxCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-v4twllvpw321",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteFaxTextFieldItemId"
+                    },
+                    "name": "MysiteFaxTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-6meyl7r5v3ey"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteGroupId",
+                "text": "Group"
+            },
+            "name": "MygroupIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-aqyesi3fvici",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteGroupName",
+                        "forceSelection": true,
+                        "itemId": "groupIdComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{GroupIdComboStore}"
+                        ],
+                        "valueField": "siteGroupId"
+                    },
+                    "name": "MygroupIdComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-td96vegb155k"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCategory",
+                "text": "Category"
+            },
+            "name": "MysiteCategoryCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jghw5i9hi1lv",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteCategoryName",
+                        "forceSelection": true,
+                        "itemId": "siteCategoryComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SiteCategoryComboStore}"
+                        ],
+                        "valueField": "siteCategory"
+                    },
+                    "name": "MysiteCategoryComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-6a35ksji8tb5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteAddress1",
+                "text": "Address 1"
+            },
+            "name": "MysiteAddress1Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-v49bnrv817tv",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteAddress1TextFieldItemId"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-2pjtget6b3jf"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteAddress2",
+                "text": "Address 2"
+            },
+            "name": "MysiteAddress2Col",
+            "designerId": "7c6bec59-5c6a-4872-9cec-7dbw12eskaw5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteAddress2TextFieldItemId"
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-eeph7ja2v6p3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteZipCode",
+                "text": "Zip Code"
+            },
+            "name": "MysiteZipCodeCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-k777d427r5aj",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteZipCodeTextFieldItemId"
+                    },
+                    "name": "MysiteZipCodeTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-uav1a68ktvtl"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCityId",
+                "text": "City"
+            },
+            "name": "MysiteCityIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-ldtbhdnxdg3a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "cityName",
+                        "forceSelection": true,
+                        "itemId": "siteCityIdComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SiteCityIdComboStore}"
+                        ],
+                        "valueField": "cityId"
+                    },
+                    "name": "MysiteCityIdComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-2g6jlxc9m7ap"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteIsVirtual",
+                "text": "Vitrual?"
+            },
+            "name": "MysiteIsVirtualCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-xf81pxr71dpq",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MysiteIsVirtualCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-kvduc25wmrwa"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-japw5d9ge4pd"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "active",
+                "text": "Active?"
+            },
+            "name": "MyactiveCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-rtn8w5err56y",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyactiveCheckBox",
+                    "designerId": "73e1ef6a-05db-4aa6-cacc-ugq9u2r9la9c"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "2916280f-9t88-41ee-85ef-4efc6v1a9xyg"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "tx1n3py8-ccc7-232C-1245-3hktu1i34xjv"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "7r6aegs9-f393-483a-8425-sap9lug6vn7v"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "dxutscrb-ccc7-465c-8662-i3ejnk8hf1l9"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processSiteGrid",
+                "implHandler": [
+                    "Plugins.grid.GridEditingPlugin.configure(this);",
+                    "this.plugins.push (",
+                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
+                    ""
+                ]
+            },
+            "name": "processSiteGrid",
+            "designerId": "69rdm345-2054-459b-a4aa-tr6gw2e5gx54"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdChHist",
+            "designerId": "x9h6tv7p-1d4f-4fb9-9364-ph7ds5bgvmqk"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdAfterRender",
+            "designerId": "geiym7hu-1f65-4972-a6e1-lcvvrvk3ab3t"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdInEdit",
+            "designerId": "1ibmrgcx-1a08-4be0-b287-vaav47kxbmqq"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onSiteGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdResetEdit",
+            "designerId": "gka6lec4-2c80-456a-a5c5-4srjc76qfm3y"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onSiteGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdSaveEdit",
+            "designerId": "m8c1ey13-f0d5-4d89-a1bb-kgr8cbtgrs6m"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onSiteGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdAddItem",
+            "designerId": "63se27il-ffc4-4ede-a9db-v4sbhvuu43c2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdDeleteItem",
+            "designerId": "kul8p2ic-ac56-469a-895f-7fnrw993sdx3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdModifyItem",
+            "designerId": "2h2xwyf6-6b6f-4377-998f-ah5gtmvy8ehb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onSiteGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdQuitEdit",
+            "designerId": "cc5beup3-746f-4da4-9f4d-irhap41msb6s"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "87956724-4a21-42c1-d9wq4l8myppg"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdBeforeEdit",
+            "designerId": "ache5h4e-4019-4a61-8c79-gcwwcr2vnmn8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdCanceledit",
+            "designerId": "faqj5dtn-6686-46dd-bfe7-hx1mxtvselxx"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdContainerClick",
+            "designerId": "rjg84cv2-3079-420b-87bf-vdap3eacg8q7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdEdit",
+            "designerId": "7lpcfdxw-47bf-4b29-bb1d-ks4642c4hyx2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSiteGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdBeforeCellClick",
+            "designerId": "$vgbphd8k-6a9c-488e-8122-a2qi1gg7i5am"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onSiteGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onSiteGridIdValidateedit",
+            "designerId": "bu5rgcry-b2ec-4782-a56f-5prsil29p7dv"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "fa fa-pencil fa-2x",
+                "text": "config"
+            },
+            "name": "MyActionColumn",
+            "designerId": "bbd33456-daf6-4b85-a426-340cec1058dd",
+            "cn": [
+                {
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": null,
+                        "iconCls": "fa fa-cogs"
+                    },
+                    "name": "MyActionColumnItem",
+                    "designerId": "52525ee1-ca67-4a3f-990c-fcc47bb34117",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "view",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "item",
+                                    "e",
+                                    "record",
+                                    "row"
+                                ],
+                                "designer|viewControllerFn": "openConfigHandler",
+                                "fn": "handler",
+                                "implHandler": null
+                            },
+                            "name": "handler",
+                            "designerId": "8e8dfc97-a025-4b8d-b88d-9634d1705c03"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

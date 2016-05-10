@@ -45,9 +45,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	withValidation: false,
 	showConfirmationOnSave: true,
 	liveSearch:true,
-	
-	
-	
+	preferences:true,
+
 	// Add, Delete, Save, Cancel, Quit and Edit
 	noModif: false,
 	
@@ -252,12 +251,15 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	},
 	fillToolbar: function (){
 
+
 		this.createFilterCheckboxCtn();
+
 
 		if(this.liveSearch){
 			this.createLiveSearchCtn();
 		this.tb.add(this.liveSearchCtn);
 		}
+
 
 		if (this.onlyADM===false 
 			&& this.onlyECSQ===false 
@@ -361,6 +363,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
+		}
+		if(this.preferences){
+			this.createPreferenceBtnCtn();
+			this.tb.add(this.preferenceBtnCtn)
 		}
 
 		
@@ -664,6 +670,26 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 						me.grid.fireEvent('modifyItem', me.grid);										
 					}	
 				}    			
+			}
+			]
+		});
+	},
+	createPreferenceBtnCtn: function () {
+		var me = this;
+		this.preferenceBtnCtn = Ext.create('Ext.container.Container', {
+			itemId: 'preferenceBtnCtn',
+			items:[{
+				xtype: 'button',
+				itemId: 'preferenceBtn',
+
+				glyph: 'xf234@FontAwesome',
+				tooltip: 'Cliquer ici pour enregistrer vos préférences',
+				listeners: {
+					click: function (button, e, options){
+
+						me.grid.fireEvent('modifyItem', me.grid);
+					}
+				}
 			}
 			]
 		});

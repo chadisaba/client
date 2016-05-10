@@ -1,0 +1,52 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
+        "exportPath": "../login_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "3657ce41-a071-4b07-bf47-dbfe31c06de2",
+            "54994357-44a5-42a2-beed-4ac2c0d17d6a",
+            "5bd17e86-85e9-44dd-ac9d-5d0ba67fbf9b"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

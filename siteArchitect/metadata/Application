@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "GroupIdComboModel",
+			"SiteCategoryComboModel",
+            "SiteCityIdComboModel",
+            "SiteModel",
+            "SiteConfigModel",
+            "SiteGroupModel"
+        ],
+        "name": "MyApp",
+        "requires": [
+            "MyApp.DirectAPI"
+        ],
+        "views": [
+            "SiteGrid",
+            "SiteGroupGrid",
+            "SiteConfigWindow",
+            "SiteConfigForm",
+            "SitesConfigTabPanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

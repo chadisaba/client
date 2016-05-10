@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sitesconfigtabpanel",
+        "designer|userClassName": "SitesConfigTabPanelViewController"
+    },
+    "designerId": "1bb8288b-0b45-4196-a375-2ed211e6f2bc"
+}

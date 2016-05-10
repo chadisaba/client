@@ -1,0 +1,193 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "center",
+        "container|pack": "center",
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "layout": "vbox",
+        "style": [
+            "\"background-image: url(../Common/resources/images/background.jpg);\""
+        ]
+    },
+    "name": "MyViewport",
+    "designerId": "3657ce41-a071-4b07-bf47-dbfe31c06de2",
+    "viewControllerInstanceId": "5bd17e86-85e9-44dd-ac9d-5d0ba67fbf9b",
+    "viewModelInstanceId": "54994357-44a5-42a2-beed-4ac2c0d17d6a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "\"background-image: url(../Common/resources/images/logo.png);",
+                    "background-position:right top;",
+                    "background-repeat:no-repeat;\""
+                ],
+                "height": 244,
+                "itemId": "loginForm",
+                "layout|flex": null,
+                "margin": null,
+                "title": "Connection",
+                "width": 459
+            },
+            "name": "MyForm",
+            "designerId": "9042a75e-7a02-41ab-a485-4e40d46d9c24",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "blankText": "Enter your Username.",
+                        "enableKeyEvents": true,
+                        "fieldLabel": "Nom utilisateur",
+                        "itemId": "usernameItemId",
+                        "labelAlign": "right",
+                        "labelStyle": null,
+                        "margin": "0 0 20 0",
+                        "msgTarget": "title",
+                        "name": "username",
+                        "regexText": "Enter your username."
+                    },
+                    "name": "MyTextField",
+                    "designerId": "efa5c9ec-7163-4120-8c82-18b18a8b803a",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUsernameItemIdKeydown",
+                                "name": "keydown",
+                                "scope": "me"
+                            },
+                            "name": "onUsernameItemIdKeydown",
+                            "designerId": "2f6aae4b-64b0-457c-a1ab-d2c39f6b79a6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "blankText": "Enter your password.",
+                        "enableKeyEvents": true,
+                        "fieldLabel": "Mot de passe",
+                        "inputType": "password",
+                        "itemId": "passwordItemId",
+                        "labelAlign": "right",
+                        "margin": "0 0 10 0",
+                        "msgTarget": "title",
+                        "name": "password"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "c9874a86-4786-48a3-b82e-83c619a1c210",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPasswordItemIdKeydown",
+                                "name": "keydown",
+                                "scope": "me"
+                            },
+                            "name": "onPasswordItemIdKeydown",
+                            "designerId": "39614a08-d3c7-44ad-8203-d5efe089b86a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "51d7d550-01de-46e4-8142-c850812e9374",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill",
+                            "designerId": "fb9db510-31a3-4e3e-ae68-6094abec6a1c"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "itemId": "loginBtn",
+                                "layout|flex": null,
+                                "margin": "0 15 0 0",
+                                "scale": "medium",
+                                "text": "Se connecter"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "528f9810-0fa2-40de-b1d8-10c89c69db60",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLoginBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLoginBtnClick",
+                                    "designerId": "0e1f1170-d962-4840-966f-0c8e606ef0d9"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
