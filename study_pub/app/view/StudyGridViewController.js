@@ -21,6 +21,10 @@ Ext.define('MyApp.view.StudyGridViewController', {
         'MyApp.view.override.StudyGridViewController'
     ],
 
+    onStudyTypeComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

@@ -38,7 +38,37 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyCatId",
+                "hidden": true,
+                "itemId": null,
+                "text": "Cat ID"
+            },
+            "name": "MyColumn2",
+            "designerId": "f5ff7e8c-16b3-4876-81e8-8b8ef7b41c24",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyCatTextFieldItemId"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "1aa24cce-1c91-4743-b196-2d198841c1b8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyCatName",
                 "text": "Catégorie"
             },
             "name": "MystudyCatIdCol",
@@ -61,37 +91,30 @@
                         "store": [
                             "{StudyCatComboStore}"
                         ],
-                        "valueField": "studyCatId"
+                        "valueField": "studyCatName"
                     },
                     "name": "MystudyCatComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-5hvas6p3jr61"
-                },
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "studyCatRenderer",
-                        "fn": "renderer",
-                        "implHandler": null
-                    },
-                    "name": "renderer",
-                    "designerId": "b77a0803-f967-4c1b-a0d1-b9007dd7d8c4"
+                    "designerId": "ade60fcf-b3b2-4bae-5hvas6p3jr61",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStudyCatComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onStudyCatComboBoxEditorItemIdSelect",
+                            "designerId": "ef8f31b8-c5a4-4d40-ab3a-131dad58e6cf"
+                        }
+                    ]
                 }
             ]
         },

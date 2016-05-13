@@ -25,9 +25,6 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
                     console.error(res.msg);
                 }
             });
-            
-        
-   
         this.getResultArray(
         	    function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyStore'));
@@ -128,26 +125,40 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
+    onStudyTypeComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var deviceTypeIdField=combo.up('roweditor').down('#studTypeTextFieldItemId');
+        deviceTypeIdField.setValue(record.get('studyTypeId'));
+    },
+
     getResultArray:function(callback)
     {
+
         var me=this;
-        var params={
-        		table:"study"
+        var mainTableObject={};
+        mainTableObject.tableName='STUDY';
+        var joinTablesArray=[];
+        joinTablesArray.push({tableName:'STUDY_TYPE'});
+
+        var params = {
+            mainTableObject: mainTableObject,
+            joinTablesArray: joinTablesArray
+
         };
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
+        Server.CommonQueries.readJoin(params,
+            function (res) {
+                if (res.success) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].studyTypeCode=res.data[i].StudyType.studyTypeCode;
+
                     }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
-    },
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
+                    callback(res.data);
+                }
+                else {
+                    console.error(res.msg);
+                    callback(res.msg);
+                }
+            }, me);
+    }
     
  
     

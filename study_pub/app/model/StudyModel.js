@@ -38,6 +38,9 @@ Ext.define('MyApp.model.StudyModel', {
             name: 'studyTypeId'
         },
         {
+            name: 'studyTypeCode'
+        },
+        {
             type: 'string',
             name: 'studyCode'
         },

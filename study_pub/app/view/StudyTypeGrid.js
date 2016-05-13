@@ -45,8 +45,16 @@ Ext.define('MyApp.view.StudyTypeGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            renderer: 'studyCatRenderer',
-            dataIndex: 'studyCatId',
+            hidden: true,
+            text: 'Cat ID',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyCatTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyCatName',
             text: 'Catégorie',
             editor: {
                 xtype: 'combobox',
@@ -56,9 +64,12 @@ Ext.define('MyApp.view.StudyTypeGrid', {
                 displayField: 'studyCatName',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'studyCatId',
+                valueField: 'studyCatName',
                 bind: {
                     store: '{StudyCatComboStore}'
+                },
+                listeners: {
+                    select: 'onStudyCatComboBoxEditorItemIdSelect'
                 }
             }
         },

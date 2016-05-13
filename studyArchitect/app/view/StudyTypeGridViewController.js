@@ -21,7 +21,7 @@ Ext.define('MyApp.view.StudyTypeGridViewController', {
         'MyApp.view.override.StudyTypeGridViewController'
     ],
 
-    studyCatRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+    onStudyCatComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 

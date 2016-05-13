@@ -44,6 +44,19 @@
             "designerId": "e96f8d89-803f-419a-a346-sxqgt2ka6m3g"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyTypeCode"
+            },
+            "name": "MyField6",
+            "designerId": "aa052b53-d2a7-480e-8f9d-ab2fc874ddf3"
+        },
+        {
             "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",

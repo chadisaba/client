@@ -150,29 +150,40 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
+    onStudyCatComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var studCatIdField=combo.up('roweditor').down('#studCatTextFieldItemId');
+        studCatIdField.setValue(record.get('studyCatId'));
+    },
+
     getResultArray:function(callback)
     {
+
         var me=this;
-        var params={
-        		table:"study_type"
+        var mainTableObject={};
+        mainTableObject.tableName='study_type';
+        var joinTablesArray=[];
+        joinTablesArray.push({tableName:'study_cat'});
+
+        var params = {
+            mainTableObject: mainTableObject,
+            joinTablesArray: joinTablesArray
+
         };
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
+        Server.CommonQueries.readJoin(params,
+            function (res) {
+                if (res.success) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].studyCatName=res.data[i]['StudyCat.studyCatName'];
+
                     }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
-    },
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
-  rdvColorRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-return '<div style="line-height:30px;background-color:#'+value+';height:30px;width:100%;float:left;padding:5px;"></div>';
-  }
+                    callback(res.data);
+                }
+                else {
+                    console.error(res.msg);
+                    callback(res.msg);
+                }
+            });
+    }
 
 
 

@@ -224,7 +224,12 @@ Ext.define('MyApp.view.override.UserGridViewController', {
         Server.CommonQueries.readJoin(params,
             function (res) {
                 if (res.success) {
-                    res.data[0].cityName=res.data[0].City.cityName;
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].cityName=res.data[i].City.cityName;
+
+                    }
+
+
                     callback(res.data);
                 }
                 else {

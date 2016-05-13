@@ -36,10 +36,45 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyTypeId",
-                "text": "Type"
+                "hidden": true,
+                "text": "Type ID"
             },
             "name": "MystudyTypeIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-94n4ns8qppqv",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studTypeTextFieldItemId",
+                        "selectOnFocus": true
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-aamqlqkdpvqa"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyTypeCode",
+                "text": "Type"
+            },
+            "name": "MystudyTypeIdCol1",
+            "designerId": "b3dda150-c43c-47be-bb4d-6c5e013a8e3e",
             "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -58,13 +93,33 @@
                         "store": [
                             "{StudyTypeComboStore}"
                         ],
-                        "valueField": "studyTypeId"
+                        "valueField": "studyTypeCode"
                     },
                     "name": "MystudyTypeComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-aamqlqkdpvqa"
+                    "designerId": "d8dfbfd5-d8f6-44ef-9057-baf5630ca637",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStudyTypeComboBoxEditorItemIdSelect",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onStudyTypeComboBoxEditorItemIdSelect",
+                            "designerId": "1db690e4-7671-468d-8694-30a32f64f732"
+                        }
+                    ]
                 }
             ]
         },

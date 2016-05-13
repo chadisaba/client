@@ -31,6 +31,19 @@
             "designerId": "e96f8d89-803f-419a-a346-ergfvdgrjtag"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyCatName"
+            },
+            "name": "MyField7",
+            "designerId": "e96f8d89-803f-419a-a346-y1fhkhbnkxtm"
+        },
+        {
             "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
@@ -40,8 +53,8 @@
             "userConfig": {
                 "name": "studyCatId"
             },
-            "name": "MyInteger5",
-            "designerId": "e96f8d89-803f-419a-a346-y1fhkhbnkxtm"
+            "name": "MyInteger7",
+            "designerId": "8fcf06f1-7186-4c32-9909-4c052e92e16e"
         },
         {
             "type": "Ext.data.field.String",

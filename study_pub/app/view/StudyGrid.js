@@ -46,6 +46,18 @@ Ext.define('MyApp.view.StudyGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyTypeId',
+            hidden: true,
+            text: 'Type ID',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studTypeTextFieldItemId',
+                allowBlank: false,
+                selectOnFocus: true
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyTypeCode',
             text: 'Type',
             editor: {
                 xtype: 'combobox',
@@ -55,9 +67,12 @@ Ext.define('MyApp.view.StudyGrid', {
                 displayField: 'studyTypeCode',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'studyTypeId',
+                valueField: 'studyTypeCode',
                 bind: {
                     store: '{StudyTypeComboStore}'
+                },
+                listeners: {
+                    select: 'onStudyTypeComboBoxEditorItemIdSelect'
                 }
             }
         },
