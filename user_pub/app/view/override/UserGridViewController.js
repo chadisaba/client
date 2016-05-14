@@ -89,8 +89,6 @@ Ext.define('MyApp.view.override.UserGridViewController', {
        params.idName="userId";
        params.dataToBeSaved=dataToBeSaved;
        params.comment=comment;
-
-       console.log(dataToBeSaved);
        Server.CommonQueries.saveRecords(params,
            function(_result){
                if(_result.success){
@@ -225,7 +223,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
             function (res) {
                 if (res.success) {
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i].cityName=res.data[i].City.cityName;
+                        res.data[i].cityName=res.data[i]['City.cityName'];
 
                     }
 

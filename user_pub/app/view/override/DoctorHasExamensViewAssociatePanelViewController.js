@@ -215,8 +215,10 @@ Ext.define('MyApp.view.override.DoctorHasExamensViewAssociatePanelViewController
         Server.CommonQueries.readJoin(params,
             function (res) {
                 if (res.success) {
-                    res.data[0].userFName=res.data[0].User.userFName;
-                    res.data[0].userLName=res.data[0].User.userLName;
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].userFName=res.data[i]['User.userFName'];
+                        res.data[i].userLName=res.data[i]['User.userLName'];
+                    }
                     associateComboDataArray=res.data;
                     var associateComboStore=this.getViewModel().getStore('AssociateComboStore');
                     associateComboStore.loadData(associateComboDataArray);

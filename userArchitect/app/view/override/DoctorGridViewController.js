@@ -173,7 +173,10 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
         Server.CommonQueries.readJoin(params,
             function (res) {
                 if (res.success) {
-                    res.data[0].userInitiales=res.data[0].User.userInitiales;
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].userInitiales=res.data[i]['User.userInitiales'];
+
+                    }
                     callback(res.data);
                 }
                 else {
