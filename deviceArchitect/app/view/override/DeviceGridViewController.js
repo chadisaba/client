@@ -74,7 +74,6 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     },
 
     onDeviceGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-
         var me=this;
         var params={};
         params.table="DEVICE";
@@ -136,8 +135,6 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     },
 
     onDeviceGridIdEdit: function(editor,context) {
-        // var columnsName=['name','text'];
-
         var columnsName=['deviceTypeId','modalityId','deviceName','deviceModel','deviceAET','deviceAgreementNumber','deviceAgreementDate','deviceTrademark','deviceInstallationDate','devicePower','deviceIsSenolog','deviceSupport','deviceLecture'];
         Utility.grid.edit(editor, context, columnsName);
     },
@@ -158,21 +155,29 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     getResultArray:function(callback)
     {
         var me=this;
-        var params={
 
-            tablesArray:['DEVICE_TYPE',"DEVICE",'MODALITY'],
-            keysArray:['deviceTypeId','modalityId']
-    };
-        Server.CommonQueries.readJoin(params,
-            function(res){
-                if(res.success){
-                    callback(res.data);
-                }
-                else{
-                    console.error(res.msg);
-                    callback(res.msg);
-                }
-            },me);
+                var mainTableObject={};
+                mainTableObject.tableName='DEVICE';
+                var joinTablesArray=[];
+                joinTablesArray.push({tableName:'DEVICE_TYPE'},{tableName:'MODALITY'});
+                var params = {
+                    mainTableObject: mainTableObject,
+                    joinTablesArray: joinTablesArray
+                };
+                Server.CommonQueries.readJoin(params,
+                    function (res) {
+                        if (res.success) {
+                            for (var i = 0; i < res.data.length; i++) {
+                                res.data[i].deviceTypeCode=res.data[i]['DeviceType.deviceTypeCode'];
+                                res.data[i].modalityCode=res.data[i]['Modality.modalityCode'];
+                            }
+                            callback(res.data);
+                        }
+                        else {
+                            console.error(res.msg);
+                            callback(res.msg);
+                        }
+                    }, me);
     },
 
     onDeviceTypeComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
