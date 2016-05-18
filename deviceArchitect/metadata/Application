@@ -13,13 +13,14 @@
             "DeviceModel",
             "DeviceTypeComboModel",
             "ModalityComboModel",
+            "DeviceTypeModel",
             "DeviceSupportComboModel"
-			
         ],
         "name": "MyApp",
         "views": [
             "DeviceGrid",
-
+            "DeviceTypeGrid",
+            "DevicePanel"
         ]
     },
     "name": "Application",

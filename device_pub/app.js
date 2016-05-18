@@ -24,10 +24,13 @@ Ext.application({
         'DeviceModel',
         'DeviceTypeComboModel',
         'ModalityComboModel',
+        'DeviceTypeModel',
         'DeviceSupportComboModel'
     ],
     views: [
-        'DeviceGrid'
+        'DeviceGrid',
+        'DeviceTypeGrid',
+        'DevicePanel'
     ],
     controllers: [
         'MainController'

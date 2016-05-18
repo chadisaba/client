@@ -12,7 +12,7 @@
                 "width": null
             }
         },
-        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
+        "urlPrefix": "http://localhost:8888/clientch/device_pub/",
         "exportPath": "../device_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
@@ -31,18 +31,25 @@
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "7u2hwm6x-8a5d-4154-8917-llljpr4dspws",
+            "ekl386ec-4ace-45f2-b4ee-vy5g28w3mws3",
+            "94elf13v-8c41-4643-a8f8-s3577psrkpul",
             "vxwuqtxg-8c41-4643-a8f8-h7lqblg3vx5g",
             "mngeqcsp-8a5d-4154-8917-789c6lc11urj",
             "wbxteydm-4ace-45f2-b4ee-tedg5hepcbk8",
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "e4c81814-a7a1-4d7e-953c-ca2804168436",
-            "fae57581-31ab-468c-9676-c119bb73d702"
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "de9fc04e-8999-447c-9cd8-726eed33a27e",
+            "115651d7-3d40-43ca-90ac-c79f980886f9",
+            "c0392576-0ae3-4722-a3e6-90f08a788ed0"
         ],
         "store": [],
         "controller": [
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "x67djphv-1d4f-4fb9-9364-279fksvddexl",
             "kii2576p-1d4f-4fb9-9364-qip97789qudu",
             "040092bf-b6f4-441b-b581-rigtuhbd594q",
             "040092bf-b6f4-441b-b581-idjsmqjww3xk",

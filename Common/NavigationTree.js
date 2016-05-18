@@ -42,10 +42,10 @@ Ext.define('MyApp.store.NavigationTree', {
                     {
                         text: 'Appareils',
                         iconCls: 'x-fa fa fa-plug',
-                        viewType: 'devicegrid',
-                        routeId: 'devicegrid', // routeId defaults to viewType
+                        viewType: 'devicetabpanel',
+                        routeId: 'devicetabpanel', // routeId defaults to viewType
                         leaf: true,
-                        href:'../device_pub/#devicegrid'
+                        href:'../device_pub/#devicetabpanel'
 
                     },
                     {
