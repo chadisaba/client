@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicepanel",
+        "designer|userClassName": "DevicePanelViewModel"
+    },
+    "designerId": "115651d7-3d40-43ca-90ac-c79f980886f9"
+}
