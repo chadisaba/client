@@ -21,6 +21,22 @@ Ext.define('MyApp.view.SiteGridViewController', {
         'MyApp.view.override.SiteGridViewController'
     ],
 
+    onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    siteTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
+    onSiteZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onSiteCityIdComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

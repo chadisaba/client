@@ -45,8 +45,68 @@ Ext.define('MyApp.view.SiteGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'siteGroupId',
+            text: 'GroupeId',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'groupIdTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'siteCityId',
+            text: 'CityId',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'cityIdTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'siteGroupName',
+            text: 'Groupe',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'groupIdComboBoxEditorItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'siteGroupName',
+                forceSelection: true,
+                queryMode: 'local',
+                valueField: 'siteGroupName',
+                bind: {
+                    store: '{GroupIdComboStore}'
+                },
+                listeners: {
+                    select: 'onGroupIdComboBoxEditorItemIdSelect'
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: 'siteTypeRenderer',
+            dataIndex: 'siteCategory',
+            text: 'Type',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'siteCategoryComboBoxEditorItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'siteCategoryName',
+                forceSelection: true,
+                queryMode: 'local',
+                valueField: 'siteCategory',
+                bind: {
+                    store: '{SiteCategoryComboStore}'
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             dataIndex: 'siteName',
-            text: 'Name',
+            text: 'Nom',
             editor: {
                 xtype: 'textfield',
                 itemId: 'siteNameTextFieldItemId'
@@ -64,7 +124,7 @@ Ext.define('MyApp.view.SiteGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'sitePhone',
-            text: 'Phone',
+            text: 'Tél',
             editor: {
                 xtype: 'textfield',
                 itemId: 'sitePhoneTextFieldItemId'
@@ -81,44 +141,10 @@ Ext.define('MyApp.view.SiteGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteGroupId',
-            text: 'Group',
-            editor: {
-                xtype: 'combobox',
-                itemId: 'groupIdComboBoxEditorItemId',
-                allowBlank: false,
-                selectOnFocus: true,
-                displayField: 'siteGroupName',
-                forceSelection: true,
-                queryMode: 'local',
-                valueField: 'siteGroupId',
-                bind: {
-                    store: '{GroupIdComboStore}'
-                }
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'siteCategory',
-            text: 'Category',
-            editor: {
-                xtype: 'combobox',
-                itemId: 'siteCategoryComboBoxEditorItemId',
-                allowBlank: false,
-                selectOnFocus: true,
-                displayField: 'siteCategoryName',
-                forceSelection: true,
-                queryMode: 'local',
-                valueField: 'siteCategory',
-                bind: {
-                    store: '{SiteCategoryComboStore}'
-                }
-            }
-        },
-        {
-            xtype: 'gridcolumn',
+            minWidth: 150,
             dataIndex: 'siteAddress1',
-            text: 'Address 1',
+            text: 'Adresse',
+            flex: 1,
             editor: {
                 xtype: 'textareafield',
                 itemId: 'siteAddress1TextFieldItemId'
@@ -126,26 +152,21 @@ Ext.define('MyApp.view.SiteGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteAddress2',
-            text: 'Address 2',
-            editor: {
-                xtype: 'textareafield',
-                itemId: 'siteAddress2TextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
             dataIndex: 'siteZipCode',
-            text: 'Zip Code',
+            text: 'C.P',
             editor: {
                 xtype: 'textfield',
-                itemId: 'siteZipCodeTextFieldItemId'
+                itemId: 'siteZipCodeTextFieldItemId',
+                listeners: {
+                    change: 'onSiteZipCodeTextFieldItemIdChange'
+                }
             }
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'siteCityId',
-            text: 'City',
+            minWidth: 120,
+            dataIndex: 'cityName',
+            text: 'Commune',
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteCityIdComboBoxEditorItemId',
@@ -153,9 +174,12 @@ Ext.define('MyApp.view.SiteGrid', {
                 displayField: 'cityName',
                 forceSelection: true,
                 queryMode: 'local',
-                valueField: 'cityId',
+                valueField: 'cityName',
                 bind: {
                     store: '{SiteCityIdComboStore}'
+                },
+                listeners: {
+                    change: 'onSiteCityIdComboBoxEditorItemIdChange'
                 }
             }
         },
@@ -164,26 +188,17 @@ Ext.define('MyApp.view.SiteGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            dataIndex: 'siteIsVirtual',
-            text: 'Vitrual?',
-            editor: {
-                xtype: 'checkboxfield'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return Utility.renderer.checkBoxRenderer(value);
-            },
+            defaultWidth: 50,
             dataIndex: 'active',
-            text: 'Active?',
+            text: 'Actif?',
             editor: {
                 xtype: 'checkboxfield'
             }
         },
         {
             xtype: 'actioncolumn',
-            text: 'config',
+            defaultWidth: 50,
+            text: 'Config',
             iconCls: 'fa fa-pencil fa-2x',
             items: [
                 {

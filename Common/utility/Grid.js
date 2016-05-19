@@ -222,6 +222,45 @@ Ext.define('Utility.grid', {
                 enableColumnHide: false,
                 hideable: false
             });
+        },
+        fillCityFromZipCode:function(_scope,_cityComboStoreName,_cityComboBoxItemId,_zipCodeField,_newValue)
+        {
+            var me=_scope;
+            var viewModel = me.getViewModel();
+            var cityComboStore=viewModel.getStore(_cityComboStoreName);
+            var userCombo=_zipCodeField.up('roweditor').down('#'+_cityComboBoxItemId);
+            userCombo.setValue(null);
+            if (_newValue.length==5){
+                var filters=[];
+                var filter= {name:'cityZipCode',value:_newValue};
+                filters.push(filter);
+                var params={
+                    id:50,
+                    table:"CITY",
+                    filters:filters
+                };
+                userCombo.setDisabled(false);
+
+                var groupData=[];
+                Server.CommonQueries.read(params,
+                    function(res){
+                        if(res.success){
+                            groupData=res.data;
+                            cityComboStore.loadData(groupData);
+                            userCombo.select(cityComboStore.getAt(0));
+                        }
+                        else{
+                            console.log(res.msg);
+                        }
+                    },me
+                );
+
+
+
+            }else{
+                userCombo.setDisabled(true);
+
+            }
         }
 
 

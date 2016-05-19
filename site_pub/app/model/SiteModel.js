@@ -17,7 +17,7 @@ Ext.define('MyApp.model.SiteModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Field'
+        'Ext.data.field.Integer'
     ],
 
     validators: [
@@ -32,9 +32,11 @@ Ext.define('MyApp.model.SiteModel', {
             name: 'id'
         },
         {
+            type: 'int',
             name: 'siteId'
         },
         {
+            type: 'int',
             name: 'siteGroupId'
         },
         {
@@ -59,19 +61,14 @@ Ext.define('MyApp.model.SiteModel', {
             name: 'siteAddress1'
         },
         {
-            name: 'siteAddress2'
-        },
-        {
             name: 'siteZipCode'
         },
         {
+            type: 'int',
             name: 'siteCityId'
         },
         {
-            name: 'siteCityName'
-        },
-        {
-            name: 'siteIsVirtual'
+            name: 'cityName'
         },
         {
             name: 'active'

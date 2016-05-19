@@ -28,8 +28,6 @@ Ext.define('MyApp.view.SiteConfigWindow', {
     viewModel: {
         type: 'siteconfigwindow'
     },
-    height: 389,
-    width: 373,
     iconCls: 'fx-fa-list-alt',
     title: 'Configuration',
     modal: true,

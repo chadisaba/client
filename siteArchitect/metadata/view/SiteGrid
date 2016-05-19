@@ -35,8 +35,191 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "siteGroupId",
+                "hidden": true,
+                "text": "GroupeId"
+            },
+            "name": "MyColumn",
+            "designerId": "223f7eb7-a0ed-4551-aa60-c38513db7d54",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "groupIdTextFieldItemId"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "9bb864e8-f1cc-457f-ac06-f43df244a8e3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCityId",
+                "hidden": true,
+                "text": "CityId"
+            },
+            "name": "MyColumn1",
+            "designerId": "e58dc6a0-d16a-4e64-af4a-3e14be40751f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "cityIdTextFieldItemId"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "5b9d2152-b384-4591-85a6-65f3df91d0c7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteGroupName",
+                "text": "Groupe"
+            },
+            "name": "MygroupIdCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-aqyesi3fvici",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteGroupName",
+                        "forceSelection": true,
+                        "itemId": "groupIdComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{GroupIdComboStore}"
+                        ],
+                        "valueField": "siteGroupName"
+                    },
+                    "name": "MygroupIdComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-td96vegb155k",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGroupIdComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onGroupIdComboBoxEditorItemIdSelect",
+                            "designerId": "375e0e6a-782d-4a5b-8cfa-dc0793d49b39"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteCategory",
+                "text": "Type"
+            },
+            "name": "MysiteCategoryCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-jghw5i9hi1lv",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteCategoryName",
+                        "forceSelection": true,
+                        "itemId": "siteCategoryComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SiteCategoryComboStore}"
+                        ],
+                        "valueField": "siteCategory"
+                    },
+                    "name": "MysiteCategoryComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "ade60fcf-b3b2-4bae-6a35ksji8tb5"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "siteTypeRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "c83f5b8e-8b0c-4abc-bb11-4b9b64903cb2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "siteName",
-                "text": "Name"
+                "text": "Nom"
             },
             "name": "MysiteNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-umpux8c2151b",
@@ -94,7 +277,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "sitePhone",
-                "text": "Phone"
+                "text": "Tél"
             },
             "name": "MysitePhoneCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-k1rqjcutfga1",
@@ -151,90 +334,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteGroupId",
-                "text": "Group"
-            },
-            "name": "MygroupIdCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-aqyesi3fvici",
-            "cn": [
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "displayField": "siteGroupName",
-                        "forceSelection": true,
-                        "itemId": "groupIdComboBoxEditorItemId",
-                        "queryMode": "local",
-                        "selectOnFocus": true,
-                        "store": [
-                            "{GroupIdComboStore}"
-                        ],
-                        "valueField": "siteGroupId"
-                    },
-                    "name": "MygroupIdComboBox",
-                    "configAlternates": {
-                        "store": "binding"
-                    },
-                    "designerId": "ade60fcf-b3b2-4bae-td96vegb155k"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "siteCategory",
-                "text": "Category"
-            },
-            "name": "MysiteCategoryCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-jghw5i9hi1lv",
-            "cn": [
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "displayField": "siteCategoryName",
-                        "forceSelection": true,
-                        "itemId": "siteCategoryComboBoxEditorItemId",
-                        "queryMode": "local",
-                        "selectOnFocus": true,
-                        "store": [
-                            "{SiteCategoryComboStore}"
-                        ],
-                        "valueField": "siteCategory"
-                    },
-                    "name": "MysiteCategoryComboBox",
-                    "configAlternates": {
-                        "store": "binding"
-                    },
-                    "designerId": "ade60fcf-b3b2-4bae-6a35ksji8tb5"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "siteAddress1",
-                "text": "Address 1"
+                "flex": 1,
+                "minWidth": 150,
+                "text": "Adresse"
             },
             "name": "MysiteAddress1Col",
             "designerId": "7c6bec59-5c6a-4872-9cec-v49bnrv817tv",
@@ -262,37 +365,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteAddress2",
-                "text": "Address 2"
-            },
-            "name": "MysiteAddress2Col",
-            "designerId": "7c6bec59-5c6a-4872-9cec-7dbw12eskaw5",
-            "cn": [
-                {
-                    "type": "Ext.form.field.TextArea",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "siteAddress2TextFieldItemId"
-                    },
-                    "name": "MyTextArea1",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-eeph7ja2v6p3"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "siteZipCode",
-                "text": "Zip Code"
+                "text": "C.P"
             },
             "name": "MysiteZipCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-k777d427r5aj",
@@ -308,7 +382,24 @@
                         "itemId": "siteZipCodeTextFieldItemId"
                     },
                     "name": "MysiteZipCodeTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-uav1a68ktvtl"
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-uav1a68ktvtl",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteZipCodeTextFieldItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onSiteZipCodeTextFieldItemIdChange",
+                            "designerId": "4c024588-caf9-4ca4-9b94-749754b02b6f"
+                        }
+                    ]
                 }
             ]
         },
@@ -320,8 +411,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "siteCityId",
-                "text": "City"
+                "dataIndex": "cityName",
+                "minWidth": 120,
+                "text": "Commune"
             },
             "name": "MysiteCityIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ldtbhdnxdg3a",
@@ -342,64 +434,30 @@
                         "store": [
                             "{SiteCityIdComboStore}"
                         ],
-                        "valueField": "cityId"
+                        "valueField": "cityName"
                     },
                     "name": "MysiteCityIdComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "ade60fcf-b3b2-4bae-2g6jlxc9m7ap"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "siteIsVirtual",
-                "text": "Vitrual?"
-            },
-            "name": "MysiteIsVirtualCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-xf81pxr71dpq",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "name": "MysiteIsVirtualCheckBox",
-                    "designerId": "73e1ef6a-05db-4aa6-cacc-kvduc25wmrwa"
-                },
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "fn": "renderer",
-                        "implHandler": [
-                            "return Utility.renderer.checkBoxRenderer(value);"
-                        ]
-                    },
-                    "name": "renderer",
-                    "designerId": "2916280f-9t88-41ee-85ef-japw5d9ge4pd"
+                    "designerId": "ade60fcf-b3b2-4bae-2g6jlxc9m7ap",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteCityIdComboBoxEditorItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onSiteCityIdComboBoxEditorItemIdChange",
+                            "designerId": "dd718f67-8dff-4780-a67d-77d23d52b735"
+                        }
+                    ]
                 }
             ]
         },
@@ -412,7 +470,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
-                "text": "Active?"
+                "defaultWidth": 50,
+                "text": "Actif?"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-rtn8w5err56y",
@@ -824,8 +883,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultWidth": 50,
                 "iconCls": "fa fa-pencil fa-2x",
-                "text": "config"
+                "text": "Config"
             },
             "name": "MyActionColumn",
             "designerId": "bbd33456-daf6-4b85-a426-340cec1058dd",

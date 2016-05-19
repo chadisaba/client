@@ -17,16 +17,16 @@ Ext.define('MyApp.view.SiteConfigWindowViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.siteconfigwindow',
 
-    onFormAfterRender: function(component, eOpts) {
-        var siteConfig=this.getView().siteConfig;
+    requires: [
+        'MyApp.view.override.SiteConfigWindowViewController'
+    ],
 
-        component.loadRecord(siteConfig);
+    onFormAfterRender: function(component, eOpts) {
+
     },
 
     onFormValidateEvent: function(form, rec) {
-        var siteConfig=this.getView().siteConfig;
-        siteConfigModel=rec;
-        this.fireViewEvent('validateEvent',siteConfigModel);
+
     },
 
     onFormCancelEvent: function(form) {

@@ -9,12 +9,12 @@
         "designer|userAlias": "siteconfigwindow",
         "designer|userClassName": "SiteConfigWindow",
         "fdfdf": null,
-        "height": 389,
+        "height": null,
         "iconCls": "fx-fa-list-alt",
         "modal": true,
         "siteConfig": null,
         "title": "Configuration",
-        "width": 373
+        "width": null
     },
     "name": "MyWindow",
     "configAlternates": {
@@ -65,9 +65,7 @@
                     "userConfig": {
                         "fn": "onFormAfterRender",
                         "implHandler": [
-                            "var siteConfig=this.getView().siteConfig;",
-                            "",
-                            "component.loadRecord(siteConfig);"
+                            ""
                         ],
                         "name": "afterrender",
                         "scope": "me"
@@ -89,9 +87,7 @@
                         ],
                         "fn": "onFormValidateEvent",
                         "implHandler": [
-                            "var siteConfig=this.getView().siteConfig;",
-                            "siteConfigModel=rec;",
-                            "this.fireViewEvent('validateEvent',siteConfigModel);"
+                            ""
                         ],
                         "name": "validateEvent",
                         "scope": "me"
