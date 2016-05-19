@@ -34,13 +34,11 @@ var params={};
        params.idName="siteGroupId";
        params.dataToBeSaved=dataToBeSaved;
        params.comment=comment;
-       var result=[];
        Server.CommonQueries.saveRecords(params,
            function(_result){
                if(_result.success){
-                   var resultArray=[];
                    this.getResultArray(function(data){
-                       Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
+                       Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteGroupStore'),promptWin);
                    },this);
                }
                else{

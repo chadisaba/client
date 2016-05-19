@@ -31,60 +31,64 @@ Ext.define('MyApp.view.SiteConfigForm', {
     viewModel: {
         type: 'siteconfigform'
     },
+    layout: 'form',
     bodyPadding: 10,
-    title: 'Site config Form',
+    title: 'Configuration du site',
 
-    layout: {
-        type: 'vbox',
-        align: 'center'
-    },
     items: [
         {
             xtype: 'textfield',
+            hidden: true,
             fieldLabel: 'Site Id     ',
             name: 'siteId'
         },
         {
             xtype: 'textfield',
+            hidden: true,
             fieldLabel: 'added',
             name: 'added'
         },
         {
             xtype: 'textfield',
+            hidden: true,
             fieldLabel: 'modified',
             name: 'modified'
         },
         {
             xtype: 'textfield',
+            hidden: true,
             fieldLabel: 'Site config id',
             name: 'siteConfigId'
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Start Hour',
+            fieldLabel: 'Ouverture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
             name: 'siteConfigStartHour',
-            inputType: 'time'
+            inputType: 'time',
+            allowBlank: false
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'End Hour',
+            fieldLabel: 'Fermeture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
             name: 'siteConfigEndHour',
-            inputType: 'time'
+            inputType: 'time',
+            allowBlank: false
         },
         {
             xtype: 'checkboxfield',
-            fieldLabel: 'FSE is Checked',
+            width: 300,
+            fieldLabel: 'Générer FSE par défaut',
             name: 'siteConfigFseIsChecked',
-            boxLabel: 'Box Label'
+            boxLabel: ''
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Uid Senolog',
+            fieldLabel: 'Senolog UID',
             name: 'siteConfigUidSenolog'
         },
         {
             xtype: 'combobox',
-            fieldLabel: 'Senolog Type',
+            fieldLabel: 'Senolog type',
             name: 'siteConfigSenologType'
         }
     ],
@@ -108,6 +112,8 @@ Ext.define('MyApp.view.SiteConfigForm', {
                 },
                 {
                     xtype: 'button',
+                    formBind: true,
+                    disabled: true,
                     itemId: 'validateBtn',
                     style: 'color:green',
                     iconCls: 'fa fa-check',

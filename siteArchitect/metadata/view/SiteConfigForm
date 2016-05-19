@@ -7,12 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
-        "container|align": "center",
         "designer|userAlias": "siteconfigform",
         "designer|userClassName": "SiteConfigForm",
         "height": null,
-        "layout": "vbox",
-        "title": "Site config Form",
+        "layout": "form",
+        "title": "Configuration du site",
         "width": null
     },
     "name": "MyForm",
@@ -29,6 +28,7 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Site Id     ",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "siteId"
             },
@@ -44,6 +44,7 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "added",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "added"
             },
@@ -59,6 +60,7 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "modified",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "modified"
             },
@@ -74,6 +76,7 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Site config id",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "siteConfigId"
             },
@@ -88,7 +91,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fieldLabel": "Start Hour",
+                "allowBlank": false,
+                "fieldLabel": "Ouverture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
                 "inputType": "time",
                 "labelWidth": null,
                 "name": "siteConfigStartHour"
@@ -104,7 +108,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fieldLabel": "End Hour",
+                "allowBlank": false,
+                "fieldLabel": "Fermeture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
                 "inputType": "time",
                 "labelWidth": null,
                 "name": "siteConfigEndHour"
@@ -120,10 +125,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "boxLabel": "Box Label",
-                "fieldLabel": "FSE is Checked",
+                "boxLabel": "",
+                "fieldLabel": "Générer FSE par défaut",
                 "labelWidth": null,
-                "name": "siteConfigFseIsChecked"
+                "name": "siteConfigFseIsChecked",
+                "width": 300
             },
             "name": "MyCheckbox1",
             "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
@@ -136,7 +142,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fieldLabel": "Uid Senolog",
+                "fieldLabel": "Senolog UID",
                 "labelWidth": null,
                 "name": "siteConfigUidSenolog"
             },
@@ -151,7 +157,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fieldLabel": "Senolog Type",
+                "fieldLabel": "Senolog type",
                 "labelWidth": null,
                 "name": "siteConfigSenologType"
             },
@@ -232,6 +238,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "disabled": true,
+                        "formBind": true,
                         "iconCls": "fa fa-check",
                         "itemId": "validateBtn",
                         "layout|flex": null,

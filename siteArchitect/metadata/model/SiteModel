@@ -31,7 +31,7 @@
             "designerId": "e96f8d89-803f-419a-a346-v894f4vuifu5"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -40,11 +40,11 @@
             "userConfig": {
                 "name": "siteId"
             },
-            "name": "MyField6",
+            "name": "MyInteger1",
             "designerId": "1b1ab37d-1a20-45d8-a86f-ca3d2b2f6ad4"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -53,7 +53,7 @@
             "userConfig": {
                 "name": "siteGroupId"
             },
-            "name": "MygroupId",
+            "name": "MyInteger",
             "designerId": "e96f8d89-803f-419a-a346-9kltjmippfu4"
         },
         {
@@ -155,26 +155,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteAddress2"
-            },
-            "name": "MysiteAddress2",
-            "designerId": "e96f8d89-803f-419a-a346-c3gjeqpqjxf2"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "siteZipCode"
             },
             "name": "MysiteZipCode",
             "designerId": "e96f8d89-803f-419a-a346-3udbdva59xpl"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -183,7 +170,7 @@
             "userConfig": {
                 "name": "siteCityId"
             },
-            "name": "MysiteCityId",
+            "name": "MyInteger2",
             "designerId": "e96f8d89-803f-419a-a346-39vxyu7tijsh"
         },
         {
@@ -194,23 +181,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteCityName"
+                "name": "cityName"
             },
             "name": "MyField8",
             "designerId": "7101a1e2-de03-4391-a4cf-2b12875adb95"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "siteIsVirtual"
-            },
-            "name": "MysiteIsVirtual",
-            "designerId": "e96f8d89-803f-419a-a346-cew2ey5ue8e6"
         },
         {
             "type": "Ext.data.field.Field",

@@ -14,10 +14,8 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         // site group store
 
         var params={
-            id:50,
             table:"SITE_GROUP"
         };
-
         var groupComboStore=viewModel.getStore('GroupIdComboStore');
         var groupData=[];
         Server.CommonQueries.read(params,
@@ -39,8 +37,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
 
         // City store
-        var params={
-            id:50,
+       /* var params={
             table:"CITY"
         };
 
@@ -56,11 +53,11 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                     console.log(res.msg);
                 }
             },me
-        );
+        );*/
 
         this.getResultArray(function(data){
             Utility.grid.loadGrid(component,data,component.getViewModel().getStore('SiteStore'));
-        },this);
+        },me);
 
 
 
@@ -106,11 +103,10 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         console.log(dataToBeSaved);
         console.log(dataToBeSaved1);
 
-        var result=[];
+
         Server.CommonQueries.saveRecords(params,
             function(_result){
                 if(_result.success){
-                    var resultArray=[];
                     this.getResultArray(function(data){
                         Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
                     },this);
@@ -173,7 +169,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
     onSiteGridIdEdit: function(editor,context) {
         // var columnsName=['name','text'];
 
-        var columnsName=['siteName','siteCode','sitePhone','siteFax','siteGroupName','siteCategory','siteAddress1','siteAddress2','siteZipCode','siteCityId','siteIsVirtual','active'];
+        var columnsName=['siteName','siteCode','sitePhone','siteFax','siteGroupName','siteCategory','siteAddress1','siteZipCode','siteCityId','siteGroupId','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -197,16 +193,26 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
     getResultArray:function(callback)
     {
-
         var me=this;
-        var params={
-            id:50
-        };
-        var result=[];
-        // Server.Settings.Site.createDescribe(params,
-        Server.Settings.SiteDirect.getSiteAndGroup(params,
+                var mainTableObject={};
+                mainTableObject.tableName='SITE';
+                mainTableObject.raw=false;
+                var joinTablesArray=[];
+                joinTablesArray.push({tableName:'SITE_GROUP'});
+
+                var params = {
+                    mainTableObject: mainTableObject,
+                    joinTablesArray: joinTablesArray
+                };
+
+        Server.Settings.Site.getSiteAndConfig(params,
             function(res){
                 if(res.success){
+                    for (var i = 0; i < res.data[0].length; i++) {
+                        res.data[0][i].siteGroupName=res.data[0][i]['SiteGroup.siteGroupName'];
+                        res.data[0][i].cityName=res.data[0][i]['City.cityName'];
+
+                    }
                     callback(res.data[0]);
                     if(res.data[1].length>0)
                         me.getViewModel().getStore('SiteConfigStore').loadData(res.data[1]);
@@ -216,6 +222,9 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                 }
             },me
         );
+
+
+        //me.getViewModel().getStore('SiteConfigStore').loadData(res.data[1]);
 
     },
     openConfigHandler: function(view, rowIndex, colIndex, item, e, record, row) {
@@ -264,7 +273,28 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         });
         win.show();
 
+    },
+
+    onSiteZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+        Utility.grid.fillCityFromZipCode(this,"SiteCityIdComboStore","siteCityIdComboBoxEditorItemId",field,newValue);
+    },
+
+    siteTypeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+        return Utility.renderer.retreiveTextFromStore(value,'siteCategory','siteCategoryName','SiteCategoryComboStore',this);
+    },
+    onSiteCityIdComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+        if(newValue){
+            var   cityStore=this.getViewModel().getStore('SiteCityIdComboStore');
+            var rec=cityStore.findRecord('cityName',newValue);
+            field.up('roweditor').down('#cityIdTextFieldItemId').setValue(rec.get('cityId'));
+        }
+    },
+
+    onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var groupIdField=combo.up('roweditor').down('#groupIdTextFieldItemId');
+        groupIdField.setValue(record.get('siteGroupId'));
     }
+
 
 
 

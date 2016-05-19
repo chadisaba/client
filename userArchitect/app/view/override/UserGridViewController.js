@@ -8,44 +8,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
 
     onUserZipCodeTextFieldItemIdChange: function(field, newValue) {
 
-        var me=this;
-        var viewModel = me.getViewModel();
-        var cityComboStore=viewModel.getStore('CityComboStore');
-        var userCombo=field.up('roweditor').down('#userCityComboBoxItemId');
-        userCombo.setValue(null);
-        if (newValue.length==5){
-            var filters=[];
-            var filter= {name:'cityZipCode',value:newValue};
-            filters.push(filter);
-            var params={
-                id:50,
-                table:"CITY",
-                filters:filters
-            };
-            userCombo.setDisabled(false);
-
-            var groupData=[];
-            Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                        groupData=res.data;
-                        cityComboStore.loadData(groupData);
-                        userCombo.select(cityComboStore.getAt(0));
-                    }
-                    else{
-                        console.log(res.msg);
-                    }
-                },me
-            );
-
-
-
-        }else{
-            userCombo.setDisabled(true);
-
-        }
-
-
+        Utility.grid.fillCityFromZipCode(this,"CityComboStore","userCityComboBoxItemId",field,newValue);
     },
 
     onUserCityComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {

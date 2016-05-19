@@ -31,9 +31,6 @@
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
-            "mttdgf93-8a5d-4154-8917-mttdgf93leq8",
-            "mttdgf93-8c41-4643-a8f8-mttdgf93leq8",
-            "mttdgf93-4ace-45f2-b4ee-mttdgf93leq8",
             "lwng1fa4-8a5d-4154-8917-lwng1fa4wxsp",
             "4vw4y3bu-4ace-45f2-b4ee-lwng1fa4wxsp",
             "iuekgaab-8c41-4643-a8f8-iuekgaabsc3f",
@@ -58,7 +55,6 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
-            "6phe2vv7-1d4f-4fb9-9364-6phe2vv7tq64",
             "vtd39c3u-1d4f-4fb9-9364-vtd39c3uuvsj",
             "iy6yfsjn-1d4f-4fb9-9364-2kw4kytlyif4",
             "040092bf-b6f4-441b-b581-9igk4vlwdiy7",

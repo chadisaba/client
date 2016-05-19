@@ -26,7 +26,7 @@ Ext.application({
     ],
     models: [
         'GroupIdComboModel',
-		'SiteCategoryComboModel',
+        'SiteCategoryComboModel',
         'SiteCityIdComboModel',
         'SiteModel',
         'SiteConfigModel',
