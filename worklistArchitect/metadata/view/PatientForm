@@ -1,0 +1,667 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "stretch",
+        "designer|userAlias": "patientform",
+        "designer|userClassName": "PatientForm",
+        "header": false,
+        "height": null,
+        "itemId": "patientFormId",
+        "layout": "hbox",
+        "title": "Patient Form",
+        "width": null
+    },
+    "name": "MyForm",
+    "designerId": "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596",
+    "viewControllerInstanceId": "25cad4d1-ca96-486b-81ab-08e8716444b2",
+    "viewModelInstanceId": "6e2b36c6-38ef-47ee-bd2a-0c30707ed261",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processPatientForm",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "name": "processPatientForm",
+            "designerId": "94f6e1b3-1e8f-40f5-8156-5db18b00f09f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPatientFormItemIdAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onPatientFormItemIdAfterRender",
+            "designerId": "8a5a3a4f-3f71-424a-af06-539d5920f3cd"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "layout|flex": 1,
+                "title": "Identité patient"
+            },
+            "name": "MyFieldSet1",
+            "designerId": "0012ab0c-75b6-49b7-9f39-a5561f488f3f",
+            "cn": [
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "defaults": [
+                            "{name : 'patientGender'}"
+                        ],
+                        "fieldLabel": "Sexe"
+                    },
+                    "name": "MyRadioGroup1",
+                    "designerId": "c5f7855d-14a7-4753-955b-4d417908a9ac",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "M",
+                                "fieldLabel": null,
+                                "inputValue": "1"
+                            },
+                            "name": "MyRadio3",
+                            "designerId": "a074d947-07ba-4d9c-b322-316005ea7b5a"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "F",
+                                "fieldLabel": null,
+                                "inputValue": "2"
+                            },
+                            "name": "MyRadio4",
+                            "designerId": "51124637-29eb-49ff-ba2a-bb5f4b2b7f6f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "patientTitle",
+                        "fieldLabel": "Civilité",
+                        "forceSelection": true,
+                        "itemId": "patientTitleComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "patientTitle",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PatientTitleComboStore}"
+                        ],
+                        "valueField": "patientTitleId"
+                    },
+                    "name": "MypatientTitleComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "026413d7-d184-43f9-876e-5029eef26a72"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Nom",
+                        "layout|anchor": "100%",
+                        "name": "patientLName"
+                    },
+                    "name": "MypatientLNameTextField",
+                    "designerId": "5ad54f22-7cef-4ebd-a274-0941c9687bbd"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Prénom",
+                        "layout|anchor": "100%",
+                        "name": "patientFname"
+                    },
+                    "name": "MypatientFnameTextField",
+                    "designerId": "024c7a80-5605-4738-99d3-51c8430b4a80"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Date naissance",
+                        "format": "d/m/Y",
+                        "layout|anchor": "100%",
+                        "name": "patientBirthday"
+                    },
+                    "name": "MyDateField1",
+                    "designerId": "ac1b50ae-07ff-409b-aad3-18281acafa4f"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nom naissance",
+                        "layout|anchor": "100%",
+                        "name": "patientBirthName"
+                    },
+                    "name": "MypatientBirthNameTextField",
+                    "designerId": "231e3782-cb53-45d8-a904-3563055ebae4"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "referringPhysicianName",
+                        "fieldLabel": "Méd. Traitant",
+                        "forceSelection": true,
+                        "itemId": "referringPhysicianNameComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianName",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{ReferringPhysicianNameComboStore}"
+                        ],
+                        "valueField": "referringPhysicianId"
+                    },
+                    "name": "MyreferringPhysicianNameComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Numéro I.N.S",
+                        "layout|anchor": "100%",
+                        "name": "patientIns"
+                    },
+                    "name": "MypatientInsTextField",
+                    "designerId": "e88cebd1-05aa-4468-a1a6-9dba9143d7b7"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "15a27c25-e033-4374-8f57-b177db6e14da",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "N Sécu",
+                                "name": "patientSocialNumber"
+                            },
+                            "name": "MypatientSocialNumberTextField",
+                            "designerId": "ea86d91c-ee55-4584-97e9-4549f04a75a7"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Clé",
+                                "fieldLabel": "",
+                                "maxLength": 2,
+                                "name": "patientSocialKey",
+                                "width": 40
+                            },
+                            "name": "MypatientSocialKeyTextField",
+                            "designerId": "c069fedc-1d7b-49df-93db-a0a751c358a1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Enceinte",
+                        "layout|anchor": "100%",
+                        "name": "patientPregnant"
+                    },
+                    "name": "MypatientPregnantCheckBox",
+                    "designerId": "8316da9c-2454-4f0e-96c8-d6bc38d16684"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Actif",
+                        "layout|anchor": "100%",
+                        "name": "active"
+                    },
+                    "name": "MyactiveCheckBox",
+                    "designerId": "1af1032b-e3a4-4388-987f-aa908a963725"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "fieldLabel": "Reprise ID",
+                        "layout|anchor": "100%",
+                        "name": "patientIdReprise",
+                        "readOnly": true
+                    },
+                    "name": "MypatientIdRepriseTextField",
+                    "designerId": "d76a83e8-54c4-458a-8889-8f6cfb42f3da"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "width": 10
+            },
+            "name": "MySpacer6",
+            "designerId": "e4ad591f-a36c-4dd9-aed9-26b71ee2ad2b"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "layout|flex": 1,
+                "title": "Coordonnées"
+            },
+            "name": "MyFieldSet",
+            "designerId": "3ea3f2b1-e229-4ca6-9df9-a5291e086f3c",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|anchor": "100%",
+                        "name": "patientId"
+                    },
+                    "name": "MypatientIdTextField",
+                    "designerId": "6e05f16f-20de-44a5-88ff-29c246306679"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Adresse",
+                        "height": 105,
+                        "layout|anchor": "100%",
+                        "name": "patientAddress"
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "b6e3e2de-de10-4096-8ae0-3555e279ac5a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Code postal",
+                        "itemId": "patientZipCodeTextFieldItemId",
+                        "layout|anchor": "100%",
+                        "name": "patientZipCode"
+                    },
+                    "name": "MypatientZipCodeTextField",
+                    "designerId": "95b2df83-c44e-4550-8b66-0585e5bc5029",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPatientZipCodeTextFieldItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onPatientZipCodeTextFieldItemIdChange",
+                            "designerId": "999126e9-cb79-4b42-b4ba-ca0467608117"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "cityName",
+                        "emptyText": "Saisir au moins 4caractères",
+                        "fieldLabel": "Commune",
+                        "itemId": "cityNameComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "minChars": 4,
+                        "name": "cityId",
+                        "queryDelay": 500,
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CityNameComboStore}"
+                        ],
+                        "triggerAction": null,
+                        "typeAhead": true,
+                        "valueField": "cityId"
+                    },
+                    "name": "MycityNameComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "77e9eeac-4cc2-48ac-a044-b7e0525cb480",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCityNameComboBoxEditorItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onCityNameComboBoxEditorItemIdChange",
+                            "designerId": "61c985cd-97af-43dc-bfee-ef8f4a886fe2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Tél",
+                        "layout|anchor": "100%",
+                        "name": "patientPhoneNumber"
+                    },
+                    "name": "MypatientPhoneNumberTextField",
+                    "designerId": "709fe3b8-45d3-4cbb-997b-9b58dfc05069"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Portable",
+                        "layout|anchor": "100%",
+                        "name": "patientMobileNumber"
+                    },
+                    "name": "MypatientMobileNumberTextField",
+                    "designerId": "091998e0-8915-40fd-a636-1c7cbebdbd72"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "E-Mail",
+                        "layout|anchor": "100%",
+                        "name": "patientEmail",
+                        "vtype": "email"
+                    },
+                    "name": "MypatientEmailTextField",
+                    "designerId": "6f207c31-0cad-403a-81f8-d445f4b53b66"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar1",
+            "designerId": "6a10b6db-f19d-4863-9d59-8ef9194c2a12",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "0dfe1e7b-6d3c-4fb3-8e1a-c34503b5ea7b"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "c5046cc8-fbf0-4d6d-8e8b-9162105d21ef",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "glyph": "xf0c7@FontAwesome",
+                                "itemId": "saveFormBtnItemId",
+                                "text": "Enregistrer"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "3d40e8ac-57de-41c0-9595-66277ba819f4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveFormBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSaveFormBtnItemIdClick",
+                                    "designerId": "d0f18d59-2e9b-4dcf-b2cc-4648ab314ad7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "e2d8cb50-5efd-4491-83f8-b7608822c68a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": false,
+                                "glyph": "xf0e2@FontAwesome",
+                                "itemId": "cancelFormBtnItemId",
+                                "text": "Annuler"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "4b4139aa-a64f-43a7-af05-453452ebfe9c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySpacer5",
+                    "designerId": "c83c93f9-1263-4231-bc91-c6d43e4f1259"
+                }
+            ]
+        }
+    ]
+}

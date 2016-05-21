@@ -183,12 +183,11 @@ westPanel.setWidth(new_width);
                     hideTrigger:true,
                     displayField:'patientLName',
                     valueField:'patientId',
-width:400,
+                    width:400,
                     id:'comboSearchPatient',
                     store: {
                         model: 'Patient',
                         remoteSort: true,
-
                         sorters: [{
                             property: 'patientLName',
                             direction: 'ASC'
@@ -201,7 +200,6 @@ width:400,
                                 rootProperty: 'data'
                             }
                         }
-
                     },
                     pageSize: 10,
                     listConfig: {
@@ -222,7 +220,6 @@ width:400,
                     listeners:{
                         select:function(combo, record)
                         {
-                          //  alert('fadi');
                             Ext.create('Common.ux.window.FullScreenWindow', {
 
                                // animateTarget:'comboSearchPatient',

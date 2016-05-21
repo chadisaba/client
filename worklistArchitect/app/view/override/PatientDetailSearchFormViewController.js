@@ -1,17 +1,34 @@
 Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     override: 'MyApp.view.PatientDetailSearchFormViewController',
+
      onPatientSearchBtnItemIdClick: function(button, e, eOpts) {
 
-         Utility.loading.start(this.getView())
-         var me=this;
-         var patientSearchStore=me.getViewModel().getStore('PatientSearchDetailStore');
-         var params;
-         var formValuesObject=me.getView().getValues();
+         var view=this.getView();
+         Utility.loading.start(view);
 
-         var params={
-             tablesArray:['PATIENT','ADDRESS','CITY'],
-             keysArray:['addressId','cityId']
+         view.down('#nouveauPatientBtnItemId').setDisabled(true);
+         view.down('#accueilPatientBtnItemId').setDisabled(true);
+         view.down('#historiquePatientBtnItemId').setDisabled(true);
+
+         var me=this;
+         var mainTableObject={};
+         mainTableObject.tableName='PATIENT';
+         var joinTablesArray=[];
+         joinTablesArray.push({tableName:'CITY',
+             required:false,
+             fieldsArray:[
+                 'cityName'
+             ]
+         });
+
+         var params = {
+             mainTableObject: mainTableObject,
+             joinTablesArray: joinTablesArray
          };
+
+         var patientSearchStore=me.getViewModel().getStore('PatientSearchDetailStore');
+         var formValuesObject=view.getValues();
+
          params.filters=[];
          if(formValuesObject.patientLName)
              params.filters.push({name:"patientLName",value:formValuesObject.patientLName,startBy:true});
@@ -25,19 +42,21 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
              params.filters.push({name:"patientSocialKey",value:formValuesObject.patientSocialKey});
 
 
-                 Server.CommonQueries.readJoin(params,
-                     function(res){
-                         if(res.success){
-                             patientSearchStore.loadData(res.data);
-                             Utility.loading.end(this.getView());
-                         }
-                         else{
-                             console.error(res.msg);
-                             Utility.loading.end(this.getView());
-
-                         }
-                     },me);
-
+         Server.CommonQueries.readJoin(params,
+             function (res) {
+                 if (res.success) {
+                     for (var i = 0; i < res.data.length; i++) {
+                         res.data[i].cityName=res.data[i]['City.cityName'];
+                     }
+                     patientSearchStore.loadData(res.data);
+                     view.down('#nouveauPatientBtnItemId').setDisabled(false);
+                     Utility.loading.end(view);
+                 }
+                 else {
+                     console.error(res.msg);
+                     Utility.loading.end(view);
+                 }
+             }, me);
     },
 
     onTextfieldSpecialkey: function(field, e, eOpts) {
@@ -52,60 +71,52 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     },
     onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
-        Ext.create('Ext.window.Window', {
 
+        Ext.create('Common.ux.window.FullScreenWindow', {
+
+            // animateTarget:'comboSearchPatient',
             title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
-
-
-            layout: {
-                type: 'border',
-                padding: 5
-            },
-            tools:[{
-                type:'refresh',
-                tooltip: 'Refresh form Data',
-                // hidden:true,
-                handler: function(event, toolEl, panelHeader) {
-                    // refresh logic
-                }
-            },
-                {
-                    type:'help',
-                    tooltip: 'Get Help',
-                    callback: function(panel, tool, event) {
-                        // show help here
-                    }
-                }],
-            maximizable: true,
-            maximized:true,
-            height:30,
-            width:500,
-
-            /*anim: {
-             endOpacity: 1,
-             easing: 'easeIn',
-             duration: .9
-             },*/
-            listeners: {
-                /* show: function(w){
-                 w.getEl().fadeIn(w.anim);
-                 w.getEl().shadow.el.fadeIn(w.anim);
-                 },*/
-                minimize: function (window, opts) {
-
-                    /*  window.collapse();
-                     window.setWidth(150);
-                     window.alignTo(Ext.getBody(), 'bl-bl');*/
-                }
-            },
             items:{
                 region: 'center',
                 xtype:'patienthistorytabpanel',
                 patientId:record.get('patientId')
-
             }
         }).show();
-    }
+    },
+    onPatientSearchGridItemIdSelectionChange: function(model, selected, eOpts) {
+        view.down('#accueilPatientBtnItemId').setDisabled(false);
+        view.down('#historiquePatientBtnItemId').setDisabled(false);
+
+    },
+    onNouveauPatientBtnItemIdClick: function(button, e, eOpts) {
+
+        Ext.create('Common.ux.window.FullScreenWindow', {
+
+            // animateTarget:'comboSearchPatient',
+            title:"Informations du patient",
+            items:{
+                region: 'center',
+                xtype:'patientform'
+
+                /*plugins:[
+                    new Plugins.form.FormEditingPlugin({
+                    withValidation: false,
+                    showConfirmationOnSave: true
+                })]*/
+            }
+        }).show();
+    },
+
+    onAccueilPatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onHistoriquePatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+    onFichePatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
 
     
 });

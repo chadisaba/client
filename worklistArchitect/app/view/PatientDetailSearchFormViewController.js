@@ -47,6 +47,26 @@ Ext.define('MyApp.view.PatientDetailSearchFormViewController', {
 
     onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
+    },
+
+    onNouveauPatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onAccueilPatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onHistoriquePatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onFichePatientBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onPatientSearchGridItemIdSelectionChange: function(model, selected, eOpts) {
+
     }
 
 });

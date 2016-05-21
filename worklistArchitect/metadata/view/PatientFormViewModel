@@ -1,0 +1,61 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patientform",
+        "designer|userClassName": "PatientFormViewModel"
+    },
+    "designerId": "6e2b36c6-38ef-47ee-bd2a-0c30707ed261",
+      "cn": [
+       
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CityNameComboModel",
+                "name": "CityNameComboStore"
+                    
+            },
+            "name": "CityNameComboStore",
+            "designerId": "961927b5-34eb-4a9b-b536-4d7d26d1aa9f"
+        },
+                   {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianNameComboModel",
+                "name": "ReferringPhysicianNameComboStore"
+                    
+            },
+            "name": "ReferringPhysicianNameComboStore",
+            "designerId": "08dd8ca9-9fb6-49e3-a5e5-efc0b4074b3a"
+        },
+                   {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PatientTitleComboModel",
+                "name": "PatientTitleComboStore"
+                    
+            },
+            "name": "PatientTitleComboStore",
+            "designerId": "eefa4e16-cc9f-41b9-922b-4d7cf0416766"
+        }
+    ]
+}

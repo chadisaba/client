@@ -24,14 +24,11 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
         'Ext.toolbar.Spacer',
         'Ext.form.field.Date',
         'Ext.button.Button',
-        'Ext.form.RadioGroup',
-        'Ext.form.field.Radio',
         'Ext.grid.Panel',
         'Ext.view.Table',
         'Ext.grid.column.Template',
         'Ext.XTemplate',
-        'Ext.toolbar.Toolbar',
-        'Ext.toolbar.Fill'
+        'Ext.toolbar.Toolbar'
     ],
 
     controller: 'patientdetailsearchform',
@@ -165,26 +162,6 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
             ]
         },
         {
-            xtype: 'radiogroup',
-            defaults: {
-                name: 'typeSearch'
-            },
-            fieldLabel: 'Double-cliquer sur le patient pour ',
-            labelWidth: 220,
-            items: [
-                {
-                    xtype: 'radiofield',
-                    boxLabel: 'L\'accueillir',
-                    inputValue: 'accueil'
-                },
-                {
-                    xtype: 'radiofield',
-                    boxLabel: 'Accéder à son historique',
-                    inputValue: 'histo'
-                }
-            ]
-        },
-        {
             xtype: 'gridpanel',
             flex: 1,
             itemId: 'patientSearchGridItemId',
@@ -201,7 +178,7 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
                         '<img src="../Common/resources/images/{patientGender}.png"/>  ',
                         '                                <span style="font-weight:bold"> {patientLName} {patientFname}',
                         '                                {[Ext.Date.format(values.patientBirthday, "d/m/Y")]}',
-                        '</span><br />Adresse : {addressText}<br/>{addressZipCode} {cityName}',
+                        '</span><br />Adresse : {patientAddress}<br/>{patientZipCode} {cityName}',
                         '  '
                     ],
                     dataIndex: 'patientLName',
@@ -210,18 +187,75 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
                 }
             ],
             listeners: {
-                itemdblclick: 'onPatientSearchGridItemIdItemDblClick'
-            }
-        }
-    ],
-    dockedItems: [
-        {
-            xtype: 'toolbar',
-            flex: 1,
-            dock: 'top',
-            items: [
+                itemdblclick: 'onPatientSearchGridItemIdItemDblClick',
+                selectionchange: 'onPatientSearchGridItemIdSelectionChange'
+            },
+            dockedItems: [
                 {
-                    xtype: 'tbfill'
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'container',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    itemId: 'nouveauPatientBtnItemId',
+                                    text: 'Nouveau patient',
+                                    listeners: {
+                                        click: 'onNouveauPatientBtnItemIdClick'
+                                    }
+                                },
+                                {
+                                    xtype: 'tbspacer',
+                                    width: 20
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    disabled: true,
+                                    itemId: 'accueilPatientBtnItemId',
+                                    text: 'Accueillir patient sélectionné',
+                                    listeners: {
+                                        click: 'onAccueilPatientBtnItemIdClick'
+                                    }
+                                },
+                                {
+                                    xtype: 'tbspacer',
+                                    width: 20
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    disabled: true,
+                                    itemId: 'historiquePatientBtnItemId',
+                                    text: 'Accès historique',
+                                    listeners: {
+                                        click: 'onHistoriquePatientBtnItemIdClick'
+                                    }
+                                },
+                                {
+                                    xtype: 'tbspacer',
+                                    width: 20
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    disabled: true,
+                                    itemId: 'fichePatientBtnItemId',
+                                    text: 'Accès Fiche patient',
+                                    listeners: {
+                                        click: 'onFichePatientBtnItemIdClick'
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

@@ -358,58 +358,6 @@
             ]
         },
         {
-            "type": "Ext.form.RadioGroup",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "blankText": null,
-                "defaults": [
-                    "{name:'typeSearch'}"
-                ],
-                "fieldLabel": "Double-cliquer sur le patient pour ",
-                "labelWidth": 220,
-                "layout|flex": null,
-                "width": null
-            },
-            "name": "MyRadioGroup1",
-            "designerId": "01004451-2f71-4d57-8791-47d8ad7a157e",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Radio",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "L'accueillir",
-                        "fieldLabel": null,
-                        "inputValue": "accueil"
-                    },
-                    "name": "MyRadio3",
-                    "designerId": "260f5fbf-110f-4bc4-911d-2cb5b664263d"
-                },
-                {
-                    "type": "Ext.form.field.Radio",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "Accéder à son historique",
-                        "fieldLabel": null,
-                        "inputValue": "histo"
-                    },
-                    "name": "MyRadio4",
-                    "designerId": "420c9039-3905-48ce-849a-4eef993f216c"
-                }
-            ]
-        },
-        {
             "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
@@ -471,7 +419,7 @@
                                     "<img src=\"../Common/resources/images/{patientGender}.png\"/>  ",
                                     "                                <span style=\"font-weight:bold\"> {patientLName} {patientFname}",
                                     "                                {[Ext.Date.format(values.patientBirthday, \"d/m/Y\")]}",
-                                    "</span><br />Adresse : {addressText}<br/>{addressZipCode} {cityName}",
+                                    "</span><br />Adresse : {patientAddress}<br/>{patientZipCode} {cityName}",
                                     "  "
                                 ]
                             },
@@ -494,35 +442,224 @@
                     },
                     "name": "onPatientSearchGridItemIdItemDblClick",
                     "designerId": "31813bab-61a1-4f9a-90da-606a6e85ca70"
-                }
-            ]
-        },
-        {
-            "type": "Ext.toolbar.Toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top",
-                "layout|flex": 1
-            },
-            "name": "MyToolbar1",
-            "designerId": "659e95af-9d26-4cb6-b09d-3509b6eca648",
-            "cn": [
+                },
                 {
-                    "type": "Ext.toolbar.Fill",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
-                        "name": "items",
+                        "name": "dockedItems",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null
+                        "dock": "top"
                     },
-                    "name": "MyFill",
-                    "designerId": "f38cee1f-dc7a-4602-9e8d-35af210ac1a5"
+                    "name": "MyToolbar2",
+                    "designerId": "6215cd21-38d1-4f9a-a651-3a2b4dc2dbb3",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "layout|flex": null
+                            },
+                            "name": "MyContainer4",
+                            "designerId": "783639f9-da51-4991-af1a-6b084ef971d5",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "itemId": "nouveauPatientBtnItemId",
+                                        "layout|flex": null,
+                                        "text": "Nouveau patient"
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "bdfe5018-bef2-4f25-ab80-9593d0251920",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onNouveauPatientBtnItemIdClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onNouveauPatientBtnItemIdClick",
+                                            "designerId": "a9d860fa-f236-48d2-9c40-4c9f993c99ac"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 20
+                                    },
+                                    "name": "MySpacer7",
+                                    "designerId": "7c24918f-0a05-4742-b71e-edca57e87e8b"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "itemId": "accueilPatientBtnItemId",
+                                        "layout|flex": 1,
+                                        "text": "Accueillir patient sélectionné"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "42e352df-7084-4b43-bd4f-9c9afc431a10",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onAccueilPatientBtnItemIdClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onAccueilPatientBtnItemIdClick",
+                                            "designerId": "f0395d29-9715-49ec-a428-b8edfe92f6da"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 20
+                                    },
+                                    "name": "MySpacer9",
+                                    "designerId": "4067dbca-ce57-4623-8d25-ae32dc284ade"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "itemId": "historiquePatientBtnItemId",
+                                        "layout|flex": 1,
+                                        "text": "Accès historique"
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "7696ef16-c285-4a35-a29c-e2b3c873180b",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHistoriquePatientBtnItemIdClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onHistoriquePatientBtnItemIdClick",
+                                            "designerId": "7bdd88a4-bb5c-4fd1-8a74-4c0e44691665"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 20
+                                    },
+                                    "name": "MySpacer8",
+                                    "designerId": "ff6ce5e7-0334-4350-bfbc-8cf2f4e652e7"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "itemId": "fichePatientBtnItemId",
+                                        "layout|flex": 1,
+                                        "text": "Accès Fiche patient"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "3a9e4acc-7247-46d2-bb64-499fe85c1d3a",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onFichePatientBtnItemIdClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onFichePatientBtnItemIdClick",
+                                            "designerId": "98ae4e6c-ec7a-4f5d-9fbd-63b5b71de228"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPatientSearchGridItemIdSelectionChange",
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onPatientSearchGridItemIdSelectionChange",
+                    "designerId": "d69a404b-6c33-4a96-907b-09afefd76204"
                 }
             ]
         }

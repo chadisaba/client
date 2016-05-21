@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PatientTitleComboModel"
+    },
+    "name": "MyModelPatientTitleComboModel",
+    "designerId": "0ef9a5cc-b468-4154-850a-c34b499aabea",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientTitleId"
+            },
+            "name": "MyField1",
+            "designerId": "57046c40-9ccb-43dc-9314-02925f90ec73"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientTitle"
+            },
+            "name": "MyField2",
+            "designerId": "a75443b9-624f-49cf-9573-e73306a231b8"
+        }
+    ]
+}

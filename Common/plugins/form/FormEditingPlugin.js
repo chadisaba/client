@@ -57,7 +57,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 	//called only when loading data into form, form.setValues(object)
 	restoreForm: function (){    	
 		var me = this;
-				
+
 		me.editBtnCtn.show();
 		me.saveBtnCtn.hide();
 		if(me.showCancelBtn)
@@ -65,7 +65,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 		me.quitBtnCtn.hide();
 		if(me.showHistoryBtn)
 			me.chHistBtnCtn.show();
-		
+
 		me.editBtnCtn.down('#editBtn').setDisabled(false);
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		if(me.showCancelBtn)

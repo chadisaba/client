@@ -29,7 +29,11 @@ Ext.application({
         'SiteComboModel',
         'PatientHistoryModel',
         'InfoModel',
-        'PatientSearchDetailModel'
+        'PatientSearchDetailModel',
+        'PatientModel',
+        'CityNameComboModel',
+        'PatientTitleComboModel',
+        'ReferringPhysicianNameComboModel'
     ],
     views: [
         'WorklistGrid',
@@ -40,7 +44,8 @@ Ext.application({
         'PatientHistoryTabPanel',
         'InfoForm',
         'mainTabPanel',
-        'PatientDetailSearchForm'
+        'PatientDetailSearchForm',
+        'PatientForm'
     ],
     controllers: [
         'MainController'

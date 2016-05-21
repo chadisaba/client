@@ -80,8 +80,6 @@ Ext.define('MyApp.view.override.InfoFormViewController', {
 
             if(params.idName)
             {
-
-                var result=[];
                 Server.CommonQueries.deleteThenInsert(params,
                     function(_result){
                         if(_result.success){
