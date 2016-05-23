@@ -122,6 +122,22 @@
             "designerId": "544e358d-55cc-4e97-9fd8-8a1f260442e9"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "patientSearch"
+            },
+            "name": "MypatientLName1",
+            "designerId": "31b7bb96-809e-4fd9-acff-01c270c70a2b"
+        },
+        {
             "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",

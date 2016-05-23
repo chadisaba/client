@@ -57,6 +57,10 @@ Ext.define('MyApp.model.PatientModel', {
             name: 'patientLName'
         },
         {
+            defaultValue: '',
+            name: 'patientSearch'
+        },
+        {
             type: 'int',
             name: 'patientGender'
         },

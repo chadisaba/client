@@ -122,14 +122,19 @@ Ext.define('MyApp.view.PatientForm', {
                     anchor: '100%',
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     fieldLabel: 'Méd. Traitant',
-                    name: 'referringPhysicianName',
+                    name: 'referringPhysicianId',
                     selectOnFocus: true,
-                    displayField: 'referringPhysicianName',
-                    forceSelection: true,
+                    displayField: 'referringPhysicianSearch',
+                    minChars: 4,
+                    queryDelay: 500,
                     queryMode: 'local',
+                    typeAhead: true,
                     valueField: 'referringPhysicianId',
                     bind: {
                         store: '{ReferringPhysicianNameComboStore}'
+                    },
+                    listeners: {
+                        change: 'onReferringPhysicianNameComboBoxEditorItemIdChange'
                     }
                 },
                 {

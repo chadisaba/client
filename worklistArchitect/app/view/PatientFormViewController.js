@@ -25,6 +25,10 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onPatientZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

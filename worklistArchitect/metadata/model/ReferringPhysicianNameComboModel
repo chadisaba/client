@@ -36,6 +36,19 @@
             },
             "name": "MyField2",
             "designerId": "664b019c-e179-4391-a50a-233b29838bf5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "referringPhysicianSearch"
+            },
+            "name": "MyField8",
+            "designerId": "1cd2942d-5874-4c48-b76e-3a33d64bb2f3"
         }
     ]
 }

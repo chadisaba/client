@@ -1,19 +1,18 @@
-var CityDirect={
-    getCities:function(_searchValue)
+var ReferringPhysicianDirect={
+    getReferringPhysician:function(_searchValue)
     {
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
 
                 var filters=[];
-                var filter= {name:'cityName',value:_searchValue};
+                var filter= {name:'referringPhysicianSearch',value:_searchValue};
                 filters.push(filter);
                 var params={
-                    table:"CITY",
+                    table:"referring_physician",
                     filters:filters,
                     limit:20
                 };
-                var cityData=[];
                 Server.CommonQueries.read(params,
                     function(res){
                         if(res.success){
@@ -25,26 +24,25 @@ var CityDirect={
                         }
                     }
                 );
-             });
-         return promise;
+            });
+        return promise;
     },
-    cityAutoComplete:function(_scope,_serachValue,_cityComboStore,_field,_searchLengh)
+    referringPhysicianDirectAutoComplete:function(_scope,_serachValue,_cityComboStore,_field,_searchLengh)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
         if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue))
         {
             var store = me.getViewModel().getStore(_cityComboStore);
-            this.getCities(_serachValue.toUpperCase())
+            this.getReferringPhysician(_serachValue.toUpperCase())
                 .then(
-                    function(cityData)
+                    function(_resultData)
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(cityData);
-
+                        store.loadData(_resultData);
                         store.filter({
-                            property: 'cityName',
+                            property: 'referringPhysicianSearch',
                             anyMatch: true,
                             value   : _serachValue
                         });

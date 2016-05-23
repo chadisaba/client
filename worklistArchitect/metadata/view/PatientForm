@@ -221,24 +221,44 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "referringPhysicianName",
+                        "displayField": "referringPhysicianSearch",
                         "fieldLabel": "Méd. Traitant",
-                        "forceSelection": true,
+                        "hideTrigger": null,
                         "itemId": "referringPhysicianNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
-                        "name": "referringPhysicianName",
+                        "minChars": 4,
+                        "name": "referringPhysicianId",
+                        "queryDelay": 500,
                         "queryMode": "local",
                         "selectOnFocus": true,
                         "store": [
                             "{ReferringPhysicianNameComboStore}"
                         ],
+                        "typeAhead": true,
                         "valueField": "referringPhysicianId"
                     },
                     "name": "MyreferringPhysicianNameComboBox",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f"
+                    "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReferringPhysicianNameComboBoxEditorItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onReferringPhysicianNameComboBoxEditorItemIdChange",
+                            "designerId": "da1b0e3e-3bf2-4656-98e6-fac5bb85b425"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",

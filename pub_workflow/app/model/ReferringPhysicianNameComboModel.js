@@ -26,6 +26,9 @@ Ext.define('MyApp.model.ReferringPhysicianNameComboModel', {
         },
         {
             name: 'referringPhysicianName'
+        },
+        {
+            name: 'referringPhysicianSearch'
         }
     ]
 });

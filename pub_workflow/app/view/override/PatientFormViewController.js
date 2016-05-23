@@ -101,29 +101,45 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     },
     onCityNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;
-        Utility.form.cityAutoComplete(me,newValue,'CityNameComboStore',field)
+        CityDirect.cityAutoComplete(me,newValue,'CityNameComboStore',field);
+    },
+    onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+        var me=this;
+        ReferringPhysicianDirect.referringPhysicianDirectAutoComplete(me,newValue,'ReferringPhysicianNameComboStore',field);
+
     },
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
-        var dataToSave=me.getView().getValues();
-        dataToSave.patientId=UUID();
 
-            Utility.loading.start(button);
+        var rec=me.getView().getRecord();
+        var form=me.getView();
+        form.updateRecord(rec); // update the record with the form data
+
+        if(!rec.patientId){
+            var patientId=UUID();
+            rec.set('patientId',patientId);
+        }
+
+        var dataToSave=rec.data;
+
+       // Utility.loading.start(button);
 
         var params={};
         params.table="PATIENT";
+        dataToSave.patientSearch=dataToSave.patientLName.toUpperCase()+" "+stringUtil.formatFName(dataToSave.patientFname);
 
         params.dataToBeSaved=dataToSave;
 
         Server.CommonQueries.createRecord(params,
             function(_result){
                 if(_result.success){
-                    Utility.loading.end(button);
+                   // Utility.loading.end(button);
                 }
                 else{
                     console.error(_result.msg);
                     Ext.MessageBox.alert("Error","save Error "+_result.msg);
+                   // Utility.loading.end(button);
                 }
             },me
         );
