@@ -123,7 +123,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
         var dataToSave=rec.data;
 
-       // Utility.loading.start(button);
+        Utility.loading.start(button);
 
         var params={};
         params.table="PATIENT";
@@ -134,12 +134,12 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         Server.CommonQueries.createRecord(params,
             function(_result){
                 if(_result.success){
-                   // Utility.loading.end(button);
+                    Utility.loading.end(button);
                 }
                 else{
                     console.error(_result.msg);
                     Ext.MessageBox.alert("Error","save Error "+_result.msg);
-                   // Utility.loading.end(button);
+                   Utility.loading.end(button);
                 }
             },me
         );
