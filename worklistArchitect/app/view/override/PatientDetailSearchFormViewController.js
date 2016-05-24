@@ -72,7 +72,7 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
 
-        Ext.create('Common.ux.window.FullScreenWindow', {
+        /*Ext.create('Common.ux.window.FullScreenWindow', {
 
             // animateTarget:'comboSearchPatient',
             title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
@@ -81,7 +81,24 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
                 xtype:'patienthistorytabpanel',
                 patientId:record.get('patientId')
             }
+        }).show();*/
+        Ext.create('Common.ux.window.FullScreenWindow', {
+
+            // animateTarget:'comboSearchPatient',
+            title:"Informations du patient",
+            items:{
+                region: 'center',
+                xtype:'patientform',
+                patientId:record.get('patientId')
+
+                /*plugins:[
+                    new Plugins.form.FormEditingPlugin({
+                    withValidation: false,
+                    showConfirmationOnSave: true
+                })]*/
+            }
         }).show();
+    },
     },
     onPatientSearchGridItemIdSelectionChange: function(model, selected, eOpts) {
         view.down('#accueilPatientBtnItemId').setDisabled(false);
@@ -109,6 +126,25 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
 
     onAccueilPatientBtnItemIdClick: function(button, e, eOpts) {
 
+var me=this;
+var grid=me.getView().down('#PatientSearchGridItemId');
+
+Ext.create('Common.ux.window.FullScreenWindow', {
+
+            // animateTarget:'comboSearchPatient',
+            title:"Informations du patient",
+            items:{
+                region: 'center',
+                xtype:'patientform',
+                patientId:
+
+                /*plugins:[
+                    new Plugins.form.FormEditingPlugin({
+                    withValidation: false,
+                    showConfirmationOnSave: true
+                })]*/
+            }
+        }).show();
     },
 
     onHistoriquePatientBtnItemIdClick: function(button, e, eOpts) {
