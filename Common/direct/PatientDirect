@@ -7,7 +7,9 @@ savePatient:function(_patientObject)
         params.table="PATIENT";
         _patientObject.patientSearch=_patientObject.patientLName.toUpperCase()+" "+stringUtil.formatFName(_patientObject.patientFname);
         params.dataToBeSaved=_patientObject;
-        Server.CommonQueries.createRecord(params,
+        if(_patientObject.patientId)
+        {
+          Server.CommonQueries.updateRecord(params,
             function(_result){
                 if(_result.success){
                     resolve(result);
@@ -18,6 +20,22 @@ savePatient:function(_patientObject)
                 }
             },me
         );
+        }
+        else
+        {
+          Server.CommonQueries.createRecord(params,
+            function(_result){
+                if(_result.success){
+                    resolve(result);
+                }
+                else{
+                    console.error(_result.msg);
+                    reject(new Error(_result.msg));
+                }
+            },me
+        );
+        }
+      
         }
     );
 return promise;
