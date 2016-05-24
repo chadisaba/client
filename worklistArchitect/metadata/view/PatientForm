@@ -403,21 +403,6 @@
             "designerId": "3ea3f2b1-e229-4ca6-9df9-a5291e086f3c",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "",
-                        "layout|anchor": "100%",
-                        "name": "patientId"
-                    },
-                    "name": "MypatientIdTextField",
-                    "designerId": "6e05f16f-20de-44a5-88ff-29c246306679"
-                },
-                {
                     "type": "Ext.form.field.TextArea",
                     "reference": {
                         "name": "items",

@@ -200,12 +200,6 @@ Ext.define('MyApp.view.PatientForm', {
             title: 'Coordonnées',
             items: [
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: '',
-                    name: 'patientId'
-                },
-                {
                     xtype: 'textareafield',
                     anchor: '100%',
                     height: 105,
