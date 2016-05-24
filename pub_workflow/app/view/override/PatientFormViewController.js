@@ -31,10 +31,10 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                     mainTableObject.filters=[{name:'patientId',value:patientId}];
                     var joinTablesArray=[];
                     joinTablesArray.push({
-                        tableName:'City',
+                        tableName:'city',
                         required:false,
                         fields:['cityName']
-                    },{tableName:'ReferringPhysician',
+                    },{tableName:'referring_physician',
                         required:false,
                         fields:['referringPhysicianName']
                     });
