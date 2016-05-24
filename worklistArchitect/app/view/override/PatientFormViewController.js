@@ -116,10 +116,14 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         var form=me.getView();
         form.updateRecord(rec); // update the record with the form data
 
-        if(!rec.patientId){
+        if(!rec.get('patientId')){
             var patientId=UUID();
             rec.set('patientId',patientId);
         }
+        else
+        patientId=rec.get('patientId');
+     
+        
 
         var dataToSave=rec.data;
 
@@ -131,7 +135,9 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
         params.dataToBeSaved=dataToSave;
 
-        Server.CommonQueries.createRecord(params,
+if(patientId)
+{
+    Server.CommonQueries.updateRecord(params,
             function(_result){
                 if(_result.success){
                     Utility.loading.end(button);
@@ -142,7 +148,24 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                    Utility.loading.end(button);
                 }
             },me
-        );
+        );    
+}
+else
+{
+  Server.CommonQueries.createRecord(params,
+            function(_result){
+                if(_result.success){
+                    Utility.loading.end(button);
+                }
+                else{
+                    console.error(_result.msg);
+                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
+                   Utility.loading.end(button);
+                }
+            },me
+        );  
+}
+        
 
     }
 
