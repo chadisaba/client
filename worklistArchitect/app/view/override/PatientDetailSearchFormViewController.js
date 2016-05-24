@@ -98,9 +98,10 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
                 })]*/
             }
         }).show();
-    },
+
     },
     onPatientSearchGridItemIdSelectionChange: function(model, selected, eOpts) {
+        var view=this.getView();
         view.down('#accueilPatientBtnItemId').setDisabled(false);
         view.down('#historiquePatientBtnItemId').setDisabled(false);
 
@@ -135,8 +136,8 @@ Ext.create('Common.ux.window.FullScreenWindow', {
             title:"Informations du patient",
             items:{
                 region: 'center',
-                xtype:'patientform',
-                patientId:
+                xtype:'patientform'
+
 
                 /*plugins:[
                     new Plugins.form.FormEditingPlugin({
