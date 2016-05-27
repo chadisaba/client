@@ -1,0 +1,410 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "visitsimplifiedform",
+        "designer|userClassName": "VisitSimplifiedForm",
+        "height": null,
+        "itemId": "visitSimplifiedFormId",
+        "title": "My Form",
+        "width": null
+    },
+    "name": "MyForm",
+    "designerId": "336fbfe5-7283-4080-94fd-711d8dcd1477",
+    "viewControllerInstanceId": "79e1aecd-2f22-4511-bab4-a79afe9fcedd",
+    "viewModelInstanceId": "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processVisitSimplifiedForm",
+                "implHandler": [
+                    "  config.plugins = new Plugins.form.FormEditingPlugin({",
+                    "            withValidation: false,",
+                    "            showConfirmationOnSave: true",
+                    "        });",
+                    "",
+                    "        return config;"
+                ]
+            },
+            "name": "processVisitSimplifiedForm",
+            "designerId": "7b250cb1-cc50-41db-bb56-a8ab8c3211e4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onVisitSimplifiedFormItemIdAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdAfterRender",
+            "designerId": "f965e90b-7622-4031-b7b3-1492dba64952"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onVisitSimplifiedFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdInEdit",
+            "designerId": "9e1fa6d4-dc0a-4aa8-89eb-6953e5c1fd14"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onVisitSimplifiedFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdSaveEdit",
+            "designerId": "$bf52d508-3827-404f-b3ab-c73227cff166"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onVisitSimplifiedFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdResetEdit",
+            "designerId": "9960723f-118c-46f9-9a5e-9646d0c9f545"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onVisitSimplifiedFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdChHist",
+            "designerId": "6c078f5e-5832-4426-b1be-da75a6297273"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onVisitSimplifiedFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onVisitSimplifiedFormItemIdQuitEdit",
+            "designerId": "65813084-8176-428c-bf81-27c835336236"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Fields"
+            },
+            "name": "MyFieldSet",
+            "designerId": "0635298b-4c31-4d44-9d77-b0206ac7d989",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Date",
+                        "layout|anchor": "100%",
+                        "name": "visitDateTime"
+                    },
+                    "name": "MyvisitDateTimeTextField",
+                    "designerId": "e79c0fe4-fb33-4967-84e8-713c6083225c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Heure",
+                        "layout|anchor": "100%",
+                        "name": "visitDateTime"
+                    },
+                    "name": "MyvisitDateTimeTextField1",
+                    "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Gratuit",
+                        "layout|anchor": "100%",
+                        "name": "visitIsFree"
+                    },
+                    "name": "MyvisitIsFreeCheckBox",
+                    "designerId": "4c09cb21-c8b1-47e4-95e6-aef3ed7c129d"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Hospitalisé",
+                        "layout|anchor": "100%",
+                        "name": "visitIsHospitalized"
+                    },
+                    "name": "MyvisitIsHospitalizedCheckBox",
+                    "designerId": "aaf298b8-2e0c-45ff-8e83-7651f575170c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "N°Séjour",
+                        "layout|anchor": "100%",
+                        "name": "visitHospitVisitNumber"
+                    },
+                    "name": "MyvisitHospitVisitNumberTextField",
+                    "designerId": "8cd845e7-1374-4ac2-8edd-36acf1deea82"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Urgence",
+                        "layout|anchor": "100%",
+                        "name": "visitIsUrgent"
+                    },
+                    "name": "MyvisitIsUrgentCheckBox",
+                    "designerId": "040c9488-db6d-40e5-b956-b79be15ae7b3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "visitStudyGridItemId",
+                "store": [
+                    "{StudyVisitStore}"
+                ],
+                "title": "Les examens"
+            },
+            "name": "MyGridPanel1",
+            "configAlternates": {
+                "store": "binding"
+            },
+            "designerId": "871ab1e5-a1f1-467a-8f98-7874abe57fba",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "Examen"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "4a21c312-7dc8-441f-bed7-b4cb067b7b26"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "Prix"
+                    },
+                    "name": "MyColumn8",
+                    "designerId": "04c02cc2-14e0-4bd6-be1a-11c4c8981f35",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "studyVisitTextFieldEditorItemId"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "ff9b1f58-6060-4058-affe-eadf46947e26"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "text": "Appareil"
+                    },
+                    "name": "MyColumn7",
+                    "designerId": "c8f8027f-fef8-4082-aa2b-b169e1634874",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "deviceComboboxEditorItemId"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "619bdba2-0164-4420-b55f-f360cd77dd31"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable4",
+                    "designerId": "dfbceedb-e657-491f-9fec-95fa05634869"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar3",
+                    "designerId": "8210c447-9293-441e-ae8d-1dec1a1c44fe",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Ajouter un examen",
+                                "labelWidth": 150,
+                                "layout|flex": null,
+                                "queryMode": "local",
+                                "store": [
+                                    "{StudyComboStore}"
+                                ],
+                                "typeAhead": true,
+                                "width": null
+                            },
+                            "name": "MyComboBox",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "85ecf1d1-ac7e-4a1c-ba46-381d4bf796c2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

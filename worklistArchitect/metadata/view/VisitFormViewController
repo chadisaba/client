@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitform",
+        "designer|userClassName": "VisitFormViewController"
+    },
+    "designerId": "a1dc7b28-132b-4d9d-945f-b3e518294321"
+ 
+}

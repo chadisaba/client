@@ -1,0 +1,31 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitform",
+        "designer|userClassName": "VisitFormViewModel"
+    },
+    "designerId": "3733e66d-16cf-4e71-a701-95f14282e3e4",
+      "cn": [
+       
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "VisitPdsComboModel",
+                "name": "VisitPdsComboStore"
+                    
+            },
+            "name": "VisitPdsComboStore",
+            "designerId": "f57ebc8c-7a78-4296-9407-732424ac95ff"
+        }
+    ]
+}

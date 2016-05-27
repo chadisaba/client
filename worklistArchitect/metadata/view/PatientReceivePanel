@@ -1,0 +1,36 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patientreceivepanel",
+        "designer|userClassName": "PatientReceivePanel",
+        "height": null,
+        "layout": "border",
+        "title": "My Panel",
+        "width": null
+    },
+    "name": "MyPanel5",
+    "designerId": "ebfb2139-f633-46db-859d-eadce4515ce9",
+    "viewControllerInstanceId": "325433eb-4403-4334-8e65-8730b9e911d4",
+    "viewModelInstanceId": "bbbe7829-5c1f-400a-8670-203ad4766211",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center"
+            },
+            "name": "patientform",
+            "designerId": "5cc49028-14a1-4119-ac8f-13514ccc00a2",
+            "masterInstanceId": "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596"
+        }
+    ]
+}

@@ -41,10 +41,9 @@ Ext.define('MyApp.model.PatientModel', {
             name: 'cityId'
         },
         {
-            name: 'referringPhysicianName'
+            name: 'referringPhysicianSearch'
         },
         {
-            type: 'int',
             name: 'referringPhysicianId'
         },
         {

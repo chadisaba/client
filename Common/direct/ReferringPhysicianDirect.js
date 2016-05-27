@@ -31,7 +31,7 @@ var ReferringPhysicianDirect={
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue))
+        if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue)&& !stringUtil.isUUID4(_serachValue))
         {
             var store = me.getViewModel().getStore(_cityComboStore);
             this.getReferringPhysician(_serachValue.toUpperCase())

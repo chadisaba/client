@@ -152,11 +152,18 @@ Ext.define('MyApp.view.PatientForm', {
                     items: [
                         {
                             xtype: 'textfield',
+                            itemId: 'patientSocialNumberTextFieldItemId',
                             fieldLabel: 'N Sécu',
-                            name: 'patientSocialNumber'
+                            name: 'patientSocialNumber',
+                            enableKeyEvents: true,
+                            vtype: 'numSecu',
+                            listeners: {
+                                change: 'onPatientSocialNumberTextFieldItemIdChange'
+                            }
                         },
                         {
                             xtype: 'textfield',
+                            itemId: 'patientSocialKey',
                             width: 40,
                             fieldLabel: '',
                             name: 'patientSocialKey',
@@ -212,6 +219,7 @@ Ext.define('MyApp.view.PatientForm', {
                     itemId: 'patientZipCodeTextFieldItemId',
                     fieldLabel: 'Code postal',
                     name: 'patientZipCode',
+                    maxLength: 10,
                     listeners: {
                         change: 'onPatientZipCodeTextFieldItemIdChange'
                     }
@@ -241,13 +249,15 @@ Ext.define('MyApp.view.PatientForm', {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'Tél',
-                    name: 'patientPhoneNumber'
+                    name: 'patientPhoneNumber',
+                    maxLength: 20
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'Portable',
-                    name: 'patientMobileNumber'
+                    name: 'patientMobileNumber',
+                    maxLength: 20
                 },
                 {
                     xtype: 'textfield',

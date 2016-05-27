@@ -29,6 +29,10 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onPatientSocialNumberTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onPatientZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

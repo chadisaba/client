@@ -1,0 +1,405 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "visitform",
+        "designer|userClassName": "VisitForm",
+        "height": 500,
+        "itemId": "visitFormId",
+        "title": "My Form",
+        "width": 500
+    },
+    "name": "MyForm",
+    "designerId": "8a6339ea-a2d3-479a-ba3f-6890f5fa0caf",
+    "viewControllerInstanceId": "a1dc7b28-132b-4d9d-945f-b3e518294321",
+    "viewModelInstanceId": "3733e66d-16cf-4e71-a701-95f14282e3e4",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processVisitForm",
+                "implHandler": [
+                    "  config.plugins = new Plugins.form.FormEditingPlugin({",
+                    "            withValidation: false,",
+                    "            showConfirmationOnSave: true",
+                    "        });",
+                    "",
+                    "        return config;"
+                ]
+            },
+            "name": "processVisitForm",
+            "designerId": "db07c2ec-9f8c-45c7-9009-4a2777980446"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onVisitFormItemIdAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdAfterRender",
+            "designerId": "9a73d6f4-c517-415c-8c62-7bd4ac8caee0"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onVisitFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdInEdit",
+            "designerId": "1d63da69-ff97-49ae-8d3f-e6248bd11e0c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onVisitFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdSaveEdit",
+            "designerId": "$0c825234-b26a-43b0-82c8-4cb7968d7440"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onVisitFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdResetEdit",
+            "designerId": "deaadae9-91b5-488c-bd2c-21fed3a425ca"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onVisitFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdChHist",
+            "designerId": "da8f6a5d-aae6-4914-b7c5-a894a99d4618"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onVisitFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onVisitFormItemIdQuitEdit",
+            "designerId": "a0bc251e-9466-4f00-94f8-e8f92146460d"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Fields"
+            },
+            "name": "MyFieldSet",
+            "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Date",
+                        "layout|anchor": "100%",
+                        "name": "visitDateTime"
+                    },
+                    "name": "MyvisitDateTimeTextField",
+                    "designerId": "0251ddea-e79a-485d-bc36-f8dba6881253"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Carte vitale",
+                        "layout|anchor": "100%",
+                        "name": "visitIsBySocialCard"
+                    },
+                    "name": "MyvisitIsBySocialCardCheckBox",
+                    "designerId": "f73912a3-4852-4b9e-bdd2-c65afc314599"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Gratuit",
+                        "layout|anchor": "100%",
+                        "name": "visitIsFree"
+                    },
+                    "name": "MyvisitIsFreeCheckBox",
+                    "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Ft Gratuit",
+                        "layout|anchor": "100%",
+                        "name": "visitFtIsFree"
+                    },
+                    "name": "MyvisitFtIsFreeCheckBox",
+                    "designerId": "36621a92-115d-4db8-a5f9-7c3dd3c8c952"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Hospitalisé",
+                        "layout|anchor": "100%",
+                        "name": "visitIsHospitalized"
+                    },
+                    "name": "MyvisitIsHospitalizedCheckBox",
+                    "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Urgence",
+                        "layout|anchor": "100%",
+                        "name": "visitIsUrgent"
+                    },
+                    "name": "MyvisitIsUrgentCheckBox",
+                    "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Num hospitalisation",
+                        "layout|anchor": "100%",
+                        "name": "visitHospitVisitNumber"
+                    },
+                    "name": "MyvisitHospitVisitNumberTextField",
+                    "designerId": "88d1dc9c-5616-4963-969b-17d48a98a092"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "A.M.O",
+                        "layout|anchor": "100%",
+                        "name": "visitIsAmo"
+                    },
+                    "name": "MyvisitIsAmoCheckBox",
+                    "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "A.M.C",
+                        "layout|anchor": "100%",
+                        "name": "visitIsAmc"
+                    },
+                    "name": "MyvisitIsAmcCheckBox",
+                    "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Facturation A.M.C",
+                        "layout|anchor": "100%",
+                        "name": "visitIsBillingAMC"
+                    },
+                    "name": "MyvisitIsBillingAMCCheckBox",
+                    "designerId": "eb4dbbb1-efff-4a78-875a-49a70047179b"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "visitPds",
+                        "fieldLabel": "Parcours soins",
+                        "forceSelection": true,
+                        "itemId": "visitPdsComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "visitPds",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{VisitPdsComboStore}"
+                        ]
+                    },
+                    "name": "MyvisitPdsComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "FT pour",
+                        "layout|anchor": "100%",
+                        "name": "visitFtFor"
+                    },
+                    "name": "MyvisitFtForCheckBox",
+                    "designerId": "afe44e0e-0eca-4958-92de-c985f5d48bcc"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Pacs Id",
+                        "layout|anchor": "100%",
+                        "name": "visitPacsId"
+                    },
+                    "name": "MyvisitPacsIdTextField",
+                    "designerId": "bf67a3ab-4188-4462-8431-eda4a437415e"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Terminé",
+                        "layout|anchor": "100%",
+                        "name": "visitIsDone"
+                    },
+                    "name": "MyvisitIsDoneCheckBox",
+                    "designerId": "9da88c14-b3d3-45ef-a533-dcc620ee75a1"
+                }
+            ]
+        }
+    ]
+}

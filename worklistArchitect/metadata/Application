@@ -15,10 +15,14 @@
             "PatientHistoryModel",
             "InfoModel",
             "PatientSearchDetailModel",
-			"PatientModel",
-			"CityNameComboModel",
-			"PatientTitleComboModel",
-			"ReferringPhysicianNameComboModel"
+            "PatientModel",
+            "CityNameComboModel",
+            "PatientTitleComboModel",
+            "ReferringPhysicianNameComboModel",
+            "VisitPdsComboModel",
+            "VisitModel",
+            "StudyVisitModel",
+            "StudyComboModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -34,7 +38,10 @@
             "InfoForm",
             "mainTabPanel",
             "PatientDetailSearchForm",
-			"PatientForm"
+            "PatientForm",
+            "PatientReceivePanel",
+            "VisitForm",
+            "VisitSimplifiedForm"
         ]
     },
     "name": "Application",

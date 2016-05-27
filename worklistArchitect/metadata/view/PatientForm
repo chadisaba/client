@@ -297,11 +297,31 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "enableKeyEvents": true,
                                 "fieldLabel": "N Sécu",
-                                "name": "patientSocialNumber"
+                                "itemId": "patientSocialNumberTextFieldItemId",
+                                "name": "patientSocialNumber",
+                                "vtype": "numSecu"
                             },
                             "name": "MypatientSocialNumberTextField",
-                            "designerId": "ea86d91c-ee55-4584-97e9-4549f04a75a7"
+                            "designerId": "ea86d91c-ee55-4584-97e9-4549f04a75a7",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPatientSocialNumberTextFieldItemIdChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPatientSocialNumberTextFieldItemIdChange",
+                                    "designerId": "b7d9efa1-1547-4c79-a400-7b3d601b4396"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -313,6 +333,7 @@
                             "userConfig": {
                                 "emptyText": "Clé",
                                 "fieldLabel": "",
+                                "itemId": "patientSocialKey",
                                 "maxLength": 2,
                                 "name": "patientSocialKey",
                                 "width": 40
@@ -429,6 +450,7 @@
                         "fieldLabel": "Code postal",
                         "itemId": "patientZipCodeTextFieldItemId",
                         "layout|anchor": "100%",
+                        "maxLength": 10,
                         "name": "patientZipCode"
                     },
                     "name": "MypatientZipCodeTextField",
@@ -509,6 +531,7 @@
                     "userConfig": {
                         "fieldLabel": "Tél",
                         "layout|anchor": "100%",
+                        "maxLength": 20,
                         "name": "patientPhoneNumber"
                     },
                     "name": "MypatientPhoneNumberTextField",
@@ -524,6 +547,7 @@
                     "userConfig": {
                         "fieldLabel": "Portable",
                         "layout|anchor": "100%",
+                        "maxLength": 20,
                         "name": "patientMobileNumber"
                     },
                     "name": "MypatientMobileNumberTextField",
@@ -644,9 +668,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "formBind": false,
-                                "glyph": "xf0e2@FontAwesome",
+                                "glyph": "xf08b@FontAwesome",
                                 "itemId": "cancelFormBtnItemId",
-                                "text": "Annuler"
+                                "text": "Quitter"
                             },
                             "name": "MyButton5",
                             "designerId": "4b4139aa-a64f-43a7-af05-453452ebfe9c"

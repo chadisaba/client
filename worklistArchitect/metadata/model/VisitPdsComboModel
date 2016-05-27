@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VisitPdsComboModel"
+    },
+    "name": "MyModelVisitPdsComboModel",
+    "designerId": "a1dbffd8-cc7e-4c3a-b920-1186d307aaa9",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": ""
+            },
+            "name": "MyField1",
+            "designerId": "3e4cf61d-5d9b-43fa-94c7-e8a496c054c9"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitPds"
+            },
+            "name": "MyField2",
+            "designerId": "14427555-5166-4615-980e-986471ddf34e"
+        }
+    ]
+}

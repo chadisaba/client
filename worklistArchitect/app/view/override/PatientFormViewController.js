@@ -13,7 +13,6 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         if(view.patientId)
             patientId=view.patientId;
 
-
         var patientTitleComboStore=viewModel.getStore('PatientTitleComboStore');
         patientTitleComboStore.loadData(ComboData.patientTitle);
 
@@ -23,61 +22,19 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         }
         else if(patientId)
         {
+            PatientDirect.getPatientAndCityAndReferringPhy(patientId)
+                .then(function(_resultObject)
+                {
+                    if(_resultObject.cityData)
+                        viewModel.getStore('CityNameComboStore').loadData(_resultObject.cityData);
 
+                    if(_resultObject.referringPhysicianData)
+                        viewModel.getStore('ReferringPhysicianNameComboStore').loadData(_resultObject.referringPhysicianData);
 
+                    var rec=Ext.create('MyApp.model.PatientModel',_resultObject.record);
+                    view.loadRecord(rec);
 
-                    var mainTableObject={};
-                    mainTableObject.tableName='PATIENT';
-                    mainTableObject.filters=[{name:'patientId',value:patientId}];
-                    var joinTablesArray=[];
-                    joinTablesArray.push({
-                        tableName:'city',
-                        required:false,
-                        fields:['cityName']
-                    },{tableName:'referring_physician',
-                        required:false,
-                        fields:['referringPhysicianName']
-                    });
-
-                    var params = {
-                        mainTableObject: mainTableObject,
-                        joinTablesArray: joinTablesArray
-
-                    };
-                    Server.CommonQueries.readJoin(params,
-                        function (res) {
-                            if (res.success) {
-
-                                if(res.data.length>0)
-                                {
-                                    if(res.data[0].cityId){
-                                        var cityData=[];
-                                        cityData.push({
-                                            cityId:res.data[0].cityId,
-                                            cityName:res.data[0]['City.cityName']
-                                        });
-                                        viewModel.getStore('CityNameComboStore').loadData(cityData);
-                                    }
-                                    if(res.data[0].referringPhysicianId){
-                                        var ReferringPhysicianData=[];
-                                        ReferringPhysicianData.push({
-                                            referringPhysicianId:res.data[0].referringPhysicianId,
-                                            referringPhysicianName:res.data[0]['ReferringPhysician.referringPhysicianSearch']
-                                        });
-                                        viewModel.getStore('ReferringPhysicianNameComboStore').loadData(ReferringPhysicianData);
-                                    }
-                                    var rec=Ext.create('MyApp.model.PatientModel',res.data[0]);
-                                    view.loadRecord(rec);
-                                    view.getPlugin('formediting').enterEditMode(view);
-                                }
-                                else{
-                                    console.error('PatientForm : the patientId is mandatory');
-                                }
-                            }
-                            else {
-                                console.error(res.msg);
-                            }
-                        }, me);
+                });
         }
         else
         {
@@ -108,6 +65,13 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         ReferringPhysicianDirect.referringPhysicianDirectAutoComplete(me,newValue,'ReferringPhysicianNameComboStore',field);
 
     },
+    onPatientSocialNumberTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+        if(newValue.length==13){
+            var secuKey=97 - ( ( parseInt(newValue) ) % 97 );
+            this.getView().down('#patientSocialKey').setValue(secuKey);
+        }
+    },
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
@@ -120,52 +84,20 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
             var patientId=UUID();
             rec.set('patientId',patientId);
         }
-        else
-        patientId=rec.get('patientId');
-     
-        
 
         var dataToSave=rec.data;
-
         Utility.loading.start(button);
 
-        var params={};
-        params.table="PATIENT";
-        dataToSave.patientSearch=dataToSave.patientLName.toUpperCase()+" "+stringUtil.formatFName(dataToSave.patientFname);
+        PatientDirect.savePatient(dataToSave)
+            .then(function()
+            {
+                Utility.loading.end(button);
+            })
+            .catch(function(_err)
+            {
+                console.log(_err);
+            });
 
-        params.dataToBeSaved=dataToSave;
-
-if(patientId)
-{
-    Server.CommonQueries.updateRecord(params,
-            function(_result){
-                if(_result.success){
-                    Utility.loading.end(button);
-                }
-                else{
-                    console.error(_result.msg);
-                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
-                   Utility.loading.end(button);
-                }
-            },me
-        );    
-}
-else
-{
-  Server.CommonQueries.createRecord(params,
-            function(_result){
-                if(_result.success){
-                    Utility.loading.end(button);
-                }
-                else{
-                    console.error(_result.msg);
-                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
-                   Utility.loading.end(button);
-                }
-            },me
-        );  
-}
-        
 
     }
 
