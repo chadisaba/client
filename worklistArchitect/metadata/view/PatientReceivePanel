@@ -143,9 +143,14 @@
                                 "formBind": true,
                                 "glyph": "xf0c7@FontAwesome",
                                 "itemId": "saveAccueilPatientBtn",
-                                "text": "Enregistrer"
+                                "text": [
+                                    "{trans.save}"
+                                ]
                             },
                             "name": "MyButton6",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "5a4cc97f-8dac-4250-833d-09f6d388cac8",
                             "cn": [
                                 {

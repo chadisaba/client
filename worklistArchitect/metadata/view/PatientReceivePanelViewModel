@@ -6,6 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "",
+            "{",
+            "    trans:{",
+            "    save: translate('save'),",
+            "    }",
+            "}"
+        ],
         "designer|userAlias": "patientreceivepanel",
         "designer|userClassName": "PatientReceivePanelViewModel"
     },

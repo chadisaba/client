@@ -94,7 +94,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
             .catch(function(_err)
             {
                 console.error(_err);
-                Ext.Msg.alert('Error', 'Le patient n\'a pas été enregistrer correctement');
+                Ext.Msg.alert('Error', translate('saveError'));
             });
     }
 

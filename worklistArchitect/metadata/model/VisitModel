@@ -17,241 +17,253 @@
     "name": "VisitModel",
     "designerId": "9bee4efc-c63b-47f8-a0fa-00866346a21c",
     "cn": [
-       
         {
-                "type": "Ext.data.field.Date",
-                "reference": {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitDateTime"
-                },
-                "name": "MyvisitDateTime",
-                "designerId": "d5192051-fc00-4299-ba85-7bffad66c183"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitDate"
+            },
+            "name": "MyvisitDateTime",
+            "designerId": "d5192051-fc00-4299-ba85-7bffad66c183"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitTime"
+            },
+            "name": "MyField22",
+            "designerId": "12793a92-88e7-44f1-8a3b-8915c079c52c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsBySocialCard"
-                },
-                "name": "MyvisitIsBySocialCard",
-                "designerId": "9ac1ef1c-904d-4a42-b756-90a94f285f74"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsBySocialCard",
+            "designerId": "9ac1ef1c-904d-4a42-b756-90a94f285f74"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsFree"
-                },
-                "name": "MyvisitIsFree",
-                "designerId": "a0de6dc1-daf2-490b-b61c-b6b75beaba90"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsFree",
+            "designerId": "a0de6dc1-daf2-490b-b61c-b6b75beaba90"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitFtIsFree"
-                },
-                "name": "MyvisitFtIsFree",
-                "designerId": "92ecfb18-3492-465c-afc0-f9aeadb1a552"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitFtIsFree",
+            "designerId": "92ecfb18-3492-465c-afc0-f9aeadb1a552"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsHospitalized"
-                },
-                "name": "MyvisitIsHospitalized",
-                "designerId": "88d04cc1-2567-4889-ad8d-87a3a698a674"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsHospitalized",
+            "designerId": "88d04cc1-2567-4889-ad8d-87a3a698a674"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsUrgent"
-                },
-                "name": "MyvisitIsUrgent",
-                "designerId": "f6c0b7cc-8154-4989-b584-fc632b102cf5"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsUrgent",
+            "designerId": "f6c0b7cc-8154-4989-b584-fc632b102cf5"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitHospitVisitNumber"
-                },
-                "name": "MyvisitHospitVisitNumber",
-                "designerId": "9d0b0a7f-6361-49fb-8608-6f12623dc91c"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitHospitVisitNumber",
+            "designerId": "9d0b0a7f-6361-49fb-8608-6f12623dc91c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsAmo"
-                },
-                "name": "MyvisitIsAmo",
-                "designerId": "b96dcebc-a58a-4142-b37b-2ad57b233374"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsAmo",
+            "designerId": "b96dcebc-a58a-4142-b37b-2ad57b233374"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsAmc"
-                },
-                "name": "MyvisitIsAmc",
-                "designerId": "000bf678-ed83-4715-b098-733723ad7687"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitIsAmc",
+            "designerId": "000bf678-ed83-4715-b098-733723ad7687"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsBillingAMC"
-                },
-                "name": "MyvisitIsBillingAMC",
-                "designerId": "3bffac62-22dc-442c-9bb6-1d37768f3a82"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "name": "MyvisitIsBillingAMC",
+            "designerId": "3bffac62-22dc-442c-9bb6-1d37768f3a82"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitPds"
-                },
-                "name": "MyvisitPds",
-                "designerId": "006c7ec3-a946-4776-aa0e-c98f9e3fa3a6"
             },
-                    {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+            "name": "MyvisitPds",
+            "designerId": "006c7ec3-a946-4776-aa0e-c98f9e3fa3a6"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitAldResponse"
-                },
-                "name": "MyvisitAldResponse",
-                "designerId": "fae77270-7711-42db-944d-9d7eb0f5994c"
             },
-                    {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+            "name": "MyvisitAldResponse",
+            "designerId": "fae77270-7711-42db-944d-9d7eb0f5994c"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitInvoiceType"
-                },
-                "name": "MyvisitInvoiceType",
-                "designerId": "bb913fe3-f58d-4380-ab41-8b354bf0be8c"
             },
-                    {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+            "name": "MyvisitInvoiceType",
+            "designerId": "bb913fe3-f58d-4380-ab41-8b354bf0be8c"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitFtFor"
-                },
-                "name": "MyvisitFtFor",
-                "designerId": "94f445ac-745c-429a-89a6-f506964496fd"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "name": "MyvisitFtFor",
+            "designerId": "94f445ac-745c-429a-89a6-f506964496fd"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitPacsId"
-                },
-                "name": "MyvisitPacsId",
-                "designerId": "3e64ba90-1abf-441f-aaef-112a17705dc0"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "name": "MyvisitPacsId",
+            "designerId": "3e64ba90-1abf-441f-aaef-112a17705dc0"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitIsDone"
-                },
-                "name": "MyvisitIsDone",
-                "designerId": "309f8492-2eef-49ea-a6ff-bca602ab814b"
             },
-                    {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+            "name": "MyvisitIsDone",
+            "designerId": "309f8492-2eef-49ea-a6ff-bca602ab814b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitLastCrStatus"
-                },
-                "name": "MyvisitLastCrStatus",
-                "designerId": "73f683f3-de49-4779-bddb-ffd4174a2e02"
             },
-                    {
-                "type": "Ext.data.field.Integer",
-                "reference": {
+            "name": "MyvisitLastCrStatus",
+            "designerId": "73f683f3-de49-4779-bddb-ffd4174a2e02"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "visitLastCotationStatus"
-                },
-                "name": "MyvisitLastCotationStatus",
-                "designerId": "835262e5-1ae7-4641-83e8-32e9a41b10ac"
             },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitLastCotationStatus"
+            },
+            "name": "MyvisitLastCotationStatus",
+            "designerId": "835262e5-1ae7-4641-83e8-32e9a41b10ac"
+        },
         {
             "type": "Ext.data.field.Field",
             "reference": {

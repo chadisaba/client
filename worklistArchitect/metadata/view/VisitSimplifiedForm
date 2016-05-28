@@ -121,9 +121,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Informations consultation"
+                "title": [
+                    "{trans.visitInformation}"
+                ]
             },
             "name": "MyFieldSet",
+            "configAlternates": {
+                "title": "binding"
+            },
             "designerId": "0635298b-4c31-4d44-9d77-b0206ac7d989",
             "cn": [
                 {
@@ -134,26 +139,36 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Date",
+                        "fieldLabel": [
+                            "{trans.date}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitDateTime"
                     },
                     "name": "MyvisitDateTimeTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "e79c0fe4-fb33-4967-84e8-713c6083225c"
                 },
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Time",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Heure",
+                        "fieldLabel": [
+                            "{trans.hour}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitDateTime"
                     },
-                    "name": "MyvisitDateTimeTextField1",
+                    "name": "MyTimeField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
                 },
                 {
@@ -165,11 +180,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Gratuit",
+                        "fieldLabel": [
+                            "{trans.free}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsFree"
                     },
                     "name": "MyvisitIsFreeCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "4c09cb21-c8b1-47e4-95e6-aef3ed7c129d"
                 },
                 {
@@ -181,11 +201,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Hospitalisé",
+                        "fieldLabel": [
+                            "{trans.hospitalized}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsHospitalized"
                     },
                     "name": "MyvisitIsHospitalizedCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "aaf298b8-2e0c-45ff-8e83-7651f575170c"
                 },
                 {
@@ -196,11 +221,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "N°Séjour",
+                        "fieldLabel": [
+                            "{trans.hospitVisitNumber}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitHospitVisitNumber"
                     },
                     "name": "MyvisitHospitVisitNumberTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "8cd845e7-1374-4ac2-8edd-36acf1deea82"
                 },
                 {
@@ -212,11 +242,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Urgence",
+                        "fieldLabel": [
+                            "{trans.emergency}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsUrgent"
                     },
                     "name": "MyvisitIsUrgentCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "040c9488-db6d-40e5-b956-b79be15ae7b3"
                 },
                 {
@@ -231,11 +266,14 @@
                         "store": [
                             "{StudyVisitStore}"
                         ],
-                        "title": "Les examens"
+                        "title": [
+                            "{trans.studies}"
+                        ]
                     },
                     "name": "MyGridPanel1",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "title": "binding"
                     },
                     "designerId": "871ab1e5-a1f1-467a-8f98-7874abe57fba",
                     "cn": [
@@ -248,9 +286,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "string",
-                                "text": "Examen"
+                                "text": [
+                                    "{trans.study}"
+                                ]
                             },
                             "name": "MyColumn3",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "4a21c312-7dc8-441f-bed7-b4cb067b7b26"
                         },
                         {
@@ -262,9 +305,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "number",
-                                "text": "Prix"
+                                "text": [
+                                    "{trans.price}"
+                                ]
                             },
                             "name": "MyColumn8",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "04c02cc2-14e0-4bd6-be1a-11c4c8981f35",
                             "cn": [
                                 {
@@ -291,9 +339,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "date",
-                                "text": "Appareil"
+                                "text": [
+                                    "{trans.device}"
+                                ]
                             },
                             "name": "MyColumn7",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "c8f8027f-fef8-4082-aa2b-b169e1634874",
                             "cn": [
                                 {
@@ -342,7 +395,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Ajouter un examen",
+                                        "fieldLabel": [
+                                            "{trans.addStudy}"
+                                        ],
                                         "labelWidth": 150,
                                         "layout|flex": null,
                                         "queryMode": "local",
@@ -354,7 +409,8 @@
                                     },
                                     "name": "MyComboBox",
                                     "configAlternates": {
-                                        "store": "binding"
+                                        "store": "binding",
+                                        "fieldLabel": "binding"
                                     },
                                     "designerId": "85ecf1d1-ac7e-4a1c-ba46-381d4bf796c2"
                                 }

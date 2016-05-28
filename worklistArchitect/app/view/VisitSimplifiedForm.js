@@ -21,10 +21,10 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
         'MyApp.view.VisitSimplifiedFormViewModel',
         'MyApp.view.VisitSimplifiedFormViewController',
         'Ext.form.FieldSet',
+        'Ext.form.field.Time',
         'Ext.form.field.Checkbox',
         'Ext.grid.Panel',
         'Ext.grid.column.Column',
-        'Ext.form.field.ComboBox',
         'Ext.view.Table',
         'Ext.toolbar.Toolbar'
     ],
@@ -46,64 +46,82 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
     items: [
         {
             xtype: 'fieldset',
-            title: 'Informations consultation',
+            bind: {
+                title: '{trans.visitInformation}'
+            },
             items: [
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Date',
-                    name: 'visitDateTime'
+                    name: 'visitDateTime',
+                    bind: {
+                        fieldLabel: '{trans.date}'
+                    }
                 },
                 {
-                    xtype: 'textfield',
+                    xtype: 'timefield',
                     anchor: '100%',
-                    fieldLabel: 'Heure',
-                    name: 'visitDateTime'
+                    name: 'visitDateTime',
+                    bind: {
+                        fieldLabel: '{trans.hour}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Gratuit',
                     name: 'visitIsFree',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.free}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Hospitalisé',
                     name: 'visitIsHospitalized',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.hospitalized}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'N°Séjour',
-                    name: 'visitHospitVisitNumber'
+                    name: 'visitHospitVisitNumber',
+                    bind: {
+                        fieldLabel: '{trans.hospitVisitNumber}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Urgence',
                     name: 'visitIsUrgent',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.emergency}'
+                    }
                 },
                 {
                     xtype: 'gridpanel',
                     itemId: 'visitStudyGridItemId',
-                    title: 'Les examens',
                     bind: {
+                        title: '{trans.studies}',
                         store: '{StudyVisitStore}'
                     },
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'string',
-                            text: 'Examen'
+                            bind: {
+                                text: '{trans.study}'
+                            }
                         },
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'number',
-                            text: 'Prix',
+                            bind: {
+                                text: '{trans.price}'
+                            },
                             editor: {
                                 xtype: 'textfield',
                                 itemId: 'studyVisitTextFieldEditorItemId'
@@ -112,7 +130,9 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'date',
-                            text: 'Appareil',
+                            bind: {
+                                text: '{trans.device}'
+                            },
                             editor: {
                                 xtype: 'combobox',
                                 itemId: 'deviceComboboxEditorItemId'
@@ -126,11 +146,11 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                             items: [
                                 {
                                     xtype: 'combobox',
-                                    fieldLabel: 'Ajouter un examen',
                                     labelWidth: 150,
                                     queryMode: 'local',
                                     typeAhead: true,
                                     bind: {
+                                        fieldLabel: '{trans.addStudy}',
                                         store: '{StudyComboStore}'
                                     }
                                 }

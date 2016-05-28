@@ -1,15 +1,31 @@
 function translate(text)
 {
     var translation={
+
+        /***commun**/
+        "active":"Actif",
+        "save":"Enregistrer",
+        "cancel":"Annuler",
+        "quit":"Quitter",
+        "edit":"Editer",
+        "modify":"Modifier",
+        "delete":"Supprimer",
+        "add":"Ajouter",
+
+        "saveError":"le formulaire n'a pas été enregistré correctement",
+        "enterAtLeast4Characters":"Saisir au moins 4 caractères",
+
+
+        /*** patient form***/
         "study":"Examen",
         "allStudy":"Tous les examens",
         "Doctor":"Médecin",
         "patientIdentity":"Identité patient",
         "gender":"Sexe",
         "civility":"Civilité",
-        "date":"Date",
-        "hour":"Heure",
-        "firstName":"Préhnom",
+        "recieving": "Accueil de ",
+
+        "firstName":"Prénom",
         "lastName":"Nom",
         "birthday":"Date de naissance",
         "birthname":"Nom de naissance",
@@ -23,18 +39,20 @@ function translate(text)
         "phone":"Tél",
         "mobile":"Portable",
         "email":"E-mail",
+         "contactInformation":"Coordonnées",
+
+        /*** visit form***/
+        "visitInformation":"Informations consultation",
+        "date":"Date",
+        "hour":"Heure",
+        "addStudy":"Ajouter un examen",
         "free":"Gratuit",
         "hospitalized":"Hospitalisé",
         "emergency":"Urgence",
         "studies":"Les examens",
-        "addStudy":"Ajouter un examen",
         "price":"Prix",
         "device":"Appareil",
-        "contactInformation":"Coordonnées",
-        "enterAtLeast4Characters":"Saisir au moins 4 caractères",
-        "active":"Actif"
-
-
+        "hospitVisitNumber":"N° séjour"
     }
     return translation[text]||text;
 }

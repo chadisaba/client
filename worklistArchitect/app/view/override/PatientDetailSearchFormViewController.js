@@ -85,7 +85,7 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
         Ext.create('Common.ux.window.FullScreenWindow', {
 
             // animateTarget:'comboSearchPatient',
-            title:"Accueil de"+record.get('patientLName')+ " "+record.get('patientFname'),
+            title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
             items:{
                 region: 'center',
                 xtype:'patientreceivepanel',

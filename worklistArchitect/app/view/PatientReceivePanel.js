@@ -73,7 +73,9 @@ Ext.define('MyApp.view.PatientReceivePanel', {
                             formBind: true,
                             itemId: 'saveAccueilPatientBtn',
                             glyph: 'xf0c7@FontAwesome',
-                            text: 'Enregistrer',
+                            bind: {
+                                text: '{trans.save}'
+                            },
                             listeners: {
                                 click: 'onSaveAccueilPatientBtnClick'
                             }

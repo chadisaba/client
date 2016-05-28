@@ -32,7 +32,10 @@ Ext.define('MyApp.model.VisitModel', {
     fields: [
         {
             type: 'date',
-            name: 'visitDateTime'
+            name: 'visitDate'
+        },
+        {
+            name: 'visitTime'
         },
         {
             type: 'boolean',
