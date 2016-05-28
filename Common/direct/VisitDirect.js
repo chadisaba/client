@@ -1,12 +1,11 @@
 var VisitDirect={
-saveVisit:function(_patientObject)
+saveVisit:function(_visitObject)
 {
   var promise = new Promise(
         function (resolve, reject) {
  var params={};
         params.table="VISIT";
-        _patientObject.patientSearch=_patientObject.patientLName.toUpperCase()+" "+stringUtil.formatFName(_patientObject.patientFname);
-        params.dataToBeSaved=_patientObject;
+           params.dataToBeSaved=_visitObject;
           Server.CommonQueries.saveRecord(params,
             function(_result){
                 if(_result.success){
@@ -21,6 +20,55 @@ saveVisit:function(_patientObject)
 });
 return promise;
 },
+    getVisit:function(_visitId)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+
+                var params;
+                        params={
+                            table:"VISIT",
+                            filters:[{name:'visitId',value:_visitId}]
+                        };
+                           Server.CommonQueries.read(params,
+                            function(res){
+                                if(res.success){
+                                    resolve(res.data);
+                                }
+                                else{
+                                    console.error(res.msg);
+                                    reject(res.msg);
+                                }
+                            }
+                        )
+             });
+         return promise;
+    },
+    getStudyVisit:function(_visitId)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                var params;
+                params={
+                    table:"study_visit",
+                    filters:[{name:'visitId',value:_visitId}]
+                };
+                Server.CommonQueries.read(params,
+                    function(res){
+                        if(res.success){
+                            resolve(res.data);
+                        }
+                        else{
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    }
+                );
+            });
+        return promise;
+    },
     getPatientAndCityAndReferringPhy:function(_patientId)
     {
         //Creating a promise

@@ -69,9 +69,14 @@
             "userConfig": {
                 "collapsible": true,
                 "layout|flex": 1,
-                "title": "Identité patient"
+                "title": [
+                    "{trans.patientIdentity}"
+                ]
             },
             "name": "MyFieldSet1",
+            "configAlternates": {
+                "title": "binding"
+            },
             "designerId": "0012ab0c-75b6-49b7-9f39-a5561f488f3f",
             "cn": [
                 {
@@ -85,9 +90,14 @@
                         "defaults": [
                             "{name : 'patientGender'}"
                         ],
-                        "fieldLabel": "Sexe"
+                        "fieldLabel": [
+                            "{trans.gender}"
+                        ]
                     },
                     "name": "MyRadioGroup1",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "c5f7855d-14a7-4753-955b-4d417908a9ac",
                     "cn": [
                         {
@@ -132,7 +142,9 @@
                     "userConfig": {
                         "allowBlank": false,
                         "displayField": "patientTitle",
-                        "fieldLabel": "Civilité",
+                        "fieldLabel": [
+                            "{trans.civility}"
+                        ],
                         "forceSelection": true,
                         "itemId": "patientTitleComboBoxEditorItemId",
                         "layout|anchor": "100%",
@@ -146,7 +158,8 @@
                     },
                     "name": "MypatientTitleComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "fieldLabel": "binding"
                     },
                     "designerId": "026413d7-d184-43f9-876e-5029eef26a72"
                 },
@@ -159,11 +172,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "fieldLabel": "Nom",
+                        "fieldLabel": [
+                            "{trans.lastName}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientLName"
                     },
                     "name": "MypatientLNameTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "5ad54f22-7cef-4ebd-a274-0941c9687bbd"
                 },
                 {
@@ -175,11 +193,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "fieldLabel": "Prénom",
+                        "fieldLabel": [
+                            "{trans.firstName}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientFname"
                     },
                     "name": "MypatientFnameTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "024c7a80-5605-4738-99d3-51c8430b4a80"
                 },
                 {
@@ -190,12 +213,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Date naissance",
+                        "fieldLabel": [
+                            "{trans.birthday}"
+                        ],
                         "format": "d/m/Y",
                         "layout|anchor": "100%",
                         "name": "patientBirthday"
                     },
                     "name": "MyDateField1",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "ac1b50ae-07ff-409b-aad3-18281acafa4f"
                 },
                 {
@@ -206,11 +234,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Nom naissance",
+                        "fieldLabel": [
+                            "{trans.birthname}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientBirthName"
                     },
                     "name": "MypatientBirthNameTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "231e3782-cb53-45d8-a904-3563055ebae4"
                 },
                 {
@@ -222,7 +255,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "displayField": "referringPhysicianSearch",
-                        "fieldLabel": "Méd. Traitant",
+                        "fieldLabel": [
+                            "{trans.referringDoctor}"
+                        ],
                         "hideTrigger": null,
                         "itemId": "referringPhysicianNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
@@ -239,7 +274,8 @@
                     },
                     "name": "MyreferringPhysicianNameComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "fieldLabel": "binding"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
                     "cn": [
@@ -268,11 +304,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Numéro I.N.S",
+                        "fieldLabel": [
+                            "{trans.InsNumber}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientIns"
                     },
                     "name": "MypatientInsTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "e88cebd1-05aa-4468-a1a6-9dba9143d7b7"
                 },
                 {
@@ -298,12 +339,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "enableKeyEvents": true,
-                                "fieldLabel": "N Sécu",
+                                "fieldLabel": [
+                                    "{trans.secuNumber}"
+                                ],
                                 "itemId": "patientSocialNumberTextFieldItemId",
                                 "name": "patientSocialNumber",
                                 "vtype": "numSecu"
                             },
                             "name": "MypatientSocialNumberTextField",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
                             "designerId": "ea86d91c-ee55-4584-97e9-4549f04a75a7",
                             "cn": [
                                 {
@@ -352,11 +398,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Enceinte",
+                        "fieldLabel": [
+                            "{trans.pregnant}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientPregnant"
                     },
                     "name": "MypatientPregnantCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "8316da9c-2454-4f0e-96c8-d6bc38d16684"
                 },
                 {
@@ -368,11 +419,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Actif",
+                        "fieldLabel": [
+                            "{trans.active}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "active"
                     },
                     "name": "MyactiveCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "1af1032b-e3a4-4388-987f-aa908a963725"
                 },
                 {
@@ -418,9 +474,14 @@
             "userConfig": {
                 "collapsible": true,
                 "layout|flex": 1,
-                "title": "Coordonnées"
+                "title": [
+                    "{trans.contactInformation}"
+                ]
             },
             "name": "MyFieldSet",
+            "configAlternates": {
+                "title": "binding"
+            },
             "designerId": "3ea3f2b1-e229-4ca6-9df9-a5291e086f3c",
             "cn": [
                 {
@@ -431,12 +492,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Adresse",
+                        "fieldLabel": [
+                            "{trans.address}"
+                        ],
                         "height": 105,
                         "layout|anchor": "100%",
                         "name": "patientAddress"
                     },
                     "name": "MyTextArea1",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "b6e3e2de-de10-4096-8ae0-3555e279ac5a"
                 },
                 {
@@ -447,13 +513,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Code postal",
+                        "fieldLabel": [
+                            "{trans.zipCode}"
+                        ],
                         "itemId": "patientZipCodeTextFieldItemId",
                         "layout|anchor": "100%",
                         "maxLength": 10,
                         "name": "patientZipCode"
                     },
                     "name": "MypatientZipCodeTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "95b2df83-c44e-4550-8b66-0585e5bc5029",
                     "cn": [
                         {
@@ -482,8 +553,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "displayField": "cityName",
-                        "emptyText": "Saisir au moins 4caractères",
-                        "fieldLabel": "Commune",
+                        "emptyText": null,
+                        "fieldLabel": [
+                            "{trans.city}"
+                        ],
                         "itemId": "cityNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
                         "minChars": 4,
@@ -500,7 +573,8 @@
                     },
                     "name": "MycityNameComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "fieldLabel": "binding"
                     },
                     "designerId": "77e9eeac-4cc2-48ac-a044-b7e0525cb480",
                     "cn": [
@@ -529,12 +603,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Tél",
+                        "fieldLabel": [
+                            "{trans.phone}"
+                        ],
                         "layout|anchor": "100%",
                         "maxLength": 20,
                         "name": "patientPhoneNumber"
                     },
                     "name": "MypatientPhoneNumberTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "709fe3b8-45d3-4cbb-997b-9b58dfc05069"
                 },
                 {
@@ -545,12 +624,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Portable",
+                        "fieldLabel": [
+                            "{trans.mobile}"
+                        ],
                         "layout|anchor": "100%",
                         "maxLength": 20,
                         "name": "patientMobileNumber"
                     },
                     "name": "MypatientMobileNumberTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "091998e0-8915-40fd-a636-1c7cbebdbd72"
                 },
                 {
@@ -561,12 +645,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "E-Mail",
+                        "fieldLabel": [
+                            "{trans.email}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "patientEmail",
                         "vtype": "email"
                     },
                     "name": "MypatientEmailTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "6f207c31-0cad-403a-81f8-d445f4b53b66"
                 }
             ]
@@ -580,6 +669,7 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
+                "itemId": "patientFormToolbarItemId",
                 "layout|flex": 1
             },
             "name": "MyToolbar1",

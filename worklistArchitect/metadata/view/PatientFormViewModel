@@ -6,12 +6,45 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            " {",
+            " trans:{",
+            "        patientIdentity: translate('patientIdentity'),",
+            "        gender:translate('gender'),",
+            "        civility:translate('civility'),",
+            "        date:translate('date'),",
+            "        hour:translate('hour'),",
+            "        firstName:translate('firstName'),",
+            "        lastName:translate('lastName'),",
+            "        birthday:translate('birthday'),",
+            "        birthname:translate('birthname'),",
+            "        referringDoctor:translate('referringDoctor'),",
+            "        InsNumber:translate('InsNumber'),",
+            "        secuNumber:translate('secuNumber'),",
+            "        pregnant:translate('pregnant'),",
+            "        address:translate('address'),",
+            "        zipCode:translate('zipCode'),",
+            "        city :translate('city'),",
+            "        phone:translate('phone'),",
+            "        mobile:translate('mobile'),",
+            "        email:translate('email'),",
+            "        free:translate('free'),",
+            "        hospitalized:translate('hospitalized'),",
+            "        emergency:translate('emergency'),",
+            "        studies:translate('studies'),",
+            "        addStudy:translate('addStudy'),",
+            "        price:translate('price'),",
+            "        device:translate('device'),",
+            "         active:translate('active'),",
+            "         contactInformation:translate('contactInformation')",
+            "        }   ",
+            "        }"
+        ],
         "designer|userAlias": "patientform",
         "designer|userClassName": "PatientFormViewModel"
     },
     "designerId": "6e2b36c6-38ef-47ee-bd2a-0c30707ed261",
-      "cn": [
-       
+    "cn": [
         {
             "type": "Ext.data.Store",
             "reference": {
@@ -22,12 +55,11 @@
             "userConfig": {
                 "model": "CityNameComboModel",
                 "name": "CityNameComboStore"
-                    
             },
             "name": "CityNameComboStore",
             "designerId": "961927b5-34eb-4a9b-b536-4d7d26d1aa9f"
         },
-                   {
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -37,12 +69,11 @@
             "userConfig": {
                 "model": "ReferringPhysicianNameComboModel",
                 "name": "ReferringPhysicianNameComboStore"
-                    
             },
             "name": "ReferringPhysicianNameComboStore",
             "designerId": "08dd8ca9-9fb6-49e3-a5e5-efc0b4074b3a"
         },
-                   {
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -52,7 +83,6 @@
             "userConfig": {
                 "model": "PatientTitleComboModel",
                 "name": "PatientTitleComboStore"
-                    
             },
             "name": "PatientTitleComboStore",
             "designerId": "eefa4e16-cc9f-41b9-922b-4d7cf0416766"

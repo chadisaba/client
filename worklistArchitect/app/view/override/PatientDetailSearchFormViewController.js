@@ -85,10 +85,10 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
         Ext.create('Common.ux.window.FullScreenWindow', {
 
             // animateTarget:'comboSearchPatient',
-            title:"Informations du patient",
+            title:"Accueil de"+record.get('patientLName')+ " "+record.get('patientFname'),
             items:{
                 region: 'center',
-                xtype:'patientform',
+                xtype:'patientreceivepanel',
                 patientId:record.get('patientId')
 
                 /*plugins:[
@@ -114,7 +114,7 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
             title:"Informations du patient",
             items:{
                 region: 'center',
-                xtype:'patientform'
+                xtype:'patientreceivepanel'
 
                 /*plugins:[
                     new Plugins.form.FormEditingPlugin({
@@ -136,7 +136,7 @@ Ext.create('Common.ux.window.FullScreenWindow', {
             title:"Informations du patient",
             items:{
                 region: 'center',
-                xtype:'patientform'
+                xtype:'patientreceivepanel'
 
 
                 /*plugins:[
@@ -153,7 +153,7 @@ Ext.create('Common.ux.window.FullScreenWindow', {
     },
     onFichePatientBtnItemIdClick: function(button, e, eOpts) {
 
-    },
+    }
 
     
 });

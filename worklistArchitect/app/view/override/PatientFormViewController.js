@@ -2,16 +2,19 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     override: 'MyApp.view.PatientFormViewController',
 
 
-    initForm: function(button, win, close) {
+    initForm: function(_patientId) {
 
         var me=this;
 
         var view=me.getView();
+        view.down('#cityNameComboBoxEditorItemId').setEmptyText(translate('enterAtLeast4Characters'));
         var viewModel=me.getViewModel();
         var patientId=null;
         var visitId=null;
         if(view.patientId)
             patientId=view.patientId;
+        if(_patientId)
+            patientId=_patientId;
 
         var patientTitleComboStore=viewModel.getStore('PatientTitleComboStore');
         patientTitleComboStore.loadData(ComboData.patientTitle);
@@ -45,14 +48,6 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
     },
 
-
-
-
-    onPatientFormItemIdAfterRender: function(component, eOpts) {
-    	//component.getPlugin('formediting').quitEditMode();
-        this.initForm();
-    },
-
     onPatientZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
         Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
     },
@@ -76,18 +71,21 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
         var me=this;
 
+        me.patientFormSave(button);
+
+
+    },
+    patientFormSave: function(button) {
+        var me=this;
         var rec=me.getView().getRecord();
         var form=me.getView();
         form.updateRecord(rec); // update the record with the form data
-
         if(!rec.get('patientId')){
             var patientId=UUID();
             rec.set('patientId',patientId);
         }
-
         var dataToSave=rec.data;
         Utility.loading.start(button);
-
         PatientDirect.savePatient(dataToSave)
             .then(function()
             {
@@ -95,10 +93,9 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
             })
             .catch(function(_err)
             {
-                console.log(_err);
+                console.error(_err);
+                Ext.Msg.alert('Error', 'Le patient n\'a pas été enregistrer correctement');
             });
-
-
     }
 
 

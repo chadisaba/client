@@ -53,14 +53,18 @@ Ext.define('MyApp.view.PatientForm', {
             xtype: 'fieldset',
             flex: 1,
             collapsible: true,
-            title: 'Identité patient',
+            bind: {
+                title: '{trans.patientIdentity}'
+            },
             items: [
                 {
                     xtype: 'radiogroup',
                     defaults: {
                         name: 'patientGender'
                     },
-                    fieldLabel: 'Sexe',
+                    bind: {
+                        fieldLabel: '{trans.gender}'
+                    },
                     items: [
                         {
                             xtype: 'radiofield',
@@ -78,7 +82,6 @@ Ext.define('MyApp.view.PatientForm', {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'patientTitleComboBoxEditorItemId',
-                    fieldLabel: 'Civilité',
                     name: 'patientTitle',
                     allowBlank: false,
                     selectOnFocus: true,
@@ -87,41 +90,49 @@ Ext.define('MyApp.view.PatientForm', {
                     queryMode: 'local',
                     valueField: 'patientTitleId',
                     bind: {
+                        fieldLabel: '{trans.civility}',
                         store: '{PatientTitleComboStore}'
                     }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Nom',
                     name: 'patientLName',
-                    allowBlank: false
+                    allowBlank: false,
+                    bind: {
+                        fieldLabel: '{trans.lastName}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Prénom',
                     name: 'patientFname',
-                    allowBlank: false
+                    allowBlank: false,
+                    bind: {
+                        fieldLabel: '{trans.firstName}'
+                    }
                 },
                 {
                     xtype: 'datefield',
                     anchor: '100%',
-                    fieldLabel: 'Date naissance',
                     name: 'patientBirthday',
-                    format: 'd/m/Y'
+                    format: 'd/m/Y',
+                    bind: {
+                        fieldLabel: '{trans.birthday}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Nom naissance',
-                    name: 'patientBirthName'
+                    name: 'patientBirthName',
+                    bind: {
+                        fieldLabel: '{trans.birthname}'
+                    }
                 },
                 {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
-                    fieldLabel: 'Méd. Traitant',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,
                     displayField: 'referringPhysicianSearch',
@@ -131,6 +142,7 @@ Ext.define('MyApp.view.PatientForm', {
                     typeAhead: true,
                     valueField: 'referringPhysicianId',
                     bind: {
+                        fieldLabel: '{trans.referringDoctor}',
                         store: '{ReferringPhysicianNameComboStore}'
                     },
                     listeners: {
@@ -140,8 +152,10 @@ Ext.define('MyApp.view.PatientForm', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Numéro I.N.S',
-                    name: 'patientIns'
+                    name: 'patientIns',
+                    bind: {
+                        fieldLabel: '{trans.InsNumber}'
+                    }
                 },
                 {
                     xtype: 'container',
@@ -153,10 +167,12 @@ Ext.define('MyApp.view.PatientForm', {
                         {
                             xtype: 'textfield',
                             itemId: 'patientSocialNumberTextFieldItemId',
-                            fieldLabel: 'N Sécu',
                             name: 'patientSocialNumber',
                             enableKeyEvents: true,
                             vtype: 'numSecu',
+                            bind: {
+                                fieldLabel: '{trans.secuNumber}'
+                            },
                             listeners: {
                                 change: 'onPatientSocialNumberTextFieldItemIdChange'
                             }
@@ -175,16 +191,20 @@ Ext.define('MyApp.view.PatientForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Enceinte',
                     name: 'patientPregnant',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.pregnant}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Actif',
                     name: 'active',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.active}'
+                    }
                 },
                 {
                     xtype: 'textfield',
@@ -204,22 +224,28 @@ Ext.define('MyApp.view.PatientForm', {
             xtype: 'fieldset',
             flex: 1,
             collapsible: true,
-            title: 'Coordonnées',
+            bind: {
+                title: '{trans.contactInformation}'
+            },
             items: [
                 {
                     xtype: 'textareafield',
                     anchor: '100%',
                     height: 105,
-                    fieldLabel: 'Adresse',
-                    name: 'patientAddress'
+                    name: 'patientAddress',
+                    bind: {
+                        fieldLabel: '{trans.address}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     itemId: 'patientZipCodeTextFieldItemId',
-                    fieldLabel: 'Code postal',
                     name: 'patientZipCode',
                     maxLength: 10,
+                    bind: {
+                        fieldLabel: '{trans.zipCode}'
+                    },
                     listeners: {
                         change: 'onPatientZipCodeTextFieldItemIdChange'
                     }
@@ -228,9 +254,7 @@ Ext.define('MyApp.view.PatientForm', {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'cityNameComboBoxEditorItemId',
-                    fieldLabel: 'Commune',
                     name: 'cityId',
-                    emptyText: 'Saisir au moins 4caractères',
                     selectOnFocus: true,
                     displayField: 'cityName',
                     minChars: 4,
@@ -239,6 +263,7 @@ Ext.define('MyApp.view.PatientForm', {
                     typeAhead: true,
                     valueField: 'cityId',
                     bind: {
+                        fieldLabel: '{trans.city}',
                         store: '{CityNameComboStore}'
                     },
                     listeners: {
@@ -248,23 +273,29 @@ Ext.define('MyApp.view.PatientForm', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Tél',
                     name: 'patientPhoneNumber',
-                    maxLength: 20
+                    maxLength: 20,
+                    bind: {
+                        fieldLabel: '{trans.phone}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Portable',
                     name: 'patientMobileNumber',
-                    maxLength: 20
+                    maxLength: 20,
+                    bind: {
+                        fieldLabel: '{trans.mobile}'
+                    }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'E-Mail',
                     name: 'patientEmail',
-                    vtype: 'email'
+                    vtype: 'email',
+                    bind: {
+                        fieldLabel: '{trans.email}'
+                    }
                 }
             ]
         }
@@ -274,6 +305,7 @@ Ext.define('MyApp.view.PatientForm', {
             xtype: 'toolbar',
             flex: 1,
             dock: 'top',
+            itemId: 'patientFormToolbarItemId',
             items: [
                 {
                     xtype: 'tbfill'

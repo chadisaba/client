@@ -21,6 +21,39 @@ Ext.define('MyApp.view.PatientFormViewModel', {
         'Ext.data.Store'
     ],
 
+    data: {
+        trans: {
+            patientIdentity: translate('patientIdentity'),
+            gender: translate('gender'),
+            civility: translate('civility'),
+            date: translate('date'),
+            hour: translate('hour'),
+            firstName: translate('firstName'),
+            lastName: translate('lastName'),
+            birthday: translate('birthday'),
+            birthname: translate('birthname'),
+            referringDoctor: translate('referringDoctor'),
+            InsNumber: translate('InsNumber'),
+            secuNumber: translate('secuNumber'),
+            pregnant: translate('pregnant'),
+            address: translate('address'),
+            zipCode: translate('zipCode'),
+            city: translate('city'),
+            phone: translate('phone'),
+            mobile: translate('mobile'),
+            email: translate('email'),
+            free: translate('free'),
+            hospitalized: translate('hospitalized'),
+            emergency: translate('emergency'),
+            studies: translate('studies'),
+            addStudy: translate('addStudy'),
+            price: translate('price'),
+            device: translate('device'),
+            active: translate('active'),
+            contactInformation: translate('contactInformation')
+        }
+    },
+
     stores: {
         CityNameComboStore: {
             model: 'MyApp.model.CityNameComboModel'
