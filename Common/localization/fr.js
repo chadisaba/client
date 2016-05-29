@@ -11,11 +11,12 @@ function translate(text)
         "modify":"Modifier",
         "delete":"Supprimer",
         "add":"Ajouter",
-
+        "name":"Nom",
         "saveError":"le formulaire n'a pas été enregistré correctement",
         "enterAtLeast4Characters":"Saisir au moins 4 caractères",
         "site":"Site",
-
+        "type":"Type",
+        "pdf":"PDF",
         /*** patient form***/
         "study":"Examen",
         "allStudy":"Tous les examens",
@@ -52,7 +53,13 @@ function translate(text)
         "studies":"Les examens",
         "price":"Prix",
         "device":"Appareil",
-        "hospitVisitNumber":"N° séjour"
+        "hospitVisitNumber":"N° séjour",
+
+        /*** patient history***/
+        "history":"Historique",
+        "path":"Appareil"
+
+
     }
     return translation[text]||text;
 }

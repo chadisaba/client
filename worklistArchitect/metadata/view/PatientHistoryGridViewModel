@@ -6,6 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{",
+            "trans:{",
+            "type:translate('type'),",
+            "history:translate('history'),",
+            "path:translate('path')",
+            "",
+            "}",
+            "}"
+        ],
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGridViewModel"
     },

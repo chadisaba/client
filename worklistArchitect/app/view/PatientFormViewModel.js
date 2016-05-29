@@ -50,7 +50,8 @@ Ext.define('MyApp.view.PatientFormViewModel', {
             price: translate('price'),
             device: translate('device'),
             active: translate('active'),
-            contactInformation: translate('contactInformation')
+            contactInformation: translate('contactInformation'),
+            save: translate('save')
         }
     },
 

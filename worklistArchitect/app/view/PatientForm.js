@@ -318,7 +318,9 @@ Ext.define('MyApp.view.PatientForm', {
                             formBind: true,
                             itemId: 'saveFormBtnItemId',
                             glyph: 'xf0c7@FontAwesome',
-                            text: 'Enregistrer',
+                            bind: {
+                                text: '{trans.save}'
+                            },
                             listeners: {
                                 click: 'onSaveFormBtnItemIdClick'
                             }

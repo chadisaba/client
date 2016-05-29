@@ -712,9 +712,14 @@
                                 "formBind": true,
                                 "glyph": "xf0c7@FontAwesome",
                                 "itemId": "saveFormBtnItemId",
-                                "text": "Enregistrer"
+                                "text": [
+                                    "{trans.save}"
+                                ]
                             },
                             "name": "MyButton5",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "3d40e8ac-57de-41c0-9595-66277ba819f4",
                             "cn": [
                                 {
