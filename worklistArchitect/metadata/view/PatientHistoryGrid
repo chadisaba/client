@@ -15,12 +15,15 @@
         "store": [
             "{PatientHistoryStore}"
         ],
-        "title": "Historique ",
+        "title": [
+            "{trans.history}"
+        ],
         "width": null
     },
     "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "title": "binding"
     },
     "designerId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
     "viewControllerInstanceId": "aac31181-09fc-4522-852d-05c72b1059da",
@@ -52,10 +55,15 @@
             "userConfig": {
                 "dataIndex": "path",
                 "flex": null,
-                "text": "Path",
+                "text": [
+                    "{trans.path}"
+                ],
                 "width": 40
             },
             "name": "MyColumn2",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7",
             "cn": [
                 {
@@ -95,9 +103,14 @@
             "userConfig": {
                 "dataIndex": "name",
                 "flex": 1,
-                "text": "Nom"
+                "text": [
+                    "{trans.name}"
+                ]
             },
             "name": "MyColumn5",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "080e54df-f635-48a0-a055-b2119c75a5cc",
             "cn": [
                 {
@@ -136,10 +149,15 @@
             "userConfig": {
                 "dataIndex": "type",
                 "flex": null,
-                "text": "Type",
+                "text": [
+                    "{trans.type}"
+                ],
                 "width": 50
             },
             "name": "MyColumn4",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "e133221a-9980-453e-bfef-4e437089bfaa",
             "cn": [
                 {
@@ -177,10 +195,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "htmlPath",
-                "text": "PDF",
+                "text": [
+                    "{trans.pdf}"
+                ],
                 "width": 50
             },
             "name": "MyColumn6",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "e41d7873-f226-4964-96ea-30c4859e48ff",
             "cn": [
                 {

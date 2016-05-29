@@ -31,9 +31,9 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
         type: 'patienthistorygrid'
     },
     cls: 'custom-grid',
-    title: 'Historique ',
 
     bind: {
+        title: '{trans.history}',
         store: '{PatientHistoryStore}'
     },
     columns: [
@@ -51,28 +51,36 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
             },
             width: 40,
             dataIndex: 'path',
-            text: 'Path'
+            bind: {
+                text: '{trans.path}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'nameDocumentRenderer',
             dataIndex: 'name',
-            text: 'Nom',
-            flex: 1
+            flex: 1,
+            bind: {
+                text: '{trans.name}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'typeDocumentRenderer',
             width: 50,
             dataIndex: 'type',
-            text: 'Type'
+            bind: {
+                text: '{trans.type}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'pdfRenderer',
             width: 50,
             dataIndex: 'htmlPath',
-            text: 'PDF'
+            bind: {
+                text: '{trans.pdf}'
+            }
         }
     ],
     features: [

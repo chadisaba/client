@@ -27,7 +27,10 @@ Ext.define('MyApp.view.PatientHistoryGridViewModel', {
         trans: {
             type: translate('type'),
             history: translate('history'),
-            path: translate('path')
+            path: translate('path'),
+            name: translate('name'),
+            type: translate('type'),
+            pdf: translate('pdf')
         }
     },
 
