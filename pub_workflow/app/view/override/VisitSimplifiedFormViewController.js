@@ -18,9 +18,9 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             // we modify the visit
 
 
-                var p1=CommunDirect.getData("VISIT",[{name:'visitId',value:_visitId}]);
-                var p2=CommunDirect.getData("study_visit",[{name:'visitId',value:_visitId}]);
-                var p3=CommunDirect.getData("SITE");
+                var p1=CommonDirect.getData("VISIT",[{name:'visitId',value:_visitId}]);
+                var p2=CommonDirect.getData("study_visit",[{name:'visitId',value:_visitId}]);
+                var p3=CommonDirect.getData("SITE");
                 Promise.all([p1,p2,p3])
                     .then(function(_valuesArray)
                     {
@@ -42,7 +42,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
              else
              {
                  // we create a new visit
-                 CommunDirect.getData("SITE")
+                 CommonDirect.getData("SITE")
                      .then(function(_resultArray)
                      {
                          viewModel.getStore('SiteComboStore').loadData(_resultArray);

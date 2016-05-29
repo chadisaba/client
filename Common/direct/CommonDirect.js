@@ -1,4 +1,4 @@
-var CommunDirect={
+var CommonDirect={
     saveData:function(_dataObject,_tableName)
     {
         var promise = new Promise(

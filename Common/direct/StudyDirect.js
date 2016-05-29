@@ -11,7 +11,7 @@ var StudyDirect={
             var filter= {name:'studyName',value:_serachValue};
             filters.push(filter);
 
-            CommunDirect.getData("STUDY",filters)
+            CommonDirect.getData("STUDY",filters)
                 .then(
                     function(_resultData)
                     {
