@@ -117,6 +117,16 @@ Ext.define('MyApp.model.VisitModel', {
         },
         {
             name: 'addedAndValidated'
+        },
+        {
+            name: 'patientId'
+        },
+        {
+            name: 'visitId'
+        },
+        {
+            type: 'int',
+            name: 'siteId'
         }
     ]
 });

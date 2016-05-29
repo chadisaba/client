@@ -1,29 +1,19 @@
 Ext.define('MyApp.view.override.PatientFormViewController', {
     override: 'MyApp.view.PatientFormViewController',
-
-
     initForm: function(_patientId) {
-
         var me=this;
 
         var view=me.getView();
         view.down('#cityNameComboBoxEditorItemId').setEmptyText(translate('enterAtLeast4Characters'));
         var viewModel=me.getViewModel();
         var patientId=null;
-        var visitId=null;
         if(view.patientId)
             patientId=view.patientId;
         if(_patientId)
             patientId=_patientId;
-
         var patientTitleComboStore=viewModel.getStore('PatientTitleComboStore');
         patientTitleComboStore.loadData(ComboData.patientTitle);
-
-        if(visitId)
-        {
-
-        }
-        else if(patientId)
+        if(patientId)
         {
             PatientDirect.getPatientAndCityAndReferringPhy(patientId)
                 .then(function(_resultObject)
@@ -43,6 +33,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         {
             // we create a new patient
             var rec=Ext.create('MyApp.model.PatientModel');
+            rec.set('patientId',UUID());
             view.loadRecord(rec);
         }
 
@@ -94,11 +85,8 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                 var rec=me.getView().getRecord();
                 var form=me.getView();
                 form.updateRecord(rec); // update the record with the form data
-                if(!rec.get('patientId')){
-                    var patientId=UUID();
-                    rec.set('patientId',patientId);
-                }
                 var dataToSave=rec.data;
+
                 PatientDirect.savePatient(dataToSave)
                     .then(function()
                     {

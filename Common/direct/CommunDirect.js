@@ -45,7 +45,7 @@ var CommunDirect={
             });
         return promise;
     },
-    getData:function()
+    getData:function(_tableName,_filtersArray)
     {
         //Creating a promise
         var promise=new Promise(
@@ -53,8 +53,10 @@ var CommunDirect={
 
                 var params;
                 params={
-                    table:"SITE"
+                    table:_tableName
                 };
+                if(_filtersArray)
+                params.filters=_filtersArray;
                 Server.CommonQueries.read(params,
                     function(res){
                         if(res.success){

@@ -174,9 +174,9 @@
                         "fieldLabel": [
                             "{trans.date}"
                         ],
-                        "format": "d/m/Y",
+                        "format": null,
                         "layout|anchor": "100%",
-                        "name": "visitDateTime"
+                        "name": "visitDate"
                     },
                     "name": "MyDateField2",
                     "configAlternates": {
@@ -197,7 +197,7 @@
                             "{trans.hour}"
                         ],
                         "layout|anchor": "100%",
-                        "name": "visitDateTime"
+                        "name": "visitTime"
                     },
                     "name": "MyTimeField",
                     "configAlternates": {
@@ -429,16 +429,23 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "displayField": "studyName",
                                         "fieldLabel": [
                                             "{trans.addStudy}"
                                         ],
+                                        "itemId": "addStudyComboItemId",
                                         "labelWidth": 150,
                                         "layout|flex": null,
+                                        "maxWidth": 500,
+                                        "minChars": 4,
                                         "queryMode": "local",
+                                        "selectOnFocus": true,
                                         "store": [
                                             "{StudyComboStore}"
                                         ],
                                         "typeAhead": true,
+                                        "typeAheadDelay": 500,
+                                        "valueField": "studyId",
                                         "width": null
                                     },
                                     "name": "MyComboBox",
@@ -446,7 +453,24 @@
                                         "store": "binding",
                                         "fieldLabel": "binding"
                                     },
-                                    "designerId": "85ecf1d1-ac7e-4a1c-ba46-381d4bf796c2"
+                                    "designerId": "85ecf1d1-ac7e-4a1c-ba46-381d4bf796c2",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onAddStudyComboItemIdChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onAddStudyComboItemIdChange",
+                                            "designerId": "d7469512-bf2f-4b44-8e0d-235e0345e792"
+                                        }
+                                    ]
                                 }
                             ]
                         }

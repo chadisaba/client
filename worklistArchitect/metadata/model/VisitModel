@@ -328,6 +328,45 @@
             },
             "name": "MyField31",
             "designerId": "9f52f26b-b7e5-4bd9-8c17-95b38297aa73"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientId"
+            },
+            "name": "MyField23",
+            "designerId": "5f651854-7f3a-4327-bf58-925ee2d1d5bc"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitId"
+            },
+            "name": "MyField24",
+            "designerId": "72398fe5-660b-45a7-8c2f-a84a0cbcf840"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteId"
+            },
+            "name": "MyInteger3",
+            "designerId": "6eeba3c2-ff53-489b-bfd9-2901c92aa79e"
         }
     ]
 }

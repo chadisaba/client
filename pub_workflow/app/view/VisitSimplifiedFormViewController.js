@@ -35,6 +35,10 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewController', {
 
     onVisitSimplifiedFormItemIdQuitEdit: function(form, promptWin) {
 
+    },
+
+    onAddStudyComboItemIdChange: function(field, newValue, oldValue, eOpts) {
+
     }
 
 });

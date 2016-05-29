@@ -32,7 +32,6 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     },
     cls: 'custom-grid',
     title: 'Historique ',
-    hideHeaders: true,
 
     bind: {
         store: '{PatientHistoryStore}'

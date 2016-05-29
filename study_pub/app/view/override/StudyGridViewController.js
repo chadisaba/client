@@ -148,7 +148,7 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
             function (res) {
                 if (res.success) {
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i].studyTypeCode=res.data[i].StudyType.studyTypeCode;
+                        res.data[i].studyTypeCode=res.data[i]['StudyType.studyTypeCode'];
 
                     }
                     callback(res.data);

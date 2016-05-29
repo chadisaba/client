@@ -31,7 +31,7 @@
                 "layout|split": true,
                 "patientId": null
             },
-            "name": "patientform",
+            "name": "patientform1",
             "designerId": "5cc49028-14a1-4119-ac8f-13514ccc00a2",
             "customConfigs": [
                 {
@@ -72,7 +72,7 @@
                 "layout|region": "east",
                 "layout|split": true
             },
-            "name": "visitsimplifiedform",
+            "name": "visitsimplifiedform1",
             "designerId": "62775934-ca14-4182-9f80-f7b83f2c3994",
             "masterInstanceId": "336fbfe5-7283-4080-94fd-711d8dcd1477",
             "cn": [

@@ -70,9 +70,8 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                 {
                     xtype: 'datefield',
                     anchor: '100%',
-                    name: 'visitDateTime',
+                    name: 'visitDate',
                     allowBlank: false,
-                    format: 'd/m/Y',
                     bind: {
                         fieldLabel: '{trans.date}'
                     }
@@ -80,7 +79,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                 {
                     xtype: 'timefield',
                     anchor: '100%',
-                    name: 'visitDateTime',
+                    name: 'visitTime',
                     allowBlank: false,
                     bind: {
                         fieldLabel: '{trans.hour}'
@@ -166,12 +165,22 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                             items: [
                                 {
                                     xtype: 'combobox',
+                                    itemId: 'addStudyComboItemId',
+                                    maxWidth: 500,
                                     labelWidth: 150,
+                                    selectOnFocus: true,
+                                    displayField: 'studyName',
+                                    minChars: 4,
                                     queryMode: 'local',
                                     typeAhead: true,
+                                    typeAheadDelay: 500,
+                                    valueField: 'studyId',
                                     bind: {
                                         fieldLabel: '{trans.addStudy}',
                                         store: '{StudyComboStore}'
+                                    },
+                                    listeners: {
+                                        change: 'onAddStudyComboItemIdChange'
                                     }
                                 }
                             ]

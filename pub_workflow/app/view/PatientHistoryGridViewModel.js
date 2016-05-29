@@ -23,6 +23,14 @@ Ext.define('MyApp.view.PatientHistoryGridViewModel', {
         'Ext.data.reader.Json'
     ],
 
+    data: {
+        trans: {
+            type: translate('type'),
+            history: translate('history'),
+            path: translate('path')
+        }
+    },
+
     stores: {
         PatientHistoryStore: {
             groupField: 'docDate',
