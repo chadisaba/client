@@ -21,6 +21,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
         'MyApp.view.VisitSimplifiedFormViewModel',
         'MyApp.view.VisitSimplifiedFormViewController',
         'Ext.form.FieldSet',
+        'Ext.form.field.Date',
         'Ext.form.field.Time',
         'Ext.form.field.Checkbox',
         'Ext.grid.Panel',
@@ -51,9 +52,27 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
             },
             items: [
                 {
-                    xtype: 'textfield',
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'siteIdComboBoxItemId',
+                    name: 'siteId',
+                    allowBlank: false,
+                    displayField: 'siteCode',
+                    forceSelection: true,
+                    queryMode: 'local',
+                    typeAhead: true,
+                    valueField: 'siteId',
+                    bind: {
+                        fieldLabel: '{trans.site}',
+                        store: '{SiteComboStore}'
+                    }
+                },
+                {
+                    xtype: 'datefield',
                     anchor: '100%',
                     name: 'visitDateTime',
+                    allowBlank: false,
+                    format: 'd/m/Y',
                     bind: {
                         fieldLabel: '{trans.date}'
                     }
@@ -62,6 +81,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     xtype: 'timefield',
                     anchor: '100%',
                     name: 'visitDateTime',
+                    allowBlank: false,
                     bind: {
                         fieldLabel: '{trans.hour}'
                     }

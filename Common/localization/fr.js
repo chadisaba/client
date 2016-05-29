@@ -14,7 +14,7 @@ function translate(text)
 
         "saveError":"le formulaire n'a pas été enregistré correctement",
         "enterAtLeast4Characters":"Saisir au moins 4 caractères",
-
+        "site":"Site",
 
         /*** patient form***/
         "study":"Examen",

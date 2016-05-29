@@ -132,20 +132,53 @@
             "designerId": "0635298b-4c31-4d44-9d77-b0206ac7d989",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteCode",
+                        "fieldLabel": [
+                            "{trans.site}"
+                        ],
+                        "forceSelection": true,
+                        "itemId": "siteIdComboBoxItemId",
+                        "layout|anchor": "100%",
+                        "name": "siteId",
+                        "queryMode": "local",
+                        "store": [
+                            "{SiteComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "siteId"
+                    },
+                    "name": "MyComboBox2",
+                    "configAlternates": {
+                        "fieldLabel": "binding",
+                        "store": "binding"
+                    },
+                    "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
                         "fieldLabel": [
                             "{trans.date}"
                         ],
+                        "format": "d/m/Y",
                         "layout|anchor": "100%",
                         "name": "visitDateTime"
                     },
-                    "name": "MyvisitDateTimeTextField",
+                    "name": "MyDateField2",
                     "configAlternates": {
                         "fieldLabel": "binding"
                     },
@@ -159,6 +192,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "fieldLabel": [
                             "{trans.hour}"
                         ],

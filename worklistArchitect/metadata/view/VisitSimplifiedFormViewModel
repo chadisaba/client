@@ -20,7 +20,8 @@
             "hospitVisitNumber:translate('hospitVisitNumber'),",
             "addStudy:translate('addStudy'),",
             "study:translate('study'),",
-            "hour:translate('hour')",
+            "hour:translate('hour'),",
+            "site:translate('site')",
             "",
             "}",
             "}"
@@ -71,6 +72,20 @@
             },
             "name": "MyStore3",
             "designerId": "aa5b58e7-b7ab-406b-a890-8d1385086eb1"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SiteComboStore"
+            },
+            "name": "MyStore4",
+            "designerId": "32e25522-ea5c-4a3c-b533-a757abddadaf"
         }
     ]
 }

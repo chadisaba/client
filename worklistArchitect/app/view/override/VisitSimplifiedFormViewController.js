@@ -1,15 +1,16 @@
 Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     override: 'MyApp.view.VisitSimplifiedFormViewController',
 
-    initForm: function(button, win, close) {
-
+    initForm: function(_visitId) {
         var me=this;
-
         var view=me.getView();
         var viewModel=me.getViewModel();
         var visitId=null;
         if(view.visitId)
             visitId=view.visitId;
+
+        if(_visitId)
+            visitId=_visitId;
 
         var visitRec;
         var studyVisitArray=[];
@@ -34,7 +35,31 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
 
 
     },
+    visitFormSave: function(button) {
+        var me=this;
+        var rec=me.getView().getRecord();
+        var form=me.getView();
+        form.updateRecord(rec); // update the record with the form data
+        if(!rec.get('visitId')){
+            var visitId=UUID();
+            rec.set('visitId',visitId);
+        }
+        var dataToSave=rec.data;
+        if(button)
+             Utility.loading.start(button);
 
+        VisitDirect.saveVisit(dataToSave)
+            .then(function()
+            {
+                if(button)
+                    Utility.loading.end(button);
+            })
+            .catch(function(_err)
+            {
+                console.error(_err);
+                Ext.Msg.alert('Error', translate('saveError'));
+            });
+    },
     onVisitSimplifiedFormItemIdAfterRender: function(component, eOpts) {
 
         this.initForm();

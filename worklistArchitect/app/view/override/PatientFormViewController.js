@@ -70,23 +70,8 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
-
-        me.patientFormSave(button);
-
-
-    },
-    patientFormSave: function(button) {
-        var me=this;
-        var rec=me.getView().getRecord();
-        var form=me.getView();
-        form.updateRecord(rec); // update the record with the form data
-        if(!rec.get('patientId')){
-            var patientId=UUID();
-            rec.set('patientId',patientId);
-        }
-        var dataToSave=rec.data;
         Utility.loading.start(button);
-        PatientDirect.savePatient(dataToSave)
+        me.patientFormSave()
             .then(function()
             {
                 Utility.loading.end(button);
@@ -96,6 +81,31 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                 console.error(_err);
                 Ext.Msg.alert('Error', translate('saveError'));
             });
+
+
+    },
+    patientFormSave: function() {
+
+        var me=this;
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+
+                var rec=me.getView().getRecord();
+                var form=me.getView();
+                form.updateRecord(rec); // update the record with the form data
+                if(!rec.get('patientId')){
+                    var patientId=UUID();
+                    rec.set('patientId',patientId);
+                }
+                var dataToSave=rec.data;
+                PatientDirect.savePatient(dataToSave)
+                    .then(function()
+                    {
+                        resolve();
+                    });
+             });
+         return promise;
     }
 
 
