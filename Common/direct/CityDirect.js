@@ -28,14 +28,34 @@ var CityDirect={
              });
          return promise;
     },
-    cityAutoComplete:function(_scope,_serachValue,_cityComboStore,_field,_searchLengh)
+      getCitiesFromIndexedDB:function(_searchValue)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+
+                var filters=[];
+                var filter= {name:'cityName',value:_searchValue};
+                filters.push(filter);
+                smartmedDB.cities.where("cityName")
+                .startsWithIgnoreCase(_searchValue)
+                .toArray (function (_resultsArray) {
+              resolve(_resultsArray);
+          });
+            
+             });
+         return promise;
+    },
+    cityAutoComplete:function(_scope,_serachValue,_cityComboStore,_field,_fromIndexedDB,_searchLengh)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
         if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue))
         {
             var store = me.getViewModel().getStore(_cityComboStore);
-            this.getCities(_serachValue.toUpperCase())
+            if(_fromIndexedDB)
+            {
+               this.getCitiesFromIndexedDB(_serachValue.toUpperCase())
                 .then(
                     function(cityData)
                     {
@@ -51,7 +71,28 @@ var CityDirect={
                         _field.expand();
 
 
-                    });
+                    });   
+            }
+            else{
+              this.getCities(_serachValue.toUpperCase())
+                .then(
+                    function(cityData)
+                    {
+                        store.clearFilter();
+                        store.removeAll();
+                        store.loadData(cityData);
+
+                        store.filter({
+                            property: 'cityName',
+                            anyMatch: true,
+                            value   : _serachValue
+                        });
+                        _field.expand();
+
+
+                    });  
+            }
+            
         }
     }
 };
