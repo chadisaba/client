@@ -33,10 +33,6 @@ var CityDirect={
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-
-                var filters=[];
-                var filter= {name:'cityName',value:_searchValue};
-                filters.push(filter);
                 smartmedDB.cities.where("cityName")
                 .startsWithIgnoreCase(_searchValue)
                 .toArray (function (_resultsArray) {
@@ -50,7 +46,9 @@ var CityDirect={
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue))
+        if(isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
+        {
+        if(_serachValue && _serachValue.length>=searchLengh)
         {
             var store = me.getViewModel().getStore(_cityComboStore);
             if(_fromIndexedDB)
@@ -94,5 +92,6 @@ var CityDirect={
             }
             
         }
+    }
     }
 };
