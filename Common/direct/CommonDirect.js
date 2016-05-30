@@ -21,16 +21,12 @@ var CommonDirect={
         return promise;
     },
     
-       getDataFromIndexedDB:function(_searchValue)
+       getDataFromIndexedDB:function(_searchValue,_searchFieldName)
     {
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-
-                var filters=[];
-                var filter= {name:'cityName',value:_searchValue};
-                filters.push(filter);
-                smartmedDB.cities.where("cityName")
+                smartmedDB.cities.where(_searchFieldName)
                 .startsWithIgnoreCase(_searchValue)
                 .toArray (function (_resultsArray) {
               resolve(_resultsArray);
@@ -90,5 +86,57 @@ var CommonDirect={
                 )
             });
         return promise;
+    },
+      autoComplete:function(_scope,_searchValue,_searchFieldName,_comboStore,_field,_fromIndexedDB,_searchLengh)
+    {
+        var me=_scope;
+        var searchLengh=_searchLengh||4;
+        if(_searchValue&& isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
+        {
+        if(_searchValue.length>=searchLengh)
+        {
+            var store = me.getViewModel().getStore(_cityComboStore);
+            if(_fromIndexedDB)
+            {
+               this.getCitiesFromIndexedDB(_searchValue,_searchFieldName)
+                .then(
+                    function(_resultData)
+                    {
+                        store.clearFilter();
+                        store.removeAll();
+                        store.loadData(_resultData);
+
+                        store.filter({
+                            property: _searchFieldName,
+                            anyMatch: true,
+                            value   : _searchValue
+                        });
+                        _field.expand();
+                    });   
+            }
+            else{
+              this.getData(_searchValue)
+                .then(
+                    function(_resultData)
+                    {
+                        store.clearFilter();
+                        store.removeAll();
+                        store.loadData(_resultData);
+
+                        store.filter({
+                            property: _searchFieldName,
+                            anyMatch: true,
+                            value   : _searchValue
+                        });
+                        _field.expand();
+
+
+                    });  
+            }
+            
+        }
+        }
+        else
+        return _searchValue;
     }
 };
