@@ -20,6 +20,26 @@ var CommonDirect={
             });
         return promise;
     },
+    
+       getDataFromIndexedDB:function(_searchValue)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+
+                var filters=[];
+                var filter= {name:'cityName',value:_searchValue};
+                filters.push(filter);
+                smartmedDB.cities.where("cityName")
+                .startsWithIgnoreCase(_searchValue)
+                .toArray (function (_resultsArray) {
+              resolve(_resultsArray);
+          });
+            
+             });
+         return promise;
+    },
+    
     getDataById:function(_IdName,_idValue,_tableName)
     {
         //Creating a promise
