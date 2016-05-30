@@ -46,9 +46,9 @@ var CityDirect={
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
+        if(_serachValue && isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
         {
-        if(_serachValue && _serachValue.length>=searchLengh)
+        if(_serachValue.length>=searchLengh)
         {
             var store = me.getViewModel().getStore(_cityComboStore);
             if(_fromIndexedDB)
