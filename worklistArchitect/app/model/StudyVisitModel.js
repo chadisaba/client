@@ -17,7 +17,15 @@ Ext.define('MyApp.model.StudyVisitModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Field'
+        'Ext.data.field.Integer',
+        'Ext.data.field.Boolean'
+    ],
+
+    validators: [
+        {
+            type: 'presence',
+            field: 'xxFieldNameRequired'
+        }
     ],
 
     fields: [
@@ -28,22 +36,44 @@ Ext.define('MyApp.model.StudyVisitModel', {
             name: 'visitId'
         },
         {
-            name: 'studyId'
-        },
-        {
+            type: 'int',
             name: 'deviceId'
         },
         {
-            name: 'studyVisitImagesAvailable'
+            name: 'deviceName'
         },
         {
-            name: 'studyVisitPrice'
+            name: 'deviceCode'
+        },
+        {
+            type: 'int',
+            name: 'userId'
+        },
+        {
+            name: 'userFName'
+        },
+        {
+            name: 'userLastName'
+        },
+        {
+            type: 'boolean',
+            name: 'studyVisitImageAvailable'
         },
         {
             name: 'studyVisitPacsId'
         },
         {
             name: 'studyVisitExternalId'
+        },
+        {
+            type: 'int',
+            name: 'studyId'
+        },
+        {
+            name: 'studyName'
+        },
+        {
+            name: 'studyCode'
         },
         {
             name: 'toDelete'

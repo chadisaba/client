@@ -9,10 +9,13 @@ Ext.define('Plugins.grid.GridInfoColumnPlugin', {
 				renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 					if(view !== undefined && view !== null){
 						if (record.get('added') ){
-							return '<div class="fa fa-plus" style="height:16px !important;">&nbsp;</div>';
+							return '<div class="fa fa-plus" style="height:16px !important;" data-qtip="Ajouté">&nbsp;</div>';
 						} else if (record.get('modified') ){
-							return '<div class="fa fa-edit" style="height:16px !important;">&nbsp;</div>';
-						}else return '';
+							return '<div class="fa fa-edit" style="height:16px !important;" data-qtip="Modifié">&nbsp;</div>';
+						}else if (record.get('deleted') ){
+							return '<div class="fa fa-trash-o" style="height:16px !important;" data-qtip="A supprimer">&nbsp;</div>';
+						}
+						else return '';
 					}else {
 						return '';
 					}

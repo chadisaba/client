@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyvisitgrid",
+        "designer|userClassName": "StudyVisitGridViewController"
+    },
+    "designerId": "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm"
+}

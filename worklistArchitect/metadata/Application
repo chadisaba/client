@@ -41,7 +41,8 @@
             "PatientForm",
             "PatientReceivePanel",
             "VisitForm",
-            "VisitSimplifiedForm"
+            "VisitSimplifiedForm",
+			'StudyVisitGrid'
         ]
     },
     "name": "Application",

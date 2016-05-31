@@ -31,6 +31,9 @@
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
+            "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
+            "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm",
             "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
             "79e1aecd-2f22-4511-bab4-a79afe9fcedd",
             "a1dc7b28-132b-4d9d-945f-b3e518294321",
@@ -79,6 +82,7 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
             "9bee4efc-c63b-47f8-a0fa-00866346a21c",
             "a1dbffd8-cc7e-4c3a-b920-1186d307aaa9",
             "da771e08-f167-4ae6-8517-af5d743359b9",
@@ -90,8 +94,7 @@
             "sa8ubty5-1d4f-4fb9-9364-uddlnqeakqnp",
             "r8h3hui7-1d4f-4fb9-9364-xyhurc54yn3d",
             "9d12509b-71be-4c74-8e94-8c832006b458",
-            "31119146-7002-4b82-a0a8-477db96a9d1d",
-            "d4c7dd37-f610-4893-81f5-b5611eff2363"
+            "31119146-7002-4b82-a0a8-477db96a9d1d"
         ],
         "resource": [
             "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",

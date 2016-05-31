@@ -6,10 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "StudyVisitModel"
+        "designer|userClassName": "StudyVisitModel",
+        "validators": [
+            "[{",
+            "            type: 'presence',",
+            "            field: 'xxFieldNameRequired'",
+            "        }]"
+        ]
     },
-    "name": "MyModel",
-    "designerId": "d4c7dd37-f610-4893-81f5-b5611eff2363",
+    "name": "StudyVisitModel",
+    "designerId": "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
     "cn": [
         {
             "type": "Ext.data.field.Field",
@@ -21,8 +27,8 @@
             "userConfig": {
                 "name": "studyVisitId"
             },
-            "name": "MyField7",
-            "designerId": "64ce5b7b-1ac5-4368-a636-9c035b79db7b"
+            "name": "MystudyVisitId",
+            "designerId": "e96f8d89-803f-419a-a346-f3xeqrkqe8rb"
         },
         {
             "type": "Ext.data.field.Field",
@@ -34,24 +40,11 @@
             "userConfig": {
                 "name": "visitId"
             },
-            "name": "MyField10",
-            "designerId": "5c4ff03e-83c8-4f86-860f-20a5fa86bd01"
+            "name": "MyvisitId",
+            "designerId": "e96f8d89-803f-419a-a346-nhxs58cbmf17"
         },
         {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "studyId"
-            },
-            "name": "MyField11",
-            "designerId": "23f18aff-03ca-48b0-90d3-2b77873aea0e"
-        },
-        {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -60,8 +53,8 @@
             "userConfig": {
                 "name": "deviceId"
             },
-            "name": "MyField12",
-            "designerId": "63c2ea40-b363-412b-b0e8-458624ac1fd5"
+            "name": "MyInteger",
+            "designerId": "e96f8d89-803f-419a-a346-91j81srlk5m7"
         },
         {
             "type": "Ext.data.field.Field",
@@ -71,10 +64,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "studyVisitImagesAvailable"
+                "name": "deviceName"
             },
-            "name": "MyField13",
-            "designerId": "9d1accf0-69f8-4faa-976e-411df60986e0"
+            "name": "MydeviceName",
+            "designerId": "e96f8d89-803f-419a-a346-sc24xhx2va63"
         },
         {
             "type": "Ext.data.field.Field",
@@ -84,10 +77,62 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "studyVisitPrice"
+                "name": "deviceCode"
             },
-            "name": "MyField14",
-            "designerId": "43d17dc9-2b3a-4100-978d-6b5dd3fa8beb"
+            "name": "MydeviceCode",
+            "designerId": "e96f8d89-803f-419a-a346-stl8qgwsebjf"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userId"
+            },
+            "name": "MyInteger1",
+            "designerId": "e96f8d89-803f-419a-a346-v58hsddhi6ji"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userFName"
+            },
+            "name": "MyuserFName",
+            "designerId": "e96f8d89-803f-419a-a346-b6v3m3gm7ifi"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userLastName"
+            },
+            "name": "MyuserLastName",
+            "designerId": "e96f8d89-803f-419a-a346-4xhkjd194ni2"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyVisitImageAvailable"
+            },
+            "name": "MyBoolean",
+            "designerId": "e96f8d89-803f-419a-a346-5q5245mn4bkj"
         },
         {
             "type": "Ext.data.field.Field",
@@ -99,8 +144,8 @@
             "userConfig": {
                 "name": "studyVisitPacsId"
             },
-            "name": "MyField15",
-            "designerId": "a975b338-0b9f-4ff2-9129-9282245b84c4"
+            "name": "MystudyVisitPacsId",
+            "designerId": "e96f8d89-803f-419a-a346-b7mwl83wxib8"
         },
         {
             "type": "Ext.data.field.Field",
@@ -112,8 +157,47 @@
             "userConfig": {
                 "name": "studyVisitExternalId"
             },
-            "name": "MyField16",
-            "designerId": "b578ad84-ea25-4f32-93aa-f686763ff5ad"
+            "name": "MystudyVisitExternalId",
+            "designerId": "e96f8d89-803f-419a-a346-u71jsyy9pta6"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyId"
+            },
+            "name": "MyInteger2",
+            "designerId": "e96f8d89-803f-419a-a346-h734l2ldteet"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyName"
+            },
+            "name": "MystudyName",
+            "designerId": "e96f8d89-803f-419a-a346-i11cpb337gud"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyCode"
+            },
+            "name": "MystudyCode",
+            "designerId": "e96f8d89-803f-419a-a346-7fj8mxhv75pn"
         },
         {
             "type": "Ext.data.field.Field",
@@ -125,8 +209,8 @@
             "userConfig": {
                 "name": "toDelete"
             },
-            "name": "MyField17",
-            "designerId": "25983176-aa0b-4ee7-ba82-a0cc56488ab6"
+            "name": "MyField27",
+            "designerId": "w81epgir-1f65-4972-a6e1-gmt53eksdn1w"
         },
         {
             "type": "Ext.data.field.Field",
@@ -138,8 +222,8 @@
             "userConfig": {
                 "name": "added"
             },
-            "name": "MyField18",
-            "designerId": "dd7627f0-efc3-456e-a3d4-23923768e957"
+            "name": "MyField28",
+            "designerId": "wjl3snsf-1a08-4be0-b287-987bba33atmp"
         },
         {
             "type": "Ext.data.field.Field",
@@ -151,8 +235,8 @@
             "userConfig": {
                 "name": "modified"
             },
-            "name": "MyField19",
-            "designerId": "123ef308-46f5-4c04-af8d-3e57613cb6ce"
+            "name": "MyField29",
+            "designerId": "jkpn3sbu-2c80-456a-a5c5-uv23rxmjj7q8"
         },
         {
             "type": "Ext.data.field.Field",
@@ -164,8 +248,8 @@
             "userConfig": {
                 "name": "notValid"
             },
-            "name": "MyField20",
-            "designerId": "340d031d-e3a0-475f-ab54-bf7e7e0a2dc0"
+            "name": "MyField30",
+            "designerId": "hrftfg6k-f0d5-4d89-a1bb-nt6ev7gyxyqb"
         },
         {
             "type": "Ext.data.field.Field",
@@ -177,8 +261,8 @@
             "userConfig": {
                 "name": "addedAndValidated"
             },
-            "name": "MyField21",
-            "designerId": "ac19d027-aab5-4227-a711-218686619c9d"
+            "name": "MyField31",
+            "designerId": "mb89avg6-ac56-469a-895f-3jeckksqchkn"
         }
     ]
 }

@@ -52,7 +52,8 @@ Ext.application({
         'PatientForm',
         'PatientReceivePanel',
         'VisitForm',
-        'VisitSimplifiedForm'
+        'VisitSimplifiedForm',
+        'StudyVisitGrid'
     ],
     controllers: [
         'MainController'

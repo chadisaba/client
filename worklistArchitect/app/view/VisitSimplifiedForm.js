@@ -20,14 +20,12 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
     requires: [
         'MyApp.view.VisitSimplifiedFormViewModel',
         'MyApp.view.VisitSimplifiedFormViewController',
+        'MyApp.view.StudyVisitGrid',
         'Ext.form.FieldSet',
         'Ext.form.field.Date',
         'Ext.form.field.Time',
         'Ext.form.field.Checkbox',
-        'Ext.grid.Panel',
-        'Ext.grid.column.Column',
-        'Ext.view.Table',
-        'Ext.toolbar.Toolbar'
+        'Ext.grid.Panel'
     ],
 
     controller: 'visitsimplifiedform',
@@ -121,71 +119,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     }
                 },
                 {
-                    xtype: 'gridpanel',
-                    itemId: 'visitStudyGridItemId',
-                    bind: {
-                        title: '{trans.studies}',
-                        store: '{StudyVisitStore}'
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'string',
-                            bind: {
-                                text: '{trans.study}'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'number',
-                            bind: {
-                                text: '{trans.price}'
-                            },
-                            editor: {
-                                xtype: 'textfield',
-                                itemId: 'studyVisitTextFieldEditorItemId'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'date',
-                            bind: {
-                                text: '{trans.device}'
-                            },
-                            editor: {
-                                xtype: 'combobox',
-                                itemId: 'deviceComboboxEditorItemId'
-                            }
-                        }
-                    ],
-                    dockedItems: [
-                        {
-                            xtype: 'toolbar',
-                            dock: 'top',
-                            items: [
-                                {
-                                    xtype: 'combobox',
-                                    itemId: 'addStudyComboItemId',
-                                    maxWidth: 500,
-                                    labelWidth: 150,
-                                    selectOnFocus: true,
-                                    displayField: 'studyName',
-                                    minChars: 4,
-                                    queryMode: 'local',
-                                    typeAhead: true,
-                                    typeAheadDelay: 500,
-                                    valueField: 'studyId',
-                                    bind: {
-                                        fieldLabel: '{trans.addStudy}',
-                                        store: '{StudyComboStore}'
-                                    },
-                                    listeners: {
-                                        change: 'onAddStudyComboItemIdChange'
-                                    }
-                                }
-                            ]
-                        }
-                    ]
+                    xtype: 'studyvisitgrid'
                 }
             ]
         }

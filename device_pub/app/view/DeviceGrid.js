@@ -274,7 +274,7 @@ Ext.define('MyApp.view.DeviceGrid', {
     processDeviceGrid: function(config) {
         Plugins.grid.GridEditingPlugin.configure(this);
         this.plugins.push (
-                           new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+            new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting',onlyADM:true}));
 
     }
 

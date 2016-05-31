@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyvisitgrid",
+        "designer|userClassName": "StudyVisitGridViewModel"
+    },
+    "designerId": "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyVisitModel",
+                "name": "StudyVisitStore"
+            },
+            "name": "StudyVisitStore",
+            "designerId": "ru6decju-c056-4140-9039-jrieewb521e8"
+        }
+        
+    ]
+}
