@@ -5,15 +5,28 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function()
+    initGrid:function(_filters)
     {
 	var me=this;
+	me.filters=_filters;
 	this.getView().getPlugin('gridediting').lockGrid(false);
-	this.getResultArray(
-        	    function(data){
+	this.getResultArray().
+	then(
+		function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyVisitStore'));
-        	        });
+        	        }
+        	        );
+        	    
     },
+
+    getDataToBeSaved:function()
+    {
+    	return component.getPlugin('gridediting').getDataToBeSaved();
+    },
+    refreshGrid()
+    {
+    	this.initGrid(this.filters);
+    }
 
     onStudyVisitGridIdInEdit: function() {
 
@@ -84,11 +97,15 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
-    getResultArray:function(callback)
+    getResultArray:function()
     {
+    	
       var me=this;
 
-                var mainTableObject={};
+	var promise=new Promise(
+		function(resolve,reject)
+		{
+		  var mainTableObject={};
                 mainTableObject.tableName='STUDY_VISIT';
                 var joinTablesArray=[];
                 joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
@@ -107,13 +124,16 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                                 res.data[i].studyCode=res.data[i]['Study.studyCode'];
                                 res.data[i].studyName=res.data[i]['Study.studyName'];
                             }
-                            callback(res.data);
+                            resolve(res.data);
                         }
                         else {
                             console.error(res.msg);
-                            callback(res.msg);
+                            reject(res.msg);
                         }
-                    }, me);
+                    });	
+		}
+		); 
+              
     },
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
