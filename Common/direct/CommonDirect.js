@@ -1,5 +1,5 @@
 var CommonDirect={
-    saveData:function(_dataObject,_tableName)
+    saveData:function(_dataObject,_tableName,_comment)
     {
         var promise = new Promise(
             function (resolve, reject) {
