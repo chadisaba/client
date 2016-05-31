@@ -102,6 +102,28 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		
 	},
 	
+	getDataToBeSaved:function()
+	{
+		var me=this;
+		var dataToBeSaved = [],
+		dataType = ['added','modified','toDelete'],
+		errors= [];
+	
+		Ext.Array.each(dataType, function(dtType){
+		    Ext.each(_grid.store.query(dtType,true).items,function(record){
+		        if(record.validate().isValid()){
+		            dataToBeSaved.push(record.data);
+		        } else {
+		            var index = me.grid.store.indexOf(record);
+		            index++;
+		            errors.push(index);
+		        } 
+		    });
+		});
+		
+		return {dataToBeSaved:dataToBeSaved,errors:errors}
+	}
+	
 	gridOnSelect : function(rowmodel,record,index,eOpts){
 		var me = this;
 		if (me.onlyECSQ === false && me.onlyModify === false && me.onlyDelete === false && me.onlyAD === false && me.noModif === false){
@@ -527,7 +549,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 					click: function (button, e, options){
 						// Show confirmation pop-up before save action
 						if (me.showConfirmationOnSave){
-							var dataToBeSaved = [],
+						/*	var dataToBeSaved = [],
 						    dataType = ['added','modified','toDelete'],
 						    errors= [];
 	
@@ -541,8 +563,11 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 							            errors.push(index);
 							        } 
 							    });
-							});
+							});*/
 		
+							var dataToSaveObject=me.getDataToBeSaved();
+							var dataToBeSaved=dataToSaveObject.dataToBeSaved;
+							var errors=dataToSaveObject.errors;
 							if(errors.length > 0){   
 							    Ext.MessageBox.show({
 							        title : 'Erreur',
