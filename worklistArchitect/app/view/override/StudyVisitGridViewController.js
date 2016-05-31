@@ -7,15 +7,9 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     initGrid:function()
     {
-
-    },
-    onStudyVisitGridIdAfterRender: function(component, eOpts) {
-        component.getPlugin('gridediting').lockGrid(false);
-
-    var params;
-            
-   
-        this.getResultArray(
+	var me=this;
+	this.getView().getPlugin('gridediting').lockGrid(false);
+	this.getResultArray(
         	    function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyVisitStore'));
         	        });
@@ -31,30 +25,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
    onStudyVisitGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-
-	     var me=this;
-	     var params={};
-	            params.table="xxTableName";
-	            params.idName="xxTableId";
-	            params.dataToBeSaved=dataToBeSaved;
-	            params.comment=comment;
-	            var result=[];
-	            Server.CommonQueries.saveRecords(params,
-	                function(_result){
-	                    if(_result.success){
-	                        var resultArray=[];
-	                        this.getResultArray(function(data){
-	                            Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
-	                        },this);
-	                    }
-	                    else{
-	                        console.error(_result.msg);
-	                        Ext.MessageBox.alert("Error","save Error "+_result.msg);
-	                    }
-	                },me
-	            );
-     
-        
+	     CommonDirect.saveData(_dataToBeSaved,"STUDY_VISIT",_comment);
     },
 
     onStudyVisitGridIdAddItem: function() {
@@ -115,21 +86,34 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
     getResultArray:function(callback)
     {
-        var me=this;
-        var params={
-        		table:"xxTableName"
-        };
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
-                    }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
+      var me=this;
+
+                var mainTableObject={};
+                mainTableObject.tableName='STUDY_VISIT';
+                var joinTablesArray=[];
+                joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
+                var params = {
+                    mainTableObject: mainTableObject,
+                    joinTablesArray: joinTablesArray
+                };
+                Server.CommonQueries.readJoin(params,
+                    function (res) {
+                        if (res.success) {
+                            for (var i = 0; i < res.data.length; i++) {
+                                res.data[i].userFName=res.data[i]['User.userFName'];
+                                res.data[i].userLName=res.data[i]['User.userLName'];
+                                res.data[i].deviceName=res.data[i]['Device.deviceName'];
+                                res.data[i].deviceCode=res.data[i]['Device.deviceCode'];
+                                res.data[i].studyCode=res.data[i]['Study.studyCode'];
+                                res.data[i].studyName=res.data[i]['Study.studyName'];
+                            }
+                            callback(res.data);
+                        }
+                        else {
+                            console.error(res.msg);
+                            callback(res.msg);
+                        }
+                    }, me);
     },
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
