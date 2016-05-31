@@ -17,8 +17,8 @@ Ext.define('MyApp.model.StudyVisitModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Integer',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.Boolean',
+        'Ext.data.field.Number'
     ],
 
     validators: [
@@ -74,6 +74,11 @@ Ext.define('MyApp.model.StudyVisitModel', {
         },
         {
             name: 'studyCode'
+        },
+        {
+            type: 'float',
+            defaultValue: 0,
+            name: 'studyVisitPrice'
         },
         {
             name: 'toDelete'

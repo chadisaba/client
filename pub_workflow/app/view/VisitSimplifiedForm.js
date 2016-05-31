@@ -119,24 +119,14 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     }
                 },
                 {
-                    xtype: 'studyvisitgrid'
+                    xtype: 'studyvisitgrid',
+                    externalEditingPlugin: {
+                        pluginId: 'gridediting',
+                        onlyADM: true
+                    }
                 }
             ]
         }
-    ],
-
-    initConfig: function(instanceConfig) {
-        var me = this,
-            config = {};
-        me.processVisitSimplifiedForm(config);
-        if (instanceConfig) {
-            me.getConfigurator().merge(me, config, instanceConfig);
-        }
-        return me.callParent([config]);
-    },
-
-    processVisitSimplifiedForm: function(config) {
-
-    }
+    ]
 
 });

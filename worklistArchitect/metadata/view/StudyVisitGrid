@@ -35,7 +35,134 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "studyName",
+                "flex": 1,
+                "text": "{trans.study}"
+            },
+            "name": "MystudyNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-8fnblkppdmre",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyComboboxItemId"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-2tyu5t8jtpma",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStudyComboboxItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onStudyComboboxItemIdSelect",
+                            "designerId": "e5b89895-cacd-4f7c-8a03-6a4e69d91002"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "deviceName",
+                "text": "{trans.device}"
+            },
+            "name": "MydeviceNameCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-hscrmwrxcmsq",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deviceComboboxItemId"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-dxesdq32jrth",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeviceComboboxItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onDeviceComboboxItemIdSelect",
+                            "designerId": "2f10aed8-c5c5-4b29-83ca-4bfffd5ca2f0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitPrice",
+                "defaultWidth": null,
+                "text": "{trans.price}",
+                "width": 100
+            },
+            "name": "MydeviceNameCol1",
+            "designerId": "f1254b28-b9e3-48a4-a6d7-5bd1d4c9b6f9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyVisitPriceTextFieldItemId"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "471a0b99-9634-4b88-bea0-f09ee3bd36f9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "deviceId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MydeviceIdCol",
@@ -49,6 +176,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "itemId": "deviceIdTextFieldItemId"
                     },
                     "name": "MydeviceIdTextField",
@@ -64,36 +192,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "deviceName",
-                "text": "Appareil"
-            },
-            "name": "MydeviceNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-hscrmwrxcmsq",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "deviceNameTextFieldItemId"
-                    },
-                    "name": "MydeviceNameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-dxesdq32jrth"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "userId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MyuserIdCol",
@@ -122,43 +222,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "userFName",
-                "text": ""
-            },
-            "name": "MyuserFNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-emmeiwck4st5",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "userFNameTextFieldItemId"
-                    },
-                    "name": "MyuserFNameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-728jnm5jhqgt"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "userLastName",
-                "text": "Manipulateur"
+                "text": "{trans.technician}"
             },
             "name": "MyuserLastNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-y695f42wmlb5",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "editor",
                         "type": "object"
@@ -166,10 +237,27 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "itemId": "userLastNameTextFieldItemId"
+                        "itemId": "technicianComboboxItemId"
                     },
-                    "name": "MyuserLastNameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-65tfr615mn7k"
+                    "name": "MyComboBox3",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-65tfr615mn7k",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTechnicianComboboxItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onTechnicianComboboxItemIdSelect",
+                            "designerId": "f5744cfe-da74-47f7-8b5c-02ec65a1dc3f"
+                        }
+                    ]
                 }
             ]
         },
@@ -182,7 +270,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitImageAvailable",
-                "text": ""
+                "defaultWidth": null,
+                "text": "",
+                "width": 40
             },
             "name": "MystudyVisitImageAvailableCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-bvkj2pjhxk1n"
@@ -196,6 +286,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MystudyIdCol",
@@ -213,35 +304,6 @@
                     },
                     "name": "MystudyIdTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-jh12u2nrbbx2"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyName",
-                "text": "Examen"
-            },
-            "name": "MystudyNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-8fnblkppdmre",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "studyNameTextFieldItemId"
-                    },
-                    "name": "MystudyNameTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-2tyu5t8jtpma"
                 }
             ]
         },
@@ -276,44 +338,6 @@
             },
             "name": "select",
             "designerId": "wqdulf67-f393-483a-8425-rtpj83vnd9wc"
-        },
-        {
-            "type": "Ext.grid.plugin.RowEditing",
-            "reference": {
-                "name": "plugins",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "autoCancel": false,
-                "clicksToMoveEditor": 0,
-                "errorSummary": false,
-                "pluginId": "rowEdit"
-            },
-            "name": "MyRowEditingPlugin",
-            "designerId": "52qu2ix5-ccc7-465c-8662-1wrm8lh9n59n"
-        },
-        {
-            "type": "processcfgfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "config"
-                ],
-                "fn": "processStudyVisitGrid",
-                "implHandler": [
-                    "Plugins.grid.GridEditingPlugin.configure(this);",
-                    "this.plugins.push (",
-                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
-                    ""
-                ]
-            },
-            "name": "processStudyVisitGrid",
-            "designerId": "6rll4irj-2054-459b-a4aa-n1jh54xvlg91"
         },
         {
             "type": "viewcontrollereventbinding",
@@ -606,6 +630,41 @@
             },
             "name": "onStudyVisitGridIdValidateedit",
             "designerId": "pss6htsn-b2ec-4782-a56f-hii1i55sdcff"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyVisitGrid",
+                "implHandler": [
+                    "GridAddPlugins.addPlugins(this);",
+                    ""
+                ]
+            },
+            "name": "processStudyVisitGrid",
+            "designerId": "593f1bf5-ce62-42eb-a748-b093bc046540"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyVisitGridItemIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onStudyVisitGridItemIdBoxReady",
+            "designerId": "983728e1-ecc7-4a36-9557-eb0cc9efa5ec"
         }
     ]
 }

@@ -16,14 +16,14 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         var studyVisitArray=[];
          if(visitId)
         {
-            var p1=VisitDirect.getVisit(visitId);
-            var p2=VisitDirect.getStudyVisit(visitId);
-            Promise.all([p1,p2])
-                .then(function(_valuesArray)
+            VisitDirect.getVisit(visitId)
+                .then(function(_resultValue)
                 {
-                    visitRec=Ext.create('MyApp.model.VisitModel',_valuesArray[0]);
-                    studyVisitArray=_valuesArray[1];
-                    viewModel.getStore('StudyVisitStore').loadData(studyVisitArray);
+                    visitRec=Ext.create('MyApp.model.VisitModel',_resultValue);
+                    var studyVisitFilters=[{
+                        name:"visitId",value:_visitId
+                    }];
+                    view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters);
                 });
         }
         else
@@ -31,6 +31,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             // we create a new patient
             var visitRec=Ext.create('MyApp.model.VisitModel');
             view.loadRecord(visitRec);
+            view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
         }
 
 

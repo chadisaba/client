@@ -21,9 +21,9 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         'MyApp.view.StudyVisitGridViewModel',
         'MyApp.view.StudyVisitGridViewController',
         'Ext.grid.column.Column',
-        'Ext.form.field.Text',
+        'Ext.form.field.ComboBox',
+        'Ext.form.field.Number',
         'Ext.view.Table',
-        'Ext.grid.plugin.RowEditing',
         'Ext.selection.RowModel'
     ],
 
@@ -43,24 +43,55 @@ Ext.define('MyApp.view.StudyVisitGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'deviceId',
-            text: '',
+            dataIndex: 'studyName',
+            text: '{trans.study}',
+            flex: 1,
             editor: {
-                xtype: 'textfield',
-                itemId: 'deviceIdTextFieldItemId'
+                xtype: 'combobox',
+                itemId: 'studyComboboxItemId',
+                allowBlank: false,
+                listeners: {
+                    select: 'onStudyComboboxItemIdSelect'
+                }
             }
         },
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceName',
-            text: 'Appareil',
+            text: '{trans.device}',
             editor: {
-                xtype: 'textfield',
-                itemId: 'deviceNameTextFieldItemId'
+                xtype: 'combobox',
+                itemId: 'deviceComboboxItemId',
+                listeners: {
+                    select: 'onDeviceComboboxItemIdSelect'
+                }
             }
         },
         {
             xtype: 'gridcolumn',
+            dataIndex: 'studyVisitPrice',
+            width: 100,
+            text: '{trans.price}',
+            editor: {
+                xtype: 'numberfield',
+                itemId: 'studyVisitPriceTextFieldItemId',
+                allowBlank: false
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'deviceId',
+            text: '',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'deviceIdTextFieldItemId',
+                allowBlank: false
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'userId',
             text: '',
             editor: {
@@ -70,44 +101,31 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'userFName',
-            text: '',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'userFNameTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
             dataIndex: 'userLastName',
-            text: 'Manipulateur',
+            text: '{trans.technician}',
             editor: {
-                xtype: 'textfield',
-                itemId: 'userLastNameTextFieldItemId',
-                allowBlank: false
+                xtype: 'combobox',
+                itemId: 'technicianComboboxItemId',
+                allowBlank: false,
+                listeners: {
+                    select: 'onTechnicianComboboxItemIdSelect'
+                }
             }
         },
         {
             xtype: 'gridcolumn',
+            width: 40,
             dataIndex: 'studyVisitImageAvailable',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyId',
             text: '',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyIdTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyName',
-            text: 'Examen',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyNameTextFieldItemId'
             }
         }
     ],
@@ -127,17 +145,9 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         containerclick: 'onStudyVisitGridIdContainerClick',
         edit: 'onStudyVisitGridIdEdit',
         beforecellclick: 'onStudyVisitGridIdBeforeCellClick',
-        validateedit: 'onStudyVisitGridIdValidateedit'
+        validateedit: 'onStudyVisitGridIdValidateedit',
+        boxready: 'onStudyVisitGridItemIdBoxReady'
     },
-    plugins: [
-        {
-            ptype: 'rowediting',
-            pluginId: 'rowEdit',
-            autoCancel: false,
-            clicksToMoveEditor: 0,
-            errorSummary: false
-        }
-    ],
     selModel: {
         selType: 'rowmodel',
         mode: 'MULTI'
@@ -154,9 +164,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
     },
 
     processStudyVisitGrid: function(config) {
-        Plugins.grid.GridEditingPlugin.configure(this);
-        this.plugins.push (
-                           new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+        GridAddPlugins.addPlugins(this);
 
     }
 

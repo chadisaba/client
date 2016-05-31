@@ -20,25 +20,6 @@
     "viewModelInstanceId": "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
     "cn": [
         {
-            "type": "processcfgfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "config"
-                ],
-                "fn": "processVisitSimplifiedForm",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "name": "processVisitSimplifiedForm",
-            "designerId": "7b250cb1-cc50-41db-bb56-a8ab8c3211e4"
-        },
-        {
             "type": "viewcontrollereventbinding",
             "reference": {
                 "name": "listeners",
@@ -295,8 +276,27 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "externalEditingPlugin": [
+                            "{",
+                            "pluginId: 'gridediting',",
+                            "onlyADM:true",
+                            "",
+                            "}"
+                        ]
+                    },
                     "name": "studyvisitgrid",
+                    "configAlternates": {
+                        "externalEditingPlugin": "object"
+                    },
                     "designerId": "d819db7b-9e36-44a4-b5c9-c054f65daa9a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "externalEditingPlugin",
+                            "type": "string"
+                        }
+                    ],
                     "masterInstanceId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9"
                 }
             ]

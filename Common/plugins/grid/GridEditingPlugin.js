@@ -64,7 +64,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	// Edit, Cancel, Save, Quit actions only
 	onlyECSQ: false,
-	
+
+
 	pluginId: 'gridediting',
 	
 	init:function (grid) {
@@ -74,7 +75,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		
 		//init edit mode boolean
 		grid.inEdition=false;
-		
+
+		if(this.onlyADM)
+			grid.inEdition = true;
+
 		var toolbars = grid.query('#editingtoolbar');	
 		if (toolbars.length==1){
 			this.tb = toolbars[0];
@@ -122,7 +126,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		});
 		
 		return {dataToBeSaved:dataToBeSaved,errors:errors}
-	}
+	},
 	
 	gridOnSelect : function(rowmodel,record,index,eOpts){
 		var me = this;
@@ -261,7 +265,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);		
 		}
-		me.filterCheckBoxCtn.hide();
+		if(me.filterCheckBoxCtn)
+			me.filterCheckBoxCtn.hide();
 	},
 	
 	createNewToolbar: function (){
@@ -272,23 +277,19 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
-
-
-		this.createFilterCheckboxCtn();
-
-
-		if(this.liveSearch){
-			this.createLiveSearchCtn();
-		this.tb.add(this.liveSearchCtn);
-		}
-
-
 		if (this.onlyADM===false 
 			&& this.onlyECSQ===false 
 			&& this.onlyModify === false
 			&& this.onlyDelete === false
 			&& this.onlyAD===false
 			&& this.noModif===false){
+			this.createFilterCheckboxCtn();
+
+			if(this.liveSearch){
+				this.createLiveSearchCtn();
+				this.tb.add(this.liveSearchCtn);
+			}
+
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -430,7 +431,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 
 	createLiveSearchCtn: function (){
 		var me = this;
-		this.liveSearchCtn = Ext.create('Ext.form.TextField',
+		me.liveSearchCtn = Ext.create('Ext.form.TextField',
 		{
 			fieldStyle : 'font-family: FontAwesome',
 			emptyText: '\uF002 Recherche rapide',
@@ -761,7 +762,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	enterEditMode: function () {
 		var me = this;
-		me.grid.inEdition = true;
+
+			me.grid.inEdition = true;
+
 		me.editBtnCtn.hide();
 		
 		me.cancelBtnCtn.show();
@@ -823,7 +826,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 			}
 		}
-		
+
 	},
 	
 	quitEditMode: function () {
@@ -904,15 +907,21 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			if (grid.getStore().query('toDelete',true).items.length > 0 
 			|| grid.getStore().query('added',true).items.length > 0 
 			|| grid.getStore().query('modified',true).items.length > 0){
-				me.saveBtnCtn.down('#saveBtn').setDisabled(false);
-				me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
+				if(me.saveBtnCtn)
+					me.saveBtnCtn.down('#saveBtn').setDisabled(false);
+				if(me.cancelBtnCtn)
+					me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
 			}
 			else {
+				if(me.saveBtnCtn)
 				me.saveBtnCtn.down('#saveBtn').setDisabled(true);
+				if(me.cancelBtnCtn)
 				me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 			}
 		} else {
+			if(me.saveBtnCtn)
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
+			if(me.cancelBtnCtn)
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
 		}
 	},

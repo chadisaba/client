@@ -200,6 +200,24 @@
             "designerId": "e96f8d89-803f-419a-a346-7fj8mxhv75pn"
         },
         {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "",
+                    "0",
+                    ""
+                ],
+                "name": "studyVisitPrice"
+            },
+            "name": "MyNumber",
+            "designerId": "3789d437-eca8-4123-becd-c5daeb695fc6"
+        },
+        {
             "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",

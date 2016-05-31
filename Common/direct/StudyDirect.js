@@ -40,11 +40,9 @@ var StudyDirect={
                 .toArray (function (_resultsArray) {
                 resolve(_resultsArray);
                 });
-                .toArray (function (_resultsArray) {
-              resolve(_resultsArray);
+
           });
-            
-             });
+
          return promise;
     },
      getStudyByNameFromIndexedDB:function(_searchValue,_doctorId)
@@ -61,7 +59,7 @@ var StudyDirect={
             
              });
          return promise;
-    }
+    },
      studyAutoComplete:function(_scope,_serachValue,_studyComboStore,_field,_fromIndexedDB,_searchLengh)
     {
         var me=_scope;

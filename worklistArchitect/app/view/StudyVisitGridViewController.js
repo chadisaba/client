@@ -21,6 +21,18 @@ Ext.define('MyApp.view.StudyVisitGridViewController', {
         'MyApp.view.override.StudyVisitGridViewController'
     ],
 
+    onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);
@@ -88,6 +100,10 @@ Ext.define('MyApp.view.StudyVisitGridViewController', {
     },
 
     onStudyVisitGridIdValidateedit: function(editor, context) {
+
+    },
+
+    onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
 
     }
 

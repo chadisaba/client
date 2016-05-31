@@ -5,20 +5,32 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function()
+    initGrid:function(_filters,_readOnlyGrid)
     {
+	var me=this;
+	me.filters=_filters||[];
+        var view=this.getView();
 
+        if(!_readOnlyGrid)
+            view.getPlugin('gridediting').lockGrid(false);
+
+
+	this.getResultArray().
+	then(
+		function(data){
+        	            Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
+        	        }
+        	        );
+        	    
     },
-    onStudyVisitGridIdAfterRender: function(component, eOpts) {
-        component.getPlugin('gridediting').lockGrid(false);
 
-    var params;
-            
-   
-        this.getResultArray(
-        	    function(data){
-        	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyVisitStore'));
-        	        });
+    getDataToBeSaved:function()
+    {
+    	return component.getPlugin('gridediting').getDataToBeSaved();
+    },
+    refreshGrid:function()
+    {
+    	this.initGrid(this.filters);
     },
 
     onStudyVisitGridIdInEdit: function() {
@@ -31,30 +43,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
    onStudyVisitGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-
-	     var me=this;
-	     var params={};
-	            params.table="xxTableName";
-	            params.idName="xxTableId";
-	            params.dataToBeSaved=dataToBeSaved;
-	            params.comment=comment;
-	            var result=[];
-	            Server.CommonQueries.saveRecords(params,
-	                function(_result){
-	                    if(_result.success){
-	                        var resultArray=[];
-	                        this.getResultArray(function(data){
-	                            Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
-	                        },this);
-	                    }
-	                    else{
-	                        console.error(_result.msg);
-	                        Ext.MessageBox.alert("Error","save Error "+_result.msg);
-	                    }
-	                },me
-	            );
-     
-        
+	     CommonDirect.saveData(_dataToBeSaved,"STUDY_VISIT",_comment);
     },
 
     onStudyVisitGridIdAddItem: function() {
@@ -113,24 +102,60 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
-    getResultArray:function(callback)
+    getResultArray:function(filters)
     {
-        var me=this;
-        var params={
-        		table:"xxTableName"
-        };
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
-                    }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
+    	
+      var me=this;
+
+	var promise=new Promise(
+		function(resolve,reject)
+		{
+		  var mainTableObject={};
+                mainTableObject.tableName='STUDY_VISIT';
+                mainTableObject.filters=filters;
+                var joinTablesArray=[];
+                joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
+                var params = {
+                    mainTableObject: mainTableObject,
+                    joinTablesArray: joinTablesArray
+                };
+                Server.CommonQueries.readJoin(params,
+                    function (res) {
+                        if (res.success) {
+                            for (var i = 0; i < res.data.length; i++) {
+                                res.data[i].userFName=res.data[i]['User.userFName'];
+                                res.data[i].userLName=res.data[i]['User.userLName'];
+                                res.data[i].deviceName=res.data[i]['Device.deviceName'];
+                                res.data[i].deviceCode=res.data[i]['Device.deviceCode'];
+                                res.data[i].studyCode=res.data[i]['Study.studyCode'];
+                                res.data[i].studyName=res.data[i]['Study.studyName'];
+                            }
+                            resolve(res.data);
+                        }
+                        else {
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    });	
+		}
+		); 
+              
     },
+    onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
+       /* if(!component.externalEditingPlugin)
+         {
+
+             component.plugins.push (
+         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+         }
+         else
+         {
+             component.plugins.push (
+         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+         }*/
+
+    }
+
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
     

@@ -5,15 +5,20 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters)
+    initGrid:function(_filters,_readOnlyGrid)
     {
 	var me=this;
-	me.filters=_filters;
-	this.getView().getPlugin('gridediting').lockGrid(false);
+	me.filters=_filters||[];
+        var view=this.getView();
+
+        if(!_readOnlyGrid)
+            view.getPlugin('gridediting').lockGrid(false);
+
+
 	this.getResultArray().
 	then(
 		function(data){
-        	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyVisitStore'));
+        	            Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
         	        }
         	        );
         	    
@@ -23,10 +28,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     {
     	return component.getPlugin('gridediting').getDataToBeSaved();
     },
-    refreshGrid()
+    refreshGrid:function()
     {
     	this.initGrid(this.filters);
-    }
+    },
 
     onStudyVisitGridIdInEdit: function() {
 
@@ -97,7 +102,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
-    getResultArray:function()
+    getResultArray:function(filters)
     {
     	
       var me=this;
@@ -107,6 +112,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 		{
 		  var mainTableObject={};
                 mainTableObject.tableName='STUDY_VISIT';
+                mainTableObject.filters=filters;
                 var joinTablesArray=[];
                 joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
                 var params = {
@@ -135,6 +141,21 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 		); 
               
     },
+    onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
+       /* if(!component.externalEditingPlugin)
+         {
+
+             component.plugins.push (
+         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+         }
+         else
+         {
+             component.plugins.push (
+         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+         }*/
+
+    }
+
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
     
