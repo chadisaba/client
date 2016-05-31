@@ -5,6 +5,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
+    initGrid:function()
+    {
+
+    },
     onStudyVisitGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
 
