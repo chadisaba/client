@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceComboModel"
+    },
+    "name": "MyModel",
+    "designerId": "f8c4ef8d-71de-4b32-89c0-9f1a3cfac98c",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceId"
+            },
+            "name": "MyInteger4",
+            "designerId": "bed7f3c9-c18f-46b3-a181-b12439f8d416"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceCode"
+            },
+            "name": "MyField10",
+            "designerId": "2f29ee6c-d044-453c-be11-b07257247f89"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceName"
+            },
+            "name": "MyField11",
+            "designerId": "1ca37829-7050-43df-8f5b-e51dd41cbeeb"
+        }
+    ]
+}

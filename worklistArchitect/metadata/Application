@@ -22,7 +22,10 @@
             "VisitPdsComboModel",
             "VisitModel",
             "StudyVisitModel",
-            "StudyComboModel"
+            "StudyComboModel",
+            "DeviceComboModel",
+            "TechnicianComboModel",
+            "DoctorComboModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -42,7 +45,7 @@
             "PatientReceivePanel",
             "VisitForm",
             "VisitSimplifiedForm",
-			'StudyVisitGrid'
+            "StudyVisitGrid"
         ]
     },
     "name": "Application",

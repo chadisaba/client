@@ -5,7 +5,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_readOnlyGrid)
+    initGrid:function(_filters,_doctorId,_readOnlyGrid)
     {
 	var me=this;
 	me.filters=_filters||[];
@@ -14,6 +14,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         if(!_readOnlyGrid)
             view.getPlugin('gridediting').lockGrid(false);
 
+       // var p1=CommonDirect.getData("STUDY")
 
 	this.getResultArray().
 	then(

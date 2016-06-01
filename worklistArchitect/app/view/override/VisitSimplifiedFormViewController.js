@@ -4,6 +4,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     initForm: function(_visitId) {
         var me=this;
         var view=me.getView();
+        view.down("#studyVisitGridItemId").mask();
         var viewModel=me.getViewModel();
         var visitId=null;
         if(view.visitId)
@@ -14,27 +15,49 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
 
         var visitRec;
         var studyVisitArray=[];
-         if(visitId)
-        {
-            VisitDirect.getVisit(visitId)
-                .then(function(_resultValue)
+
+
+        var p1=CommonDirect.getData("SITE");
+        var mainTableObject={
+            tableName:"DOCTOR"
+        };
+        var joinTablesArray=[{
+           tableName:"USER"
+        }];
+        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        Promise.all([p1,p2])
+            .then(function(_resultArray)
+            {
+                if(_resultArray[0].length>0)
+                    viewModel.getStore('SiteComboStore').loadData(_resultArray[0]);
+
+                var doctorsDataArray=_resultArray[1];
+                for (var i = 0; i < doctorsDataArray.length; i++) {
+                    doctorsDataArray[i].userLName=doctorsDataArray[i]['User.userLName'];
+                    doctorsDataArray[i].userFName=doctorsDataArray[i]['User.userFName'];
+                }
+                    viewModel.getStore('DoctorComboStore').loadData(doctorsDataArray);
+
+                if(visitId)
                 {
-                    visitRec=Ext.create('MyApp.model.VisitModel',_resultValue);
-                    var studyVisitFilters=[{
-                        name:"visitId",value:_visitId
-                    }];
-                    view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters);
-                });
-        }
-        else
-        {
-            // we create a new patient
-            var visitRec=Ext.create('MyApp.model.VisitModel');
-            view.loadRecord(visitRec);
-            view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
-        }
-
-
+                    VisitDirect.getVisit(visitId)
+                        .then(function(_resultValue)
+                        {
+                            visitRec=Ext.create('MyApp.model.VisitModel',_resultValue);
+                            var studyVisitFilters=[{
+                                name:"visitId",value:_visitId
+                            }];
+                            view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters);
+                        });
+                }
+                else
+                {
+                    // we create a new patient
+                    var visitRec=Ext.create('MyApp.model.VisitModel');
+                    view.loadRecord(visitRec);
+                    view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
+                }
+            });
     },
     visitFormSave: function(button) {
         var me=this;
@@ -78,6 +101,13 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
 
     onVisitSimplifiedFormItemIdQuitEdit: function(form, promptWin) {
 
+    },
+
+    onDoctorComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
+        if(newValue)
+            this.getView().down("#studyVisitGridItemId").unmask()
     }
+
+
 
 });

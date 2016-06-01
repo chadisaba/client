@@ -34,10 +34,10 @@ Ext.define('MyApp.view.StudyVisitGrid', {
     reference: 'studyVisitGridRef',
     itemId: 'studyVisitGridItemId',
     resizable: false,
-    title: '',
     forceFit: true,
 
     bind: {
+        title: '{trans.studies}',
         store: '{StudyVisitStore}'
     },
     columns: [
@@ -50,6 +50,15 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 xtype: 'combobox',
                 itemId: 'studyComboboxItemId',
                 allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'studyName',
+                forceSelection: true,
+                queryMode: 'local',
+                typeAhead: true,
+                valueField: 'studyName',
+                bind: {
+                    store: '{StudyComboStore}'
+                },
                 listeners: {
                     select: 'onStudyComboboxItemIdSelect'
                 }
@@ -62,6 +71,16 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'deviceComboboxItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'deviceName',
+                forceSelection: true,
+                queryMode: 'local',
+                typeAhead: true,
+                valueField: 'deviceName',
+                bind: {
+                    store: '{DeviceComlboStore}'
+                },
                 listeners: {
                     select: 'onDeviceComboboxItemIdSelect'
                 }
@@ -106,7 +125,14 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'technicianComboboxItemId',
-                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'userLName',
+                queryMode: 'local',
+                typeAhead: true,
+                valueField: 'userLName',
+                bind: {
+                    store: '{TechnicianComboStore}'
+                },
                 listeners: {
                     select: 'onTechnicianComboboxItemIdSelect'
                 }

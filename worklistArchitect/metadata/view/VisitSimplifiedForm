@@ -134,12 +134,14 @@
                             "{SiteComboStore}"
                         ],
                         "typeAhead": true,
+                        "value": "1",
                         "valueField": "siteId"
                     },
                     "name": "MyComboBox2",
                     "configAlternates": {
                         "fieldLabel": "binding",
-                        "store": "binding"
+                        "store": "binding",
+                        "value": "string"
                     },
                     "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3"
                 },
@@ -185,6 +187,101 @@
                         "fieldLabel": "binding"
                     },
                     "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "userLName",
+                        "fieldLabel": [
+                            "{trans.doctor}"
+                        ],
+                        "forceSelection": true,
+                        "itemId": "doctorComboBoxItemId",
+                        "layout|anchor": "100%",
+                        "name": "doctorId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{DoctorComboStore}"
+                        ],
+                        "valueField": "doctorId"
+                    },
+                    "name": "MyComboBox4",
+                    "configAlternates": {
+                        "fieldLabel": "binding",
+                        "store": "binding"
+                    },
+                    "designerId": "0c36ab44-ebe4-4383-ab2b-d21d0ad70489",
+                    "cn": [
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList",
+                            "designerId": "1b8d9e16-f239-46aa-9333-72403bb0fc7f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            " {userLName} {userFName}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "9a71288c-1939-4a8a-aba4-6d3f75baf111"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "<tpl for=\".\">{userLName} {userFName}</tpl>"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "2416ab74-bd2a-4a21-b878-e029e5d1f18e"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDoctorComboBoxItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onDoctorComboBoxItemIdChange",
+                            "designerId": "37a0e4f7-14e6-474e-8730-bb0c3b71e0b9"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Checkbox",
@@ -283,7 +380,9 @@
                             "onlyADM:true",
                             "",
                             "}"
-                        ]
+                        ],
+                        "hideHeaders": false,
+                        "title": null
                     },
                     "name": "studyvisitgrid",
                     "configAlternates": {

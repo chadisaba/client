@@ -114,7 +114,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		errors= [];
 	
 		Ext.Array.each(dataType, function(dtType){
-		    Ext.each(_grid.store.query(dtType,true).items,function(record){
+		    Ext.each(me.grid.store.query(dtType,true).items,function(record){
 		        if(record.validate().isValid()){
 		            dataToBeSaved.push(record.data);
 		        } else {

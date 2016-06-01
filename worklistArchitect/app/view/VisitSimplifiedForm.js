@@ -24,6 +24,8 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
         'Ext.form.FieldSet',
         'Ext.form.field.Date',
         'Ext.form.field.Time',
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
         'Ext.form.field.Checkbox',
         'Ext.grid.Panel'
     ],
@@ -54,6 +56,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     anchor: '100%',
                     itemId: 'siteIdComboBoxItemId',
                     name: 'siteId',
+                    value: '1',
                     allowBlank: false,
                     displayField: 'siteCode',
                     forceSelection: true,
@@ -81,6 +84,35 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     allowBlank: false,
                     bind: {
                         fieldLabel: '{trans.hour}'
+                    }
+                },
+                {
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'doctorComboBoxItemId',
+                    name: 'doctorId',
+                    allowBlank: false,
+                    selectOnFocus: true,
+                    displayField: 'userLName',
+                    displayTpl: [
+                        '<tpl for=".">{userLName} {userFName}</tpl>'
+                    ],
+                    forceSelection: true,
+                    queryMode: 'local',
+                    valueField: 'doctorId',
+                    bind: {
+                        fieldLabel: '{trans.doctor}',
+                        store: '{DoctorComboStore}'
+                    },
+                    listConfig: {
+                        xtype: 'boundlist',
+                        itemSelector: 'div',
+                        itemTpl: [
+                            ' {userLName} {userFName}'
+                        ]
+                    },
+                    listeners: {
+                        change: 'onDoctorComboBoxItemIdChange'
                     }
                 },
                 {
@@ -120,6 +152,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                 },
                 {
                     xtype: 'studyvisitgrid',
+                    hideHeaders: false,
                     externalEditingPlugin: {
                         pluginId: 'gridediting',
                         onlyADM: true

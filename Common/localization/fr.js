@@ -17,6 +17,8 @@ function translate(text)
         "site":"Site",
         "type":"Type",
         "pdf":"PDF",
+        "doctor":"Médecin",
+
         /*** patient form***/
         "study":"Examen",
         "allStudy":"Tous les examens",

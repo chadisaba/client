@@ -21,7 +21,7 @@ var CommonDirect={
         return promise;
     },
     
-       getDataFromIndexedDB:function(_searchValue,_searchFieldName)
+    getDataFromIndexedDB:function(_searchValue,_searchFieldName)
     {
         //Creating a promise
         var promise=new Promise(
@@ -86,6 +86,29 @@ var CommonDirect={
                 )
             });
         return promise;
+    },
+    getDataWidthJoin:function(mainTableObject,joinTablesArray)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                var params = {
+                    mainTableObject: mainTableObject,
+                    joinTablesArray: joinTablesArray
+
+                };
+                Server.CommonQueries.readJoin(params,
+                    function (res) {
+                        if (res.success) {
+                            resolve(res.data);
+                        }
+                        else {
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    });
+            });
+         return promise;
     },
       autoComplete:function(_scope,_searchValue,_searchFieldName,_comboStore,_field,_fromIndexedDB,_searchLengh)
     {

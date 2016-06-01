@@ -17,11 +17,14 @@
         "store": [
             "{StudyVisitStore}"
         ],
-        "title": ""
+        "title": [
+            "{trans.studies}"
+        ]
     },
     "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "title": "binding"
     },
     "designerId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
     "viewControllerInstanceId": "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm",
@@ -51,9 +54,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "itemId": "studyComboboxItemId"
+                        "displayField": "studyName",
+                        "forceSelection": true,
+                        "itemId": "studyComboboxItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{StudyComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "studyName"
                     },
                     "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-2tyu5t8jtpma",
                     "cn": [
                         {
@@ -97,9 +112,22 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "deviceComboboxItemId"
+                        "allowBlank": false,
+                        "displayField": "deviceName",
+                        "forceSelection": true,
+                        "itemId": "deviceComboboxItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{DeviceComlboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "deviceName"
                     },
                     "name": "MyComboBox1",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-dxesdq32jrth",
                     "cn": [
                         {
@@ -236,10 +264,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
-                        "itemId": "technicianComboboxItemId"
+                        "displayField": "userLName",
+                        "itemId": "technicianComboboxItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{TechnicianComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "userLName"
                     },
                     "name": "MyComboBox3",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-65tfr615mn7k",
                     "cn": [
                         {

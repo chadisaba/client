@@ -37,7 +37,10 @@ Ext.application({
         'VisitPdsComboModel',
         'VisitModel',
         'StudyVisitModel',
-        'StudyComboModel'
+        'StudyComboModel',
+        'DeviceComboModel',
+        'TechnicianComboModel',
+        'DoctorComboModel'
     ],
     views: [
         'WorklistGrid',

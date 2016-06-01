@@ -35,7 +35,8 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewModel', {
             addStudy: translate('addStudy'),
             study: translate('study'),
             hour: translate('hour'),
-            site: translate('site')
+            site: translate('site'),
+            doctor: translate('doctor')
         }
     },
 
@@ -51,6 +52,9 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewModel', {
         },
         SiteComboStore: {
             model: 'MyApp.model.SiteComboModel'
+        },
+        DoctorComboStore: {
+            model: 'MyApp.model.DoctorComboModel'
         }
     }
 

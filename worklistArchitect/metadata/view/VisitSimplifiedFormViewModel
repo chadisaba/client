@@ -21,7 +21,8 @@
             "addStudy:translate('addStudy'),",
             "study:translate('study'),",
             "hour:translate('hour'),",
-            "site:translate('site')",
+            "site:translate('site'),",
+            "doctor:translate('doctor')",
             "",
             "}",
             "}"
@@ -86,6 +87,20 @@
             },
             "name": "MyStore4",
             "designerId": "32e25522-ea5c-4a3c-b533-a757abddadaf"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorComboModel",
+                "name": "DoctorComboStore"
+            },
+            "name": "MyStore8",
+            "designerId": "ed39cd02-7f21-4c80-8664-b815d32237f2"
         }
     ]
 }

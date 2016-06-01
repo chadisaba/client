@@ -21,9 +21,24 @@ Ext.define('MyApp.view.StudyVisitGridViewModel', {
         'Ext.data.Store'
     ],
 
+    data: {
+        trans: {
+            studies: translate('studies')
+        }
+    },
+
     stores: {
         StudyVisitStore: {
             model: 'MyApp.model.StudyVisitModel'
+        },
+        DeviceComlboStore: {
+            model: 'MyApp.model.DeviceComboModel'
+        },
+        StudyComboStore: {
+            model: 'MyApp.model.StudyComboModel'
+        },
+        TechnicianComboStore: {
+            model: 'MyApp.model.TechnicianComboModel'
         }
     }
 
