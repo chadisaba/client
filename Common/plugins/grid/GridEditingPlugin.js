@@ -130,25 +130,25 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	gridOnSelect : function(rowmodel,record,index,eOpts){
 		var me = this;
-		if (me.onlyECSQ === false && me.onlyModify === false && me.onlyDelete === false && me.onlyAD === false && me.noModif === false){
+		if (!me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
 			// Disable Delete & Modify btns when record locked or toDelete
-			if (record.data.locked || record.data.toDelete){
+			if (record.get('locked') || record.get('toDelete')){
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			} else {
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
 			}
-		} else if (me.onlyModify === true){
+		} else if (me.onlyModify){
 			// Disable Modify btn when record locked
-			if (record.data.locked){
+			if (record.get('locked')){
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			} else {
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
 			}
-		} else if (me.onlyDelete === true || me.onlyAD === true || me.noModif === true){
+		} else if (me.onlyDelete || me.onlyAD|| me.noModif){
 			// Disable Delete btn when record locked or toDelete
-			if (record.data.locked || record.data.toDelete){
+			if (record.get('locked') || record.get('toDelete')){
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			} else {
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
@@ -734,12 +734,22 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		me.filterCheckBoxCtn.show();
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		if (this.onlyECSQ === false && this.onlyModify === false && this.onlyDelete === false && this.onlyAD === false && this.noModif === false){
+		
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+				var selectedRec=me.grid.getSelectionModel().getSelection()[0];	
+			}
+			
+		if (!this.onlyECSQ && !this.onlyModify && !this.onlyDelete && !this.onlyAD && !this.noModif){
 			
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
 			me.modifyBtnCtn.show();
 			
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+				
+			}
 			if (me.grid.getSelectionModel().hasSelection() 
 				&& (me.grid.getSelectionModel().getSelection()[0].data.locked
 				|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
