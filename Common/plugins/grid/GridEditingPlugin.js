@@ -172,7 +172,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	restoreGrid: function (){
 		var me = this;
-		if (me.onlyADM === false && me.onlyECSQ === false && me.onlyModify === false && me.onlyDelete === false && me.onlyAD === false && me.noModif === false){
+		if (!me.onlyADM && !me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
 			me.editBtnCtn.show();
 			me.deleteBtnCtn.hide();
 			me.addBtnCtn.hide();
@@ -190,7 +190,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-		} else if (me.onlyECSQ === true) {
+		} else if (me.onlyECSQ) {
 			me.editBtnCtn.show();
 			me.saveBtnCtn.hide();
 			me.cancelBtnCtn.hide();
@@ -202,7 +202,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-		} else if (me.onlyADM === true) {
+		} else if (me.onlyADM) {
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
 			me.modifyBtnCtn.show();
@@ -212,7 +212,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.addBtnCtn.down('#addBtn').setDisabled(false);
 			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-		} else if (me.onlyModify === true){
+		} else if (me.onlyModify){
 			me.editBtnCtn.show();
 			me.modifyBtnCtn.hide();
 			me.saveBtnCtn.hide();
@@ -226,7 +226,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-		} else if (me.onlyDelete === true){
+		} else if (me.onlyDelete){
 			me.editBtnCtn.show();
 			me.deleteBtnCtn.hide();
 			me.saveBtnCtn.hide();
@@ -240,7 +240,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);			
-		} else if (me.onlyAD === true) {
+		} else if (me.onlyAD) {
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
 			me.chHistBtnCtn.show();
@@ -248,7 +248,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			me.addBtnCtn.down('#addBtn').setDisabled(false);
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-		} else if (me.noModif === true){
+		} else if (me.noModif){
 			me.editBtnCtn.show();
 			me.deleteBtnCtn.hide();
 			me.addBtnCtn.hide();
@@ -277,12 +277,12 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
-		if (this.onlyADM===false 
-			&& this.onlyECSQ===false 
-			&& this.onlyModify === false
-			&& this.onlyDelete === false
-			&& this.onlyAD===false
-			&& this.noModif===false){
+		if (!this.onlyADM
+			&& !this.onlyECSQ
+			&& !this.onlyModify
+			&& !this.onlyDelete
+			&& !this.onlyAD
+			&& !this.noModif){
 			this.createFilterCheckboxCtn();
 
 			if(this.liveSearch){
@@ -308,7 +308,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyADM === true) {
+		} else if (this.onlyADM) {
 			this.createChHistBtnCtn();
 			this.createAddBtnCtn();
 			this.createDeleteBtnCtn();
@@ -318,7 +318,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add({xtype:'tbfill'});
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyECSQ === true){
+		} else if (this.onlyECSQ){
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -331,7 +331,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyModify === true){
+		} else if (this.onlyModify){
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -346,7 +346,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyDelete === true){
+		} else if (this.onlyDelete){
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -361,7 +361,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyAD === true) {
+		} else if (this.onlyAD) {
 			this.createChHistBtnCtn();
 			this.createAddBtnCtn();
 			this.createDeleteBtnCtn();
@@ -369,7 +369,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.addBtnCtn);
 			this.tb.add({xtype:'tbfill'});
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.noModif === true){
+		} else if (this.noModif){
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -404,7 +404,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			items:[{
 				xtype: 'checkbox',
 				fieldBodyCls: 'x-form-cb-wrap-default_toolbar',
-				boxLabel:'Afficher lignes modifiées',
+				boxLabel:translate('displayModifiedRows'),//'Afficher lignes modifiées',
 				itemId: 'filterCheckbox',
 				listeners: {
 					change: function (field){
@@ -434,7 +434,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		me.liveSearchCtn = Ext.create('Ext.form.TextField',
 		{
 			fieldStyle : 'font-family: FontAwesome',
-			emptyText: '\uF002 Recherche rapide',
+			emptyText: translate('liveSearch'),//'\uF002 Recherche rapide',
 			listeners: {
 				specialkey: function (field,e){
 					var value=field.getValue();
@@ -481,8 +481,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			hidden: true,
 			items:[{
 				xtype: 'button',
-				text: 'Editer',
-				tooltip: 'Cliquer ici pour passer en mode édition',
+				text: translate('edit'),
+				tooltip: translate('clickToSwitchInEditMode'),//Cliquer ici pour passer en mode édition
 				itemId: 'editBtn',
 				glyph: 'xf040@FontAwesome',
 				listeners: {
@@ -507,17 +507,17 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 
 					glyph: 'xf0e2@FontAwesome',
 					disabled: true,
-					tooltip: 'Cliquer ici pour annuler les modifications',
+					tooltip:translate('clickToCancelModifications'),// 'Cliquer ici pour annuler les modifications',
 					listeners: {
 						click: function (button, e, options){										
 							//Confirm quitting edition mode
 							var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
-							promptWin.setTitle('${gridEdit.cancelTitle}');
-							promptWin.down('#confirmMsg').setText('${gridEdit.cancelMsg}');
+							promptWin.setTitle(translate('cancelTitle')');
+							promptWin.down('#confirmMsg').setText(translate('cancelMsg'));
 							promptWin.down('#description').hide();
 							promptWin.down('#inputText').hide();
-							promptWin.query('button')[0].setText('${yes}');
-							promptWin.query('button')[1].setText('${no}');
+							promptWin.query('button')[0].setText(translate('yes'));
+							promptWin.query('button')[1].setText(translate('no'));
 							promptWin.callbackFunction = function (choice,comment){
 							    if(choice==='ok'){
 							    	// Loading artifact on save btn
@@ -545,27 +545,11 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'saveBtn',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
-				tooltip: 'Cliquer ici pour enregistrer toutes les modifications',
+				tooltip: translate('clickToSaveModifications')//,'Cliquer ici pour enregistrer toutes les modifications',
 				listeners: {
 					click: function (button, e, options){
 						// Show confirmation pop-up before save action
 						if (me.showConfirmationOnSave){
-						/*	var dataToBeSaved = [],
-						    dataType = ['added','modified','toDelete'],
-						    errors= [];
-	
-							Ext.Array.each(dataType, function(dtType){
-							    Ext.each(me.grid.store.query(dtType,true).items,function(record){
-							        if(record.validate().isValid()){
-							            dataToBeSaved.push(record.data);
-							        } else {
-							            var index = me.grid.store.indexOf(record);
-							            index++;
-							            errors.push(index);
-							        } 
-							    });
-							});*/
-		
 							var dataToSaveObject=me.getDataToBeSaved();
 							var dataToBeSaved=dataToSaveObject.dataToBeSaved;
 							var errors=dataToSaveObject.errors;
@@ -581,16 +565,16 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 							    var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false, closable:false});
 							    if (me.withValidation){
 								    promptWin.setTitle('Commentaire');
-								    promptWin.down('#confirmMsg').setText('${gridEdit.submitMsg}');
+								    promptWin.down('#confirmMsg').setText(translate('submitMsg'));
 							    } else {
-							    	promptWin.setTitle('${gridEdit.applyChTitle}');
-								    promptWin.down('#confirmMsg').setText('Appliquer les modifications?');
+							    	promptWin.setTitle(translate('applyChTitle'));
+								    promptWin.down('#confirmMsg').setText(translate('ApplyModification?'));//Appliquer les modifications?
 							    }
 							    
 							    promptWin.query('button')[0].setText('Oui');
 							    promptWin.query('button')[1].setText('Non');
 							    
-							    promptWin.down('#description').setText('${gridEdit.comment}');
+							    promptWin.down('#description').setText(translate('comment'));
 							    promptWin.callbackFunction = function (choice,comment){
 							        if(choice==='ok'){
 							            // Loading artifact on yes btn
@@ -621,7 +605,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'chHistBtn',
 				glyph: 'xf073@FontAwesome',
-				tooltip: 'Historique des modifications',
+				tooltip: translate('modificationsHistory'),//'Historique des modifications',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('chHist', me.grid);										
@@ -642,7 +626,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'addBtn',
 				glyph: 'xf067@FontAwesome',
 
-				tooltip: 'Cliquer ici pour ajouter une nouvelle ligne',
+				tooltip: translate('clickToAddNewRow'),//'Cliquer ici pour ajouter une nouvelle ligne',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('addItem', me.grid);										
@@ -664,7 +648,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				glyph: 'xf014@FontAwesome',
 				disabled: true,
 
-				tooltip: 'Cliquer pour supprimer la sélection',
+				tooltip: translate('clickToDeleteTheSelection'),//'Cliquer pour supprimer la sélection',
 				listeners: {
 					click: function (button, e, options){
 						if(me.onlyDelete === false && me.onlyAD === false && me.noModif === false)
@@ -690,7 +674,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				disabled: true,
 
                 glyph: 'xf044@FontAwesome',
-				tooltip: 'Cliquer ici pour modifier la ligne sélectionnée',
+				tooltip: translate('clickToModifySelection'),//'Cliquer ici pour modifier la ligne sélectionnée',
 				listeners: {
 					click: function (button, e, options){
 						me.grid.fireEvent('modifyItem', me.grid);										
@@ -709,7 +693,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'preferenceBtn',
 
 				glyph: 'xf234@FontAwesome',
-				tooltip: 'Cliquer ici pour enregistrer vos préférences',
+				tooltip: translate('clickToSavePreference'),//'Cliquer ici pour enregistrer vos préférences',
 				listeners: {
 					click: function (button, e, options){
 
@@ -730,7 +714,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				xtype: 'button',
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
-				tooltip: 'Quitter',
+				tooltip: translate('quit'),//'Quitter',
 				listeners: {
 					click: function (button, e, options){					
 						var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
@@ -841,56 +825,49 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+				var selectedRec=me.grid.getSelectionModel().getSelection()[0];	
+			}
+		if (!this.onlyECSQ && !this.onlyModify && !this.onlyDelete && !this.onlyAD && !this.noModife){
+			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
+			
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+					if ((selectedRec.get('locked') || selectedRec.get('toDelete'))){
+						me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+						me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
+					} else if ((!selectedRec.get('locked') && !selectedRec.get('toDelete')) {
+						me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
+						me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
+				}
+			}
 		
-		if (this.onlyECSQ === false && this.onlyModify === false && this.onlyDelete === false && this.onlyAD === false && this.noModif === false){
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			
-			if (me.grid.getSelectionModel().hasSelection() 
-					&& (me.grid.getSelectionModel().getSelection()[0].data.locked 
-					|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-					&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-					&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-			}
-			
 			me.addBtnCtn.down('#addBtn').setDisabled(false);
-		} else if (this.onlyModify === true){
+			
+		} else if (this.onlyModify){
 			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			
-			if (me.grid.getSelectionModel().hasSelection() 
-					&& me.grid.getSelectionModel().getSelection()[0].data.locked){
+			if (selectedRec.get('locked')){
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-					&& !me.grid.getSelectionModel().getSelection()[0].data.locked) {
+			} else if (!selectedRec.get('locked')) {
 				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
 			}
-		} else if (this.onlyDelete === true || this.onlyAD === true){
+		} else if (this.onlyDelete|| this.onlyAD){
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			
-			if (me.grid.getSelectionModel().hasSelection() 
-					&& (me.grid.getSelectionModel().getSelection()[0].data.locked 
-					|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
+			if (selectedRec.get('locked') || selectedRec.get('toDelete')){
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-					&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-					&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
+			} else if (!selectedRec.get('locked')&& !selectedRec.get('toDelete')) {
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 			}
 		} else if (this.noModif === true){
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			
-			if (me.grid.getSelectionModel().hasSelection() 
-					&& (me.grid.getSelectionModel().getSelection()[0].data.locked 
-					|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
+			if (selectedRec.get('locked') || selectedRec.get('toDelete')){
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-					&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-					&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
+			} else if (!selectedRec.get('locked')&& !selectedRec.get('toDelete')) {
 				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 			}
 			
@@ -981,12 +958,12 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 
 		grid.down('#chHistBtn').setDisabled(false);
 
-		if (me.onlyADM === false && me.onlyAD === false){
+		if (!me.onlyADM && !me.onlyAD){
 			grid.down('#quitBtn').setDisabled(false);
-			if (me.onlyECSQ === false)
+			if (!me.onlyECSQ)
 				me.checkIfModifications();
 		}
-		if (me.onlyECSQ === false && me.onlyModify === false && me.onlyDelete === false && me.onlyAD === false && me.noModif === false){
+		if (!me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD&& !me.noModif){
 			if (hasSelection && selection.data.locked){
 			    grid.down('#deleteBtn').setDisabled(true);
 			    grid.down('#modifyBtn').setDisabled(true);
@@ -996,26 +973,26 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			}
 			
 			grid.down('#addBtn').setDisabled(false);
-		} else if (me.onlyModify === true){
+		} else if (me.onlyModify){
 			if (hasSelection && selection.data.locked){
 			    grid.down('#modifyBtn').setDisabled(true);
 			} else {
 			    grid.down('#modifyBtn').setDisabled(false);
 			}
-		} else if (me.onlyDelete === true){
+		} else if (me.onlyDelete){
 			if (hasSelection && selection.data.locked){
 			    grid.down('#deleteBtn').setDisabled(true);
 			} else {
 			    grid.down('#deleteBtn').setDisabled(false);
 			}
-		} else if (me.onlyAD === true){
+		} else if (me.onlyAD){
 			if (hasSelection && selection.data.locked){
 			    grid.down('#deleteBtn').setDisabled(true);
 			} else {
 			    grid.down('#deleteBtn').setDisabled(false);
 			}
 			grid.down('#addBtn').setDisabled(false);
-		} else if (me.noModif === true){
+		} else if (me.noModif){
 			if (hasSelection && selection.data.locked){
 			    grid.down('#deleteBtn').setDisabled(true);
 			} else {
