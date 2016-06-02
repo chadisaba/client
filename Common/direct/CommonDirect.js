@@ -121,7 +121,7 @@ var CommonDirect={
             var store = me.getViewModel().getStore(_cityComboStore);
             if(_fromIndexedDB)
             {
-               this.getCitiesFromIndexedDB(_searchValue,_searchFieldName)
+               this.getDataFromIndexedDB(_searchValue,_searchFieldName)
                 .then(
                     function(_resultData)
                     {
