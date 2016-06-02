@@ -5,16 +5,16 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_doctorId,_readOnlyGrid)
+    initGrid:function(_filters,_readOnlyGrid)
     {
 	var me=this;
+
+
 	me.filters=_filters||[];
         var view=this.getView();
 
         if(!_readOnlyGrid)
             view.getPlugin('gridediting').lockGrid(false);
-
-       // var p1=CommonDirect.getData("STUDY")
 
 	this.getResultArray().
 	then(
@@ -103,9 +103,12 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
+    setDoctorId:function(_doctorId)
+    {
+       this.doctorId= _doctorId;
+    },
     getResultArray:function(filters)
     {
-    	
       var me=this;
 
 	var promise=new Promise(
@@ -116,44 +119,48 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                 mainTableObject.filters=filters;
                 var joinTablesArray=[];
                 joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
-                var params = {
-                    mainTableObject: mainTableObject,
-                    joinTablesArray: joinTablesArray
-                };
-                Server.CommonQueries.readJoin(params,
-                    function (res) {
-                        if (res.success) {
-                            for (var i = 0; i < res.data.length; i++) {
-                                res.data[i].userFName=res.data[i]['User.userFName'];
-                                res.data[i].userLName=res.data[i]['User.userLName'];
-                                res.data[i].deviceName=res.data[i]['Device.deviceName'];
-                                res.data[i].deviceCode=res.data[i]['Device.deviceCode'];
-                                res.data[i].studyCode=res.data[i]['Study.studyCode'];
-                                res.data[i].studyName=res.data[i]['Study.studyName'];
-                            }
-                            resolve(res.data);
-                        }
-                        else {
-                            console.error(res.msg);
-                            reject(res.msg);
-                        }
-                    });	
+
+            CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray)
+                .then(function(_result)
+                {
+                    for (var i = 0; i < _result; i++) {
+                        _result[i].userFName=_result[i]['User.userFName'];
+                        _result[i].userLName=_result[i]['User.userLName'];
+                        _result[i].deviceName=_result[i]['Device.deviceName'];
+                        _result[i].deviceCode=_result[i]['Device.deviceCode'];
+                        _result[i].studyCode=_result[i]['Study.studyCode'];
+                        _result[i].studyName=_result[i]['Study.studyName'];
+
+                    }
+                    resolve(_result);
+                })
+                .catch(function(_err)
+                {
+                    console.error(res.msg);
+                    reject(res.msg);
+                });
+
 		}
 		); 
               
     },
-    onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
-       /* if(!component.externalEditingPlugin)
-         {
+    onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
 
-             component.plugins.push (
-         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
-         }
-         else
-         {
-             component.plugins.push (
-         new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
-         }*/
+    },
+
+    onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+        if(!this.doctorId)
+            console.error("function initGrid : doctorId is required ");
+
+       var doctorId=this.getView().doctorId;
+        StudyDirect.studyAutoComplete(this,newValue,"StudyComboStore",field,false,3,this.doctorId);
+    },
+
+    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
 
     }
 

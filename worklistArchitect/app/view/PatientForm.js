@@ -38,8 +38,9 @@ Ext.define('MyApp.view.PatientForm', {
     },
     itemId: 'patientFormId',
     bodyPadding: 10,
+    collapsible: false,
     header: false,
-    title: 'Patient Form',
+    title: '{trans.patient}',
 
     layout: {
         type: 'hbox',
@@ -255,6 +256,7 @@ Ext.define('MyApp.view.PatientForm', {
                     anchor: '100%',
                     itemId: 'cityNameComboBoxEditorItemId',
                     name: 'cityId',
+                    enableKeyEvents: true,
                     selectOnFocus: true,
                     displayField: 'cityName',
                     minChars: 4,
@@ -267,7 +269,8 @@ Ext.define('MyApp.view.PatientForm', {
                         store: '{CityNameComboStore}'
                     },
                     listeners: {
-                        change: 'onCityNameComboBoxEditorItemIdChange'
+                        change: 'onCityNameComboBoxEditorItemIdChange',
+                        keyup: 'onCityNameComboBoxEditorItemIdKeyup'
                     }
                 },
                 {

@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
+        "collapsible": false,
         "container|align": "stretch",
         "designer|userAlias": "patientform",
         "designer|userClassName": "PatientForm",
@@ -14,7 +15,7 @@
         "height": null,
         "itemId": "patientFormId",
         "layout": "hbox",
-        "title": "Patient Form",
+        "title": "{trans.patient}",
         "width": null
     },
     "name": "MyForm",
@@ -554,6 +555,7 @@
                     "userConfig": {
                         "displayField": "cityName",
                         "emptyText": null,
+                        "enableKeyEvents": true,
                         "fieldLabel": [
                             "{trans.city}"
                         ],
@@ -592,6 +594,21 @@
                             },
                             "name": "onCityNameComboBoxEditorItemIdChange",
                             "designerId": "61c985cd-97af-43dc-bfee-ef8f4a886fe2"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCityNameComboBoxEditorItemIdKeyup",
+                                "name": "keyup",
+                                "scope": "me"
+                            },
+                            "name": "onCityNameComboBoxEditorItemIdKeyup",
+                            "designerId": "54867189-7537-44aa-ab9c-164def2a908f"
                         }
                     ]
                 },

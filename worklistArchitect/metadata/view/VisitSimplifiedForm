@@ -113,6 +113,85 @@
             "designerId": "0635298b-4c31-4d44-9d77-b0206ac7d989",
             "cn": [
                 {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer9",
+                    "designerId": "3dd218b9-ba07-44cd-86a1-3cf7ab55194f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": [
+                                    "{trans.emergency}"
+                                ],
+                                "layout|flex": 1,
+                                "name": "visitIsUrgent"
+                            },
+                            "name": "MyvisitIsUrgentCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "040c9488-db6d-40e5-b956-b79be15ae7b3"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": [
+                                    "{trans.free}"
+                                ],
+                                "layout|flex": 1,
+                                "name": "visitIsFree"
+                            },
+                            "name": "MyvisitIsFreeCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "4c09cb21-c8b1-47e4-95e6-aef3ed7c129d"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": [
+                                    "{trans.hospitalized}"
+                                ],
+                                "layout|flex": 1,
+                                "name": "visitIsHospitalized"
+                            },
+                            "name": "MyvisitIsHospitalizedCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "aaf298b8-2e0c-45ff-8e83-7651f575170c"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
@@ -146,47 +225,92 @@
                     "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3"
                 },
                 {
-                    "type": "Ext.form.field.Date",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
-                        "fieldLabel": [
-                            "{trans.date}"
-                        ],
-                        "format": null,
-                        "layout|anchor": "100%",
-                        "name": "visitDate"
+                        "container|align": "stretch",
+                        "height": null,
+                        "layout": "hbox"
                     },
-                    "name": "MyDateField2",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "e79c0fe4-fb33-4967-84e8-713c6083225c"
+                    "name": "MyContainer8",
+                    "designerId": "d5e9d872-23a6-437c-b6d3-e68df1ee35c6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": [
+                                    "{trans.date}"
+                                ],
+                                "format": null,
+                                "layout|flex": 2,
+                                "name": "visitDate"
+                            },
+                            "name": "MyDateField2",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "e79c0fe4-fb33-4967-84e8-713c6083225c"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer11",
+                            "designerId": "b4b9edc6-9c2c-4a3a-ae7d-fb4e994b643f"
+                        },
+                        {
+                            "type": "Ext.form.field.Time",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": [
+                                    "{trans.hour}"
+                                ],
+                                "layout|flex": null,
+                                "name": "visitTime",
+                                "width": 200
+                            },
+                            "name": "MyTimeField",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
+                        }
+                    ]
                 },
                 {
-                    "type": "Ext.form.field.Time",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
-                        "fieldLabel": [
-                            "{trans.hour}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitTime"
+                        "height": 5
                     },
-                    "name": "MyTimeField",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
+                    "name": "MySpacer10",
+                    "designerId": "8857e072-516d-4985-9f11-3b467e68ec2c"
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -284,48 +408,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.free}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsFree"
-                    },
-                    "name": "MyvisitIsFreeCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "4c09cb21-c8b1-47e4-95e6-aef3ed7c129d"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.hospitalized}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsHospitalized"
-                    },
-                    "name": "MyvisitIsHospitalizedCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "aaf298b8-2e0c-45ff-8e83-7651f575170c"
-                },
-                {
                     "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
@@ -344,27 +426,6 @@
                         "fieldLabel": "binding"
                     },
                     "designerId": "8cd845e7-1374-4ac2-8edd-36acf1deea82"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.emergency}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsUrgent"
-                    },
-                    "name": "MyvisitIsUrgentCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "040c9488-db6d-40e5-b956-b79be15ae7b3"
                 },
                 {
                     "type": "linkedinstance",

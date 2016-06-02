@@ -21,12 +21,12 @@ var CommonDirect={
         return promise;
     },
     
-    getDataFromIndexedDB:function(_searchValue,_searchFieldName)
+    getDataFromIndexedDB:function(_searchValue,_searchFieldName,_tableName)
     {
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-                smartmedDB.cities.where(_searchFieldName)
+                smartmedDB[_tableName].where(_searchFieldName)
                 .startsWithIgnoreCase(_searchValue)
                 .toArray (function (_resultsArray) {
               resolve(_resultsArray);
@@ -110,15 +110,15 @@ var CommonDirect={
             });
          return promise;
     },
-      autoComplete:function(_scope,_searchValue,_searchFieldName,_comboStore,_field,_fromIndexedDB,_searchLengh)
+      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_searchValue&& isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
+        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&& (_field.getValue()!=_field.getRawValue()))
         {
         if(_searchValue.length>=searchLengh)
         {
-            var store = me.getViewModel().getStore(_cityComboStore);
+            var store = me.getViewModel().getStore(_comboStoreName);
             if(_fromIndexedDB)
             {
                this.getDataFromIndexedDB(_searchValue,_searchFieldName)
@@ -138,7 +138,8 @@ var CommonDirect={
                     });   
             }
             else{
-              this.getData(_searchValue)
+                var filtersArray=[{name:_searchFieldName,value:_searchValue}];
+              this.getData(_tableName,filtersArray)
                 .then(
                     function(_resultData)
                     {

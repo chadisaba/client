@@ -1,14 +1,14 @@
 var StudyDirect={
 
-    studyDirectAutoComplete:function(_scope,_serachValue,_comboStore,_field,_searchLengh)
+    studyDirectAutoComplete:function(_scope,_searchValue,_comboStore,_field,_searchLengh)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue)&& !stringUtil.isUUID4(_serachValue))
+        if(_searchValue && _searchValue.length>=searchLengh && isNaN(_searchValue)&& !stringUtil.isUUID4(_searchValue))
         {
             var store = me.getViewModel().getStore(_comboStore);
             var filters=[];
-            var filter= {name:'studyName',value:_serachValue};
+            var filter= {name:'studyName',value:_searchValue};
             filters.push(filter);
 
             CommonDirect.getData("STUDY",filters)
@@ -21,7 +21,7 @@ var StudyDirect={
                         store.filter({
                             property: 'studyName',
                             anyMatch: true,
-                            value   : _serachValue
+                            value   : _searchValue
                         });
                         _field.expand();
 
@@ -60,29 +60,29 @@ var StudyDirect={
              });
          return promise;
     },
-     studyAutoComplete:function(_scope,_serachValue,_studyComboStore,_field,_fromIndexedDB,_searchLengh)
+     studyAutoComplete:function(_scope,_searchValue,_studyComboStoreName,_field,_fromIndexedDB,_searchLengh,_doctorId)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_serachValue && isNaN(_serachValue) && !stringUtil.isUUID4(_serachValue))
+        if(_searchValue && isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&&(_field.getRawValue().indexOf("-")<0))
         {
-        if(_serachValue.length>=searchLengh)
+        if(_searchValue.length>=searchLengh)
         {
-            var store = me.getViewModel().getStore(_studyComboStore);
+            var store = me.getViewModel().getStore(_studyComboStoreName);
             if(_fromIndexedDB)
             {
-               this.getCitiesFromIndexedDB(_serachValue)
+               me.getStudyByNameFromIndexedDB(_searchValue,_doctorId)
                 .then(
-                    function(cityData)
+                    function(_resultData)
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(cityData);
+                        store.loadData(_resultData);
 
                         store.filter({
-                            property: 'cityName',
+                            property: 'studyName',
                             anyMatch: true,
-                            value   : _serachValue
+                            value   : _searchValue
                         });
                         _field.expand();
 
@@ -90,18 +90,18 @@ var StudyDirect={
                     });   
             }
             else{
-              this.getCities(_serachValue.toUpperCase())
+                CommonDirect.getData("STUDY",[{name:"studyName",value:_searchValue}])
                 .then(
-                    function(cityData)
+                    function(_resultData)
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(cityData);
+                        store.loadData(_resultData);
 
                         store.filter({
-                            property: 'cityName',
+                            property: 'studyName',
                             anyMatch: true,
-                            value   : _serachValue
+                            value   : _searchValue
                         });
                         _field.expand();
 

@@ -43,8 +43,12 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
     },
     onCityNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
-        var me=this;
-        CityDirect.cityAutoComplete(me,newValue,'CityNameComboStore',field);
+       /* var me=this;
+        CityDirect.cityAutoComplete(me,newValue,'CityNameComboStore',field);*/
+        CommonDirect.autoComplete(this,"CITY",newValue,"cityName",'CityNameComboStore',field,false,4);
+    },
+    onCityNameComboBoxEditorItemIdKeyup: function(textfield, e, eOpts) {
+       // CommonDirect.autoComplete(this,"CITY",textfield.getRawValue(),"cityName",'CityNameComboStore',textfield,false,4);
     },
     onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;

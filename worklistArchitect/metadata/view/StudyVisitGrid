@@ -55,7 +55,6 @@
                     "userConfig": {
                         "allowBlank": false,
                         "displayField": "studyName",
-                        "forceSelection": true,
                         "itemId": "studyComboboxItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
@@ -85,6 +84,68 @@
                             },
                             "name": "onStudyComboboxItemIdSelect",
                             "designerId": "e5b89895-cacd-4f7c-8a03-6a4e69d91002"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStudyComboboxItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onStudyComboboxItemIdChange",
+                            "designerId": "a77d4e01-00ab-4ed8-94c5-6ba88dc4bae6"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList1",
+                            "designerId": "1475b894-adfe-4d5d-b450-a6dd4dd2eb08",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "{studyCode} : {studyName}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "746421de-62d3-42d1-86d4-61fdae7d1302"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "<tpl for=\".\">{studyCode} : {studyName}</tpl>"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "879a9fa6-9198-41a3-8e7f-753410461616"
                         }
                     ]
                 }
@@ -160,7 +221,7 @@
                 "dataIndex": "studyVisitPrice",
                 "defaultWidth": null,
                 "text": "{trans.price}",
-                "width": 100
+                "width": 70
             },
             "name": "MydeviceNameCol1",
             "designerId": "f1254b28-b9e3-48a4-a6d7-5bd1d4c9b6f9",
@@ -309,6 +370,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitImageAvailable",
                 "defaultWidth": null,
+                "hidden": true,
                 "text": "",
                 "width": 40
             },

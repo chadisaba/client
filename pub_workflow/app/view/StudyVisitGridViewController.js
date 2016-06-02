@@ -25,6 +25,10 @@ Ext.define('MyApp.view.StudyVisitGridViewController', {
 
     },
 
+    onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
 
     },

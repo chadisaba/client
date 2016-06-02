@@ -22,11 +22,12 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
         'MyApp.view.VisitSimplifiedFormViewController',
         'MyApp.view.StudyVisitGrid',
         'Ext.form.FieldSet',
+        'Ext.form.field.Checkbox',
         'Ext.form.field.Date',
+        'Ext.toolbar.Spacer',
         'Ext.form.field.Time',
         'Ext.view.BoundList',
         'Ext.XTemplate',
-        'Ext.form.field.Checkbox',
         'Ext.grid.Panel'
     ],
 
@@ -52,6 +53,42 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
             },
             items: [
                 {
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            name: 'visitIsUrgent',
+                            boxLabel: '',
+                            bind: {
+                                fieldLabel: '{trans.emergency}'
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            name: 'visitIsFree',
+                            boxLabel: '',
+                            bind: {
+                                fieldLabel: '{trans.free}'
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            name: 'visitIsHospitalized',
+                            boxLabel: '',
+                            bind: {
+                                fieldLabel: '{trans.hospitalized}'
+                            }
+                        }
+                    ]
+                },
+                {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'siteIdComboBoxItemId',
@@ -69,22 +106,39 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     }
                 },
                 {
-                    xtype: 'datefield',
-                    anchor: '100%',
-                    name: 'visitDate',
-                    allowBlank: false,
-                    bind: {
-                        fieldLabel: '{trans.date}'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'datefield',
+                            flex: 2,
+                            name: 'visitDate',
+                            allowBlank: false,
+                            bind: {
+                                fieldLabel: '{trans.date}'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'timefield',
+                            width: 200,
+                            name: 'visitTime',
+                            allowBlank: false,
+                            bind: {
+                                fieldLabel: '{trans.hour}'
+                            }
+                        }
+                    ]
                 },
                 {
-                    xtype: 'timefield',
-                    anchor: '100%',
-                    name: 'visitTime',
-                    allowBlank: false,
-                    bind: {
-                        fieldLabel: '{trans.hour}'
-                    }
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
                     xtype: 'combobox',
@@ -116,38 +170,11 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     }
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsFree',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.free}'
-                    }
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsHospitalized',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.hospitalized}'
-                    }
-                },
-                {
                     xtype: 'textfield',
                     anchor: '100%',
                     name: 'visitHospitVisitNumber',
                     bind: {
                         fieldLabel: '{trans.hospitVisitNumber}'
-                    }
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsUrgent',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.emergency}'
                     }
                 },
                 {

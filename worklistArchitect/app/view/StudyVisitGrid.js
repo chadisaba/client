@@ -22,6 +22,8 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         'MyApp.view.StudyVisitGridViewController',
         'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
         'Ext.form.field.Number',
         'Ext.view.Table',
         'Ext.selection.RowModel'
@@ -52,7 +54,9 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'studyName',
-                forceSelection: true,
+                displayTpl: [
+                    '<tpl for=".">{studyCode} : {studyName}</tpl>'
+                ],
                 queryMode: 'local',
                 typeAhead: true,
                 valueField: 'studyName',
@@ -60,7 +64,15 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                     store: '{StudyComboStore}'
                 },
                 listeners: {
-                    select: 'onStudyComboboxItemIdSelect'
+                    select: 'onStudyComboboxItemIdSelect',
+                    change: 'onStudyComboboxItemIdChange'
+                },
+                listConfig: {
+                    xtype: 'boundlist',
+                    itemSelector: 'div',
+                    itemTpl: [
+                        '{studyCode} : {studyName}'
+                    ]
                 }
             }
         },
@@ -89,7 +101,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyVisitPrice',
-            width: 100,
+            width: 70,
             text: '{trans.price}',
             editor: {
                 xtype: 'numberfield',
@@ -140,6 +152,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             width: 40,
             dataIndex: 'studyVisitImageAvailable',
             text: ''

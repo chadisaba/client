@@ -39,6 +39,11 @@ Ext.define('MyApp.view.PatientReceivePanel', {
     items: [
         {
             xtype: 'patientform',
+            animCollapse: true,
+            collapseDirection: 'left',
+            collapsible: true,
+            titleCollapse: false,
+            collapseMode: 'header',
             flex: 1.5,
             region: 'center',
             split: true,

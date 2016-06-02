@@ -41,6 +41,10 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onCityNameComboBoxEditorItemIdKeyup: function(textfield, e, eOpts) {
+
+    },
+
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
 
     }

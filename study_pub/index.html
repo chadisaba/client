@@ -16,15 +16,16 @@
 
 
     <script src="../extjs61/ext-all-debug.js"></script>
-
     <script src="../Common/utility/StateProvider.js"></script>
     <script src="../Common/utility/ServerStateProvider.js"></script>
     <script src="../Common/data/comboData.js"></script>
+    <script src="../Common/data/StaticData.js"></script>
 
     <script src="../Common/utility/Connection.js"></script>
     <script src="../Common/DirectAPI.js"></script>
 
     <script src="../Common/plugins/grid/GridEditingPlugin.js"></script>
+    <script src="../Common/plugins/grid/GridAddPlugins.js"></script>
     <script src="../Common/plugins/grid/GridSearchPlugin.js"></script>
 	 <script src="../Common/plugins/form/FormEditingPlugin.js"></script>
 
@@ -38,14 +39,26 @@
 	 <script src="../Common/utility/renderer.js"></script>
     <script src="../Common/utility/loading.js"></script>
     <script src="../Common/utility/Grid.js"></script>
+    <script src="../Common/utility/Form.js"></script>
 	<script src="../Common/utility/routes.js"></script>
     <script src="../Common/utility/tree.js"></script>
+    <script src="../Common/utility/uuid-v4.js"></script>
+    <script src="../Common/utility/stringUtil.js"></script>
 
+    <script src="../Common/vtype/AdvancedVType.js"></script>
+
+    <script src="../Common/direct/CityDirect.js"></script>
+    <script src="../Common/direct/ReferringPhysicianDirect.js"></script>
+    <script src="../Common/direct/PatientDirect.js"></script>
+    <script src="../Common/direct/VisitDirect.js"></script>
+    <script src="../Common/direct/CommonDirect.js"></script>
+    <script src="../Common/direct/StudyDirect.js"></script>
     <!--End order is important for theses files-->
 
    <link rel="stylesheet" href="../extjs61/classic/theme-triton/resources/theme-triton-all.css">
     <link rel="stylesheet" href="../extjs61/admin/Admin-all.css">
     <script src="../Common/ux/window/PromptWindow.js"></script>
+    <script src="../Common/ux/window/FullScreenWindow.js"></script>
     <script src="../Common/NavigationTree.js"></script>
     <script src="../Common/plugins/tree/TreeMultiSelect.js"></script>
 	<link rel="stylesheet" href="../Common/resources/css/style.css"/>
@@ -55,30 +68,25 @@
 
     <script type="text/javascript" src="app.js"></script>
 
+
+
     <link rel="stylesheet" href="../Common/material.min.css"/>
     <link rel="stylesheet" href="../Common/material-desktop.css"/>
-    <!--   <script src="../extjs61/ux/classic/colorpick/Field.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/Selector.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/ColorUtils.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/Selection.js"></script>
+
+    <script type="text/javascript" src="../Common/localization/fr.js"></script>
+    <script type="text/javascript" src="../Common/localization/dateTime_fr.js"></script>
+    <script>
 
 
-     <script src="../extjs61/ux/classic/colorpick/ColorMap.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SelectorModel.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SelectorController.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/ColorPreview.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/Slider.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SliderAlpha.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SliderSaturation.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SliderValue.js"></script>
-     <script src="../extjs61/ux/classic/colorpick/SliderHue.js"></script>-->
+        window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
+        window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+        window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
 
-
-
-
-
-
- </head>
- <body></body>
- </html>
+        if (!window.indexedDB) {
+            window.alert("Your browser doesn't support a stable version of IndexedDB.")
+        }
+    </script>
+</head>
+<body></body>
+</html>

@@ -489,7 +489,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 						click: function (button, e, options){										
 							//Confirm quitting edition mode
 							var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false});
-							promptWin.setTitle(translate('cancelTitle')');
+							promptWin.setTitle(translate('cancelTitle'));
 							promptWin.down('#confirmMsg').setText(translate('cancelMsg'));
 							promptWin.down('#description').hide();
 							promptWin.down('#inputText').hide();
@@ -522,7 +522,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'saveBtn',
 				disabled: true,
 				glyph: 'xf0c7@FontAwesome',
-				tooltip: translate('clickToSaveModifications')//,'Cliquer ici pour enregistrer toutes les modifications',
+				tooltip: translate('clickToSaveModifications'),//,'Cliquer ici pour enregistrer toutes les modifications',
 				listeners: {
 					click: function (button, e, options){
 						// Show confirmation pop-up before save action
@@ -748,41 +748,40 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			
 			if(me.grid.getSelectionModel().hasSelection())
 			{
-				
+				if (selectedRec.get('locked')|| selectedRec.get('toDelete')){
+					me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+					me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
+				} else if (!selectedRec.get('locked') && !selectedRec.get('locked')) {
+					me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
+					me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
+				}
 			}
-			if (me.grid.getSelectionModel().hasSelection() 
-				&& (me.grid.getSelectionModel().getSelection()[0].data.locked
-				|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-				&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-				&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-			}
+
 		} else if (this.onlyModify === true){
 			me.modifyBtnCtn.show();
-			
-			if (me.grid.getSelectionModel().hasSelection() 
-				&& me.grid.getSelectionModel().getSelection()[0].data.locked){
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-				&& !me.grid.getSelectionModel().getSelection()[0].data.locked) {
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+				if (selectedRec.get('locked')){
+					me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
+				}
+				 else if (!selectedRec.get('locked')) {
+					me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
+				}
 			}
+
 		} else if (this.onlyDelete === true || this.onlyAD === true){
 			me.deleteBtnCtn.show();
-			
-			if (me.grid.getSelectionModel().hasSelection() 
-				&& (me.grid.getSelectionModel().getSelection()[0].data.locked
-				|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-				&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-				&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
+
+			if(me.grid.getSelectionModel().hasSelection())
+			{
+				if (selectedRec.get('locked') || selectedRec.get('toDelete')){
+					me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+				}
+				else if (!selectedRec.get('locked')&& !selectedRec.get('toDelete')) {
+					me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
+				}
 			}
+
 		} else if (this.noModif === true){
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
@@ -825,7 +824,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 					if ((selectedRec.get('locked') || selectedRec.get('toDelete'))){
 						me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 						me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-					} else if ((!selectedRec.get('locked') && !selectedRec.get('toDelete')) {
+					} else if (!selectedRec.get('locked') && !selectedRec.get('toDelete')) {
 						me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 						me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
 				}

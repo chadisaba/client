@@ -5,13 +5,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_doctorId,_readOnlyGrid)
+    initGrid:function(_filters,_readOnlyGrid)
     {
 	var me=this;
-        if(!_doctorId)
-            console.error("function initGrid : _doctorId is required ");
 
-        me.doctorId=_doctorId;
 
 	me.filters=_filters||[];
         var view=this.getView();
@@ -106,6 +103,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
+    setDoctorId:function(_doctorId)
+    {
+       this.doctorId= _doctorId;
+    },
     getResultArray:function(filters)
     {
       var me=this;
@@ -142,6 +143,25 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 		}
 		); 
               
+    },
+    onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+        if(!this.doctorId)
+            console.error("function initGrid : doctorId is required ");
+
+       var doctorId=this.getView().doctorId;
+        StudyDirect.studyAutoComplete(this,newValue,"StudyComboStore",field,false,3,this.doctorId);
+    },
+
+    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
+
     }
 
     /*********************** renderers****************************************************/

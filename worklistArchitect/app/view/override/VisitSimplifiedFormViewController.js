@@ -104,8 +104,13 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     },
 
     onDoctorComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
-        if(newValue)
-            this.getView().down("#studyVisitGridItemId").unmask()
+        if(newValue){
+            this.getView().down("#studyVisitGridItemId").unmask();
+            this.getView().down("#studyVisitGridItemId").getController().setDoctorId(newValue);
+        }
+        else
+            this.getView().down("#studyVisitGridItemId").mask()
+
     }
 
 

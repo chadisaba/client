@@ -26,10 +26,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "animCollapse": true,
+                "collapseDirection": "left",
+                "collapsible": true,
+                "layout|collapseMode": "header",
                 "layout|flex": 1.5,
                 "layout|region": "center",
                 "layout|split": true,
-                "patientId": null
+                "patientId": null,
+                "titleCollapse": false
             },
             "name": "patientform",
             "designerId": "5cc49028-14a1-4119-ac8f-13514ccc00a2",
