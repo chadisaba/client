@@ -171,99 +171,81 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	},
 	
 	restoreGrid: function (){
-		var me = this;
-		if (!me.onlyADM && !me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
-			me.editBtnCtn.show();
+			var me = this;
+			me.editBtnCtn.hide();
 			me.deleteBtnCtn.hide();
 			me.addBtnCtn.hide();
 			me.modifyBtnCtn.hide();
 			me.saveBtnCtn.hide();
 			me.cancelBtnCtn.hide();
 			me.quitBtnCtn.hide();
-			me.chHistBtnCtn.show();
+			me.chHistBtnCtn.hide();
 
 			me.editBtnCtn.down('#editBtn').setDisabled(false);
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+			me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
 			me.addBtnCtn.down('#addBtn').setDisabled(false);
+			me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
+			me.saveBtnCtn.down('#saveBtn').setDisabled(false);
+			me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
+			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
+			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+			
+		if (!me.onlyADM && !me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
+			me.editBtnCtn.show();
+			me.chHistBtnCtn.show();
+
+			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+	
 		} else if (me.onlyECSQ) {
 			me.editBtnCtn.show();
-			me.saveBtnCtn.hide();
-			me.cancelBtnCtn.hide();
-			me.quitBtnCtn.hide();
 			me.chHistBtnCtn.show();
-			
-			me.editBtnCtn.down('#editBtn').setDisabled(false);
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+		
 		} else if (me.onlyADM) {
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
 			me.modifyBtnCtn.show();
 			me.chHistBtnCtn.show();
-			
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.addBtnCtn.down('#addBtn').setDisabled(false);
 			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+		
 		} else if (me.onlyModify){
 			me.editBtnCtn.show();
-			me.modifyBtnCtn.hide();
-			me.saveBtnCtn.hide();
-			me.cancelBtnCtn.hide();
-			me.quitBtnCtn.hide();
 			me.chHistBtnCtn.show();
-			
-			me.editBtnCtn.down('#editBtn').setDisabled(false);
+		
 			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+	
 		} else if (me.onlyDelete){
 			me.editBtnCtn.show();
-			me.deleteBtnCtn.hide();
-			me.saveBtnCtn.hide();
-			me.cancelBtnCtn.hide();
-			me.quitBtnCtn.hide();
 			me.chHistBtnCtn.show();
-			
-			me.editBtnCtn.down('#editBtn').setDisabled(false);
+		
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);			
+				
 		} else if (me.onlyAD) {
 			me.deleteBtnCtn.show();
 			me.addBtnCtn.show();
 			me.chHistBtnCtn.show();
 			
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.addBtnCtn.down('#addBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
+	
 		} else if (me.noModif){
 			me.editBtnCtn.show();
-			me.deleteBtnCtn.hide();
-			me.addBtnCtn.hide();
-			me.saveBtnCtn.hide();
-			me.cancelBtnCtn.hide();
-			me.quitBtnCtn.hide();
+		
 			me.chHistBtnCtn.show();
-			
-			me.editBtnCtn.down('#editBtn').setDisabled(false);
+		
 			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.addBtnCtn.down('#addBtn').setDisabled(false);
+		
 			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);		
+		
 		}
 		if(me.filterCheckBoxCtn)
 			me.filterCheckBoxCtn.hide();
@@ -277,19 +259,12 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
-		if (!this.onlyADM
-			&& !this.onlyECSQ
-			&& !this.onlyModify
-			&& !this.onlyDelete
-			&& !this.onlyAD
-			&& !this.noModif){
+		
 			this.createFilterCheckboxCtn();
-
 			if(this.liveSearch){
 				this.createLiveSearchCtn();
 				this.tb.add(this.liveSearchCtn);
 			}
-
 			this.createEditBtnCtn();
 			this.createCancelBtnCtn();
 			this.createSaveBtnCtn();
@@ -308,7 +283,12 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		} else if (this.onlyADM) {
+			
+			if(this.preferences){
+			this.createPreferenceBtnCtn();
+			this.tb.add(this.preferenceBtnCtn)
+			}
+	/*	 if (this.onlyADM) {
 			this.createChHistBtnCtn();
 			this.createAddBtnCtn();
 			this.createDeleteBtnCtn();
@@ -386,11 +366,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
 			this.tb.add(this.chHistBtnCtn);
-		}
-		if(this.preferences){
-			this.createPreferenceBtnCtn();
-			this.tb.add(this.preferenceBtnCtn)
-		}
+		}*/
+		
 
 		
 	},
