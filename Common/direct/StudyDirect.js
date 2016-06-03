@@ -34,6 +34,8 @@ var StudyDirect={
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
+                if(!_doctorId)
+                    reject("getStudyByNameFromIndexedDB : the doctorId is required");
                 smartmedDB.study.where("studyCode")
                 .startsWithIgnoreCase(_searchValue)
                 .and(function(_study) { return _study.doctorId == _doctorId; })
@@ -50,12 +52,21 @@ var StudyDirect={
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-                smartmedDB.study.where("studyName")
-                .startsWithIgnoreCase(_searchValue)
-                .and(function(_study) { return _study.doctorId == _doctorId; })
-                .toArray (function (_resultsArray) {
-              resolve(_resultsArray);
-          });
+                if(!_doctorId)
+                    reject("getStudyByNameFromIndexedDB : the doctorId is required");
+                IndexedDB.openDB()
+                    .then(
+                    function()
+                    {
+                        IndexedDB.db.DOC_HAS_STUDY.where("studyName")
+                            .startsWithIgnoreCase(_searchValue)
+                            .and(function(_study) { return _study.doctorId == _doctorId;})
+                            .toArray (function (_resultsArray) {
+                                resolve(_resultsArray);
+                            });
+                    }
+                );
+
             
              });
          return promise;
@@ -64,14 +75,14 @@ var StudyDirect={
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_searchValue && isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&&(_field.getRawValue().indexOf("-")<0))
+        if(_searchValue && isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&&(_field.getRawValue().indexOf(":")<0))
         {
         if(_searchValue.length>=searchLengh)
         {
             var store = me.getViewModel().getStore(_studyComboStoreName);
             if(_fromIndexedDB)
             {
-               me.getStudyByNameFromIndexedDB(_searchValue,_doctorId)
+               this.getStudyByNameFromIndexedDB(_searchValue,_doctorId)
                 .then(
                     function(_resultData)
                     {

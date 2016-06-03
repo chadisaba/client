@@ -153,7 +153,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
             console.error("function initGrid : doctorId is required ");
 
        var doctorId=this.getView().doctorId;
-        StudyDirect.studyAutoComplete(this,newValue,"StudyComboStore",field,false,3,this.doctorId);
+        StudyDirect.studyAutoComplete(this,newValue,"StudyComboStore",field,true,3,this.doctorId);
     },
 
     onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
