@@ -9,6 +9,7 @@
                     "cn": [
                         {
                             "id": "73e1ef6a-05cb-4aa6-aacc-2tyu5t8jtpma",
+                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "e5b89895-cacd-4f7c-8a03-6a4e69d91002"
@@ -76,6 +77,17 @@
                             "cn": [
                                 {
                                     "id": "f5744cfe-da74-47f7-8b5c-02ec65a1dc3f"
+                                },
+                                {
+                                    "id": "bb130a31-9757-4573-bd00-60e0c61fb5b7",
+                                    "cn": [
+                                        {
+                                            "id": "cde6a472-bd7c-4843-ad6d-dc8f37c2ec83"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "00e76025-9ff8-4211-8abc-a4f627804155"
                                 }
                             ]
                         }
@@ -156,7 +168,6 @@
         },
         "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb": {
             "id": "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
-            "expanded": false,
             "cn": [
                 {
                     "id": "ru6decju-c056-4140-9039-jrieewb521e8"
@@ -303,6 +314,7 @@
         },
         "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596": {
             "id": "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596",
+            "expanded": false,
             "cn": [
                 {
                     "id": "94f6e1b3-1e8f-40f5-8156-5db18b00f09f"
@@ -2017,8 +2029,8 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
-        "selectedInstance": "7c6bec59-5c6a-4872-9cec-jku13lsx7etv"
+        "topInstance": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
+        "selectedInstance": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9"
     },
     "editMode": "code",
     "userSettings": {

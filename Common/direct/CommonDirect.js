@@ -21,19 +21,44 @@ var CommonDirect={
         return promise;
     },
     
-    getDataFromIndexedDB:function(_searchValue,_searchFieldName,_tableName)
+    searchDataFromIndexedDB:function(_searchValue,_searchFieldName,_tableName)
     {
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-                smartmedDB[_tableName].where(_searchFieldName)
-                .startsWithIgnoreCase(_searchValue)
-                .toArray (function (_resultsArray) {
-              resolve(_resultsArray);
-          });
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db[_tableName].where(_searchFieldName)
+                                .startsWithIgnoreCase(_searchValue)
+                                .toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
             
              });
          return promise;
+    },
+    gethDataFromIndexedDB:function(_tableName)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db[_tableName]
+                                .toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
+
+            });
+        return promise;
     },
     
     getDataById:function(_IdName,_idValue,_tableName)
@@ -61,7 +86,7 @@ var CommonDirect={
             });
         return promise;
     },
-    getData:function(_tableName,_filtersArray)
+    getData:function(_tableName,_filtersArray,_limit)
     {
         //Creating a promise
         var promise=new Promise(
@@ -69,7 +94,8 @@ var CommonDirect={
 
                 var params;
                 params={
-                    table:_tableName
+                    table:_tableName,
+                    limit:_limit||100
                 };
                 if(_filtersArray)
                 params.filters=_filtersArray;

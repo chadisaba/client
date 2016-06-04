@@ -55,6 +55,8 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                     // we create a new patient
                     var visitRec=Ext.create('MyApp.model.VisitModel');
                     view.loadRecord(visitRec);
+                    view.down('#studyVisitGridItemId').getController().initGrid();
+
                     view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
                 }
             });

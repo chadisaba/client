@@ -139,6 +139,9 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 itemId: 'technicianComboboxItemId',
                 selectOnFocus: true,
                 displayField: 'userLName',
+                displayTpl: [
+                    '<tpl for=".">{userLName} : {userFName}</tpl>'
+                ],
                 queryMode: 'local',
                 typeAhead: true,
                 valueField: 'userLName',
@@ -147,6 +150,13 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 },
                 listeners: {
                     select: 'onTechnicianComboboxItemIdSelect'
+                },
+                listConfig: {
+                    xtype: 'boundlist',
+                    itemSelector: 'div',
+                    itemTpl: [
+                        '{userLName} {userFName}'
+                    ]
                 }
             }
         },

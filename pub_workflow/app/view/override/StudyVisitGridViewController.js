@@ -5,26 +5,39 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_doctorId,_readOnlyGrid)
+    initGrid:function(_filters,_readOnlyGrid,_visitId)
     {
 	var me=this;
         if(!_doctorId)
             console.error("function initGrid : _doctorId is required ");
 
-        me.doctorId=_doctorId;
 
-	me.filters=_filters||[];
-        var view=this.getView();
+        UserDirect.getUserByCat(3,true)// 3 for Technician
+            .then(function(_resultArray)
+            {
+                me.getViewModel().getStore('TechnicianComboStore').loadData(_resultArray);
+            });
 
-        if(!_readOnlyGrid)
-            view.getPlugin('gridediting').lockGrid(false);
+        if(_visitId)
+        {
+            me.filters=_filters||[];
+            var view=this.getView();
 
-	this.getResultArray().
-	then(
-		function(data){
-        	            Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
-        	        }
-        	        );
+            if(!_readOnlyGrid)
+                view.getPlugin('gridediting').lockGrid(false);
+
+
+            this.getResultArray().
+            then(
+                function(data){
+                    Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
+
+
+                }
+            );
+        }
+
+
         	    
     },
 
@@ -144,7 +157,8 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                 });
 
 		}
-		); 
+		);
+        return promise;
               
     },
     onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
@@ -152,11 +166,19 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
     onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
-        if(!this.doctorId)
+        if(!this.doctorId){
             console.error("function initGrid : doctorId is required ");
+            throw new Error("StudyVisitGrid function initGrid : doctorId is required ");
 
-       var doctorId=this.getView().doctorId;
-        StudyDirect.studyAutoComplete(this,newValue,"StudyComboStore",field,true,3,this.doctorId);
+        }
+        else
+        {
+            var doctorId=this.getView().doctorId;
+            StudyDirect.docHasstudyAutoComplete(this,newValue,"StudyComboStore",field,true,3,this.doctorId);
+        }
+
+
+
     },
 
     onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
@@ -166,11 +188,5 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
 
     }
-
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
-    
- 
-    
 
 });
