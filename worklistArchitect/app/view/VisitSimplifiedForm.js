@@ -179,7 +179,6 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                 },
                 {
                     xtype: 'studyvisitgrid',
-                    hideHeaders: false,
                     externalEditingPlugin: {
                         pluginId: 'gridediting',
                         onlyADM: true

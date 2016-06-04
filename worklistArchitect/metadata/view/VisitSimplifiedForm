@@ -442,7 +442,6 @@
                             "",
                             "}"
                         ],
-                        "hideHeaders": false,
                         "title": null
                     },
                     "name": "studyvisitgrid",

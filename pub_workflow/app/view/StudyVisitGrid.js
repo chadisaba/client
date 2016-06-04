@@ -100,8 +100,8 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyVisitPrice',
             width: 70,
+            dataIndex: 'studyVisitPrice',
             text: '{trans.price}',
             editor: {
                 xtype: 'numberfield',
