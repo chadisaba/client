@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
-        "exportPath": "d:/wamp/www/nodejs_extjs_project/clientCh/pub_workflow/",
+        "exportPath": "../pub_workflow/",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,

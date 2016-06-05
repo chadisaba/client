@@ -127,6 +127,10 @@ Ext.define('MyApp.model.VisitModel', {
         {
             type: 'int',
             name: 'siteId'
+        },
+        {
+            type: 'int',
+            name: 'doctorId'
         }
     ]
 });

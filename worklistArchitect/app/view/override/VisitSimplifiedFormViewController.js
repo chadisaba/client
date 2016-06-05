@@ -1,9 +1,10 @@
 Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     override: 'MyApp.view.VisitSimplifiedFormViewController',
 
-    initForm: function(_visitId) {
+    initForm: function(_visitId,_patientId) {
         var me=this;
         var view=me.getView();
+        this.patientId=_patientId;
         view.down("#studyVisitGridItemId").mask();
         var viewModel=me.getViewModel();
         var visitId=null;
@@ -54,6 +55,9 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 {
                     // we create a new patient
                     var visitRec=Ext.create('MyApp.model.VisitModel');
+                    visitRec.set('visitDate',new Date());
+                    visitRec.set('visitTime',new Date());
+                    visitRec.set('siteId',1);// select the first site
                     view.loadRecord(visitRec);
                     view.down('#studyVisitGridItemId').getController().initGrid();
 
@@ -70,7 +74,13 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             var visitId=UUID();
             rec.set('visitId',visitId);
         }
+        rec.set('patientId',me.patientId);
+
+
         var dataToSave=rec.data;
+        var visitTimeHour=dataToSave.visitTime.getHours();
+        var visitTimeMinutes=dataToSave.visitTime.getMinutes();
+        dataToSave.visitTime=visitTimeHour+":"+visitTimeMinutes;
         if(button)
              Utility.loading.start(button);
 

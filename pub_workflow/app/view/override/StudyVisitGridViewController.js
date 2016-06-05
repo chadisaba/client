@@ -8,9 +8,6 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     initGrid:function(_filters,_readOnlyGrid,_visitId)
     {
 	var me=this;
-        if(!_doctorId)
-            console.error("function initGrid : _doctorId is required ");
-
 
         UserDirect.getUserByCat(3,true)// 3 for Technician
             .then(function(_resultArray)

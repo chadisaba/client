@@ -83,7 +83,6 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'deviceComboboxItemId',
-                allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'deviceName',
                 forceSelection: true,
@@ -100,7 +99,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
-            width: 100,
+            width: 70,
             dataIndex: 'studyVisitPrice',
             text: '{trans.price}',
             editor: {

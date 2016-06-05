@@ -367,6 +367,19 @@
             },
             "name": "MyInteger3",
             "designerId": "6eeba3c2-ff53-489b-bfd9-2901c92aa79e"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "doctorId"
+            },
+            "name": "MyInteger7",
+            "designerId": "ff93eab0-25e5-43f0-b0a1-50bbbcee1f41"
         }
     ]
 }

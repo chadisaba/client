@@ -173,7 +173,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
                         "displayField": "deviceName",
                         "forceSelection": true,
                         "itemId": "deviceComboboxItemId",
