@@ -87,6 +87,11 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         VisitDirect.saveVisit(dataToSave)
             .then(function()
             {
+                var dataToSave=me.getView().down('#studyVisitGridItemId').getController().getDataToBeSaved();
+                CommonDirect.saveData(dataToSave,"STUDY_VISIT","");
+
+            })
+            .then(function(){
                 if(button)
                     Utility.loading.end(button);
             })

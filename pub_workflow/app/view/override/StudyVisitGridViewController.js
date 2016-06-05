@@ -40,8 +40,9 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     getDataToBeSaved:function()
     {
-    	return component.getPlugin('gridediting').getDataToBeSaved();
+        return this.getView().getPlugin('gridediting').getDataToBeSaved();
     },
+
     refreshGrid:function()
     {
     	this.initGrid(this.filters);
@@ -52,12 +53,12 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
     onStudyVisitGridIdResetEdit: function(gridpanel,promptWin) {
-        Utility.grid.resetEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
+        Utility.grid.resetEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
 
     },
 
    onStudyVisitGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-	     CommonDirect.saveData(_dataToBeSaved,"STUDY_VISIT",_comment);
+	     CommonDirect.saveData(dataToBeSaved,"STUDY_VISIT",comment);
     },
 
     onStudyVisitGridIdAddItem: function() {
@@ -80,7 +81,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
     onStudyVisitGridIdQuitEdit: function(gridpanel,promptWin) {
-        Utility.grid.quitEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
+        Utility.grid.quitEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
     },
     onStudyVisitGridIdBeforeEdit: function(editor,context) {
         return (Utility.grid.beforeEdit(editor,context));
