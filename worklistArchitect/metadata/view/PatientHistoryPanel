@@ -87,10 +87,15 @@
                 "layout|flex": 2,
                 "layout|region": "east",
                 "layout|split": true,
-                "title": "Contenu",
+                "title": [
+                    "{trans.content}"
+                ],
                 "width": null
             },
             "name": "MyPanel",
+            "configAlternates": {
+                "title": "binding"
+            },
             "designerId": "14278470-6efc-45c2-8036-91a2a6ff5df9",
             "cn": [
                 {

@@ -44,6 +44,7 @@ function translate(text)
         "email":"E-mail",
          "contactInformation":"Coordonnées",
 
+
         /*** visit form***/
         "visitInformation":"Informations consultation",
         "date":"Date",
@@ -59,9 +60,34 @@ function translate(text)
 
         /*** patient history***/
         "history":"Historique",
-        "path":"Appareil"
+        "path":"Appareil",
+
+        /*** Work list***/
+        "visit":"Visite",
+        "patient":"Patient",
+        "visitIsFree":"Visit is free",
+        "vitale":"Vitale",
+        "pat":"patient",
+        "med":"doctor",
+        "consultantPh":"consultantPh",
+        "drRecipient":"drRecipient",
+        "dict":"dict",
+        "cR":"cR",
+        "cot":"cot",
+        "fT":"FT",
+        "comment":"Comment",
+        "duP":"DuP",
+        "duV":"DuV",
+        "visitInvoiceType":"VisitInvoiceType",
+        "visitIsHopitalized":"VisitIsHopitalized",
+        "visitIsUrgent":"VisitIsUrgent",
+        "nVisit":"NVisit",
+        "visitFtFor":"VisitFtFor",
+        "visitPEC":"VisitPEC",
+        "actions":"Actions",
+        "print":"Impremt"
 
 
-    }
+        }
     return translation[text]||text;
 }

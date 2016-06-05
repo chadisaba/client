@@ -338,7 +338,9 @@ Ext.define('MyApp.view.PatientForm', {
                             formBind: false,
                             itemId: 'cancelFormBtnItemId',
                             glyph: 'xf08b@FontAwesome',
-                            text: 'Quitter'
+                            bind: {
+                                text: '{trans.cancel}'
+                            }
                         }
                     ]
                 },

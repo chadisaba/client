@@ -6,14 +6,14 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Small",
+                "name": "Medium",
                 "builtIn": true,
-                "height": 600,
-                "width": 800
+                "height": 768,
+                "width": 1024
             }
         },
-        "urlPrefix": "http://localhost/nodejs_extjs_project/client_ch/pub_workflow/",
-        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client_ch/pub_workflow/",
+        "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
+        "exportPath": "d:/wamp/www/nodejs_extjs_project/clientCh/pub_workflow/",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,

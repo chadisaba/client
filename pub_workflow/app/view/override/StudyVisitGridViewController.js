@@ -5,10 +5,13 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_readOnlyGrid)
+    initGrid:function(_filters,_doctorId,_readOnlyGrid)
     {
 	var me=this;
+        if(!_doctorId)
+            console.error("function initGrid : _doctorId is required ");
 
+        me.doctorId=_doctorId;
 
 	me.filters=_filters||[];
         var view=this.getView();

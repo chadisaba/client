@@ -54,7 +54,9 @@ Ext.define('MyApp.view.PatientHistoryPanel', {
             layout: 'fit',
             animCollapse: true,
             collapsible: true,
-            title: 'Contenu',
+            bind: {
+                title: '{trans.content}'
+            },
             items: [
                 {
                     xtype: 'textareafield',

@@ -51,8 +51,10 @@ Ext.define('MyApp.view.VisitForm', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Date',
-                    name: 'visitDateTime'
+                    name: 'visitDateTime',
+                    bind: {
+                        fieldLabel: '{trans.date}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
@@ -64,9 +66,11 @@ Ext.define('MyApp.view.VisitForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Gratuit',
                     name: 'visitIsFree',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.free}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
@@ -78,16 +82,20 @@ Ext.define('MyApp.view.VisitForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Hospitalisé',
                     name: 'visitIsHospitalized',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.hospital}'
+                    }
                 },
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'Urgence',
                     name: 'visitIsUrgent',
-                    boxLabel: ''
+                    boxLabel: '',
+                    bind: {
+                        fieldLabel: '{trans.emergency}'
+                    }
                 },
                 {
                     xtype: 'textfield',

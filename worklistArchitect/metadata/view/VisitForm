@@ -176,11 +176,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Date",
+                        "fieldLabel": [
+                            "{trans.date}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitDateTime"
                     },
                     "name": "MyvisitDateTimeTextField",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "0251ddea-e79a-485d-bc36-f8dba6881253"
                 },
                 {
@@ -208,11 +213,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Gratuit",
+                        "fieldLabel": [
+                            "{trans.free}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsFree"
                     },
                     "name": "MyvisitIsFreeCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
                 },
                 {
@@ -240,11 +250,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Hospitalisé",
+                        "fieldLabel": [
+                            "{trans.hospital}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsHospitalized"
                     },
                     "name": "MyvisitIsHospitalizedCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
                 },
                 {
@@ -256,11 +271,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Urgence",
+                        "fieldLabel": [
+                            "{trans.emergency}"
+                        ],
                         "layout|anchor": "100%",
                         "name": "visitIsUrgent"
                     },
                     "name": "MyvisitIsUrgentCheckBox",
+                    "configAlternates": {
+                        "fieldLabel": "binding"
+                    },
                     "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
                 },
                 {

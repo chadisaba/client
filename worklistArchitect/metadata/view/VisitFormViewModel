@@ -6,12 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{",
+            "trans:{date:translate('date'),",
+            "free:translate('free'),",
+            "hospital:translate('hospital'),",
+            "emergency:translate('emergency'),",
+            "",
+            "}",
+            "}"
+        ],
         "designer|userAlias": "visitform",
         "designer|userClassName": "VisitFormViewModel"
     },
     "designerId": "3733e66d-16cf-4e71-a701-95f14282e3e4",
-      "cn": [
-       
+    "cn": [
         {
             "type": "Ext.data.Store",
             "reference": {
@@ -22,7 +31,6 @@
             "userConfig": {
                 "model": "VisitPdsComboModel",
                 "name": "VisitPdsComboStore"
-                    
             },
             "name": "VisitPdsComboStore",
             "designerId": "f57ebc8c-7a78-4296-9407-732424ac95ff"

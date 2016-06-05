@@ -39,6 +39,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     stateful: true,
     itemId: 'worklistGridId',
     resizable: false,
+    width: 940,
     title: '',
     forceFit: true,
 
@@ -53,19 +54,25 @@ Ext.define('MyApp.view.WorklistGrid', {
             minWidth: 50,
             width: 50,
             dataIndex: 'siteCode',
-            text: 'Site'
+            bind: {
+                text: '{trans.site}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'socialCardRenderer',
             dataIndex: 'visitIsBySocialCard',
-            text: 'Vitale'
+            bind: {
+                text: '{trans.vitale}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'infoVisitRenderer',
             dataIndex: 'worklistVisitInfo',
-            text: 'Visite.'
+            bind: {
+                text: '{trans.visit}'
+            }
         },
         {
             xtype: 'gridcolumn',
@@ -73,91 +80,119 @@ Ext.define('MyApp.view.WorklistGrid', {
             scrollable: true,
             width: '',
             dataIndex: 'worklistDate',
-            text: 'Date'
+            bind: {
+                text: '{trans.date}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'infoPatientRenderer',
             dataIndex: 'worklistPatientInfo',
-            text: 'Pat.'
+            bind: {
+                text: '{trans.pat}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'patientRenderer',
             width: 150,
             dataIndex: 'patientLName',
-            text: 'Patient'
+            bind: {
+                text: '{trans.patient}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dateRenderer',
             dataIndex: 'patientBirthday',
-            text: 'Naissance'
+            bind: {
+                text: '{trans.birthday}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'studiesRenderer',
             dataIndex: 'worklistStudies',
-            text: 'Studies'
+            bind: {
+                text: '{trans.studies}'
+            }
         },
         {
             xtype: 'gridcolumn',
             dataIndex: 'worklistDoctor',
-            text: 'Méd.'
+            bind: {
+                text: '{trans.med}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererPrescPhysician',
             dataIndex: 'worklistMedPresc',
-            text: 'consultant Ph.'
+            bind: {
+                text: '{trans.consultantPh}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererRecipientPhysician',
             dataIndex: 'worklistMedRecipient',
-            text: 'Dr. Recipient'
+            bind: {
+                text: '{trans.drRecipient}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dictationRenderer',
             dataIndex: 'worklistDictationsStatus',
-            text: 'Dict.'
+            bind: {
+                text: '{trans.dict}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'CRRenderer',
             dataIndex: 'worklistLastCrStatus',
-            text: 'C.R'
+            bind: {
+                text: '{trans.cR}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'quotationRenderer',
             dataIndex: 'worklistLastDictationStatus',
-            text: 'Cot.'
+            bind: {
+                text: '{trans.cot}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'FTRenderer',
             dataIndex: 'worklistFTNum',
-            text: 'F.T'
+            bind: {
+                text: '{trans.fT}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'commentRenderer',
             dataIndex: 'worklistVisitComment',
-            text: 'Comment'
+            bind: {
+                text: '{trans.voment}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
             dataIndex: 'worklistPatientDu',
-            text: 'Du .P'
+            bind: {
+                text: '{trans.duP}'
+            }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
             dataIndex: 'worklistFtDu',
-            text: 'Du. V'
+            text: '{trans.duV}'
         },
         {
             xtype: 'gridcolumn',
@@ -180,6 +215,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'visitIsFreeRenderer',
+            width: 10,
             dataIndex: 'visitIsFree',
             text: ''
         },
@@ -198,7 +234,9 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'visitHospitVisitNumber',
-            text: 'N.Visite'
+            bind: {
+                text: '{trans.nVisit}'
+            }
         },
         {
             xtype: 'gridcolumn',
@@ -247,7 +285,9 @@ Ext.define('MyApp.view.WorklistGrid', {
                 {
                     xtype: 'splitbutton',
                     itemId: 'actionsBtnMenu',
-                    text: 'Actions',
+                    bind: {
+                        text: '{trans.actions}'
+                    },
                     menu: {
                         xtype: 'menu',
                         items: [
@@ -273,7 +313,9 @@ Ext.define('MyApp.view.WorklistGrid', {
                 {
                     xtype: 'splitbutton',
                     itemId: 'printBtnMenu',
-                    text: 'Imprimer',
+                    bind: {
+                        text: '{trans.print}'
+                    },
                     menu: {
                         xtype: 'menu',
                         items: [

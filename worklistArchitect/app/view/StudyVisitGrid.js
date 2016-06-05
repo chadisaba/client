@@ -100,7 +100,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
-            width: 70,
+            width: 100,
             dataIndex: 'studyVisitPrice',
             text: '{trans.price}',
             editor: {

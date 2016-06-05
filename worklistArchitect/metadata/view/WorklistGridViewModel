@@ -6,6 +6,39 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{trans:{",
+            "",
+            "visit:translate('visit'),",
+            "patient: translate('patient'),",
+            "studies: translate('studies'),",
+            "birthday:translate('birthday'),",
+            "site:translate ('site'),",
+            "date:translate('date'),",
+            "visitIsFree:translate('visitIsFree'),",
+            "vitale:translate('Vitale'),",
+            "pat:translate('Patient'),",
+            "med:translate('doctor'),",
+            "consultantPh:translate('consultantPh'),",
+            "dict:translate('dict'),",
+            "drRecipient:translate('drRecipient'),",
+            "cR:translate('cR'),",
+            "cot:translate('cot'),",
+            "fT:translate('fT'),",
+            "comment:translate('comment'),",
+            "duP:translate('duP'),",
+            "duV:translate('duV'),",
+            "vistIsFree:translate('visitIsFree'),",
+            "visitIsHopitalized:translate('visitIsHopitalized'),",
+            "visitIsUrgent:translate('visitIsUrgent'),",
+            "nVisit:translate('nVisit'),",
+            "visitInvoiceType:translate('visitInvoiceType'),",
+            "visitFtFor:translate('visitFtFor'),",
+            "visitPEC:translate('visitPEC'),",
+            "actions:translate('actions'),",
+            "print:translate('print')",
+            "}}"
+        ],
         "designer|userAlias": "worklistgrid",
         "designer|userClassName": "WorklistGridViewModel"
     },
@@ -25,6 +58,5 @@
             "name": "WorklistStore",
             "designerId": "g44blag4-c056-4140-9039-83s6s9uhj9yg"
         }
-        
     ]
 }

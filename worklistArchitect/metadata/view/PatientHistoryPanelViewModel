@@ -6,6 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{trans:{",
+            "content:translate('content')",
+            "}}"
+        ],
         "designer|userAlias": "patienthistorypanel",
         "designer|userClassName": "PatientHistoryPanelViewModel"
     },

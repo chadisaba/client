@@ -782,9 +782,14 @@
                                 "formBind": false,
                                 "glyph": "xf08b@FontAwesome",
                                 "itemId": "cancelFormBtnItemId",
-                                "text": "Quitter"
+                                "text": [
+                                    "{trans.cancel}"
+                                ]
                             },
                             "name": "MyButton5",
+                            "configAlternates": {
+                                "text": "binding"
+                            },
                             "designerId": "4b4139aa-a64f-43a7-af05-453452ebfe9c"
                         }
                     ]

@@ -15,6 +15,12 @@
 
 Ext.define('MyApp.view.PatientHistoryPanelViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.patienthistorypanel'
+    alias: 'viewmodel.patienthistorypanel',
+
+    data: {
+        trans: {
+            content: translate('content')
+        }
+    }
 
 });

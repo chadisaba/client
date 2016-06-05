@@ -21,6 +21,16 @@ Ext.define('MyApp.view.VisitFormViewModel', {
         'Ext.data.Store'
     ],
 
+    data: {
+        trans: {
+            date: translate('date'),
+            free: translate('free'),
+            hospital: translate('hospital'),
+            emergency: translate('emergency'),
+            
+        }
+    },
+
     stores: {
         VisitPdsComboStore: {
             model: 'MyApp.model.VisitPdsComboModel'

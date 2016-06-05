@@ -21,6 +21,39 @@ Ext.define('MyApp.view.WorklistGridViewModel', {
         'Ext.data.Store'
     ],
 
+    data: {
+        trans: {
+            visit: translate('visit'),
+            patient: translate('patient'),
+            studies: translate('studies'),
+            birthday: translate('birthday'),
+            site: translate('site'),
+            date: translate('date'),
+            visitIsFree: translate('visitIsFree'),
+            vitale: translate('Vitale'),
+            pat: translate('Patient'),
+            med: translate('doctor'),
+            consultantPh: translate('consultantPh'),
+            dict: translate('dict'),
+            drRecipient: translate('drRecipient'),
+            cR: translate('cR'),
+            cot: translate('cot'),
+            fT: translate('fT'),
+            comment: translate('comment'),
+            duP: translate('duP'),
+            duV: translate('duV'),
+            vistIsFree: translate('visitIsFree'),
+            visitIsHopitalized: translate('visitIsHopitalized'),
+            visitIsUrgent: translate('visitIsUrgent'),
+            nVisit: translate('nVisit'),
+            visitInvoiceType: translate('visitInvoiceType'),
+            visitFtFor: translate('visitFtFor'),
+            visitPEC: translate('visitPEC'),
+            actions: translate('actions'),
+            print: translate('print')
+        }
+    },
+
     stores: {
         WorklistStore: {
             model: 'MyApp.model.WorklistModel'
