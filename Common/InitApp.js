@@ -24,13 +24,13 @@ var InitApp={
         var p3=CommonDirect.getData("USER");
         var p4=CommonDirect.getData("CITY",false,5000);
 
-         mainTableObject={
+        /* mainTableObject={
             tableName:"ROOM_HAS_DEVICE"
         };
          joinTablesArray=[{
             tableName:"DEVICE"
         }];
-        var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
 
         var p6=CommonDirect.getData("DEVICE");
         var p7=CommonDirect.getData("ROOM");
@@ -45,7 +45,7 @@ var InitApp={
         }];
         var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
         
-        Promise.all([p1,p2,p3,p4,p5,p6,p7,p8,p9,p10])
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -64,11 +64,11 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('DOC_HAS_STUDY',docHasStduiesArray));
 
                         // Populating ROOM_HAS_DEVICE DOC_HAS_STUDY table
-                        for (var i = 0; i < roomHasDeviceArray.length; i++) {
+                       /* for (var i = 0; i < roomHasDeviceArray.length; i++) {
                             roomHasDeviceArray[i].deviceCode=roomHasDeviceArray[i]['Device.deviceCode'];
                             roomHasDeviceArray[i].deviceName=roomHasDeviceArray[i]['Device.deviceName'];
                         }
-                        indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));
+                        indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
 
                         // Populating  USER table
                         var usersArray=values[2];
