@@ -23,7 +23,7 @@ var IndexedDB={
                         DOC_HAS_STUDY: "++id,docHasStudyId,studyId,studyCode,studyName,doctorId",
                         USER: "++id,userId,userFName,userLName,userCatId",
                         CITY: "++id,cityId,cityName,cityZipCode",
-                        DEVICE: "++id,deviceId,deviceCode,deviceName,modalityId",
+                        DEVICE: "++id,deviceId,deviceCode,deviceName,modalityId,siteId",
                         STUDY: "++id,studyId,studyCode,studyName",
                         DOCTOR: "++id,doctorId,userFName,userLName",
                         ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceCode,deviceName,siteId",
