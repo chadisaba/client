@@ -113,6 +113,7 @@ var InitApp={
                         for (var i = 0; i < deviceHasStudyArray.length; i++) {
                             deviceHasStudyArray[i].deviceName=deviceHasStudyArray[i]['Device.deviceName'];
                             deviceHasStudyArray[i].deviceCode=deviceHasStudyArray[i]['Device.deviceCode'];
+                             deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
 
