@@ -37,7 +37,15 @@ var InitApp={
         var p8=CommonDirect.getData("STUDY");
         var p9=CommonDirect.getData("REFERRING_PHYSICIAN");
 
-        Promise.all([p1,p2,p3,p4,p5,p6,p7,p8,p9])
+        mainTableObject={
+            tableName:"DEVICE_HAS_STUDY"
+        };
+        var joinTablesArray=[{
+            tableName:"DEVICE"
+        }];
+        var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        
+        Promise.all([p1,p2,p3,p4,p5,p6,p7,p8,p9,p10])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -97,6 +105,16 @@ var InitApp={
                         // Populating  ROOM table
                         var refPhysicansArray=values[8];
                         indexDBPromiseArray.push(IndexedDB.populateData('REFERRING_PHYSICIAN',refPhysicansArray));
+
+
+                    // Populating  DEVICE_HAS_STUDY table
+                        var deviceHasStudyArray=values[9];
+
+                        for (var i = 0; i < deviceHasStudyArray.length; i++) {
+                            deviceHasStudyArray[i].deviceName=deviceHasStudyArray[i]['Device.deviceName'];
+                            deviceHasStudyArray[i].deviceCode=deviceHasStudyArray[i]['Device.deviceCode'];
+                        }
+                        indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
 
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
