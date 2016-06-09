@@ -99,7 +99,7 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('ROOM',roomsArray));
 
                         // Populating  STATUS table
-                        var statusArray=[{lastUpdate:new Date()}];
+                        var statusArray=[{lastUpdate:Ext.Date.format(new Date(),'Y-m-d H:i:s')}];
                         indexDBPromiseArray.push(IndexedDB.populateData('STATUS',statusArray));
 
                         // Populating  REFERRING_PHYSICIAN  table
