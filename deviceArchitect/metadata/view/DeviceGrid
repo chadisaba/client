@@ -94,6 +94,64 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "siteCode",
+                "text": "{trans.site]"
+            },
+            "name": "MydeviceTypeIdCol1",
+            "designerId": "d761e449-108c-4602-8e63-2ca64a6deb6e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "siteCode",
+                        "forceSelection": true,
+                        "itemId": "siteComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{SiteComboStore}"
+                        ],
+                        "valueField": "siteCode"
+                    },
+                    "name": "MydeviceTypeComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "89510d78-2dd4-4d3c-b296-78cba05e00a7",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onSiteComboBoxEditorItemIdSelect",
+                            "designerId": "a772d191-ae44-4a9d-8a91-4773a034be59"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "modalityCode",
                 "text": "Modalité"
             },
@@ -259,6 +317,36 @@
                     },
                     "name": "MyHiddenField1",
                     "designerId": "1a14e939-a6fa-4ad7-b982-2d0a3541617d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteId",
+                "hidden": true,
+                "text": "siteId"
+            },
+            "name": "MydeviceAETCol3",
+            "designerId": "c4647f9b-f057-4e22-955f-9b1650d66288",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteIdTextFieldItemId"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "cc81b522-0c6a-4da8-b83d-515656134808"
                 }
             ]
         },

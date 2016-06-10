@@ -68,6 +68,27 @@ Ext.define('MyApp.view.DeviceGrid', {
         },
         {
             xtype: 'gridcolumn',
+            dataIndex: 'siteCode',
+            text: '{trans.site]',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'siteComboBoxEditorItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'siteCode',
+                forceSelection: true,
+                queryMode: 'local',
+                valueField: 'siteCode',
+                bind: {
+                    store: '{SiteComboStore}'
+                },
+                listeners: {
+                    select: 'onSiteComboBoxEditorItemIdSelect'
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             dataIndex: 'modalityCode',
             text: 'Modalité',
             editor: {
@@ -123,6 +144,16 @@ Ext.define('MyApp.view.DeviceGrid', {
             editor: {
                 xtype: 'hiddenfield',
                 itemId: 'deviceTypeIdFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'siteId',
+            text: 'siteId',
+            editor: {
+                xtype: 'hiddenfield',
+                itemId: 'siteIdTextFieldItemId'
             }
         },
         {

@@ -24,8 +24,8 @@
             },
             "name": "DeviceStore",
             "designerId": "y9eynevi-c056-4140-9039-ki4u86e5gvar"
-        }
-        ,{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -38,7 +38,8 @@
             },
             "name": "DeviceTypeComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-ep8n9s4qywf8"
-        },{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -51,7 +52,8 @@
             },
             "name": "ModalityComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-vtqjeddk4l1w"
-        },{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -64,6 +66,20 @@
             },
             "name": "DeviceSupportComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-ntkdtiti5u41"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SiteComboStore"
+            },
+            "name": "MyStore",
+            "designerId": "555b516c-9abb-4b86-8df9-9ca6de84f019"
         }
     ]
 }

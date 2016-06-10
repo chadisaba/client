@@ -78,7 +78,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		//init edit mode boolean
 		grid.inEdition=false;
 
-		if(inEditing)
+		if(this.inEditing)
 			grid.inEdition=true;	
 		if(this.onlyADM)
 			grid.inEdition = true;

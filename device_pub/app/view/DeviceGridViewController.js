@@ -25,6 +25,10 @@ Ext.define('MyApp.view.DeviceGridViewController', {
 
     },
 
+    onSiteComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     onModalityComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
