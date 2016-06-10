@@ -37,7 +37,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceTypeCode",
-                "text": "Type"
+                "text": "Type",
+                "width": 120
             },
             "name": "MydeviceTypeIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-43wgcefabp19",
@@ -95,7 +96,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "siteCode",
-                "text": "{trans.site]"
+                "text": "{trans.site]",
+                "width": 120
             },
             "name": "MydeviceTypeIdCol1",
             "designerId": "d761e449-108c-4602-8e63-2ca64a6deb6e",

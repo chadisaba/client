@@ -47,6 +47,7 @@ Ext.define('MyApp.view.DeviceGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'deviceTypeCode',
             text: 'Type',
             editor: {
@@ -68,6 +69,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'siteCode',
             text: '{trans.site]',
             editor: {
