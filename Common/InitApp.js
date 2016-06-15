@@ -1,4 +1,5 @@
 var InitApp={
+    siteId:null,
     initIndexedDB:function(_myMask)
     {
         // retreive data from server db to update indexedDB
@@ -44,8 +45,10 @@ var InitApp={
             tableName:"DEVICE"
         }];
         var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
-        
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10])
+
+        var p11=CommonDirect.getData("SITE");
+
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -79,11 +82,11 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('CITY',citiesArray));
 
                         // Populating  DEVICE table
-                        var devicesArray=values[5];
+                        var devicesArray=values[4];
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE',devicesArray));
 
                         // Populating  STUDY table
-                        var studiesArray=values[7];
+                        var studiesArray=values[6];
                         indexDBPromiseArray.push(IndexedDB.populateData('STUDY',studiesArray));
 
                         // Populating  DOCTOR table
@@ -95,7 +98,7 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('DOCTOR',doctorsArray));
 
                         // Populating  ROOM table
-                        var roomsArray=values[6];
+                        var roomsArray=values[5];
                         indexDBPromiseArray.push(IndexedDB.populateData('ROOM',roomsArray));
 
                         // Populating  STATUS table
@@ -103,16 +106,21 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('STATUS',statusArray));
 
                         // Populating  REFERRING_PHYSICIAN  table
-                        var refPhysicansArray=values[8];
+                        var refPhysicansArray=values[7];
                         indexDBPromiseArray.push(IndexedDB.populateData('REFERRING_PHYSICIAN',refPhysicansArray));
 
 
-                    // Populating  DEVICE_HAS_STUDY table
-                        var deviceHasStudyArray=values[9];
+
+                        // Populating  SITE  table
+                        var sitesArray=values[9];
+                        indexDBPromiseArray.push(IndexedDB.populateData('SITE',sitesArray));
+
+
+                        // Populating  DEVICE_HAS_STUDY table
+                        var deviceHasStudyArray=values[8];
 
                         for (var i = 0; i < deviceHasStudyArray.length; i++) {
                             deviceHasStudyArray[i].deviceName=deviceHasStudyArray[i]['Device.deviceName'];
-                            deviceHasStudyArray[i].deviceCode=deviceHasStudyArray[i]['Device.deviceCode'];
                              deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
@@ -127,7 +135,7 @@ var InitApp={
                     })
                     .then(function(_result){
 
-                        // window.open("../pub_workflow/#maintabpanel",'_self');
+                         window.open("../pub_workflow/#maintabpanel",'_self');
                     });
 
 

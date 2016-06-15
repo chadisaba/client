@@ -103,6 +103,9 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     bind: {
                         fieldLabel: '{trans.site}',
                         store: '{SiteComboStore}'
+                    },
+                    listeners: {
+                        change: 'onSiteIdComboBoxItemIdChange'
                     }
                 },
                 {

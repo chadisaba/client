@@ -83,6 +83,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'deviceComboboxItemId',
+                allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'deviceName',
                 forceSelection: true,
@@ -90,22 +91,11 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 typeAhead: true,
                 valueField: 'deviceName',
                 bind: {
-                    store: '{DeviceComlboStore}'
+                    store: '{DeviceComboStore}'
                 },
                 listeners: {
                     select: 'onDeviceComboboxItemIdSelect'
                 }
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            width: 70,
-            dataIndex: 'studyVisitPrice',
-            text: '{trans.price}',
-            editor: {
-                xtype: 'numberfield',
-                itemId: 'studyVisitPriceTextFieldItemId',
-                allowBlank: false
             }
         },
         {
@@ -147,15 +137,15 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 bind: {
                     store: '{TechnicianComboStore}'
                 },
-                listeners: {
-                    select: 'onTechnicianComboboxItemIdSelect'
-                },
                 listConfig: {
                     xtype: 'boundlist',
                     itemSelector: 'div',
                     itemTpl: [
                         '{userLName} {userFName}'
                     ]
+                },
+                listeners: {
+                    change: 'onTechnicianComboboxItemIdChange'
                 }
             }
         },
@@ -165,6 +155,17 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             width: 40,
             dataIndex: 'studyVisitImageAvailable',
             text: ''
+        },
+        {
+            xtype: 'gridcolumn',
+            width: 70,
+            dataIndex: 'studyVisitPrice',
+            text: '{trans.price}',
+            editor: {
+                xtype: 'numberfield',
+                itemId: 'studyVisitPriceTextFieldItemId',
+                allowBlank: false
+            }
         },
         {
             xtype: 'gridcolumn',

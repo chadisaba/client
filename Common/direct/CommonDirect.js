@@ -6,6 +6,7 @@ var CommonDirect={
                 var params={};
                 params.table=_tableName;
                 params.dataToBeSaved=_dataObject;
+                params.comment=_comment||null;
                 Server.CommonQueries.saveRecord(params,
                     function(_result){
                         if(_result.success){
@@ -20,7 +21,31 @@ var CommonDirect={
             });
         return promise;
     },
-    
+
+    saveDataArray:function(_dataToBySaved,_tableName,_idName,_comment)
+    {
+        var promise = new Promise(
+            function (resolve, reject) {
+                var params={};
+                params.table=_tableName;
+                params.dataToBeSaved=_dataToBySaved;
+                params.idName=_idName;
+                params.comment=_comment||null;
+                Server.CommonQueries.saveRecords(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+        return promise;
+    },
+
     searchDataFromIndexedDB:function(_searchValue,_searchFieldName,_tableName)
     {
         //Creating a promise

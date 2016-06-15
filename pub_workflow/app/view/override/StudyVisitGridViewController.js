@@ -40,7 +40,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     getDataToBeSaved:function()
     {
-        return this.getView().getPlugin('gridediting').getDataToBeSaved();
+        return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
 
     refreshGrid:function()
@@ -121,6 +121,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     {
        this.doctorId= _doctorId;
     },
+    setSiteId:function(_siteId)
+    {
+        this.siteId= _siteId;
+    },
     getResultArray:function(filters)
     {
       var me=this;
@@ -160,13 +164,43 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
               
     },
     onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
+        var me=this;
+        if(!me.doctorId || !me.siteId){
+            console.error("function initGrid : doctorId and siteId required ");
+            throw new Error("StudyVisitGrid function initGrid : doctorId and siteId are required ");
 
+        }
+        else
+        {
+            var studyIdField=combo.up('roweditor').down('#studyIdTextFieldItemId');
+            studyIdField.setValue(record.get('studyId'));
+
+            var deviceStore=me.getViewModel().getStore('DeviceComboStore');
+            deviceStore.removeAll();
+           DeviceDirect.getDeviceBySiteAndStudy(record.get('studyId'),me.siteId,true)
+                .then(function(_resultArray)
+                {
+                    if(_resultArray.length>0)
+                    {
+                        deviceStore.loadData(_resultArray);
+                        var deviceCombo=combo.up('roweditor').down('#deviceComboboxItemId');
+                        var selectedDevice=deviceStore.first();
+                        deviceCombo.select(selectedDevice);
+
+                        var deviceIdField=combo.up('roweditor').down('#deviceIdTextFieldItemId');
+                        deviceIdField.setValue(selectedDevice.get('deviceId'));
+
+
+                    }
+
+                })
+        }
     },
 
     onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
-        if(!this.doctorId){
-            console.error("function initGrid : doctorId is required ");
-            throw new Error("StudyVisitGrid function initGrid : doctorId is required ");
+        if(!this.doctorId || !this.siteId){
+            console.error("function initGrid : doctorId and siteId required ");
+            throw new Error("StudyVisitGrid function initGrid : doctorId and siteId are required ");
 
         }
         else
@@ -179,12 +213,28 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
+    onTechnicianComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+        var userIdField=field.up('roweditor').down('#userIdTextFieldItemId');
+        userIdField.setValue(null);
+        if(newValue)
+        {
+            var rec;
+            if(field.findRecordByDisplay(newValue))
+            {
+                rec=field.findRecordByDisplay(newValue);
+                userIdField.setValue(rec.get('userId'));
+            }
+
+
+        }
+
 
     },
+    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
 
-    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
-
+        var deviceIdField=combo.up('roweditor').down('#deviceIdTextFieldItemId');
+        deviceIdField.setValue(record.get('deviceId'));
     }
 
 });

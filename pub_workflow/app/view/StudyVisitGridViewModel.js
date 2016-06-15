@@ -31,7 +31,7 @@ Ext.define('MyApp.view.StudyVisitGridViewModel', {
         StudyVisitStore: {
             model: 'MyApp.model.StudyVisitModel'
         },
-        DeviceComlboStore: {
+        DeviceComboStore: {
             model: 'MyApp.model.DeviceComboModel'
         },
         StudyComboStore: {

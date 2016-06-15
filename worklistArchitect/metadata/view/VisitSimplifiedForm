@@ -222,7 +222,24 @@
                         "store": "binding",
                         "value": "string"
                     },
-                    "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3"
+                    "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteIdComboBoxItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onSiteIdComboBoxItemIdChange",
+                            "designerId": "e4399e00-1f50-4d50-87da-4b7db72a2814"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.container.Container",

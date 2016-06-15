@@ -37,6 +37,10 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewController', {
 
     },
 
+    onSiteIdComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onDoctorComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     }

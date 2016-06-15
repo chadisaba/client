@@ -23,13 +23,14 @@ var IndexedDB={
                         DOC_HAS_STUDY: "++id,docHasStudyId,studyId,studyCode,studyName,doctorId",
                         USER: "++id,userId,userFName,userLName,userCatId",
                         CITY: "++id,cityId,cityName,cityZipCode",
-                        DEVICE: "++id,deviceId,deviceCode,deviceName,modalityId,siteId",
+                        DEVICE: "++id,deviceId,deviceName,modalityId,siteId",
                         STUDY: "++id,studyId,studyCode,studyName",
                         DOCTOR: "++id,doctorId,userFName,userLName",
-                        ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceCode,deviceName,siteId",
+                        ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceName,siteId",
                         ROOM: "++id,roomId,roomCode,roomName,siteId",
                         REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle",
                         DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
+                        SITE: "++id,siteId,siteCode,siteName"
 
                     });
                     me.db.open();

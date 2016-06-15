@@ -29,6 +29,20 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                 if(_result.length>0){
                     user=_result[0];
 
+                 // get the siteId from the url
+
+                    var url=Ext.Object.fromQueryString(document.URL);
+
+                    // get the userId from the
+                    Ext.Object.each(url, function(key, value) {
+
+                        if (key === 'siteId') {
+                            InitApp.siteId=parseInt(value); // stop the iteration
+                            window.localStorage.setItem('smartmed-siteId', value);
+                        }
+                    });
+
+
                  InitApp.initIndexedDB(myMask)
 
                 }
