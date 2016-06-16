@@ -47,6 +47,7 @@ Ext.define('MyApp.view.DeviceGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'deviceTypeCode',
             text: 'Type',
             editor: {
@@ -63,6 +64,28 @@ Ext.define('MyApp.view.DeviceGrid', {
                 },
                 listeners: {
                     select: 'onDeviceTypeComboBoxEditorItemIdSelect'
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            width: 120,
+            dataIndex: 'siteCode',
+            text: '{trans.site]',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'siteComboBoxEditorItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'siteCode',
+                forceSelection: true,
+                queryMode: 'local',
+                valueField: 'siteCode',
+                bind: {
+                    store: '{SiteComboStore}'
+                },
+                listeners: {
+                    select: 'onSiteComboBoxEditorItemIdSelect'
                 }
             }
         },
@@ -123,6 +146,16 @@ Ext.define('MyApp.view.DeviceGrid', {
             editor: {
                 xtype: 'hiddenfield',
                 itemId: 'deviceTypeIdFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'siteId',
+            text: 'siteId',
+            editor: {
+                xtype: 'hiddenfield',
+                itemId: 'siteIdTextFieldItemId'
             }
         },
         {
@@ -274,7 +307,7 @@ Ext.define('MyApp.view.DeviceGrid', {
     processDeviceGrid: function(config) {
         Plugins.grid.GridEditingPlugin.configure(this);
         this.plugins.push (
-            new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting',onlyADM:true}));
+            new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
 
     }
 

@@ -18,7 +18,8 @@ Ext.define('MyApp.model.DeviceModel', {
 
     requires: [
         'Ext.data.field.Date',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.Boolean',
+        'Ext.data.field.Integer'
     ],
 
     validators: [
@@ -95,6 +96,13 @@ Ext.define('MyApp.model.DeviceModel', {
         },
         {
             name: 'addedAndValidated'
+        },
+        {
+            type: 'int',
+            name: 'siteId'
+        },
+        {
+            name: 'siteCode'
         }
     ]
 });

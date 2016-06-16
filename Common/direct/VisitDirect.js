@@ -20,31 +20,6 @@ saveVisit:function(_visitObject)
 });
 return promise;
 },
-    getVisit:function(_visitId)
-    {
-        //Creating a promise
-        var promise=new Promise(
-            function(resolve, reject) {
-
-                var params;
-                        params={
-                            table:"VISIT",
-                            filters:[{name:'visitId',value:_visitId}]
-                        };
-                           Server.CommonQueries.read(params,
-                            function(res){
-                                if(res.success){
-                                    resolve(res.data);
-                                }
-                                else{
-                                    console.error(res.msg);
-                                    reject(res.msg);
-                                }
-                            }
-                        )
-             });
-         return promise;
-    },
     getPatientAndCityAndReferringPhy:function(_patientId)
     {
         //Creating a promise

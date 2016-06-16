@@ -17,9 +17,21 @@ var IndexedDB={
             function(resolve, reject) {
 
                 if(!me.db){
-                    me.db = new Dexie("SmartMedDB");
+                    me.db = new Dexie("smartMedDB");
                     me.db.version(1).stores({
-                        DOC_HAS_STUDY: "++id,docHasStudyId,studyId,studyCode,studyName,doctorId"
+                        STATUS: "++id,lastUpdate",
+                        DOC_HAS_STUDY: "++id,docHasStudyId,studyId,studyCode,studyName,doctorId",
+                        USER: "++id,userId,userFName,userLName,userCatId",
+                        CITY: "++id,cityId,cityName,cityZipCode",
+                        DEVICE: "++id,deviceId,deviceName,modalityId,siteId",
+                        STUDY: "++id,studyId,studyCode,studyName",
+                        DOCTOR: "++id,doctorId,userFName,userLName",
+                        ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceName,siteId",
+                        ROOM: "++id,roomId,roomCode,roomName,siteId",
+                        REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle",
+                        DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
+                        SITE: "++id,siteId,siteCode,siteName"
+
                     });
                     me.db.open();
                     resolve();
@@ -42,7 +54,7 @@ var IndexedDB={
             then(function()
             {
                 table.bulkAdd(_dataArray);
-            })
+            });
 
         // Log data from DB:
        /* db.friends.orderBy('name').each(function (friend) {

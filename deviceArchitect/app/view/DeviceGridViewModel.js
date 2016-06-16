@@ -33,6 +33,9 @@ Ext.define('MyApp.view.DeviceGridViewModel', {
         },
         DeviceSupportComboStore: {
             model: 'MyApp.model.DeviceSupportComboModel'
+        },
+        SiteComboStore: {
+            model: 'MyApp.model.SiteComboModel'
         }
     }
 

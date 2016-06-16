@@ -1,9 +1,10 @@
 Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     override: 'MyApp.view.VisitSimplifiedFormViewController',
 
-    initForm: function(_visitId) {
+    initForm: function(_visitId,_patientId) {
         var me=this;
         var view=me.getView();
+        this.patientId=_patientId;
         view.down("#studyVisitGridItemId").mask();
         var viewModel=me.getViewModel();
         var visitId=null;
@@ -29,14 +30,18 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             .then(function(_resultArray)
             {
                 if(_resultArray[0].length>0)
-                    viewModel.getStore('SiteComboStore').loadData(_resultArray[0]);
+                    {
+                        var siteStore = viewModel.getStore('SiteComboStore');
+                        siteStore.loadData(_resultArray[0]);
+                    }
 
                 var doctorsDataArray=_resultArray[1];
                 for (var i = 0; i < doctorsDataArray.length; i++) {
                     doctorsDataArray[i].userLName=doctorsDataArray[i]['User.userLName'];
                     doctorsDataArray[i].userFName=doctorsDataArray[i]['User.userFName'];
                 }
-                    viewModel.getStore('DoctorComboStore').loadData(doctorsDataArray);
+                var doctorStore = viewModel.getStore('DoctorComboStore');
+                doctorStore.loadData(doctorsDataArray);
 
                 if(visitId)
                 {
@@ -54,7 +59,14 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 {
                     // we create a new patient
                     var visitRec=Ext.create('MyApp.model.VisitModel');
+                    visitRec.set('visitDate',new Date());
+                    visitRec.set('visitTime',new Date());
+                    visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
+
+                    visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
                     view.loadRecord(visitRec);
+                    view.down('#studyVisitGridItemId').getController().initGrid();
+
                     view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
                 }
             });
@@ -68,16 +80,37 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             var visitId=UUID();
             rec.set('visitId',visitId);
         }
+        else
+            var visitId=rec.get('visitId');
+
+        rec.set('patientId',me.patientId);
+
+
         var dataToSave=rec.data;
+        var visitTimeHour=dataToSave.visitTime.getHours();
+        var visitTimeMinutes=dataToSave.visitTime.getMinutes();
+        dataToSave.visitTime=visitTimeHour+":"+visitTimeMinutes;
         if(button)
              Utility.loading.start(button);
 
         VisitDirect.saveVisit(dataToSave)
             .then(function()
             {
-                if(button)
-                    Utility.loading.end(button);
+                var dataToSave=me.getView().down('#studyVisitGridItemId').getController().getDataToBeSaved();
+
+                dataToSave.forEach(
+                    function(_item)
+                {
+                    _item.visitId=visitId;
+                });
+                CommonDirect.saveDataArray(dataToSave,"STUDY_VISIT","studyVisitId")
+                    .then(function(){
+                        if(button)
+                            Utility.loading.end(button);
+                    })
+
             })
+
             .catch(function(_err)
             {
                 console.error(_err);
@@ -109,8 +142,13 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             this.getView().down("#studyVisitGridItemId").getController().setDoctorId(newValue);
         }
         else
-            this.getView().down("#studyVisitGridItemId").mask()
+            this.getView().down("#studyVisitGridItemId").mask();
 
+    },
+    onSiteIdComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
+        if(newValue){
+            this.getView().down("#studyVisitGridItemId").getController().setSiteId(newValue);
+        }
     }
 
 

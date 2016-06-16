@@ -8,44 +8,26 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     onDeviceGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
 
-        var params;
-        params={
-            id:50,
-            table:"DEVICE_TYPE"
-        };
         var deviceTypeComboStore=this.getViewModel().getStore('DeviceTypeComboStore');
-        var deviceTypeComboStoreData=[];
+          CommonDirect.getData("DEVICE_TYPE")
+                      .then(function(_resultData)
+                      {
+                          deviceTypeComboStore.loadData(_resultData);
+                      });
 
-
-           Server.CommonQueries.read(params,
-            function(res){
-                if(res.success){
-                    deviceTypeComboStoreData=res.data;
-                    deviceTypeComboStore.loadData(deviceTypeComboStoreData);
-                }
-                else{
-                    console.log(res.msg);
-                }
-            }
-        );
-
-        params={
-            id:50,
-            table:"MODALITY"
-        };
         var modalityComboStore=this.getViewModel().getStore('ModalityComboStore');
-        var modalityComboStoreData=[];
-        Server.CommonQueries.read(params,
-            function(res){
-                if(res.success){
-                    modalityComboStoreData=res.data;
-                    modalityComboStore.loadData(modalityComboStoreData);
-                }
-                else{
-                    console.log(res.msg);
-                }
-            }
-        );
+          CommonDirect.getData("MODALITY")
+                      .then(function(_resultData)
+                      {
+                          modalityComboStore.loadData(_resultData);
+                      });
+
+        var siteComboStore=this.getViewModel().getStore('SiteComboStore');
+        CommonDirect.getData("SITE")
+            .then(function(_resultData)
+            {
+                siteComboStore.loadData(_resultData);
+            });
 
 
         var deviceSupportComboStore=this.getViewModel().getStore('DeviceSupportComboStore');
@@ -55,8 +37,6 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
             {'deviceSupport':2,'deviceSupportDisplay':'Support'}
         ];
         deviceSupportComboStore.loadData(deviceSupportComboStoreData);
-
-
 
         this.getResultArray(
             function(data){
@@ -159,7 +139,7 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
                 var mainTableObject={};
                 mainTableObject.tableName='DEVICE';
                 var joinTablesArray=[];
-                joinTablesArray.push({tableName:'DEVICE_TYPE'},{tableName:'MODALITY'});
+                joinTablesArray.push({tableName:'DEVICE_TYPE'},{tableName:'MODALITY'},{tableName:'SITE'});
                 var params = {
                     mainTableObject: mainTableObject,
                     joinTablesArray: joinTablesArray
@@ -170,6 +150,8 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
                             for (var i = 0; i < res.data.length; i++) {
                                 res.data[i].deviceTypeCode=res.data[i]['DeviceType.deviceTypeCode'];
                                 res.data[i].modalityCode=res.data[i]['Modality.modalityCode'];
+                                res.data[i].siteCode=res.data[i]['Site.siteCode'];
+                               // res.data[i].siteName=res.data[i]['Site.modalityCode'];
                             }
                             callback(res.data);
                         }
@@ -188,6 +170,11 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     onModalityComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
         var modalityIdField=combo.up('roweditor').down('#modalityIdFieldItemId');
         modalityIdField.setValue(record.get('modalityId'));
+    },
+
+    onSiteComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var siteIdField=combo.up('roweditor').down('#siteIdTextFieldItemId');
+        siteIdField.setValue(record.get('siteId'));
     },
 
     /*********************** renderers****************************************************/

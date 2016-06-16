@@ -64,6 +64,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	// Edit, Cancel, Save, Quit actions only
 	onlyECSQ: false,
+	
+	inEditing:false,
 
 
 	pluginId: 'gridediting',
@@ -76,6 +78,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		//init edit mode boolean
 		grid.inEdition=false;
 
+		if(this.inEditing)
+			grid.inEdition=true;	
 		if(this.onlyADM)
 			grid.inEdition = true;
 
@@ -274,8 +278,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.createModifyBtnCtn();
 			this.createQuitBtnCtn();
 			this.tb.add(this.editBtnCtn);
-			this.tb.add(this.deleteBtnCtn);
+			
 			this.tb.add(this.addBtnCtn);
+			this.tb.add(this.deleteBtnCtn);
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add({xtype:'tbfill'});
 			this.tb.add(this.filterCheckBoxCtn);
@@ -892,7 +897,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	fillInInterfaceOn: function () {
 		var me = this,
 		grid = me.grid;
-		if (me.onlyADM === false && me.onlyECSQ === false && me.onlyModify === false && me.onlyDelete === false && me.onlyAD === false && me.noModif === false){
+		if (!me.onlyADM && !me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
 			grid.down('#modifyBtn').setDisabled(true);
 			grid.down('#saveBtn').setDisabled(true);
 			grid.down('#cancelBtn').setDisabled(true);
@@ -900,33 +905,33 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			grid.down('#deleteBtn').setDisabled(true);
 			grid.down('#quitBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.onlyADM === true){
+		} else if (me.onlyADM){
 			grid.down('#modifyBtn').setDisabled(true);
 			grid.down('#addBtn').setDisabled(true);
 			grid.down('#deleteBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.onlyECSQ === true){
+		} else if (me.onlyECSQ){
 			grid.down('#saveBtn').setDisabled(true);
 			grid.down('#cancelBtn').setDisabled(true);
 			grid.down('#quitBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.onlyModify === true){
+		} else if (me.onlyModify){
 			grid.down('#modifyBtn').setDisabled(true);
 			grid.down('#saveBtn').setDisabled(true);
 			grid.down('#cancelBtn').setDisabled(true);
 			grid.down('#quitBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.onlyDelete === true){
+		} else if (me.onlyDelete){
 			grid.down('#saveBtn').setDisabled(true);
 			grid.down('#cancelBtn').setDisabled(true);
 			grid.down('#deleteBtn').setDisabled(true);
 			grid.down('#quitBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.onlyAD === true){
+		} else if (me.onlyAD){
 			grid.down('#addBtn').setDisabled(true);
 			grid.down('#deleteBtn').setDisabled(true);
 			grid.down('#chHistBtn').setDisabled(true);
-		} else if (me.noModif === true){
+		} else if (me.noModif){
 			grid.down('#saveBtn').setDisabled(true);
 			grid.down('#cancelBtn').setDisabled(true);
 			grid.down('#addBtn').setDisabled(true);

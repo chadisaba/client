@@ -29,55 +29,21 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                 if(_result.length>0){
                     user=_result[0];
 
-                    // retreive data from server db to update indexedDB
+                 // get the siteId from the url
 
-                      var mainTableObject={
-                                  tableName:"DOC_HAS_STUDY"
-                              };
-                              var joinTablesArray=[{
-                                 tableName:"STUDY"
-                              }];
-                    var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+                    var url=Ext.Object.fromQueryString(document.URL);
 
+                    // get the userId from the
+                    Ext.Object.each(url, function(key, value) {
 
-                    var p2=CommonDirect.getData("DOCTOR");
-                    var p3=CommonDirect.getData("USER");
-                    var p4=CommonDirect.getData("CITY");
-
-                    var mainTableObject={
-                        tableName:"ROOM_HAS_DEVICE"
-                    };
-                    var joinTablesArray=[{
-                        tableName:"DEVICE"
-                    }];
-                    var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
-
-                    Promise.all([p1,p2,p3,p4,p5])
-                        .then(function(values)
-                        {
-                            var docStduiesArray=values[0];
-                            IndexedDB.openDB()
-                                .then(function(_result){
-                                    for (var i = 0; i < docStduiesArray.length; i++) {
-                                        docStduiesArray[i].studyCode=docStduiesArray[i]['Study.studyCode'];
-                                        docStduiesArray[i].studyName=docStduiesArray[i]['Study.studyName'];
-                                    }
-                                IndexedDB.populateData('DOC_HAS_STUDY',docStduiesArray);
-                            })
-                                .then(function(_result){
-                                    myMask.hide();
-                                   // window.open("../pub_workflow/#maintabpanel",'_self');
-                                });
+                        if (key === 'siteId') {
+                            InitApp.siteId=parseInt(value); // stop the iteration
+                            window.localStorage.setItem('smartmed-siteId', value);
+                        }
+                    });
 
 
-                           // myMask.hide();
-
-
-                        })
-                        .catch(function(_err)
-                        {
-                           console.error(_err);
-                        });
+                 InitApp.initIndexedDB(myMask)
 
                 }
                 else

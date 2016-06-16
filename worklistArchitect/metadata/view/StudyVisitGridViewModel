@@ -41,7 +41,7 @@
             "codeClass": null,
             "userConfig": {
                 "model": "DeviceComboModel",
-                "name": "DeviceComlboStore"
+                "name": "DeviceComboStore"
             },
             "name": "MyStore5",
             "designerId": "c71469b9-ee38-4b1a-9bcc-ae79e85850e5"

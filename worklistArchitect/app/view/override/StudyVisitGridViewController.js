@@ -5,30 +5,44 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
-    initGrid:function(_filters,_readOnlyGrid)
+    initGrid:function(_filters,_readOnlyGrid,_visitId)
     {
 	var me=this;
 
+        UserDirect.getUserByCat(3,true)// 3 for Technician
+            .then(function(_resultArray)
+            {
+                me.getViewModel().getStore('TechnicianComboStore').loadData(_resultArray);
+            });
 
-	me.filters=_filters||[];
-        var view=this.getView();
+        if(_visitId)
+        {
+            me.filters=_filters||[];
+            var view=this.getView();
 
-        if(!_readOnlyGrid)
-            view.getPlugin('gridediting').lockGrid(false);
+            if(!_readOnlyGrid)
+                view.getPlugin('gridediting').lockGrid(false);
 
-	this.getResultArray().
-	then(
-		function(data){
-        	            Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
-        	        }
-        	        );
+
+            this.getResultArray().
+            then(
+                function(data){
+                    Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
+
+
+                }
+            );
+        }
+
+
         	    
     },
 
     getDataToBeSaved:function()
     {
-    	return component.getPlugin('gridediting').getDataToBeSaved();
+        return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
+
     refreshGrid:function()
     {
     	this.initGrid(this.filters);
@@ -39,12 +53,12 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
     onStudyVisitGridIdResetEdit: function(gridpanel,promptWin) {
-        Utility.grid.resetEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
+        Utility.grid.resetEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
 
     },
 
    onStudyVisitGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-	     CommonDirect.saveData(_dataToBeSaved,"STUDY_VISIT",_comment);
+	     CommonDirect.saveData(dataToBeSaved,"STUDY_VISIT",comment);
     },
 
     onStudyVisitGridIdAddItem: function() {
@@ -67,7 +81,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     },
 
     onStudyVisitGridIdQuitEdit: function(gridpanel,promptWin) {
-        Utility.grid.quitEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
+        Utility.grid.quitEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
     },
     onStudyVisitGridIdBeforeEdit: function(editor,context) {
         return (Utility.grid.beforeEdit(editor,context));
@@ -107,6 +121,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     {
        this.doctorId= _doctorId;
     },
+    setSiteId:function(_siteId)
+    {
+        this.siteId= _siteId;
+    },
     getResultArray:function(filters)
     {
       var me=this;
@@ -141,33 +159,82 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                 });
 
 		}
-		); 
+		);
+        return promise;
               
     },
     onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
+        var me=this;
+        if(!me.doctorId || !me.siteId){
+            console.error("function initGrid : doctorId and siteId required ");
+            throw new Error("StudyVisitGrid function initGrid : doctorId and siteId are required ");
 
+        }
+        else
+        {
+            var studyIdField=combo.up('roweditor').down('#studyIdTextFieldItemId');
+            studyIdField.setValue(record.get('studyId'));
+
+            var deviceStore=me.getViewModel().getStore('DeviceComboStore');
+            deviceStore.removeAll();
+           DeviceDirect.getDeviceBySiteAndStudy(record.get('studyId'),me.siteId,true)
+                .then(function(_resultArray)
+                {
+                    if(_resultArray.length>0)
+                    {
+                        deviceStore.loadData(_resultArray);
+                        var deviceCombo=combo.up('roweditor').down('#deviceComboboxItemId');
+                        var selectedDevice=deviceStore.first();
+                        deviceCombo.select(selectedDevice);
+
+                        var deviceIdField=combo.up('roweditor').down('#deviceIdTextFieldItemId');
+                        deviceIdField.setValue(selectedDevice.get('deviceId'));
+
+
+                    }
+
+                })
+        }
     },
 
     onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
-        if(!this.doctorId)
-            console.error("function initGrid : doctorId is required ");
+        if(!this.doctorId || !this.siteId){
+            console.error("function initGrid : doctorId and siteId required ");
+            throw new Error("StudyVisitGrid function initGrid : doctorId and siteId are required ");
 
-       var doctorId=this.getView().doctorId;
-        StudyDirect.docHasstudyAutoComplete(this,newValue,"StudyComboStore",field,true,3,this.doctorId);
+        }
+        else
+        {
+            var doctorId=this.getView().doctorId;
+            StudyDirect.docHasstudyAutoComplete(this,newValue,"StudyComboStore",field,true,3,this.doctorId);
+        }
+
+
+
     },
 
+    onTechnicianComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+        var userIdField=field.up('roweditor').down('#userIdTextFieldItemId');
+        userIdField.setValue(null);
+        if(newValue)
+        {
+            var rec;
+            if(field.findRecordByDisplay(newValue))
+            {
+                rec=field.findRecordByDisplay(newValue);
+                userIdField.setValue(rec.get('userId'));
+            }
+
+
+        }
+
+
+    },
     onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
 
-    },
-
-    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
-
+        var deviceIdField=combo.up('roweditor').down('#deviceIdTextFieldItemId');
+        deviceIdField.setValue(record.get('deviceId'));
     }
-
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
-    
- 
-    
 
 });

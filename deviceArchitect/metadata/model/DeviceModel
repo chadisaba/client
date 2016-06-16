@@ -293,6 +293,32 @@
             },
             "name": "MyField31",
             "designerId": "mepi9sep-ac56-469a-895f-pic672xa2ylv"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteId"
+            },
+            "name": "MyInteger",
+            "designerId": "d5b892d8-1dc1-4afc-aea4-ea2c1efa96ea"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteCode"
+            },
+            "name": "MyField3",
+            "designerId": "3f83faed-c552-4d4c-b44d-7f877b05ba40"
         }
     ]
 }

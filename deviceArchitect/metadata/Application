@@ -14,7 +14,8 @@
             "DeviceTypeComboModel",
             "ModalityComboModel",
             "DeviceTypeModel",
-            "DeviceSupportComboModel"
+            "DeviceSupportComboModel",
+            "SiteComboModel"
         ],
         "name": "MyApp",
         "views": [

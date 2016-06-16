@@ -33,7 +33,7 @@ Ext.define('MyApp.view.StudyVisitGridViewController', {
 
     },
 
-    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
+    onTechnicianComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
 

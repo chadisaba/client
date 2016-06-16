@@ -180,7 +180,7 @@
                         "queryMode": "local",
                         "selectOnFocus": true,
                         "store": [
-                            "{DeviceComlboStore}"
+                            "{DeviceComboStore}"
                         ],
                         "typeAhead": true,
                         "valueField": "deviceName"
@@ -207,38 +207,6 @@
                             "designerId": "2f10aed8-c5c5-4b29-83ca-4bfffd5ca2f0"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitPrice",
-                "defaultWidth": null,
-                "text": "{trans.price}",
-                "width": 70
-            },
-            "name": "MydeviceNameCol1",
-            "designerId": "f1254b28-b9e3-48a4-a6d7-5bd1d4c9b6f9",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Number",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "itemId": "studyVisitPriceTextFieldItemId"
-                    },
-                    "name": "MyNumberField",
-                    "designerId": "471a0b99-9634-4b88-bea0-f09ee3bd36f9"
                 }
             ]
         },
@@ -342,6 +310,53 @@
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-65tfr615mn7k",
                     "cn": [
                         {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList2",
+                            "designerId": "bb130a31-9757-4573-bd00-60e0c61fb5b7",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "{userLName} {userFName}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "cde6a472-bd7c-4843-ad6d-dc8f37c2ec83"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "<tpl for=\".\">{userLName} : {userFName}</tpl>"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "00e76025-9ff8-4211-8abc-a4f627804155"
+                        },
+                        {
                             "type": "viewcontrollereventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -349,12 +364,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onTechnicianComboboxItemIdSelect",
-                                "name": "select",
+                                "fn": "onTechnicianComboboxItemIdChange",
+                                "name": "change",
                                 "scope": "me"
                             },
-                            "name": "onTechnicianComboboxItemIdSelect",
-                            "designerId": "f5744cfe-da74-47f7-8b5c-02ec65a1dc3f"
+                            "name": "onTechnicianComboboxItemIdChange",
+                            "designerId": "d5940898-9ad1-4d66-b9b2-e280230e1d39"
                         }
                     ]
                 }
@@ -376,6 +391,38 @@
             },
             "name": "MystudyVisitImageAvailableCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-bvkj2pjhxk1n"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitPrice",
+                "defaultWidth": null,
+                "text": "{trans.price}",
+                "width": 70
+            },
+            "name": "MydeviceNameCol1",
+            "designerId": "f1254b28-b9e3-48a4-a6d7-5bd1d4c9b6f9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyVisitPriceTextFieldItemId"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "471a0b99-9634-4b88-bea0-f09ee3bd36f9"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
