@@ -27,7 +27,9 @@ Ext.application({
         'UserCatModel',
         'UserInitialComboModel',
         'DoctorHasExamensViewAssociateComboModel',
-        'DoctorHasExamensViewTreeModel'
+        'DoctorHasExamensViewTreeModel',
+        'ReferringPhysicianModel',
+        'CityNaComboModel'
     ],
     views: [
         'UserGrid',
@@ -36,6 +38,7 @@ Ext.application({
         'DoctorGrid',
         'DoctorHasExamensViewAssociatePanel',
         'DoctorHasExamensViewAvailableTreePanel',
+        'ReferringPhysicianGrid',
         'DoctorHasExamensViewSelectedTreePanel'
     ],
     controllers: [

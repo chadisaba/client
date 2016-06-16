@@ -27,7 +27,7 @@
             "userConfig": {
                 "title": "Types utilisateur"
             },
-            "name": "usercatgrid",
+            "name": "usercatgrid1",
             "designerId": "212ddfda-b1d3-4b3f-9b5b-4341021d77db",
             "masterInstanceId": "i4x5yc8q-8c41-4643-a8f8-x84rrvapxjja",
             "cn": [
@@ -53,7 +53,7 @@
             "userConfig": {
                 "title": "Utilisateurs"
             },
-            "name": "usergrid",
+            "name": "usergrid1",
             "designerId": "d72614ce-c4fb-427a-83ee-37a434f70f4a",
             "masterInstanceId": "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
             "cn": [
@@ -79,7 +79,7 @@
             "userConfig": {
                 "title": "Médecins"
             },
-            "name": "doctorgrid",
+            "name": "doctorgrid1",
             "designerId": "2d4ab6b2-1a90-4f19-98e5-54c404e174e5",
             "masterInstanceId": "mjsgfsku-8c41-4643-a8f8-b1tfwisw8te4",
             "cn": [
@@ -105,7 +105,7 @@
             "userConfig": {
                 "title": "Médecins & Examens"
             },
-            "name": "doctorhasexamensviewassociatepanel",
+            "name": "doctorhasexamensviewassociatepanel1",
             "designerId": "0ba13ed5-71ec-43f2-8457-db1edc087147",
             "masterInstanceId": "79f36a5d-5720-4229-8215-1767e8438ff0",
             "cn": [
@@ -118,6 +118,32 @@
                     "codeClass": null,
                     "name": "TabConfig2",
                     "designerId": "e20819d3-8e55-4b42-8ec7-086beac57a57"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Manipulateurs"
+            },
+            "name": "referringphysiciangrid",
+            "designerId": "cbf3966f-a642-4ea7-8462-4b23c9f50bc1",
+            "masterInstanceId": "1a4placx-8c41-4643-a8f8-3k22juflcnks",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig4",
+                    "designerId": "201b048f-6fc0-47c2-8b22-7225e90172cc"
                 }
             ]
         }
