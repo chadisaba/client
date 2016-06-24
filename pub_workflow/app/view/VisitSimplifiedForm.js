@@ -40,7 +40,6 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
     title: 'My Form',
 
     listeners: {
-        afterrender: 'onVisitSimplifiedFormItemIdAfterRender',
         saveEdit: 'onVisitSimplifiedFormItemIdSaveEdit',
         chHist: 'onVisitSimplifiedFormItemIdChHist',
         quitEdit: 'onVisitSimplifiedFormItemIdQuitEdit'
@@ -48,6 +47,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
     items: [
         {
             xtype: 'fieldset',
+            itemId: 'visitFieldSetItemId',
             bind: {
                 title: '{trans.visitInformation}'
             },
@@ -179,15 +179,19 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
                     bind: {
                         fieldLabel: '{trans.hospitVisitNumber}'
                     }
-                },
-                {
-                    xtype: 'studyvisitgrid',
-                    externalEditingPlugin: {
-                        pluginId: 'gridediting',
-                        onlyADM: true
-                    }
                 }
             ]
+        },
+        {
+            xtype: 'studyvisitgrid',
+            externalEditingPlugin: {
+                pluginId: 'gridediting',
+                onlyADM: true
+            },
+            listeners: {
+                studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent',
+                studyVisitGridStartEditEvent: 'onStudyVisitGridItemIdStudyVisitGridStartEditEvent'
+            }
         }
     ]
 

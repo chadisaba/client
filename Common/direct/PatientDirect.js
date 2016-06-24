@@ -5,7 +5,8 @@ savePatient:function(_patientObject)
         function (resolve, reject) {
  var params={};
         params.table="PATIENT";
-        _patientObject.patientSearch=_patientObject.patientLName.toUpperCase()+" "+stringUtil.formatFName(_patientObject.patientFname);
+            if(_patientObject.patientLName)
+                _patientObject.patientSearch=_patientObject.patientLName.toUpperCase()+" "+stringUtil.formatFName(_patientObject.patientFname);
         params.dataToBeSaved=_patientObject;
           Server.CommonQueries.saveRecord(params,
             function(_result){

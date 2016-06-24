@@ -29,6 +29,18 @@ Ext.define('MyApp.view.PatientReceivePanelViewController', {
 
     },
 
+    onVisitSimplifiedFormIdStudyVisitGridEndEditEvent: function(form) {
+
+    },
+
+    onVisitSimplifiedFormIdStudyVisitGridStartEditEvent: function(form) {
+
+    },
+
+    onVisitSimplifiedFormIdVisitDataSavedEvent: function(form) {
+
+    },
+
     onSaveAccueilPatientBtnClick: function(button, e, eOpts) {
 
     }

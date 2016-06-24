@@ -27,24 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitSimplifiedFormItemIdAfterRender",
-                "implHandler": [
-                    ""
-                ],
-                "name": "afterrender",
-                "scope": "me"
-            },
-            "name": "onVisitSimplifiedFormItemIdAfterRender",
-            "designerId": "f965e90b-7622-4031-b7b3-1492dba64952"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|params": [
                     "form",
                     "promptWin",
@@ -102,6 +84,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "visitFieldSetItemId",
                 "title": [
                     "{trans.visitInformation}"
                 ]
@@ -443,37 +426,75 @@
                         "fieldLabel": "binding"
                     },
                     "designerId": "8cd845e7-1374-4ac2-8edd-36acf1deea82"
-                },
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "externalEditingPlugin": [
+                    "{",
+                    "pluginId: 'gridediting',",
+                    "onlyADM:true",
+                    "",
+                    "}"
+                ],
+                "title": null
+            },
+            "name": "studyvisitgrid",
+            "configAlternates": {
+                "externalEditingPlugin": "object"
+            },
+            "designerId": "d819db7b-9e36-44a4-b5c9-c054f65daa9a",
+            "customConfigs": [
                 {
-                    "type": "linkedinstance",
+                    "group": "(Custom Properties)",
+                    "name": "externalEditingPlugin",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "externalEditingPlugin": [
-                            "{",
-                            "pluginId: 'gridediting',",
-                            "onlyADM:true",
-                            "",
-                            "}"
+                        "designer|params": [
+                            "gridpanel"
                         ],
-                        "title": null
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                        "name": "studyVisitGridEndEditEvent",
+                        "scope": "me"
                     },
-                    "name": "studyvisitgrid",
-                    "configAlternates": {
-                        "externalEditingPlugin": "object"
+                    "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                    "designerId": "bb7b6f05-9e26-44cc-88ee-5a3c366561b8"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
                     },
-                    "designerId": "d819db7b-9e36-44a4-b5c9-c054f65daa9a",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "externalEditingPlugin",
-                            "type": "string"
-                        }
-                    ],
-                    "masterInstanceId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9"
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel"
+                        ],
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                        "name": "studyVisitGridStartEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                    "designerId": "2b9fa52d-d4c4-430f-8369-4aa6e24a70b5"
                 }
             ]
         }

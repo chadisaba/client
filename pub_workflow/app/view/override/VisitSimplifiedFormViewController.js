@@ -4,18 +4,17 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     initForm: function(_visitId,_patientId) {
         var me=this;
         var view=me.getView();
-        this.patientId=_patientId;
+        var rec=view.getRecord();
+
+        if(!_patientId)
+            throw Error('_patientId can\'t be undefined');
+        //rec.set('patientId',_patientId);
+
         view.down("#studyVisitGridItemId").mask();
         var viewModel=me.getViewModel();
         var visitId=null;
-        if(view.visitId)
-            visitId=view.visitId;
-
         if(_visitId)
             visitId=_visitId;
-
-        var visitRec;
-        var studyVisitArray=[];
 
 
         var p1=CommonDirect.getData("SITE");
@@ -45,7 +44,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
 
                 if(visitId)
                 {
-                    VisitDirect.getVisit(visitId)
+                    CommonDirect.getDataById("visitId",visitId,'VISIT')
                         .then(function(_resultValue)
                         {
                             visitRec=Ext.create('MyApp.model.VisitModel',_resultValue);
@@ -63,13 +62,24 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                     visitRec.set('visitTime',new Date());
                     visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
 
+                    visitRec.set('patientId',_patientId);
+
                     visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
                     view.loadRecord(visitRec);
+
                     view.down('#studyVisitGridItemId').getController().initGrid();
 
                     view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
                 }
             });
+    },
+    getStudyVisitGrid:function()
+    {
+        return this.getView().down('#studyVisitGridItemId');
+    },
+    getVisitId:function()
+    {
+        return me.getRecord().get('visitId')
     },
     visitFormSave: function(button) {
         var me=this;
@@ -80,12 +90,6 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
             var visitId=UUID();
             rec.set('visitId',visitId);
         }
-        else
-            var visitId=rec.get('visitId');
-
-        rec.set('patientId',me.patientId);
-
-
         var dataToSave=rec.data;
         var visitTimeHour=dataToSave.visitTime.getHours();
         var visitTimeMinutes=dataToSave.visitTime.getMinutes();
@@ -93,7 +97,19 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         if(button)
              Utility.loading.start(button);
 
-        VisitDirect.saveVisit(dataToSave)
+        var studyVisitDataToBeSaved=me.getStudyVisitGrid().getController().getDataToBeSaved();
+        studyVisitDataToBeSaved.forEach(
+            function(_item)
+            {
+                _item.visitId=visitId;
+            });
+        VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved)
+            .then(function(_result)
+            {
+                if(button)
+                    Utility.loading.end(button);
+            })
+       /* VisitDirect.saveVisit(dataToSave)
             .then(function()
             {
                 var dataToSave=me.getView().down('#studyVisitGridItemId').getController().getDataToBeSaved();
@@ -109,7 +125,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                             Utility.loading.end(button);
                     })
 
-            })
+            })*/
 
             .catch(function(_err)
             {
@@ -117,11 +133,6 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 Ext.Msg.alert('Error', translate('saveError'));
             });
     },
-    onVisitSimplifiedFormItemIdAfterRender: function(component, eOpts) {
-
-        this.initForm();
-    },
-
 
     onVisitSimplifiedFormItemIdSaveEdit: function(form, promptWin, comment) {
 
@@ -149,6 +160,16 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         if(newValue){
             this.getView().down("#studyVisitGridItemId").getController().setSiteId(newValue);
         }
+    },
+    onStudyVisitGridItemIdStudyVisitGridEndEditEvent: function(gridpanel) {
+
+        this.getView().down("#visitFieldSetItemId").unmask();
+        this.fireViewEvent('studyVisitGridEndEditEvent');
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridStartEditEvent: function(gridpanel) {
+        this.getView().down("#visitFieldSetItemId").mask();
+        this.fireViewEvent('studyVisitGridStartEditEvent');
     }
 
 

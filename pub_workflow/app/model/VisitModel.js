@@ -58,7 +58,6 @@ Ext.define('MyApp.model.VisitModel', {
             name: 'visitIsUrgent'
         },
         {
-            type: 'boolean',
             name: 'visitHospitVisitNumber'
         },
         {

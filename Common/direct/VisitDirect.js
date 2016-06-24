@@ -20,6 +20,29 @@ saveVisit:function(_visitObject)
 });
 return promise;
 },
+
+    saveVisitAndStudyVisit:function(_visitObject,_studiesVisitArray)
+    {
+        var promise = new Promise(
+            function (resolve, reject) {
+                var params={
+                    visitObj:_visitObject,
+                    studyVisitDataToBeSaved:_studiesVisitArray
+                };
+                Server.Visit.saveVisitAndStudyVisit(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+        return promise;
+    },
     getPatientAndCityAndReferringPhy:function(_patientId)
     {
         //Creating a promise

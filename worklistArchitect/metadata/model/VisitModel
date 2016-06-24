@@ -109,7 +109,7 @@
             "designerId": "f6c0b7cc-8154-4989-b584-fc632b102cf5"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -118,7 +118,7 @@
             "userConfig": {
                 "name": "visitHospitVisitNumber"
             },
-            "name": "MyvisitHospitVisitNumber",
+            "name": "MyField7",
             "designerId": "9d0b0a7f-6361-49fb-8608-6f12623dc91c"
         },
         {

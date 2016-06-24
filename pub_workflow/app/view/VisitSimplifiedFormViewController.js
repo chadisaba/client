@@ -21,10 +21,6 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewController', {
         'MyApp.view.override.VisitSimplifiedFormViewController'
     ],
 
-    onVisitSimplifiedFormItemIdAfterRender: function(component, eOpts) {
-
-    },
-
     onVisitSimplifiedFormItemIdSaveEdit: function(form, promptWin, comment) {
 
     },
@@ -42,6 +38,14 @@ Ext.define('MyApp.view.VisitSimplifiedFormViewController', {
     },
 
     onDoctorComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridEndEditEvent: function(gridpanel) {
+
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridStartEditEvent: function(gridpanel) {
 
     }
 

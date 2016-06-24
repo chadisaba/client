@@ -95,6 +95,60 @@
                     },
                     "name": "onVisitSimplifiedFormIdAfterRender",
                     "designerId": "0e6e2767-b4bf-40fc-8a71-87734ddb780b"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form"
+                        ],
+                        "fn": "onVisitSimplifiedFormIdStudyVisitGridEndEditEvent",
+                        "name": "studyVisitGridEndEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onVisitSimplifiedFormIdStudyVisitGridEndEditEvent",
+                    "designerId": "7ebb6bcb-039b-4848-b477-2f51ff4364e0"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form"
+                        ],
+                        "fn": "onVisitSimplifiedFormIdStudyVisitGridStartEditEvent",
+                        "name": "studyVisitGridStartEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onVisitSimplifiedFormIdStudyVisitGridStartEditEvent",
+                    "designerId": "7ce7e6fd-ca7f-4841-8576-686863fafa3c"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form"
+                        ],
+                        "fn": "onVisitSimplifiedFormIdVisitDataSavedEvent",
+                        "name": "visitDataSavedEvent",
+                        "scope": "me"
+                    },
+                    "name": "onVisitSimplifiedFormIdVisitDataSavedEvent",
+                    "designerId": "3073a55c-1f92-44bd-a06c-a71ff9ed00bb"
                 }
             ]
         },
@@ -132,6 +186,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "saveBtnCtnItemId",
                         "layout|flex": null
                     },
                     "name": "MyContainer7",

@@ -58,7 +58,10 @@ Ext.define('MyApp.view.PatientReceivePanel', {
             region: 'east',
             split: true,
             listeners: {
-                afterrender: 'onVisitSimplifiedFormIdAfterRender'
+                afterrender: 'onVisitSimplifiedFormIdAfterRender',
+                studyVisitGridEndEditEvent: 'onVisitSimplifiedFormIdStudyVisitGridEndEditEvent',
+                studyVisitGridStartEditEvent: 'onVisitSimplifiedFormIdStudyVisitGridStartEditEvent',
+                visitDataSavedEvent: 'onVisitSimplifiedFormIdVisitDataSavedEvent'
             }
         }
     ],
@@ -72,6 +75,7 @@ Ext.define('MyApp.view.PatientReceivePanel', {
                 },
                 {
                     xtype: 'container',
+                    itemId: 'saveBtnCtnItemId',
                     items: [
                         {
                             xtype: 'button',

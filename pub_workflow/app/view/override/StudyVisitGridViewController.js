@@ -5,6 +5,10 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
     },
 
+    getVisitId:function()
+    {
+      return this.getView().getRecord().get('visitId');
+    },
     initGrid:function(_filters,_readOnlyGrid,_visitId)
     {
 	var me=this;
@@ -18,13 +22,14 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         if(_visitId)
         {
             me.filters=_filters||[];
+            me.filters.push({name:"visitId",value:_visitId})
             var view=this.getView();
 
             if(!_readOnlyGrid)
                 view.getPlugin('gridediting').lockGrid(false);
 
 
-            this.getResultArray().
+            this.getResultArray(me.filters).
             then(
                 function(data){
                     Utility.grid.loadGrid(view,data,view.getViewModel().getStore('StudyVisitStore'));
@@ -84,13 +89,16 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         Utility.grid.quitEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('StudyVisitStore'),promptWin);
     },
     onStudyVisitGridIdBeforeEdit: function(editor,context) {
+        this.fireViewEvent('studyVisitGridStartEditEvent');
         return (Utility.grid.beforeEdit(editor,context));
     },
 
  
 
     onStudyVisitGridIdCanceledit: function(editor,context) {
+        this.fireViewEvent('studyVisitGridEndEditEvent');
         return(Utility.grid.cancelEdit(editor,context));
+
     },
 
     onStudyVisitGridIdContainerClick: function(dataview, e, eOpts) {
@@ -102,6 +110,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     	
     	var columnsName=['deviceId','deviceName','userId','userFName','userLastName','studyVisitImageAvailable','studyId','studyName'];
         Utility.grid.edit(editor, context, columnsName);
+        this.fireViewEvent('studyVisitGridEndEditEvent');
     },
 
     onStudyVisitGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
