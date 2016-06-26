@@ -255,7 +255,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "referringPhysicianSearch",
+                        "displayField": "referringPhysicianLName",
                         "fieldLabel": [
                             "{trans.referringDoctor}"
                         ],
@@ -294,6 +294,53 @@
                             },
                             "name": "onReferringPhysicianNameComboBoxEditorItemIdChange",
                             "designerId": "da1b0e3e-3bf2-4656-98e6-fac5bb85b425"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList3",
+                            "designerId": "881edf16-8af0-4f00-9a60-ad4d6017b9c9",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "{referringPhysicianLName} {referringPhysicianFName}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "fc9e0611-e3e1-4cee-a78a-1660adca8c6c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "<tpl for=\".\">{referringPhysicianLName} {referringPhysicianFName}</tpl>"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "eb21d1b4-c0a8-48f3-90e0-2e6b449a7350"
                         }
                     ]
                 },

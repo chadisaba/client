@@ -90,7 +90,6 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
                 region: 'center',
                 xtype:'patientreceivepanel',
                 patientId:record.get('patientId')
-
                 /*plugins:[
                     new Plugins.form.FormEditingPlugin({
                     withValidation: false,
@@ -111,7 +110,7 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
         Ext.create('Common.ux.window.FullScreenWindow', {
 
             // animateTarget:'comboSearchPatient',
-            title:"Informations du patient",
+            title:translate('patientInformations'),//"Informations du patient",
             items:{
                 region: 'center',
                 xtype:'patientreceivepanel'

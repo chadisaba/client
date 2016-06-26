@@ -37,7 +37,7 @@ return promise;
                     fields:['cityName']
                 },{tableName:'referring_physician',
                     required:false,
-                    fields:['referringPhysicianName']
+                    fields:['referringPhysicianLName','referringPhysicianFName']
                 });
 
                 var params = {
@@ -63,7 +63,8 @@ return promise;
                                     var referringPhysicianData=[];
                                     referringPhysicianData.push({
                                         referringPhysicianId:res.data[0].referringPhysicianId,
-                                        referringPhysicianSearch:res.data[0]['ReferringPhysician.referringPhysicianSearch']
+                                        referringPhysicianLName:res.data[0]['ReferringPhysician.referringPhysicianLName'],
+                                        referringPhysicianFName:res.data[0]['ReferringPhysician.referringPhysicianFName']
                                     });
                                 }
                                 resolve({

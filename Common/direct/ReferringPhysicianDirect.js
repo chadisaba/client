@@ -6,7 +6,7 @@ var ReferringPhysicianDirect={
             function(resolve, reject) {
 
                 var filters=[];
-                var filter= {name:'referringPhysicianSearch',value:_searchValue};
+                var filter= {name:'referringPhysicianLName',value:_searchValue};
                 filters.push(filter);
                 var params={
                     table:"referring_physician",
@@ -34,19 +34,28 @@ var ReferringPhysicianDirect={
         if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue)&& !stringUtil.isUUID4(_serachValue))
         {
             var store = me.getViewModel().getStore(_cityComboStore);
-            this.getReferringPhysician(_serachValue.toUpperCase())
+            this.getReferringPhysician(_serachValue)
                 .then(
                     function(_resultData)
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(_resultData);
-                        store.filter({
-                            property: 'referringPhysicianSearch',
-                            anyMatch: true,
-                            value   : _serachValue
-                        });
-                        _field.expand();
+                        if(_resultData.length>0)
+                        {
+                            store.loadData(_resultData);
+                            store.filter({
+                                property: 'referringPhysicianLName',
+                                anyMatch: true,
+                                value   : _serachValue
+                            });
+                            _field.expand();
+                        }
+                        else
+                        {
+                            _field.setValue("");
+                        }
+
+
 
 
                     });

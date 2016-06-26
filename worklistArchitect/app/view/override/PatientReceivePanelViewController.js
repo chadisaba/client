@@ -11,7 +11,12 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
     onVisitSimplifiedFormIdAfterRender: function(component, eOpts) {
         this.visitView=component;
       //  this.visitView.down('#patientFormToolbarItemId').setHidden(true);
-        component.getController().initForm(this.getView().visitId,this.getView().patientId);
+        if(this.getView().patientId)
+            component.getController().initForm(this.getView().visitId,this.getView().patientId);
+        else
+        {
+            this.getView().down('#visitSimplifiedFormId').setDisabled(true);
+        }
     },
     onVisitSimplifiedFormIdStudyVisitGridEndEditEvent: function(form) {
 
@@ -26,19 +31,36 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
 
         var me=this;
         Utility.loading.start(button);
-        var p1=me.patientView.getController().patientFormSave();
-       var  p2=me.visitView.getController().visitFormSave();
-        Promise.all([p1,p2]).
-        then(function(values)
+        var patientViewController = me.patientView.getController();
+        if(me.getView().patientId)
         {
-            Utility.loading.end(button);
-            me.visitView.getController().getStudyVisitGrid().initGrid(null,null,me.visitView.getController().getVisitId());
-            me.fireEvent('visitDataSavedEvent');
-        })
-            .catch(function(_err)
+            var p1=patientViewController.patientFormSave();
+            var p2=me.visitView.getController().visitFormSave();
+            Promise.all([p1,p2]).
+                then(function(values)
+                {
+                    Utility.loading.end(button);
+                    me.visitView.getController().getStudyVisitGrid().getController().initGrid(null,null,me.visitView.getController().getVisitId());
+                    me.fireEvent('visitDataSavedEvent');
+                })
+                .catch(function(_err)
+                {
+                    console.error(_err);
+                })
+        }
+        else
+        {
+            var p1=patientViewController.patientFormSave();
+            p1.then(function()
             {
-                console.error(_err);
-            })
+                Utility.loading.end(button);
+                me.getView().patientId= me.patientView.getController().getPatientId();
+                me.visitView.getController().initForm(null,me.getView().patientId);
+                me.visitView.setDisabled(false);
+            }
+            )
+        }
+
 
     }
 

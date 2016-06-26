@@ -121,7 +121,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'userLastName',
+            dataIndex: 'userLName',
             text: '{trans.technician}',
             editor: {
                 xtype: 'combobox',

@@ -22,7 +22,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
         if(_visitId)
         {
             me.filters=_filters||[];
-            me.filters.push({name:"visitId",value:_visitId})
+            me.filters.push({name:"visitId",value:_visitId});
             var view=this.getView();
 
             if(!_readOnlyGrid)
@@ -145,12 +145,13 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                 mainTableObject.tableName='STUDY_VISIT';
                 mainTableObject.filters=filters;
                 var joinTablesArray=[];
-                joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER'},{tableName:'VISIT'},{tableName:'STUDY'});
+                joinTablesArray.push({tableName:'DEVICE'},{tableName:'USER',required:false},{tableName:'VISIT'},{tableName:'STUDY'});
 
             CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray)
-                .then(function(_result)
-                {
-                    for (var i = 0; i < _result; i++) {
+                .then(
+                    function(_result)
+                     {
+                    for (var i = 0; i <_result.length; i++) {
                         _result[i].userFName=_result[i]['User.userFName'];
                         _result[i].userLName=_result[i]['User.userLName'];
                         _result[i].deviceName=_result[i]['Device.deviceName'];
@@ -163,8 +164,8 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
                 })
                 .catch(function(_err)
                 {
-                    console.error(res.msg);
-                    reject(res.msg);
+                    console.error(_err);
+                    reject(_err);
                 });
 
 		}

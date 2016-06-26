@@ -279,7 +279,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "userLastName",
+                "dataIndex": "userLName",
                 "text": "{trans.technician}"
             },
             "name": "MyuserLastNameCol",

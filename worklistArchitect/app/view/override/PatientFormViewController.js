@@ -79,6 +79,10 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
 
     },
+    getPatientId:function()
+    {
+     return this.getView().getRecord().get('patientId');
+    },
     patientFormSave: function() {
 
         var me=this;

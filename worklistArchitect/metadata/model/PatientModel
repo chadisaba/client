@@ -64,7 +64,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "referringPhysicianSearch"
+                "name": "referringPhysicianLName"
             },
             "name": "MyreferringPhysicianName",
             "designerId": "f9d78ca1-3a1c-4208-b690-b4113183dc29"

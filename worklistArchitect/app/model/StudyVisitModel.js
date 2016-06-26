@@ -53,7 +53,7 @@ Ext.define('MyApp.model.StudyVisitModel', {
             name: 'userFName'
         },
         {
-            name: 'userLastName'
+            name: 'userLName'
         },
         {
             type: 'boolean',
