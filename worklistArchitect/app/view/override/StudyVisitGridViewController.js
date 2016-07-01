@@ -47,6 +47,21 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
+    getStudiesArray:function()
+    {
+        var view=this.getView();
+        var studiesStore=view.getViewModel().getStore('StudyVisitStore');
+        var result=[];
+        studiesStore.each(
+            function(_record)
+            {
+                result.push({
+                    studyCode:_record.get('studyCode'),
+                    studyId:_record.get('studyId')
+                })
+            })
+        return result;
+    },
 
     refreshGrid:function()
     {

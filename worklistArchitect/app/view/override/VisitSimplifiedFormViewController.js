@@ -50,7 +50,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                             var studyVisitFilters=[{
                                 name:"visitId",value:_visitId
                             }];
-                            view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters)
+                            view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters);
                             view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
                         });
                 }
@@ -86,7 +86,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         var me=this;
         var rec=me.getView().getRecord();
         var form=me.getView();
-        form.updateRecord(rec); // update the record with the form data
+        form.updateRecord(rec); // update the record with the form
         var dataToSave=rec.data;
         var visitTimeHour=dataToSave.visitTime.getHours();
         var visitTimeMinutes=dataToSave.visitTime.getMinutes();
@@ -94,13 +94,15 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         if(button)
             Utility.loading.start(button);
 
-        var studyVisitDataToBeSaved=me.getStudyVisitGrid().getController().getDataToBeSaved();
+        var studyVisitCtr = me.getStudyVisitGrid().getController();
+        var studyVisitDataToBeSaved=studyVisitCtr.getDataToBeSaved();
         studyVisitDataToBeSaved.forEach(
             function(_item)
             {
                 _item.visitId=rec.get('visitId');
             });
-        VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved)
+        var studiesArray=studyVisitCtr.getStudiesArray();
+        VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray)
             .then(function(_result)
             {
                 if(button)

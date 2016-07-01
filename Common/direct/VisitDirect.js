@@ -21,13 +21,14 @@ saveVisit:function(_visitObject)
 return promise;
 },
 
-    saveVisitAndStudyVisit:function(_visitObject,_studiesVisitArray)
+    saveVisitAndStudyVisit:function(_visitObject,_studiesVisitArray,_studiesArray)
     {
         var promise = new Promise(
             function (resolve, reject) {
                 var params={
                     visitObj:_visitObject,
-                    studyVisitDataToBeSaved:_studiesVisitArray
+                    studyVisitDataToBeSaved:_studiesVisitArray,
+                    studiesArray:_studiesArray
                 };
                 Server.Visit.saveVisitAndStudyVisit(params,
                     function(_result){
