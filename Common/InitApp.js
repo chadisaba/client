@@ -23,7 +23,7 @@ var InitApp={
         var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
 
         var p3=CommonDirect.getData("USER");
-        var p4=CommonDirect.getData("CITY",false,5000);
+        var p4=CommonDirect.getData("CITY",false,100);
 
         /* mainTableObject={
             tableName:"ROOM_HAS_DEVICE"
@@ -130,13 +130,15 @@ var InitApp={
                             {
                                 _myMask.hide();
                                 alert('indexedDB tables updated');
-                            });
+                                window.open("../pub_workflow/#maintabpanel",'_self');
+                            }).
+                            catch(function(_err)
+                        {
+                            console.error(_err);
+                        })
 
-                    })
-                    .then(function(_result){
-
-                         window.open("../pub_workflow/#maintabpanel",'_self');
                     });
+
 
 
                 // myMask.hide();

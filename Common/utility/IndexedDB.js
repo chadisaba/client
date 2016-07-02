@@ -50,10 +50,10 @@ var IndexedDB={
          var db=this.db;
          var table=db[_tableName];
         return db.transaction("rw", table, function () {
-            table.clear().
+            return table.clear().
             then(function()
             {
-                table.bulkAdd(_dataArray);
+                return table.bulkAdd(_dataArray);
             });
 
         // Log data from DB:
