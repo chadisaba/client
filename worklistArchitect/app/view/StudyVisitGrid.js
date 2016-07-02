@@ -45,7 +45,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyName',
+            dataIndex: 'studyCode',
             text: '{trans.study}',
             flex: 1,
             editor: {
@@ -53,13 +53,13 @@ Ext.define('MyApp.view.StudyVisitGrid', {
                 itemId: 'studyComboboxItemId',
                 allowBlank: false,
                 selectOnFocus: true,
-                displayField: 'studyName',
+                displayField: 'studyCode',
                 displayTpl: [
                     '<tpl for=".">{studyCode} : {studyName}</tpl>'
                 ],
                 queryMode: 'local',
                 typeAhead: true,
-                valueField: 'studyName',
+                valueField: 'studyCode',
                 bind: {
                     store: '{StudyComboStore}'
                 },

@@ -33,7 +33,10 @@ Ext.define('MyApp.model.WorklistModel', {
         },
         {
             type: 'date',
-            name: 'worklistDate'
+            name: 'visitDate'
+        },
+        {
+            name: 'visitTime'
         },
         {
             name: 'worklistStudies'

@@ -38,7 +38,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyName",
+                "dataIndex": "studyCode",
                 "flex": 1,
                 "text": "{trans.study}"
             },
@@ -54,7 +54,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "displayField": "studyName",
+                        "displayField": "studyCode",
                         "itemId": "studyComboboxItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
@@ -62,7 +62,7 @@
                             "{StudyComboStore}"
                         ],
                         "typeAhead": true,
-                        "valueField": "studyName"
+                        "valueField": "studyCode"
                     },
                     "name": "MyComboBox",
                     "configAlternates": {

@@ -20,7 +20,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     requires: [
         'MyApp.view.WorklistGridViewModel',
         'MyApp.view.WorklistGridViewController',
-        'Ext.grid.column.Column',
+        'Ext.grid.column.Date',
         'Ext.view.Table',
         'Ext.selection.RowModel',
         'Ext.toolbar.Toolbar',
@@ -39,9 +39,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     stateful: true,
     itemId: 'worklistGridId',
     resizable: false,
-    width: 940,
     title: '',
-    forceFit: true,
 
     bind: {
         store: '{WorklistStore}'
@@ -76,10 +74,16 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            renderer: 'dateRenderer',
+            dataIndex: 'visitTime',
+            bind: {
+                text: '{trans.visit}'
+            }
+        },
+        {
+            xtype: 'datecolumn',
             scrollable: true,
-            width: '',
-            dataIndex: 'worklistDate',
+            dataIndex: 'visitDate',
+            format: 'd/m/Y',
             bind: {
                 text: '{trans.date}'
             }
@@ -259,16 +263,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     listeners: {
         select: 'select',
         chHist: 'onWorklistGridIdChHist',
-        _afterrender0: 'onWorklistGridIdAfterRender',
-        _afterrender1: 'onWorklistGridIdAfterRender',
-        afterrender: function() {
-            var me = this,
-                args = Ext.toArray(arguments, 0, -1);
-            args.unshift('_afterrender0');
-            me.fireEvent.apply(me, args);
-            args[0] = '_afterrender1';
-            me.fireEvent.apply(me, args);
-        },
+        afterrender: 'onWorklistGridIdAfterRender',
         selectionchange: 'onWorklistGridIdSelectionChange',
         cellclick: 'onWorklistGridIdCellClick'
     },

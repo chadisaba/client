@@ -38,10 +38,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "worklistDate"
+                "name": "visitDate"
             },
-            "name": "MyDate",
+            "name": "MyDate4",
             "designerId": "e96f8d89-803f-419a-a346-1nt5y4bpp1mw"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitTime"
+            },
+            "name": "MyField19",
+            "designerId": "1ec3b2f8-1f78-4fb7-8fbd-887b27d6d9d0"
         },
         {
             "type": "Ext.data.field.Field",

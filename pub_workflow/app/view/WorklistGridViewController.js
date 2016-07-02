@@ -29,10 +29,6 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
-    dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-    },
-
     infoPatientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
@@ -135,10 +131,6 @@ Ext.define('MyApp.view.WorklistGridViewController', {
     },
 
     onWorklistGridIdSelectionChange: function(model, selected, eOpts) {
-
-    },
-
-    onWorklistGridIdAfterRender: function(component, eOpts) {
 
     },
 

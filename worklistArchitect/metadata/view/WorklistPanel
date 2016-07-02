@@ -10,8 +10,8 @@
         "designer|userClassName": "WorklistPanel",
         "height": null,
         "layout": "border",
-        "minWidth": 1500,
-        "scrollable": null,
+        "minWidth": null,
+        "scrollable": "true",
         "title": "WorkList",
         "width": null
     },

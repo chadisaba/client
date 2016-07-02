@@ -26,6 +26,9 @@ Ext.define('MyApp.model.StudyComboModel', {
         },
         {
             name: 'studyName'
+        },
+        {
+            name: 'studyCode'
         }
     ]
 });

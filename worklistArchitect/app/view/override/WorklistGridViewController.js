@@ -6,10 +6,23 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
     },
 
     onWorklistGridIdAfterRender: function(component) {
-        this.getResultArray(function(result)
-        {
-            component.getViewModel().getStore('WorklistStore').loadData(result);
-        });
+
+        this.getResultArray()
+            .then(function(_resultArray)
+            {
+                for (var i = 0; i < _resultArray.length; i++) {
+                    _resultArray[i].siteCode = _resultArray[i]['Site.siteCode'];
+                    _resultArray[i].patientLName = _resultArray[i]['Patient.patientLName'];
+                    _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
+                    _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
+                    _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                }
+                debugger;
+                component.getViewModel().getStore('WorklistStore').loadData(_resultArray);
+            })
+            .catch(function (_err) {
+                console.error(_err);
+            });
 
         var grid=component;
         grid.down('#freeIcon').setVisible(false);
@@ -22,24 +35,28 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         grid.down('#urgentIcon').setVisible(false);
     },
 
-    getResultArray:function(callback)
+    getResultArray:function()
     {
-        var me=this;
-        var params={
-            id:50
-        };
-        // Server.Settings.Site.createDescribe(params,
-        Server.Worklist.Worklist.getWorklistInfo(params,
-            function(res){
-                if(res.success){
-                    callback (res.data);
-                }
-                else{
-                    console.log(res.msg);
-                }
-            },me
-        );
-
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                var mainTable={
+                    tableName:"WORKLIST"
+                };
+                var joinTablesArray=[
+                    {tableName:"VISIT"},{tableName:"PATIENT"},{tableName:"SITE"}
+                ];
+                CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
+                    .then(function(_resultArray)
+                    {
+                        resolve(_resultArray);
+                    })
+                    .catch(function (_err) {
+                        console.error(_err);
+                        reject(_err);
+                    });
+             });
+         return promise;
     },
 
 
@@ -220,7 +237,7 @@ var tooltip;
 
     },
     patientRenderer: function(value, metaData, record) {
-        return Utility.renderer.textHrefRenderer("#31b0d5",record.get('patientLName')+' '+record.get('patientFName'));
+        return Utility.renderer.textHrefRenderer("#31b0d5",record.get('patientLName')+' '+record.get('patientFname'));
     },
 
     dictationRenderer: function(value, metaData, record) {

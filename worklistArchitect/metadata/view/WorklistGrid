@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userAlias": "worklistgrid",
         "designer|userClassName": "WorklistGrid",
-        "forceFit": true,
+        "forceFit": null,
         "itemId": "worklistGridId",
         "minWidth": null,
         "reference": "worklistGridRef",
@@ -22,7 +22,7 @@
             "{WorklistStore}"
         ],
         "title": "",
-        "width": 940
+        "width": null
     },
     "name": "MyGridPanel",
     "configAlternates": {
@@ -158,48 +158,41 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistDate",
+                "dataIndex": "visitTime",
+                "minWidth": null,
+                "text": [
+                    "{trans.visit}"
+                ]
+            },
+            "name": "My\tworklistVisitInfoCol1",
+            "configAlternates": {
+                "text": "binding"
+            },
+            "designerId": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitDate",
+                "format": "d/m/Y",
                 "minWidth": null,
                 "scrollable": true,
                 "text": [
                     "{trans.date}"
                 ],
-                "width": ""
+                "width": null
             },
-            "name": "MyworklistDateCol",
+            "name": "MyDateColumn2",
             "configAlternates": {
                 "scrollable": "boolean",
                 "text": "binding"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "dateRenderer",
-                        "fn": "renderer",
-                        "implHandler": [
-                            ""
-                        ]
-                    },
-                    "name": "renderer",
-                    "designerId": "16365acb-4b22-4f55-ad1b-958e9c1be855"
-                }
-            ]
+            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -1650,21 +1643,6 @@
             },
             "name": "onWorklistGridIdSelectionChange",
             "designerId": "78f21e61-9408-4a11-b2e9-bccbeefa5156"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onWorklistGridIdAfterRender",
-                "name": "afterrender",
-                "scope": "me"
-            },
-            "name": "onWorklistGridIdAfterRender",
-            "designerId": "fd1b6892-a2a2-4ae3-a524-5964f4f08860"
         },
         {
             "type": "viewcontrollereventbinding",
