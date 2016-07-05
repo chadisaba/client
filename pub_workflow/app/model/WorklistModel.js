@@ -168,6 +168,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'visitId'
         },
         {
+            type: 'date',
             name: 'lastUpdate'
         }
     ]

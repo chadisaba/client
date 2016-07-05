@@ -5,9 +5,20 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     },
 
-    onWorklistGridIdAfterRender: function(component) {
+    onRefreshbtnClick:function(btn)
+    {
+      this.initGrid(true);
+    },
+    initGrid:function(_today,_filtersObject)
+    {
+        var me=this;
+        me.filtersObject=_filtersObject||[];
+        var worklistUpdate;
+        var dateTemp;
 
-        this.getResultArray()
+
+
+        this.getResultArray(_today,me.filtersObject)
             .then(function(_resultArray)
             {
                 for (var i = 0; i < _resultArray.length; i++) {
@@ -16,14 +27,62 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
                     _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
                     _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                    if(_today) // just when we display the current day on our worklist
+                    {
+                        worklistUpdate= _resultArray[i]['updatedAt'];
+                        if(me.lastUpdateDate)
+                        {
+                            if(Ext.Date.diff(new Date(worklistUpdate),me.lastUpdateDate,Ext.Date.SECOND)<0)
+                                me.lastUpdateDate=new Date(worklistUpdate);// last update on the database
+                        }
+                        else
+                            me.lastUpdateDate= new Date(worklistUpdate);
+
+                    }
+
+
                 }
-                debugger;
-                component.getViewModel().getStore('WorklistStore').loadData(_resultArray);
+                var worklistStore = me.getViewModel().getStore('WorklistStore');
+                if(!_today || worklistStore.count()==0)
+                         worklistStore.loadData(_resultArray);// if we don't refresh the current day worklist
+                    else
+                {
+                    // we refresh the current day =>we get just the diff data form server using the me.lastUpdateDate
+                   // alert('refresh just the diff');
+                   // alert('refresh just the diff');
+                    var recordsToRemove=[];
+                    var recordsToAdd=[];
+                    _resultArray.forEach(function (_item)
+                    {
+                        var recordExist=false;
+                        worklistStore.each(function(_rec)
+                        {
+                            if(_item.worklistId==_rec.get('worklistId'))
+                            {
+                                recordsToRemove.push(_rec);
+                                recordsToAdd.push(_item);
+                                recordExist=true;
+                            }
+                        });
+                        if(!recordExist)
+                            recordsToAdd.push(_item);
+                    });
+
+                    worklistStore.remove(recordsToRemove);
+                    worklistStore.add(recordsToAdd);
+
+                }
+
             })
             .catch(function (_err) {
                 console.error(_err);
             });
+    },
+    onWorklistGridIdAfterRender: function(component) {
 
+    var me=this;
+        me.lastUpdateDate=null;
+        me.initGrid(true);
         var grid=component;
         grid.down('#freeIcon').setVisible(false);
         grid.down('#hospitIcon').setVisible(false);
@@ -35,16 +94,39 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         grid.down('#urgentIcon').setVisible(false);
     },
 
-    getResultArray:function()
+    getResultArray:function(_today,_filtersObject)
     {
         //Creating a promise
+        var me=this;
         var promise=new Promise(
             function(resolve, reject) {
+                if(!_filtersObject)
+                    _filtersObject={};
+                var worklistFilters=_filtersObject.worklistFilters||[];
+                var visitFilters=_filtersObject.visitFilters||[];
+                var patientFilters=_filtersObject.patientFilters||[];
+
+                if(_today){
+                    worklistFilters=[];
+                    var today=Ext.Date.format(new Date(),"Y-m-d");
+                    visitFilters=[{name:"visitDate",value:today}];
+                    patientFilters=[];
+
+                    if(me.lastUpdateDate)
+                    {
+                        worklistFilters.push({name:'updatedAt', value:me.lastUpdateDate,compare:'gt'});
+                    }
+
+
+
+                }
+
                 var mainTable={
-                    tableName:"WORKLIST"
+                    tableName:"WORKLIST",
+                    filters:worklistFilters
                 };
                 var joinTablesArray=[
-                    {tableName:"VISIT"},{tableName:"PATIENT"},{tableName:"SITE"}
+                    {tableName:"VISIT", filters:visitFilters},{tableName:"PATIENT",filters:patientFilters},{tableName:"SITE"}
                 ];
                 CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
                     .then(function(_resultArray)

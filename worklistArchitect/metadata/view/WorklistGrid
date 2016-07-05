@@ -1626,6 +1626,38 @@
                         "html": "string"
                     },
                     "designerId": "ce884174-9b24-40ef-b370-4961190279da"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshbtn",
+                        "layout|flex": null,
+                        "text": "trans.refresh"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "792d22d8-34b3-42e6-b17d-d8adc2641348",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshbtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshbtnClick",
+                            "designerId": "bee447cd-92c0-4eef-abc8-fa9d178d5403"
+                        }
+                    ]
                 }
             ]
         },

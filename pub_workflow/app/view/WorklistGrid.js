@@ -378,6 +378,14 @@ Ext.define('MyApp.view.WorklistGrid', {
                     xtype: 'component',
                     html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">U</i></span>',
                     itemId: 'urgentIcon'
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'refreshbtn',
+                    text: 'trans.refresh',
+                    listeners: {
+                        click: 'onRefreshbtnClick'
+                    }
                 }
             ]
         }

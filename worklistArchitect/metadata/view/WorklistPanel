@@ -11,7 +11,7 @@
         "height": null,
         "layout": "border",
         "minWidth": null,
-        "scrollable": "true",
+        "scrollable": null,
         "title": "WorkList",
         "width": null
     },

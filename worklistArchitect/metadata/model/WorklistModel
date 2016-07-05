@@ -616,7 +616,7 @@
             "designerId": "e96f8d89-803f-419a-a346-xl1dvle3vs5e"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -625,7 +625,7 @@
             "userConfig": {
                 "name": "lastUpdate"
             },
-            "name": "MyField31",
+            "name": "MyDate2",
             "designerId": "b23df6ll-ac56-469a-895f-p9tlyyy2jg9r"
         }
     ]
