@@ -22,5 +22,13 @@ var GridAddPlugins={
                     new Plugins.grid.GridEditingPlugin(_scope.initialConfig.externalEditingPlugin));
             }
 
-        }
-}
+        },
+    addSearchPlugin:function(_scope)
+    {
+        _scope.plugins=[{
+            ptype: 'cellediting',
+            pluginId: 'cellEditing'
+        }];
+        _scope.plugins.push (new Plugins.grid.GridSearchPlugin({pluginId: 'gridsearch'}));
+    }
+};

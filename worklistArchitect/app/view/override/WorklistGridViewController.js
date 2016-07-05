@@ -16,8 +16,6 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
         var worklistUpdate;
         var dateTemp;
 
-
-
         this.getResultArray(_today,me.filtersObject)
             .then(function(_resultArray)
             {

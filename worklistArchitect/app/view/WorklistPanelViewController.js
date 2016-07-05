@@ -15,5 +15,14 @@
 
 Ext.define('MyApp.view.WorklistPanelViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.worklistpanel'
+    alias: 'controller.worklistpanel',
+
+    requires: [
+        'MyApp.view.override.WorklistPanelViewController'
+    ],
+
+    onPanelAfterRender: function(component, eOpts) {
+
+    }
+
 });

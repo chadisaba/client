@@ -54,7 +54,14 @@
             "configAlternates": {
                 "text": "binding"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik"
+            "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",

@@ -31,6 +31,7 @@
                 "animCollapse": false,
                 "collapsed": true,
                 "collapsible": true,
+                "itemId": null,
                 "layout|collapseMode": "header",
                 "layout|region": "west",
                 "layout|split": true,
@@ -58,6 +59,40 @@
             "name": "worklistgrid",
             "designerId": "d46edd4c-a145-423c-94c3-63e4fb8f1a2c",
             "masterInstanceId": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": true,
+                "collapsed": false,
+                "collapsible": true,
+                "itemId": "worklistFilterGridItemId",
+                "layout|region": "north",
+                "layout|split": true
+            },
+            "name": "worklistfiltregridpanel",
+            "designerId": "f1bc1fcf-e615-4ced-bcde-03d3dd508d01",
+            "masterInstanceId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "a293dafc-a077-4c87-b6a4-01f49b9f328f"
         }
     ]
 }

@@ -45,7 +45,8 @@
             "PatientReceivePanel",
             "VisitForm",
             "VisitSimplifiedForm",
-            "StudyVisitGrid"
+            "StudyVisitGrid",
+            "WorklistFiltreGridPanel"
         ]
     },
     "name": "Application",

@@ -12,14 +12,28 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			newColumnTemp={};
 			newColumnTemp.dataIndex=_column.dataIndex;
 			newColumnTemp.xtype='widgetcolumn';
-			if(_column.editor.xtype="combo")
+			/*if(_column.editor.xtype="combo")
 			newColumnTemp.widget={
-				xtype:	_column.xtype;
+				xtype:	_column.xtype
+			}*/
+
+			if(_column.bind){
+				newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
+				//newColumnTemp.bind.text=_column.bind.text;
 			}
+			else
+			{
+				newColumnTemp.text=_column.text;
+			}
+
 			
+			newColumnTemp.widget={
+					xtype:	'textfield'
+				};
+			searchGridColumns.push(newColumnTemp);
 			
 		});
-		searchGrid.columns.push(searchGridColumns);
+		searchGrid.reconfigure(null,searchGridColumns);
 				
 		}
 	},

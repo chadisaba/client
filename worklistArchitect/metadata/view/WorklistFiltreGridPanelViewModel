@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "worklistfiltregridpanel",
+        "designer|userClassName": "WorklistFiltreGridPanelViewModel"
+    },
+    "designerId": "ab9d6573-f890-480a-92e4-c7e3debdf66d",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "WorklistModel",
+                "name": "WorklistGridFilterStore"
+            },
+            "name": "MyStore9",
+            "designerId": "3e3cabe6-ac1c-408d-88c0-73adff2f8faa"
+        }
+    ]
+}
