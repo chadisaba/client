@@ -1,6 +1,39 @@
 Ext.define('Plugins.grid.GridSearchPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.searchgrid',
+		statics:{
+		configure: function(masterGrid,searchGrid){
+			config.columns.push({
+				xtype: 'gridcolumn',
+				renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+					if(view !== undefined && view !== null){
+						var grid = view.up('gridpanel');
+						if (record.data.notValid && !record.data.toDelete && grid.inEdition===true){
+		                    return '<div class="fa fa-exclamation-triangle" style="height:16px !important;" data-qtip="${gridEdit.notValid}<br>'+record.data.notValidTip+'">&nbsp;</div>';
+		                } else if (record.data.toDelete && grid.inEdition===true){
+		                    return '<div class="fa fa-trash-o" style="height:16px !important;" data-qtip="A supprimer">&nbsp;</div>';
+		                }else if (record.data.added && grid.inEdition===true){
+		                    return '<div class="fa fa-plus" style="height:16px !important;" data-qtip="Ajouté">&nbsp;</div>';
+		                }else if (record.data.modified && grid.inEdition===true){
+		                    return '<div class="fa fa-edit" style="height:16px !important;" data-qtip="Modifié">&nbsp;</div>';
+		                } else if (record.data.locked){
+		                    return '<div class="fa fa-lock" style="height:16px !important;" data-qtip="' + record.data.userID + " " + record.data.userName + '">&nbsp;</div>';
+		                } else return '';
+					}else {
+						return '';
+					}
+	            },
+	            itemId: 'actionColumn',
+	            maxWidth: 28,
+	            minWidth: 28,
+	            width: 28,
+	            menuDisabled: true,
+	            draggable: false,
+	            enableColumnHide: false,
+	            hideable: false
+	        });			
+		}
+	},
 	config:{
 		toolbarSelector : null
 	},
