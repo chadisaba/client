@@ -47,6 +47,7 @@ Ext.define('MyApp.view.WorklistGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            createFilter: true,
             stateId: 'worklistSiteCol',
             stateful: true,
             minWidth: 50,
@@ -59,6 +60,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'socialCardRenderer',
+            createFilter: true,
+            filterType: 'boolean',
             dataIndex: 'visitIsBySocialCard',
             bind: {
                 text: '{trans.vitale}'
@@ -67,20 +70,21 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'infoVisitRenderer',
-            dataIndex: 'worklistVisitInfo',
-            bind: {
-                text: '{trans.visit}'
-            }
+            dataIndex: 'worklistVisitInfo'
         },
         {
             xtype: 'gridcolumn',
+            filterType: 'hour',
+            createFilter: true,
             dataIndex: 'visitTime',
             bind: {
-                text: '{trans.visit}'
+                text: '{trans.time}'
             }
         },
         {
             xtype: 'datecolumn',
+            filterType: 'date',
+            createFilter: true,
             scrollable: true,
             dataIndex: 'visitDate',
             format: 'd/m/Y',
@@ -93,12 +97,13 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'infoPatientRenderer',
             dataIndex: 'worklistPatientInfo',
             bind: {
-                text: '{trans.pat}'
+                text: '{trans.patInfo}'
             }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'patientRenderer',
+            createFilter: true,
             width: 150,
             dataIndex: 'patientLName',
             bind: {
@@ -116,6 +121,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'studiesRenderer',
+            createFilter: true,
             dataIndex: 'worklistStudies',
             bind: {
                 text: '{trans.studies}'

@@ -2085,17 +2085,18 @@
         "openTabs": [
             "application",
             "b68b3eb9-ea53-41e7-8584-0f9360c148ae",
-            "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+            "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
+            "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
     },
     "inspectorState": {
         "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
-        "selectedInstance": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik"
+        "selectedInstance": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

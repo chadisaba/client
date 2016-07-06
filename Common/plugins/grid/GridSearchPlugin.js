@@ -1,6 +1,12 @@
 Ext.define('Plugins.grid.GridSearchPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.searchgrid',
+	requires: [
+		'Ext.ux.filterWidget.ComboFilter',
+		'Ext.ux.filterWidget.TextFilter',
+		'Ext.ux.filterWidget.DateFilter',
+		'Ext.ux.filterWidget.BooleanFilter'
+	],
 		statics:{
 		configure: function(masterGrid,searchGrid){
 			
@@ -9,28 +15,63 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		masterGrid.columns.forEach(
 		function(_column)
 		{
-			newColumnTemp={};
-			newColumnTemp.dataIndex=_column.dataIndex;
-			newColumnTemp.xtype='widgetcolumn';
-			/*if(_column.editor.xtype="combo")
-			newColumnTemp.widget={
-				xtype:	_column.xtype
-			}*/
-
-			if(_column.bind){
-				newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
-				//newColumnTemp.bind.text=_column.bind.text;
-			}
-			else
+			if(_column.createFilter)
 			{
-				newColumnTemp.text=_column.text;
+				newColumnTemp={};
+				newColumnTemp.dataIndex=_column.dataIndex;
+				newColumnTemp.width=_column.width;
+				newColumnTemp.xtype='widgetcolumn';
+				/*if(_column.editor.xtype="combo")
+				 newColumnTemp.widget={
+				 xtype:	_column.xtype
+				 }*/
+
+				if(_column.bind){
+					newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
+					//newColumnTemp.bind.text=_column.bind.text;
+				}
+				else
+				{
+					newColumnTemp.text=_column.text;
+				}
+
+				newColumnTemp.widget={xtype:'textfilter'};
+				switch(_column.filterType)
+				{
+					case "combobox":
+						newColumnTemp.widget={
+							xtype:'combofilter'
+						};
+						break;
+					case "boolean":
+						newColumnTemp.widget={
+							xtype:'booleanfilter'
+						};
+						break;
+					case "numeric":
+						newColumnTemp.widget={
+							xtype:'numericfilter'
+						};
+						break;
+					case "date":
+					newColumnTemp.widget={
+						xtype:'datefilter'
+					};
+					break;
+					case "hour":
+						newColumnTemp.widget={
+							xtype:'combofilter'
+						};
+						break;
+
+
+
+				}
+				searchGridColumns.push(newColumnTemp);
 			}
 
-			
-			newColumnTemp.widget={
-					xtype:	'textfield'
-				};
-			searchGridColumns.push(newColumnTemp);
+
+
 			
 		});
 		searchGrid.reconfigure(null,searchGridColumns);

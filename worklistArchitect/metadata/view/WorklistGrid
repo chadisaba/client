@@ -41,6 +41,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "siteCode",
                 "minWidth": 50,
                 "stateId": "worklistSiteCol",
@@ -52,13 +53,19 @@
             },
             "name": "MysiteNameCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
                     "name": "title",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
                     "type": "string"
                 }
             ]
@@ -71,7 +78,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "visitIsBySocialCard",
+                "filterType": "boolean",
                 "minWidth": null,
                 "text": [
                     "{trans.vitale}"
@@ -79,9 +88,22 @@
             },
             "name": "My\tvisitIsBySocialCardCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -117,17 +139,30 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": null,
                 "dataIndex": "worklistVisitInfo",
+                "filterType": null,
                 "minWidth": null,
-                "text": [
-                    "{trans.visit}"
-                ]
+                "text": null
             },
             "name": "My\tworklistVisitInfoCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -165,17 +200,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "visitTime",
+                "filterType": "hour",
                 "minWidth": null,
                 "text": [
-                    "{trans.visit}"
+                    "{trans.time}"
                 ]
             },
             "name": "My\tworklistVisitInfoCol1",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
-            "designerId": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8"
+            "designerId": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Date",
@@ -185,7 +235,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "visitDate",
+                "filterType": "date",
                 "format": "d/m/Y",
                 "minWidth": null,
                 "scrollable": true,
@@ -197,9 +249,22 @@
             "name": "MyDateColumn2",
             "configAlternates": {
                 "scrollable": "boolean",
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194"
+            "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -209,17 +274,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": null,
                 "dataIndex": "worklistPatientInfo",
                 "minWidth": null,
                 "text": [
-                    "{trans.pat}"
+                    "{trans.patInfo}"
                 ]
             },
             "name": "MyworklistPatientInfoCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-jc7rfiu7dyh7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -257,6 +331,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "patientLName",
                 "minWidth": null,
                 "text": [
@@ -266,9 +341,17 @@
             },
             "name": "MypatientLastNameCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -352,6 +435,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "worklistStudies",
                 "minWidth": null,
                 "text": [
@@ -361,9 +445,17 @@
             },
             "name": "MyworklistStudiesCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
