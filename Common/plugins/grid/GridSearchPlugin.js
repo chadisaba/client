@@ -5,7 +5,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		'Ext.ux.filterWidget.ComboFilter',
 		'Ext.ux.filterWidget.TextFilter',
 		'Ext.ux.filterWidget.DateFilter',
-		'Ext.ux.filterWidget.BooleanFilter'
+		'Ext.ux.filterWidget.BooleanFilter',
+		'Ext.ux.filterWidget.NumericFilter',
 	],
 		statics:{
 		configure: function(masterGrid,searchGrid){
@@ -25,7 +26,6 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				 newColumnTemp.widget={
 				 xtype:	_column.xtype
 				 }*/
-
 				if(_column.bind){
 					newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
 					//newColumnTemp.bind.text=_column.bind.text;
@@ -34,7 +34,6 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				{
 					newColumnTemp.text=_column.text;
 				}
-
 				newColumnTemp.widget={xtype:'textfilter'};
 				switch(_column.filterType)
 				{
@@ -58,14 +57,11 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						xtype:'datefilter'
 					};
 					break;
-					case "hour":
+					case "time":
 						newColumnTemp.widget={
-							xtype:'combofilter'
+							xtype:'timefilter'
 						};
 						break;
-
-
-
 				}
 				searchGridColumns.push(newColumnTemp);
 			}
