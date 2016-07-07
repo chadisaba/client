@@ -15,8 +15,8 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     {name: 'text',  type: 'string'}
                    ],
                     data : [
-                        {id: 'eq', text: translate('Equal')},
-                        {id: 'diff',text: translate('Different')}
+                        {id: 'eq', text: translate('=')},
+                        {id: 'diff',text: translate('diff')}
 
                     ]
                 });
@@ -28,13 +28,20 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     store:comboCompareStore
                 });
 
-            var filterCombo=Ext.create('Ext.form.field.ComboBox',
+            var filterStore=Ext.create('Ext.data.Store',
+                {
+                   fields:[
+                    {name: 'id', type: 'string'},
+                    {name: 'text',  type: 'string'}
+                   ]
+                });
+                filterStore.loadData(me.filterValues)//filterValues is an objects array (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
+                var filterCombo=Ext.create('Ext.form.field.ComboBox',
                 {
                     fieldLabel: '',
                     queryMode: 'local',
-                    store:me.store
+                    store:me.filterStore
                 });
-
             me.items=[comboCompare,filterCombo];
             me.callParent();
         }
