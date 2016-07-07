@@ -40,7 +40,7 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                 {
                     fieldLabel: '',
                     queryMode: 'local',
-                    store:me.filterStore
+                    store:filterStore
                 });
             me.items=[comboCompare,filterCombo];
             me.callParent();
