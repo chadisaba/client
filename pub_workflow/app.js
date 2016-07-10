@@ -57,7 +57,8 @@ Ext.application({
         'VisitForm',
         'VisitSimplifiedForm',
         'StudyVisitGrid',
-        'WorklistFiltreGridPanel'
+        'WorklistFiltreGridPanel',
+        'MyPanel5'
     ],
     controllers: [
         'MainController'

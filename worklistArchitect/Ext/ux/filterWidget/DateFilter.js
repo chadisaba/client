@@ -3,8 +3,7 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
         extend: 'Ext.container.Container',
         xtype: 'datefilter',
         layout: {
-            type: 'vbox',
-            align: 'stretch'
+            type: 'fit'
         },
         initComponent:function(){
             var me=this;
@@ -22,20 +21,34 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                         {id: 'lt', text: translate('<')}
                     ]
                 });
-            var comboCompare=Ext.create('Ext.form.field.ComboBox',
+            me.comboCompare=Ext.create('Ext.form.field.ComboBox',
                 {
                     fieldLabel: '',
                     queryMode: 'local',
                     store:comboCompareStore
                 });
 
-            var filterDate=Ext.create('Ext.form.field.Date',
+            me.filterDate=Ext.create('Ext.form.field.Date',
                 {
                     fieldLabel: ''
                 });
-
-            me.items=[comboCompare,filterDate];
+            me.filterDate.on('change',me.onChangeHandler,me);
+            me.items=[me.comboCompare,me.filterDate];
             me.callParent();
+        },
+        onChangeHandler:function(_comp)
+        {
+            var me=this;
+            var result;
+            var recordId=me.getWidgetRecord().get('id');
+            var compId=_comp.id;
+            result= {
+                filterValue:me.filterDate.getValue(),
+                filterOp:me.comboCompare.getValue()
+            };
+            me.fireEvent('change',result,recordId,compId);
+
+
         }
 
     });

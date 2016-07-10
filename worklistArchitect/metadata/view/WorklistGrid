@@ -43,6 +43,7 @@
             "userConfig": {
                 "createFilter": true,
                 "dataIndex": "siteCode",
+                "filterWidth": 100,
                 "minWidth": 50,
                 "stateId": "worklistSiteCol",
                 "stateful": true,
@@ -54,7 +55,8 @@
             "name": "MysiteNameCol",
             "configAlternates": {
                 "text": "binding",
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "filterWidth": "number"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik",
             "customConfigs": [
@@ -66,6 +68,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterWidth",
                     "type": "string"
                 }
             ]
@@ -235,9 +242,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "createFilter": true,
+                "createFilter": null,
                 "dataIndex": "visitDate",
-                "filterType": "date",
+                "filterType": null,
                 "format": "d/m/Y",
                 "minWidth": null,
                 "scrollable": true,
@@ -446,13 +453,19 @@
             "name": "MyworklistStudiesCol",
             "configAlternates": {
                 "text": "binding",
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "filterValues": "array"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
                     "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterValues",
                     "type": "string"
                 }
             ],
@@ -651,7 +664,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "worklistLastCrStatus",
+                "filterType": "combobox",
+                "filterValues": [
+                    "[ComboData.crStatus]"
+                ],
                 "minWidth": null,
                 "text": [
                     "{trans.cR}"
@@ -659,9 +677,28 @@
             },
             "name": "MyworklistCrsStatusCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean",
+                "filterValues": "array"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-udqxppjjuvmk",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterValues",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -699,7 +736,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "worklistLastDictationStatus",
+                "filterType": "combobox",
+                "filterValues": [
+                    "[ComboData.quotationStatus]"
+                ],
                 "minWidth": null,
                 "text": [
                     "{trans.cot}"
@@ -707,9 +749,28 @@
             },
             "name": "MyworklistCotationStatusCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "filterValues": "array",
+                "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-suh9qp59ml87",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterValues",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -798,7 +859,7 @@
                 "dataIndex": "worklistVisitComment",
                 "minWidth": null,
                 "text": [
-                    "{trans.voment}"
+                    "{trans.comment}"
                 ]
             },
             "name": "MyworklistVisitCommentCol",
@@ -891,7 +952,7 @@
             "userConfig": {
                 "dataIndex": "worklistFtDu",
                 "minWidth": null,
-                "text": "{trans.duV}"
+                "text": "{trans.duP}"
             },
             "name": "MyworklistFtDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju",
@@ -930,12 +991,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "visitIsDone",
+                "filterType": "boolean",
                 "minWidth": null,
                 "text": "<i class=\"fa fa-lock\"></i>"
             },
             "name": "MyvisitIsDoneCol",
+            "configAlternates": {
+                "createFilter": "boolean"
+            },
             "designerId": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -1140,7 +1218,7 @@
             "userConfig": {
                 "dataIndex": "visitIsUrgent",
                 "minWidth": null,
-                "text": ""
+                "text": "{trans.isUrgent}"
             },
             "name": "MyvisitIsUrgentCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by",
@@ -1255,12 +1333,44 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
+                "createType": null,
                 "dataIndex": "visitPEC",
+                "filterType": "combobox",
+                "filterValues": [
+                    "[ComboData.pec]"
+                ],
                 "minWidth": null,
-                "text": ""
+                "text": "{trans.pec}"
             },
             "name": "MyvisitPECCol",
+            "configAlternates": {
+                "createFilter": "boolean",
+                "filterValues": "array"
+            },
             "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterValues",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

@@ -3,8 +3,7 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
         extend: 'Ext.container.Container',
         xtype: 'combofilter',
         layout: {
-            type: 'vbox',
-            align: 'stretch'
+            type: 'fit'
         },
         initComponent:function(){
             var me=this;
@@ -20,10 +19,15 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
 
                     ]
                 });
-            var comboCompare=Ext.create('Ext.form.field.ComboBox',
+             me.comboCompare=Ext.create('Ext.form.field.ComboBox',
                 {
                     width: 50,
+                    style: 'font-size:10px;',
+                    height:20,
                     fieldLabel: '',
+                    valueField:'id',
+                    displayField:'text',
+                    value:'eq',
                     queryMode: 'local',
                     store:comboCompareStore
                 });
@@ -35,15 +39,32 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     {name: 'text',  type: 'string'}
                    ]
                 });
-                filterStore.loadData(me.filterValues)//filterValues is an objects array (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
-                var filterCombo=Ext.create('Ext.form.field.ComboBox',
+                filterStore.loadData(me.filterValues[0]);//filterValues[0] is array of objects (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
+                me.filterCombo=Ext.create('Ext.form.field.ComboBox',
                 {
                     fieldLabel: '',
+                    height:15,
                     queryMode: 'local',
-                    store:filterStore
+                    store:filterStore,
+                    matchFieldWidth:true
                 });
-            me.items=[comboCompare,filterCombo];
+            me.filterCombo.on('change',me.onChangeHandler,me);
+            me.items=[me.comboCompare,me.filterCombo];
             me.callParent();
+        },
+        onChangeHandler:function(_comp)
+        {
+            var me=this;
+            var result;
+            var recordId=me.getWidgetRecord().get('id');
+            var compId=_comp.id;
+            result= {
+                filterValue:me.filterCombo.getValue(),
+                filterOp:me.comboCompare.getValue()
+            };
+                me.fireEvent('change',result,recordId,compId);
+
+
         }
 
     });

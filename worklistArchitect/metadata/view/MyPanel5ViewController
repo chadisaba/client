@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mypanel5",
+        "designer|userClassName": "MyPanel5ViewController"
+    },
+    "designerId": "0c2a3c44-b0d2-4cd2-86a7-85ede29ff929"
+}

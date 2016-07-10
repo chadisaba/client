@@ -77,7 +77,27 @@
             },
             "name": "worklistfiltregridpanel",
             "designerId": "f1bc1fcf-e615-4ced-bcde-03d3dd508d01",
-            "masterInstanceId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2"
+            "masterInstanceId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "searchObject"
+                        ],
+                        "fn": "onGridpanelApplySearch",
+                        "name": "applySearch",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelApplySearch",
+                    "designerId": "95c13116-dff3-4a06-a59f-46c41fc40262"
+                }
+            ]
         },
         {
             "type": "viewcontrollereventbinding",
@@ -92,7 +112,7 @@
                 "scope": "me"
             },
             "name": "onPanelAfterRender",
-            "designerId": "a293dafc-a077-4c87-b6a4-01f49b9f328f"
+            "designerId": "eed6d3fa-e73a-426b-91b4-e9d69fc27887"
         }
     ]
 }

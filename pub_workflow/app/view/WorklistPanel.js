@@ -57,7 +57,10 @@ Ext.define('MyApp.view.WorklistPanel', {
             collapsed: false,
             collapsible: true,
             region: 'north',
-            split: true
+            split: true,
+            listeners: {
+                applySearch: 'onGridpanelApplySearch'
+            }
         }
     ],
     listeners: {

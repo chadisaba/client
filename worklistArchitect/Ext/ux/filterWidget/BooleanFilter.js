@@ -20,7 +20,7 @@ Ext.define('Ext.ux.filterWidget.BooleanFilter',
 
                     ]
                 });
-            var comboCompare=Ext.create('Ext.form.field.ComboBox',
+             me.comboCompare=Ext.create('Ext.form.field.ComboBox',
                 {
                     width: 50,
                     fieldLabel: '',
@@ -28,8 +28,24 @@ Ext.define('Ext.ux.filterWidget.BooleanFilter',
                     store:comboCompareStore
                 });
 
-            me.items=[comboCompare];
+            me.comboCompare.on('change',me.onChangeHandler,me);
+            me.items=[me.comboCompare];
             me.callParent();
+        },
+        onChangeHandler:function(_comp)
+        {
+            var me=this;
+            var result;
+            var recordId=me.getWidgetRecord().get('id');
+            var compId=_comp.id;
+
+            result= {
+                filterValue:me.comboCompare.getValue(),
+                filterOp:'eq'
+            };
+            me.fireEvent('change',result,recordId,compId);
+
+
         }
 
     });

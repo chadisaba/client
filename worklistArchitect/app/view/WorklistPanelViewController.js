@@ -21,6 +21,10 @@ Ext.define('MyApp.view.WorklistPanelViewController', {
         'MyApp.view.override.WorklistPanelViewController'
     ],
 
+    onGridpanelApplySearch: function(searchObject) {
+
+    },
+
     onPanelAfterRender: function(component, eOpts) {
 
     }

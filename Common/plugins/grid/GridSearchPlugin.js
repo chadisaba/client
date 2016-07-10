@@ -10,9 +10,13 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	],
 		statics:{
 		configure: function(masterGrid,searchGrid){
-			
+			searchGrid.searchObj={};
 		var searchGridColumns=[];
 		var newColumnTemp;
+			newColumnTemp={
+				xtype: 'rownumberer'
+			};
+			searchGridColumns.push(newColumnTemp);
 		masterGrid.columns.forEach(
 		function(_column)
 		{
@@ -20,7 +24,10 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			{
 				newColumnTemp={};
 				newColumnTemp.dataIndex=_column.dataIndex;
-				newColumnTemp.width=_column.width;
+				newColumnTemp.width=_column.filterWidth||_column.width;
+				if(_column.filterFlex)
+					newColumnTemp.flex=_column.filterFlex;
+
 				newColumnTemp.xtype='widgetcolumn';
 				/*if(_column.editor.xtype="combo")
 				 newColumnTemp.widget={
@@ -34,35 +41,45 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				{
 					newColumnTemp.text=_column.text;
 				}
-				newColumnTemp.widget={xtype:'textfilter'};
+				newColumnTemp.widget={};
+				newColumnTemp.widget.xtype='textfilter';
 				switch(_column.filterType)
 				{
 					case "combobox":
-						newColumnTemp.widget={
-							xtype:'combofilter'
-						};
+						newColumnTemp.widget.xtype='combofilter';
+
+						if(_column.filterValues)
+							newColumnTemp.widget.filterValues=_column.filterValues;
+
 						break;
 					case "boolean":
-						newColumnTemp.widget={
-							xtype:'booleanfilter'
-						};
+						newColumnTemp.widget.xtype='booleanfilter';
 						break;
 					case "numeric":
-						newColumnTemp.widget={
-							xtype:'numericfilter'
-						};
+						newColumnTemp.widget.xtype='numericfilter';
 						break;
 					case "date":
-					newColumnTemp.widget={
-						xtype:'datefilter'
-					};
+					newColumnTemp.widget.xtype='datefilter';
 					break;
 					case "time":
-						newColumnTemp.widget={
-							xtype:'timefilter'
-						};
+						newColumnTemp.widget.xtype='timefilter';
 						break;
 				}
+				newColumnTemp.widget.listeners={
+					change:function(_resultObj,_recordId,_compId)
+					{
+						if(!searchGrid.searchObj[_recordId])
+						{
+							searchGrid.searchObj[_recordId]={};
+						}
+						if(!searchGrid.searchObj[_recordId][_compId])
+						{
+							searchGrid.searchObj[_recordId][_compId]={};
+						}
+						searchGrid.searchObj[_recordId][_compId]=_resultObj;
+					}
+
+			}
 				searchGridColumns.push(newColumnTemp);
 			}
 
@@ -150,9 +167,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				glyph: 'xf002@FontAwesome',
 				listeners: {
 					click: function (button, e, options){
-						var gridStore=me.grid.getStore();
-						var records=gridStore.getData().items;
-						me.grid.fireEvent('applySearch', records);
+						var searchObject=me.grid.searchObj;
+						me.grid.fireEvent('applySearch', searchObject);
 					}
 				}
 			}

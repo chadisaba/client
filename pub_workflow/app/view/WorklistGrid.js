@@ -48,6 +48,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             createFilter: true,
+            filterWidth: 100,
             stateId: 'worklistSiteCol',
             stateful: true,
             minWidth: 50,
@@ -83,8 +84,6 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'datecolumn',
-            filterType: 'date',
-            createFilter: true,
             scrollable: true,
             dataIndex: 'visitDate',
             format: 'd/m/Y',
@@ -161,6 +160,11 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'CRRenderer',
+            createFilter: true,
+            filterType: 'combobox',
+            filterValues: [
+                ComboData.crStatus
+            ],
             dataIndex: 'worklistLastCrStatus',
             bind: {
                 text: '{trans.cR}'
@@ -169,6 +173,11 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'quotationRenderer',
+            filterValues: [
+                ComboData.quotationStatus
+            ],
+            createFilter: true,
+            filterType: 'combobox',
             dataIndex: 'worklistLastDictationStatus',
             bind: {
                 text: '{trans.cot}'
@@ -187,7 +196,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'commentRenderer',
             dataIndex: 'worklistVisitComment',
             bind: {
-                text: '{trans.voment}'
+                text: '{trans.comment}'
             }
         },
         {
@@ -202,11 +211,13 @@ Ext.define('MyApp.view.WorklistGrid', {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
             dataIndex: 'worklistFtDu',
-            text: '{trans.duV}'
+            text: '{trans.duP}'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'isDoneRenderer',
+            createFilter: true,
+            filterType: 'boolean',
             dataIndex: 'visitIsDone',
             text: '<i class="fa fa-lock"></i>'
         },
@@ -239,7 +250,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             xtype: 'gridcolumn',
             renderer: 'visitIsUrgentRenderer',
             dataIndex: 'visitIsUrgent',
-            text: ''
+            text: '{trans.isUrgent}'
         },
         {
             xtype: 'gridcolumn',
@@ -262,8 +273,13 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'visitPECRenderer',
+            createFilter: true,
+            filterValues: [
+                ComboData.pec
+            ],
+            filterType: 'combobox',
             dataIndex: 'visitPEC',
-            text: ''
+            text: '{trans.pec}'
         }
     ],
     listeners: {
