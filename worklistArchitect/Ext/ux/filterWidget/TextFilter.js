@@ -36,20 +36,19 @@ Ext.define('Ext.ux.filterWidget.TextFilter',
                 });
 
             me.filterText.on('change',me.onChangeHandler,me);
+             me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterText];
             me.callParent();
         },
         onChangeHandler:function(_comp)
         {
-            var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
+            comboCompare
+              var me=this;
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.filterText.getValue(),
                 filterOp:me.comboCompare.getValue()
-            };
-            me.fireEvent('change',result,recordId,compId);
+            });
 
 
         }
