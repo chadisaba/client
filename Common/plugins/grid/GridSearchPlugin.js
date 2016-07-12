@@ -10,16 +10,23 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	],
 		statics:{
 		search: function(masterGrid,searchGrid){
+			searchGridStore=searchGrid.getStore();
+			masterGridStore=masterGrid.getStore();
+			masterGridStore.each(function(_masterRec)
+			{
+				searchGridStore.each(function(_searchRec)
+				{
+					
+				});	
+			});
+		
+			
 			},
 		configure: function(masterGrid,searchGrid){
 			searchGrid.searchObj={};
 		var searchGridColumns=[];
 		// creating the searchGrid Store
-		var searchGridStore=Ext.data.Store({
-            model: KitchenSink.model.grid.Employee,
-            data: data
-        });
-        var searchGridStoreModelFields=[];
+        	var searchGridStoreModelFields=[];
 		masterGrid.columns.forEach(
 		function(_column)
 		{
