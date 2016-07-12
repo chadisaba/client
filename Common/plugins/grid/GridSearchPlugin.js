@@ -12,12 +12,29 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		search: function(masterGrid,searchGrid){
 			searchGridStore=searchGrid.getStore();
 			masterGridStore=masterGrid.getStore();
-			masterGridStore.each(function(_masterRec)
+			masterGridStore.filterBy(
+				function(_masterRec)
 			{
+				var result=false;
 				searchGridStore.each(function(_searchRec)
 				{
-					
-				});	
+					var resultFilter=true;
+					_searchRec.fields.forEach(
+						function(_field)
+						{
+							if(_searchRec.get(_field.name))
+							{
+								var searchRec=_searchRec.get(_field.name);
+								if(searchRec.filterValue==_masterRec.get(_field.name))
+									resultFilter=false;
+							}
+							
+						}
+						);
+						if(resultFilter)
+							result=true;
+				});
+				return result;
 			});
 		
 			
