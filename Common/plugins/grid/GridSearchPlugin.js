@@ -10,8 +10,9 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	],
 		statics:{
 		doLocalSearch: function(masterGrid,searchGrid){
-			searchGridStore=searchGrid.getStore();
-			masterGridStore=masterGrid.getStore();
+			var searchGridStore=searchGrid.getStore();
+			var masterGridStore=masterGrid.getStore();
+			masterGridStore.clearFilter();
 			masterGridStore.filterBy(
 				function(_masterRec)
 			{
@@ -19,25 +20,79 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				searchGridStore.each(function(_searchRec)
 				{
 					var resultFilter=true;
-					_searchRec.fields.forEach(
-						function(_field)
-						{
-							if(_searchRec.get(_field.name))
+					var data=_searchRec.getData();
+					for (var key in data) {
+						if(data[key]){
+							if (key!='id' && _masterRec.get(key))
 							{
-								var searchRec=_searchRec.get(_field.name);
-								if(searchRec.filterValue==_masterRec.get(_field.name))
-									resultFilter=false;
+								var filterValue=data[key].filterValue;
+								var filterOp=data[key].filterOp;
+								var recValue=_masterRec.get(key);
+
+								switch (filterOp)
+								{
+									case 'eq':
+										if(filterValue.toUpperCase() != recValue.toUpperCase())
+											resultFilter=false;
+										break;
+									case 'diff':
+										if(filterValue.toUpperCase()== recValue.toUpperCase())
+											resultFilter=false;
+										break;
+									case 'start':
+										if(!Ext.String.startsWith(recValue,filterValue,true))
+											resultFilter=false;
+										break;
+									case 'contains':
+										if(recValue.toUpperCase().indexOf(filterValue.toUpperCase())<0)
+											resultFilter=false;
+										break;
+									case 'end':
+										if(!Ext.String.endsWith(recValue,filterValue,true))
+											resultFilter=false;
+										break;
+
+									case 'eqDate':
+										if(filterValue() !== recValue)
+											resultFilter=false;
+										break;
+									/* put date comparaison here*/
+
+
+									case 'eqNbr':
+										if(filterValue() != recValue)
+											resultFilter=false;
+										break;
+									case 'gtNbr':
+										if(filterValue() <= recValue)
+											resultFilter=false;
+										break;
+									case 'lteNbr':
+										if(filterValue() > recValue)
+											resultFilter=false;
+										break;
+									case 'gteNbr':
+										if(filterValue() < recValue)
+											resultFilter=false;
+										break;
+									case 'ltNbr':
+										if(filterValue() >= recValue)
+											resultFilter=false;
+										break;
+									case 'diffNbr':
+										if(filterValue() == recValue)
+											resultFilter=false;
+										break;
+								}
 							}
-							
+
 						}
-						);
+					}
 						if(resultFilter)
 							result=true;
 				});
 				return result;
 			});
-		
-			
 			},
 		configure: function(masterGrid,searchGrid){
 			searchGrid.searchObj={};
@@ -108,7 +163,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						newColumnTemp.widget.xtype='timefilter';
 						break;
 				}
-			
+				newColumnTemp.widget.dataIndex=newColumnTemp.dataIndex;
 				searchGridColumns.push(newColumnTemp);
 			}
 
@@ -219,10 +274,10 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					click: function (){
 
 						var gridStore=me.grid.getStore();
-						var model=gridStore.getModel();
-						var rec=Ext.create(model);
-						gridStore.insert(0, rec);
-						me.grid.fireEvent('addSearchCriteria', rec);
+						/*var model=gridStore.getModel();
+						var rec=Ext.create(model);*/
+						gridStore.insert(0, {});
+						//me.grid.fireEvent('addSearchCriteria', rec);
 
 					}	
 				}    			

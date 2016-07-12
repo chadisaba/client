@@ -19,10 +19,12 @@ Ext.define('MyApp.view.MyPanel5', {
 
     requires: [
         'MyApp.view.MyPanel5ViewModel',
+        'MyApp.view.MyPanel5ViewController',
         'Ext.container.Container',
         'Ext.form.field.ComboBox'
     ],
 
+    controller: 'mypanel5',
     viewModel: {
         type: 'mypanel5'
     },
@@ -44,7 +46,10 @@ Ext.define('MyApp.view.MyPanel5', {
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: 'Label'
+                    fieldLabel: 'Label',
+                    listeners: {
+                        blur: 'onTextfieldBlur'
+                    }
                 }
             ]
         }

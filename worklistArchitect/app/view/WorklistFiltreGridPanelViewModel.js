@@ -18,12 +18,17 @@ Ext.define('MyApp.view.WorklistFiltreGridPanelViewModel', {
     alias: 'viewmodel.worklistfiltregridpanel',
 
     requires: [
-        'Ext.data.Store'
+        'Ext.data.Store',
+        'Ext.data.field.Field'
     ],
 
     stores: {
         WorklistGridFilterStore: {
-            model: 'MyApp.model.WorklistModel'
+            fields: [
+                {
+                    name: 'value'
+                }
+            ]
         }
     }
 

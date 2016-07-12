@@ -14,11 +14,12 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
                     {name: 'text',  type: 'string'}
                    ],
                     data : [
-                        {id: 'eq',text: translate('=')},
-                        {id: 'gt',text: translate('>')},
-                        {id: 'lte', text: translate('<=')},
-                        {id: 'gte',text: translate('>=')},
-                        {id: 'lt', text: translate('<')}
+                        {id: 'eqNbr',text: translate('=')},
+                        {id: 'gtNbr',text: translate('>')},
+                        {id: 'lteNbr', text: translate('<=')},
+                        {id: 'gteNbr',text: translate('>=')},
+                        {id: 'ltNbr', text: translate('<')},
+                        {id: 'diffNbr', text: translate('!=')}
                     ]
                 });
             me.comboCompare=Ext.create('Ext.form.field.ComboBox',
@@ -36,21 +37,19 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
                     fieldLabel: ''
                 });
             me.filterNumeric.on('change',me.onChangeHandler,me);
+            me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterNumeric];
             me.callParent();
         },
         onChangeHandler:function(_comp)
         {
             var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.filterNumeric.getValue(),
                 filterOp:me.comboCompare.getValue()
-            };
-            me.fireEvent('change',result,recordId,compId);
-
+            });
+         
 
         }
 

@@ -40,6 +40,9 @@ Ext.define('MyApp.view.WorklistFiltreGridPanel', {
             text: 'Boolean'
         }
     ],
+    viewConfig: {
+        markDirty: false
+    },
     listeners: {
         afterrender: 'onGridpanelAfterRender'
     },

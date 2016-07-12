@@ -34,18 +34,13 @@ Ext.define('Ext.ux.filterWidget.BooleanFilter',
         },
         onChangeHandler:function(_comp)
         {
-            var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-
-            result= {
+            
+              var me=this;
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.comboCompare.getValue(),
                 filterOp:'eq'
-            };
-            me.fireEvent('change',result,recordId,compId);
-
-
+            });
         }
 
     });

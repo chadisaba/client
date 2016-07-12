@@ -48,6 +48,7 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     store:filterStore,
                     matchFieldWidth:true
                 });
+            me.comboCompare.on('change',me.onChangeHandler,me);
             me.filterCombo.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterCombo];
             me.callParent();
@@ -55,15 +56,11 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
         onChangeHandler:function(_comp)
         {
             var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.filterCombo.getValue(),
                 filterOp:me.comboCompare.getValue()
-            };
-                me.fireEvent('change',result,recordId,compId);
-
+            });
 
         }
 

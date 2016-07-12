@@ -14,11 +14,11 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                     {name: 'text',  type: 'string'}
                    ],
                     data : [
-                        {id: 'eq',text: translate('=')},
-                        {id: 'gt',text: translate('>')},
-                        {id: 'lte', text: translate('<=')},
-                        {id: 'gte',text: translate('>=')},
-                        {id: 'lt', text: translate('<')}
+                        {id: 'eqDate',text: translate('=')},
+                        {id: 'gtDate',text: translate('>')},
+                        {id: 'lteDate', text: translate('<=')},
+                        {id: 'gteDate',text: translate('>=')},
+                        {id: 'ltDate', text: translate('<')}
                     ]
                 });
             me.comboCompare=Ext.create('Ext.form.field.ComboBox',

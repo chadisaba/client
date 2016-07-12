@@ -44,6 +44,9 @@
                 "type": "object"
             },
             "codeClass": null,
+            "userConfig": {
+                "markDirty": false
+            },
             "name": "MyTable4",
             "designerId": "c3c32407-0dcf-4b23-bec0-8d9df5f9aa8b"
         },

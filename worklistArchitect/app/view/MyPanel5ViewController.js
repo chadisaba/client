@@ -15,5 +15,10 @@
 
 Ext.define('MyApp.view.MyPanel5ViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.mypanel5'
+    alias: 'controller.mypanel5',
+
+    onTextfieldBlur: function(component, event, eOpts) {
+
+    }
+
 });

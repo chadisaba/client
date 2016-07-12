@@ -14,11 +14,11 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                     {name: 'text',  type: 'string'}
                    ],
                     data : [
-                        {id: 'eq',text: translate('=')},
-                        {id: 'gt',text: translate('>')},
-                        {id: 'lte', text: translate('<=')},
-                        {id: 'gte',text: translate('>=')},
-                        {id: 'lt', text: translate('<')}
+                        {id: 'eqDate',text: translate('=')},
+                        {id: 'gtDate',text: translate('>')},
+                        {id: 'lteDate', text: translate('<=')},
+                        {id: 'gteDate',text: translate('>=')},
+                        {id: 'ltDate', text: translate('<')}
                     ]
                 });
             me.comboCompare=Ext.create('Ext.form.field.ComboBox',
@@ -33,22 +33,19 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                     fieldLabel: ''
                 });
             me.filterDate.on('change',me.onChangeHandler,me);
+             me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterDate];
             me.callParent();
         },
         onChangeHandler:function(_comp)
         {
             var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.filterDate.getValue(),
                 filterOp:me.comboCompare.getValue()
-            };
-            me.fireEvent('change',result,recordId,compId);
-
-
+            });
+        
         }
 
     });

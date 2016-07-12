@@ -19,11 +19,26 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "WorklistModel",
+                "model": null,
                 "name": "WorklistGridFilterStore"
             },
             "name": "MyStore9",
-            "designerId": "3e3cabe6-ac1c-408d-88c0-73adff2f8faa"
+            "designerId": "3e3cabe6-ac1c-408d-88c0-73adff2f8faa",
+            "cn": [
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "value"
+                    },
+                    "name": "MyField17",
+                    "designerId": "b6c9755a-d6a5-45e1-aeed-5881f21c037b"
+                }
+            ]
         }
     ]
 }

@@ -14,11 +14,12 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
                     {name: 'text',  type: 'string'}
                    ],
                     data : [
-                        {id: 'eq',text: translate('=')},
-                        {id: 'gt',text: translate('>')},
-                        {id: 'lte', text: translate('<=')},
-                        {id: 'gte',text: translate('>=')},
-                        {id: 'lt', text: translate('<')}
+                        {id: 'eqNbr',text: translate('=')},
+                        {id: 'gtNbr',text: translate('>')},
+                        {id: 'lteNbr', text: translate('<=')},
+                        {id: 'gteNbr',text: translate('>=')},
+                        {id: 'ltNbr', text: translate('<')},
+                        {id: 'diffNbr', text: translate('!=')}
                     ]
                 });
             me.comboCompare=Ext.create('Ext.form.field.ComboBox',

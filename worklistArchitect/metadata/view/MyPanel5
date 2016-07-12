@@ -63,7 +63,24 @@
                         "fieldLabel": "Label"
                     },
                     "name": "MyTextField",
-                    "designerId": "733997ff-20f6-442c-88d9-174352adf157"
+                    "designerId": "733997ff-20f6-442c-88d9-174352adf157",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldBlur",
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onTextfieldBlur",
+                            "designerId": "fc8a2f95-6c29-4e82-b535-12f8325eeb0f"
+                        }
+                    ]
                 }
             ]
         }

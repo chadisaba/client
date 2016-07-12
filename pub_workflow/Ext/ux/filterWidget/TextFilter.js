@@ -35,21 +35,25 @@ Ext.define('Ext.ux.filterWidget.TextFilter',
                     fieldLabel: ''
                 });
 
-            me.filterText.on('change',me.onChangeHandler,me);
+            me.filterText.on('blur',me.onChangeHandler,me);
+             me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterText];
             me.callParent();
         },
         onChangeHandler:function(_comp)
         {
-            var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
-                filterValue:me.filterText.getValue(),
-                filterOp:me.comboCompare.getValue()
-            };
-            me.fireEvent('change',result,recordId,compId);
+              var me=this;
+            var rec=me.getWidgetRecord();
+            if(!me.filterText.getValue())
+                rec.set(me.dataIndex,null);
+            else{
+                rec.set(me.dataIndex, {
+                    filterValue:me.filterText.getValue(),
+                    filterOp:me.comboCompare.getValue()
+                });
+
+            }
+
 
 
         }
