@@ -33,22 +33,19 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                     fieldLabel: ''
                 });
             me.filterDate.on('change',me.onChangeHandler,me);
+             me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterDate];
             me.callParent();
         },
         onChangeHandler:function(_comp)
         {
             var me=this;
-            var result;
-            var recordId=me.getWidgetRecord().get('id');
-            var compId=_comp.id;
-            result= {
+            var rec=me.getWidgetRecord();
+            rec.set(me.dataIndex, {
                 filterValue:me.filterDate.getValue(),
                 filterOp:me.comboCompare.getValue()
-            };
-            me.fireEvent('change',result,recordId,compId);
-
-
+            });
+        
         }
 
     });
