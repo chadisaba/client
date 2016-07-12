@@ -9,6 +9,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		'Ext.ux.filterWidget.NumericFilter',
 	],
 		statics:{
+		search: function(masterGrid,searchGrid){
+			},
 		configure: function(masterGrid,searchGrid){
 			searchGrid.searchObj={};
 		var searchGridColumns=[];
