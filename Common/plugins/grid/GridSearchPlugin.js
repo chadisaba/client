@@ -12,6 +12,23 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		configure: function(masterGrid,searchGrid){
 			searchGrid.searchObj={};
 		var searchGridColumns=[];
+		// creating the searchGrid Store
+		var searchGridStore=Ext.data.Store({
+            model: KitchenSink.model.grid.Employee,
+            data: data
+        });
+        var searchGridStoreModelFields=[];
+		masterGrid.columns.forEach(
+		function(_column)
+		{
+			if(_column.dataIndex)
+				{
+				searchGridStoreModelFields.push({name:_column.dataIndex});	
+				}
+		});
+		var searchGridStore=new Ext.data.Store({
+              fields:searchGridStoreModelFields
+        	});
 		var newColumnTemp;
 			newColumnTemp={
 				xtype: 'rownumberer'
@@ -65,21 +82,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						newColumnTemp.widget.xtype='timefilter';
 						break;
 				}
-				newColumnTemp.widget.listeners={
-					change:function(_resultObj,_recordId,_compId)
-					{
-						if(!searchGrid.searchObj[_recordId])
-						{
-							searchGrid.searchObj[_recordId]={};
-						}
-						if(!searchGrid.searchObj[_recordId][_compId])
-						{
-							searchGrid.searchObj[_recordId][_compId]={};
-						}
-						searchGrid.searchObj[_recordId][_compId]=_resultObj;
-					}
-
-			}
+			
 				searchGridColumns.push(newColumnTemp);
 			}
 
@@ -87,7 +90,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 
 			
 		});
-		searchGrid.reconfigure(null,searchGridColumns);
+		searchGrid.reconfigure(searchGridStore,searchGridColumns);
 				
 		}
 	},
