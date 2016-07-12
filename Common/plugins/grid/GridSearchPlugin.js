@@ -9,7 +9,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		'Ext.ux.filterWidget.NumericFilter',
 	],
 		statics:{
-		search: function(masterGrid,searchGrid){
+		doLocalSearch: function(masterGrid,searchGrid){
 			searchGridStore=searchGrid.getStore();
 			masterGridStore=masterGrid.getStore();
 			masterGridStore.filterBy(
