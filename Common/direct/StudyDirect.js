@@ -66,11 +66,19 @@ var StudyDirect={
                         store.removeAll();
                         store.loadData(_resultData);
 
-                        store.filter({
-                            property: 'studyName',
-                            anyMatch: true,
-                            value   : _searchValue
-                        });
+                        store.filterBy(
+                            function(_rec)
+                        {
+                            var resultFilter=false;
+                            if(_rec.get('studyCode').toUpperCase().indexOf(_searchValue.toUpperCase())<0)
+                                resultFilter=true;
+                            if(_rec.get('studyName').toUpperCase().indexOf(_searchValue.toUpperCase())<0)
+                                resultFilter=true;
+
+                            return resultFilter;
+                        }
+
+                );
                         _field.expand();
 
 
