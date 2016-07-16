@@ -20,7 +20,6 @@ Ext.define('MyApp.view.WorklistPanel', {
     requires: [
         'MyApp.view.WorklistPanelViewModel',
         'MyApp.view.WorklistPanelViewController',
-        'MyApp.view.SitesSelectionGrid',
         'MyApp.view.WorklistGrid',
         'MyApp.view.WorklistFiltreGridPanel',
         'Ext.grid.Panel'
@@ -35,17 +34,6 @@ Ext.define('MyApp.view.WorklistPanel', {
 
     items: [
         {
-            xtype: 'sitesselectiongrid',
-            width: 200,
-            animCollapse: false,
-            collapsed: true,
-            collapsible: true,
-            titleCollapse: false,
-            collapseMode: 'header',
-            region: 'west',
-            split: true
-        },
-        {
             xtype: 'worklistgrid',
             scrollable: true,
             region: 'center'
@@ -53,11 +41,12 @@ Ext.define('MyApp.view.WorklistPanel', {
         {
             xtype: 'worklistfiltregridpanel',
             itemId: 'worklistFilterGridItemId',
-            animCollapse: true,
-            collapsed: false,
+            collapsed: true,
             collapsible: true,
+            hideCollapseTool: false,
             region: 'north',
             split: true,
+            splitterResize: false,
             listeners: {
                 applySearch: 'onGridpanelApplySearch'
             }

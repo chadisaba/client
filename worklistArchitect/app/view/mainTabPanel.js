@@ -14,33 +14,27 @@
  */
 
 Ext.define('MyApp.view.mainTabPanel', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.panel.Panel',
     alias: 'widget.maintabpanel',
 
     requires: [
         'MyApp.view.mainTabPanelViewModel',
         'MyApp.view.WorklistPanel',
-        'Ext.panel.Panel',
-        'Ext.tab.Tab'
+        'Ext.panel.Panel'
     ],
 
     viewModel: {
         type: 'maintabpanel'
     },
-    activeTab: 0,
+    layout: 'border',
+    header: false,
 
     items: [
         {
             xtype: 'worklistpanel',
-            title: 'Salle attente'
-        },
-        {
-            xtype: 'panel',
-            title: 'Accueil R.D.V & hospitalisés'
-        },
-        {
-            xtype: 'panel',
-            title: 'Tableau de bord'
+            header: false,
+            title: 'Salle attente',
+            region: 'center'
         }
     ]
 

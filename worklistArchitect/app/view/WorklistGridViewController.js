@@ -29,15 +29,15 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
+    visitTimeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+    },
+
     infoPatientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
 
     patientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-    },
-
-    dateRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },
 

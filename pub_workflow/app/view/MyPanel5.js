@@ -21,7 +21,8 @@ Ext.define('MyApp.view.MyPanel5', {
         'MyApp.view.MyPanel5ViewModel',
         'MyApp.view.MyPanel5ViewController',
         'Ext.container.Container',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.XTemplate'
     ],
 
     controller: 'mypanel5',
@@ -41,8 +42,10 @@ Ext.define('MyApp.view.MyPanel5', {
                 {
                     xtype: 'combobox',
                     height: 15,
-                    style: 'font-seize:10px;"',
-                    fieldLabel: 'Label'
+                    fieldLabel: 'Label',
+                    displayTpl: [
+                        'fsdf'
+                    ]
                 },
                 {
                     xtype: 'textfield',

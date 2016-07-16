@@ -28,28 +28,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "animCollapse": false,
-                "collapsed": true,
-                "collapsible": true,
-                "itemId": null,
-                "layout|collapseMode": "header",
-                "layout|region": "west",
-                "layout|split": true,
-                "titleCollapse": false,
-                "width": 200
-            },
-            "name": "sitesselectiongrid",
-            "designerId": "20800b4f-9366-4f49-899f-a16f1ceb1b22",
-            "masterInstanceId": "21db76f7-aea9-404e-8f1a-3084d23c43e0"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "layout|region": "center",
                 "maxWidth": null,
                 "minWidth": null,
@@ -68,12 +46,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "animCollapse": true,
-                "collapsed": false,
+                "animCollapse": null,
+                "collapsed": true,
                 "collapsible": true,
+                "hideCollapseTool": false,
                 "itemId": "worklistFilterGridItemId",
                 "layout|region": "north",
-                "layout|split": true
+                "layout|split": true,
+                "layout|splitterResize": false
             },
             "name": "worklistfiltregridpanel",
             "designerId": "f1bc1fcf-e615-4ced-bcde-03d3dd508d01",

@@ -52,7 +52,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             stateId: 'worklistSiteCol',
             stateful: true,
             minWidth: 50,
-            width: 50,
+            width: 100,
             dataIndex: 'siteCode',
             bind: {
                 text: '{trans.site}'
@@ -63,6 +63,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'socialCardRenderer',
             createFilter: true,
             filterType: 'boolean',
+            width: 50,
             dataIndex: 'visitIsBySocialCard',
             bind: {
                 text: '{trans.vitale}'
@@ -71,22 +72,25 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'infoVisitRenderer',
+            width: 50,
             dataIndex: 'worklistVisitInfo'
         },
         {
             xtype: 'gridcolumn',
+            renderer: 'visitTimeRenderer',
             filterType: 'hour',
             createFilter: true,
             dataIndex: 'visitTime',
+            width: 60,
             bind: {
                 text: '{trans.time}'
             }
         },
         {
             xtype: 'datecolumn',
+            hidden: true,
             scrollable: true,
             dataIndex: 'visitDate',
-            format: 'd/m/Y',
             bind: {
                 text: '{trans.date}'
             }
@@ -94,6 +98,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'infoPatientRenderer',
+            width: 50,
             dataIndex: 'worklistPatientInfo',
             bind: {
                 text: '{trans.patInfo}'
@@ -110,8 +115,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             }
         },
         {
-            xtype: 'gridcolumn',
-            renderer: 'dateRenderer',
+            xtype: 'datecolumn',
             dataIndex: 'patientBirthday',
             bind: {
                 text: '{trans.birthday}'
@@ -122,12 +126,14 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'studiesRenderer',
             createFilter: true,
             dataIndex: 'worklistStudies',
+            flex: 1,
             bind: {
                 text: '{trans.studies}'
             }
         },
         {
             xtype: 'gridcolumn',
+            width: 60,
             dataIndex: 'worklistDoctor',
             bind: {
                 text: '{trans.med}'
@@ -218,6 +224,9 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'isDoneRenderer',
             createFilter: true,
             filterType: 'boolean',
+            initFilterValue: {
+                value: 'no'
+            },
             dataIndex: 'visitIsDone',
             text: '<i class="fa fa-lock"></i>'
         },

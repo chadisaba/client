@@ -45,12 +45,28 @@
                     "userConfig": {
                         "fieldLabel": "Label",
                         "height": 15,
-                        "style": [
-                            "\"font-seize:10px;\"\""
-                        ]
+                        "style": null
                     },
                     "name": "MyComboBox5",
-                    "designerId": "89a69eac-7fc5-4e3e-8b28-8093bfd3ea93"
+                    "designerId": "89a69eac-7fc5-4e3e-8b28-8093bfd3ea93",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "fsdf"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "f6fb51ef-ea28-4b6b-931e-98f7cc144a0e"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",

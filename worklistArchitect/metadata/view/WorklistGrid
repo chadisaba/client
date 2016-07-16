@@ -50,7 +50,7 @@
                 "text": [
                     "{trans.site}"
                 ],
-                "width": 50
+                "width": 100
             },
             "name": "MysiteNameCol",
             "configAlternates": {
@@ -91,7 +91,8 @@
                 "minWidth": null,
                 "text": [
                     "{trans.vitale}"
-                ]
+                ],
+                "width": 50
             },
             "name": "My\tvisitIsBySocialCardCol",
             "configAlternates": {
@@ -150,7 +151,8 @@
                 "dataIndex": "worklistVisitInfo",
                 "filterType": null,
                 "minWidth": null,
-                "text": null
+                "text": null,
+                "width": 50
             },
             "name": "My\tworklistVisitInfoCol",
             "configAlternates": {
@@ -213,7 +215,8 @@
                 "minWidth": null,
                 "text": [
                     "{trans.time}"
-                ]
+                ],
+                "width": 60
             },
             "name": "My\tworklistVisitInfoCol1",
             "configAlternates": {
@@ -232,6 +235,32 @@
                     "name": "createFilter",
                     "type": "string"
                 }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "visitTimeRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "name": "renderer",
+                    "designerId": "34de43d6-1aa1-4663-8f8d-794d9956e08a"
+                }
             ]
         },
         {
@@ -245,7 +274,8 @@
                 "createFilter": null,
                 "dataIndex": "visitDate",
                 "filterType": null,
-                "format": "d/m/Y",
+                "format": null,
+                "hidden": true,
                 "minWidth": null,
                 "scrollable": true,
                 "text": [
@@ -286,7 +316,8 @@
                 "minWidth": null,
                 "text": [
                     "{trans.patInfo}"
-                ]
+                ],
+                "width": 50
             },
             "name": "MyworklistPatientInfoCol",
             "configAlternates": {
@@ -389,7 +420,7 @@
             ]
         },
         {
-            "type": "Ext.grid.column.Column",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -402,37 +433,11 @@
                     "{trans.birthday}"
                 ]
             },
-            "name": "MypatientBirthDayCol",
+            "name": "MyDateColumn1",
             "configAlternates": {
                 "text": "binding"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "dateRenderer",
-                        "fn": "renderer",
-                        "implHandler": null
-                    },
-                    "name": "renderer",
-                    "designerId": "8cf3aad1-7515-4357-be64-405ef21605a8"
-                }
-            ]
+            "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -444,6 +449,7 @@
             "userConfig": {
                 "createFilter": true,
                 "dataIndex": "worklistStudies",
+                "flex": 1,
                 "minWidth": null,
                 "text": [
                     "{trans.studies}"
@@ -508,7 +514,8 @@
                 "minWidth": null,
                 "text": [
                     "{trans.med}"
-                ]
+                ],
+                "width": 60
             },
             "name": "MyworklistMedRefCol",
             "configAlternates": {
@@ -994,12 +1001,18 @@
                 "createFilter": true,
                 "dataIndex": "visitIsDone",
                 "filterType": "boolean",
+                "initFilterValue": [
+                    "{",
+                    "value:'no'",
+                    "}"
+                ],
                 "minWidth": null,
                 "text": "<i class=\"fa fa-lock\"></i>"
             },
             "name": "MyvisitIsDoneCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "initFilterValue": "object"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
             "customConfigs": [
@@ -1011,6 +1024,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filterType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "initFilterValue",
                     "type": "string"
                 }
             ],

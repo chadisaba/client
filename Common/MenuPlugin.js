@@ -26,44 +26,20 @@ Ext.define('menu.MenuPlugin', {
     },
 
     viewport:null,
-    init:function (viewport) {
-        this.viewport = viewport;
-        var me = this;
-        
-        this.items= [
-        {
-            xtype: 'toolbar',
-            cls: 'sencha-logo',
-            height: 64,
-            itemId: 'headerBar',
-            items: [
-                {
-                    xtype: 'component',
-                    itemId: 'amandaLogo',
+    collapse:function(){
 
-                    html: '<div class="main-logo"><img src="../Common/resources/images/logo-small.png" width="62"  height="48">Smart Med</div>',
-                    width: 250
-                },
-                {
-                    margin: '0 0 0 0',
-                    ui: 'header',
-
-                    iconCls:'x-fa fa-navicon',
-                    id: 'main-navigation-btn',
-                    handler:function () {
-
-
-            navigationList = this.up('viewport').down('#navigationTreeList'),
-			westPanel = this.up('viewport').down('#westPanel'),
-			mainContainerWrap = this.up('viewport').down('#mainContainerWrap'),
-            wrapContainer = this.up('viewport').down('#mainContainerWrap'),
+        var me=this;
+        var navigationList = me.viewport.down('#navigationTreeList'),
+            westPanel = me.viewport.down('#westPanel'),
+            mainContainerWrap = me.viewport.down('#mainContainerWrap'),
+            wrapContainer = me.viewport.down('#mainContainerWrap'),
             collapsing = !navigationList.getMicro(),
-            new_width = collapsing ? 64 : 250;
-westPanel.setWidth(new_width);
+            new_width = collapsing ? 60 : 250;
+        westPanel.setWidth(new_width);
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
             Ext.suspendLayouts();
 
-            this.up('viewport').down('#amandaLogo').setWidth(new_width);
+            me.viewport.down('#amandaLogo').setWidth(new_width);
 
             navigationList.setWidth(new_width);
 
@@ -84,7 +60,7 @@ westPanel.setWidth(new_width);
             }
 
             // Start this layout first since it does not require a layout
-            this.up('viewport').down('#amandaLogo').animate({dynamic: true, to: {width: new_width}});
+            me.viewport.down('#amandaLogo').animate({dynamic: true, to: {width: new_width}});
 
             // Directly adjust the width config and then run the main wrap container layout
             // as the root layout (it and its chidren). This will cause the adjusted size to
@@ -106,7 +82,44 @@ westPanel.setWidth(new_width);
                 });
             }
         }
-    }
+    },
+
+    init:function (viewport) {
+        this.viewport = viewport;
+        var me = this;
+        viewport.on('afterrender',function(){
+            var navigationList = viewport.down('#navigationTreeList');
+            /*navigationList.setMicro(true);
+            me.collapse();
+            navigationList.setMicro(false);*/
+        });
+
+        
+        this.items= [
+        {
+            xtype: 'toolbar',
+            cls: 'sencha-logo',
+            height: 51,
+            itemId: 'headerBar',
+            margin: '0',
+            items: [
+                {
+                    xtype: 'component',
+                    itemId: 'amandaLogo',
+                    margin: '0',
+                    html: '<div class="main-logo"><img src="../Common/resources/images/logo-small.png" width="62"  height="40">Smart Med</div>',
+                    width: 250
+                },
+                {
+                    margin: '0 0 0 0',
+                    ui: 'header',
+
+                    iconCls:'x-fa fa-navicon',
+                    id: 'main-navigation-btn',
+                    handler:function () {
+
+                        me.collapse();
+                    }
                 },
 
 
@@ -373,7 +386,7 @@ westPanel.setWidth(new_width);
         this.tb = viewport.add({
             xtype:'panel',
             region:"north",
-            height:64,
+            height:51,
             border:0,
             weight:10000,
             items:this.items

@@ -23,8 +23,21 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     _resultArray[i].siteCode = _resultArray[i]['Site.siteCode'];
                     _resultArray[i].patientLName = _resultArray[i]['Patient.patientLName'];
                     _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
+                    _resultArray[i].patientBirthday = _resultArray[i]['Patient.patientBirthday'];
+                    _resultArray[i].patientSearch = _resultArray[i]['Patient.patientSearch'];
                     _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
                     _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                    _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+
+
+                    /*_resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
+                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];*/
+
                     if(_today) // just when we display the current day on our worklist
                     {
                         worklistUpdate= _resultArray[i]['updatedAt'];
@@ -609,7 +622,16 @@ var tooltip;
         var result=Utility.renderer.textHtmlTagRenderer('div',color,value);
 
         return result;
+    },
+    visitTimeRenderer: function(value) {
+
+        if(value)
+        {
+            var arr=value.split(":");
+            return arr[0]+':'+arr[1];
+        }
     }
+
 
 
 

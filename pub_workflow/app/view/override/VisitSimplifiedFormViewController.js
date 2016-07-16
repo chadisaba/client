@@ -36,6 +36,8 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 for (var i = 0; i < doctorsDataArray.length; i++) {
                     doctorsDataArray[i].userLName=doctorsDataArray[i]['User.userLName'];
                     doctorsDataArray[i].userFName=doctorsDataArray[i]['User.userFName'];
+                    doctorsDataArray[i].userInitiales=doctorsDataArray[i]['User.userInitiales'];
+
                 }
                 var doctorStore = viewModel.getStore('DoctorComboStore');
                 doctorStore.loadData(doctorsDataArray);
@@ -102,7 +104,9 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 _item.visitId=rec.get('visitId');
             });
         var studiesArray=studyVisitCtr.getStudiesArray();
-        VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray)
+
+        var worklistDoctor=form.down("#doctorComboBoxItemId").getSelection().get('userInitiales');
+        VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor)
             .then(function(_result)
             {
                 if(button)

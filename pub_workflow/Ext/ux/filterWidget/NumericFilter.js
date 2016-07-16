@@ -29,6 +29,7 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
                     valueField:'id',
                     displayField:'text',
                     value:'eq',
+                    forceSelection:true,
                     store:comboCompareStore
                 });
 
@@ -40,6 +41,17 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
             me.comboCompare.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterNumeric];
             me.callParent();
+        },
+        setValue:function(_obj)
+        {
+            var me=this;
+            if(_obj.op)
+                me.comboCompare.setValue(_obj.op);
+            else
+                me.comboCompare.setValue('eq');
+            if(_obj.value)
+                me.filterNumeric.setValue(_obj.value);
+            else me.filterNumeric.setValue(null);
         },
         onChangeHandler:function(_comp)
         {

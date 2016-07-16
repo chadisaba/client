@@ -30,6 +30,9 @@ Ext.define('MyApp.model.DoctorComboModel', {
         },
         {
             name: 'userLName'
+        },
+        {
+            name: 'userInitiales'
         }
     ]
 });

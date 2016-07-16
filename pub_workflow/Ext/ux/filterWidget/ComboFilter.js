@@ -29,6 +29,7 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     displayField:'text',
                     value:'eq',
                     queryMode: 'local',
+                    forceSelection:true,
                     store:comboCompareStore
                 });
 
@@ -46,12 +47,24 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     height:15,
                     queryMode: 'local',
                     store:filterStore,
-                    matchFieldWidth:true
+                    matchFieldWidth:true,
+                    forceSelection:true
                 });
             me.comboCompare.on('change',me.onChangeHandler,me);
             me.filterCombo.on('change',me.onChangeHandler,me);
             me.items=[me.comboCompare,me.filterCombo];
             me.callParent();
+        },
+        setValue:function(_obj)
+        {
+            var me=this;
+            if(_obj.op)
+                me.comboCompare.setValue(_obj.op);
+            else
+                me.comboCompare.setValue('eq');
+            if(_obj.value)
+                me.filterCombo.setValue(_obj.value);
+            else me.filterCombo.setValue("");
         },
         onChangeHandler:function(_comp)
         {

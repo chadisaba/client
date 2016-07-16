@@ -12,7 +12,11 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		doLocalSearch: function(masterGrid,searchGrid){
 			var searchGridStore=searchGrid.getStore();
 			var masterGridStore=masterGrid.getStore();
+
 			masterGridStore.clearFilter();
+
+			if(searchGridStore.getCount()==0)
+				return ;
 			masterGridStore.filterBy(
 				function(_masterRec)
 			{
@@ -23,7 +27,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					var data=_searchRec.getData();
 					for (var key in data) {
 						if(data[key]){
-							if (key!='id' && _masterRec.get(key))
+							if (key!='id' && (_masterRec.get(key)===false|| _masterRec.get(key)==0 || _masterRec.get(key)))
 							{
 								var filterValue=data[key].filterValue;
 								var filterOp=data[key].filterOp;
@@ -33,6 +37,13 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 								{
 									case 'eq':
 										if(filterValue.toUpperCase() != recValue.toUpperCase())
+											resultFilter=false;
+										break;
+									case 'eqBool':
+										var all=filterValue=="all";
+										if(!all && filterValue=="yes" && recValue===false)
+											resultFilter=false;
+										if(!all && filterValue=="no" && recValue===true)
 											resultFilter=false;
 										break;
 									case 'diff':
@@ -122,6 +133,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			{
 				newColumnTemp={};
 				newColumnTemp.dataIndex=_column.dataIndex;
+				newColumnTemp.initFilterValue=_column.initFilterValue||null;
 				newColumnTemp.width=_column.filterWidth||_column.width;
 				if(_column.filterFlex)
 					newColumnTemp.flex=_column.filterFlex;
@@ -163,6 +175,21 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						newColumnTemp.widget.xtype='timefilter';
 						break;
 				}
+				newColumnTemp.onWidgetAttach= function (column, container, record) {
+					var widgetComp = container;
+					var initValue={};
+					if(column.initFilterValue){
+						initValue=_column.initFilterValue;
+						widgetComp.setValue(initValue);
+					}
+
+					/*if(record.get(_column.dataIndex))
+						initValue.value=record.get(_column.dataIndex);*/
+
+					;
+
+
+				};
 				newColumnTemp.widget.dataIndex=newColumnTemp.dataIndex;
 				searchGridColumns.push(newColumnTemp);
 			}
@@ -180,7 +207,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	},
 	pluginId: 'gridsearch',
 	init:function (grid) {
-		var plugin = this;
+
 		this.grid = grid;
 
 		var toolbars = grid.query('#searchToolbar');
@@ -274,9 +301,9 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					click: function (){
 
 						var gridStore=me.grid.getStore();
-						/*var model=gridStore.getModel();
-						var rec=Ext.create(model);*/
-						gridStore.insert(0, {});
+						//var model=gridStore.getModel();
+						//var rec=Ext.create(model);
+						gridStore.insert(gridStore.getCount(), {});
 						//me.grid.fireEvent('addSearchCriteria', rec);
 
 					}	

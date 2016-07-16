@@ -70,9 +70,9 @@ var StudyDirect={
                             function(_rec)
                         {
                             var resultFilter=false;
-                            if(_rec.get('studyCode').toUpperCase().indexOf(_searchValue.toUpperCase())<0)
+                            if(_rec.get('studyCode').toUpperCase().indexOf(_searchValue.toUpperCase())>=0)
                                 resultFilter=true;
-                            if(_rec.get('studyName').toUpperCase().indexOf(_searchValue.toUpperCase())<0)
+                            if(_rec.get('studyName').toUpperCase().indexOf(_searchValue.toUpperCase())>=0)
                                 resultFilter=true;
 
                             return resultFilter;
