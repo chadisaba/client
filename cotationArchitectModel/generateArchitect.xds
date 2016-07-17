@@ -1,0 +1,55 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:8888/clientch/cotation_pub/",
+        "exportPath": "/Applications/MAMP/htdocs/clientch/cotation_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "04066d1c-7822-46e5-825a-1d1d52b03901",
+            "754eb02b-d1c8-48ad-8e88-b50fda0247d2",
+            "857b6e6f-e979-497f-a731-fa35215185f4",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "d0053432-ba71-4633-92df-e6edfabc950a"
+        ],
+        "resource": [
+            "614b1371-c3d6-4987-8837-deb62ffcfdf8"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

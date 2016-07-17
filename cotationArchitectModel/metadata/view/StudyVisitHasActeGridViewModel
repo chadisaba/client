@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyvisithasactegrid",
+        "designer|userClassName": "StudyVisitHasActeGridViewModel"
+    },
+    "designerId": "857b6e6f-e979-497f-a731-fa35215185f4",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyVisitHasActeModel",
+                "name": "StudyVisitHasActeStore"
+            },
+            "name": "StudyVisitHasActeStore",
+            "designerId": "75c60dcd-b234-4fc0-85e7-3165d0ce5864"
+        }
+        
+    ]
+}

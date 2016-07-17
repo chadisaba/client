@@ -1,0 +1,21 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+       
+        "models": [
+           "StudyVisitHasActeModel"
+        ],
+        "name": "MyApp",
+        
+        "views": [
+           "StudyVisitHasActeGrid"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}
