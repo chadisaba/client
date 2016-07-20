@@ -76,8 +76,9 @@ Ext.define('MyApp.store.NavigationTree', {
             }, {
                 text: 'Cotations ',
                 iconCls: 'x-fa fa-users',
-                viewType: 'studyvisithasactegrid',
-                routeId: 'studyvisithasactegrid',
+                viewType: 'mypanelcotation',
+                routeId: 'mypanelcotation',
+                href:'../cotation_pub/#mypanelcotation',
                 leaf: true
             },
             {
