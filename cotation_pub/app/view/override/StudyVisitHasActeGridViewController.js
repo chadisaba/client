@@ -8,9 +8,9 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
 
 
-    initGrid: function (_filters, _readOnlyGrid,_visitId) {
+    initGrid: function (_filters, _readOnlyGrid,_visitId) {// fait un publish et test, ok // n'oubl
         var me = this;
-        _visiteId="dd2826d3-7791-48cc-a116-335c41b9723c";
+        var _visitId="dd2826d3-7791-48cc-a116-335c41b9723c";
         var params;
         
             me.filters = _filters || [];
@@ -18,6 +18,8 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
             me.filters.push({name: "visitId", value: _visitId});
         }
+        else
+            throw Error('_visitId can\'t be undefined');
 
             var view = this.getView();
             if (!_readOnlyGrid)
@@ -48,8 +50,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                         //  "studyActeId"
                        //    mainTable.filters=filterArray;
                           var joinTablesArray=[{tableName: 'STUDY_ACTE'},{tableName:'STUDY_VISIT',filters:[{
-                              name:'visitId',value:_visitId
-                          }]}];
+                              name:'visitId',value:_visitId}]}];
 
                      //     joinTablesArray.push({tableName: 'STUDY_ACTE'});
                       //    joinTablesArray.filters=filterArray;
@@ -58,9 +59,39 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                               .then(
                                   function (_data) {
                                       for (var i = 0; i < _data.length; i++) {
-                                              _data[i].userFName = 1;
+                                           //   _data[i].userFName = 1;
                                           //    _result[i].userFName = _result[i]['User.userFName'];
+                                     //     studyActeCode
+                                          _data[i].studyVisitHasActeCode=_data[i]['StudyActes.studyActeCode'];
+                                          _data[i].studyVisitHasActeModificators=_data[i]['StudyActes.studyActeModificators'];
+                                          _data[i].studyVisitHasActeAcceptedModificators=_data[i]['StudyActes.studyActeAcceptedModificators'];
+                                          _data[i].studyVisitHasActeQuantity=_data[i]['StudyActes.studyActeQuantity'];
+                                          _data[i].studyVisitHasActeAmount=_data[i]['StudyActes.studyActeAmount'];
+                                          _data[i].studyVisitHasActeAmountDepassement=_data[i]['StudyActes.studyActeAmountDepassement'];
+                                          _data[i].studyVisitHasActeAssociationNonPrevu=_data[i]['StudyActes.studyActeAssociationNonPrevu'];
+                                          _data[i].studyVisitHasActeType=_data[i]['StudyActes.studyActeType'];
+                                          _data[i].studyVisitHasActeDepense=_data[i]['StudyActes.studyActeDepense'];
+                                          _data[i].studyVisitHasActeExoParticuliere=0;
+                                          _data[i].studyVisitHasActeSoumisEntentePrealable=_data[i]['StudyActes.studyActeEntentePrealable'];
+                                          _data[i].studyVisitHasActeRefundingCode=_data[i]['StudyActes.studyActeRefundingCode'];
+                                          _data[i].studyVisitHasActeCoefficient=_data[i]['StudyActes.studyActeCoefficient'];
+                                          _data[i].studyVisitHasActeIsHoliday=0;
+                                          _data[i].studyVisitHasActeIsEmergency=0;
+                                          _data[i].studyVisitHasActeIsNight=0;
+                                          _data[i].studyVisitHasActeSuppCharge=0;
+                                          _data[i].studyVisitHasActeIsDomicile=0;
+                                          _data[i].studyVisitHasActeIsMultiple=0;
+                                          _data[i].studyVisitHasActeArchivingActeAddedAuto=0;
+                                          _data[i].studyVisitHasActeDenombrement=0;
+                                          _data[i].studyVisitHasActeCodeAffine="";
+                                          _data[i].studyVisitHasActeCodeAccEntentePrealable="";
+                                       //   _data[i].studyVisitHasActeDateEntentePrealable=date;
 
+                                       //       "studyActeAdditionalAmount" numeric DEFAULT 0.00,
+                                          /*
+                                          _result[i].studyVisitHasActeExceptionalRefunding" boolean DEFAULT false,
+
+                                          */
                                       }
 
                                       console.log(_data);
@@ -93,7 +124,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
     },
     
     onStudyVisitHasActeGridIdAfterRender: function(component, eOpts) {
-        this.initGrid (this.filters, false,"");
+      //  this.initGrid (this.filters, false,"");
     },
 
     onStudyVisitHasActeGridIdInEdit: function() {
@@ -185,14 +216,11 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
             var promise = new Promise(
                 function (resolve, reject) {
                     var mainTableObject = {};
-                    mainTableObject.tableName = 'STUDY_VISIT_HAS_ACTE';
+                    mainTableObject.tableName = 'STUDY_VISIT';
                     mainTableObject.filters = filters;
                     var joinTablesArray = [];
 
-                 //   joinTablesArray.push({tableName: 'DEVICE'}, {
-                  //      tableName: 'STUDY_VISIT'
-
-                   // });
+                    joinTablesArray.push({tableName: 'STUDY_VISIT_HAS_ACTE'});
 
                     CommonDirect.getDataWidthJoin(mainTableObject, joinTablesArray) // or getData(mainTableObject)
                         .then(

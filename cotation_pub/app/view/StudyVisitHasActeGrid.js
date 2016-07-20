@@ -21,11 +21,13 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         'MyApp.view.StudyVisitHasActeGridViewModel',
         'MyApp.view.StudyVisitHasActeGridViewController',
         'Ext.grid.column.Column',
-        'Ext.form.field.Text',
+        'Ext.form.field.ComboBox',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
-        'Ext.selection.RowModel'
+        'Ext.selection.RowModel',
+        'Ext.grid.feature.GroupingSummary',
+        'Ext.XTemplate'
     ],
 
     controller: 'studyvisithasactegrid',
@@ -44,12 +46,25 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeType',
-            text: 'Type',
+            dataIndex: 'studyCode',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'studyCodeComboBox',
+                queryMode: 'local'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyId',
             editor: {
                 xtype: 'textfield',
-                itemId: 'studyVisitHasActeTypeTextFieldItemId'
+                itemId: 'studyIdTextField'
             }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyVisitHasActeType',
+            text: 'Type'
         },
         {
             xtype: 'gridcolumn',
@@ -67,6 +82,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeSoumisEntentePrealable',
             text: 'Entente prealable',
             editor: {
@@ -105,8 +121,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            width: 60,
             dataIndex: 'studyVisitHasActeIsNight',
-            text: 'Nuit',
+            text: 'N.',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -116,6 +133,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeIsMultiple',
             text: 'Multiple',
             editor: {
@@ -127,8 +145,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            width: 60,
             dataIndex: 'studyVisitHasActeIsHoliday',
-            text: 'Férié',
+            text: 'F.',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -138,8 +157,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            width: 60,
             dataIndex: 'studyVisitHasActeIsEmergency',
-            text: 'Urgence',
+            text: 'U.',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -149,6 +169,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeIsDomicile',
             text: 'Domicile',
             editor: {
@@ -186,6 +207,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeDenombrement',
             text: 'Denombrement',
             editor: {
@@ -195,6 +217,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeDateEntentePrealable',
             text: 'Date Entente',
             editor: {
@@ -213,6 +236,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeCodeAffine',
             text: 'Code affine',
             editor: {
@@ -222,6 +246,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeCodeAccEntentePrealable',
             text: 'acc entente prealable',
             editor: {
@@ -253,6 +278,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeArchivingActeAddedAuto',
             text: 'Auto',
             editor: {
@@ -291,6 +317,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'active',
             text: 'Active',
             editor: {
@@ -329,6 +356,14 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         selType: 'rowmodel',
         mode: 'MULTI'
     },
+    features: [
+        {
+            ftype: 'groupingsummary',
+            groupHeaderTpl: [
+                ' {name}'
+            ]
+        }
+    ],
 
     initConfig: function(instanceConfig) {
         var me = this,
