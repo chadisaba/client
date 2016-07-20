@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mypanelcotation",
+        "designer|userClassName": "MyPanelCotationViewController"
+    },
+    "designerId": "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03"
+}

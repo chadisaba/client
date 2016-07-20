@@ -35,11 +35,41 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyVisitHasActeType",
-                "text": "Type"
+                "dataIndex": "studyCode",
+                "text": null
             },
             "name": "MystudyVisitHasActeTypeCol",
             "designerId": "e5366c2f-9125-495c-9c73-edc549b09ef7",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyCodeComboBox",
+                        "queryMode": "local"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "1996245e-d471-49c6-8208-008518a8066c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyId",
+                "text": null
+            },
+            "name": "MystudyVisitHasActeTypeCol2",
+            "designerId": "814f5014-c4b0-496f-a338-de9ade4ff2c5",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -49,12 +79,26 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "studyVisitHasActeTypeTextFieldItemId"
+                        "itemId": "studyIdTextField"
                     },
-                    "name": "MystudyVisitHasActeTypeTextField",
-                    "designerId": "6ed4813d-c271-478f-b3ae-eaafe866294c"
+                    "name": "MyTextField",
+                    "designerId": "5227d062-085a-487d-b8d9-9df01d08e793"
                 }
             ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitHasActeType",
+                "text": "Type"
+            },
+            "name": "MystudyVisitHasActeTypeCol1",
+            "designerId": "0dc4efd1-718c-4d42-b9ee-08b1555a5e3e"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -116,6 +160,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeSoumisEntentePrealable",
+                "hidden": true,
                 "text": "Entente prealable"
             },
             "name": "MystudyVisitHasActeSoumisEntentePrealableCol",
@@ -254,7 +299,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsNight",
-                "text": "Nuit"
+                "text": "N.",
+                "width": 60
             },
             "name": "MystudyVisitHasActeIsNightCol",
             "designerId": "7a898318-6072-4795-abe6-3a43306a64ff",
@@ -305,6 +351,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsMultiple",
+                "hidden": true,
                 "text": "Multiple"
             },
             "name": "MystudyVisitHasActeIsMultipleCol",
@@ -356,7 +403,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsHoliday",
-                "text": "Férié"
+                "text": "F.",
+                "width": 60
             },
             "name": "MystudyVisitHasActeIsHolidayCol",
             "designerId": "b3ceef66-aedc-428c-b472-c5d0fbffb212",
@@ -407,7 +455,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsEmergency",
-                "text": "Urgence"
+                "text": "U.",
+                "width": 60
             },
             "name": "MystudyVisitHasActeIsEmergencyCol",
             "designerId": "eec9c9b5-886e-4a96-8f21-b266546e74b4",
@@ -458,6 +507,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsDomicile",
+                "hidden": true,
                 "text": "Domicile"
             },
             "name": "MystudyVisitHasActeIsDomicileCol",
@@ -618,6 +668,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeDenombrement",
+                "hidden": true,
                 "text": "Denombrement"
             },
             "name": "MystudyVisitHasActeDenombrementCol",
@@ -647,6 +698,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeDateEntentePrealable",
+                "hidden": true,
                 "text": "Date Entente"
             },
             "name": "MystudyVisitHasActeDateEntentePrealableCol",
@@ -705,6 +757,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCodeAffine",
+                "hidden": true,
                 "text": "Code affine"
             },
             "name": "MystudyVisitHasActeCodeAffineCol",
@@ -734,6 +787,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCodeAccEntentePrealable",
+                "hidden": true,
                 "text": "acc entente prealable"
             },
             "name": "MystudyVisitHasActeCodeAccEntentePrealableCol",
@@ -822,6 +876,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeArchivingActeAddedAuto",
+                "hidden": true,
                 "text": "Auto"
             },
             "name": "MystudyVisitHasActeArchivingActeAddedAutoCol",
@@ -960,6 +1015,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
+                "hidden": true,
                 "text": "Active"
             },
             "name": "MyactiveCol",
@@ -1361,6 +1417,34 @@
             },
             "name": "onStudyVisitHasActeGridIdValidateedit",
             "designerId": "562af1d2-55e3-46b2-ac0e-5769a0593853"
+        },
+        {
+            "type": "Ext.grid.feature.GroupingSummary",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingSummaryFeature",
+            "designerId": "849223bc-78f6-4783-82e6-b3d20cc356d0",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            " {name}"
+                        ]
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "0e858183-fd6d-4c2f-aa59-f65e09b72c37"
+                }
+            ]
         }
     ]
 }

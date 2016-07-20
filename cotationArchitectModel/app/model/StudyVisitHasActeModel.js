@@ -158,6 +158,16 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
         },
         {
             name: 'addedAndValidated'
+        },
+        {
+            type: 'int',
+            name: 'studyId'
+        },
+        {
+            name: 'studyCode'
+        },
+        {
+            name: 'studyName'
         }
     ]
 });

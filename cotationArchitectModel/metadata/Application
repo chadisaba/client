@@ -9,13 +9,14 @@
         "controllers": [
             "MainController"
         ],
- "views": [
-           "StudyVisitHasActeGrid"
+        "models": [
+            "StudyVisitHasActeModel"
         ],
-"models": [
-           "StudyVisitHasActeModel"
-        ],      
-  "name": "MyApp"
+        "name": "MyApp",
+        "views": [
+            "StudyVisitHasActeGrid",
+            "MyPanelCotation"
+        ]
     },
     "name": "Application",
     "designerId": "application"

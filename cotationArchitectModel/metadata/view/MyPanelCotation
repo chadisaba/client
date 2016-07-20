@@ -1,0 +1,76 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mypanelcotation",
+        "designer|userClassName": "MyPanelCotation",
+        "height": 250,
+        "title": "My Panel",
+        "width": 400
+    },
+    "name": "MyPanel",
+    "designerId": "0dd4d087-ac5c-46db-a574-37cdf506c4e0",
+    "viewControllerInstanceId": "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03",
+    "viewModelInstanceId": "314b8adf-4aec-420c-8c39-b824c6c3fd81",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "MyButton"
+            },
+            "name": "MyButton",
+            "designerId": "f1f14f8d-9533-4a2e-a307-a72cdbd69d34",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "  Ext.create('Common.ux.window.FullScreenWindow', {",
+                            "",
+                            "            // animateTarget:'comboSearchPatient',",
+                            "            title:'Cotation',",
+                            "            items:{",
+                            "                region: 'center',",
+                            "                xtype:'studyvisithasactegrid',",
+                            "",
+                            "                listeners:{",
+                            "                    afterrender:function(_comp)",
+                            "                    {",
+                            "                        _comp.getController().initGrid([],true,'dd2826d3-7791-48cc-a116-335c41b9723c');",
+                            "                    }",
+                            "                }",
+                            "                /*plugins:[",
+                            "                new Plugins.form.FormEditingPlugin({",
+                            "                withValidation: false,",
+                            "                showConfirmationOnSave: true",
+                            "                })]*/",
+                            "            }",
+                            "        }).show();",
+                            "",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onButtonClick",
+                    "designerId": "a5b53bc1-3b84-4dca-8d3a-fe0edef1faec"
+                }
+            ]
+        }
+    ]
+}
