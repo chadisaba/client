@@ -52,10 +52,14 @@ Ext.define('Ext.ux.filterWidget.TextFilter',
                 me.filterText.setValue(_obj.value);
             else me.filterText.setValue("");
         },
-        onChangeHandler:function(_comp)
+        onChangeHandler:function(_comp,_value)
         {
               var me=this;
             var rec=me.getWidgetRecord();
+            if(_value)
+                _comp.setFieldStyle({color: 'red'});
+            else
+                _comp.setFieldStyle({color: 'black'});
             if(!me.filterText.getValue())
                 rec.set(me.dataIndex,null);
             else{

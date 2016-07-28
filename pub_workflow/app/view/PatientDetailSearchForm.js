@@ -171,6 +171,9 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
             bind: {
                 store: '{PatientSearchDetailStore}'
             },
+            viewConfig: {
+                itemId: 'searchGridItemId'
+            },
             columns: [
                 {
                     xtype: 'templatecolumn',

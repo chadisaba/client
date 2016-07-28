@@ -4,108 +4,107 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
     onWorklistGridIdChHist: function() {
 
     },
-
-    onRefreshbtnClick:function(btn)
-    {
-      this.initGrid(true);
-    },
     initGrid:function(_today,_filtersObject)
     {
         var me=this;
-        me.filtersObject=_filtersObject||[];
-        var worklistUpdate;
-        var dateTemp;
-
-        this.getResultArray(_today,me.filtersObject)
-            .then(function(_resultArray)
-            {
-                for (var i = 0; i < _resultArray.length; i++) {
-                    _resultArray[i].siteCode = _resultArray[i]['Site.siteCode'];
-                    _resultArray[i].patientLName = _resultArray[i]['Patient.patientLName'];
-                    _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
-                    _resultArray[i].patientBirthday = _resultArray[i]['Patient.patientBirthday'];
-                    _resultArray[i].patientSearch = _resultArray[i]['Patient.patientSearch'];
-                    _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
-                    _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
-                    _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
-                    _resultArray[i].visitIsUrgent = _resultArray[i]['Visit.visitIsUrgent'];
-                    _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
-                    _resultArray[i].visitIsFree = _resultArray[i]['Visit.visitIsFree'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-
-
-                    /*_resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-                    _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];*/
-
-                    if(_today) // just when we display the current day on our worklist
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                me.filtersObject=_filtersObject||[];
+                var worklistUpdate;
+                me.getResultArray(_today,me.filtersObject)
+                    .then(function(_resultArray)
                     {
-                        worklistUpdate= _resultArray[i]['updatedAt'];
-                        if(me.lastUpdateDate)
-                        {
-                            if(Ext.Date.diff(new Date(worklistUpdate),me.lastUpdateDate,Ext.Date.SECOND)<0)
-                                me.lastUpdateDate=new Date(worklistUpdate);// last update on the database
-                        }
-                        else
-                            me.lastUpdateDate= new Date(worklistUpdate);
+                        for (var i = 0; i < _resultArray.length; i++) {
+                            _resultArray[i].siteCode = _resultArray[i]['Site.siteCode'];
+                            _resultArray[i].patientLName = _resultArray[i]['Patient.patientLName'];
+                            _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
+                            _resultArray[i].patientBirthday = _resultArray[i]['Patient.patientBirthday'];
+                            _resultArray[i].patientSearch = _resultArray[i]['Patient.patientSearch'];
+                            _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
+                            _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                            _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
+                            _resultArray[i].visitIsUrgent = _resultArray[i]['Visit.visitIsUrgent'];
+                            _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
+                            _resultArray[i].visitIsFree = _resultArray[i]['Visit.visitIsFree'];
+                            _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
 
-                    }
-
-
-                }
-                var worklistStore = me.getViewModel().getStore('WorklistStore');
-                if(!_today || worklistStore.count()==0)
-                         worklistStore.loadData(_resultArray);// if we don't refresh the current day worklist
-                    else
-                {
-                    // we refresh the current day =>we get just the diff data form server using the me.lastUpdateDate
-                   // alert('refresh just the diff');
-                   // alert('refresh just the diff');
-                    var recordsToRemove=[];
-                    var recordsToAdd=[];
-                    _resultArray.forEach(function (_item)
-                    {
-                        var recordExist=false;
-                        worklistStore.each(function(_rec)
-                        {
-                            if(_item.worklistId==_rec.get('worklistId'))
+                            if(_today) // just when we display the current day on our worklist
                             {
-                                recordsToRemove.push(_rec);
-                                recordsToAdd.push(_item);
-                                recordExist=true;
+                                worklistUpdate= _resultArray[i]['updatedAt'];
+                                if(me.lastUpdateDate)
+                                {
+                                    if(Ext.Date.diff(new Date(worklistUpdate),me.lastUpdateDate,Ext.Date.SECOND)<0)
+                                        me.lastUpdateDate=new Date(worklistUpdate);// last update on the database
+                                }
+                                else
+                                    me.lastUpdateDate= new Date(worklistUpdate);
                             }
-                        });
-                        if(!recordExist)
-                            recordsToAdd.push(_item);
+                        }
+                        var worklistStore = me.getViewModel().getStore('WorklistStore');
+                        if(!_today || worklistStore.count()==0)
+                            worklistStore.loadData(_resultArray);// if we don't refresh the current day worklist
+                        else
+                        {
+                            // we refresh the current day =>we get just the diff data form server using the me.lastUpdateDate
+                            // alert('refresh just the diff');
+                            // alert('refresh just the diff');
+                            var recordsToRemove=[];
+                            var recordsToAdd=[];
+                            _resultArray.forEach(function (_item)
+                            {
+                                var recordExist=false;
+                                worklistStore.each(function(_rec)
+                                {
+                                    if(_item.worklistId==_rec.get('worklistId'))
+                                    {
+                                        recordsToRemove.push(_rec);
+                                        recordsToAdd.push(_item);
+                                        recordExist=true;
+                                    }
+                                });
+                                if(!recordExist)
+                                    recordsToAdd.push(_item);
+                            });
+
+                            worklistStore.remove(recordsToRemove);
+                            worklistStore.add(recordsToAdd);
+
+                        }
+
+                        resolve();
+                    })
+                    .catch(function (_err) {
+                        console.error(_err);
+                        reject(_err);
                     });
+             });
+         return promise;
 
-                    worklistStore.remove(recordsToRemove);
-                    worklistStore.add(recordsToAdd);
-
-                }
-
-            })
-            .catch(function (_err) {
-                console.error(_err);
-            });
     },
     onWorklistGridIdAfterRender: function(component) {
 
     var me=this;
         me.lastUpdateDate=null;
-        me.initGrid(true);
-        var grid=component;
-        grid.down('#freeIcon').setVisible(false);
-        grid.down('#hospitIcon').setVisible(false);
-        grid.down('#amoIcon').setVisible(false);
-        grid.down('#amcIcon').setVisible(false);
-        grid.down('#fsIcon').setVisible(false);
-        grid.down('#fseIcon').setVisible(false);
-        grid.down('#ftIcon').setVisible(false);
-        grid.down('#urgentIcon').setVisible(false);
+        me.initGrid(true).then(
+            function(_result)
+            {
+                var grid=component;
+                grid.down('#freeIcon').setVisible(false);
+                grid.down('#hospitIcon').setVisible(false);
+                grid.down('#amoIcon').setVisible(false);
+                grid.down('#amcIcon').setVisible(false);
+                grid.down('#fsIcon').setVisible(false);
+                grid.down('#fseIcon').setVisible(false);
+                grid.down('#ftIcon').setVisible(false);
+                grid.down('#urgentIcon').setVisible(false);
+            }
+        )
+            .catch(function(_err)
+            {
+                console.error(_err);
+            })
+
     },
 
     getResultArray:function(_today,_filtersObject)
@@ -525,7 +524,14 @@ if(selected.length>0){
         var examen="Examens...";
         if (value){
             color='#31b0d5';
-            examen=value.split("|")[0]+"...";
+            var exArray=value.split("|");
+            if(exArray.length>1)
+            {
+                examen=exArray.length+" "+exArray[0]+"...";
+            }
+            else
+                examen=value;
+
         }
         return Utility.renderer.textHrefRenderer(color,examen);
         //return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';

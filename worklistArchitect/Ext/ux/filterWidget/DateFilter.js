@@ -51,10 +51,14 @@ Ext.define('Ext.ux.filterWidget.DateFilter',
                 me.filterDate.setValue(_obj.value);
             else me.filterDate.setValue(null);
         },
-        onChangeHandler:function(_comp)
+        onChangeHandler:function(_comp,_value)
         {
             var me=this;
             var rec=me.getWidgetRecord();
+            if(_value)
+                _comp.setFieldStyle({color: 'red'});
+            else
+                _comp.setFieldStyle({color: 'black'});
             rec.set(me.dataIndex, {
                 filterValue:me.filterDate.getValue(),
                 filterOp:me.comboCompare.getValue()

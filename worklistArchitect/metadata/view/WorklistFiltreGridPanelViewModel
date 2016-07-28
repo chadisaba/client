@@ -6,6 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            " {trans: {",
+            "            filters: translate('Filtres'),",
+            "   ",
+            "            ",
+            "        }}"
+        ],
         "designer|userAlias": "worklistfiltregridpanel",
         "designer|userClassName": "WorklistFiltreGridPanelViewModel"
     },

@@ -2,7 +2,7 @@ function translate(text)
 {
     var translation={
 
-        /***commun**/
+        /***common**/
         "active":"Actif",
         "save":"Enregistrer",
         "cancel":"Annuler",
@@ -18,6 +18,7 @@ function translate(text)
         "type":"Type",
         "pdf":"PDF",
         "doctor":"Médecin",
+        "time":"Heure",
 
         /*** patient form***/
         "study":"Examen",
@@ -65,27 +66,25 @@ function translate(text)
         /*** Work list***/
         "visit":"Visite",
         "patient":"Patient",
-        "visitIsFree":"Visit is free",
+        "free":"Gratuit",
         "vitale":"Vitale",
-        "pat":"patient",
-        "med":"doctor",
         "consultantPh":"consultantPh",
         "drRecipient":"drRecipient",
-        "dict":"dict",
-        "cR":"cR",
-        "cot":"cot",
+        "dictation":"dictée",
+        "report":"C.R",
+        "quotation":"Cotation",
         "fT":"FT",
-        "comment":"Comment",
-        "duP":"DuP",
-        "duV":"DuV",
+        "comment":"Commentaire",
+        "duP":"Du. P",
+        "duV":"Du. Consult",
         "visitInvoiceType":"VisitInvoiceType",
-        "visitIsHopitalized":"VisitIsHopitalized",
-        "visitIsUrgent":"VisitIsUrgent",
-        "nVisit":"NVisit",
+        "Hopitalized":"Hospit.",
+        "urgent":"Urgence",
+        "visitnumber":"N. Consults",
         "visitFtFor":"VisitFtFor",
-        "visitPEC":"VisitPEC",
+        "visitPEC":"Prise en Charge",
         "actions":"Actions",
-        "print":"Impremt"
+        "print":"Imprimer"
 
 
         }

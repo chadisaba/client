@@ -55,10 +55,7 @@ Ext.define('MyApp.view.override.InfoFormViewController', {
 
         var form=me.getView();
         var rec=form.getRecord();
-
         form.updateRecord(rec); // update the record with the form
-
-
         if(me.visitId){
             rec.set('visitId',me.visitId);
         }

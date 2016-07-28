@@ -85,9 +85,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "createFilter": true,
+                "createFilter": null,
                 "dataIndex": "visitIsBySocialCard",
-                "filterType": "boolean",
+                "filterType": null,
+                "hidden": true,
                 "minWidth": null,
                 "text": [
                     "{trans.vitale}"
@@ -156,7 +157,6 @@
             },
             "name": "My\tworklistVisitInfoCol",
             "configAlternates": {
-                "text": "binding",
                 "createFilter": "boolean"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
@@ -314,9 +314,7 @@
                 "createFilter": null,
                 "dataIndex": "worklistPatientInfo",
                 "minWidth": null,
-                "text": [
-                    "{trans.patInfo}"
-                ],
+                "text": null,
                 "width": 50
             },
             "name": "MyworklistPatientInfoCol",
@@ -449,12 +447,12 @@
             "userConfig": {
                 "createFilter": true,
                 "dataIndex": "worklistStudies",
-                "flex": 1,
+                "flex": null,
                 "minWidth": null,
                 "text": [
                     "{trans.studies}"
                 ],
-                "width": null
+                "width": 200
             },
             "name": "MyworklistStudiesCol",
             "configAlternates": {
@@ -510,18 +508,27 @@
             },
             "codeClass": null,
             "userConfig": {
+                "createFilter": true,
                 "dataIndex": "worklistDoctor",
                 "minWidth": null,
                 "text": [
-                    "{trans.med}"
+                    "{trans.doctor}"
                 ],
-                "width": 60
+                "width": 80
             },
             "name": "MyworklistMedRefCol",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "createFilter": "boolean"
             },
-            "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq"
+            "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "createFilter",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -532,6 +539,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistMedPresc",
+                "hidden": true,
                 "minWidth": null,
                 "text": [
                     "{trans.consultantPh}"
@@ -578,6 +586,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistMedRecipient",
+                "hidden": true,
                 "minWidth": null,
                 "text": [
                     "{trans.drRecipient}"
@@ -626,7 +635,7 @@
                 "dataIndex": "worklistDictationsStatus",
                 "minWidth": null,
                 "text": [
-                    "{trans.dict}"
+                    "{trans.dictation}"
                 ]
             },
             "name": "MyColumn1",
@@ -679,7 +688,7 @@
                 ],
                 "minWidth": null,
                 "text": [
-                    "{trans.cR}"
+                    "{trans.report}"
                 ]
             },
             "name": "MyworklistCrsStatusCol",
@@ -749,9 +758,10 @@
                 "filterValues": [
                     "[ComboData.quotationStatus]"
                 ],
+                "hidden": true,
                 "minWidth": null,
                 "text": [
-                    "{trans.cot}"
+                    "{trans.quotation}"
                 ]
             },
             "name": "MyworklistCotationStatusCol",
@@ -816,6 +826,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFTNum",
+                "hidden": true,
                 "minWidth": null,
                 "text": [
                     "{trans.fT}"
@@ -958,8 +969,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklistFtDu",
+                "hidden": true,
                 "minWidth": null,
-                "text": "{trans.duP}"
+                "text": "{trans.duFt}"
             },
             "name": "MyworklistFtDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju",
@@ -1111,6 +1123,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "worklisCrMailedTo",
+                "hidden": true,
                 "minWidth": null,
                 "text": "<i class=\"fa fa-envelope-o\"></i>"
             },
@@ -1153,10 +1166,15 @@
             "userConfig": {
                 "dataIndex": "visitIsFree",
                 "minWidth": null,
-                "text": "",
-                "width": 10
+                "text": [
+                    "{trans.free}"
+                ],
+                "width": 60
             },
             "name": "MyvisitIsFreeCol",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "7c6bec59-5c6a-4872-9cec-lutcy48v89gc",
             "cn": [
                 {
@@ -1195,9 +1213,14 @@
             "userConfig": {
                 "dataIndex": "visitIsHospitalized",
                 "minWidth": null,
-                "text": ""
+                "text": [
+                    "{trans.hospitalized}"
+                ]
             },
             "name": "MyvisitIsHospitalizedCol",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "7c6bec59-5c6a-4872-9cec-w5fq41xd34jq",
             "cn": [
                 {
@@ -1236,9 +1259,14 @@
             "userConfig": {
                 "dataIndex": "visitIsUrgent",
                 "minWidth": null,
-                "text": "{trans.isUrgent}"
+                "text": [
+                    "{trans.urgent}"
+                ]
             },
             "name": "MyvisitIsUrgentCol",
+            "configAlternates": {
+                "text": "binding"
+            },
             "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by",
             "cn": [
                 {
@@ -1278,7 +1306,7 @@
                 "dataIndex": "visitHospitVisitNumber",
                 "minWidth": null,
                 "text": [
-                    "{trans.nVisit}"
+                    "{trans.visitnumber}"
                 ]
             },
             "name": "MyvisitHospitVisitNumberCol",
@@ -1296,6 +1324,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitInvoiceType",
+                "hidden": true,
                 "minWidth": null,
                 "text": ""
             },
@@ -1337,6 +1366,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "visitFtFor",
+                "hidden": true,
                 "minWidth": null,
                 "text": ""
             },
@@ -1359,12 +1389,15 @@
                     "[ComboData.pec]"
                 ],
                 "minWidth": null,
-                "text": "{trans.pec}"
+                "text": [
+                    "{trans.pec}"
+                ]
             },
             "name": "MyvisitPECCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterValues": "array"
+                "filterValues": "array",
+                "text": "binding"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1",
             "customConfigs": [
@@ -1853,38 +1886,6 @@
                         "html": "string"
                     },
                     "designerId": "ce884174-9b24-40ef-b370-4961190279da"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "refreshbtn",
-                        "layout|flex": null,
-                        "text": "trans.refresh"
-                    },
-                    "name": "MyButton7",
-                    "designerId": "792d22d8-34b3-42e6-b17d-d8adc2641348",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onRefreshbtnClick",
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "name": "onRefreshbtnClick",
-                            "designerId": "bee447cd-92c0-4eef-abc8-fa9d178d5403"
-                        }
-                    ]
                 }
             ]
         },

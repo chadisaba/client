@@ -3,16 +3,35 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
 
      onPatientSearchBtnItemIdClick: function(button, e, eOpts) {
 
-         var view=this.getView();
+         var me=this;
+         var view=me.getView();
          Utility.loading.start(view);
 
          view.down('#nouveauPatientBtnItemId').setDisabled(true);
          view.down('#accueilPatientBtnItemId').setDisabled(true);
          view.down('#historiquePatientBtnItemId').setDisabled(true);
+         var patientSearchStore=me.getViewModel().getStore('PatientSearchDetailStore');
+         var formValuesObject=view.getValues();
 
-         var me=this;
          var mainTableObject={};
          mainTableObject.tableName='PATIENT';
+         var mainFilters=[];
+         if(formValuesObject.patientLName)
+             mainFilters.push({name:"patientLName",value:formValuesObject.patientLName,startBy:true});
+         if(formValuesObject.patientFname)
+             mainFilters.push({name:"patientFname",value:formValuesObject.patientFname,startBy:true});
+         if(formValuesObject.patientBirthday)
+             mainFilters.push({name:"patientBirthday",value:formValuesObject.patientBirthday});
+         if(formValuesObject.patientSocialNumber)
+             mainFilters.push({name:"patientSocialNumber",value:formValuesObject.patientSocialNumber});
+         if(formValuesObject.patientSocialKey)
+             mainFilters.push({name:"patientSocialKey",value:formValuesObject.patientSocialKey});
+
+
+         var mainTableObject={
+             tableName:'PATIENT',
+             filters:mainFilters
+         };
          var joinTablesArray=[];
          joinTablesArray.push({tableName:'CITY',
              required:false,
@@ -21,42 +40,23 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
              ]
          });
 
-         var params = {
-             mainTableObject: mainTableObject,
-             joinTablesArray: joinTablesArray
-         };
-
-         var patientSearchStore=me.getViewModel().getStore('PatientSearchDetailStore');
-         var formValuesObject=view.getValues();
-
-         params.filters=[];
-         if(formValuesObject.patientLName)
-             params.filters.push({name:"patientLName",value:formValuesObject.patientLName,startBy:true});
-         if(formValuesObject.patientFname)
-             params.filters.push({name:"patientFname",value:formValuesObject.patientFname,startBy:true});
-         if(formValuesObject.patientBirthday)
-             params.filters.push({name:"patientBirthday",value:formValuesObject.patientBirthday});
-         if(formValuesObject.patientSocialNumber)
-             params.filters.push({name:"patientSocialNumber",value:formValuesObject.patientSocialNumber});
-         if(formValuesObject.patientSocialKey)
-             params.filters.push({name:"patientSocialKey",value:formValuesObject.patientSocialKey});
-
-
-         Server.CommonQueries.readJoin(params,
-             function (res) {
-                 if (res.success) {
-                     for (var i = 0; i < res.data.length; i++) {
-                         res.data[i].cityName=res.data[i]['City.cityName'];
-                     }
-                     patientSearchStore.loadData(res.data);
-                     view.down('#nouveauPatientBtnItemId').setDisabled(false);
-                     Utility.loading.end(view);
+         CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray)
+             .then(function(_result)
+             {
+                 for (var i = 0; i < _result.length; i++) {
+                     _result[i].cityName=_result[i]['City.cityName'];
                  }
-                 else {
-                     console.error(res.msg);
-                     Utility.loading.end(view);
-                 }
-             }, me);
+                 patientSearchStore.loadData(_result);
+                 view.down('#nouveauPatientBtnItemId').setDisabled(false);
+                 Utility.loading.end(view);
+             }
+
+         )
+             .catch(function(_err)
+             {
+                 console.error(_err);
+                 Utility.loading.end(view);
+             });
     },
 
     onTextfieldSpecialkey: function(field, e, eOpts) {
@@ -69,8 +69,9 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
         if(e.getKey()== e.ENTER)
             this.onPatientSearchBtnItemIdClick();
     },
-    onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
+    receiveExistingPatient:function(record)
+    {
         var me=this;
         Ext.create('Common.ux.window.FullScreenWindow', {
 
@@ -79,20 +80,23 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
                 region: 'center',
                 xtype:'patientreceivepanel',
                 patientId:record.get('patientId')
-
                 /*plugins:[
-                    new Plugins.form.FormEditingPlugin({
-                    withValidation: false,
-                    showConfirmationOnSave: true
-                })]*/
+                 new Plugins.form.FormEditingPlugin({
+                 withValidation: false,
+                 showConfirmationOnSave: true
+                 })]*/
             },
             listeners:{
                 afterrender:function(_comp)
                 {
-                  me.getView().up('#searchPatientWindowItemId').close();
+                    me.getView().up('#searchPatientWindowItemId').close();
                 }
             }
         }).show();
+    },
+    onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
+
+     this.receiveExistingPatient(record);
 
     },
     onPatientSearchGridItemIdSelectionChange: function(model, selected, eOpts) {
@@ -103,6 +107,7 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     },
     onNouveauPatientBtnItemIdClick: function(button, e, eOpts) {
 
+        var me=this;
         Ext.create('Common.ux.window.FullScreenWindow',{
             // animateTarget:'comboSearchPatient',
             title:translate('patientInformations'),//"Informations du patient",
@@ -114,25 +119,24 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
                     withValidation: false,
                     showConfirmationOnSave: true
                 })]*/
+            },
+            listeners:{
+                afterrender:function(_comp)
+                {
+                    me.getView().up('#searchPatientWindowItemId').close();
+                }
             }
         }).show();
     },
-    onAccueilPatientBtnItemIdClick: function(button, e, eOpts) {
-        var me=this;
-        Ext.create('Common.ux.window.FullScreenWindow', {
+    onAccueilPatientBtnItemIdClick: function(button, e, eOpts)
+    {
+        var grid=this.getView().down('#searchGridItemId');
+        if(grid.getSelectionModel().hasSelection())
+        {
+            var selectedRec=grid.getSelectionModel().getSelection()[0];
+            this.receiveExistingPatient(selectedRec);
+        }
 
-                    // animateTarget:'comboSearchPatient',
-                    title:"Informations du patient",
-                    items:{
-                        region: 'center',
-                        xtype:'patientreceivepanel'
-                        /*plugins:[
-                            new Plugins.form.FormEditingPlugin({
-                            withValidation: false,
-                            showConfirmationOnSave: true
-                        })]*/
-                    }
-                }).show();
     },
 
     onHistoriquePatientBtnItemIdClick: function(button, e, eOpts) {

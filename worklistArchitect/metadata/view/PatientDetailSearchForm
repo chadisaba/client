@@ -388,6 +388,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "itemId": "searchGridItemId"
+                    },
                     "name": "MyTable3",
                     "designerId": "20ee450e-d720-4ca4-8fcb-3e9161ecefa4"
                 },

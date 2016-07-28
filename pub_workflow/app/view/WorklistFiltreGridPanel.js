@@ -28,9 +28,9 @@ Ext.define('MyApp.view.WorklistFiltreGridPanel', {
     viewModel: {
         type: 'worklistfiltregridpanel'
     },
-    title: 'trans.filters',
 
     bind: {
+        title: '{trans.filters}',
         store: '{WorklistGridFilterStore}'
     },
     columns: [

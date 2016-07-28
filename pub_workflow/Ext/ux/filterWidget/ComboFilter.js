@@ -41,6 +41,7 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                    ]
                 });
                 filterStore.loadData(me.filterValues[0]);//filterValues[0] is array of objects (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
+                 filterStore.insert(0,{id:0,text:'All'});
                 me.filterCombo=Ext.create('Ext.form.field.ComboBox',
                 {
                     fieldLabel: '',
@@ -66,10 +67,15 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                 me.filterCombo.setValue(_obj.value);
             else me.filterCombo.setValue("");
         },
-        onChangeHandler:function(_comp)
+        onChangeHandler:function(_comp,_value)
         {
             var me=this;
             var rec=me.getWidgetRecord();
+            if(_value)
+                _comp.setFieldStyle({color: 'red'});
+            else
+                _comp.setFieldStyle({color: 'black'});
+
             rec.set(me.dataIndex, {
                 filterValue:me.filterCombo.getValue(),
                 filterOp:me.comboCompare.getValue()

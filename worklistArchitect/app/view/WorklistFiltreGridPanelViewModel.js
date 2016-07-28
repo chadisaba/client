@@ -22,6 +22,13 @@ Ext.define('MyApp.view.WorklistFiltreGridPanelViewModel', {
         'Ext.data.field.Field'
     ],
 
+    data: {
+        trans: {
+            filters: translate('Filtres'),
+            
+        }
+    },
+
     stores: {
         WorklistGridFilterStore: {
             fields: [

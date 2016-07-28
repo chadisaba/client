@@ -12,7 +12,11 @@ Ext.define('MyApp.view.override.WorklistPanelViewController', {
 
         var searchGrid=me.getView().down('#worklistFilterGridItemId');
         var worklistGrid=me.getView().down('#worklistGridId');
-        Plugins.grid.GridSearchPlugin.doLocalSearch(worklistGrid,searchGrid);
+        worklistGrid.getController().initGrid(true).then(function(_result)
+        {
+            Plugins.grid.GridSearchPlugin.doLocalSearch(worklistGrid,searchGrid);
+        });
+
     }
 
 });

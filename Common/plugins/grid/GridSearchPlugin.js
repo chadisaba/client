@@ -186,7 +186,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					/*if(record.get(_column.dataIndex))
 						initValue.value=record.get(_column.dataIndex);*/
 
-					;
+
 
 
 				};
@@ -207,9 +207,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	},
 	pluginId: 'gridsearch',
 	init:function (grid) {
-
 		this.grid = grid;
-
 		var toolbars = grid.query('#searchToolbar');
 		if (toolbars.length==1){
 			this.tb = toolbars[0];
@@ -219,8 +217,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			this.tb = this.createNewToolbar();
 			this.fillToolbar();
 			grid.addDocked(this.tb);
-		} 
-
+		}
 	},
 	createNewToolbar: function (){
 		var toolbar = Ext.create('Ext.toolbar.Toolbar',{
@@ -241,15 +238,11 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 		this.tb.add(this.resetBtnCtn);
 		this.tb.add(this.deleteSearchBtnCtn);
 		this.tb.add(this.applyBtnCtn);
-
-
-
 	},
 	createResetBtnCtn: function (){
 		var me = this;
 		this.resetBtnCtn = Ext.create('Ext.container.Container', {
 			itemId: 'resetBtnCtn',
-
 			items:[{
 				xtype: 'button',
 				text: '',

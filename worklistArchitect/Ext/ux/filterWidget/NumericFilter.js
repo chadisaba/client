@@ -53,10 +53,14 @@ Ext.define('Ext.ux.filterWidget.NumericFilter',
                 me.filterNumeric.setValue(_obj.value);
             else me.filterNumeric.setValue(null);
         },
-        onChangeHandler:function(_comp)
+        onChangeHandler:function(_comp,_value)
         {
             var me=this;
             var rec=me.getWidgetRecord();
+            if(_value)
+                _comp.setFieldStyle({color: 'red'});
+            else
+                _comp.setFieldStyle({color: 'black'});
             rec.set(me.dataIndex, {
                 filterValue:me.filterNumeric.getValue(),
                 filterOp:me.comboCompare.getValue()

@@ -12,12 +12,15 @@
         "store": [
             "{WorklistGridFilterStore}"
         ],
-        "title": "trans.filters",
+        "title": [
+            "{trans.filters}"
+        ],
         "width": null
     },
     "name": "MyGridPanel1",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "title": "binding"
     },
     "designerId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2",
     "viewControllerInstanceId": "36c197d6-107d-4b51-98a9-3aba4e809c9b",
