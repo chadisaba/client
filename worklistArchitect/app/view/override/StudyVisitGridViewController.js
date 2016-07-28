@@ -1,40 +1,29 @@
 Ext.define('MyApp.view.override.StudyVisitGridViewController', {
     override: 'MyApp.view.StudyVisitGridViewController',
-
     onStudyVisitGridIdChHist: function () {
-
     },
-
     getVisitId: function () {
         return this.getView().getRecord().get('visitId');
     },
     initGrid: function (_filters, _readOnlyGrid, _visitId) {
         var me = this;
-
         UserDirect.getUserByCat(3, true)// 3 for Technician
             .then(function (_resultArray) {
                 me.getViewModel().getStore('TechnicianComboStore').loadData(_resultArray);
             });
-
         if (_visitId) {
             me.filters = _filters || [];
             me.filters.push({name: "visitId", value: _visitId});
             var view = this.getView();
-
             if (!_readOnlyGrid)
                 view.getPlugin('gridediting').lockGrid(false);
-
-
             this.getResultArray(me.filters).then(
                 function (data) {
                     Utility.grid.loadGrid(view, data, view.getViewModel().getStore('StudyVisitStore'));
 
-
                 }
             );
         }
-
-
     },
 
     getDataToBeSaved: function () {

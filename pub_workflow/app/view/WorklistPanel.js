@@ -43,7 +43,6 @@ Ext.define('MyApp.view.WorklistPanel', {
             itemId: 'worklistFilterGridItemId',
             collapsed: true,
             collapsible: true,
-            hideCollapseTool: false,
             region: 'north',
             split: true,
             splitterResize: false,

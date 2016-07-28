@@ -111,6 +111,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'userId',
             text: '',
             editor: {

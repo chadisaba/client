@@ -35,33 +35,6 @@ Ext.define('Utility.form', {
 
 
             }
-        },
-        cityAutoComplete:function(_scope,_serachValue,_cityComboStore,_field,_searchLengh)
-        {
-            var me=_scope;
-            var searchLengh=_searchLengh||4;
-            if(_serachValue && _serachValue.length>=searchLengh && isNaN(_serachValue))
-            {
-                var store = me.getViewModel().getStore(_cityComboStore);
-                CityDirect.getCities(_serachValue.toUpperCase())
-                    .then(
-                        function(cityData)
-                        {
-                            store.clearFilter();
-                            store.removeAll();
-                            store.loadData(cityData);
-
-                            store.filter({
-                                property: 'cityName',
-                                anyMatch: true,
-                                value   : _serachValue
-                            });
-                            _field.expand();
-
-
-                        });
-            }
         }
-
     }
 });

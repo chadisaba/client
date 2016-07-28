@@ -25,6 +25,10 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onRadiogroupChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
@@ -37,11 +41,15 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onPatientZipCodeTextFieldItemIdBlur: function(component, event, eOpts) {
+
+    },
+
     onCityNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
 
-    onCityNameComboBoxEditorItemIdKeyup: function(textfield, e, eOpts) {
+    onCityNameComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 

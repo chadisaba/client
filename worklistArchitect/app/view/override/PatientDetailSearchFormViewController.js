@@ -71,30 +71,26 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     },
     onPatientSearchGridItemIdItemDblClick: function(dataview, record, item, index, e, eOpts) {
 
-
-        /*Ext.create('Common.ux.window.FullScreenWindow', {
-
-            // animateTarget:'comboSearchPatient',
-            title:"Historique du patient "+record.get('patientLName')+" "+record.get('patientFname'),
-            items:{
-                region: 'center',
-                xtype:'patienthistorytabpanel',
-                patientId:record.get('patientId')
-            }
-        }).show();*/
+        var me=this;
         Ext.create('Common.ux.window.FullScreenWindow', {
 
-            // animateTarget:'comboSearchPatient',
             title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
             items:{
                 region: 'center',
                 xtype:'patientreceivepanel',
                 patientId:record.get('patientId')
+
                 /*plugins:[
                     new Plugins.form.FormEditingPlugin({
                     withValidation: false,
                     showConfirmationOnSave: true
                 })]*/
+            },
+            listeners:{
+                afterrender:function(_comp)
+                {
+                  me.getView().up('#searchPatientWindowItemId').close();
+                }
             }
         }).show();
 
@@ -107,14 +103,12 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     },
     onNouveauPatientBtnItemIdClick: function(button, e, eOpts) {
 
-        Ext.create('Common.ux.window.FullScreenWindow', {
-
+        Ext.create('Common.ux.window.FullScreenWindow',{
             // animateTarget:'comboSearchPatient',
             title:translate('patientInformations'),//"Informations du patient",
             items:{
                 region: 'center',
                 xtype:'patientreceivepanel'
-
                 /*plugins:[
                     new Plugins.form.FormEditingPlugin({
                     withValidation: false,
@@ -123,28 +117,22 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
             }
         }).show();
     },
-
     onAccueilPatientBtnItemIdClick: function(button, e, eOpts) {
+        var me=this;
+        Ext.create('Common.ux.window.FullScreenWindow', {
 
-var me=this;
-var grid=me.getView().down('#PatientSearchGridItemId');
-
-Ext.create('Common.ux.window.FullScreenWindow', {
-
-            // animateTarget:'comboSearchPatient',
-            title:"Informations du patient",
-            items:{
-                region: 'center',
-                xtype:'patientreceivepanel'
-
-
-                /*plugins:[
-                    new Plugins.form.FormEditingPlugin({
-                    withValidation: false,
-                    showConfirmationOnSave: true
-                })]*/
-            }
-        }).show();
+                    // animateTarget:'comboSearchPatient',
+                    title:"Informations du patient",
+                    items:{
+                        region: 'center',
+                        xtype:'patientreceivepanel'
+                        /*plugins:[
+                            new Plugins.form.FormEditingPlugin({
+                            withValidation: false,
+                            showConfirmationOnSave: true
+                        })]*/
+                    }
+                }).show();
     },
 
     onHistoriquePatientBtnItemIdClick: function(button, e, eOpts) {

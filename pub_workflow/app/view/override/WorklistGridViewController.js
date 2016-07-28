@@ -28,6 +28,9 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
                     _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
                     _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
+                    _resultArray[i].visitIsUrgent = _resultArray[i]['Visit.visitIsUrgent'];
+                    _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
+                    _resultArray[i].visitIsFree = _resultArray[i]['Visit.visitIsFree'];
                     _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
 
 
@@ -217,8 +220,7 @@ if(selected.length>0){
                 }).show();
                 break;
             case 'worklistPatientInfo':
-
-                Ext.create('Ext.window.Window', {
+                Ext.create('Ext.window.Window',{
 
                     //animateTarget:'comboSearchPatient',
                     title:"Info patient "+record.get('patientLName')+" "+record.get('patientFname'),
@@ -251,18 +253,30 @@ if(selected.length>0){
                     }
                 }).show();
                 break;
+            case 'visitTime':
+                Ext.create('Common.ux.window.FullScreenWindow', {
+                    title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
+                    items:{
+                        region: 'center',
+                        xtype:'patientreceivepanel',
+                        visitId:record.get('visitId'),
+                        patientId:record.get('patientId')
+                        /*plugins:[
+                         new Plugins.form.FormEditingPlugin({
+                         withValidation: false,
+                         showConfirmationOnSave: true
+                         })]*/
+                    }
+                }).show();
+                break;
         }
     },
-
-
     /***********************Renderers*********************************/
-
-
     infoVisitRenderer: function(value, metaData, record) {
         var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
         var color;
         var icon;
-var tooltip;
+        var tooltip;
         tooltip=value||"";
         switch(infoAlertLevel)
         {
@@ -338,7 +352,6 @@ var tooltip;
         result='<span style="color:#27b6af">'+record.get('worklistDictationsNb')+'&nbsp;<span/><a href="#" onclick="return;" style="color:#27b6af;font-size:17px;"><i class="fa fa-bullhorn"></i></a>';
         return result;
     },
-
     CRRenderer: function(value, metaData, record) {
         /*
          0 : no report
@@ -566,7 +579,6 @@ var tooltip;
 
     },
     socialCardRenderer: function(value, metaData) {
-
         if(value){
             metaData.tdAttr = 'data-qtip="Accueilli par carte vitale"';
             return '<img src="../Common/resources/images/vitale.png" alt="Accueilli par carte vitale"/>';
@@ -624,15 +636,10 @@ var tooltip;
         return result;
     },
     visitTimeRenderer: function(value) {
-
         if(value)
         {
             var arr=value.split(":");
-            return arr[0]+':'+arr[1];
+            return Utility.renderer.textHrefRenderer("#31b0d5",arr[0]+':'+arr[1]);
         }
     }
-
-
-
-
 });

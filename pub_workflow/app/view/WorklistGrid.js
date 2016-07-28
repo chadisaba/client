@@ -80,8 +80,8 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'visitTimeRenderer',
             filterType: 'hour',
             createFilter: true,
-            dataIndex: 'visitTime',
             width: 60,
+            dataIndex: 'visitTime',
             bind: {
                 text: '{trans.time}'
             }

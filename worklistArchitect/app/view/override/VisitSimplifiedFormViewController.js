@@ -42,24 +42,27 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 var doctorStore = viewModel.getStore('DoctorComboStore');
                 doctorStore.loadData(doctorsDataArray);
 
+                var visitRec=Ext.create('MyApp.model.VisitModel');
                 if(visitId)
                 {
                     CommonDirect.getDataById("visitId",visitId,'VISIT')
                         .then(function(_resultValue)
                         {
-                            visitRec=Ext.create('MyApp.model.VisitModel',_resultValue);
+                            var timeArray=_resultValue[0]['visitTime'].split(":");
+                            _resultValue[0].visitTime=timeArray[0]+":"+timeArray[1];
+                            var visitRec=new MyApp.model.VisitModel(_resultValue[0]);
+
                             view.loadRecord(visitRec);
-                            var studyVisitFilters=[{
-                                name:"visitId",value:_visitId
-                            }];
-                            view.down('#studyVisitGridItemId').getController().initGrid(studyVisitFilters);
+                            var studyVisitController = view.down('#studyVisitGridItemId').getController();
+                            studyVisitController.initGrid([],true,_visitId);
                             view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
                         });
                 }
+
                 else
                 {
                     // we create a new visit
-                    var visitRec=Ext.create('MyApp.model.VisitModel');
+
                     visitRec.set('visitId',UUID());
                     visitRec.set('visitDate',new Date());
                     visitRec.set('visitTime',new Date());
@@ -86,8 +89,9 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
     },
     visitFormSave: function(button) {
         var me=this;
-        var rec=me.getView().getRecord();
         var form=me.getView();
+        var rec=form.getRecord();
+
         form.updateRecord(rec); // update the record with the form
         var dataToSave=rec.data;
         var visitTimeHour=dataToSave.visitTime.getHours();
@@ -112,24 +116,6 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
                 if(button)
                     Utility.loading.end(button);
             })
-            /* VisitDirect.saveVisit(dataToSave)
-             .then(function()
-             {
-             var dataToSave=me.getView().down('#studyVisitGridItemId').getController().getDataToBeSaved();
-
-             dataToSave.forEach(
-             function(_item)
-             {
-             _item.visitId=visitId;
-             });
-             CommonDirect.saveDataArray(dataToSave,"STUDY_VISIT","studyVisitId")
-             .then(function(){
-             if(button)
-             Utility.loading.end(button);
-             })
-
-             })*/
-
             .catch(function(_err)
             {
                 console.error(_err);

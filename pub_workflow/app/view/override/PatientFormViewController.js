@@ -40,30 +40,31 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     },
 
     onPatientZipCodeTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
-        Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
+        //Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
+    },
+    onPatientZipCodeTextFieldItemIdBlur: function(component, event, eOpts) {
+        Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",component,component.getValue());
     },
     onCityNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
-       /* var me=this;
-        CityDirect.cityAutoComplete(me,newValue,'CityNameComboStore',field);*/
         CommonDirect.autoComplete(this,"CITY",newValue,"cityName",'CityNameComboStore',field,false,4);
     },
-    onCityNameComboBoxEditorItemIdKeyup: function(textfield, e, eOpts) {
-       // CommonDirect.autoComplete(this,"CITY",textfield.getRawValue(),"cityName",'CityNameComboStore',textfield,false,4);
+    onCityNameComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        if(record.get('cityZipCode'))
+        {
+             this.getView().down('#patientZipCodeTextFieldItemId').setValue(record.get('cityZipCode'));
+        }
     },
     onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;
-        ReferringPhysicianDirect.referringPhysicianDirectAutoComplete(me,newValue,'ReferringPhysicianNameComboStore',field);
-
+        CommonDirect.autoComplete(me,"REFERRING_PHYSICIAN",newValue,"referringPhysicianLName",'ReferringPhysicianNameComboStore',field,true,4,"referringPhysicianFName");
     },
     onPatientSocialNumberTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
-
         if(newValue.length==13){
             var secuKey=97 - ( ( parseInt(newValue) ) % 97 );
             this.getView().down('#patientSocialKey').setValue(secuKey);
         }
     },
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
-
         var me=this;
         Utility.loading.start(button);
         me.patientFormSave()
@@ -76,25 +77,20 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                 console.error(_err);
                 Ext.Msg.alert('Error', translate('saveError'));
             });
-
-
     },
     getPatientId:function()
     {
-     return this.getView().getRecord().get('patientId');
+        return this.getView().getRecord().get('patientId');
     },
     patientFormSave: function() {
-
         var me=this;
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-
                 var rec=me.getView().getRecord();
                 var form=me.getView();
                 form.updateRecord(rec); // update the record with the form data
                 var dataToSave=rec.data;
-
                 PatientDirect.savePatient(dataToSave)
                     .then(function()
                     {
@@ -102,9 +98,27 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                     });
              });
          return promise;
+    },
+    onRadiogroupChange: function(field, newValue, oldValue, eOpts) {
+        var view=this.getView();
+        var patientTitleCombo=view.down('#patientTitleComboBoxEditorItemId');
+        var patientPregnantCheckBox = view.down('#patientPregnantCheckBoxItemId');
+        if(newValue.patientGender=="1") // 1 form H, 2 Form W
+        {
+            patientPregnantCheckBox.setHidden(true);
+            patientPregnantCheckBox.setValue(false);
+            if(patientTitleCombo.getValue()!=4)
+            {
+                patientTitleCombo.setValue(1);
+            }
+        }
+        if(newValue.patientGender=="2") // 1 form H, 2 Form W
+        {
+            patientPregnantCheckBox.setHidden(false);
+            if(patientTitleCombo.getValue()!=4 || patientTitleCombo.getValue()!=3)
+            {
+                patientTitleCombo.setValue(2);
+            }
+        }
     }
-
-
-
-
 });

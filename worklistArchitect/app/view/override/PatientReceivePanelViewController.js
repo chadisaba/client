@@ -4,10 +4,7 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
            this.patientView=component;
            this.patientView.down('#patientFormToolbarItemId').setHidden(true);
            component.getController().initForm(this.getView().patientId);
-
-
     },
-
     onVisitSimplifiedFormIdAfterRender: function(component, eOpts) {
         this.visitView=component;
       //  this.visitView.down('#patientFormToolbarItemId').setHidden(true);
@@ -19,28 +16,25 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
         }
     },
     onVisitSimplifiedFormIdStudyVisitGridEndEditEvent: function(form) {
-
         this.getView().down('#saveBtnCtnItemId').setDisabled(false);
     },
-
     onVisitSimplifiedFormIdStudyVisitGridStartEditEvent: function(form) {
         this.getView().down('#saveBtnCtnItemId').setDisabled(true);
     },
-
     onSaveAccueilPatientBtnClick: function(button, e, eOpts) {
-
         var me=this;
         Utility.loading.start(button);
         var patientViewController = me.patientView.getController();
+        var p1=patientViewController.patientFormSave();
         if(me.getView().patientId)
         {
-            var p1=patientViewController.patientFormSave();
             var p2=me.visitView.getController().visitFormSave();
             Promise.all([p1,p2]).
                 then(function(values)
                 {
                     Utility.loading.end(button);
-                    me.visitView.getController().getStudyVisitGrid().getController().initGrid(null,null,me.visitView.getController().getVisitId());
+                    var visitController = me.visitView.getController();
+                    visitController.getStudyVisitGrid().getController().initGrid(null,null,visitController.getVisitId());
                     me.fireEvent('visitDataSavedEvent');
                 })
                 .catch(function(_err)
@@ -50,7 +44,6 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
         }
         else
         {
-            var p1=patientViewController.patientFormSave();
             p1.then(function()
             {
                 Utility.loading.end(button);
@@ -60,8 +53,6 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
             }
             )
         }
-
-
     }
 
 

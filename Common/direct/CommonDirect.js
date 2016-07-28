@@ -55,9 +55,13 @@ var CommonDirect={
                     .then(
                         function()
                         {
-                            IndexedDB.db[_tableName].where(_searchFieldName)
+                                IndexedDB.db[_tableName]
+                                .where(_searchFieldName)
                                 .startsWithIgnoreCase(_searchValue)
-                                .toArray (function (_resultsArray) {
+                               /* if(_searchFieldName)
+                                    obj.or(_searchFieldName2).startsWithIgnoreCase(_searchValue);*/
+                                .toArray(
+                                    function (_resultsArray) {
                                     resolve(_resultsArray);
                                 });
                         }
@@ -65,6 +69,28 @@ var CommonDirect={
             
              });
          return promise;
+    },
+    searchDataWithTwoCriteriaFromIndexedDB:function(_searchValue,_searchFieldName1,_tableName,_searchFieldName2)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db[_tableName]
+                                .where(_searchFieldName1)
+                                .startsWithIgnoreCase(_searchValue)
+                                .or(_searchFieldName2)
+                                .startsWithIgnoreCase(_searchValue)
+                                .toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
+            });
+        return promise;
     },
     gethDataFromIndexedDB:function(_tableName)
     {
@@ -161,32 +187,51 @@ var CommonDirect={
             });
          return promise;
     },
-      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh)
-    {
+      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh,_searchFieldName2)
+        {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&& (_field.getValue()!=_field.getRawValue()))
+        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue))
         {
         if(_searchValue.length>=searchLengh)
         {
             var store = me.getViewModel().getStore(_comboStoreName);
             if(_fromIndexedDB)
             {
-               this.getDataFromIndexedDB(_searchValue,_searchFieldName)
-                .then(
+                var p;
+                if(_searchFieldName2)
+                    p=this.searchDataWithTwoCriteriaFromIndexedDB(_searchValue,_searchFieldName,_tableName,_searchFieldName2);
+                    else
+                     p=this.searchDataFromIndexedDB(_searchValue,_searchFieldName,_tableName);
+                p.then(
                     function(_resultData)
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(_resultData);
+                        if(_resultData.length>0) {
+                            store.loadData(_resultData);
+                            store.filterBy(
+                                function(_rec)
+                                {
+                                    var resultFilter=false;
+                                    if(_rec.get(_searchFieldName).toUpperCase().indexOf(_searchValue.toUpperCase())>=0)
+                                        resultFilter=true;
+                                    if(_searchFieldName2)
+                                    {
+                                        if(_rec.get(_searchFieldName2).toUpperCase().indexOf(_searchValue.toUpperCase())>=0)
+                                            resultFilter=true;
+                                    }
+                                    return resultFilter;
+                                }
 
-                        store.filter({
-                            property: _searchFieldName,
-                            anyMatch: true,
-                            value   : _searchValue
-                        });
-                        _field.expand();
-                    });   
+                            );
+                            _field.expand();
+                        }
+                        else
+                        {
+                            _field.setValue("");
+                        }
+                    });
             }
             else{
                 var filtersArray=[{name:_searchFieldName,value:_searchValue}];
@@ -196,19 +241,22 @@ var CommonDirect={
                     {
                         store.clearFilter();
                         store.removeAll();
-                        store.loadData(_resultData);
-
-                        store.filter({
-                            property: _searchFieldName,
-                            anyMatch: true,
-                            value   : _searchValue
-                        });
-                        _field.expand();
-
-
-                    });  
+                        if(_resultData.length>0)
+                        {
+                            store.loadData(_resultData);
+                            store.filter({
+                                property: _searchFieldName,
+                                anyMatch: true,
+                                value   : _searchValue
+                            });
+                            _field.expand();
+                        }
+                        else
+                        {
+                            _field.setValue("");
+                        }
+                    });
             }
-            
         }
         }
         else

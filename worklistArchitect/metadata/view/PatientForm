@@ -130,6 +130,21 @@
                             },
                             "name": "MyRadio4",
                             "designerId": "51124637-29eb-49ff-ba2a-bb5f4b2b7f6f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRadiogroupChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onRadiogroupChange",
+                            "designerId": "851a128f-26e1-4f49-aa94-44d84a9fca6b"
                         }
                     ]
                 },
@@ -449,6 +464,7 @@
                         "fieldLabel": [
                             "{trans.pregnant}"
                         ],
+                        "itemId": "patientPregnantCheckBoxItemId",
                         "layout|anchor": "100%",
                         "name": "patientPregnant"
                     },
@@ -470,6 +486,7 @@
                         "fieldLabel": [
                             "{trans.active}"
                         ],
+                        "hidden": true,
                         "layout|anchor": "100%",
                         "name": "active"
                     },
@@ -489,6 +506,7 @@
                     "userConfig": {
                         "disabled": true,
                         "fieldLabel": "Reprise ID",
+                        "hidden": true,
                         "layout|anchor": "100%",
                         "name": "patientIdReprise",
                         "readOnly": true
@@ -589,6 +607,21 @@
                             },
                             "name": "onPatientZipCodeTextFieldItemIdChange",
                             "designerId": "999126e9-cb79-4b42-b4ba-ca0467608117"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPatientZipCodeTextFieldItemIdBlur",
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onPatientZipCodeTextFieldItemIdBlur",
+                            "designerId": "84bbb6db-f903-4036-ab93-9539851aa2ea"
                         }
                     ]
                 },
@@ -650,12 +683,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onCityNameComboBoxEditorItemIdKeyup",
-                                "name": "keyup",
+                                "fn": "onCityNameComboBoxEditorItemIdSelect",
+                                "name": "select",
                                 "scope": "me"
                             },
-                            "name": "onCityNameComboBoxEditorItemIdKeyup",
-                            "designerId": "54867189-7537-44aa-ab9c-164def2a908f"
+                            "name": "onCityNameComboBoxEditorItemIdSelect",
+                            "designerId": "ab3d2369-49d7-427f-824b-d94cdb4c69b1"
                         }
                     ]
                 },

@@ -250,6 +250,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MyuserIdCol",

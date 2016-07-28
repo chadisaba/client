@@ -253,48 +253,16 @@ Ext.define('menu.MenuPlugin', {
                     tooltip: 'Recherche patient détaillée',
                     listeners: {
                         click: function () {
-                            // affichage de la recherche détaillé du patient
-                            Ext.create('Ext.window.Window', {
 
-                                // animateTarget:'comboSearchPatient',
+                            Ext.create('Common.ux.window.FullScreenWindow',{
+
                                 title:"Recherche patient",
-
-                                layout: {
-                                    type: 'border',
-                                    padding: 5
-                                },
-                                tools:[{
-                                    type:'refresh',
-                                    tooltip: 'Refresh form Data',
-                                    // hidden:true,
-                                    handler: function(event, toolEl, panelHeader) {
-                                        // refresh logic
-                                    }
-                                },
-                                    {
-                                        type:'help',
-                                        tooltip: 'Get Help',
-                                        callback: function(panel, tool, event) {
-                                            // show help here
-                                        }
-                                    }],
-                                maximizable: true,
-                                maximized:true,
-                                height:30,
-                                width:500,
-
-
-                                listeners: {
-
-                                    minimize: function (window, opts) {
-                                    }
-                                },
+                                itemId:"searchPatientWindowItemId",
                                 items:{
                                     region: 'center',
                                     xtype:'patientdetailsearchform'
                                 }
                             }).show();
-
                         }
                     }
                 },

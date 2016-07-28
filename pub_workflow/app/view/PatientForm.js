@@ -79,7 +79,10 @@ Ext.define('MyApp.view.PatientForm', {
                             boxLabel: 'F',
                             inputValue: '2'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        change: 'onRadiogroupChange'
+                    }
                 },
                 {
                     xtype: 'combobox',
@@ -204,6 +207,7 @@ Ext.define('MyApp.view.PatientForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
+                    itemId: 'patientPregnantCheckBoxItemId',
                     name: 'patientPregnant',
                     boxLabel: '',
                     bind: {
@@ -213,6 +217,7 @@ Ext.define('MyApp.view.PatientForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
+                    hidden: true,
                     name: 'active',
                     boxLabel: '',
                     bind: {
@@ -223,6 +228,7 @@ Ext.define('MyApp.view.PatientForm', {
                     xtype: 'textfield',
                     anchor: '100%',
                     disabled: true,
+                    hidden: true,
                     fieldLabel: 'Reprise ID',
                     name: 'patientIdReprise',
                     readOnly: true
@@ -260,7 +266,8 @@ Ext.define('MyApp.view.PatientForm', {
                         fieldLabel: '{trans.zipCode}'
                     },
                     listeners: {
-                        change: 'onPatientZipCodeTextFieldItemIdChange'
+                        change: 'onPatientZipCodeTextFieldItemIdChange',
+                        blur: 'onPatientZipCodeTextFieldItemIdBlur'
                     }
                 },
                 {
@@ -282,7 +289,7 @@ Ext.define('MyApp.view.PatientForm', {
                     },
                     listeners: {
                         change: 'onCityNameComboBoxEditorItemIdChange',
-                        keyup: 'onCityNameComboBoxEditorItemIdKeyup'
+                        select: 'onCityNameComboBoxEditorItemIdSelect'
                     }
                 },
                 {

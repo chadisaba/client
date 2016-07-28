@@ -5,10 +5,10 @@ var ComboData= {
 ],
 
     patientTitle:[
-        {patientTitleId:1, patientTitle:'Mr.'},
-        {patientTitleId:2, patientTitle:'Mme.'},
-        {patientTitleId:3, patientTitle:'Mlle'},
-        {patientTitleId:4, patientTitle:'Enfant'}
+        {patientTitleId:1, patientTitle:translate('Mr.')},
+        {patientTitleId:2, patientTitle:translate('Mme.')},
+        {patientTitleId:3, patientTitle:translate('Mlle')},
+        {patientTitleId:4, patientTitle:translate('Enfant')}
     ],
     quotationStatus:[
         {
