@@ -224,6 +224,32 @@
             },
             "name": "MyField31",
             "designerId": "du5eap13-ac56-469a-895f-du5eap13yv1f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigJSDavUrl"
+            },
+            "name": "MyField",
+            "designerId": "5b7fa6e6-75f1-4fdb-91a0-ff2e50f7b362"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigWordPath"
+            },
+            "name": "MyField3",
+            "designerId": "602d064a-d673-4995-9a33-32645f4b7677"
         }
     ]
 }

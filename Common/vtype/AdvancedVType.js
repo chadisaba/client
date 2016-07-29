@@ -33,6 +33,15 @@ Ext.define('Vtype.AdvancedVType', {
 
     },
 
+
+    filePath: function(val, field) {
+        return this.numSecuRe.test(val);
+    },
+    numSecuRe: /^([a-zA-Z]:)?(\/[a-zA-Z0-9_/-~]+)+\/?$/i,
+    // vtype Text property: The error text to display when the validation function returns false
+    numSecuText: translate('invalidFilePath'),
+
+
     password: function(val, field) {
         if (field.initialPassField) {
             var pwd = field.up('form').down('#' + field.initialPassField);

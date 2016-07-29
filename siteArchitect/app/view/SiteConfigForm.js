@@ -83,11 +83,24 @@ Ext.define('MyApp.view.SiteConfigForm', {
         },
         {
             xtype: 'textfield',
+            hidden: true,
             fieldLabel: 'Senolog UID',
             name: 'siteConfigUidSenolog'
         },
         {
+            xtype: 'textfield',
+            fieldLabel: 'JsDav Url',
+            name: 'siteConfigJSDavUrl',
+            vtype: 'url'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Word Path',
+            name: 'siteConfigWordPath'
+        },
+        {
             xtype: 'combobox',
+            hidden: true,
             fieldLabel: 'Senolog type',
             name: 'siteConfigSenologType'
         }

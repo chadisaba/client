@@ -268,6 +268,12 @@ if(selected.length>0){
                     }
                 }).show();
                 break;
+            case 'worklistLastCrStatus':
+                var dataObject={};
+                if(!record.get('worklistLastCrStatus'))
+                dataObject.reportId=
+              CommonDirect.saveData()
+                break;
         }
     },
     /***********************Renderers*********************************/

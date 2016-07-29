@@ -75,6 +75,12 @@ Ext.define('MyApp.model.SiteConfigModel', {
         },
         {
             name: 'addedAndValidated'
+        },
+        {
+            name: 'siteConfigJSDavUrl'
+        },
+        {
+            name: 'siteConfigWordPath'
         }
     ]
 });

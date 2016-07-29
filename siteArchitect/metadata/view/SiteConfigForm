@@ -143,11 +143,45 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Senolog UID",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "siteConfigUidSenolog"
             },
             "name": "MyTextField7",
             "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "JsDav Url",
+                "itemId": null,
+                "labelWidth": null,
+                "name": "siteConfigJSDavUrl",
+                "vtype": "url"
+            },
+            "name": "MyTextField2",
+            "designerId": "9a1204ee-3e49-40f4-8b14-6e706dda5b95"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Word Path",
+                "labelWidth": null,
+                "name": "siteConfigWordPath",
+                "vtype": null
+            },
+            "name": "MyTextField3",
+            "designerId": "25f803b6-b93d-40b0-be31-7bfc15c581aa"
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -158,6 +192,7 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Senolog type",
+                "hidden": true,
                 "labelWidth": null,
                 "name": "siteConfigSenologType"
             },
