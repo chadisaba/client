@@ -1303,7 +1303,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "visitHospitVisitNumber",
+                "dataIndex": "patientNbVisit",
                 "minWidth": null,
                 "text": [
                     "{trans.visitnumber}"

@@ -627,6 +627,45 @@
             },
             "name": "MyDate2",
             "designerId": "b23df6ll-ac56-469a-895f-p9tlyyy2jg9r"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "doctorId"
+            },
+            "name": "MyInteger8",
+            "designerId": "da47cb15-3227-4545-9398-78984b99a291"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientId"
+            },
+            "name": "MyField20",
+            "designerId": "5a08b70c-e5da-4587-aee0-b1bb605d8f0b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientNbVisit"
+            },
+            "name": "MyInteger9",
+            "designerId": "c4e2a1be-b07b-43b8-965c-42fd5cde7ad2"
         }
     ]
 }

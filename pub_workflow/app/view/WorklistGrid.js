@@ -272,7 +272,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'visitHospitVisitNumber',
+            dataIndex: 'patientNbVisit',
             bind: {
                 text: '{trans.visitnumber}'
             }

@@ -17,10 +17,13 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     {
                         for (var i = 0; i < _resultArray.length; i++) {
                             _resultArray[i].siteCode = _resultArray[i]['Site.siteCode'];
+                            _resultArray[i].siteId = _resultArray[i]['Site.siteId'];
                             _resultArray[i].patientLName = _resultArray[i]['Patient.patientLName'];
                             _resultArray[i].patientFname = _resultArray[i]['Patient.patientFname'];
                             _resultArray[i].patientBirthday = _resultArray[i]['Patient.patientBirthday'];
                             _resultArray[i].patientSearch = _resultArray[i]['Patient.patientSearch'];
+                            _resultArray[i].patientId = _resultArray[i]['Patient.patientId'];
+                            _resultArray[i].patientNbVisit = _resultArray[i]['Patient.patientNbVisit'];
                             _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
                             _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
                             _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
@@ -28,7 +31,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
                             _resultArray[i].visitIsFree = _resultArray[i]['Visit.visitIsFree'];
                             _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
-
+                            _resultArray[i].doctorId = _resultArray[i]['Visit.doctorId'];
                             if(_today) // just when we display the current day on our worklist
                             {
                                 worklistUpdate= _resultArray[i]['updatedAt'];
@@ -180,6 +183,7 @@ if(selected.length>0){
     },
     onWorklistGridIdCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
+        var me=this;
         var fieldName=this.getView().columns[cellIndex].dataIndex;
         switch (fieldName)
         {
@@ -268,6 +272,72 @@ if(selected.length>0){
                     }
                 }).show();
                 break;
+            case 'worklistLastCrStatus':
+
+                var dataObject={};
+                if(!record.get('worklistLastCrStatus'))
+                {
+                    var myMask = new Ext.LoadMask({msg:translate("reportOpening..."),target:me.getView()});
+                    myMask.show();
+                    var dateFile=new Date();
+                    var year=dateFile.getFullYear();
+                    var month=dateFile.getMonth();
+
+                    dataObject.reportId= UUID();
+                    dataObject.doctorId= record.get('doctorId');
+                    dataObject.visitId= record.get('visitId');
+                    dataObject.reportName= dataObject.reportId+".docx";
+                    dataObject.reportPath= record.get('doctorId')+"/"+year+"/"+month;
+                    dataObject.reportDate= new Date();
+                    dataObject.reportStatus= 1;
+                    var p1=CommonDirect.saveData(dataObject,'REPORT',"");
+
+                    var worklistObject={};
+                    worklistObject.worklistId=record.get('worklistId');
+                    worklistObject.patientId=record.get('patientId');
+                    worklistObject.siteId=record.get('siteId');
+                    worklistObject.visitId=record.get('visitId');
+                    worklistObject.worklistLastCrStatus=1;
+                    var p2=CommonDirect.saveData(worklistObject,'WORKLIST',"");
+
+                       Promise.all([p1,p2])
+                            .then(function(_result)
+                            {
+                                //console.log(_result);
+                                // create the report file on the jsDav server
+
+                                var xhttp;
+                                if (window.XMLHttpRequest) {
+                                    xhttp = new XMLHttpRequest();
+                                } else {
+                                    // code for IE6, IE5
+                                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                }
+
+                                xhttp.open("POST", "http://localhost:1000/openWord", true);
+                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                xhttp.send("jsDavUrl=http://localhost:8000/&wordPath=C:/Program Files (x86)/Microsoft Office/root/Office16/WINWORD.EXE&docPath=app4office.docx");
+
+                                /*Ext.Ajax.request({
+                                    url: 'http://localhost:1000/openWord',
+                                    method:'POST',
+                                    params: {
+                                         jsDavUrl:"http://localhost:8000/",
+                                         wordPath:"C:/Program Files (x86)/Microsoft Office/root/Office16/WINWORD.EXE",
+                                        docPath:"app4office.docx"
+                                    },
+                                    success: function(response){
+                                        var text = response.responseText;
+                                        // process server response here
+                                    }
+                                });/*/
+
+                                Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                                myMask.hide();
+                            })
+                }
+
+                break;
         }
     },
     /***********************Renderers*********************************/
@@ -352,6 +422,7 @@ if(selected.length>0){
         return result;
     },
     CRRenderer: function(value, metaData, record) {
+      //  return value;
         /*
          0 : no report
          1 :Report  in typing

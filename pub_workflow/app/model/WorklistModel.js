@@ -17,7 +17,8 @@ Ext.define('MyApp.model.WorklistModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Date'
+        'Ext.data.field.Date',
+        'Ext.data.field.Integer'
     ],
 
     validators: [
@@ -170,6 +171,17 @@ Ext.define('MyApp.model.WorklistModel', {
         {
             type: 'date',
             name: 'lastUpdate'
+        },
+        {
+            type: 'int',
+            name: 'doctorId'
+        },
+        {
+            name: 'patientId'
+        },
+        {
+            type: 'int',
+            name: 'patientNbVisit'
         }
     ]
 });

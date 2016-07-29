@@ -4,8 +4,12 @@ Ext.define('MyApp.view.override.WorklistPanelViewController', {
 
         var me=this;
         var worklistGrid=me.getView().down('#worklistGridId');
-       var  worklistFilterGrid=me.getView().down('#worklistFilterGridItemId');
+        var worklistFilterGrid=me.getView().down('#worklistFilterGridItemId');
         Plugins.grid.GridSearchPlugin.configure(worklistGrid,worklistFilterGrid);
+
+        Ext.GlobalEvents.on('refreshWorklistEvent', function() {
+            me.onGridpanelApplySearch();
+        });
     },
     onGridpanelApplySearch: function() {
         var me=this;
