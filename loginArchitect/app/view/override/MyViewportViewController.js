@@ -5,7 +5,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
 
 
         var view=this.getView().down("#loginForm");
-        var myMask = new Ext.LoadMask({msg:"Vérification en cours",target:view});
+        var myMask = new Ext.LoadMask({msg:translate("VerificationEnCours"),target:view});
         myMask.show();
         var formValuesObject=view.getValues();
 
@@ -13,6 +13,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
         var password=formValuesObject.password;
 
         var user;
+        var site;
         var filters=[
             {
                 name:'userLogin',value:login,nolike:true
@@ -23,27 +24,49 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
         ];
 
 
-        CommonDirect.getData("USER",filters)
-            .then(function(_result)
+        var url=Ext.Object.fromQueryString(document.URL);
+        Ext.Object.each(url, function(key, value) {
+            if (key === 'siteId') {
+                InitApp.siteId=parseInt(value);
+                window.localStorage.setItem('smartmed-siteId', value);
+
+            }
+        });
+        var filterSite= [{name:'siteId',value:InitApp.siteId}];
+        var mainTableObject={
+            tableName:"SITE",
+            filters:filterSite
+        };
+        var joinTableArray=[
             {
-                if(_result.length>0){
-                    user=_result[0];
+                tableName:"SITE_CONFIG"
+            }
+        ];
+        var pSite=CommonDirect.getDataWidthJoin(mainTableObject,joinTableArray);
+        var pUser= CommonDirect.getData("USER",filters);
 
-                 // get the siteId from the url
+        Promise.all([pSite,pUser])
+            .then(function(_values)
+            {
+                var userResult=_values[1];
+                if(userResult.length>0){
+                    user=userResult[0];
 
-                    var url=Ext.Object.fromQueryString(document.URL);
+                    var siteResult=_values[0];
+                    if(siteResult.length>0){
+                        site=siteResult[0];
+                        InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
+                        InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                        window.localStorage.setItem('smartmed-jsDavUrl', InitApp.jsDavUrl);
+                        window.localStorage.setItem('smartmed-wordPath', InitApp.wordPath);
 
-                    // get the userId from the
-                    Ext.Object.each(url, function(key, value) {
-
-                        if (key === 'siteId') {
-                            InitApp.siteId=parseInt(value); // stop the iteration
-                            window.localStorage.setItem('smartmed-siteId', value);
-                        }
-                    });
-
-
-                 InitApp.initIndexedDB(myMask)
+                        InitApp.initIndexedDB(myMask)
+                    }
+                    else
+                    {
+                        Ext.MessageBox.alert("Error","siteConfigIsNotFound");
+                        myMask.hide();
+                    }
 
                 }
                 else

@@ -53,7 +53,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
        params.dataToBeSaved=dataToBeSaved;
        params.comment=comment;
 
-       console.log(dataToBeSaved);
+      // console.log(dataToBeSaved);
        Server.CommonQueries.saveRecords(params,
            function(_result){
                if(_result.success){

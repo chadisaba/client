@@ -287,7 +287,7 @@ if(selected.length>0){
                     dataObject.doctorId= record.get('doctorId');
                     dataObject.visitId= record.get('visitId');
                     dataObject.reportName= dataObject.reportId+".docx";
-                    dataObject.reportPath= record.get('doctorId')+"/"+year+"/"+month;
+                    dataObject.reportPath= "site"+record.get('siteId')+"/"+year+"/"+month;
                     dataObject.reportDate= new Date();
                     dataObject.reportStatus= 1;
                     var p1=CommonDirect.saveData(dataObject,'REPORT',"");
@@ -298,6 +298,8 @@ if(selected.length>0){
                     worklistObject.siteId=record.get('siteId');
                     worklistObject.visitId=record.get('visitId');
                     worklistObject.worklistLastCrStatus=1;
+
+                   var  reportFullPath=dataObject.reportPath+"/"+ dataObject.reportName;
                     var p2=CommonDirect.saveData(worklistObject,'WORKLIST',"");
 
                        Promise.all([p1,p2])
@@ -307,17 +309,42 @@ if(selected.length>0){
                                 // create the report file on the jsDav server
 
                                 var xhttp;
-                                if (window.XMLHttpRequest) {
-                                    xhttp = new XMLHttpRequest();
-                                } else {
-                                    // code for IE6, IE5
-                                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                }
 
+                                xhttp = new XMLHttpRequest();
+                                xhttp.onreadystatechange = function() {
+                                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                                        if(xhttp.responseText=="success")
+                                        {
+                                            // word file is created successfuly on jsDav server
+                                            // we open the word file now
+
+                                            xhttp.open("POST", "http://localhost:1000/openWord", true);
+                                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                            xhttp.send("jsDavUrl="+jsDavUrl+"&wordPath="+wordPath+"&docPath="+reportFullPath);
+
+                                            Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                                            myMask.hide();
+
+                                        }
+                                        else
+                                        {
+                                            Ext.Msg.alert('Error', translate('reportFileCreationisFailed'));
+                                        }
+
+                                    }
+                                };
+
+                               var wordPath= window.localStorage.getItem('smartmed-wordPath');
+                                var jsDavUrl=window.localStorage.getItem('smartmed-jsDavUrl');
+
+                                xhttp.open("POST", "http://localhost:7000/createWord", true);
+                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                xhttp.send("docPath="+reportFullPath);
+                                /*
                                 xhttp.open("POST", "http://localhost:1000/openWord", true);
                                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                                xhttp.send("jsDavUrl=http://localhost:8000/&wordPath=C:/Program Files (x86)/Microsoft Office/root/Office16/WINWORD.EXE&docPath=app4office.docx");
-
+                                xhttp.send("jsDavUrl="+jsDavUrl+"&wordPath="+wordPath+"&docPath=app4office.docx");
+*/
                                 /*Ext.Ajax.request({
                                     url: 'http://localhost:1000/openWord',
                                     method:'POST',
@@ -332,8 +359,7 @@ if(selected.length>0){
                                     }
                                 });/*/
 
-                                Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
-                                myMask.hide();
+
                             })
                 }
 

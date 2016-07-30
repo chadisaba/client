@@ -36,6 +36,7 @@ Ext.define('MyApp.view.override.PatientReceivePanelViewController', {
                     var visitController = me.visitView.getController();
                     visitController.getStudyVisitGrid().getController().initGrid(null,null,visitController.getVisitId());
                     me.fireEvent('visitDataSavedEvent');
+                    Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
                 })
                 .catch(function(_err)
                 {
