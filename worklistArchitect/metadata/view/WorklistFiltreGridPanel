@@ -9,8 +9,7 @@
         "designer|userAlias": "worklistfiltregridpanel",
         "designer|userClassName": "WorklistFiltreGridPanel",
         "height": null,
-        "stateId": "worklist-filtre",
-        "stateful": true,
+        "stateId": null,
         "store": [
             "{WorklistGridFilterStore}"
         ],
