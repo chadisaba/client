@@ -179,12 +179,28 @@ if(selected.length>0){
         grid.down('#urgentIcon').setVisible(visitIsUrgent);
 }
 
+    },
+    onSavePreferenceItemIdClick: function(button, e, eOpts) {
+        Utility.loading.start(button);
+        StateProvider.saveState( window.localStorage.getItem('smartmed-userId'))
+            .then(function(_result)
+            {
+                Ext.Msg.alert(translate('Info'),translate('preferenceSavedSuccessfully'));
+                Utility.loading.end(button);
+            })
+            .catch(function(_err)
+            {
+                Ext.Msg.alert('Error',translate(('savePreferenceError')));
+                Utility.loading.end(button);
+            });
+
+
 
     },
     onWorklistGridIdCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
         var me=this;
-        var fieldName=this.getView().columns[cellIndex].dataIndex;
+        var fieldName=this.getView().getColumns()[cellIndex].dataIndex;
         switch (fieldName)
         {
             case 'worklistVisitInfo':
@@ -274,93 +290,25 @@ if(selected.length>0){
                 break;
             case 'worklistLastCrStatus':
 
-                var dataObject={};
+
                 if(!record.get('worklistLastCrStatus'))
                 {
                     var myMask = new Ext.LoadMask({msg:translate("reportOpening..."),target:me.getView()});
                     myMask.show();
-                    var dateFile=new Date();
-                    var year=dateFile.getFullYear();
-                    var month=dateFile.getMonth();
-
-                    dataObject.reportId= UUID();
-                    dataObject.doctorId= record.get('doctorId');
-                    dataObject.visitId= record.get('visitId');
-                    dataObject.reportName= dataObject.reportId+".docx";
-                    dataObject.reportPath= "site"+record.get('siteId')+"/"+year+"/"+month;
-                    dataObject.reportDate= new Date();
-                    dataObject.reportStatus= 1;
-                    var p1=CommonDirect.saveData(dataObject,'REPORT',"");
-
-                    var worklistObject={};
-                    worklistObject.worklistId=record.get('worklistId');
-                    worklistObject.patientId=record.get('patientId');
-                    worklistObject.siteId=record.get('siteId');
-                    worklistObject.visitId=record.get('visitId');
-                    worklistObject.worklistLastCrStatus=1;
-
-                   var  reportFullPath=dataObject.reportPath+"/"+ dataObject.reportName;
-                    var p2=CommonDirect.saveData(worklistObject,'WORKLIST',"");
-
-                       Promise.all([p1,p2])
-                            .then(function(_result)
-                            {
-                                //console.log(_result);
-                                // create the report file on the jsDav server
-
-                                var xhttp;
-
-                                xhttp = new XMLHttpRequest();
-                                xhttp.onreadystatechange = function() {
-                                    if (xhttp.readyState == 4 && xhttp.status == 200) {
-                                        if(xhttp.responseText=="success")
-                                        {
-                                            // word file is created successfuly on jsDav server
-                                            // we open the word file now
-
-                                            xhttp.open("POST", "http://localhost:1000/openWord", true);
-                                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                                            xhttp.send("jsDavUrl="+jsDavUrl+"&wordPath="+wordPath+"&docPath="+reportFullPath);
-
-                                            Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
-                                            myMask.hide();
-
-                                        }
-                                        else
-                                        {
-                                            Ext.Msg.alert('Error', translate('reportFileCreationisFailed'));
-                                        }
-
-                                    }
-                                };
-
-                               var wordPath= window.localStorage.getItem('smartmed-wordPath');
-                                var jsDavUrl=window.localStorage.getItem('smartmed-jsDavUrl');
-
-                                xhttp.open("POST", "http://localhost:7000/createWord", true);
-                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                                xhttp.send("docPath="+reportFullPath);
-                                /*
-                                xhttp.open("POST", "http://localhost:1000/openWord", true);
-                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                                xhttp.send("jsDavUrl="+jsDavUrl+"&wordPath="+wordPath+"&docPath=app4office.docx");
-*/
-                                /*Ext.Ajax.request({
-                                    url: 'http://localhost:1000/openWord',
-                                    method:'POST',
-                                    params: {
-                                         jsDavUrl:"http://localhost:8000/",
-                                         wordPath:"C:/Program Files (x86)/Microsoft Office/root/Office16/WINWORD.EXE",
-                                        docPath:"app4office.docx"
-                                    },
-                                    success: function(response){
-                                        var text = response.responseText;
-                                        // process server response here
-                                    }
-                                });/*/
-
-
-                            })
+                    var doctorId=record.get('doctorId');
+                    var visitId=record.get('visitId');
+                    var patientId=record.get('patientId');
+                    var worklistId=record.get('worklistId');
+                    var siteId=record.get('siteId');
+                  func.Report.createNewReport(doctorId,visitId,siteId,worklistId,patientId)
+                      .then(function(_result)
+                      {
+                          myMask.hide();
+                      })
+                      .catch(function(_err)
+                      {
+                          Ext.Msg.alert(translate('error'), translate(_err));
+                      })
                 }
 
                 break;

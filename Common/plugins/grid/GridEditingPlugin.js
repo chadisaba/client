@@ -678,8 +678,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				tooltip: translate('clickToSavePreference'),//'Cliquer ici pour enregistrer vos préférences',
 				listeners: {
 					click: function (button, e, options){
-
-						me.grid.fireEvent('modifyItem', me.grid);
+						StateProvider.saveState( window.localStorage.getItem('smartmed-userId'));
 					}
 				}
 			}

@@ -1886,6 +1886,59 @@
                         "html": "string"
                     },
                     "designerId": "ce884174-9b24-40ef-b370-4961190279da"
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "name": "MySpacer12",
+                    "designerId": "0431881e-c734-40c2-b70b-cc367e6c4ebe"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "glyph": "xf234@FontAwesome",
+                        "itemId": "savePreferenceItemId",
+                        "layout|flex": null,
+                        "text": null,
+                        "tooltip": "{trans.clickToSavePreference}"
+                    },
+                    "name": "MyButton7",
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "5392b9fe-da9d-4d93-bcdb-abcf53c635f1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSavePreferenceItemIdClick",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSavePreferenceItemIdClick",
+                            "designerId": "c3ca6b89-1df1-469e-8f89-f15f5ce0bf1c"
+                        }
+                    ]
                 }
             ]
         },

@@ -27,7 +27,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         'Ext.button.Split',
         'Ext.menu.Menu',
         'Ext.menu.Item',
-        'Ext.toolbar.Separator'
+        'Ext.toolbar.Separator',
+        'Ext.toolbar.Spacer'
     ],
 
     controller: 'worklistgrid',
@@ -422,6 +423,19 @@ Ext.define('MyApp.view.WorklistGrid', {
                     xtype: 'component',
                     html: ' <span class="fa-stack fa-lg" style="font-size:10px;color:#204d74;cursor: help;" >             <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-inverse fa-stack-1x">U</i></span>',
                     itemId: 'urgentIcon'
+                },
+                {
+                    xtype: 'tbspacer',
+                    flex: 1
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'savePreferenceItemId',
+                    glyph: 'xf234@FontAwesome',
+                    tooltip: '{trans.clickToSavePreference}',
+                    listeners: {
+                        click: 'onSavePreferenceItemIdClick'
+                    }
                 }
             ]
         }

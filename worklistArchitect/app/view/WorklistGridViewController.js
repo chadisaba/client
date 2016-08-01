@@ -130,6 +130,10 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
+    onSavePreferenceItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onWorklistGridIdSelectionChange: function(model, selected, eOpts) {
 
     },

@@ -28,6 +28,8 @@ Ext.define('MyApp.view.WorklistFiltreGridPanel', {
     viewModel: {
         type: 'worklistfiltregridpanel'
     },
+    stateId: 'worklist-filtre',
+    stateful: true,
 
     bind: {
         title: '{trans.filters}',

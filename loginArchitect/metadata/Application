@@ -15,5 +15,23 @@
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());"
+                ]
+            },
+            "name": "launch",
+            "designerId": "081baa18-ea73-41db-a37b-320ca83e9a13"
+        }
+    ]
 }

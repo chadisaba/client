@@ -57,10 +57,22 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                         site=siteResult[0];
                         InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
                         InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                        InitApp.userId= user.userId;
+
                         window.localStorage.setItem('smartmed-jsDavUrl', InitApp.jsDavUrl);
                         window.localStorage.setItem('smartmed-wordPath', InitApp.wordPath);
+                        window.localStorage.setItem('smartmed-userId', InitApp.userId);
 
-                        InitApp.initIndexedDB(myMask)
+                        StateProvider.restoreState(InitApp.userId)
+                            .then(function(_result)
+                            {
+                                InitApp.initIndexedDB(myMask)
+                            })
+                            .catch(function(_err)
+                            {
+                                Ext.Msg.alert('Error',translate(('restorePreferenceError')));
+                            });
+
                     }
                     else
                     {
