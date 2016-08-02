@@ -66,6 +66,8 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                         StateProvider.restoreState(InitApp.userId)
                             .then(function(_result)
                             {
+                                myMask.hide();
+                                var myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
                                 InitApp.initIndexedDB(myMask)
                             })
                             .catch(function(_err)

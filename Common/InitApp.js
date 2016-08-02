@@ -129,7 +129,7 @@ var InitApp={
                             .then(function(_result)
                             {
                                 _myMask.hide();
-                                alert('indexedDB tables updated');
+                               // alert('indexedDB tables updated');
                                 window.open("../pub_workflow/#maintabpanel",'_self');
                             }).
                             catch(function(_err)

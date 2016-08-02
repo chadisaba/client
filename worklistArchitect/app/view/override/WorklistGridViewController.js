@@ -88,6 +88,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
     onWorklistGridIdAfterRender: function(component) {
 
     var me=this;
+
+        translateUtil.transAll(component);
         me.lastUpdateDate=null;
         me.initGrid(true).then(
             function(_result)

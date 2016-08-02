@@ -21,6 +21,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         'MyApp.view.WorklistGridViewModel',
         'MyApp.view.WorklistGridViewController',
         'Ext.grid.column.Date',
+        'Ext.form.field.TextArea',
         'Ext.view.Table',
         'Ext.selection.RowModel',
         'Ext.toolbar.Toolbar',
@@ -28,7 +29,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         'Ext.menu.Menu',
         'Ext.menu.Item',
         'Ext.toolbar.Separator',
-        'Ext.toolbar.Spacer'
+        'Ext.toolbar.Spacer',
+        'Ext.grid.plugin.CellEditing'
     ],
 
     controller: 'worklistgrid',
@@ -55,9 +57,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             minWidth: 50,
             width: 100,
             dataIndex: 'siteCode',
-            bind: {
-                text: '{trans.site}'
-            }
+            text: 'site'
         },
         {
             xtype: 'gridcolumn',
@@ -65,15 +65,14 @@ Ext.define('MyApp.view.WorklistGrid', {
             hidden: true,
             width: 50,
             dataIndex: 'visitIsBySocialCard',
-            bind: {
-                text: '{trans.vitale}'
-            }
+            text: 'By Social Card'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'infoVisitRenderer',
             width: 50,
-            dataIndex: 'worklistVisitInfo'
+            dataIndex: 'worklistVisitInfo',
+            text: 'C. Info'
         },
         {
             xtype: 'gridcolumn',
@@ -82,24 +81,21 @@ Ext.define('MyApp.view.WorklistGrid', {
             createFilter: true,
             width: 60,
             dataIndex: 'visitTime',
-            bind: {
-                text: '{trans.time}'
-            }
+            text: 'time'
         },
         {
             xtype: 'datecolumn',
             hidden: true,
             scrollable: true,
             dataIndex: 'visitDate',
-            bind: {
-                text: '{trans.date}'
-            }
+            text: 'date'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'infoPatientRenderer',
             width: 50,
-            dataIndex: 'worklistPatientInfo'
+            dataIndex: 'worklistPatientInfo',
+            text: 'P.Info'
         },
         {
             xtype: 'gridcolumn',
@@ -107,16 +103,12 @@ Ext.define('MyApp.view.WorklistGrid', {
             createFilter: true,
             width: 150,
             dataIndex: 'patientLName',
-            bind: {
-                text: '{trans.patient}'
-            }
+            text: 'patient'
         },
         {
             xtype: 'datecolumn',
             dataIndex: 'patientBirthday',
-            bind: {
-                text: '{trans.birthday}'
-            }
+            text: 'birthday'
         },
         {
             xtype: 'gridcolumn',
@@ -124,44 +116,34 @@ Ext.define('MyApp.view.WorklistGrid', {
             createFilter: true,
             width: 200,
             dataIndex: 'worklistStudies',
-            bind: {
-                text: '{trans.studies}'
-            }
+            text: 'studies'
         },
         {
             xtype: 'gridcolumn',
             createFilter: true,
             width: 80,
             dataIndex: 'worklistDoctor',
-            bind: {
-                text: '{trans.doctor}'
-            }
+            text: 'worklistDoctor'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererPrescPhysician',
             hidden: true,
             dataIndex: 'worklistMedPresc',
-            bind: {
-                text: '{trans.consultantPh}'
-            }
+            text: 'consultant Ph.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'rendererRecipientPhysician',
             hidden: true,
             dataIndex: 'worklistMedRecipient',
-            bind: {
-                text: '{trans.drRecipient}'
-            }
+            text: 'Recipient'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'dictationRenderer',
             dataIndex: 'worklistDictationsStatus',
-            bind: {
-                text: '{trans.dictation}'
-            }
+            text: 'dictation'
         },
         {
             xtype: 'gridcolumn',
@@ -172,9 +154,7 @@ Ext.define('MyApp.view.WorklistGrid', {
                 ComboData.crStatus
             ],
             dataIndex: 'worklistLastCrStatus',
-            bind: {
-                text: '{trans.report}'
-            }
+            text: 'worklist Report'
         },
         {
             xtype: 'gridcolumn',
@@ -186,41 +166,37 @@ Ext.define('MyApp.view.WorklistGrid', {
             filterType: 'combobox',
             hidden: true,
             dataIndex: 'worklistLastDictationStatus',
-            bind: {
-                text: '{trans.quotation}'
-            }
+            text: 'worklist quotation'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'FTRenderer',
             hidden: true,
             dataIndex: 'worklistFTNum',
-            bind: {
-                text: '{trans.fT}'
-            }
+            text: 'F.T'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'commentRenderer',
             dataIndex: 'worklistVisitComment',
-            bind: {
-                text: '{trans.comment}'
+            text: 'comment',
+            editor: {
+                xtype: 'textareafield',
+                itemId: 'commentTextAreaEditor'
             }
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
             dataIndex: 'worklistPatientDu',
-            bind: {
-                text: '{trans.duP}'
-            }
+            text: 'P. due'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'duRenderer',
             hidden: true,
             dataIndex: 'worklistFtDu',
-            text: '{trans.duFt}'
+            text: 'Dû F.T'
         },
         {
             xtype: 'gridcolumn',
@@ -251,45 +227,37 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'visitIsFreeRenderer',
             width: 60,
             dataIndex: 'visitIsFree',
-            bind: {
-                text: '{trans.free}'
-            }
+            text: 'free'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'hospitalizedRenderer',
             dataIndex: 'visitIsHospitalized',
-            bind: {
-                text: '{trans.hospitalized}'
-            }
+            text: 'hospit.'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'visitIsUrgentRenderer',
             dataIndex: 'visitIsUrgent',
-            bind: {
-                text: '{trans.urgent}'
-            }
+            text: 'urgent'
         },
         {
             xtype: 'gridcolumn',
             dataIndex: 'patientNbVisit',
-            bind: {
-                text: '{trans.visitnumber}'
-            }
+            text: 'Visit Numbers'
         },
         {
             xtype: 'gridcolumn',
             renderer: 'invoiceTypeRenderer',
             hidden: true,
             dataIndex: 'visitInvoiceType',
-            text: ''
+            text: 'Invoice type'
         },
         {
             xtype: 'gridcolumn',
             hidden: true,
             dataIndex: 'visitFtFor',
-            text: ''
+            text: 'F.T. Pour'
         },
         {
             xtype: 'gridcolumn',
@@ -300,9 +268,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             ],
             filterType: 'combobox',
             dataIndex: 'visitPEC',
-            bind: {
-                text: '{trans.pec}'
-            }
+            text: 'P.E.C'
         }
     ],
     listeners: {
@@ -310,7 +276,8 @@ Ext.define('MyApp.view.WorklistGrid', {
         chHist: 'onWorklistGridIdChHist',
         afterrender: 'onWorklistGridIdAfterRender',
         selectionchange: 'onWorklistGridIdSelectionChange',
-        cellclick: 'onWorklistGridIdCellClick'
+        cellclick: 'onWorklistGridIdCellClick',
+        boxready: 'onWorklistGridIdBoxReady'
     },
     selModel: {
         selType: 'rowmodel',
@@ -429,15 +396,25 @@ Ext.define('MyApp.view.WorklistGrid', {
                     flex: 1
                 },
                 {
-                    xtype: 'button',
-                    itemId: 'savePreferenceItemId',
-                    glyph: 'xf234@FontAwesome',
-                    tooltip: '{trans.clickToSavePreference}',
-                    listeners: {
-                        click: 'onSavePreferenceItemIdClick'
-                    }
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'savePreferenceItemId',
+                            glyph: 'xf234@FontAwesome',
+                            tooltip: 'clickToSavePreference',
+                            listeners: {
+                                click: 'onSavePreferenceItemIdClick'
+                            }
+                        }
+                    ]
                 }
             ]
+        }
+    ],
+    plugins: [
+        {
+            ptype: 'cellediting'
         }
     ]
 

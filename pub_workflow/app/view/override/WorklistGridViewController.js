@@ -88,6 +88,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
     onWorklistGridIdAfterRender: function(component) {
 
     var me=this;
+
+        translateUtil.transAll(component);
         me.lastUpdateDate=null;
         me.initGrid(true).then(
             function(_result)
@@ -185,12 +187,12 @@ if(selected.length>0){
         StateProvider.saveState( window.localStorage.getItem('smartmed-userId'))
             .then(function(_result)
             {
-                Ext.Msg.alert(translate('Info'),translate('preferenceSavedSuccessfully'));
+                Ext.Msg.alert(translate('infoMsg'),translate('preferenceSavedSuccessfully'));
                 Utility.loading.end(button);
             })
             .catch(function(_err)
             {
-                Ext.Msg.alert('Error',translate(('savePreferenceError')));
+                Ext.Msg.alert(translate('error'),translate(('savePreferenceError')));
                 Utility.loading.end(button);
             });
 
