@@ -41,6 +41,7 @@ Ext.define('MyApp.view.override.InfoFormViewController', {
     },
     quitEditMode: function() {
         this.fireViewEvent('closeInfoWinEvent');
+        Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
     },
 
     onInfoFormItemIdAfterRender: function(component) {

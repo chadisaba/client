@@ -142,7 +142,7 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
-    onWorklistGridIdBoxReady: function(component, width, height, eOpts) {
+    onWorklistGridIdEdit: function(editor, context) {
 
     }
 

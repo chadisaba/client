@@ -1914,21 +1914,6 @@
             "designerId": "74390b28-172a-45cf-ad43-3ebe759c2500"
         },
         {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onWorklistGridIdBoxReady",
-                "name": "boxready",
-                "scope": "me"
-            },
-            "name": "onWorklistGridIdBoxReady",
-            "designerId": "e6513eaf-6653-4ad9-8846-61d794137e54"
-        },
-        {
             "type": "Ext.grid.plugin.CellEditing",
             "reference": {
                 "name": "plugins",
@@ -1937,6 +1922,25 @@
             "codeClass": null,
             "name": "MyCellEditingPlugin",
             "designerId": "97f34841-0a16-4dab-a028-a474c9b1aa8c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onWorklistGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onWorklistGridIdEdit",
+            "designerId": "2ec4ef51-d442-44ec-9692-871293fea28f"
         }
     ]
 }

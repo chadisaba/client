@@ -277,7 +277,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         afterrender: 'onWorklistGridIdAfterRender',
         selectionchange: 'onWorklistGridIdSelectionChange',
         cellclick: 'onWorklistGridIdCellClick',
-        boxready: 'onWorklistGridIdBoxReady'
+        edit: 'onWorklistGridIdEdit'
     },
     selModel: {
         selType: 'rowmodel',

@@ -837,6 +837,7 @@
                 },
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-4w73tqb8g9j5",
+                    "expanded": false,
                     "cn": [
                         {
                             "id": "a3b25347-c3e2-461f-94cd-43542ee5fb7c"
@@ -959,6 +960,7 @@
                 },
                 {
                     "id": "a043d579-af23-4d9d-896a-5e1b4704821e",
+                    "expanded": false,
                     "cn": [
                         {
                             "id": "0970033b-8ebf-44ca-aa2b-6a125440bd5a",
@@ -1037,6 +1039,7 @@
                         },
                         {
                             "id": "0e710faf-f211-43d1-af75-39ebb7efc091",
+                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "5392b9fe-da9d-4d93-bcdb-abcf53c635f1",
@@ -1057,15 +1060,16 @@
                     "id": "74390b28-172a-45cf-ad43-3ebe759c2500"
                 },
                 {
-                    "id": "e6513eaf-6653-4ad9-8846-61d794137e54"
+                    "id": "97f34841-0a16-4dab-a028-a474c9b1aa8c"
                 },
                 {
-                    "id": "97f34841-0a16-4dab-a028-a474c9b1aa8c"
+                    "id": "2ec4ef51-d442-44ec-9692-871293fea28f"
                 }
             ]
         },
         "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k": {
-            "id": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k"
+            "id": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
+            "expanded": false
         },
         "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn": {
             "id": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
@@ -2178,13 +2182,13 @@
         ]
     },
     "canvasState": {
-        "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
-        "selectedInstance": "466567f1-60cd-4706-9cbf-0128955cdd68"
+        "selectedInstance": "2ec4ef51-d442-44ec-9692-871293fea28f"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": true
     }

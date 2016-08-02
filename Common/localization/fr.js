@@ -33,6 +33,7 @@ function translate(text)
         /**** waiting messages********/
 
         'VerificationEnCours':"Vérification en cours, veuillez patienter....",
+        'Saving':"Enregistrement en cours...",
         'loadingIndexedDB':"Chargement des données en cache,veuillez patienter....",
 
 

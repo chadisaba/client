@@ -187,17 +187,36 @@ if(selected.length>0){
         StateProvider.saveState( window.localStorage.getItem('smartmed-userId'))
             .then(function(_result)
             {
-                Ext.Msg.alert(translate('infoMsg'),translate('preferenceSavedSuccessfully'));
+                Ext.Msg.alert(translate('Info'),translate('preferenceSavedSuccessfully'));
                 Utility.loading.end(button);
             })
             .catch(function(_err)
             {
-                Ext.Msg.alert(translate('error'),translate(('savePreferenceError')));
+                Ext.Msg.alert('Error',translate(('savePreferenceError')));
                 Utility.loading.end(button);
             });
 
 
 
+    },
+    onWorklistGridIdEdit: function(editor,context) {
+
+        var me=this;
+        var objectToSave={};
+        var rec=context.record;
+        objectToSave.worklistId=rec.get('worklistId');
+        objectToSave.idName='worklistId';
+        objectToSave.idValue=rec.get('worklistId');
+        objectToSave.worklistVisitComment=rec.get('worklistVisitComment');
+        var myMask = new Ext.LoadMask({msg:translate("Saving"),target:me.getView()});
+        myMask.show();
+        CommonDirect.saveData(objectToSave,'WORKLIST')
+            .then(function(_result)
+            {
+                Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                myMask.hide();
+
+            })
     },
     onWorklistGridIdCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
