@@ -333,6 +333,22 @@ if(selected.length>0){
                 }
 
                 break;
+            case 'visitIsDone':
+                var objectToSave={};
+                objectToSave.visitId=record.get('visitId');
+                objectToSave.idName='visitId';
+                objectToSave.idValue=record.get('visitId');
+                objectToSave.visitIsDone=true;
+                var myMask = new Ext.LoadMask({msg:translate("Saving"),target:me.getView()});
+                myMask.show();
+                CommonDirect.saveData(objectToSave,'VISIT')
+                    .then(function(_result)
+                    {
+                        Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                        myMask.hide();
+
+                    });
+                break;
         }
     },
     /***********************Renderers*********************************/

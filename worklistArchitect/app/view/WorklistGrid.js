@@ -182,7 +182,9 @@ Ext.define('MyApp.view.WorklistGrid', {
             text: 'comment',
             editor: {
                 xtype: 'textareafield',
-                itemId: 'commentTextAreaEditor'
+                height: 100,
+                itemId: 'commentTextAreaEditor',
+                width: 200
             }
         },
         {
