@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicehasstudyassociateviewavailabletreepanel",
+        "designer|userClassName": "DeviceHasStudyAssociateViewAvailableTreePanelViewModel"
+    },
+    "designerId": "4f3c9476-88d8-4fee-93e1-cdc1f7c1e3f8",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceHasStudyAssociateViewTreeModel",
+                "name": "AvailableTreeStore"
+            },
+            "name": "MyTreeStore",
+            "designerId": "0bc53a3c-9fa3-4e8a-a37d-6e5ff9838ae5"
+        }
+    ]
+}

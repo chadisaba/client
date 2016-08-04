@@ -1,13 +1,7 @@
 Ext.define('Plugins.grid.GridSearchPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.searchgrid',
-	requires: [
-		'Ext.ux.filterWidget.ComboFilter',
-		'Ext.ux.filterWidget.TextFilter',
-		'Ext.ux.filterWidget.DateFilter',
-		'Ext.ux.filterWidget.BooleanFilter',
-		'Ext.ux.filterWidget.NumericFilter',
-	],
+
 		statics:{
 		doLocalSearch: function(masterGrid,searchGrid){
 			var searchGridStore=searchGrid.getStore();

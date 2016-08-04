@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicehasstudyassociateviewavailabletreepanel",
+        "designer|userClassName": "DeviceHasStudyAssociateViewAvailableTreePanelViewController"
+    },
+    "designerId": "83c4f7c2-0ea1-47df-a94c-683fb27499f9"
+}

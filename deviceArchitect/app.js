@@ -26,12 +26,17 @@ Ext.application({
         'ModalityComboModel',
         'DeviceTypeModel',
         'DeviceSupportComboModel',
-        'SiteComboModel'
+        'SiteComboModel',
+        'DeviceHasStudyAssociateViewAssociateComboModel',
+        'DeviceHasStudyAssociateViewTreeModel'
     ],
     views: [
         'DeviceGrid',
         'DeviceTypeGrid',
-        'DevicePanel'
+        'DevicePanel',
+        'DeviceHasStudyAssociateViewAssociatePanel',
+        'DeviceHasStudyAssociateViewAvailableTreePanel',
+        'DeviceHasStudyAssociateViewSelectedTreePanel'
     ],
     controllers: [
         'MainController'

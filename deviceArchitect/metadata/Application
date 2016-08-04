@@ -15,13 +15,18 @@
             "ModalityComboModel",
             "DeviceTypeModel",
             "DeviceSupportComboModel",
-            "SiteComboModel"
+            "SiteComboModel",
+			"DeviceHasStudyAssociateViewAssociateComboModel",
+			"DeviceHasStudyAssociateViewTreeModel"
         ],
         "name": "MyApp",
         "views": [
             "DeviceGrid",
             "DeviceTypeGrid",
-            "DevicePanel"
+            "DevicePanel",
+			"DeviceHasStudyAssociateViewAssociatePanel",
+			"DeviceHasStudyAssociateViewAvailableTreePanel",
+			"DeviceHasStudyAssociateViewSelectedTreePanel"
         ]
     },
     "name": "Application",

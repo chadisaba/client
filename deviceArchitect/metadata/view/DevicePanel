@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "activeTab": 0,
         "designer|userAlias": "devicetabpanel",
         "designer|userClassName": "DevicePanel",
         "height": null,
@@ -65,6 +66,32 @@
                     "codeClass": null,
                     "name": "TabConfig4",
                     "designerId": "3b6ad3ff-4ea0-400c-948b-9e4b727b5912"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Device & Studies"
+            },
+            "name": "devicehasstudyassociateviewassociatepanel",
+            "designerId": "58d08677-f334-4747-b32b-8192add20293",
+            "masterInstanceId": "79f36a5d-5720-4229-8215-6e5ff9838ae5",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "bacc5e6a-4160-4158-9752-4ed653afbfd1"
                 }
             ]
         }

@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceHasStudyAssociateViewAssociateComboModel"
+    },
+    "name": "DeviceHasStudyAssociateViewAssociateComboModel",
+    "designerId": "2ff78808c400-159e-428a-b6e8-6e5ff9838ae5",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceId"
+            },
+            "name": "MyInteger2",
+            "designerId": "2ff78808c400-572b-4376-bd2b-6e5ff9838ae5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceCode"
+            },
+            "name": "MyField5",
+            "designerId": "2ff78808c400-6de0-4b46-b8cd-6e5ff9838ae5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deviceName"
+            },
+            "name": "MyField6",
+            "designerId": "3319d1b6-51ae-4036-be48-4a6e1791dfa6"
+        }
+    ]
+}

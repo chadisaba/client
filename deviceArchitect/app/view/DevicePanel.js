@@ -21,6 +21,7 @@ Ext.define('MyApp.view.DevicePanel', {
         'MyApp.view.DevicePanelViewModel',
         'MyApp.view.DeviceGrid',
         'MyApp.view.DeviceTypeGrid',
+        'MyApp.view.DeviceHasStudyAssociateViewAssociatePanel',
         'Ext.grid.Panel',
         'Ext.tab.Tab'
     ],
@@ -28,6 +29,7 @@ Ext.define('MyApp.view.DevicePanel', {
     viewModel: {
         type: 'devicepanel'
     },
+    activeTab: 0,
 
     items: [
         {
@@ -37,6 +39,10 @@ Ext.define('MyApp.view.DevicePanel', {
         {
             xtype: 'devicetypegrid',
             title: 'Device Type'
+        },
+        {
+            xtype: 'devicehasstudyassociateviewassociatepanel',
+            title: 'Device & Studies'
         }
     ]
 

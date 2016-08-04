@@ -111,7 +111,28 @@ var CommonDirect={
             });
         return promise;
     },
-    
+
+    getAssociatedAndAvailable:function(params)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                Server.CommonQueries.getAssociatedAndAvailable(params,
+                    function(res){
+                        if(res.success){
+                            resolve(res.data)
+                        }
+                        else{
+                            reject(res.msg);
+
+                        }
+                    }
+                );
+             });
+         return promise;
+
+
+    },
     getDataById:function(_IdName,_idValue,_tableName)
     {
         //Creating a promise
