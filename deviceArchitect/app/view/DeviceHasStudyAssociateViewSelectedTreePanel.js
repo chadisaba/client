@@ -35,7 +35,7 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewSelectedTreePanel', {
     height: 250,
     itemId: 'selectedTreePanel',
     width: 400,
-    title: 'Les examens associés à l\'appreil selectionné',
+    title: 'Studies associated to selected device',
     hideHeaders: true,
     root: {
         text: 'Root',
@@ -86,7 +86,8 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewSelectedTreePanel', {
         }
     ],
     listeners: {
-        select: 'onSelectedTreePanelSelect'
+        select: 'onSelectedTreePanelSelect',
+        boxready: 'onSelectedTreePanelBoxReady'
     },
 
     initConfig: function(instanceConfig) {

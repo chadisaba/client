@@ -49,7 +49,7 @@ Ext.define('MyApp.view.DeviceGrid', {
             xtype: 'gridcolumn',
             width: 120,
             dataIndex: 'deviceTypeCode',
-            text: 'Type',
+            text: 'type',
             editor: {
                 xtype: 'combobox',
                 itemId: 'deviceTypeComboBoxEditorItemId',
@@ -71,7 +71,7 @@ Ext.define('MyApp.view.DeviceGrid', {
             xtype: 'gridcolumn',
             width: 120,
             dataIndex: 'siteCode',
-            text: '{trans.site]',
+            text: 'site',
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteComboBoxEditorItemId',
@@ -92,7 +92,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'modalityCode',
-            text: 'Modalité',
+            text: 'modality',
             editor: {
                 xtype: 'combobox',
                 itemId: 'modalityComboBoxEditorItemId',
@@ -113,7 +113,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceName',
-            text: 'Libellé',
+            text: 'label',
             editor: {
                 xtype: 'textfield',
                 itemId: 'deviceNameTextFieldItemId',
@@ -123,7 +123,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceModel',
-            text: 'Modèle',
+            text: 'model',
             editor: {
                 xtype: 'textfield',
                 itemId: 'deviceModelTextFieldItemId'
@@ -132,7 +132,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceAET',
-            text: 'AET',
+            text: 'A.E.T',
             editor: {
                 xtype: 'textfield',
                 itemId: 'deviceAETTextFieldItemId'
@@ -172,7 +172,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceAgreementNumber',
-            text: 'N Agrément',
+            text: 'agreement number',
             editor: {
                 xtype: 'textfield',
                 itemId: 'deviceAgreementNumberTextFieldItemId'
@@ -183,7 +183,7 @@ Ext.define('MyApp.view.DeviceGrid', {
             width: 110,
             dataIndex: 'deviceAgreementDate',
             formatter: 'date(\'d/m/Y\')',
-            text: 'Date Agr.',
+            text: 'agreement date',
             editor: {
                 xtype: 'datefield',
                 itemId: 'deviceAgreementDateTextFieldItemId',
@@ -193,7 +193,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceTrademark',
-            text: 'Marque',
+            text: 'marque',
             editor: {
                 xtype: 'textfield',
                 itemId: 'deviceTrademarkTextFieldItemId'
@@ -204,7 +204,7 @@ Ext.define('MyApp.view.DeviceGrid', {
             width: 110,
             dataIndex: 'deviceInstallationDate',
             formatter: 'date(\'d/m/Y\')',
-            text: 'Installation',
+            text: 'installation',
             editor: {
                 xtype: 'datefield',
                 itemId: 'deviceInstallationDateTextFieldItemId',
@@ -214,7 +214,7 @@ Ext.define('MyApp.view.DeviceGrid', {
         {
             xtype: 'numbercolumn',
             dataIndex: 'devicePower',
-            text: 'Puissance',
+            text: 'power',
             editor: {
                 xtype: 'numberfield',
                 itemId: 'devicePowerTextFieldItemId'

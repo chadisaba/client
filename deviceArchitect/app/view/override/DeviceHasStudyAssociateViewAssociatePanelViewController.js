@@ -114,6 +114,7 @@ Ext.define('MyApp.view.override.DeviceHasStudyAssociateViewAssociatePanelViewCon
 
     onAssociatePanelAfterRender: function(component, eOpts) {
         var me=this;
+        translateUtil.transInputs(component);
         var refs=this.getReferences();
         this.availableTree=refs.availableTreePanel;
         this.selectedTree=refs.selectedTreePanel;

@@ -21,7 +21,7 @@
         "store": [
             "{SelectedTreeStore}"
         ],
-        "title": "Les examens associés à l'appreil selectionné",
+        "title": "Studies associated to selected device",
         "width": 400
     },
     "name": "MyTreePanel",
@@ -194,6 +194,21 @@
             },
             "name": "processDeviceHasStudyAssociateViewSelectedTreePanel",
             "designerId": "b814da48-215d-4860-8e29-6e5ff9838ae5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectedTreePanelBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onSelectedTreePanelBoxReady",
+            "designerId": "bb0c35e4-3378-4f41-9489-2ca1e6963a1e"
         }
     ]
 }

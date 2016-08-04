@@ -18,6 +18,10 @@ Ext.define('MyApp.view.override.DeviceHasStudyAssociateViewAvailableTreePanelVie
 
     onAvailableTreePanelavailableTreeSelectEvent: function() {
 
+    },
+    onAvailableTreePanelBoxReady: function(component, width, height, eOpts) {
+        translateUtil.transGrid(component);
+        translateUtil.transInputs(component);
     }
 
 

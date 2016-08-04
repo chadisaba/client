@@ -11,6 +11,11 @@ Ext.define('MyApp.view.override.DeviceHasStudyAssociateViewSelectedTreePanelView
 
         Utility.tree.select(tree,record);
         this.fireViewEvent('selectedTreeSelectEvent');
+    },
+    onSelectedTreePanelBoxReady: function(component, width, height, eOpts) {
+
+        translateUtil.transGrid(component);
+        translateUtil.transInputs(component);
     }
     
 });

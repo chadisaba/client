@@ -35,7 +35,7 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewAvailableTreePanel', {
     height: 250,
     itemId: 'availableTreePanel',
     width: 400,
-    title: 'Tous les examens',
+    title: 'All Studies',
     hideHeaders: true,
     root: {
         text: 'Root',
@@ -68,7 +68,8 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewAvailableTreePanel', {
     },
     listeners: {
         select: 'onAvailableTreePanelSelect',
-        availableTreeSelectEvent: 'onAvailableTreePanelAvailableTreeSelectEvent'
+        availableTreeSelectEvent: 'onAvailableTreePanelAvailableTreeSelectEvent',
+        boxready: 'onAvailableTreePanelBoxReady'
     },
     dockedItems: [
         {

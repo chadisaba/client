@@ -37,7 +37,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceTypeCode",
-                "text": "Type",
+                "text": "type",
                 "width": 120
             },
             "name": "MydeviceTypeIdCol",
@@ -96,7 +96,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "siteCode",
-                "text": "{trans.site]",
+                "text": "site",
                 "width": 120
             },
             "name": "MydeviceTypeIdCol1",
@@ -155,7 +155,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "modalityCode",
-                "text": "Modalité"
+                "text": "modality"
             },
             "name": "MymodalityIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-b6b8mca3sp62",
@@ -213,7 +213,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceName",
-                "text": "Libellé"
+                "text": "label"
             },
             "name": "MydeviceNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-dh6yj9sse1su",
@@ -243,7 +243,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceModel",
-                "text": "Modèle"
+                "text": "model"
             },
             "name": "MydeviceModelCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-d4r6bbsj7rff",
@@ -272,7 +272,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceAET",
-                "text": "AET"
+                "text": "A.E.T"
             },
             "name": "MydeviceAETCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-53h3uxmbnduf",
@@ -392,7 +392,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceAgreementNumber",
-                "text": "N Agrément"
+                "text": "agreement number"
             },
             "name": "MydeviceAgreementNumberCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-mcdp55c5vt5u",
@@ -422,7 +422,7 @@
             "userConfig": {
                 "dataIndex": "deviceAgreementDate",
                 "formatter": "date('d/m/Y')",
-                "text": "Date Agr.",
+                "text": "agreement date",
                 "width": 110
             },
             "name": "MyColumn2",
@@ -453,7 +453,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceTrademark",
-                "text": "Marque"
+                "text": "marque"
             },
             "name": "MydeviceTrademarkCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-a378c3nqjblu",
@@ -483,7 +483,7 @@
             "userConfig": {
                 "dataIndex": "deviceInstallationDate",
                 "formatter": "date('d/m/Y')",
-                "text": "Installation",
+                "text": "installation",
                 "width": 110
             },
             "name": "MyColumn1",
@@ -514,7 +514,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "devicePower",
-                "text": "Puissance"
+                "text": "power"
             },
             "name": "MyNumberColumn",
             "designerId": "7c6bec59-5c6a-4872-9cec-iv2x4jxcgf2y",

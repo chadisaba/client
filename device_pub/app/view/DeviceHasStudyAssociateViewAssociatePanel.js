@@ -142,7 +142,7 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewAssociatePanel', {
                 {
                     xtype: 'combobox',
                     itemId: 'associateCombo',
-                    fieldLabel: 'Choisir l\'examen',
+                    fieldLabel: 'Select Study',
                     labelWidth: 150,
                     displayField: 'deviceName',
                     forceSelection: true,

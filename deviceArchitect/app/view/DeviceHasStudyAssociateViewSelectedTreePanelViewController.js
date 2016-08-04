@@ -28,6 +28,10 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewSelectedTreePanelViewControlle
 
     onSelectedTreePanelSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onSelectedTreePanelBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

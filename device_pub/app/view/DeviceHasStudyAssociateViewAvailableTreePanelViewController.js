@@ -31,6 +31,10 @@ Ext.define('MyApp.view.DeviceHasStudyAssociateViewAvailableTreePanelViewControll
 
     onAvailableTreePanelAvailableTreeSelectEvent: function() {
 
+    },
+
+    onAvailableTreePanelBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

@@ -94,6 +94,21 @@
                     "designerId": "bacc5e6a-4160-4158-9752-4ed653afbfd1"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabpanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onTabpanelAfterRender",
+            "designerId": "cb60d9d1-a515-40f1-b9b5-e8bc2c6fb04f"
         }
     ]
 }

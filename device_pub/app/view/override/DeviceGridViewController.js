@@ -6,6 +6,8 @@ Ext.define('MyApp.view.override.DeviceGridViewController', {
     },
 
     onDeviceGridIdAfterRender: function(component) {
+        translateUtil.transGrid(component);
+
         component.getPlugin('gridediting').lockGrid(false);
 
         var deviceTypeComboStore=this.getViewModel().getStore('DeviceTypeComboStore');

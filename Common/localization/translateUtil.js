@@ -1,6 +1,7 @@
 var translateUtil={
     transGrid:function(_comp)
     {
+        _comp.setTitle(translate(_comp.title));
         _comp.columns.forEach(
             function(_column)
             {
@@ -19,6 +20,37 @@ var translateUtil={
                 _btn.setTooltip(translate(_btn.tooltip))
         });
     },
+    transInputs:function(_comp)
+    {
+        var comboArray=_comp.query('combobox');
+        var textfiledArray=_comp.query('textfield');
+        comboArray.forEach(function(_btn)
+        {
+            if(_btn.fieldLabel)
+                _btn.setFieldLabel(translate(_btn.fieldLabel));
+            if(_btn.emptyText)
+                _btn.setEmptyText(translate(_btn.emptyText));
+        });
+        textfiledArray.forEach(function(_btn)
+        {
+            if(_btn.fieldLabel)
+                _btn.setFieldLabel(translate(_btn.fieldLabel));
+            if(_btn.emptyText)
+                _btn.setEmptyText(translate(_btn.emptyText));
+        });
+    },
+    transPanel:function(_comp)
+    {
+        _comp.setTitle(_comp.title);
+        var pannelArray=_comp.query('panel');
+        pannelArray.forEach(function(_btn)
+        {
+            if(_btn.title)
+                _btn.setTitle(translate(_btn.title));
+        });
+
+    },
+
     transAll:function(_comp)
     {
        this.transGrid(_comp);

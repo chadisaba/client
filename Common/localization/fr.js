@@ -3,6 +3,7 @@ function translate(text)
     var translation={
 
         /***common**/
+        "Filter":"Filtre",
         "active":"Actif",
         "save":"Enregistrer",
         "cancel":"Annuler",
@@ -114,7 +115,29 @@ function translate(text)
         "duV":"Du. Consult",
 
         "actions":"Actions",
-        "print":"Imprimer"
+        "print":"Imprimer",
+
+        /**** device component****/
+
+        "All Studies":"Tous les examens",
+        "Studies associated to selected device":"Les examens associés à l'appreil selectionné",
+        "Select Study":"Choisir un examen",
+        "Device":"Appareil",
+        "Device Type":"Type appareil",
+        "Device & Studies":"Appareil & examens",
+        "modality":"Modalité",
+        "A.E.T":"A.E.T",
+        "agreement number":"N°Agrément",
+        "agreement date":"Date Agr.",
+        "marque":"Marque",
+        "installation":"Installation",
+        "power":"Puissance",
+        "Support":"Support",
+        "Lecture?":"Lecture?",
+        "Senolog?":"Senolog?"
+
+
+
 
 
         }

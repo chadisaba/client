@@ -32,7 +32,7 @@
                 "layout|flex": 1,
                 "reference": "selectedTreePanel"
             },
-            "name": "devicehasstudyassociateviewselectedtreepanel1",
+            "name": "devicehasstudyassociateviewselectedtreepanel",
             "designerId": "79f36a5d-7ccb-4f9e-8ae3-6e5ff9838ae5",
             "masterInstanceId": "9decb949-4885-4e85-a79b-e767c9845a56",
             "cn": [
@@ -295,7 +295,7 @@
                 "layout|flex": 1,
                 "reference": "availableTreePanel"
             },
-            "name": "devicehasstudyassociateviewavailabletreepanel1",
+            "name": "devicehasstudyassociateviewavailabletreepanel",
             "designerId": "9de396ea-8da9-44a1-80e3-6e5ff9838ae5",
             "masterInstanceId": "c6c8b1a2-c5d7-4f99-9ecf-af101a99aa86",
             "cn": [
@@ -466,7 +466,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "displayField": "deviceName",
-                        "fieldLabel": "Choisir l'examen",
+                        "emptyText": null,
+                        "fieldLabel": "Select Study",
                         "forceSelection": true,
                         "itemId": "associateCombo",
                         "labelWidth": 150,

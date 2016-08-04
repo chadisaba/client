@@ -15,5 +15,14 @@
 
 Ext.define('MyApp.view.DevicePanelViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.devicepanel'
+    alias: 'controller.devicepanel',
+
+    requires: [
+        'MyApp.view.override.DevicePanelViewController'
+    ],
+
+    onTabpanelAfterRender: function(component, eOpts) {
+
+    }
+
 });
