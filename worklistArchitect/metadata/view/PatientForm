@@ -263,13 +263,21 @@
                     "designerId": "231e3782-cb53-45d8-a904-3563055ebae4"
                 },
                 {
-                    "type": "Ext.form.field.ComboBox",
+                    "type": "Ext.ux.inputs.AdvancedCombobox",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "advancedListConfig": [
+                            "{",
+                            " itemSelector: 'div',",
+                            "                        itemTpl: [",
+                            "                            '{referringPhysicianLName} {referringPhysicianFName}'",
+                            "                        ]",
+                            "}"
+                        ],
                         "displayField": "referringPhysicianLName",
                         "fieldLabel": [
                             "{trans.referringDoctor}"
@@ -288,12 +296,20 @@
                         "typeAhead": true,
                         "valueField": "referringPhysicianId"
                     },
-                    "name": "MyreferringPhysicianNameComboBox",
+                    "name": "MyadvancedCombobox2",
                     "configAlternates": {
                         "store": "binding",
-                        "fieldLabel": "binding"
+                        "fieldLabel": "binding",
+                        "advancedListConfig": "object"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "advancedListConfig",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "viewcontrollereventbinding",
@@ -309,37 +325,6 @@
                             },
                             "name": "onReferringPhysicianNameComboBoxEditorItemIdChange",
                             "designerId": "da1b0e3e-3bf2-4656-98e6-fac5bb85b425"
-                        },
-                        {
-                            "type": "Ext.view.BoundList",
-                            "reference": {
-                                "name": "listConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemSelector": "div"
-                            },
-                            "name": "MyBoundList3",
-                            "designerId": "881edf16-8af0-4f00-9a60-ad4d6017b9c9",
-                            "cn": [
-                                {
-                                    "type": "Ext.XTemplate",
-                                    "reference": {
-                                        "name": "itemTpl",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "itemTpl",
-                                        "implHandler": [
-                                            "{referringPhysicianLName} {referringPhysicianFName}"
-                                        ]
-                                    },
-                                    "name": "itemTpl",
-                                    "designerId": "fc9e0611-e3e1-4cee-a78a-1660adca8c6c"
-                                }
-                            ]
                         },
                         {
                             "type": "Ext.XTemplate",
@@ -626,7 +611,7 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.ComboBox",
+                    "type": "Ext.ux.inputs.AdvancedCombobox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -653,7 +638,7 @@
                         "typeAhead": true,
                         "valueField": "cityId"
                     },
-                    "name": "MycityNameComboBox",
+                    "name": "MyadvancedCombobox1",
                     "configAlternates": {
                         "store": "binding",
                         "fieldLabel": "binding"

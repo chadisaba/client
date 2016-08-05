@@ -1,41 +1,6 @@
-Ext.define('Ext.ux.inputs.ComboBoundList', {
-    extend: 'Ext.view.BoundList',
-    alias: 'widget.btnboundlist',
-    initComponent: function(){
-        var me  = this;
-        me.minWidth = 100;
-            me.pagingToolbar = Ext.create('Ext.toolbar.Toolbar', {
-                border: false,
-                ownerCt: me,
-                ownerLayout: me.getComponentLayout(),
-                items:[
-                    {
-                        xtype:'button',
-                        glyph: 'xf067@FontAwesome',
-                        handler: function() {
-                            me.fireEvent('comboAddItemEvent', me, me.pickerField.getValue());
-                        }
-                    },{
-                        xtype:'button',
-                        glyph: 'xf040@FontAwesome',
-                        handler: function() {
-                            me.fireEvent('comboEditItemEvent', me, me.rawValue);
-                        }
-                    }
-                ],
-                bindStore : function(store, initial) {
-
-                }
-            });
-
-        me.callParent();
-
-    }
-});
-
-Ext.define('Ext.ux.inputs.ComboWithBtns', {
+Ext.define('Ext.ux.inputs.AdvancedCombobox', {
     extend: 'Ext.form.field.ComboBox',
-    alias: 'widget.combowithbuttons',
+    alias: 'widget.advancedCombobox',
     multiSelect: false,
     selectOnFocus:true,
     queryMode: 'local',

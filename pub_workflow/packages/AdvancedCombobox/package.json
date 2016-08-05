@@ -1,0 +1,27 @@
+{
+    "name": "AdvancedCombobox",
+    "type": "code",
+    "creator": "anonymous",
+    "summary": "Short summary",
+    "detailedDescription": "Advanced Combobox with add and edit buttons",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "local": true,
+    "requires": [],
+	"architect": {
+        "compatFrameworks": [
+                "ext51"
+        ],
+        "classes": [{
+                "definition": "AdvancedCombobox.Definition.js",
+                "className": "Ext.ux.inputs.AdvancedCombobox",
+                "js": [
+                        "AdvancedCombobox.js"
+                ],
+                "css": [
+                ]
+        }]
+}
+}
+

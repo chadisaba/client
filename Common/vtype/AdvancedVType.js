@@ -39,7 +39,7 @@ Ext.define('Vtype.AdvancedVType', {
     },
     numSecuRe: /^([a-zA-Z]:)?(\/[a-zA-Z0-9_/-~]+)+\/?$/i,
     // vtype Text property: The error text to display when the validation function returns false
-    numSecuText: translate('invalidFilePath'),
+    numSecuText: translate('invalidSocialNumber'),
 
 
     password: function(val, field) {

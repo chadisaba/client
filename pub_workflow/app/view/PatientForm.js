@@ -23,9 +23,8 @@ Ext.define('MyApp.view.PatientForm', {
         'Ext.form.FieldSet',
         'Ext.form.RadioGroup',
         'Ext.form.field.Radio',
-        'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
-        'Ext.view.BoundList',
+        'Ext.ux.inputs.AdvancedCombobox',
         'Ext.XTemplate',
         'Ext.toolbar.Spacer',
         'Ext.form.field.TextArea',
@@ -136,8 +135,14 @@ Ext.define('MyApp.view.PatientForm', {
                     }
                 },
                 {
-                    xtype: 'combobox',
+                    xtype: 'advancedCombobox',
                     anchor: '100%',
+                    advancedListConfig: {
+                        itemSelector: 'div',
+                        itemTpl: [
+                            '{referringPhysicianLName} {referringPhysicianFName}'
+                        ]
+                    },
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,
@@ -156,13 +161,6 @@ Ext.define('MyApp.view.PatientForm', {
                     },
                     listeners: {
                         change: 'onReferringPhysicianNameComboBoxEditorItemIdChange'
-                    },
-                    listConfig: {
-                        xtype: 'boundlist',
-                        itemSelector: 'div',
-                        itemTpl: [
-                            '{referringPhysicianLName} {referringPhysicianFName}'
-                        ]
                     }
                 },
                 {
@@ -271,7 +269,7 @@ Ext.define('MyApp.view.PatientForm', {
                     }
                 },
                 {
-                    xtype: 'combobox',
+                    xtype: 'advancedCombobox',
                     anchor: '100%',
                     itemId: 'cityNameComboBoxEditorItemId',
                     name: 'cityId',

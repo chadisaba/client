@@ -21,8 +21,8 @@ Ext.define('MyApp.view.MyPanel5', {
         'MyApp.view.MyPanel5ViewModel',
         'MyApp.view.MyPanel5ViewController',
         'Ext.container.Container',
-        'Ext.form.field.ComboBox',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.ux.inputs.AdvancedCombobox'
     ],
 
     controller: 'mypanel5',
@@ -45,7 +45,8 @@ Ext.define('MyApp.view.MyPanel5', {
                     fieldLabel: 'Label',
                     displayTpl: [
                         'fsdf'
-                    ]
+                    ],
+                    typeAhead: true
                 },
                 {
                     xtype: 'textfield',
@@ -55,6 +56,11 @@ Ext.define('MyApp.view.MyPanel5', {
                     }
                 }
             ]
+        },
+        {
+            xtype: 'advancedCombobox',
+            fieldLabel: 'Label',
+            queryMode: 'local'
         }
     ]
 

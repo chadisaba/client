@@ -45,7 +45,8 @@
                     "userConfig": {
                         "fieldLabel": "Label",
                         "height": 15,
-                        "style": null
+                        "style": null,
+                        "typeAhead": true
                     },
                     "name": "MyComboBox5",
                     "designerId": "89a69eac-7fc5-4e3e-8b28-8093bfd3ea93",
@@ -99,6 +100,20 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Ext.ux.inputs.AdvancedCombobox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "queryMode": "local"
+            },
+            "name": "MyadvancedCombobox",
+            "designerId": "676e7d58-6c3b-4c95-91c2-68a720dbe78c"
         }
     ]
 }
