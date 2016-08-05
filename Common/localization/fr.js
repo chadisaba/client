@@ -44,7 +44,9 @@ function translate(text)
             'preferenceSavedSuccessfully':"Vos préférences ont été  enregistrées",
 
         /*** patient form***/
+
         "study":"Examen",
+        "invalidSocialNumber":"Numéro de sécurité sociale invalide",
         "allStudy":"Tous les examens",
         "Doctor":"Médecin",
         "patientIdentity":"Identité patient",
