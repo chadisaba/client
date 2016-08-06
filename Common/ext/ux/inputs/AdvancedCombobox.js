@@ -30,11 +30,18 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             //  picker.pagingToolbar.on('beforechange', me.onPageChange, me);
         }
 
-        picker.on({
-            comboAddItemEvent: function(){ me.fireEvent('comboAddEvent', me, null, null, me.getValue());},
-            comboEditItemEvent: function(){ me.fireEvent('comboEditEvent', me, me.rawValue);},
+        picker.on(
+            {
+            comboAddItemEvent: function(){
+                me.fireEvent('comboEditEvent', me, me.rawValue);
+            },
+            comboEditItemEvent: function(){
+                me.fireEvent('comboAddEvent', me,me.getValue());
+
+            },
             scope: me
-        });
+        }
+        );
 
         // We limit the height of the picker to fit in the space above
         // or below this field unless the picker has its own ideas about that.

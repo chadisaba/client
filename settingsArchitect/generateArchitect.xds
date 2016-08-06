@@ -1,0 +1,66 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
+        "exportPath": "../settings_pub",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": false,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "455b1a7a-3569-4ce4-a4a3-440be9416758",
+            "b1e95721-c6b7-470b-ad6b-fd859060ef69",
+            "419cb704-c086-41cf-b5db-d03d0d916cf0",
+            "f41c01c9-9a8f-4120-9d02-dc5e4be4483f",
+            "bf186447-2b5b-46b9-aae1-7981efc7a6ed",
+            "52c0d078-a201-4159-aa70-e2747d23e8db",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "56584666-c853-4fe0-ac5c-6bfe1e61674e",
+            "66248f2c-b53f-4aca-b904-cb5b2dd77678",
+            "42e6506d-82cc-413b-980c-4c008a353b07"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "0d48d189-b33d-411c-8462-10b967325818",
+            "568b5eeb-6216-4e32-bfa5-657d9322373f",
+            "53de0be1-1f16-47c5-a23c-b289e56d27fc",
+            "533c44c0-8110-409f-b73d-b86305ae3c23"
+        ],
+        "resource": [
+            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
+            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
+            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "refphyform",
+        "designer|userClassName": "RefPhyFormViewModel"
+    },
+    "designerId": "f41c01c9-9a8f-4120-9d02-dc5e4be4483f",
+      "cn": [
+       
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianGenderComboModel",
+                "name": "ReferringPhysicianGenderComboStore"
+                    
+            },
+            "name": "ReferringPhysicianGenderComboStore",
+            "designerId": "1ce3b101-6437-47be-96b5-c35f24a16d23"
+        },
+                   {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianTitleComboModel",
+                "name": "ReferringPhysicianTitleComboStore"
+                    
+            },
+            "name": "ReferringPhysicianTitleComboStore",
+            "designerId": "b2f28082-6212-41e1-90d6-e475f05644f3"
+        },
+                   {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CityNameComboModel",
+                "name": "CityNameComboStore"
+                    
+            },
+            "name": "CityNameComboStore",
+            "designerId": "dd46345f-4fff-471b-a2ba-8b778a1adc18"
+        }
+    ]
+}

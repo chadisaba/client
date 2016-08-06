@@ -1,0 +1,373 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "refphyform",
+        "designer|userClassName": "RefPhyForm",
+        "height": 500,
+        "itemId": "refPhyFormId",
+        "title": "My Form",
+        "width": 500
+    },
+    "name": "MyForm",
+    "designerId": "bf186447-2b5b-46b9-aae1-7981efc7a6ed",
+    "viewControllerInstanceId": "52c0d078-a201-4159-aa70-e2747d23e8db",
+    "viewModelInstanceId": "f41c01c9-9a8f-4120-9d02-dc5e4be4483f",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processRefPhyForm",
+                "implHandler": [
+                    "config.plugins = new Plugins.form.FormEditingPlugin({",
+                    "    withValidation: false,",
+                    "    showConfirmationOnSave: true",
+                    "});",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processRefPhyForm",
+            "designerId": "fea625b3-a6ed-46b7-a68e-cefe9cd40720"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRefPhyFormItemIdAfterRender",
+                "implHandler": [
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdAfterRender",
+            "designerId": "f026e7a3-6397-4932-a6d0-ebdfb2d8f4d3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onRefPhyFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdInEdit",
+            "designerId": "3eae6734-9e7c-4e23-9141-015f9a9fc9d0"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onRefPhyFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdSaveEdit",
+            "designerId": "$e8d91879-3a9f-4455-a37e-715a377d50db"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onRefPhyFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdResetEdit",
+            "designerId": "4b69333a-3f23-43de-82fe-338039987ca5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onRefPhyFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdChHist",
+            "designerId": "8c0b4a96-6dc8-426f-8828-d5cbb2b2dc82"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onRefPhyFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormItemIdQuitEdit",
+            "designerId": "98229c2e-6a7d-4b76-b72f-cac251275f8c"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Fields"
+            },
+            "name": "MyFieldSet",
+            "designerId": "a3ce07eb-f9ca-4faf-bb6e-8162ee8337f0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianId"
+                    },
+                    "name": "MyreferringPhysicianIdTextField",
+                    "designerId": "c12b855a-760b-4c35-8c41-797ae293f06c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "first name",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianFName"
+                    },
+                    "name": "MyreferringPhysicianFNameTextField",
+                    "designerId": "ac849ff7-3ae2-4623-bcd3-e8cc74c629e4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "last name",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianLName"
+                    },
+                    "name": "MyreferringPhysicianLNameTextField",
+                    "designerId": "87ece4a6-792b-45d1-b3cb-18787ebf2d09"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "gender",
+                        "fieldLabel": "gender",
+                        "forceSelection": true,
+                        "itemId": "referringPhysicianGenderComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianGender",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{ReferringPhysicianGenderComboStore}"
+                        ]
+                    },
+                    "name": "MyreferringPhysicianGenderComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "45074354-89d3-4f6d-b606-b263316d031a"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "title",
+                        "fieldLabel": "title",
+                        "forceSelection": true,
+                        "itemId": "referringPhysicianTitleComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianTitle",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{ReferringPhysicianTitleComboStore}"
+                        ]
+                    },
+                    "name": "MyreferringPhysicianTitleComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "90aa00df-bf2c-4630-b67f-1a8d8c46a92a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "zip code",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianZipCode"
+                    },
+                    "name": "MyreferringPhysicianZipCodeTextField",
+                    "designerId": "bed0a39e-5345-45c4-9e90-70aa11715c08"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "address",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianAddress"
+                    },
+                    "name": "MyreferringPhysicianAddressTextField",
+                    "designerId": "2a89bbcb-c15b-49ae-902c-432b46cea887"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "phone",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianPhoneNumber"
+                    },
+                    "name": "MyreferringPhysicianPhoneNumberTextField",
+                    "designerId": "25010c5a-4f5b-48d5-88ff-31d779f8edf4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "fax",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianFaxNumber"
+                    },
+                    "name": "MyreferringPhysicianFaxNumberTextField",
+                    "designerId": "96a25232-a21f-40dc-8d0e-6d5fb5937641"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "email",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianEmail"
+                    },
+                    "name": "MyreferringPhysicianEmailTextField",
+                    "designerId": "ef8d2145-cd9a-4996-b959-490c08302461"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "cityName",
+                        "fieldLabel": "city",
+                        "forceSelection": true,
+                        "itemId": "cityNameComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "cityName",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CityNameComboStore}"
+                        ],
+                        "valueField": "cityId"
+                    },
+                    "name": "MycityNameComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "7482ebb6-42a8-48c2-835e-a77d61598f6d"
+                }
+            ]
+        }
+    ]
+}

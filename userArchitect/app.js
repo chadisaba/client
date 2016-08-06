@@ -20,30 +20,6 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
-    models: [
-        'UserModel',
-        'CityModel',
-        'DoctorModel',
-        'UserCatModel',
-        'UserInitialComboModel',
-        'DoctorHasExamensViewAssociateComboModel',
-        'DoctorHasExamensViewTreeModel',
-        'ReferringPhysicianModel',
-        'CityNaComboModel'
-    ],
-    views: [
-        'UserGrid',
-        'UserTabPanel',
-        'UserCatGrid',
-        'DoctorGrid',
-        'DoctorHasExamensViewAssociatePanel',
-        'DoctorHasExamensViewAvailableTreePanel',
-        'ReferringPhysicianGrid',
-        'DoctorHasExamensViewSelectedTreePanel'
-    ],
-    controllers: [
-        'MainController'
-    ],
     name: 'MyApp',
 
     launch: function() {

@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CityNameComboModel"
+    },
+    "name": "MyModelCityNameComboModel",
+    "designerId": "0d48d189-b33d-411c-8462-10b967325818",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cityId"
+            },
+            "name": "MyField1",
+            "designerId": "44b69c70-e4e8-4310-bc79-9c1acc6a3206"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cityName"
+            },
+            "name": "MyField2",
+            "designerId": "b2ab7181-6884-441a-b632-59ae21dec08a"
+        }
+    ]
+}

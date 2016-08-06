@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReferringPhysicianGenderComboModel"
+    },
+    "name": "MyModelReferringPhysicianGenderComboModel",
+    "designerId": "568b5eeb-6216-4e32-bfa5-657d9322373f",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "genderId"
+            },
+            "name": "MyField1",
+            "designerId": "0c56c24d-8fc8-4989-a542-b52d329ae3f4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "gender"
+            },
+            "name": "MyField2",
+            "designerId": "b8c69c9b-7e54-49dc-b30d-33a3bf756b64"
+        }
+    ]
+}

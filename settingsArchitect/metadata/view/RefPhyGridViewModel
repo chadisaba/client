@@ -1,0 +1,72 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "refphygrid",
+        "designer|userClassName": "RefPhyGridViewModel"
+    },
+    "designerId": "455b1a7a-3569-4ce4-a4a3-440be9416758",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "RefPhyModel",
+                "name": "RefPhyStore"
+            },
+            "name": "RefPhyStore",
+            "designerId": "8f7d65dc-b3bf-4a9c-b2bc-63615c70d41f"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianGenderComboModel",
+                "name": "ReferringPhysicianGenderComboStore"
+            },
+            "name": "ReferringPhysicianGenderComboStore",
+            "designerId": "df3a012c-b524-4a3a-9672-deda7da71939"
+        }
+               ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianTitleComboModel",
+                "name": "ReferringPhysicianTitleComboStore"
+            },
+            "name": "ReferringPhysicianTitleComboStore",
+            "designerId": "135d55d0-e468-4d47-89c7-87266c11d92b"
+        }
+               ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CityNameComboModel",
+                "name": "CityNameComboStore"
+            },
+            "name": "CityNameComboStore",
+            "designerId": "876e013f-e0b1-49ae-aae9-8ae472049f8a"
+        }
+               
+    ]
+}

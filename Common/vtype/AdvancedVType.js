@@ -25,7 +25,7 @@ Ext.define('Vtype.AdvancedVType', {
     },
     cleSecuRe: /^([1-9]|1[0-9]):([0-5][0-9])(\s[a|p]m)$/i,
     // vtype Text property: The error text to display when the validation function returns false
-    cleSecuText: 'Not a valid time.  Must be in the format "12:34 PM".',
+    cleSecuText: 'invalidKey',
     // vtype Mask property: The keystroke filter mask
     cleSecuMask: /[\d\s:amp]/i,
 

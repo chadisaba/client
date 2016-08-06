@@ -57,6 +57,15 @@ Ext.define('MyApp.store.NavigationTree', {
                         href:'../study_pub/#studysettingstabpanel'
                     },
                     {
+                        text: translate('referring physician'),
+                        iconCls: 'x-fa fa-home',
+
+                        viewType: 'settingstabpanel',
+                        routeId: 'settingstabpanel', // routeId defaults to viewType
+                        leaf: true,
+                        href:'../settings_pub/#settingstabpanel'
+                    },
+                    {
                         text: 'Exercices fiscal',
                         iconCls: 'x-fa fa-home',
                         rowCls: 'nav-tree-badge nav-tree-badge-new',

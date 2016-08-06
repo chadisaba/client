@@ -1,0 +1,27 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "RefPhyModel",
+            "ReferringPhysicianGenderComboModel",
+            "ReferringPhysicianTitleComboModel",
+            "CityNameComboModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "RefPhyGrid",
+            "RefPhyForm",
+            "SettingsTabPanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

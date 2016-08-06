@@ -10,6 +10,17 @@ var ComboData= {
         {patientTitleId:3, patientTitle:translate('Mlle')},
         {patientTitleId:4, patientTitle:translate('Enfant')}
     ],
+    title:[
+        {titleId:1, title:('Mr.')},
+        {titleId:2, title:translate('Mme.')},
+        {titleId:3, title:translate('Mlle')},
+        {titleId:4, title:translate('Enfant')}
+    ],
+    gender:[
+        {genderId:1, gender:translate('M.')},
+        {genderId:2, gender:translate('F.')}
+
+    ],
     quotationStatus:[
         {
             id:0,text :translate('notQuoted')

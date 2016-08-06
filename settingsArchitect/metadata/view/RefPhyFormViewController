@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "refphyform",
+        "designer|userClassName": "RefPhyFormViewController"
+    },
+    "designerId": "52c0d078-a201-4159-aa70-e2747d23e8db"
+ 
+}

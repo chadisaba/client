@@ -22,6 +22,16 @@ function translate(text)
         "time":"Heure",
         "comment":"Commentaire",
         "clickToSavePreference":"Cliquer pour sauvegarder vos préférences",
+        "first name":"Prénom",
+        "last name":"Name",
+        "gender":"Sexe",
+        "title":"Civilité",
+        "city":"Ville",
+        "zip code":"C.P",
+        "phone":"Tél.",
+        "fax":"Fax",
+        "email":"E-mail",
+
 
 
         /**** Errors********/
@@ -47,6 +57,7 @@ function translate(text)
 
         "study":"Examen",
         "invalidSocialNumber":"Numéro de sécurité sociale invalide",
+        "invalidKey":"Clé invalide",
         "allStudy":"Tous les examens",
         "Doctor":"Médecin",
         "patientIdentity":"Identité patient",

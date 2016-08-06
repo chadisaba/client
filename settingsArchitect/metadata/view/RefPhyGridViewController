@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "refphygrid",
+        "designer|userClassName": "RefPhyGridViewController"
+    },
+    "designerId": "b1e95721-c6b7-470b-ad6b-fd859060ef69"
+}
