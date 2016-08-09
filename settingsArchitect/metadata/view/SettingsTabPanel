@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "activeTab": 0,
         "designer|userAlias": "settingstabpanel",
         "designer|userClassName": "SettingsTabPanel",
         "height": null,
@@ -24,7 +25,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "referring physician"
+                "title": "the referring physicians"
             },
             "name": "refphygrid",
             "designerId": "06dc2d5b-f78d-4cae-98b7-6496c96efb91",
@@ -56,6 +57,21 @@
                     "designerId": "2cd841e5-72f4-4a07-9235-cc7a1bc0a188"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabpanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onTabpanelAfterRender",
+            "designerId": "5a48543f-6074-4c86-991d-14d17806f6d4"
         }
     ]
 }

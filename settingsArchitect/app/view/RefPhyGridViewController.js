@@ -112,6 +112,10 @@ Ext.define('MyApp.view.RefPhyGridViewController', {
 
     onRefPhyGridIdBoxReady: function(component, width, height, eOpts) {
 
+    },
+
+    onRefPhyGridIdDuplicateItem: function(grid) {
+
     }
 
 });

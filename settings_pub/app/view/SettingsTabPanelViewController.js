@@ -23,6 +23,10 @@ Ext.define('MyApp.view.SettingsTabPanelViewController', {
 
     onRefPhyGridIdAfterRender: function(component, eOpts) {
 
+    },
+
+    onTabpanelAfterRender: function(component, eOpts) {
+
     }
 
 });

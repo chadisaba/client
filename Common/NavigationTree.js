@@ -8,7 +8,7 @@ Ext.define('MyApp.store.NavigationTree', {
         expanded: true,
         children: [
             {
-                text: 'Accueil',
+                text: translate('home'),
                 iconCls: 'x-fa fa-home',
                 rowCls: 'nav-tree-badge nav-tree-badge-new',
                 viewType: 'maintabpanel',
@@ -20,10 +20,10 @@ Ext.define('MyApp.store.NavigationTree', {
                 iconCls: 'x-fa fa-cogs',
                 expanded: false,
                 selectable: false,
-                text: 'Paramétrage',
+                text: translate('menu.settings'),
                 children: [
                     {
-                        text: 'Sites',
+                        text: translate('menu.sites'),
                         iconCls: 'x-fa fa-building',
                         viewType: 'sitesconfigtabpanel',
                         routeId: 'sitesconfigtabpanel', // routeId defaults to viewType
@@ -31,7 +31,7 @@ Ext.define('MyApp.store.NavigationTree', {
                         href:'../site_pub/#sitesconfigtabpanel'
                     },
                     {
-                        text: 'Utilisateurs ',
+                        text: translate('menu.users'),
                         iconCls: 'x-fa fa-users',
                         viewType: 'usertabpanel',
                         routeId: 'usertabpanel',
@@ -40,7 +40,7 @@ Ext.define('MyApp.store.NavigationTree', {
                     },
 
                     {
-                        text: 'Appareils',
+                        text: translate('menu.devices'),
                         iconCls: 'x-fa fa fa-plug',
                         viewType: 'devicetabpanel',
                         routeId: 'devicetabpanel', // routeId defaults to viewType
@@ -49,7 +49,7 @@ Ext.define('MyApp.store.NavigationTree', {
 
                     },
                     {
-                        text: 'Examens',
+                        text: translate('menu.studies'),
                         iconCls: 'x-fa fa-leanpub',
                         viewType: 'studysettingstabpanel',
                         routeId: 'studysettingstabpanel', // routeId defaults to viewType
@@ -57,7 +57,7 @@ Ext.define('MyApp.store.NavigationTree', {
                         href:'../study_pub/#studysettingstabpanel'
                     },
                     {
-                        text: translate('referring physician'),
+                        text: translate('menu.referring physicians'),
                         iconCls: 'x-fa fa-home',
 
                         viewType: 'settingstabpanel',
@@ -91,7 +91,7 @@ Ext.define('MyApp.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'Favoris',
+                text: translate('menu.favorite'),
                 iconCls: 'x-fa fa-star',
                 viewType: 'charts',
                 leaf: true

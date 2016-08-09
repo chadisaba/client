@@ -207,7 +207,8 @@ Ext.define('MyApp.view.RefPhyGrid', {
         edit: 'onRefPhyGridIdEdit',
         beforecellclick: 'onRefPhyGridIdBeforeCellClick',
         validateedit: 'onRefPhyGridIdValidateedit',
-        boxready: 'onRefPhyGridIdBoxReady'
+        boxready: 'onRefPhyGridIdBoxReady',
+        duplicateItem: 'onRefPhyGridIdDuplicateItem'
     },
     plugins: [
         {

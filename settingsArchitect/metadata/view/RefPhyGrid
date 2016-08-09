@@ -861,6 +861,24 @@
             },
             "name": "onRefPhyGridIdBoxReady",
             "designerId": "3f1c3b52-6e7f-4967-be2b-8691c6aa883f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onRefPhyGridIdDuplicateItem",
+                "name": "duplicateItem",
+                "scope": "me"
+            },
+            "name": "onRefPhyGridIdDuplicateItem",
+            "designerId": "0e59d4fe-d686-4466-92d2-2169ec723e3d"
         }
     ]
 }

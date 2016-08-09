@@ -29,15 +29,19 @@ Ext.define('MyApp.view.SettingsTabPanel', {
     viewModel: {
         type: 'settingstabpanel'
     },
+    activeTab: 0,
 
     items: [
         {
             xtype: 'refphygrid',
-            title: 'referring physician',
+            title: 'the referring physicians',
             listeners: {
                 afterrender: 'onRefPhyGridIdAfterRender'
             }
         }
-    ]
+    ],
+    listeners: {
+        afterrender: 'onTabpanelAfterRender'
+    }
 
 });

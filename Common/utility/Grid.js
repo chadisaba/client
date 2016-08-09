@@ -136,6 +136,25 @@ Ext.define('Utility.grid', {
             }
             gridpanel.getPlugin('gridediting').checkIfModifications();
         },
+        duplicateItem: function (gridpanel,idFieldName) {
+            var selectedRecords = gridpanel.getSelectionModel().getSelection();
+
+            var duplicatedRows=[];
+            selectedRecords.forEach(function(_rec)
+            {
+                if(!_rec.get('toDelete')) {
+                    var newRec = _rec.copy(null);
+                    newRec.set('added', true);
+                    newRec.set('modified', false);
+                    newRec.set(idFieldName, 'default');
+                    duplicatedRows.push(newRec);
+                }
+            });
+            var store=gridpanel.getStore();
+
+             store.add(duplicatedRows);
+
+        },
         resetEdit: function (gridpanel, resultArray, store, promptWin) {
             this.loadGrid(gridpanel, resultArray, store, promptWin.query('button')[0], promptWin, true);
         },

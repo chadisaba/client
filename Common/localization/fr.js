@@ -23,7 +23,7 @@ function translate(text)
         "comment":"Commentaire",
         "clickToSavePreference":"Cliquer pour sauvegarder vos préférences",
         "first name":"Prénom",
-        "last name":"Name",
+        "last name":"Nom",
         "gender":"Sexe",
         "title":"Civilité",
         "city":"Ville",
@@ -31,7 +31,36 @@ function translate(text)
         "phone":"Tél.",
         "fax":"Fax",
         "email":"E-mail",
+        "yes":"Oui",
+        "no":"Non",
 
+        "the referring physicians":"Les Prescripteurs",
+        "clickToAddNewRow":"Ajouter une nouvelle ligne",
+        "clickToDuplicateRow":"Dupliquer les lignes sélectionnées",
+        "clickToDeleteTheSelection":"Supprimer les lignes sélectionnées",
+        "clickToModifySelection":"Modifier la ligne sélectionnée",
+        "modificationsHistory":"Voir l'historique des modifications",
+        "clickToSaveModifications":"Enregistrer les modifications",
+        "clickToCancelModifications":"Annuler les modifications",
+        "gridEdit.quitEditionTitle":"Quitter l'édition",
+        "gridEdit.quitEditionMsg":"Voulez vous quittez le mode d'édition?",
+        "displayModifiedRows":"Afficher seulement les modifications",
+        "applyChTitle":"Confirmation",
+        "ApplyModification":"Appliquer les modifications?",
+        "submitMsg":"Enregistrer",
+        "msg.comment":"Commentaire",
+        "liveSearch":"Recherche rapide",
+
+        /**** menu**/
+        "home":"Accueil",
+        "menu.settings":"Paramétrage",
+
+        "menu.users":"Utilisateurs",
+        "menu.devices":"Appareils",
+        "menu.studies":"Examens",
+        "menu.favorite":"Favoris",
+        "menu.sites":"Sites",
+        "menu.referring physicians":"Prescripteurs",
 
 
         /**** Errors********/
@@ -52,6 +81,9 @@ function translate(text)
 
             'infoMsg':"Information",
             'preferenceSavedSuccessfully':"Vos préférences ont été  enregistrées",
+            'ApplyModification?':"Voulez vous enregistrer les modifications?",
+            'cancelTitle':"Annulation",
+            'cancelMsg':"Souhaitez vous annuler les modifications?",
 
         /*** patient form***/
 
