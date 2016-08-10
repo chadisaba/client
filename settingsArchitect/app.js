@@ -38,6 +38,7 @@ Ext.application({
 
     launch: function() {
         Ext.create('MyApp.view.MyViewport1');
+        Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
     }
 
 });

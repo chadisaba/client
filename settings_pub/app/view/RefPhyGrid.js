@@ -33,6 +33,8 @@ Ext.define('MyApp.view.RefPhyGrid', {
         type: 'refphygrid'
     },
     reference: 'refPhyGridRef',
+    stateId: 'refphGrid',
+    stateful: true,
     itemId: 'refPhyGridId',
     resizable: false,
     title: '',

@@ -16,7 +16,7 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
             var view = this.getView();
             if (!_readOnlyGrid)
                     view.getPlugin('gridediting').lockGrid(false);
-            this.getResultArray(me.filters).then(
+            me.getResultArray(me.filters).then(
                 function (data) {
                     Utility.grid.loadGrid(view, data, view.getViewModel().getStore('RefPhyStore'));
 
@@ -39,8 +39,13 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
 
     },
 
+    onRefPhyGridIdDuplicateItem: function(grid) {
+        Utility.grid.duplicateItem(grid,'referringPhysicianId');
+        grid.getPlugin('gridediting').checkIfModifications();
+    },
+
     onRefPhyGridIdResetEdit: function(gridpanel,promptWin) {
-        Utility.grid.resetEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('RefPhyStore'),promptWin);
+        this.onQuitEdit(gridpanel,promptWin);
 
     },
 
@@ -49,10 +54,11 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
 	            var me=this;
 	            CommonDirect.saveDataArray(dataToBeSaved, "REFERRING_PHYSICIAN","referringPhysicianId",
                     comment)
-	                .then(function(_result)
+	                .then(function()
 	                {
                         promptWin.close();
-	                  me.refreshGrid();
+                        gridpanel.getPlugin('gridediting').quitEditMode();
+	                    me.refreshGrid();
 	                })
 	                .catch(function(_err)
 	               {
@@ -80,8 +86,17 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
         Utility.grid.modifyItem(this.getView());
     },
 
+    onQuitEdit:function(gridpanel,promptWin)
+    {
+        var me=this;
+        me.getResultArray(me.filters).then(
+            function (data) {
+                Utility.grid.quitEdit(me.getView(),data,me.getView().getViewModel().getStore('RefPhyStore'),promptWin);
+            }
+        );
+    },
     onRefPhyGridIdQuitEdit: function(gridpanel,promptWin) {
-        Utility.grid.quitEdit(this.getView(),this.refreshGrid(),this.getView().getViewModel().getStore('RefPhyStore'),promptWin);
+       this.onQuitEdit(gridpanel,promptWin);
     },
     onRefPhyGridIdBeforeEdit: function(editor,context) {
         return (Utility.grid.beforeEdit(editor,context));
@@ -93,13 +108,11 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
         return(Utility.grid.cancelEdit(editor,context));
     },
 
-    onRefPhyGridIdContainerClick: function(dataview, e, eOpts) {
+    onRefPhyGridIdContainerClick: function() {
         return(Utility.grid.gridContainerClick(this.getView()));
     },
 
     onRefPhyGridIdEdit: function(editor,context) {
- // var columnsName=['name','text'];
-    	
     	var columnsName=['cityId','referringPhysicianFName','referringPhysicianLName','referringPhysicianGender','referringPhysicianTitle','referringPhysicianZipCode','referringPhysicianAddress','referringPhysicianPhoneNumber','referringPhysicianFaxNumber','referringPhysicianEmail','cityName'];
         Utility.grid.edit(editor, context, columnsName);
     },
@@ -182,7 +195,8 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
         if(newValue){
             var   cityStore=this.getViewModel().getStore('CityNameComboStore');
             var rec=cityStore.findRecord('cityName',newValue);
-            field.up('roweditor').down('#cityIdTextFieldItemId').setValue(rec.get('cityId'));
+            if(rec)
+                field.up('roweditor').down('#cityIdTextFieldItemId').setValue(rec.get('cityId'));
         }
 
     }

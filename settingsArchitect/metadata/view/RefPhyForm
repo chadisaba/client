@@ -11,7 +11,7 @@
         "designer|userClassName": "RefPhyForm",
         "height": 500,
         "itemId": "refPhyFormId",
-        "title": "My Form",
+        "title": "Create Referring physician",
         "width": 500
     },
     "name": "MyForm",
