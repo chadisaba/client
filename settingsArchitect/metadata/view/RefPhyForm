@@ -32,12 +32,7 @@
                 ],
                 "fn": "processRefPhyForm",
                 "implHandler": [
-                    "config.plugins = new Plugins.form.FormEditingPlugin({",
-                    "    withValidation: false,",
-                    "    showConfirmationOnSave: true",
-                    "});",
-                    "",
-                    "return config;"
+                    "FormAddPlugins.addPlugins(this);"
                 ]
             },
             "name": "processRefPhyForm",

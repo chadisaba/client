@@ -1,0 +1,1 @@
+var StudyHelper={onStudyCodeComboBoxChange:function(o,d,t,r){if(!this.doctorId||!this.siteId)throw console.error("function initGrid : doctorId and siteId required "),new Error("StudyVisitGrid function initGrid : doctorId and siteId are required ");r.doctorId;StudyDirect.docHasstudyAutoComplete(d,t,"StudyComboStore",o,!0,3,d.doctorId)}};

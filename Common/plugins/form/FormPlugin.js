@@ -1,11 +1,9 @@
-Ext.define('Plugins.form.FormEditingPlugin', {
+Ext.define('Plugins.form.FormPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.formediting',
-
 	config:{
 		toolbarSelector : null
 	},
-	
 	withValidation: false,
 	showHistoryBtn: true,
 	showCancelBtn: true,
@@ -16,19 +14,14 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 	
 	init:function (form) {
 		var plugin = this;
-		this.form = form;      
-
+		this.form = form;
 		// Change event on all fields in order to mark changes
 		var fields = form.query('field');
 		for (var i=0; i < fields.length; i++){
 			fields[i].addListener('change',this.handleFieldChanged,this);
 		}
-		
-		
 		//init edit mode boolean
 		form.editMode=false;
-
-		
 		var toolbars = form.query('#editingtoolbar');	
 		if (toolbars.length==1){
 			this.tb = toolbars[0];
@@ -38,13 +31,6 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			this.tb = this.createNewToolbar();
 			this.fillToolbar();
 			form.addDocked(this.tb);
-		} 
-
-		// Add toolbar with Add, Modify, Delete and ChHist actions to grids in form
-		var grids = form.query('grid[blocked=false]');
-		for (var i=0; i <grids.length; i++){
-			if (grids[i].query('#grideditingTb').length<1)
-				plugin.addTb(grids[i]);
 		}
 	},
 	
@@ -318,180 +304,10 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			if (!fieldsets[i].blocked)
 				fieldsets[i].addCls('grey-fieldset');
 		}
-		
-		// All not blocked grids with Add, Modify, Delete & ChHist actions
-		var grids = me.form.query('grid[blocked=false]');
-		for (var i=0; i <grids.length; i++){
-			grids[i].query('#grideditingTb')[0].down('#gridAddBtnCtn').show();
-			grids[i].query('#grideditingTb')[0].down('#gridDeleteBtnCtn').show();
-			if (grids[i].onlyAD !== true){
-				grids[i].query('#grideditingTb')[0].down('#gridModifyBtnCtn').show();
-			}
-			grids[i].inEdition = true;
-		}
-		
-		
 		me.form.addBodyCls('editFormPanel');
 		me.form.removeBodyCls('readOnlyFormPanel');
 	},
-	
-	// create editing grid's edition toolbar
-	addTb: function (grid){
-		var me = this;
-		
-		var addBtnCtn = Ext.create('Ext.container.Container', {
-			itemId: 'gridAddBtnCtn',
-			hidden: true,
-			items:[{
-				xtype: 'button',
-				itemId: 'gridAddBtn',
-				iconCls: 'icon-add',
-				text: '${add}',
-				tooltip: '${gridEdit.addTip}',
-				listeners: {
-					click: function (button, e, options){
-						me.form.fireEvent('addItem', grid);										
-					}	
-				}    			
-			}
-			]
-		});
-		
-		var deleteBtnCtn = Ext.create('Ext.container.Container', {
-			itemId: 'gridDeleteBtnCtn',
-			hidden: true,
-			items:[{
-				xtype: 'button',
-				itemId: 'gridDeleteBtn',
-				iconCls: 'icon-bin2',
-				disabled: true,
-				text: '${delete}',
-				tooltip: '${gridEdit.deleteTip}',
-				listeners: {
-					click: function (button, e, options){
-						grid.down('#gridDeleteBtn').setDisabled(true);
-						me.form.fireEvent('deleteItem', grid);										
-					}	
-				}    			
-			}
-			]
-		});
-		
-		var modifyBtnCtn = Ext.create('Ext.container.Container', {
-			itemId: 'gridModifyBtnCtn',
-			hidden: true,
-			items:[{
-				xtype: 'button',
-				itemId: 'gridModifyBtn',
-				disabled: true,
-				text: translate('modify'),
-				tooltip: translate('gridEdit.modifyTip'),
-				listeners: {
-					click: function (button, e, options){
-						me.form.fireEvent('modifyItem', grid);										
-					}	
-				}    			
-			}
-			]
-		});
-		
-		var chHistBtnCtn = Ext.create('Ext.container.Container', {
-			itemId: 'gridChHistBtnCtn',  		
-			items:[{
-				xtype: 'button',
-				itemId: 'gridChHistBtn',
-				iconCls: 'icon-script',
-				tooltip: translatr('chHist'),
-				listeners: {
-					click: function (button, e, options){
-						me.form.fireEvent('chHist', grid);										
-					}	
-				}    			
-			}
-			]
-		});
-		
-		var toolbar = Ext.create('Ext.toolbar.Toolbar',{
-			dock: 'top',
-			itemId: 'grideditingTb'
-		});
-		
-		toolbar.add(addBtnCtn);
-		toolbar.add(deleteBtnCtn);
-		//console.log('form editing',grid.itemId,grid.onlyAD);
-		if (grid.onlyAD !== true){
-			toolbar.add(modifyBtnCtn);
-		}
-		toolbar.add('->');
-		toolbar.add(chHistBtnCtn);
-		
-		grid.addDocked(toolbar);
-		
-		me.configureGrid(grid);
-	},
-	
-	// Configure editing grid from form
-	configureGrid : function (grid){
-		// Add on select event to grid
-		grid.on('select',function(rowmodel,record,index,eOpts){
-			// Disable Delete btn when record locked or toDelete
-			if (record.data.locked || record.data.toDelete){
-				grid.down('#gridDeleteBtn').setDisabled(true);
-				if (grid.onlyAD !== true){
-					grid.down('#gridModifyBtn').setDisabled(true);
-				}
-			} else {
-				grid.down('#gridDeleteBtn').setDisabled(false);
-				if (grid.onlyAD !== true){
-					grid.down('#gridModifyBtn').setDisabled(false);
-				}
-			}
-		},this);
-		
-		// Add action column to grid
-		var column = Ext.create('Ext.grid.column.Column', {
-			renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-				if (record.data.notValid && grid.inEdition==true){
-                    return '<div class="icon-error" style="height:16px !important;" data-qtip="${gridEdit.notValid}<br>'+record.data.notValidTip+'">&nbsp;</div>';
-                }else if (record.data.toDelete && grid.inEdition==true){
-                    return '<div class="icon-bin2" style="height:16px !important;" data-qtip="${gridEdit.toDelete}">&nbsp;</div>';
-                }else if (record.data.added && grid.inEdition==true){
-                    return '<div class="icon-add" style="height:16px !important;" data-qtip="${gridEdit.added}">&nbsp;</div>';
-                }else if (record.data.modified && grid.inEdition==true){
-                    return '<div class="icon-pencil" style="height:16px !important;" data-qtip="${gridEdit.modified}">&nbsp;</div>';
-                } else if (record.data.locked){
-                    return '<div class="icon-lock" style="height:16px !important;" data-qtip="${gridEdit.locked}">&nbsp;</div>';
-                } else return '';
-            },
-            //QC MOA#144 - always show lock icon
-            //hidden: true,
-            itemId: 'actionColumn',
-            maxWidth: 28,
-            minWidth: 28,
-            width: 28,
-            menuDisabled: true,
-            enableColumnHide: false,
-            hideable: false
-        });
-		grid.headerCt.insert(grid.columns.length,column);
-		grid.getView().refresh();		
 
-	},
-	
-	// Check if modification in grid, if so, then activate save, cancel btns; else inactivate btns
-	checkIfModifications: function (grid) {
-		var me = this;
-		
-		if (grid.getStore().query('toDelete',true).items.length > 0 
-		|| grid.getStore().query('added',true).items.length > 0 
-		|| grid.getStore().query('modified',true).items.length > 0){
-			me.saveBtnCtn.down('#saveBtn').setDisabled(false);
-			if(me.showCancelBtn)
-				me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
-		}
-		
-	},
-	
 	quitEditMode: function (){
 		var me = this;
 		
@@ -547,21 +363,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 					divTitle.removeCls('dirty-form-field');
 			}
 		}
-		
-		// All editing grids with Add and Delete actions
-		var grids = me.form.query('gridpanel');
-		for (var i=0; i < grids.length; i++){
-			if (!grids[i].blocked){
-				grids[i].query('#grideditingTb')[0].down('#gridAddBtnCtn').hide();
-				grids[i].query('#grideditingTb')[0].down('#gridDeleteBtnCtn').hide();
-				if(grids[i].onlyAD !== true){
-					grids[i].query('#grideditingTb')[0].down('#gridModifyBtnCtn').hide();
-				}
-				grids[i].inEdition = false;
-			}
-		}
-		
-		
+
 		this.form.addBodyCls('readOnlyFormPanel');
 		this.form.removeBodyCls('editFormPanel');
 	},
@@ -620,32 +422,7 @@ Ext.define('Plugins.form.FormEditingPlugin', {
 			}
 		} 
 	},
-	
-	/**
-	 * Check atleast anyone object is changed in the field set
-	 * in that case keep the highlight as it is. adding this as part of the 
-	 * defect#654.
-	 */
-	/*checkChangesOnOtherFields:function(fieldset){
-		var oldValues = this.form.recordValues;
-		if(fieldset!=null){
-			var radioGroup =  fieldset.items.items;
-			for(var i=0;i<radioGroup.length;i++){
-				var checkedItems = radioGroup[i].getChecked();
-				if(checkedItems.length>1){
-					return true;
-				}
-				var radio = radioGroup[i].getChecked()[0];
-				if(radio){
-					var fieldNameToCompare = radio.name;
-					if(oldValues[fieldNameToCompare]!=radioGroup[i].getChecked()[0].inputValue){
-						return true;
-					}
-				}
-			}
-		}	
-	},*/
-	
+
 	checkChangesOnOtherFields:function(fieldset){
 		var oldValues = this.form.recordValues;
 		if(fieldset!=null){

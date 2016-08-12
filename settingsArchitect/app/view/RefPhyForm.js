@@ -153,12 +153,7 @@ Ext.define('MyApp.view.RefPhyForm', {
     },
 
     processRefPhyForm: function(config) {
-        config.plugins = new Plugins.form.FormEditingPlugin({
-            withValidation: false,
-            showConfirmationOnSave: true
-        });
-
-        return config;
+        FormAddPlugins.addPlugins(this);
     }
 
 });

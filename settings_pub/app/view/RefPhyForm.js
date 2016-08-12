@@ -32,7 +32,7 @@ Ext.define('MyApp.view.RefPhyForm', {
     itemId: 'refPhyFormId',
     width: 500,
     bodyPadding: 10,
-    title: 'My Form',
+    title: 'Create Referring physician',
 
     listeners: {
         afterrender: 'onRefPhyFormItemIdAfterRender',
@@ -153,12 +153,7 @@ Ext.define('MyApp.view.RefPhyForm', {
     },
 
     processRefPhyForm: function(config) {
-        config.plugins = new Plugins.form.FormEditingPlugin({
-            withValidation: false,
-            showConfirmationOnSave: true
-        });
-
-        return config;
+        FormAddPlugins.addPlugins(this);
     }
 
 });

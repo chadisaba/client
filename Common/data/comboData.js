@@ -13,8 +13,7 @@ var ComboData= {
     title:[
         {titleId:1, title:('Mr.')},
         {titleId:2, title:translate('Mme.')},
-        {titleId:3, title:translate('Mlle')},
-        {titleId:4, title:translate('Enfant')}
+        {titleId:3, title:translate('Mlle')}
     ],
     gender:[
         {genderId:1, gender:translate('M.')},
