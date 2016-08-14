@@ -69,37 +69,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "referringPhysicianFName",
-                "text": "first name"
-            },
-            "name": "MyreferringPhysicianFNameCol",
-            "designerId": "77cf99b1-754f-40e3-a504-1ed69ad0aa71",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "referringPhysicianFNameTextFieldItemId"
-                    },
-                    "name": "MyreferringPhysicianFNameTextField",
-                    "designerId": "f49a2f62-04d2-4e0b-ad0b-13850c5bd375"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "referringPhysicianLName",
-                "text": "last name"
+                "maxWidth": 120,
+                "minWidth": null,
+                "text": "last name",
+                "width": 120
             },
             "name": "MyreferringPhysicianLNameCol",
             "designerId": "06c89993-53f9-4e22-94b7-844f10e4b079",
@@ -127,7 +101,40 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "referringPhysicianFName",
+                "maxWidth": 120,
+                "minWidth": 120,
+                "text": "first name",
+                "width": 120
+            },
+            "name": "MyreferringPhysicianFNameCol",
+            "designerId": "77cf99b1-754f-40e3-a504-1ed69ad0aa71",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "referringPhysicianFNameTextFieldItemId"
+                    },
+                    "name": "MyreferringPhysicianFNameTextField",
+                    "designerId": "f49a2f62-04d2-4e0b-ad0b-13850c5bd375"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "referringPhysicianGender",
+                "minWidth": null,
                 "text": "gender",
                 "width": 80
             },
@@ -210,6 +217,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianTitle",
+                "minWidth": null,
                 "text": "title",
                 "width": 80
             },
@@ -292,8 +300,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianZipCode",
+                "minWidth": 80,
                 "text": "zip code",
-                "width": 80
+                "width": null
             },
             "name": "MyreferringPhysicianZipCodeCol",
             "designerId": "0fca1d1b-f98c-4405-b442-dad0c2d2308c",
@@ -339,7 +348,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "cityName",
-                "text": "city"
+                "minWidth": null,
+                "text": "city",
+                "width": 120
             },
             "name": "MycityNameCol",
             "designerId": "24eb502b-8e01-4458-87a8-6c9b7762bec1",
@@ -397,8 +408,9 @@
             "userConfig": {
                 "dataIndex": "referringPhysicianAddress",
                 "flex": 1,
-                "minWidth": 150,
-                "text": "address"
+                "minWidth": null,
+                "text": "address",
+                "width": 150
             },
             "name": "MyreferringPhysicianAddressCol",
             "designerId": "f36be30e-54af-405e-89e1-ad146009a8ff",
@@ -427,7 +439,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianPhoneNumber",
-                "text": "phone"
+                "minWidth": null,
+                "text": "phone",
+                "width": 120
             },
             "name": "MyreferringPhysicianPhoneNumberCol",
             "designerId": "5e45c2a1-0051-4785-bdb1-cf1ea992a697",
@@ -456,7 +470,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianFaxNumber",
-                "text": "fax"
+                "minWidth": null,
+                "text": "fax",
+                "width": 120
             },
             "name": "MyreferringPhysicianFaxNumberCol",
             "designerId": "f4bdc18b-b4b0-4376-abd9-90993ace9a94",
@@ -486,8 +502,9 @@
             "userConfig": {
                 "dataIndex": "referringPhysicianEmail",
                 "flex": 1,
-                "minWidth": 150,
-                "text": "email"
+                "minWidth": null,
+                "text": "email",
+                "width": 150
             },
             "name": "MyreferringPhysicianEmailCol",
             "designerId": "237cb2f3-c9f7-4f8b-8a23-567612200d18",

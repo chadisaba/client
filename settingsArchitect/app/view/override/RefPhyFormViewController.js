@@ -4,7 +4,8 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
     initForm: function(_formId) {
         var me=this;
         var view=me.getView();
-        view.getPlugin('formediting').quitEditMode();
+        if(view.getPlugin('formediting'))
+            view.getPlugin('formediting').quitEditMode();
         var viewModel=me.getViewModel();
         var formId=null;
         if(_formId)
@@ -35,24 +36,21 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
             CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray).
             then(function(_result)
             {
-                if(_result.cityId) {
+                if(_result[0].cityId) {
                     var cityData = [];
                     cityData.push({
                         cityId: _result[0].cityId,
                         cityName: _result[0]['City.cityName']
                     });
-
+                  //  _result[0]['cityName']= _result[0]['City.cityName'];
                     viewModel.getStore('CityNameComboStore').loadData(cityData);
                 }
 
 
-                    rec=Ext.create('MyApp.model.RefPhyModel',_result[0]);
-                if(cityData)
-                    viewModel.getStore('CityNameComboStore').loadData(cityData);
-
-
+                rec=Ext.create('MyApp.model.RefPhyModel',_result[0]);
                 view.loadRecord(rec);
-                me.enterEditMode();
+                if(view.getPlugin('formediting'))
+                     me.enterEditMode();
 
             }) .catch(function(_err)
             {
@@ -65,7 +63,8 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
             rec=Ext.create('MyApp.model.RefPhyModel');
             rec.set('referringPhysicianId',UUID());
             view.loadRecord(rec);
-            me.enterEditMode();
+            if(view.getPlugin('formediting'))
+                 me.enterEditMode();
         }
     },
 
@@ -80,25 +79,45 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
 
     },
 
-    onRefPhyFormItemIdSaveEdit: function(form, promptWin, comment) {
-
+    saveForm:function(comment){
         var me=this;
+        var promise=new Promise(
+            function(resolve, reject) {
+                var form=me.getView();
+                var rec=form.getRecord();
+                form.updateRecord(rec); // update the record with the form
+                var dataToSave=rec.data;
+                CommonDirect.saveData(dataToSave,'REFERRING_PHYSICIAN',comment)
+                    .then(function(_result)
+                    {
+                        resolve(_result);
+                    });
 
-        var form=me.getView();
-        var rec=form.getRecord();
-        form.updateRecord(rec); // update the record with the form
-        var dataToSave=rec.data;
-            CommonDirect.saveData(dataToSave,'REFERRING_PHYSICIAN',"")
-                .then(function(_result)
-                {
-                    Utility.loading.end(saveBtn);
-                    me.quitEditMode();
-                })
-                .catch(function(_err)
-                {
-                    console.error(_err.msg);
-                    Ext.MessageBox.alert("Error","save Error "+_err.msg);
-                });
+             });
+         return promise;
+    },
+    onRefPhyFormItemIdSaveEdit: function(form, promptWin, comment) {
+        var me=this;
+        me.saveForm(comment)
+            .then(function(_result)
+            {
+                if(promptWin.isButton)
+                    Utility.loading.end(promptWin);
+                    else
+                    promptWin.close();
+
+                me.quitEditMode();
+                me.fireViewEvent('formSavedEvent');
+            })
+            .catch(function(_err)
+            {
+                console.error(_err);
+                Ext.Msg.alert('Error', translate('saveError'));
+            });
+    },
+
+    onRefPhyZipCodeChange: function(field, newValue, oldValue, eOpts) {
+        Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
     },
 
     onRefPhyFormItemIdResetEdit: function(form, promptWin) {

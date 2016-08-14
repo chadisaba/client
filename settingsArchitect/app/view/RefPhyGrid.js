@@ -58,20 +58,25 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'referringPhysicianFName',
-            text: 'first name',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'referringPhysicianFNameTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
+            maxWidth: 120,
+            width: 120,
             dataIndex: 'referringPhysicianLName',
             text: 'last name',
             editor: {
                 xtype: 'textfield',
                 itemId: 'referringPhysicianLNameTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            maxWidth: 120,
+            minWidth: 120,
+            width: 120,
+            dataIndex: 'referringPhysicianFName',
+            text: 'first name',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'referringPhysicianFNameTextFieldItemId'
             }
         },
         {
@@ -120,7 +125,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
-            width: 80,
+            minWidth: 80,
             dataIndex: 'referringPhysicianZipCode',
             text: 'zip code',
             editor: {
@@ -133,6 +138,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'cityName',
             text: 'city',
             editor: {
@@ -153,7 +159,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 150,
+            width: 150,
             dataIndex: 'referringPhysicianAddress',
             text: 'address',
             flex: 1,
@@ -164,6 +170,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'referringPhysicianPhoneNumber',
             text: 'phone',
             editor: {
@@ -173,6 +180,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'referringPhysicianFaxNumber',
             text: 'fax',
             editor: {
@@ -182,7 +190,7 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
-            minWidth: 150,
+            width: 150,
             dataIndex: 'referringPhysicianEmail',
             text: 'email',
             flex: 1,

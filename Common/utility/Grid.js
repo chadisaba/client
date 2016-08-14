@@ -269,7 +269,7 @@ Ext.define('Utility.grid', {
                             userCombo.select(cityComboStore.getAt(0));
                         }
                         else{
-                            console.log(res.msg);
+                            console.error(res.msg);
                         }
                     },me
                 );

@@ -33,12 +33,9 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
     refreshGrid: function () {
         this.initGrid(this.filters);
     },
-
-
     onRefPhyGridIdInEdit: function() {
 
     },
-
     onRefPhyGridIdDuplicateItem: function(grid) {
         Utility.grid.duplicateItem(grid,'referringPhysicianId');
         grid.getPlugin('gridediting').checkIfModifications();
@@ -93,6 +90,7 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
                              items:{
                                  region: 'center',
                                  xtype:'refphyform',
+                                // noPlugin:true,
                                  listeners:{
                                      afterrender:function(_comp)
                                      {

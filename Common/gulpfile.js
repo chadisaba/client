@@ -1,7 +1,18 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var clean = require('gulp-clean');
+var gulpsync = require('gulp-sync')(gulp);
 
+gulp.task('clean-prebuild', function () {
+    return gulp.src('C:/wamp5.5/www/nodejs_extjs_project/client_ch/prebuild/', {read: false})
+        .pipe(clean({force: true}));
+});
+
+gulp.task('clean-build', function () {
+    return gulp.src('C:/wamp5.5/www/nodejs_extjs_project/client_ch/commonBuild/', {read: false})
+        .pipe(clean({force: true}));
+});
 
 gulp.task('min-common-data', function(){
    gulp.src('C:/wamp5.5/www/nodejs_extjs_project/client_ch/Common/data/*.js')
@@ -104,12 +115,13 @@ gulp.task('concat-common', function(){
 });
 
 
-gulp.task('default', ['min-common-data', 'min-common-direct','min-common-ext-ux-filterWidget','min-common-ext-ux-inputs','min-common-func','min-common-localization','min-common-plugins','min-common-plugins-combobox',
+gulp.task('default', gulpsync.sync(['clean-prebuild','clean-build','min-common-data', 'min-common-direct','min-common-ext-ux-filterWidget','min-common-ext-ux-inputs','min-common-func','min-common-localization','min-common-plugins','min-common-plugins-combobox',
 'min-common-plugins-form',
 'min-common-plugins-grid',
 'min-common-plugins-tree',
-'min-common-uiHelper','min-common-utility','min-common-ux-window','min-common-vtype','concat-common']);
+'min-common-uiHelper','min-common-utility','min-common-ux-window','min-common-vtype','concat-common']));
 
+gulp.task('concat',['concat-common']);
 /*var gulp = require('gulp');,
 var uglify = require('gulp-uglify');
 var pump = require('pump');

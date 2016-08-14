@@ -7,8 +7,8 @@ Ext.define('Plugins.form.FormPlugin', {
 	withValidation: false,
 	showHistoryBtn: true,
 	showCancelBtn: true,
-	showConfirmationOnSave: true,
-	showConfirmationOnQuit: true,
+	showConfirmationOnSave: false,
+	showConfirmationOnQuit: false,
 	
 	pluginId: 'formediting',
 	
@@ -170,17 +170,17 @@ Ext.define('Plugins.form.FormPlugin', {
 							    //Reporter Comment pop-up
 							    var promptWin = Ext.create('Common.ux.window.PromptWindow',{withClose:false,  closable:false});
 							    if (me.withValidation){
-								    promptWin.setTitle('${gridEdit.submitTitle}');
-								    promptWin.down('#confirmMsg').setText('${gridEdit.submitMsg}');
+								    promptWin.setTitle(translate('submitTitle'));
+								    promptWin.down('#confirmMsg').setText(translate('submitMsg'));
 							    } else {
-							    	promptWin.setTitle('${gridEdit.applyChTitle}');
-								    promptWin.down('#confirmMsg').setText('${gridEdit.applyChMsg}');
+							    	promptWin.setTitle(translate('applyChTitle'));
+								    promptWin.down('#confirmMsg').setText(translate('ApplyModification?'));
 							    }
 							    
 							    promptWin.query('button')[0].setText('Oui');
 							    promptWin.query('button')[1].setText('Non');
 							    
-							    promptWin.down('#description').setText('${gridEdit.comment}');
+							    promptWin.down('#description').setText(translate('comment'));
 							    promptWin.callbackFunction = function (choice,comment){
 							        if(choice==='ok'){
 							            // Loading artifact on yes btn
@@ -211,7 +211,7 @@ Ext.define('Plugins.form.FormPlugin', {
 				xtype: 'button',
 				itemId: 'chHistBtn',
 				glyph: 'xf073@FontAwesome',
-				tooltip: '${chHist}',
+				tooltip: translate('chHist'),
 				listeners: {
 					click: function (button, e, options){
 						me.form.fireEvent('chHist', me.form);										
@@ -232,7 +232,7 @@ Ext.define('Plugins.form.FormPlugin', {
 				itemId: 'quitBtn',
 				glyph: 'xf08b@FontAwesome',
 				text: 'Quitter',
-				tooltip: translate('$gridEdit.quitTip'),
+				tooltip: translate('quit'),
 				listeners: {
 					click: function (button, e, options){
 						if(me.showConfirmationOnQuit){

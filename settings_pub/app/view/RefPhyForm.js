@@ -32,6 +32,7 @@ Ext.define('MyApp.view.RefPhyForm', {
     itemId: 'refPhyFormId',
     width: 500,
     bodyPadding: 10,
+    header: false,
     title: 'Create Referring physician',
 
     listeners: {
@@ -45,14 +46,8 @@ Ext.define('MyApp.view.RefPhyForm', {
     items: [
         {
             xtype: 'fieldset',
-            title: 'My Fields',
+            title: 'create referring physician',
             items: [
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: '',
-                    name: 'referringPhysicianId'
-                },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
@@ -68,13 +63,14 @@ Ext.define('MyApp.view.RefPhyForm', {
                 {
                     xtype: 'combobox',
                     anchor: '100%',
-                    itemId: 'referringPhysicianGenderComboBoxEditorItemId',
+                    itemId: 'refPhyGenderComboBoxEditorItemId',
                     fieldLabel: 'gender',
                     name: 'referringPhysicianGender',
                     selectOnFocus: true,
                     displayField: 'gender',
                     forceSelection: true,
                     queryMode: 'local',
+                    valueField: 'genderId',
                     bind: {
                         store: '{ReferringPhysicianGenderComboStore}'
                     }
@@ -82,13 +78,14 @@ Ext.define('MyApp.view.RefPhyForm', {
                 {
                     xtype: 'combobox',
                     anchor: '100%',
-                    itemId: 'referringPhysicianTitleComboBoxEditorItemId',
+                    itemId: 'refPhTitleComboBoxEditorItemId',
                     fieldLabel: 'title',
                     name: 'referringPhysicianTitle',
                     selectOnFocus: true,
                     displayField: 'title',
                     forceSelection: true,
                     queryMode: 'local',
+                    valueField: 'titleId',
                     bind: {
                         store: '{ReferringPhysicianTitleComboStore}'
                     }
@@ -96,8 +93,12 @@ Ext.define('MyApp.view.RefPhyForm', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    itemId: 'refPhyZipCode',
                     fieldLabel: 'zip code',
-                    name: 'referringPhysicianZipCode'
+                    name: 'referringPhysicianZipCode',
+                    listeners: {
+                        change: 'onRefPhyZipCodeChange'
+                    }
                 },
                 {
                     xtype: 'textfield',
@@ -128,7 +129,7 @@ Ext.define('MyApp.view.RefPhyForm', {
                     anchor: '100%',
                     itemId: 'cityNameComboBoxEditorItemId',
                     fieldLabel: 'city',
-                    name: 'cityName',
+                    name: 'cityId',
                     selectOnFocus: true,
                     displayField: 'cityName',
                     forceSelection: true,

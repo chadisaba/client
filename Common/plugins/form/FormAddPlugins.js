@@ -1,6 +1,7 @@
 var FormAddPlugins={
     addPlugins:function(_scope)
         {
+
             _scope.plugins=[];
             if(_scope.initialConfig.noPlugin)
             {
@@ -10,8 +11,6 @@ var FormAddPlugins={
             {
                 _scope.plugins.push (
                     new Plugins.form.FormPlugin({
-                        withValidation: false,
-                        showConfirmationOnSave: true,
                         showHistoryBtn:false,
                         showCancelBtn:false,
                          pluginId: 'formediting'

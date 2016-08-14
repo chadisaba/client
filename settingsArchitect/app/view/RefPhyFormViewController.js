@@ -43,6 +43,10 @@ Ext.define('MyApp.view.RefPhyFormViewController', {
 
     onRefPhyFormItemIdQuitEdit: function(form, promptWin) {
 
+    },
+
+    onRefPhyZipCodeChange: function(field, newValue, oldValue, eOpts) {
+
     }
 
 });

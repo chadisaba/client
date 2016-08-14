@@ -9,6 +9,7 @@
         "bodyPadding": 10,
         "designer|userAlias": "refphyform",
         "designer|userClassName": "RefPhyForm",
+        "header": false,
         "height": 500,
         "itemId": "refPhyFormId",
         "title": "Create Referring physician",
@@ -158,26 +159,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "My Fields"
+                "title": "create referring physician"
             },
             "name": "MyFieldSet",
             "designerId": "a3ce07eb-f9ca-4faf-bb6e-8162ee8337f0",
             "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "",
-                        "layout|anchor": "100%",
-                        "name": "referringPhysicianId"
-                    },
-                    "name": "MyreferringPhysicianIdTextField",
-                    "designerId": "c12b855a-760b-4c35-8c41-797ae293f06c"
-                },
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -219,14 +205,15 @@
                         "displayField": "gender",
                         "fieldLabel": "gender",
                         "forceSelection": true,
-                        "itemId": "referringPhysicianGenderComboBoxEditorItemId",
+                        "itemId": "refPhyGenderComboBoxEditorItemId",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianGender",
                         "queryMode": "local",
                         "selectOnFocus": true,
                         "store": [
                             "{ReferringPhysicianGenderComboStore}"
-                        ]
+                        ],
+                        "valueField": "genderId"
                     },
                     "name": "MyreferringPhysicianGenderComboBox",
                     "configAlternates": {
@@ -245,14 +232,15 @@
                         "displayField": "title",
                         "fieldLabel": "title",
                         "forceSelection": true,
-                        "itemId": "referringPhysicianTitleComboBoxEditorItemId",
+                        "itemId": "refPhTitleComboBoxEditorItemId",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianTitle",
                         "queryMode": "local",
                         "selectOnFocus": true,
                         "store": [
                             "{ReferringPhysicianTitleComboStore}"
-                        ]
+                        ],
+                        "valueField": "titleId"
                     },
                     "name": "MyreferringPhysicianTitleComboBox",
                     "configAlternates": {
@@ -269,11 +257,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "fieldLabel": "zip code",
+                        "itemId": "refPhyZipCode",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianZipCode"
                     },
                     "name": "MyreferringPhysicianZipCodeTextField",
-                    "designerId": "bed0a39e-5345-45c4-9e90-70aa11715c08"
+                    "designerId": "bed0a39e-5345-45c4-9e90-70aa11715c08",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefPhyZipCodeChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onRefPhyZipCodeChange",
+                            "designerId": "e1d9efc5-008c-4276-9b0b-af8775419965"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -348,7 +354,7 @@
                         "forceSelection": true,
                         "itemId": "cityNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
-                        "name": "cityName",
+                        "name": "cityId",
                         "queryMode": "local",
                         "selectOnFocus": true,
                         "store": [

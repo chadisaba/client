@@ -93,15 +93,7 @@ Ext.define('MyApp.view.InfoForm', {
     },
 
     processInfoForm: function(config) {
-          config.plugins = new Plugins.form.FormEditingPlugin({
-                    withValidation: false,
-                    showConfirmationOnSave: false,
-              showConfirmationOnQuit:false,
-              showCancelBtn:false,
-              showHistoryBtn:false
-                });
-
-                return config;
+        FormAddPlugins.addPlugins(this);
     }
 
 });
