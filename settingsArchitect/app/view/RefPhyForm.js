@@ -41,24 +41,27 @@ Ext.define('MyApp.view.RefPhyForm', {
         saveEdit: 'onRefPhyFormItemIdSaveEdit',
         resetEdit: 'onRefPhyFormItemIdResetEdit',
         chHist: 'onRefPhyFormItemIdChHist',
-        quitEdit: 'onRefPhyFormItemIdQuitEdit'
+        quitEdit: 'onRefPhyFormItemIdQuitEdit',
+        boxready: 'onRefPhyFormIdBoxReady'
     },
     items: [
         {
             xtype: 'fieldset',
-            title: 'create referring physician',
+            title: 'identifying referring physician',
             items: [
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'first name',
-                    name: 'referringPhysicianFName'
+                    name: 'referringPhysicianFName',
+                    allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'last name',
-                    name: 'referringPhysicianLName'
+                    name: 'referringPhysicianLName',
+                    allowBlank: false
                 },
                 {
                     xtype: 'combobox',
@@ -66,6 +69,7 @@ Ext.define('MyApp.view.RefPhyForm', {
                     itemId: 'refPhyGenderComboBoxEditorItemId',
                     fieldLabel: 'gender',
                     name: 'referringPhysicianGender',
+                    allowBlank: false,
                     selectOnFocus: true,
                     displayField: 'gender',
                     forceSelection: true,
@@ -81,6 +85,7 @@ Ext.define('MyApp.view.RefPhyForm', {
                     itemId: 'refPhTitleComboBoxEditorItemId',
                     fieldLabel: 'title',
                     name: 'referringPhysicianTitle',
+                    allowBlank: false,
                     selectOnFocus: true,
                     displayField: 'title',
                     forceSelection: true,

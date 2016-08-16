@@ -1,6 +1,10 @@
 Ext.define('MyApp.view.override.RefPhyFormViewController', {
     override: 'MyApp.view.RefPhyFormViewController',
 
+    onRefPhyFormIdBoxReady: function(component, width, height, eOpts) {
+        translateUtil.transForm(component);
+
+    },
     initForm: function(_formId) {
         var me=this;
         var view=me.getView();
@@ -87,6 +91,12 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
                 var rec=form.getRecord();
                 form.updateRecord(rec); // update the record with the form
                 var dataToSave=rec.data;
+                dataToSave.referringPhysicianSearch="";
+                if(dataToSave.referringPhysicianLName)
+                    dataToSave.referringPhysicianSearch+=dataToSave.referringPhysicianLName.toUpperCase();
+
+                if(dataToSave.referringPhysicianFName)
+                    dataToSave.referringPhysicianSearch=" "+stringUtil.formatFName(dataToSave.referringPhysicianFName);
                 CommonDirect.saveData(dataToSave,'REFERRING_PHYSICIAN',comment)
                     .then(function(_result)
                     {
@@ -107,6 +117,7 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
                     promptWin.close();
 
                 me.quitEditMode();
+                me.fireViewEvent('formSavedEvent');
             })
             .catch(function(_err)
             {

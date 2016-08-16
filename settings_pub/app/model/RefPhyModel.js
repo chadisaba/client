@@ -39,6 +39,9 @@ Ext.define('MyApp.model.RefPhyModel', {
             name: 'cityId'
         },
         {
+            name: 'referringPhysicianSearch'
+        },
+        {
             name: 'referringPhysicianFName'
         },
         {

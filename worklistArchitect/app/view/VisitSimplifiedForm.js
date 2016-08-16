@@ -185,6 +185,7 @@ Ext.define('MyApp.view.VisitSimplifiedForm', {
         {
             xtype: 'studyvisitgrid',
             externalEditingPlugin: {
+                pluginId: 'gridediting',
                 onlyADM: true
             },
             listeners: {

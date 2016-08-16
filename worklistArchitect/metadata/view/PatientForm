@@ -270,15 +270,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "advancedListConfig": [
-                            "{",
-                            " itemSelector: 'div',",
-                            "                        itemTpl: [",
-                            "                            '{referringPhysicianLName} {referringPhysicianFName}'",
-                            "                        ]",
-                            "}"
-                        ],
-                        "displayField": "referringPhysicianLName",
+                        "advancedListConfig": null,
+                        "displayField": "referringPhysicianSearch",
                         "fieldLabel": [
                             "{trans.referringDoctor}"
                         ],
@@ -327,20 +320,40 @@
                             "designerId": "da1b0e3e-3bf2-4656-98e6-fac5bb85b425"
                         },
                         {
-                            "type": "Ext.XTemplate",
+                            "type": "viewcontrollereventbinding",
                             "reference": {
-                                "name": "displayTpl",
-                                "type": "object"
+                                "name": "listeners",
+                                "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "displayTpl",
-                                "implHandler": [
-                                    "<tpl for=\".\">{referringPhysicianLName} {referringPhysicianFName}</tpl>"
-                                ]
+                                "designer|params": [
+                                    "advancedCombobox"
+                                ],
+                                "fn": "onRefPhyComboBoxComboAddItemEvent",
+                                "name": "comboAddEvent",
+                                "scope": "me"
                             },
-                            "name": "displayTpl",
-                            "designerId": "eb21d1b4-c0a8-48f3-90e0-2e6b449a7350"
+                            "name": "onRefPhyComboBoxComboAddItemEvent",
+                            "designerId": "62e2151d-515b-48d6-9980-c5322811d4c9"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "advancedCombobox"
+                                ],
+                                "fn": "onRefPhyComboBoxComboEditItemEvent",
+                                "name": "comboEditEvent",
+                                "scope": "me"
+                            },
+                            "name": "onRefPhyComboBoxComboEditItemEvent",
+                            "designerId": "2ccc02a4-bc5e-4138-8c94-b54e327e12d5"
                         }
                     ]
                 },

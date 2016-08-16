@@ -47,6 +47,10 @@ Ext.define('MyApp.view.RefPhyFormViewController', {
 
     onRefPhyZipCodeChange: function(field, newValue, oldValue, eOpts) {
 
+    },
+
+    onRefPhyFormIdBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

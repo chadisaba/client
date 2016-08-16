@@ -25,7 +25,6 @@ Ext.define('MyApp.view.PatientForm', {
         'Ext.form.field.Radio',
         'Ext.form.field.Date',
         'Ext.ux.inputs.AdvancedCombobox',
-        'Ext.XTemplate',
         'Ext.toolbar.Spacer',
         'Ext.form.field.TextArea',
         'Ext.toolbar.Toolbar',
@@ -136,20 +135,11 @@ Ext.define('MyApp.view.PatientForm', {
                 },
                 {
                     xtype: 'advancedCombobox',
-                    advancedListConfig: {
-                        itemSelector: 'div',
-                        itemTpl: [
-                            '{referringPhysicianLName} {referringPhysicianFName}'
-                        ]
-                    },
                     anchor: '100%',
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,
-                    displayField: 'referringPhysicianLName',
-                    displayTpl: [
-                        '<tpl for=".">{referringPhysicianLName} {referringPhysicianFName}</tpl>'
-                    ],
+                    displayField: 'referringPhysicianSearch',
                     minChars: 4,
                     queryDelay: 500,
                     queryMode: 'local',
@@ -160,7 +150,9 @@ Ext.define('MyApp.view.PatientForm', {
                         store: '{ReferringPhysicianNameComboStore}'
                     },
                     listeners: {
-                        change: 'onReferringPhysicianNameComboBoxEditorItemIdChange'
+                        change: 'onReferringPhysicianNameComboBoxEditorItemIdChange',
+                        comboAddEvent: 'onRefPhyComboBoxComboAddItemEvent',
+                        comboEditEvent: 'onRefPhyComboBoxComboEditItemEvent'
                     }
                 },
                 {

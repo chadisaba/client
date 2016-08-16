@@ -28,7 +28,7 @@ var IndexedDB={
                         DOCTOR: "++id,doctorId,userFName,userLName",
                         ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceName,siteId",
                         ROOM: "++id,roomId,roomCode,roomName,siteId",
-                        REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle",
+                        REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle,referringPhysicianSearch",
                         DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
                         SITE: "++id,siteId,siteCode,siteName"
 

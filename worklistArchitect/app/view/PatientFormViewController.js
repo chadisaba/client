@@ -33,6 +33,14 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     },
 
+    onRefPhyComboBoxComboAddItemEvent: function(advancedCombobox) {
+
+    },
+
+    onRefPhyComboBoxComboEditItemEvent: function(advancedCombobox) {
+
+    },
+
     onPatientSocialNumberTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

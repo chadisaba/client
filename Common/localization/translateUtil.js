@@ -9,6 +9,36 @@ var translateUtil={
             });
 
     },
+
+    transForm:function(_comp)
+    {
+        _comp.setTitle(translate(_comp.title));
+        this.transInputs(_comp);
+        this.transBtns(_comp);
+        this.transFieldSet(_comp);
+    },
+
+    transWindow:function(_comp)
+    {
+        var me=this;
+        _comp.setTitle(translate(_comp.title));
+        var buttonsArray=_comp.query('form');
+        buttonsArray.forEach(function(_btn)
+        {
+            me.transForm(_comp);
+        });
+    },
+    transFieldSet:function(_comp)
+    {
+        var buttonsArray=_comp.query('fieldset');
+        buttonsArray.forEach(function(_btn)
+        {
+            if(_btn.title)
+                _btn.setTitle(translate(_btn.title));
+
+        });
+    },
+
     transBtns:function(_comp)
     {
         var buttonsArray=_comp.query('button');

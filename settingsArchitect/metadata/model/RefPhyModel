@@ -64,6 +64,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "referringPhysicianSearch"
+            },
+            "name": "MyField",
+            "designerId": "279013a4-bbc1-4ed4-99a4-825baa80058b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "referringPhysicianFName"
             },
             "name": "MyreferringPhysicianFName",

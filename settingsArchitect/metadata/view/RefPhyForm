@@ -159,7 +159,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "create referring physician"
+                "title": "identifying referring physician"
             },
             "name": "MyFieldSet",
             "designerId": "a3ce07eb-f9ca-4faf-bb6e-8162ee8337f0",
@@ -172,6 +172,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "fieldLabel": "first name",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianFName"
@@ -187,6 +188,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "fieldLabel": "last name",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianLName"
@@ -202,6 +204,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "displayField": "gender",
                         "fieldLabel": "gender",
                         "forceSelection": true,
@@ -229,6 +232,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "displayField": "title",
                         "fieldLabel": "title",
                         "forceSelection": true,
@@ -369,6 +373,21 @@
                     "designerId": "7482ebb6-42a8-48c2-835e-a77d61598f6d"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRefPhyFormIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onRefPhyFormIdBoxReady",
+            "designerId": "0b34ee10-c4fb-488e-8657-2962b7e72cc0"
         }
     ]
 }

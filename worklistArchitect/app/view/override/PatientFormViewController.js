@@ -56,7 +56,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     },
     onReferringPhysicianNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;
-        CommonDirect.autoComplete(me,"REFERRING_PHYSICIAN",newValue,"referringPhysicianLName",'ReferringPhysicianNameComboStore',field,true,4,"referringPhysicianFName");
+        CommonDirect.autoComplete(me,"REFERRING_PHYSICIAN",newValue,"referringPhysicianSearch",'ReferringPhysicianNameComboStore',field,true,4);
     },
     onPatientSocialNumberTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
         if(newValue.length==13){
@@ -120,5 +120,37 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                 patientTitleCombo.setValue(2);
             }
         }
+    },
+    openRefPhyWin:function(refPhyId,title)
+    {
+        Ext.create('Common.ux.window.FullScreenWindow', {
+            title:translate(title),
+            items:{
+                region: 'center',
+                xtype:'refphyform',
+                listeners:{
+                    afterrender:function(_comp)
+                    {
+                        _comp.getController().initForm(refPhyId);
+                    },
+                    formSavedEvent:function()
+                    {
+                        this.up('window').close();
+                    },
+                    quitFormEvent:function()
+                    {
+                        this.up('window').close();
+                    }
+                }
+            }
+        }).show();
+    },
+    onRefPhyComboBoxComboAddItemEvent: function(combo, text) {
+        this.openRefPhyWin(null,"add form");
+    },
+
+    onRefPhyComboBoxComboEditItemEvent: function(combo, value) {
+        this.openRefPhyWin(value,"edit form");
+
     }
 });

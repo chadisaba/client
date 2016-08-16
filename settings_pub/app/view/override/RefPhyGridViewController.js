@@ -85,25 +85,6 @@ Ext.define('MyApp.view.override.RefPhyGridViewController', {
 
     onQuitEdit:function(gridpanel,promptWin)
     {
-         Ext.create('Common.ux.window.FullScreenWindow', {
-                             title:'Create Referring physician',
-                             items:{
-                                 region: 'center',
-                                 xtype:'refphyform',
-                                // noPlugin:true,
-                                 listeners:{
-                                     afterrender:function(_comp)
-                                     {
-                                       _comp.getController().initForm('7e313b69-3336-42a4-927a-845039e31d6d');
-                                     }
-                                 }
-                                 /*plugins:[
-                                  new Plugins.form.FormEditingPlugin({
-                                  withValidation: false,
-                                  showConfirmationOnSave: true
-                                  })]*/
-                             }
-                         }).show();
         var me=this;
 
         me.getResultArray(me.filters).then(

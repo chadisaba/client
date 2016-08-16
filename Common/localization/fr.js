@@ -33,8 +33,11 @@ function translate(text)
         "email":"E-mail",
         "yes":"Oui",
         "no":"Non",
+        "add form":"Formulaire d'ajout",
+        "edit form":"Formulaire de modification",
 
         "the referring physicians":"Les Prescripteurs",
+
         "clickToAddNewRow":"Ajouter une nouvelle ligne",
         "clickToDuplicateRow":"Dupliquer les lignes sélectionnées",
         "clickToDeleteTheSelection":"Supprimer les lignes sélectionnées",
@@ -179,12 +182,18 @@ function translate(text)
         "power":"Puissance",
         "Support":"Support",
         "Lecture?":"Lecture?",
-        "Senolog?":"Senolog?"
+        "Senolog?":"Senolog?",
+
+        /******* Referring physicina*****/
+        "identifying referring physician":"Identification  prescripteur",
+        "referring physician form":"Formulaire des préscripteurs"
 
 
 
 
 
-        }
+
+
+        };
     return translation[text]||text;
 }

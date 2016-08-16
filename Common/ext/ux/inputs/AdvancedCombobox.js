@@ -33,10 +33,10 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
         picker.on(
             {
             comboAddItemEvent: function(){
-                me.fireEvent('comboEditEvent', me, me.rawValue);
+                me.fireEvent('comboAddEvent', me, me.rawValue);
             },
             comboEditItemEvent: function(){
-                me.fireEvent('comboAddEvent', me,me.getValue());
+                me.fireEvent('comboEditEvent', me,me.getValue());
 
             },
             scope: me
@@ -79,13 +79,18 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
                         xtype:'button',
                         glyph: 'xf067@FontAwesome',
                         handler: function() {
-                            me.fireEvent('comboAddItemEvent', me, me.pickerField.getValue());
+                             me.fireEvent('comboAddItemEvent', me, me.pickerField.getValue());
+
+
                         }
                     },{
                         xtype:'button',
                         glyph: 'xf040@FontAwesome',
                         handler: function() {
-                            me.fireEvent('comboEditItemEvent', me, me.rawValue);
+                            if(me.rawValue)
+                                me.fireEvent('comboEditItemEvent', me, me.rawValue);
+                            else
+                                Ext.MessageBox.alert('Warring',translate('no item selected to edit'));
                         }
                     }
                 ],
