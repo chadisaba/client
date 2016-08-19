@@ -253,6 +253,21 @@
                     "designerId": "90aa00df-bf2c-4630-b67f-1a8d8c46a92a"
                 },
                 {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "address",
+                        "layout|anchor": "100%",
+                        "name": "referringPhysicianAddress"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "2a89bbcb-c15b-49ae-902c-432b46cea887"
+                },
+                {
                     "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
@@ -286,19 +301,31 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "address",
+                        "displayField": "cityName",
+                        "fieldLabel": "city",
+                        "forceSelection": true,
+                        "itemId": "cityNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
-                        "name": "referringPhysicianAddress"
+                        "name": "cityId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CityNameComboStore}"
+                        ],
+                        "valueField": "cityId"
                     },
-                    "name": "MyreferringPhysicianAddressTextField",
-                    "designerId": "2a89bbcb-c15b-49ae-902c-432b46cea887"
+                    "name": "MycityNameComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "7482ebb6-42a8-48c2-835e-a77d61598f6d"
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -344,33 +371,6 @@
                     },
                     "name": "MyreferringPhysicianEmailTextField",
                     "designerId": "ef8d2145-cd9a-4996-b959-490c08302461"
-                },
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "displayField": "cityName",
-                        "fieldLabel": "city",
-                        "forceSelection": true,
-                        "itemId": "cityNameComboBoxEditorItemId",
-                        "layout|anchor": "100%",
-                        "name": "cityId",
-                        "queryMode": "local",
-                        "selectOnFocus": true,
-                        "store": [
-                            "{CityNameComboStore}"
-                        ],
-                        "valueField": "cityId"
-                    },
-                    "name": "MycityNameComboBox",
-                    "configAlternates": {
-                        "store": "binding"
-                    },
-                    "designerId": "7482ebb6-42a8-48c2-835e-a77d61598f6d"
                 }
             ]
         },

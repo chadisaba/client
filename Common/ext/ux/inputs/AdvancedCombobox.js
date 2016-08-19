@@ -36,7 +36,12 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
                 me.fireEvent('comboAddEvent', me, me.rawValue);
             },
             comboEditItemEvent: function(){
-                me.fireEvent('comboEditEvent', me,me.getValue());
+                var me=this;
+                if(me.getValue())
+                    me.fireEvent('comboEditEvent', me,me.getValue());
+                else
+                    Ext.MessageBox.alert('Warring',translate('no item selected to edit'));
+
 
             },
             scope: me
@@ -87,10 +92,8 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
                         xtype:'button',
                         glyph: 'xf040@FontAwesome',
                         handler: function() {
-                            if(me.rawValue)
                                 me.fireEvent('comboEditItemEvent', me, me.rawValue);
-                            else
-                                Ext.MessageBox.alert('Warring',translate('no item selected to edit'));
+
                         }
                     }
                 ],

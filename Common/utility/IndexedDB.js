@@ -46,6 +46,57 @@ var IndexedDB={
 
 
     },
+
+    findById:function(_tableName,_idName,_idValue)
+    {
+        var db=this.db;
+        var table=db[_tableName];
+        return db.transaction("rw", table, function () {
+            return table.where(_idName).equals(_idValue).first();
+        }).catch(function (e) {
+            console.error("Error: "+e);
+        });
+    },
+
+    insertRecord:function(_tableName,_dataArray)
+    {
+        var db=this.db;
+        var table=db[_tableName];
+        return db.transaction("rw", table, function () {
+            return table.bulkAdd(_dataArray);
+        }).catch(function (e) {
+            console.error("Error: "+e);
+        });
+    },
+    deleteRecord:function(_tableName,_idValue)
+    {
+        var db=this.db;
+        var table=db[_tableName];
+        return db.transaction("rw", table, function () {
+            return table.delete(_idValue);
+        }).catch(function (e) {
+            console.error("Error: "+e);
+        });
+    },
+    updateRecord:function(_tableName,_idName,_idValue,_dataObject)
+    {
+        var db=this.db;
+        var me=this;
+        var table=db[_tableName];
+        return db.transaction("rw", table, function () {
+            return me.findById(_tableName,_idName,_idValue)
+                .then (function(_result)
+                {
+                    if(_dataObject.id || isNaN(_dataObject.id))
+                        _dataObject.id=_result.id;
+                    return table.put(_dataObject);
+                }
+                )
+        })
+            .catch(function (e) {
+            console.error("Error: "+e);
+        });
+    },
      populateData:function(_tableName,_dataArray) {
          var db=this.db;
          var table=db[_tableName];

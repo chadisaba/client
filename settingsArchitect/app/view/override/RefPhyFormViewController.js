@@ -100,7 +100,12 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
                 CommonDirect.saveData(dataToSave,'REFERRING_PHYSICIAN',comment)
                     .then(function(_result)
                     {
-                        resolve(_result);
+                       IndexedDB.updateRecord("REFERRING_PHYSICIAN","referringPhysicianId",rec.get('referringPhysicianId'), dataToSave).
+                       then(function(_result)
+                       {
+                           resolve(_result);
+                       });
+
                     });
 
              });

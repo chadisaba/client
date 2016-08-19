@@ -21,7 +21,8 @@ Ext.define('MyApp.view.RefPhyForm', {
         'MyApp.view.RefPhyFormViewModel',
         'MyApp.view.RefPhyFormViewController',
         'Ext.form.FieldSet',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.form.field.TextArea'
     ],
 
     controller: 'refphyform',
@@ -96,6 +97,12 @@ Ext.define('MyApp.view.RefPhyForm', {
                     }
                 },
                 {
+                    xtype: 'textareafield',
+                    anchor: '100%',
+                    fieldLabel: 'address',
+                    name: 'referringPhysicianAddress'
+                },
+                {
                     xtype: 'textfield',
                     anchor: '100%',
                     itemId: 'refPhyZipCode',
@@ -106,10 +113,19 @@ Ext.define('MyApp.view.RefPhyForm', {
                     }
                 },
                 {
-                    xtype: 'textfield',
+                    xtype: 'combobox',
                     anchor: '100%',
-                    fieldLabel: 'address',
-                    name: 'referringPhysicianAddress'
+                    itemId: 'cityNameComboBoxEditorItemId',
+                    fieldLabel: 'city',
+                    name: 'cityId',
+                    selectOnFocus: true,
+                    displayField: 'cityName',
+                    forceSelection: true,
+                    queryMode: 'local',
+                    valueField: 'cityId',
+                    bind: {
+                        store: '{CityNameComboStore}'
+                    }
                 },
                 {
                     xtype: 'textfield',
@@ -128,21 +144,6 @@ Ext.define('MyApp.view.RefPhyForm', {
                     anchor: '100%',
                     fieldLabel: 'email',
                     name: 'referringPhysicianEmail'
-                },
-                {
-                    xtype: 'combobox',
-                    anchor: '100%',
-                    itemId: 'cityNameComboBoxEditorItemId',
-                    fieldLabel: 'city',
-                    name: 'cityId',
-                    selectOnFocus: true,
-                    displayField: 'cityName',
-                    forceSelection: true,
-                    queryMode: 'local',
-                    valueField: 'cityId',
-                    bind: {
-                        store: '{CityNameComboStore}'
-                    }
                 }
             ]
         }
