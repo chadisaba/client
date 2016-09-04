@@ -87,7 +87,7 @@ var IndexedDB={
             return me.findById(_tableName,_idName,_idValue)
                 .then (function(_result)
                 {
-                    if(_dataObject.id || isNaN(_dataObject.id))
+                    if(_result && (_dataObject.id || isNaN(_dataObject.id)))
                         _dataObject.id=_result.id;
                     return table.put(_dataObject);
                 }
