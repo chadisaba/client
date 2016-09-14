@@ -123,6 +123,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     },
     openRefPhyWin:function(refPhyId,title)
     {
+        var me=this;
         Ext.create('Common.ux.window.FullScreenWindow', {
             title:translate(title),
             items:{
@@ -133,10 +134,15 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                     {
                         _comp.getController().initForm(refPhyId);
                     },
-                    formSavedEvent:function(_rec)
+                    formSavedEvent:function(_comp,_rec)
                     {
-                        alert(_rec.get('referringPhysicianLName'));
-                        this.up('window').close();
+                        var refphStore=me.getViewModel().getStore('ReferringPhysicianNameComboStore');
+                        refphStore.removeAll();
+
+                        refphStore.loadData([_rec.getData()]);
+                        me.getView().down('#referringPhysicianNameComboBoxEditorItemId').select(refphStore.getAt(0));
+                       // alert(_rec.get('referringPhysicianLName'));
+                        //this.up('window').close();
                     },
                     quitFormEvent:function()
                     {

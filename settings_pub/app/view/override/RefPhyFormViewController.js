@@ -121,8 +121,10 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
                     else
                     promptWin.close();
 
-                me.quitEditMode();
                 me.fireViewEvent('formSavedEvent',form.getRecord());
+
+                me.quitEditMode();
+
             })
             .catch(function(_err)
             {
