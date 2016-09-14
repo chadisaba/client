@@ -10,7 +10,6 @@
         "category": "Form Fields",
         "groups": ["Forms"]
     },
-
     "configs": [{
         "name":"queryMode",
         "type":"string",

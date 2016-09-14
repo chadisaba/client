@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
-        "exportPath": "C:/wamp5.5/www/nodejs_extjs_project/client/generate_pub_model",
+        "exportPath": "../generate_pub_model",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -22,10 +22,12 @@
         "lineEnding": "CRLF",
         "genTimestamps": false,
         "cacheBust": false,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "3.2.0",
-    "xdsBuild": 320,
+    "xdsVersion": "4.0.0",
+    "xdsBuild": 168,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",

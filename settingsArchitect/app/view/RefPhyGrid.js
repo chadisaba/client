@@ -159,10 +159,10 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             width: 150,
             dataIndex: 'referringPhysicianAddress',
             text: 'address',
-            flex: 1,
             editor: {
                 xtype: 'textareafield',
                 itemId: 'referringPhysicianAddressTextTextAreaItemId'
@@ -190,10 +190,10 @@ Ext.define('MyApp.view.RefPhyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             width: 150,
             dataIndex: 'referringPhysicianEmail',
             text: 'email',
-            flex: 1,
             editor: {
                 xtype: 'textfield',
                 itemId: 'referringPhysicianEmailTextFieldItemId',

@@ -268,7 +268,9 @@
                 "format": null,
                 "hidden": true,
                 "minWidth": null,
-                "scrollable": true,
+                "scrollable": [
+                    "true"
+                ],
                 "text": "date",
                 "width": null
             },

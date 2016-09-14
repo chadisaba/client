@@ -52,8 +52,8 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7",
-        "selectedInstance": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        "topInstance": "application",
+        "selectedInstance": "application"
     },
     "editMode": "code",
     "userSettings": {

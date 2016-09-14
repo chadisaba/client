@@ -133,8 +133,9 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
                     {
                         _comp.getController().initForm(refPhyId);
                     },
-                    formSavedEvent:function()
+                    formSavedEvent:function(_rec)
                     {
+                        alert(_rec.get('referringPhysicianLName'));
                         this.up('window').close();
                     },
                     quitFormEvent:function()

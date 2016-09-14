@@ -1,18 +1,27 @@
+/* Advanced Combobox 1.0.0
+Compatibility Extjs 5.x 6.x
+Copyright (c) 2015-2016 SmartWebSoft
+http://www.smartwebsoft.fr/advancedCombo/
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as
+published by the Free Software Foundation and appearing in the file LICENSE included in the
+packaging of this file.
+Please review the following information to ensure the GNU General Public License version 3.0
+requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+*/
 Ext.define('Ext.ux.inputs.AdvancedCombobox', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.advancedCombobox',
     multiSelect: false,
     selectOnFocus:true,
     queryMode: 'local',
-
     initComponent: function () {
-
         this.callParent();
     },
     createPicker: function() {
         var me = this,
             picker,
-            pickerConfig = Ext.apply({
+            pickerConf = Ext.apply({
                 xtype: 'btnboundlist',
                 pickerField: me,
                 selectionModel: me.pickerSelectionModel,
@@ -25,11 +34,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
                 tpl: me.tpl
             }, me.advancedListConfig);
 
-        picker = me.picker = Ext.widget(pickerConfig);
-        if (me.pageSize) {
-            //  picker.pagingToolbar.on('beforechange', me.onPageChange, me);
-        }
-
+        picker = me.picker = Ext.widget(pickerConf);
         picker.on(
             {
             comboAddItemEvent: function(){
@@ -47,22 +52,6 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             scope: me
         }
         );
-
-        // We limit the height of the picker to fit in the space above
-        // or below this field unless the picker has its own ideas about that.
-        /* if (!picker.initialConfig.maxHeight) {
-         picker.on({
-         beforeshow: me.onBeforePickerShow,
-         scope: me
-         });
-         }
-         picker.getSelectionModel().on({
-         beforeselect: me.onBeforeSelect,
-         beforedeselect: me.onBeforeDeselect,
-         focuschange: me.onFocusChange,
-         scope: me
-         });*/
-
         picker.getNavigationModel().navigateOnSpace = false;
 
         return picker;
@@ -85,8 +74,6 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
                         glyph: 'xf067@FontAwesome',
                         handler: function() {
                              me.fireEvent('comboAddItemEvent', me, me.pickerField.getValue());
-
-
                         }
                     },{
                         xtype:'button',
@@ -106,9 +93,3 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
 
     }
 });
-
-
-
-
-
-
