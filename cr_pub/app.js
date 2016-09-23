@@ -14,22 +14,26 @@
  */
 
 // @require @packageOverrides
-Ext.Loader.setConfig({
+/*Office.initialize = function (reason) {*/
+    Ext.Loader.setConfig({
 
-});
+    });
 
 
-Ext.application({
-    views: [
-        'MyForm'
-    ],
-    controllers: [
-        'MainController'
-    ],
-    name: 'MyApp',
+    Ext.application({
+        views: [
+            'MyForm'
+        ],
+        controllers: [
+            'MainController'
+        ],
+        name: 'MyApp',
 
-    launch: function() {
-        Ext.create('MyApp.view.MyViewport1');
-    }
+        launch: function() {
+            Ext.create('MyApp.view.MyViewport1');
+        }
 
-});
+    });
+//};
+
+

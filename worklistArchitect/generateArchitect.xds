@@ -25,8 +25,8 @@
         "installStatus": "Not Installed",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.0.0",
-    "xdsBuild": 168,
+    "xdsVersion": "4.0.1",
+    "xdsBuild": 190,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -82,7 +82,10 @@
             "36c197d6-107d-4b51-98a9-3aba4e809c9b",
             "acd669aa-d6ed-4125-8f11-08b94b94e666",
             "6587c30b-0ad3-4bbe-a30a-f2e8c68d8fad",
-            "0c2a3c44-b0d2-4cd2-86a7-85ede29ff929"
+            "0c2a3c44-b0d2-4cd2-86a7-85ede29ff929",
+            "98634705-127d-4bfc-a7b8-2d9aed3c6171",
+            "0255783a-1ef2-4479-8c11-25323ee7ea8b",
+            "bcf1efca-9e53-44a2-a0af-112a000c90f1"
         ],
         "store": [],
         "controller": [

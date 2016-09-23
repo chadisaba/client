@@ -19,11 +19,13 @@ Ext.define('MyApp.view.MyForm', {
 
     requires: [
         'MyApp.view.MyFormViewModel',
+        'MyApp.view.MyFormViewController',
         'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button'
     ],
 
+    controller: 'myform',
     viewModel: {
         type: 'myform'
     },
@@ -49,13 +51,21 @@ Ext.define('MyApp.view.MyForm', {
             items: [
                 {
                     xtype: 'button',
+                    itemId: 'saveBtn',
                     iconCls: 'fa fa-floppy-o',
-                    text: 'save'
+                    text: 'save',
+                    listeners: {
+                        click: 'onSaveBtnClick'
+                    }
                 },
                 {
                     xtype: 'button',
+                    itemId: 'reviewBtn',
                     iconCls: 'fa fa-undo',
-                    text: 'review'
+                    text: 'review',
+                    listeners: {
+                        click: 'onReviewBtnClick'
+                    }
                 },
                 {
                     xtype: 'button',

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "officeviewport",
+        "designer|userClassName": "OfficeViewportViewController"
+    },
+    "designerId": "bcf1efca-9e53-44a2-a0af-112a000c90f1"
+}

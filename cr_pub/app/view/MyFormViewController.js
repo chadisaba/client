@@ -15,5 +15,18 @@
 
 Ext.define('MyApp.view.MyFormViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.myform'
+    alias: 'controller.myform',
+
+    requires: [
+        'MyApp.view.override.MyFormViewController'
+    ],
+
+    onSaveBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onReviewBtnClick: function(button, e, eOpts) {
+
+    }
+
 });

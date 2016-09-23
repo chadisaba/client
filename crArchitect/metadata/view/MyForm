@@ -68,11 +68,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "iconCls": "fa fa-floppy-o",
+                        "itemId": "saveBtn",
                         "layout|flex": null,
                         "text": "save"
                     },
                     "name": "MyButton",
-                    "designerId": "be721c3e-faf0-4767-93ed-04cd270fb432"
+                    "designerId": "be721c3e-faf0-4767-93ed-04cd270fb432",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveBtnClick",
+                            "designerId": "981a7021-2511-4a34-b524-dbc102db9020"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -83,11 +101,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "iconCls": "fa fa-undo",
+                        "itemId": "reviewBtn",
                         "layout|flex": null,
                         "text": "review"
                     },
                     "name": "MyButton1",
-                    "designerId": "b87f7313-db4f-4759-be67-517d145dc55b"
+                    "designerId": "b87f7313-db4f-4759-be67-517d145dc55b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReviewBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onReviewBtnClick",
+                            "designerId": "bd536fe7-6628-461e-98a1-5e17440d2543"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

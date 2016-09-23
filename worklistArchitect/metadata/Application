@@ -47,7 +47,8 @@
             "VisitSimplifiedForm",
             "StudyVisitGrid",
             "WorklistFiltreGridPanel",
-            "MyPanel5"
+            "MyPanel5",
+            "OfficeViewport"
         ]
     },
     "name": "Application",

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "officeviewport",
+        "designer|userClassName": "OfficeViewportViewModel"
+    },
+    "designerId": "0255783a-1ef2-4479-8c11-25323ee7ea8b"
+}
