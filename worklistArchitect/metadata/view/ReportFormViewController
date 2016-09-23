@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reportform",
+        "designer|userClassName": "ReportFormViewController"
+    },
+    "designerId": "00b9645d-0d73-41ba-af9e-32d28866eebb"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reportform",
+        "designer|userClassName": "ReportFormViewModel"
+    },
+    "designerId": "92692d24-49c0-437b-a395-8bf469e94624"
+}

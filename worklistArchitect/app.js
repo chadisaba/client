@@ -61,7 +61,8 @@ Ext.application({
         'StudyVisitGrid',
         'WorklistFiltreGridPanel',
         'MyPanel5',
-        'OfficeViewport'
+        'OfficeViewport',
+        'ReportForm'
     ],
     controllers: [
         'MainController'
@@ -73,8 +74,12 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.create('MyApp.view.MyViewport1');
-        Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
+         if(appType==="office")
+                    Ext.create('MyApp.view.OfficeViewport');
+                else
+                    Ext.create('MyApp.view.MyViewport1');
+
+                Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
     }
 
 });

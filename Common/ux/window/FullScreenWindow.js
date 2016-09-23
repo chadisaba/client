@@ -4,14 +4,7 @@ Ext.define('Common.ux.window.FullScreenWindow', {
         type: 'border',
         padding: 5
     },
-    tools:[{
-        type:'refresh',
-        tooltip: 'Refresh form Data',
-        // hidden:true,
-        handler: function(event, toolEl, panelHeader) {
-            // refresh logic
-        }
-    },
+    tools:[
         {
             type:'help',
             tooltip: 'Get Help',

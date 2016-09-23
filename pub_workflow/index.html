@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>generateArchitect</title>
     <script>
+        var appType="desktop";
         var Ext = Ext || {};
         Ext.theme = {
             name: ""
@@ -69,10 +70,7 @@
     <script src="../Common/direct/UserDirect.js"></script>
     <script src="../Common/direct/DeviceDirect.js"></script>
 
-    <script src="../Common/uiHelper/VisitHelper.js"></script>
-    <script src="../Common/uiHelper/StudyHelper.js"></script>
 
-    <script src="../Common/func/Report.js"></script>
     <!--End order is important for theses files-->
 
     <link rel="stylesheet" href="../extjs61/classic/theme-triton/resources/theme-triton-all.css">
@@ -86,9 +84,13 @@
     <link rel="stylesheet" href="../Common/resources/css/themeStyle.css"/>
 
 
-    <script type="text/javascript" src="app.js"></script>
+    <!-- include UI Helper form other modules-->
+    <script src="../Common/uiHelper/VisitHelper.js"></script>
+    <script src="../Common/uiHelper/StudyHelper.js"></script>
+    <script src="../Common/func/Report.js"></script>
 
-
+    <!-- include form other modules-->
+    <!-- settings Module-->
     <script type="text/javascript" src="../settings_pub/app/view/RefPhyForm.js"></script>
     <script type="text/javascript" src="../settings_pub/app/view/RefPhyFormViewController.js"></script>
     <script type="text/javascript" src="../settings_pub/app/view/RefPhyFormViewModel.js"></script>
@@ -96,6 +98,12 @@
     <script type="text/javascript" src="../settings_pub/app/model/ReferringPhysicianGenderComboModel.js"></script>
     <script type="text/javascript" src="../settings_pub/app/model/ReferringPhysicianTitleComboModel.js"></script>
     <script type="text/javascript" src="../settings_pub/app/model/RefPhyModel.js"></script>
+
+
+    <script type="text/javascript" src="app.js"></script>
+
+
+
 
     <link rel="stylesheet" href="../Common/material.min.css"/>
     <link rel="stylesheet" href="../Common/material-desktop.css"/>

@@ -1,0 +1,185 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "reportform",
+        "designer|userClassName": "ReportForm",
+        "height": null,
+        "title": "reports",
+        "width": null
+    },
+    "name": "MyForm",
+    "designerId": "5e3dbabe-784f-4b37-bc41-cc39c3565974",
+    "viewControllerInstanceId": "00b9645d-0d73-41ba-af9e-32d28866eebb",
+    "viewModelInstanceId": "92692d24-49c0-437b-a395-8bf469e94624",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar3",
+            "designerId": "3f913d70-5128-4ea0-ba71-2a5806bccac9",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "f02522f6-3ba8-42a7-b3a9-2e078dcbbe59",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-floppy-o",
+                                "itemId": "saveBtnItemId",
+                                "text": "save"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "f9ed4c4c-f4c5-4dd3-9d04-24e8f9ca0f6a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSaveBtnItemIdClick",
+                                    "designerId": "8744b7a3-32c7-445b-beb9-18da47464f65"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "name": "MySpacer10",
+                            "designerId": "39020760-710c-4f90-a3fe-0e41e987ea92"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-check",
+                                "itemId": "validateBtnItemId",
+                                "text": "validate"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "22dc28e5-e819-4791-ae16-bfc79f0f7b14"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "name": "MySpacer11",
+                            "designerId": "b61bcb61-ad04-4524-982b-5d60670725ff"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-exclamation-triangle",
+                                "itemId": "reviewBtnItemId",
+                                "text": "review"
+                            },
+                            "name": "MyButton9",
+                            "designerId": "1fc66640-5677-47cf-a282-afba4f38a160"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar4",
+            "designerId": "40796754-1dc4-41c5-9a37-a40d52d605ef"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "modeles",
+                "itemId": "modelesComboItemId",
+                "layout|anchor": "100%"
+            },
+            "name": "MyComboBox2",
+            "designerId": "597d8325-71b5-4969-8473-6c71bbf3b0ea"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "shortcuts",
+                "itemId": "shortcutsComboItemId",
+                "layout|anchor": "100%"
+            },
+            "name": "MyComboBox4",
+            "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77"
+        }
+    ]
+}

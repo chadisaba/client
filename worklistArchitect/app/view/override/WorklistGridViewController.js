@@ -81,13 +81,13 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         console.error(_err);
                         reject(_err);
                     });
-             });
-         return promise;
+            });
+        return promise;
 
     },
     onWorklistGridIdAfterRender: function(component) {
 
-    var me=this;
+        var me=this;
 
         translateUtil.transAll(component);
         me.lastUpdateDate=null;
@@ -104,7 +104,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 grid.down('#ftIcon').setVisible(false);
                 grid.down('#urgentIcon').setVisible(false);
             }
-        )
+            )
             .catch(function(_err)
             {
                 console.error(_err);
@@ -155,31 +155,31 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         console.error(_err);
                         reject(_err);
                     });
-             });
-         return promise;
+            });
+        return promise;
     },
 
 
     onWorklistGridIdSelectionChange: function(model, selected, eOpts) {
-if(selected.length>0){
-        var visitIsFree=selected[0].get('visitIsFree')?true:false;
-        var visitIsHospitalized=selected[0].get('visitIsHospitalized')?true:false;
-        var visitIsUrgent=selected[0].get('visitIsUrgent')?true:false;
-        var visitIsAmo=selected[0].get('visitIsAmo')?true:false;
-        var visitIsAmc=selected[0].get('visitIsAmc')?true:false;
-        var visitIsFS=selected[0].get('visitInvoiceType')==1?true:false;
-        var visitIsFSE=selected[0].get('visitInvoiceType')==2?true:false;
-        var worklistFTNum=selected[0].get('worklistFTNum')?true:false;
-        var grid=this.getView();
-        grid.down('#freeIcon').setVisible(visitIsFree);
-        grid.down('#hospitIcon').setVisible(visitIsHospitalized);
-        grid.down('#amoIcon').setVisible(visitIsAmo);
-        grid.down('#amcIcon').setVisible(visitIsAmc);
-        grid.down('#fsIcon').setVisible(visitIsFS);
-        grid.down('#fseIcon').setVisible(visitIsFSE);
-        grid.down('#ftIcon').setVisible(worklistFTNum);
-        grid.down('#urgentIcon').setVisible(visitIsUrgent);
-}
+        if(selected.length>0){
+            var visitIsFree=selected[0].get('visitIsFree')?true:false;
+            var visitIsHospitalized=selected[0].get('visitIsHospitalized')?true:false;
+            var visitIsUrgent=selected[0].get('visitIsUrgent')?true:false;
+            var visitIsAmo=selected[0].get('visitIsAmo')?true:false;
+            var visitIsAmc=selected[0].get('visitIsAmc')?true:false;
+            var visitIsFS=selected[0].get('visitInvoiceType')==1?true:false;
+            var visitIsFSE=selected[0].get('visitInvoiceType')==2?true:false;
+            var worklistFTNum=selected[0].get('worklistFTNum')?true:false;
+            var grid=this.getView();
+            grid.down('#freeIcon').setVisible(visitIsFree);
+            grid.down('#hospitIcon').setVisible(visitIsHospitalized);
+            grid.down('#amoIcon').setVisible(visitIsAmo);
+            grid.down('#amcIcon').setVisible(visitIsAmc);
+            grid.down('#fsIcon').setVisible(visitIsFS);
+            grid.down('#fseIcon').setVisible(visitIsFSE);
+            grid.down('#ftIcon').setVisible(worklistFTNum);
+            grid.down('#urgentIcon').setVisible(visitIsUrgent);
+        }
 
     },
     onSavePreferenceItemIdClick: function(button, e, eOpts) {
@@ -312,25 +312,26 @@ if(selected.length>0){
             case 'worklistLastCrStatus':
 
 
-                if(!record.get('worklistLastCrStatus'))
-                {
-                    var myMask = new Ext.LoadMask({msg:translate("reportOpening..."),target:me.getView()});
-                    myMask.show();
-                    var doctorId=record.get('doctorId');
-                    var visitId=record.get('visitId');
-                    var patientId=record.get('patientId');
-                    var worklistId=record.get('worklistId');
-                    var siteId=record.get('siteId');
-                  func.Report.createNewReport(doctorId,visitId,siteId,worklistId,patientId)
-                      .then(function(_result)
-                      {
-                          myMask.hide();
-                      })
-                      .catch(function(_err)
-                      {
-                          Ext.Msg.alert(translate('error'), translate(_err));
-                      })
-                }
+                // if(!record.get('worklistLastCrStatus'))
+                me.openReportWindow( translate("report")+" "+record.get('patientLName')+ " "+record.get('patientFname'));
+
+                /* var myMask = new Ext.LoadMask({msg:translate("reportOpening..."),target:me.getView()});
+                 myMask.show();
+                 var doctorId=record.get('doctorId');
+                 var visitId=record.get('visitId');
+                 var patientId=record.get('patientId');
+                 var worklistId=record.get('worklistId');
+                 var siteId=record.get('siteId');
+                 func.Report.createNewReport(doctorId,visitId,siteId,worklistId,patientId)
+                 .then(function(_result)
+                 {
+                 myMask.hide();
+                 })
+                 .catch(function(_err)
+                 {
+                 Ext.Msg.alert(translate('error'), translate(_err));
+                 })*/
+
 
                 break;
             case 'visitIsDone':
@@ -351,6 +352,25 @@ if(selected.length>0){
                 break;
         }
     },
+    openReportWindow:function(_title)
+    {
+        var me=this;
+        Ext.create('Common.ux.window.FullScreenWindow', {
+            title:_title,
+            items:{
+                region: 'center',
+                xtype:'reportform',
+                header:false,
+                listeners:{
+                    afterrender:function(_comp)
+                    {
+                        // _comp.getController().initForm(refPhyId);
+                    }
+                }
+            }
+        }).show();
+    },
+
     /***********************Renderers*********************************/
     infoVisitRenderer: function(value, metaData, record) {
         var infoAlertLevel=record.get("worklistVisitInfoAlertLevel");
@@ -392,7 +412,7 @@ if(selected.length>0){
         var infoAlertLevel=record.get("worklistPatientInfoAlertLevel");
         var color;
         var icon;
-       var  tooltip=value||"";
+        var  tooltip=value||"";
 
         switch(infoAlertLevel)
         {
@@ -433,7 +453,7 @@ if(selected.length>0){
         return result;
     },
     CRRenderer: function(value, metaData, record) {
-      //  return value;
+        //  return value;
         /*
          0 : no report
          1 :Report  in typing
@@ -644,7 +664,7 @@ if(selected.length>0){
         if (value){
             color='#31b0d5';
             return Utility.renderer.textHtmlTagRenderer('div',color,value);
-           // return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
+            // return '<div style="cursor: pointer;color:'+color+';font-size:13px;">'+value+'</div>';
         }
 
     },
@@ -687,7 +707,7 @@ if(selected.length>0){
             return Utility.renderer.htmlTagRenderer('div',color,icon);
         }
         else{
-          return '';
+            return '';
         }
     },
     visitPECRenderer: function(value,metaData) {
