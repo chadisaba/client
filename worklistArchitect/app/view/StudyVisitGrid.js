@@ -47,7 +47,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             xtype: 'gridcolumn',
             flex: 1,
             dataIndex: 'studyCode',
-            text: '{trans.study}',
+            text: 'study',
             editor: {
                 xtype: 'combobox',
                 itemId: 'studyComboboxItemId',
@@ -79,7 +79,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'deviceName',
-            text: '{trans.device}',
+            text: 'device',
             editor: {
                 xtype: 'combobox',
                 itemId: 'deviceComboboxItemId',
@@ -122,7 +122,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'userLName',
-            text: '{trans.technician}',
+            text: 'technician',
             editor: {
                 xtype: 'combobox',
                 itemId: 'technicianComboboxItemId',
@@ -160,7 +160,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
             xtype: 'gridcolumn',
             width: 70,
             dataIndex: 'studyVisitPrice',
-            text: '{trans.price}',
+            text: 'price',
             editor: {
                 xtype: 'numberfield',
                 itemId: 'studyVisitPriceTextFieldItemId',

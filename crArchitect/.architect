@@ -1,0 +1,63 @@
+{
+    "expandedState": {
+        "view": true,
+        "4702aeb1-429b-45af-b394-40a06bf904db": {
+            "id": "4702aeb1-429b-45af-b394-40a06bf904db"
+        },
+        "e4c81814-a7a1-4d7e-953c-ca2804168436": {
+            "id": "e4c81814-a7a1-4d7e-953c-ca2804168436"
+        },
+        "fae57581-31ab-468c-9676-c119bb73d702": {
+            "id": "fae57581-31ab-468c-9676-c119bb73d702",
+            "cn": [
+                {
+                    "id": "aaf3202f-d6ad-4dc1-817c-0b54a6bab001"
+                }
+            ]
+        },
+        "b0c4b845-df69-4288-860f-6132f51de3aa": {
+            "id": "b0c4b845-df69-4288-860f-6132f51de3aa"
+        },
+        "8036921e-b15b-48db-bb6c-b668543c02c6": {
+            "id": "8036921e-b15b-48db-bb6c-b668543c02c6"
+        },
+        "65e09779-7006-4077-b118-4eb52fb5f6a6": {
+            "id": "65e09779-7006-4077-b118-4eb52fb5f6a6"
+        },
+        "store": true,
+        "model": true,
+        "controller": true,
+        "510a4bca-b82f-4906-9dc6-8fdcd5192cb7": {
+            "id": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        },
+        "resource": false,
+        "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5": {
+            "id": "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5"
+        },
+        "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2": {
+            "id": "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2"
+        },
+        "b3bd85f1-ba28-428d-91b2-9ebb4231dc35": {
+            "id": "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        }
+    },
+    "tabState": {
+        "openTabs": [
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7",
+            "b0c4b845-df69-4288-860f-6132f51de3aa"
+        ]
+    },
+    "canvasState": {
+        "topInstance": "b0c4b845-df69-4288-860f-6132f51de3aa"
+    },
+    "inspectorState": {
+        "topInstance": "b0c4b845-df69-4288-860f-6132f51de3aa",
+        "selectedInstance": "b0c4b845-df69-4288-860f-6132f51de3aa"
+    },
+    "editMode": "design",
+    "userSettings": {
+        "no-cmd": true
+    }
+}

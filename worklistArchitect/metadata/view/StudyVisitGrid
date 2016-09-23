@@ -40,7 +40,7 @@
             "userConfig": {
                 "dataIndex": "studyCode",
                 "flex": 1,
-                "text": "{trans.study}"
+                "text": "study"
             },
             "name": "MystudyNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-8fnblkppdmre",
@@ -160,7 +160,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceName",
-                "text": "{trans.device}"
+                "text": "device"
             },
             "name": "MydeviceNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-hscrmwrxcmsq",
@@ -280,7 +280,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userLName",
-                "text": "{trans.technician}"
+                "text": "technician"
             },
             "name": "MyuserLastNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-y695f42wmlb5",
@@ -402,7 +402,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitPrice",
                 "defaultWidth": null,
-                "text": "{trans.price}",
+                "text": "price",
                 "width": 70
             },
             "name": "MydeviceNameCol1",

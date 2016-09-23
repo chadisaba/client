@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myform",
+        "designer|userClassName": "MyFormViewModel"
+    },
+    "designerId": "8036921e-b15b-48db-bb6c-b668543c02c6"
+}
