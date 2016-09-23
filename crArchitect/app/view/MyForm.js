@@ -18,13 +18,73 @@ Ext.define('MyApp.view.MyForm', {
     alias: 'widget.myform',
 
     requires: [
-        'MyApp.view.MyFormViewModel'
+        'MyApp.view.MyFormViewModel',
+        'Ext.form.field.ComboBox',
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Button'
     ],
 
     viewModel: {
         type: 'myform'
     },
     bodyPadding: 10,
-    title: 'C.R '
+    title: 'C.R ',
+
+    items: [
+        {
+            xtype: 'combobox',
+            anchor: '100%',
+            fieldLabel: 'Template'
+        },
+        {
+            xtype: 'combobox',
+            anchor: '100%',
+            fieldLabel: 'Shortcut'
+        }
+    ],
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-floppy-o',
+                    text: 'save'
+                },
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-undo',
+                    text: 'review'
+                },
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-check',
+                    text: 'validate'
+                }
+            ]
+        },
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-check',
+                    text: 'validate&print'
+                },
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-print',
+                    text: 'print'
+                },
+                {
+                    xtype: 'button',
+                    iconCls: 'fa fa-times',
+                    text: 'close'
+                }
+            ]
+        }
+    ]
 
 });

@@ -19,13 +19,22 @@ Ext.define('MyApp.view.MyViewport1', {
 
     requires: [
         'MyApp.view.MyViewport1ViewModel',
-        'MyApp.view.MyViewport1ViewController'
+        'MyApp.view.MyViewport1ViewController',
+        'MyApp.view.MyForm',
+        'Ext.form.Panel'
     ],
 
     controller: 'myviewport1',
     viewModel: {
         type: 'myviewport1'
     },
-    layout: 'border'
+    layout: 'border',
+
+    items: [
+        {
+            xtype: 'myform',
+            region: 'center'
+        }
+    ]
 
 });

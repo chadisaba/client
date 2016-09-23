@@ -14,5 +14,21 @@
     "name": "MyViewport1",
     "designerId": "4702aeb1-429b-45af-b394-40a06bf904db",
     "viewControllerInstanceId": "fae57581-31ab-468c-9676-c119bb73d702",
-    "viewModelInstanceId": "e4c81814-a7a1-4d7e-953c-ca2804168436"
+    "viewModelInstanceId": "e4c81814-a7a1-4d7e-953c-ca2804168436",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center"
+            },
+            "name": "myform",
+            "designerId": "9feba215-86d3-40f8-8a79-315ef9206fd7",
+            "masterInstanceId": "b0c4b845-df69-4288-860f-6132f51de3aa"
+        }
+    ]
 }

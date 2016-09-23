@@ -16,5 +16,155 @@
     "name": "MyForm",
     "designerId": "b0c4b845-df69-4288-860f-6132f51de3aa",
     "viewControllerInstanceId": "65e09779-7006-4077-b118-4eb52fb5f6a6",
-    "viewModelInstanceId": "8036921e-b15b-48db-bb6c-b668543c02c6"
+    "viewModelInstanceId": "8036921e-b15b-48db-bb6c-b668543c02c6",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Template",
+                "layout|anchor": "100%"
+            },
+            "name": "MyComboBox",
+            "designerId": "f8bd4124-0f86-455f-93f9-e6292b40328d"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Shortcut",
+                "layout|anchor": "100%"
+            },
+            "name": "MyComboBox1",
+            "designerId": "0a4f62ed-48a4-4fcd-b804-a86ba284ca3d"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "55586ef1-3564-4c2a-8d40-67a0efaf6aec",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-floppy-o",
+                        "layout|flex": null,
+                        "text": "save"
+                    },
+                    "name": "MyButton",
+                    "designerId": "be721c3e-faf0-4767-93ed-04cd270fb432"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-undo",
+                        "layout|flex": null,
+                        "text": "review"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "b87f7313-db4f-4759-be67-517d145dc55b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-check",
+                        "layout|flex": null,
+                        "text": "validate"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "93b45b54-ef69-4502-b16f-7a19e1c04f40"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar1",
+            "designerId": "e4f9d800-a7dd-44e3-9525-7ccbb65a0aa8",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-check",
+                        "layout|flex": null,
+                        "text": "validate&print"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "ef4a0a93-53ac-4f17-bf88-8a56c83408c1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-print",
+                        "layout|flex": null,
+                        "text": "print"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "616ec97c-de4a-4f89-9bbe-6e794d08b852"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-times",
+                        "layout|flex": null,
+                        "text": "close"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "254197e8-7716-4d28-9a04-4c343220987d"
+                }
+            ]
+        }
+    ]
 }
