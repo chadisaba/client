@@ -32,6 +32,9 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             _resultArray[i].visitIsFree = _resultArray[i]['Visit.visitIsFree'];
                             _resultArray[i].visitIsBySocialCard = _resultArray[i]['Visit.visitIsBySocialCard'];
                             _resultArray[i].doctorId = _resultArray[i]['Visit.doctorId'];
+                            _resultArray[i].worklistPatientInfo=_resultArray[i]['Patient.Infos.infoText'];
+                            _resultArray[i].worklistPatientInfoAlertLevel=_resultArray[i]['Patient.Infos.infoAlertLevel'];
+
                             if(_today) // just when we display the current day on our worklist
                             {
                                 worklistUpdate= _resultArray[i]['updatedAt'];
@@ -144,7 +147,11 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     filters:worklistFilters
                 };
                 var joinTablesArray=[
-                    {tableName:"VISIT", filters:visitFilters},{tableName:"PATIENT",filters:patientFilters},{tableName:"SITE"}
+                    {tableName:"VISIT", filters:visitFilters},
+                    {tableName:"PATIENT",fieldsArray:['patientLName','patientFname','patientBirthday','patientSearch','patientNbVisit','patientId'],
+                        filters:patientFilters,
+                        joinObject:{tableName:"INFO",fieldsArray:['infoText','infoAlertLevel'],required:false}
+                    },{tableName:"SITE",fieldsArray:['siteId','siteCode']}
                 ];
                 CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
                     .then(function(_resultArray)
