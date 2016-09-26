@@ -371,7 +371,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 listeners:{
                     afterrender:function(_comp)
                     {
-                        // _comp.getController().initForm(refPhyId);
+                         _comp.getController().writeHeader();
                     }
                 }
             }

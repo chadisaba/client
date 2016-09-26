@@ -158,6 +158,32 @@ var CommonDirect={
             });
         return promise;
     },
+    getDataCallback:function(_tableName,_filtersArray,_limit,cb)
+    {
+        //Creating a promise
+
+
+                var params;
+                params={
+                    table:_tableName,
+                    limit:_limit||100
+                };
+                if(_filtersArray)
+                    params.filters=_filtersArray;
+                Server.CommonQueries.read(params,
+                    function(res){
+                        if(res.success){
+                            cb(null,res.data);
+                        }
+                        else{
+                            console.error(res.msg);
+                            cb(res.msg);
+                        }
+                    }
+                )
+
+
+    },
     getData:function(_tableName,_filtersArray,_limit)
     {
         //Creating a promise
