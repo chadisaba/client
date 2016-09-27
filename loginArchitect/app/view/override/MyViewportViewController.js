@@ -22,17 +22,12 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                 name:'userPass',value:password,nolike:true
             }
         ];
+        var siteId;
 
 
-        var url=Ext.Object.fromQueryString(document.URL);
-        Ext.Object.each(url, function(key, value) {
-            if (key === 'siteId') {
-                InitApp.siteId=parseInt(value);
-                window.localStorage.setItem('smartmed-siteId', value);
-
-            }
-        });
-        var filterSite= [{name:'siteId',value:InitApp.siteId}];
+        siteId=stringUtil.getQueryVariable('siteId');
+        window.localStorage.setItem('smartmed-siteId', siteId);
+        var filterSite= [{name:'siteId',value:window.localStorage.getItem('smartmed-siteId')}];
         var mainTableObject={
             tableName:"SITE",
             filters:filterSite
@@ -55,20 +50,33 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                     var siteResult=_values[0];
                     if(siteResult.length>0){
                         site=siteResult[0];
-                        InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
-                        InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
-                        InitApp.userId= user.userId;
 
-                        window.localStorage.setItem('smartmed-jsDavUrl', InitApp.jsDavUrl);
-                        window.localStorage.setItem('smartmed-wordPath', InitApp.wordPath);
-                        window.localStorage.setItem('smartmed-userId', InitApp.userId);
 
-                        StateProvider.restoreState(InitApp.userId)
+                        window.localStorage.setItem('smartmed-jsDavUrl', site['SiteConfig.siteConfigJSDavUrl']);
+                        window.localStorage.setItem('smartmed-wordPath', site['SiteConfig.siteConfigWordPath']);
+                        window.localStorage.setItem('smartmed-userId', user.userId);
+
+                        StateProvider.restoreState(user.userId)
                             .then(function(_result)
                             {
                                 myMask.hide();
-                                var myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
-                                InitApp.initIndexedDB(myMask)
+                                if(appType=="office")
+                                {
+                                    window.open("../pub_workflow/indexOffice.html",'_self');
+
+                                }
+                                else
+                                {
+                                     myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
+                                    InitApp.siteId=parseInt(value);
+                                    InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
+                                     InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                                     InitApp.userId= user.userId;
+
+                                    InitApp.initIndexedDB(myMask);
+                                }
+
+
                             })
                             .catch(function(_err)
                             {

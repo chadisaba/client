@@ -87,6 +87,107 @@ func.Report={
          return promise;
 
     },
+    createNewReport:function(_headerOoxml,_bodyOoxml,_footerOoxml)
+    {
+        // Run a batch operation against the Word object model.
+        Word.run(function (context) {
+                // Create a proxy sectionsCollection object.
+                var mySections = context.document.sections;
+
+                // Queue a commmand to load the sections.
+                context.load(mySections, 'body/style');
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+
+                    /***we handle the header****/
+                    // Create a proxy object the primary header of the first section.
+                    // Note that the header is a body object.
+                    var myHeader = mySections.items[0].getHeader("primary");
+                    // Queue a command to clear text in the header
+                    myHeader.clear();
+                    // Queue a command to insert text at the end of the header.
+                    myHeader.insertOoxml(_headerOoxml,Word.InsertLocation.end);
+
+                    // Queue a command to wrap the header in a content control.
+                    myHeader.insertContentControl();
+
+                    /***we handle the footer****/
+                    var myFooter = mySections.items[0].getFooter("primary");
+                    myFooter.clear();
+                    myFooter.insertOoxml(_footerOoxml,Word.InsertLocation.end);
+
+                    /***we handle the footer****/
+                    // Create a proxy object for the document body.
+                    var body = context.document.body;
+                    // Queue a commmand to clear the contents of the body.
+                    body.clear();
+                    body.insertOoxml(_bodyOoxml);
+                    // Synchronize the document state by executing the queued commands,
+                    // and return a promise to indicate task completion.
+                    return context.sync().then(function () {
+                        Ext.MessageBox.alert('','header was retreived');
+                    });
+                });
+            })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
+    },
+    cleanReport:function()
+    {
+        // Run a batch operation against the Word object model.
+        Word.run(function (context) {
+                // Create a proxy sectionsCollection object.
+                var mySections = context.document.sections;
+
+                // Queue a commmand to load the sections.
+                context.load(mySections, 'body/style');
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+
+                    // Create a proxy object the primary header of the first section.
+                    // Note that the header is a body object.
+                    var myHeader = mySections.items[0].getHeader("primary");
+
+                    // Queue a command to clear text in the header
+                    myHeader.clear();
+
+                    var myFooter = mySections.items[0].getFooter("primary");
+                    myFooter.clear();
+                    // Create a proxy object for the document body.
+                    var body = context.document.body;
+
+                    // Queue a commmand to clear the contents of the body.
+                    body.clear();
+
+
+                        var html='<h1 style="color: #5e9ca0;font-size: 30px;">'+
+                        'Aucun compte rendu à afficher</style></h1>';
+                    // Queue a commmand to insert HTML in to the beginning of the body.
+                    body.insertHtml(html, Word.InsertLocation.start);
+
+                    // Synchronize the document state by executing the queued commands,
+                    // and return a promise to indicate task completion.
+                    return context.sync().then(function () {
+                        Ext.MessageBox.alert('','header was retreived');
+
+                    });
+                });
+            })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
+    },
     writeToHeader:function(_headerOoxml)
     {
         // Run a batch operation against the Word object model.
@@ -106,7 +207,6 @@ func.Report={
                     var myHeader = mySections.items[0].getHeader("primary");
 
                     // Queue a command to insert text at the end of the header.
-                    console.log(_headerOoxml);
                      myHeader.insertOoxml(_headerOoxml,Word.InsertLocation.end);
 
                     // Queue a command to wrap the header in a content control.

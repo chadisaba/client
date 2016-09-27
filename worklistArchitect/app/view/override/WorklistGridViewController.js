@@ -320,7 +320,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
 
                 // if(!record.get('worklistLastCrStatus'))
-                me.openReportWindow( translate("report")+" "+record.get('patientLName')+ " "+record.get('patientFname'));
+                me.openReportWindow( translate("report")+" "+record.get('patientLName')+ " "+record.get('patientFname'),record.get('siteId'));
 
                 /* var myMask = new Ext.LoadMask({msg:translate("reportOpening..."),target:me.getView()});
                  myMask.show();
@@ -359,7 +359,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 break;
         }
     },
-    openReportWindow:function(_title)
+    openReportWindow:function(_title,siteId)
     {
         var me=this;
         Ext.create('Common.ux.window.FullScreenWindow', {
@@ -371,8 +371,15 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 listeners:{
                     afterrender:function(_comp)
                     {
-                         _comp.getController().writeHeader();
+                         _comp.getController().writeHeader(1);
                     }
+                }
+            },
+            listeners:
+            {
+                close:function(_comp)
+                {
+                    func.Report.cleanReport();
                 }
             }
         }).show();
