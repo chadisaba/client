@@ -21,6 +21,24 @@ var CommonDirect={
             });
         return promise;
     },
+    saveDataWithCallback:function(_dataObject,_tableName,_comment,_cb)
+    {
+        var params={};
+        params.table=_tableName;
+        params.dataToBeSaved=_dataObject;
+        params.comment=_comment||null;
+        Server.CommonQueries.saveRecord(params,
+            function(_result){
+                if(_result.success){
+                    _cb(null,_result.data);
+                }
+                else{
+                    console.error(_result.msg);
+                    _cb(new Error(_result.msg));
+                }
+            }
+        );
+    },
 
     saveDataArray:function(_dataToBySaved,_tableName,_idName,_comment)
     {

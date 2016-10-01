@@ -2,17 +2,66 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     override: 'MyApp.view.ReportFormViewController',
 
 
+    initForm:function(_visitId)
+    {
+        var me=this;
+        var filtersArray=[
+            {name:'visitId',value:_visitId}
+        ];
+        CommonDirect.getData("report",filtersArray)
+            .then(function(_resultArray)
+            {
+                if(_resultArray.length>0)
+                {
+                    // in this case the report of this visit exists, we display it
+
+                }
+                else
+                {
+                    // we create a new report
+                    me.createNewReport(window.localStorage.getItem('smartmed-userId'));
+                }
+
+            })
+            .catch(function(_err)
+            {
+                Ext.MessageBox.alert('Error',_err);
+            });
+    },
+    openReport:function(_reportId)
+    {
+        var me=this;
+
+        var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
+        var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");
+        Promise.all([reportHeaderPromise,reportPromise])
+            .then(function(_resultArray)
+            {
+                if(_resultArray.length>0)
+                {
+
+                }
+                else
+                {
+                   throw Error('The report is not exists');
+                }
+
+            })
+            .catch(function(_err)
+            {
+                Ext.MessageBox.alert('Error',_err);
+            });
+    },
      onSaveBtnItemIdClick: function(button, e, eOpts) {
-
          var me=this;
-
          var html=
              '<h1 style="color: #5e9ca0;font-size: 30px;" xmlns="http://www.w3.org/1999/html">'+
              'Le compte rendu a &eacute;t&eacute; enregistr&eacute;</style></h1>';
-         me.saveHeader();
-         me.clearBody();
-         me.clearHeader();
-         me.insertHtmlToBody(html);
+        // me.saveHeader();
+         //me.clearBody();
+        //me.clearHeader();
+        // me.insertHtmlToBody(html);
+         func.Report.saveHeaderAndFooterTemplate(false,true);
 
     },
     saveHeader:function()
@@ -45,11 +94,11 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                 reporthf. reporthfContent=ooxml.value;
 
                         CommonDirect.saveData(reporthf,'report_hf');
-                       /* reporthf.reporthfType=2;
-                        CommonDirect.saveData(reporthf,'report_hf');*/
+                       // reporthf.reporthfType=2;
+                       /* CommonDirect.saveData(reporthf,'report_hf');*/
                         //me.writeOOXML(ooxml.value);
-                        Ext.MessageBox.alert('','Report header Saved');
-                        console.error(ooxml.value);
+                        //Ext.MessageBox.alert('','Report header Saved');
+                        //console.error(ooxml.value);
                     });
                 });
             })
@@ -113,8 +162,11 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 }
             });
     },
-    writeHeader:function(_siteId)
+    createNewReport:function()
     {
+        var me=this;
+        var siteId=window.localStorage.getItem('smartmed-siteId');
+        var userId= window.localStorage.getItem('smartmed-userId')
         // get the report header and footer by userId
         var headerOoxml="";
         var footerOoxml="";
@@ -122,59 +174,64 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
         var filterArray= [{
             name:"userId",
-            value:window.localStorage.getItem('smartmed-userId')}
+            value:userId}
         ];
-         CommonDirect.getData('report_hf',filterArray)
-             .then(function(_resultsArray)
-             {
-                 _resultsArray.forEach(
-                     function(_item)
-                 {
-                     if(_item.reporthfType==1)
-                     {
-                         // we get the header by the visit site if exists
-                         if(_item.siteId && _item.siteId==_siteId)
-                         {
-                             headerOoxml= _item.reporthfContent;
-                         }
-                     }
+        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
+        myMask.show();
 
-                     if(_item.reporthfType==2)
-                     {
-                         // we get the footer by site if exists
-                         if(_item.siteId && _item.siteId==_siteId)
-                         {
-                             footerOoxml= _item.reporthfContent;
-                         }
-                     }
-                 });
-                 if(!headerOoxml || !footerOoxml) // we didn't find a header or a  footer for the visit site
-                 {
-                     _resultsArray.forEach(
-                         function(_item)
-                         {
-                             if(!headerOoxml &&_item.reporthfType==1)
-                             {
-                                 // we get the header  with siteId is null
-                                 if(!_item.siteId)
-                                 {
-                                     headerOoxml= _item.reporthfContent;
-                                 }
-                             }
+        CommonDirect.getData('report_hf',filterArray)
+            .then(function(_resultsArray)
+            {
+                _resultsArray.forEach(
+                    function(_item)
+                    {
+                        if(_item.reporthfType==1)
+                        {
+                            // we get the header by the visit site if exists
+                            if(_item.siteId && _item.siteId==siteId)
+                            {
+                                headerOoxml= _item.reporthfContent;
+                            }
+                        }
 
-                             if(!footerOoxml && _item.reporthfType==2)
-                             {
-                                 // we get the footer with siteId is null
-                                 if(!_item.siteId)
-                                 {
-                                     footerOoxml= _item.reporthfContent;
-                                 }
-                             }
-                         });
-                 }
-                 func.Report.createNewReport(headerOoxml,'',footerOoxml);
-                 //func.Report.writeToHeader(headerOoxml);
-             })
+                        if(_item.reporthfType==2)
+                        {
+                            // we get the footer by site if exists
+                            if(_item.siteId && _item.siteId==siteId)
+                            {
+                                footerOoxml= _item.reporthfContent;
+                            }
+                        }
+                    });
+                if(!headerOoxml || !footerOoxml) // we didn't find a header or a  footer for the visit site
+                {
+                    _resultsArray.forEach(
+                        function(_item)
+                        {
+                            if(!headerOoxml &&_item.reporthfType==1)
+                            {
+                                // we get the header  with siteId is null
+                                if(!_item.siteId)
+                                {
+                                    headerOoxml= _item.reporthfContent;
+                                }
+                            }
+
+                            if(!footerOoxml && _item.reporthfType==2)
+                            {
+                                // we get the footer with siteId is null
+                                if(!_item.siteId)
+                                {
+                                    footerOoxml= _item.reporthfContent;
+                                }
+                            }
+                        });
+                }
+                if(headerOoxml||footerOoxml)
+                    func.Report.createReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
+                else
+                    myMask.hide();
+            })
 
     },
     writeBodyMessage:function(msg)
