@@ -88,13 +88,13 @@ func.Report={
 
     },
     /**
-     * when creating a new report
+     *  Fill  word report with header, body and footer content
      * @param _headerOoxml
      * @param _bodyOoxml
      * @param _footerOoxml
      * @param _myMask
      */
-    createReport:function(_headerOoxml,_bodyOoxml,_footerOoxml,_headerIsOoxml,_bodyIsOoxml,_footerIsOoxml,_myMask)
+    fillReport:function(_headerOoxml,_bodyOoxml,_footerOoxml,_headerIsOoxml,_bodyIsOoxml,_footerIsOoxml,_myMask)
     {
         // Run a batch operation against the Word object model.
         Word.run(function (context) {
@@ -284,42 +284,86 @@ func.Report={
                 }
             });
     },
-    writeToHeader:function(_headerOoxml)
+    saveReport:function(_doctorId,_visitId,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
     {
-        // Run a batch operation against the Word object model.
         Word.run(function (context) {
                 // Create a proxy sectionsCollection object.
                 var mySections = context.document.sections;
-
                 // Queue a commmand to load the sections.
                 context.load(mySections, 'body/style');
-
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
                 return context.sync().then(function () {
-
                     // Create a proxy object the primary header of the first section.
                     // Note that the header is a body object.
                     var myHeader = mySections.items[0].getHeader("primary");
-
                     // Queue a command to insert text at the end of the header.
-                     myHeader.insertOoxml(_headerOoxml,Word.InsertLocation.end);
+                    var headerContent;
+                    if(_headerIsHtml)
+                        headerContent = myHeader.getHtml();
+                    else
+                        headerContent = myHeader.getOoxml();
 
-                    // Queue a command to wrap the header in a content control.
-                     myHeader.insertContentControl();
+                    var body = context.document.body;
+                    var bodyContentHtml;
+                    var bodyContentOoxml;
+                        bodyContentHtml = body.getHtml();
+                        bodyContentOoxml = body.getOoxml();
 
                     // Synchronize the document state by executing the queued commands,
                     // and return a promise to indicate task completion.
                     return context.sync().then(function () {
-                        Ext.MessageBox.alert('','header was retreived');
 
+
+                        /** report body**/
+                        var reportBody={};
+                        reportBody.doctorId=_doctorId;
+                        reportBody.reportId=UUID();
+                        reportBody.visitId=_visitId;
+                        reportBody.reportContentIsHtml=false;
+                        reportBody.reportStatus=_reportStatut;
+                        reportBody.reportName="report "+reportBody.doctorId;
+                        if(_bodyIsHtml)
+                        {
+                            reportBody.reportContentIsHtml=true;
+                            reportBody.reportContent=bodyContentHtml.value;
+                        }
+                        else
+                        {
+                            reportBody.reportContent=bodyContentOoxml.value;
+                            reportBody.reportHtmlContent=bodyContentHtml.value;
+                        }
+                        // save the header into the database
+                        /******************** report Header***************************/
+                        var reportHeader={};
+                        reportHeader.reportId=reportBody.reportId;
+                        reportHeader.reportHeaderId=reportBody.reportId;
+                        reportHeader.reportHeaderContentIsHtml=false;
+                        if(_headerIsHtml)
+                        {
+                            reportHeader.reportHeaderContentIsHtml=true;
+
+                        }
+                        reportHeader.reportHeaderContent=headerContent.value;
+
+                        return ReportDirect.saveReport(reportBody,reportHeader)
+                            .then(function()
+                            {
+                                _myMask.hide();
+                            })
+                            .catch(function(_err)
+                            {
+                                Ext.MessageBox.alert('Error',_err);
+                                _myMask.hide();
+                            });
                     });
                 });
             })
             .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
+                Ext.MessageBox.alert('Error',JSON.stringify(error));
                 if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                    Ext.MessageBox.alert('Error',JSON.stringify(error.debugInfo));
+                    myMask.hide();
                 }
             });
     }

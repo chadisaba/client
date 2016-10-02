@@ -68,7 +68,6 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                                 else
                                 {
                                      myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
-                                    InitApp.siteId=parseInt(value);
                                     InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
                                      InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
                                      InitApp.userId= user.userId;

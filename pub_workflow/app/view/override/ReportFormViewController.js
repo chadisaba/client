@@ -2,43 +2,101 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     override: 'MyApp.view.ReportFormViewController',
 
 
-    initForm:function(_visitId)
+    initForm:function(_visitId,_doctorId,_newReport)
     {
         var me=this;
+         me.doctorId=_doctorId;
+        me.visitId=_visitId;
+        var userId=window.localStorage.getItem('smartmed-userId');
+        var siteId=window.localStorage.getItem('smartmed-siteId');
         var filtersArray=[
             {name:'visitId',value:_visitId}
         ];
-        CommonDirect.getData("report",filtersArray)
-            .then(function(_resultArray)
-            {
-                if(_resultArray.length>0)
+        if(_newReport)
+            me.createNewReport(userId);
+        else
+        {
+            CommonDirect.getData("report",filtersArray)
+                .then(function(_resultArray)
                 {
-                    // in this case the report of this visit exists, we display it
-
-                }
-                else
+                    if(_resultArray.length>0)
+                    {
+                        // in this case the report of this visit exists, we display it
+                        me.editReport(_resultArray[0].reportId,userId,siteId);
+                    }
+                    else
+                    {
+                        // we create a new report
+                        me.createNewReport(userId);
+                    }
+                })
+                .catch(function(_err)
                 {
-                    // we create a new report
-                    me.createNewReport(window.localStorage.getItem('smartmed-userId'));
-                }
+                    Ext.MessageBox.alert('Error',_err);
+                });
+        }
 
-            })
-            .catch(function(_err)
-            {
-                Ext.MessageBox.alert('Error',_err);
-            });
     },
-    openReport:function(_reportId)
+    /**
+     * open an existing report
+     * @param _reportId
+     */
+    editReport:function(_reportId,_userId,_siteId)
     {
         var me=this;
-
         var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
         var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");
-        Promise.all([reportHeaderPromise,reportPromise])
+        var reportFooterPromise=CommonDirect.getData('report_hf',
+            [{name:'userId',value:_userId},
+            {name:'reporthfType',value:2}]
+        );
+        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
+        myMask.show();
+
+        Promise.all([reportHeaderPromise,reportPromise,reportFooterPromise])
             .then(function(_resultArray)
             {
-                if(_resultArray.length>0)
+                if(_resultArray[1].length>0)
                 {
+                    var reportObject=_resultArray[1][0];
+                    var reportHeaderObject=_resultArray[0][0];
+                    var reportContent;
+
+                   var reportIsHtml=reportObject.reportContentIsHtml;
+                    if(reportIsHtml)
+                        reportContent=reportObject.reportHtmlContent;
+                    else
+                        reportContent=reportObject.reportContent;
+
+                    // get The footer content
+                    var footerContent='';
+                    var reportFooterArray=_resultArray[2];
+
+                    reportFooterArray.forEach(
+                        function(_item)
+                        {
+                                // we get the footer by site if exists
+                                if(_item.siteId && _item.siteId==_siteId)
+                                {
+                                    footerContent= _item.reporthfContent;
+                                }
+                        });
+
+                    if(!footerContent)
+                    {
+                        reportFooterArray.forEach(
+                            function(_item)
+                            {
+                                // we get the footer with siteId is null
+                                if(!_item.siteId)
+                                {
+                                    footerContent= _item.reporthfContent;
+                                }
+                            });
+                    }
+
+                    func.Report.fillReport(reportHeaderObject.reportHeaderContent,reportContent,footerContent,
+                        !reportHeaderObject.reportHeaderContentIsHtml,!reportIsHtml,false,myMask)
 
                 }
                 else
@@ -50,6 +108,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
             .catch(function(_err)
             {
                 Ext.MessageBox.alert('Error',_err);
+                myMask.hide();
             });
     },
      onSaveBtnItemIdClick: function(button, e, eOpts) {
@@ -57,116 +116,27 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
          var html=
              '<h1 style="color: #5e9ca0;font-size: 30px;" xmlns="http://www.w3.org/1999/html">'+
              'Le compte rendu a &eacute;t&eacute; enregistr&eacute;</style></h1>';
+
+         var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
+         myMask.show();
+         func.Report.saveReport(me.doctorId,me.visitId,1,false,true,myMask);
         // me.saveHeader();
          //me.clearBody();
         //me.clearHeader();
         // me.insertHtmlToBody(html);
+
+
+         /** Save header and footer
          func.Report.saveHeaderAndFooterTemplate(false,true);
-
+          ***/
     },
-    saveHeader:function()
-    {
-        // Run a batch operation against the Word object model.
-        Word.run(function (context) {
-                // Create a proxy sectionsCollection object.
-                var mySections = context.document.sections;
-                // Queue a commmand to load the sections.
-                context.load(mySections, 'body/style');
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    // Create a proxy object the primary header of the first section.
-                    // Note that the header is a body object.
-                    var myHeader = mySections.items[0].getHeader("primary");
-                    // Queue a command to insert text at the end of the header.
-                    var ooxml = myHeader.getOoxml();
-                    // Queue a command to wrap the header in a content control.
-                    // myHeader.insertContentControl();
 
-                    // Synchronize the document state by executing the queued commands,
-                    // and return a promise to indicate task completion.
-                    return context.sync().then(function () {
-                        // save the header into the database
-                        var reporthf={};
-                        reporthf.reporthfType=1;
-                        reporthf.userId=window.localStorage.getItem('smartmed-userId');
-                            reporthf.reporthfName="report Header "+reporthf.userId;
-                                reporthf. reporthfContent=ooxml.value;
 
-                        CommonDirect.saveData(reporthf,'report_hf');
-                       // reporthf.reporthfType=2;
-                       /* CommonDirect.saveData(reporthf,'report_hf');*/
-                        //me.writeOOXML(ooxml.value);
-                        //Ext.MessageBox.alert('','Report header Saved');
-                        //console.error(ooxml.value);
-                    });
-                });
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-    },
-    clearDocument:function()
-    {
-
-    },
-    getBodyHtml:function()
-    {
-        var me;
-// Run a batch operation against the Word object model.
-        Word.run(function (context) {
-
-                // Create a proxy object for the document body.
-                var body = context.document.body;
-
-                // Queue a commmand to get the HTML contents of the body.
-                var bodyHTML = body.getHtml();
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log("Body HTML contents: " + bodyHTML.value);
-                });
-            })
-            .catch(function (error) {
-                console.log("Error: " + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
-    },
-    insertHtmlToBody:function(_html)
-    {
-// Run a batch operation against the Word object model.
-        Word.run(function (context) {
-
-                // Create a proxy object for the document body.
-                var body = context.document.body;
-
-                // Queue a commmand to insert HTML in to the beginning of the body.
-                body.insertHtml(_html, Word.InsertLocation.start);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('HTML added to the beginning of the document body.');
-                });
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-    },
     createNewReport:function()
     {
         var me=this;
         var siteId=window.localStorage.getItem('smartmed-siteId');
-        var userId= window.localStorage.getItem('smartmed-userId')
+        var userId= window.localStorage.getItem('smartmed-userId');
         // get the report header and footer by userId
         var headerOoxml="";
         var footerOoxml="";
@@ -228,7 +198,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                         });
                 }
                 if(headerOoxml||footerOoxml)
-                    func.Report.createReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
+                    func.Report.fillReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
                 else
                     myMask.hide();
             })
