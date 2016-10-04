@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reportgridpanel",
+        "designer|userClassName": "ReportGridPanelViewModel"
+    },
+    "designerId": "55c8bfa1-9cbf-4335-a829-0cd7d6c880ac",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReportModel",
+                "name": "ReportGridStore"
+            },
+            "name": "MyStore",
+            "designerId": "0dda5719-f3c5-4822-a405-e7d0deddaed1"
+        }
+    ]
+}
