@@ -63,9 +63,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                     var reportContent;
 
                    var reportIsHtml=reportObject.reportContentIsHtml;
-                    if(reportIsHtml)
-                        reportContent=reportObject.reportHtmlContent;
-                    else
+
                         reportContent=reportObject.reportContent;
 
                     // get The footer content

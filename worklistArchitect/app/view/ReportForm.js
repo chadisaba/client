@@ -20,10 +20,12 @@ Ext.define('MyApp.view.ReportForm', {
     requires: [
         'MyApp.view.ReportFormViewModel',
         'MyApp.view.ReportFormViewController',
+        'MyApp.view.ReportGridPanel',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.toolbar.Spacer',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.grid.Panel'
     ],
 
     controller: 'reportform',
@@ -95,6 +97,10 @@ Ext.define('MyApp.view.ReportForm', {
             anchor: '100%',
             itemId: 'shortcutsComboItemId',
             fieldLabel: 'shortcuts'
+        },
+        {
+            xtype: 'reportgridpanel',
+            itemId: 'reportGridItemId'
         }
     ]
 

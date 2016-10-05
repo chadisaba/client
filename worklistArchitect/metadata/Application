@@ -25,7 +25,8 @@
             "StudyComboModel",
             "DeviceComboModel",
             "TechnicianComboModel",
-            "DoctorComboModel"
+            "DoctorComboModel",
+            "ReportModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -49,7 +50,8 @@
             "WorklistFiltreGridPanel",
             "MyPanel5",
             "OfficeViewport",
-            "ReportForm"
+            "ReportForm",
+            "ReportGridPanel"
         ]
     },
     "name": "Application",

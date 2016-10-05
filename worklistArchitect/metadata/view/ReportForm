@@ -180,6 +180,20 @@
             },
             "name": "MyComboBox4",
             "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "reportGridItemId"
+            },
+            "name": "reportgridpanel",
+            "designerId": "23d883d4-1e4c-43bd-9348-02d5176babc3",
+            "masterInstanceId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79"
         }
     ]
 }
