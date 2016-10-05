@@ -31,37 +31,21 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                         Utility.grid.loadGrid(view, _data, view.getViewModel().getStore('StudyVisitHasActeStore'));
                     else
                       {
-                       //   var modele= new MyApp.model.StudyVisitHasActeModel();
-                       //   modele.set('')
-
-
-                         // parallel   get data
-                       /*   var filterArray= [{
-                              name:"visitId",
-                              value:_visiteId
-                          }];*/
-                         // var p1=CommonDirect.getData('STUDY_VISIT', filterArray);
                           var mainTable={};
                           mainTable.tableName="STUDY";
 
-                          //study_acte
-                          // studyActeId
-                       //   "studyVisitId"
-                        //  "studyActeId"
-                       //    mainTable.filters=filterArray;
+
                           var joinTablesArray=[{tableName: 'STUDY_ACTE'},{tableName:'STUDY_VISIT',filters:[{
                               name:'visitId',value:_visitId}]}];
-
-                     //     joinTablesArray.push({tableName: 'STUDY_ACTE'});
-                      //    joinTablesArray.filters=filterArray;
-
                           CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
                               .then(
                                   function (_data) {
                                       for (var i = 0; i < _data.length; i++) {
                                            //   _data[i].userFName = 1;
                                           //    _result[i].userFName = _result[i]['User.userFName'];
-                                     //     studyActeCode
+
+                                          _data[i].studyVisitId=_data[i]['StudyVisits.studyVisitId'];
+                                          _data[i].studyActeId=_data[i]['StudyActes.studyActeId'];
                                           _data[i].studyVisitHasActeCode=_data[i]['StudyActes.studyActeCode'];
                                           _data[i].studyVisitHasActeModificators=_data[i]['StudyActes.studyActeModificators'];
                                           _data[i].studyVisitHasActeAcceptedModificators=_data[i]['StudyActes.studyActeAcceptedModificators'];
@@ -85,18 +69,27 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                                           _data[i].studyVisitHasActeDenombrement=0;
                                           _data[i].studyVisitHasActeCodeAffine="";
                                           _data[i].studyVisitHasActeCodeAccEntentePrealable="";
+                                          _data[i].studyVisitHasActeExtensionDoc="";
+                                          _data[i].added=true;
+                                          _data[i].toDelete=false;
+                                          _data[i].addedAndValidated=false;
+                                          _data[i].modified=false;
+
+//                                          Ext.Date.format(new Date(),"Y-m-d");
+
                                        //   _data[i].studyVisitHasActeDateEntentePrealable=date;
 
-                                       //       "studyActeAdditionalAmount" numeric DEFAULT 0.00,
-                                          /*
-                                          _result[i].studyVisitHasActeExceptionalRefunding" boolean DEFAULT false,
 
-                                          */
                                       }
 
                                       console.log(_data);
-                                      if(_data.length>0)
+                                      if(_data.length>0){
+
+
                                           Utility.grid.loadGrid(view, _data, view.getViewModel().getStore('StudyVisitHasActeStore'));
+
+                                      }
+
 
                                     //  resolve(_data);
                                   })
@@ -111,6 +104,75 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
                         }
             );
+    },
+
+
+    getANP:function(_data)
+    {
+      //  var me=this;
+
+        for (var i = 0; i < _data.length; i++) {
+
+            if(_data[i].studyVisitHasActeType == 2){//NGAP
+                _data[i].studyVisitHasActeAssociationNonPrevu="";
+
+            }
+
+        }
+        //get scan actes
+        //get IRM actes
+        //get actes appareil circulatoire and imagerie interventionnelle
+        //get actes supplements
+        //get actes bucco dentaire
+
+
+
+        var actesBucco=[];
+        var actesIRM=[];
+        var actesScan=[];
+        var actesImmagerieInterventionnelle=[];
+        var actesSupplements=[];
+
+
+        for (var i = 0; i < _data.length; i++) {
+
+            if(actesBucco.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                _data[i].studyVisitHasActeAssociationNonPrevu=4;
+
+            }
+            if(actesIRM.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                _data[i].studyVisitHasActeAssociationNonPrevu=1;
+
+            }
+            if(actesScan.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                _data[i].studyVisitHasActeAssociationNonPrevu=1;
+
+            }
+            if(actesImmagerieInterventionnelle.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                _data[i].studyVisitHasActeAssociationNonPrevu=1;
+
+            }
+            if(actesSupplements.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                _data[i].studyVisitHasActeAssociationNonPrevu=1;
+
+            }
+
+
+
+        }
+
+        for (var i = 0; i < _data.length; i++) {
+
+            if(_data[i].studyVisitHasActeType == 1){//CCAM
+                _data[i].studyVisitHasActeAssociationNonPrevu="";
+
+            }
+
+        }
+
+
+        return _data;
+
     },
 
 
@@ -150,7 +212,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                   })
 	     
     },
-
+/*
     onStudyVisitHasActeGridIdAddItem: function() {
 
         var rec = new MyApp.model.StudyVisitHasActeModel({
@@ -161,6 +223,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
         });
         Utility.grid.addItem(this.getView(),rec);
     },
+    */
 
     onStudyVisitHasActeGridIdDeleteItem: function() {
         Utility.grid.deleteItem(this.getView());
@@ -212,7 +275,6 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
     	var me=this;
 
 
-
             var promise = new Promise(
                 function (resolve, reject) {
                     var mainTableObject = {};
@@ -226,7 +288,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                         .then(
                             function (_result) {
                                 for (var i = 0; i < _result.length; i++) {
-                                //    _result[i].userFName = _result[i]['User.userFName'];
+                                //    _result[i].studyVisitId = _result[i]['User.studyVisitId'];
 
                                 }
                                 resolve(_result);
@@ -241,6 +303,12 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
             return promise;
 
     },
-    /*********************** combo onSelectHandler****************************************************/
-  
+    /***********************  combo onSelectHandler****************************************************/
+
+
+
+    onStudyCodeComboBoxChange: function(field, newValue, oldValue, eOpts) {
+        StudyHelper.onStudyCodeComboBoxChange(field, this,newValue, this.getView());
+
+    }
 });
