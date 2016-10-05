@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TechnicianComboModel"
+    },
+    "name": "MyModel",
+    "designerId": "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userId"
+            },
+            "name": "MyInteger5",
+            "designerId": "22e21c99-cd52-4a1d-8701-b5b2c303618d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userLName"
+            },
+            "name": "MyField12",
+            "designerId": "35f2a59c-671c-4fbe-a832-6f32246bb4f6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userFName"
+            },
+            "name": "MyField13",
+            "designerId": "c4e56089-80e0-41b7-ad48-3cc17834c83f"
+        }
+    ]
+}

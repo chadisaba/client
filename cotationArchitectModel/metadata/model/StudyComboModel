@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StudyComboModel"
+    },
+    "name": "CityNameComboModel1",
+    "designerId": "298f1b8d-0f4d-4140-aed9-0d773aac986e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyId"
+            },
+            "name": "MyField1",
+            "designerId": "dcddc247-ba95-40ce-b881-f5a4c1f1b738"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyName"
+            },
+            "name": "MyField2",
+            "designerId": "82ff95a6-1f0f-4a1b-b1cc-5c865b46ed02"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyCode"
+            },
+            "name": "MyField16",
+            "designerId": "9c6d1581-cf3d-457c-ae53-994b7afd0e8c"
+        }
+    ]
+}

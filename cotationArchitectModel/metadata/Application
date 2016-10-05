@@ -9,15 +9,16 @@
         "controllers": [
             "MainController"
         ],
-        "models": [
-            "StudyVisitHasActeModel"
-        ],
-        "name": "MyApp",
-        "views": [
-            "StudyVisitHasActeGrid",
-            "MyPanelCotation"
-        ]
-    },
+            "models": [
+                "StudyVisitHasActeModel"
+            ],
+            "name": "MyApp",
+            "views": [
+                "StudyVisitHasActeGrid",
+                "MyPanelCotation",
+                "AddStudyForm"
+            ]
+        },
     "name": "Application",
     "designerId": "application"
 }

@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/cotation_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/cotation_pub",
+        "exportPath": "../cotation_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -22,16 +22,24 @@
         "lineEnding": "CRLF",
         "genTimestamps": false,
         "cacheBust": false,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:8888/clientch/cotation_pub/",
+        "displayfield-ExtBox1-1170-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "3.2.0",
-    "xdsBuild": 339,
+    "xdsVersion": "4.0.1",
+    "xdsBuild": 190,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
+            "79e1aecd-2f22-4511-bab4-a79afe9fcedd",
             "04066d1c-7822-46e5-825a-1d1d52b03901",
+            "336fbfe5-7283-4080-94fd-711d8dcd1477",
+            "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
+            "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm",
+            "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
             "754eb02b-d1c8-48ad-8e88-b50fda0247d2",
             "857b6e6f-e979-497f-a731-fa35215185f4",
             "4702aeb1-429b-45af-b394-40a06bf904db",
@@ -39,14 +47,21 @@
             "fae57581-31ab-468c-9676-c119bb73d702",
             "0dd4d087-ac5c-46db-a574-37cdf506c4e0",
             "314b8adf-4aec-420c-8c39-b824c6c3fd81",
-            "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03"
+            "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03",
+            "299f2421-e9ef-4246-98f0-7145130838ac",
+            "624fd4af-71f2-45b3-bb18-4401ae95fe2c",
+            "ab4a7f07-9d6c-43d3-b877-77859ffdd5f7"
         ],
         "store": [],
         "controller": [
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
-            "d0053432-ba71-4633-92df-e6edfabc950a"
+            "f8c4ef8d-71de-4b32-89c0-9f1a3cfac98c",
+            "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
+            "298f1b8d-0f4d-4140-aed9-0d773aac986e",
+            "d0053432-ba71-4633-92df-e6edfabc950a",
+            "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f"
         ],
         "resource": [
             "614b1371-c3d6-4987-8837-deb62ffcfdf8"

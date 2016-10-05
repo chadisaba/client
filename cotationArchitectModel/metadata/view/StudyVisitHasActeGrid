@@ -1236,6 +1236,17 @@
                 "fn": "onStudyVisitHasActeGridIdAddItem",
                 "implHandler": [
                     "",
+                    "Ext.create('Common.ux.window.FullScreenWindow',{",
+                    "    title:'Replace',",
+                    "    items:{",
+                    "        xtype:'studyvisitgrid',",
+                    "        region:'center'",
+                    "",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "}).show();",
                     ""
                 ],
                 "name": "addItem",

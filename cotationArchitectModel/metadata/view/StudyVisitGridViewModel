@@ -1,0 +1,78 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "trans:{",
+            "studies:translate('studies')",
+            "}",
+            "}"
+        ],
+        "designer|userAlias": "studyvisitgrid",
+        "designer|userClassName": "StudyVisitGridViewModel"
+    },
+    "designerId": "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyVisitModel",
+                "name": "StudyVisitStore"
+            },
+            "name": "StudyVisitStore",
+            "designerId": "ru6decju-c056-4140-9039-jrieewb521e8"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceComboModel",
+                "name": "DeviceComboStore"
+            },
+            "name": "MyStore5",
+            "designerId": "c71469b9-ee38-4b1a-9bcc-ae79e85850e5"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyComboModel",
+                "name": "StudyComboStore"
+            },
+            "name": "MyStore6",
+            "designerId": "402ca654-8122-4bb3-b758-b4b96b1ae0bb"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "TechnicianComboModel",
+                "name": "TechnicianComboStore"
+            },
+            "name": "MyStore7",
+            "designerId": "37cb279f-651c-47e4-be81-df85dca9437d"
+        }
+    ]
+}

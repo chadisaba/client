@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "addstudyform",
+        "designer|userClassName": "AddStudyFormViewModel"
+    },
+    "designerId": "624fd4af-71f2-45b3-bb18-4401ae95fe2c"
+}
