@@ -10,7 +10,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
     initGrid: function (_filters, _readOnlyGrid,_visitId) {// fait un publish et test, ok // n'oubl
         var me = this;
-        var _visitId="dd2826d3-7791-48cc-a116-335c41b9723c";
+        var _visitId="00b0a322-2ac9-4bec-b94b-e17ae0e996c2";
         var params;
         
             me.filters = _filters || [];

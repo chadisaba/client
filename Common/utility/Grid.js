@@ -196,7 +196,11 @@ Ext.define('Utility.grid', {
             }
 
             if (Ext.isEmpty(isAfterReset))
-                grid.getPlugin('gridediting').lockGrid(false/*result.lockStatus*/);
+            {
+                if(grid.getPlugin('gridediting'))
+                    grid.getPlugin('gridediting').lockGrid(false/*result.lockStatus*/);
+            }
+
 
         },
 

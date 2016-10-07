@@ -90,6 +90,32 @@
             "designerId": "f18469b9-9bad-4332-81cc-7dfcac8b9a7a"
         },
         {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "name": "MyBoolean1",
+            "designerId": "d6a2536d-fb4f-4347-88fa-f12b82bf49fc"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "name": "MyBoolean2",
+            "designerId": "c0b2cd0e-d7b4-4811-aaf7-f283ec8b451b"
+        },
+        {
             "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",

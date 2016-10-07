@@ -1,7 +1,6 @@
 Ext.define('Plugins.grid.GridInfoColumnPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.infocolumn',
-
 	statics:{
 		configure: function(config){
 			config.columns.push({
@@ -38,8 +37,5 @@ Ext.define('Plugins.grid.GridInfoColumnPlugin', {
 	init:function (grid) {
 		var plugin = this;
 		this.grid = grid;
-
-
 	}
-
 });

@@ -1,0 +1,80 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportHasStudyModel"
+    },
+    "name": "MyModel",
+    "designerId": "95195739-aae0-41c0-83b0-24175c8cb157",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "reportHasStudyId"
+            },
+            "name": "MyField1",
+            "designerId": "95c0eec5-d005-431b-a4c1-d95149d8a1fd"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "reportId"
+            },
+            "name": "MyField5",
+            "designerId": "aa464545-dc45-46d5-b761-b5c46dbd9898"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyId"
+            },
+            "name": "MyInteger",
+            "designerId": "328a380d-4f41-4b57-9716-7e5ebb1a3f53"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyCode"
+            },
+            "name": "MyField8",
+            "designerId": "af34a8ed-46d5-4454-88a9-8461c2381dd7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyName"
+            },
+            "name": "MyField9",
+            "designerId": "59155bf7-1882-47a5-89fb-fed3a2c5944e"
+        }
+    ]
+}

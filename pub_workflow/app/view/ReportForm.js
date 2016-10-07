@@ -20,10 +20,13 @@ Ext.define('MyApp.view.ReportForm', {
     requires: [
         'MyApp.view.ReportFormViewModel',
         'MyApp.view.ReportFormViewController',
+        'MyApp.view.ReportGridPanel',
+        'MyApp.view.ReportHasStudyGrid',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.toolbar.Spacer',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.grid.Panel'
     ],
 
     controller: 'reportform',
@@ -95,6 +98,31 @@ Ext.define('MyApp.view.ReportForm', {
             anchor: '100%',
             itemId: 'shortcutsComboItemId',
             fieldLabel: 'shortcuts'
+        },
+        {
+            xtype: 'container',
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
+            items: [
+                {
+                    xtype: 'reportgridpanel',
+                    itemId: 'reportGridItemId',
+                    width: 415,
+                    manageHeight: false
+                },
+                {
+                    xtype: 'tbspacer',
+                    width: 20
+                },
+                {
+                    xtype: 'reporthasstudygrid',
+                    itemId: 'reportHasStudyItemId',
+                    width: 147,
+                    manageHeight: false
+                }
+            ]
         }
     ]
 

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporthasstudygrid",
+        "designer|userClassName": "ReportHasStudyGridViewController"
+    },
+    "designerId": "1a027b84-8a56-4da6-bf98-236fbffa5f28"
+}

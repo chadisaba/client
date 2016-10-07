@@ -87,6 +87,69 @@ func.Report={
          return promise;
 
     },
+    reportRenderer: function(value){
+        /*
+         0 : no report
+         1 :Report  in typing
+         2: waiting for validation
+         3- validated
+         4- wainting for approuval
+         5-approved
+         6- printed.
+         */
+
+        var color;
+        var icon;
+        var tooltip;
+        switch(value)
+        {
+            case 0:
+                color="#d1d1d1";
+                icon="fa fa-file-o";
+                tooltip="Aucun compte rendu disponible";
+
+                break;
+            case 1:
+                color="#ec971f";
+                icon="fa fa-spinner fa-spin";
+                tooltip="En cours de frappe";
+
+                break;
+            case 2:
+                color="#ec971f";
+                icon="fa fa-hourglass-half";
+                tooltip="En attente de validation";
+
+                break;
+            case 3:
+                color="#27b6af";
+                icon="fa fa-file-word-o";
+                tooltip="Validé";
+                break;
+            case 4:
+                color="#ec971f";
+                icon="fa fa-hourglass-half";
+                tooltip="En attente d'approbation";
+                break;
+            case 5:
+                color="#27b6af";
+                icon="fa fa-file-word-o";
+                tooltip="Approuvé";
+                break;
+            case 6:
+                color="#27b6af";
+                icon="fa fa-print";
+                tooltip="Imprimé";
+                break;
+
+        }
+        return {
+            color:color,
+            tooltip:tooltip,
+            icon:icon
+        };
+
+    },
     /**
      *  Fill  word report with header, body and footer content
      * @param _headerOoxml

@@ -29,7 +29,7 @@ Ext.define('MyApp.view.MyPanelCotationViewController', {
                 listeners:{
                     afterrender:function(_comp)
                     {
-                        _comp.getController().initGrid([],true,'dd2826d3-7791-48cc-a116-335c41b9723c');
+                        _comp.getController().initGrid([],true,'00b0a322-2ac9-4bec-b94b-e17ae0e996c2');
                     }
                 }
                 /*plugins:[

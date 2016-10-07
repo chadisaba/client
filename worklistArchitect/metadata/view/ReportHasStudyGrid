@@ -1,0 +1,56 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporthasstudygrid",
+        "designer|userClassName": "ReportHasStudyGrid",
+        "height": null,
+        "title": "Select associated studies",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "designerId": "64b307cb-5940-4443-90d5-6c5089ed03e0",
+    "viewControllerInstanceId": "1a027b84-8a56-4da6-bf98-236fbffa5f28",
+    "viewModelInstanceId": "05a22c55-e232-44ea-ba0d-ec5e8e9c0255",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyName",
+                "flex": 1,
+                "text": "study"
+            },
+            "name": "MyColumn",
+            "designerId": "9c7bc8e6-40f7-4961-b8b5-ff8a85573008"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "9729ede0-aaf8-466e-b795-8c0fa510211f"
+        },
+        {
+            "type": "Ext.selection.CheckboxModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyCheckboxSelectionModel",
+            "designerId": "ecf75d92-7137-443d-a88d-c90b46c18e99"
+        }
+    ]
+}

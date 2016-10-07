@@ -42,7 +42,9 @@ Ext.application({
         'StudyComboModel',
         'DeviceComboModel',
         'TechnicianComboModel',
-        'DoctorComboModel'
+        'DoctorComboModel',
+        'ReportModel',
+        'ReportHasStudyModel'
     ],
     views: [
         'WorklistGrid',
@@ -62,7 +64,9 @@ Ext.application({
         'WorklistFiltreGridPanel',
         'MyPanel5',
         'OfficeViewport',
-        'ReportForm'
+        'ReportForm',
+        'ReportGridPanel',
+        'ReportHasStudyGrid'
     ],
     controllers: [
         'MainController'

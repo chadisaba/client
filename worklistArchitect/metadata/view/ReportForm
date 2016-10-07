@@ -182,18 +182,68 @@
             "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77"
         },
         {
-            "type": "linkedinstance",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "reportGridItemId"
+                "container|align": "stretch",
+                "height": null,
+                "layout": "hbox"
             },
-            "name": "reportgridpanel",
-            "designerId": "23d883d4-1e4c-43bd-9348-02d5176babc3",
-            "masterInstanceId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79"
+            "name": "MyContainer2",
+            "designerId": "a72b2f22-84dc-4eee-adf4-a78de1e3684d",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "itemId": "reportGridItemId",
+                        "manageHeight": false,
+                        "width": 415
+                    },
+                    "name": "reportgridpanel",
+                    "designerId": "23d883d4-1e4c-43bd-9348-02d5176babc3",
+                    "masterInstanceId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79"
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "width": 20
+                    },
+                    "name": "MySpacer",
+                    "designerId": "841b4bd7-b1a6-4b79-9777-83ca587c65de"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "reportHasStudyItemId",
+                        "manageHeight": false,
+                        "width": 147
+                    },
+                    "name": "reporthasstudygrid",
+                    "designerId": "93e8b618-45b2-4aaf-ba9c-b1af2b141305",
+                    "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0"
+                }
+            ]
         }
     ]
 }

@@ -7,12 +7,15 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         var me=this;
          me.doctorId=_doctorId;
         me.visitId=_visitId;
+        me.getView().down('#reportGridItemId').getController().initGrid(null,_visitId);
+        me.getView().down('#reportHasStudyItemId').getController().initGrid(null,_visitId);
+
         var userId=window.localStorage.getItem('smartmed-userId');
         var siteId=window.localStorage.getItem('smartmed-siteId');
         var filtersArray=[
             {name:'visitId',value:_visitId}
         ];
-        if(_newReport)
+       /* if(_newReport)
             me.createNewReport(userId);
         else
         {
@@ -34,7 +37,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 {
                     Ext.MessageBox.alert('Error',_err);
                 });
-        }
+        }*/
 
     },
     /**

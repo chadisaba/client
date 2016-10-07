@@ -24,6 +24,21 @@
     "viewModelInstanceId": "55c8bfa1-9cbf-4335-a829-0cd7d6c880ac",
     "cn": [
         {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "reportDate",
+                "text": "reportDate",
+                "width": 120
+            },
+            "name": "MyDateColumn3",
+            "designerId": "55922909-f442-4951-bc73-db298ec17f6d"
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -32,6 +47,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "reportName",
+                "flex": 1,
                 "text": "reportName"
             },
             "name": "MyColumn7",
@@ -45,11 +61,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "reportStatus",
-                "text": "reportStatus"
+                "dataIndex": "doctor",
+                "flex": 1,
+                "text": "reportDoctor"
             },
-            "name": "MyColumn1",
-            "designerId": "47f02bcf-9e5a-407d-b33a-e63198744b77"
+            "name": "MyColumn2",
+            "designerId": "761aea75-a6a9-4af8-bbe5-1a6dc8c95d2c"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -59,25 +76,40 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "doctor",
-                "text": "reportDoctor"
+                "dataIndex": "reportStatus",
+                "text": "reportStatus",
+                "width": 80
             },
-            "name": "MyColumn2",
-            "designerId": "761aea75-a6a9-4af8-bbe5-1a6dc8c95d2c"
-        },
-        {
-            "type": "Ext.grid.column.Date",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "reportDate",
-                "text": "reportDate"
-            },
-            "name": "MyDateColumn3",
-            "designerId": "55922909-f442-4951-bc73-db298ec17f6d"
+            "name": "MyColumn1",
+            "designerId": "47f02bcf-9e5a-407d-b33a-e63198744b77",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "reportStatusRenderer",
+                        "fn": "renderer",
+                        "implHandler": [
+                            "      "
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "fa20e2ac-e72d-4ca8-bc7e-5b0b3343492d"
+                }
+            ]
         },
         {
             "type": "Ext.view.Table",
@@ -112,6 +144,110 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyContainer1",
+                    "designerId": "c9561e1c-6073-4190-849a-4572f9c10f5f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-plus-circle",
+                                "itemId": "addBtnItemId",
+                                "text": "new report",
+                                "tooltip": [
+                                    "Create new report",
+                                    ""
+                                ]
+                            },
+                            "name": "MyButton10",
+                            "designerId": "1195e89e-856d-47d9-95e9-acbe63ecc9f9",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAddBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAddBtnItemIdClick",
+                                    "designerId": "c173e42e-8e52-423a-8d63-4932c6e3bd68"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "Modifier",
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyContainer",
+                    "designerId": "89e77e70-9f9e-4854-a992-278e117d6121",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-edit",
+                                "itemId": "modifyBtnItemId",
+                                "text": "modify",
+                                "tooltip": [
+                                    "Modify the selected report"
+                                ]
+                            },
+                            "name": "MyButton10",
+                            "designerId": "49951258-1e0f-4fa4-acda-27aee4aa9a35",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onModifyBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onModifyBtnItemIdClick",
+                                    "designerId": "ff3616be-c702-484b-9d59-df44af328c41"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "width": null
+                    },
                     "name": "MyContainer11",
                     "designerId": "00a6a71d-f97e-43d6-a4c0-874ebaeaab56",
                     "cn": [
@@ -125,7 +261,10 @@
                             "userConfig": {
                                 "iconCls": "fa fa-floppy-o",
                                 "itemId": "saveBtnItemId",
-                                "text": "save"
+                                "text": "",
+                                "tooltip": [
+                                    "Save"
+                                ]
                             },
                             "name": "MyButton10",
                             "designerId": "e2da38e9-8ac2-4311-b2fc-4d55d9a1d6ff",
@@ -172,7 +311,10 @@
                             "userConfig": {
                                 "iconCls": "fa fa-check",
                                 "itemId": "validateBtnItemId",
-                                "text": "validate"
+                                "text": "",
+                                "tooltip": [
+                                    "Validate"
+                                ]
                             },
                             "name": "MyButton10",
                             "designerId": "6cb46846-89ea-465a-92c6-21e82758b36b",
@@ -204,55 +346,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "Modifier",
-                        "layout|flex": null
-                    },
-                    "name": "MyContainer",
-                    "designerId": "89e77e70-9f9e-4854-a992-278e117d6121",
-                    "cn": [
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconCls": "fa fa-edit",
-                                "itemId": "modifyBtnItemId",
-                                "text": "modify"
-                            },
-                            "name": "MyButton10",
-                            "designerId": "49951258-1e0f-4fa4-acda-27aee4aa9a35",
-                            "cn": [
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onModifyBtnItemIdClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onModifyBtnItemIdClick",
-                                    "designerId": "ff3616be-c702-484b-9d59-df44af328c41"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
+                        "layout|flex": null,
+                        "width": null
                     },
                     "name": "MyContainer13",
                     "designerId": "5b4b46c8-50e4-458c-8677-d5909e4a563b",
@@ -267,7 +362,10 @@
                             "userConfig": {
                                 "iconCls": "fa fa-exclamation-triangle",
                                 "itemId": "reviewBtnItemId",
-                                "text": "review"
+                                "text": "",
+                                "tooltip": [
+                                    "Review"
+                                ]
                             },
                             "name": "MyButton10",
                             "designerId": "74f4a16c-f53a-4af6-b837-76aa74089212",
@@ -292,6 +390,68 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processReportGridPanel",
+                "implHandler": [
+                    "GridAddPlugins.addGridInfoColumnPlugin(this);"
+                ]
+            },
+            "name": "processReportGridPanel",
+            "designerId": "e6d2f0b5-e5ce-4735-add8-b6c9c8c6e9a2"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "SINGLE"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "e953848a-2b20-4f2b-af6d-22f921803bc7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelectionChange",
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "42376fa5-416d-48db-aa9a-67d313bf4576"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBeforeSelect",
+                "name": "beforeselect",
+                "scope": "me"
+            },
+            "name": "onGridpanelBeforeSelect",
+            "designerId": "4aea3744-390f-4685-aaca-0c7acd4cced5"
         }
     ]
 }

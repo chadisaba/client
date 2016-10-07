@@ -21,6 +21,7 @@ Ext.define('MyApp.view.ReportForm', {
         'MyApp.view.ReportFormViewModel',
         'MyApp.view.ReportFormViewController',
         'MyApp.view.ReportGridPanel',
+        'MyApp.view.ReportHasStudyGrid',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.toolbar.Spacer',
@@ -99,8 +100,29 @@ Ext.define('MyApp.view.ReportForm', {
             fieldLabel: 'shortcuts'
         },
         {
-            xtype: 'reportgridpanel',
-            itemId: 'reportGridItemId'
+            xtype: 'container',
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
+            items: [
+                {
+                    xtype: 'reportgridpanel',
+                    itemId: 'reportGridItemId',
+                    width: 415,
+                    manageHeight: false
+                },
+                {
+                    xtype: 'tbspacer',
+                    width: 20
+                },
+                {
+                    xtype: 'reporthasstudygrid',
+                    itemId: 'reportHasStudyItemId',
+                    width: 147,
+                    manageHeight: false
+                }
+            ]
         }
     ]
 
