@@ -1,19 +1,29 @@
 Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     override: 'MyApp.view.ReportGridPanelViewController',
 
-    initGrid: function (_filters, _visitId) {
+    initGrid: function (_filters, _visitId,_reportDataArray) {
         var me = this;
         if (_visitId) {
+            me.visitId=_visitId;
             me.filters = _filters || [];
             me.filters.push({name: "visitId", value: _visitId});
             var view = this.getView();
 
-            this.getResultArray(me.filters).then(
-                function (data) {
-                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportGridStore'));
+            if(_reportDataArray)
+            {
+                me.reportDataArray=_reportDataArray;
+                Utility.grid.loadGrid(view, _reportDataArray, view.getViewModel().getStore('ReportGridStore'));
+            }
+            else
+            {
+                this.getResultArray(me.filters).then(
+                    function (data) {
+                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportGridStore'));
 
-                }
-            );
+                    }
+                );
+            }
+
         }
     },
     getDataToBeSaved: function () {
@@ -21,7 +31,10 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     },
 
     refreshGrid: function () {
-        this.initGrid(this.filters);
+        if(this.reportDataArray)
+            this.initGrid(this.filters,this.reportDataArray);
+        else
+            this.initGrid(this.filters);
     },
     getResultArray: function (filters) {
         var me = this;
@@ -93,6 +106,20 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
     },
     onGridpanelSelectionChange: function(model, selected, eOpts) {
+
+        var me=this;
+        if(!selected[0].get('added'))
+        {
+            me.fireViewEvent('selectReportEvent',selected[0]);
+        }
+        else
+        {
+            me.fireViewEvent('addReportEvent',selected[0]);
+
+
+        }
+        //me.getView().down('#reportHasStudyItemId').getController().initGrid(null,me.visitId);
+
        /* var me=this;
         var grid=me.getView();
         view.getViewModel().getStore('ReportGridStore');
@@ -112,7 +139,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
         var result=true;
         store.each(function(_rec)
         {
-            if(_rec.get('modified'))
+            if((_rec.get('reportId')!=record.get('reportId'))&&(_rec.get('modified')||_rec.get('added')))
                 result= false;
         });
         return result;

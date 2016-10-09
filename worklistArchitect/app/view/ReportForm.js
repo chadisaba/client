@@ -101,6 +101,7 @@ Ext.define('MyApp.view.ReportForm', {
         },
         {
             xtype: 'container',
+            height: 243,
             layout: {
                 type: 'hbox',
                 align: 'stretch'
@@ -108,9 +109,13 @@ Ext.define('MyApp.view.ReportForm', {
             items: [
                 {
                     xtype: 'reportgridpanel',
+                    flex: 5,
                     itemId: 'reportGridItemId',
                     width: 415,
-                    manageHeight: false
+                    manageHeight: false,
+                    listeners: {
+                        selectReportEvent: 'onGridpanelSelectReportEvent'
+                    }
                 },
                 {
                     xtype: 'tbspacer',
@@ -118,9 +123,13 @@ Ext.define('MyApp.view.ReportForm', {
                 },
                 {
                     xtype: 'reporthasstudygrid',
+                    flex: 1,
                     itemId: 'reportHasStudyItemId',
                     width: 147,
-                    manageHeight: false
+                    manageHeight: false,
+                    listeners: {
+                        addReportEvent: 'onGridpanelAddReportEvent'
+                    }
                 }
             ]
         }

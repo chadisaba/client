@@ -9,10 +9,16 @@
         "designer|userAlias": "reporthasstudygrid",
         "designer|userClassName": "ReportHasStudyGrid",
         "height": null,
+        "store": [
+            "{ReportHasStudyStore}"
+        ],
         "title": "Select associated studies",
         "width": null
     },
     "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
     "designerId": "64b307cb-5940-4443-90d5-6c5089ed03e0",
     "viewControllerInstanceId": "1a027b84-8a56-4da6-bf98-236fbffa5f28",
     "viewModelInstanceId": "05a22c55-e232-44ea-ba0d-ec5e8e9c0255",
@@ -51,6 +57,21 @@
             "codeClass": null,
             "name": "MyCheckboxSelectionModel",
             "designerId": "ecf75d92-7137-443d-a88d-c90b46c18e99"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelect",
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelect",
+            "designerId": "934c9726-c9ad-4506-939b-c8233ddcbfad"
         }
     ]
 }

@@ -19,5 +19,10 @@ Ext.define('MyApp.view.ReportHasStudyGridViewController', {
 
     requires: [
         'MyApp.view.override.ReportHasStudyGridViewController'
-    ]
+    ],
+
+    onGridpanelSelect: function(rowmodel, record, index, eOpts) {
+
+    }
+
 });

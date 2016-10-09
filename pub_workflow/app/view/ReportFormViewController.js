@@ -23,6 +23,14 @@ Ext.define('MyApp.view.ReportFormViewController', {
 
     onSaveBtnItemIdClick: function(button, e, eOpts) {
 
+    },
+
+    onGridpanelSelectReportEvent: function(gridpanel) {
+
+    },
+
+    onGridpanelAddReportEvent: function(gridpanel) {
+
     }
 
 });

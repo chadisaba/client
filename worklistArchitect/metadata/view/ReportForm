@@ -189,9 +189,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "anchor": null,
                 "container|align": "stretch",
-                "height": null,
-                "layout": "hbox"
+                "height": 243,
+                "layout": "hbox",
+                "layout|anchor": null
             },
             "name": "MyContainer2",
             "designerId": "a72b2f22-84dc-4eee-adf4-a78de1e3684d",
@@ -204,6 +206,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "flex": 5,
                         "height": null,
                         "itemId": "reportGridItemId",
                         "manageHeight": false,
@@ -211,7 +214,27 @@
                     },
                     "name": "reportgridpanel",
                     "designerId": "23d883d4-1e4c-43bd-9348-02d5176babc3",
-                    "masterInstanceId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79"
+                    "masterInstanceId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelSelectReportEvent",
+                                "name": "selectReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelSelectReportEvent",
+                            "designerId": "307ede0b-f851-4f5b-a0bd-2609a2e25f5d"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Spacer",
@@ -235,13 +258,34 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "flex": 1,
                         "itemId": "reportHasStudyItemId",
                         "manageHeight": false,
                         "width": 147
                     },
                     "name": "reporthasstudygrid",
                     "designerId": "93e8b618-45b2-4aaf-ba9c-b1af2b141305",
-                    "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0"
+                    "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelAddReportEvent",
+                                "name": "addReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelAddReportEvent",
+                            "designerId": "8ef42c66-ecf6-4c6a-957a-1407d42793cb"
+                        }
+                    ]
                 }
             ]
         }

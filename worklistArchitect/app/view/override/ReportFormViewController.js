@@ -1,20 +1,69 @@
 Ext.define('MyApp.view.override.ReportFormViewController', {
     override: 'MyApp.view.ReportFormViewController',
 
+    onGridpanelSelectReportEvent: function(_grid,_selectedRec) {
+        var me=this;
+        var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
+        studyVisitController.selectedStudiesByReport(_selectedRec.get('reportId'));
 
-    initForm:function(_visitId,_doctorId,_newReport)
+        me.editReport(_selectedRec.get('reportId'),me.userId,me.siteId);
+    },
+    onGridpanelAddReportEvent: function(_grid,_selectedRec) {
+        var me=this;
+        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
+
+        me.getView().down('#reportHasStudyItemId').getSelectionModel().selectAll();
+
+        func.Report.createNewReport(me.siteId,me.userId,myMask);
+    },
+
+    initForm:function(_visitId,_doctorId,_siteId)
     {
         var me=this;
          me.doctorId=_doctorId;
         me.visitId=_visitId;
-        me.getView().down('#reportGridItemId').getController().initGrid(null,_visitId);
-        me.getView().down('#reportHasStudyItemId').getController().initGrid(null,_visitId);
+        me.siteId=_siteId;
+        var reportGridController = me.getView().down('#reportGridItemId').getController();
+        var pReport= reportGridController.getResultArray([{name: "visitId", value: _visitId}]);
+        var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
+        var pStudyVisit=studyVisitController.getResultArray([{name: "visitId", value: _visitId}]);
 
-        var userId=window.localStorage.getItem('smartmed-userId');
-        var siteId=window.localStorage.getItem('smartmed-siteId');
-        var filtersArray=[
-            {name:'visitId',value:_visitId}
-        ];
+        var reportArray,visitStudyArray;
+
+        Promise.all([pReport,pStudyVisit])
+            .then(function(_resultArray)
+            {
+                reportArray=_resultArray[0];
+
+                visitStudyArray=_resultArray[1];
+                studyVisitController.initGrid(null,_visitId,visitStudyArray);
+
+                if( reportArray.length==0)
+                {
+                    // in this case we create the first report for this visit
+
+                    var reportObject={
+                        doctorId:_doctorId,
+                        reportDate:new Date(),
+                        reportId:UUID(),
+                        visitId:_visitId,
+                        reportContentIsHtml:false,
+                        reportStatus:1,
+                        reportName:"",
+                        added:true
+                    };
+                    visitStudyArray.forEach(function(_item)
+                    {
+                        reportObject.reportName+=", "+ _item.studyCode;
+
+                    });
+                    reportGridController.initGrid(null,_visitId,[reportObject]);
+
+                }
+                else
+                    reportGridController.initGrid(null,_visitId,reportArray);
+            });
+
        /* if(_newReport)
             me.createNewReport(userId);
         else
@@ -120,91 +169,11 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
          var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
          myMask.show();
-         func.Report.saveReport(me.doctorId,me.visitId,1,false,true,myMask);
-        // me.saveHeader();
-         //me.clearBody();
-        //me.clearHeader();
-        // me.insertHtmlToBody(html);
-
-
-         /** Save header and footer
-         func.Report.saveHeaderAndFooterTemplate(false,true);
-          ***/
+         var selectedStudyRec=me.getView().down('#reportHasStudyItemId').getSelectionModel().getSelection();
+         func.Report.saveReport(me.doctorId,me.visitId,selectedStudyRec,1,false,true,myMask);
     },
 
 
-    createNewReport:function()
-    {
-        var me=this;
-        var siteId=window.localStorage.getItem('smartmed-siteId');
-        var userId= window.localStorage.getItem('smartmed-userId');
-        // get the report header and footer by userId
-        var headerOoxml="";
-        var footerOoxml="";
-        var bodyOoxml="";
-
-        var filterArray= [{
-            name:"userId",
-            value:userId}
-        ];
-        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
-        myMask.show();
-
-        CommonDirect.getData('report_hf',filterArray)
-            .then(function(_resultsArray)
-            {
-                _resultsArray.forEach(
-                    function(_item)
-                    {
-                        if(_item.reporthfType==1)
-                        {
-                            // we get the header by the visit site if exists
-                            if(_item.siteId && _item.siteId==siteId)
-                            {
-                                headerOoxml= _item.reporthfContent;
-                            }
-                        }
-
-                        if(_item.reporthfType==2)
-                        {
-                            // we get the footer by site if exists
-                            if(_item.siteId && _item.siteId==siteId)
-                            {
-                                footerOoxml= _item.reporthfContent;
-                            }
-                        }
-                    });
-                if(!headerOoxml || !footerOoxml) // we didn't find a header or a  footer for the visit site
-                {
-                    _resultsArray.forEach(
-                        function(_item)
-                        {
-                            if(!headerOoxml &&_item.reporthfType==1)
-                            {
-                                // we get the header  with siteId is null
-                                if(!_item.siteId)
-                                {
-                                    headerOoxml= _item.reporthfContent;
-                                }
-                            }
-
-                            if(!footerOoxml && _item.reporthfType==2)
-                            {
-                                // we get the footer with siteId is null
-                                if(!_item.siteId)
-                                {
-                                    footerOoxml= _item.reporthfContent;
-                                }
-                            }
-                        });
-                }
-                if(headerOoxml||footerOoxml)
-                    func.Report.fillReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
-                else
-                    myMask.hide();
-            })
-
-    },
     writeBodyMessage:function(msg)
     {
         // Run a batch operation against the Word object model.
@@ -228,10 +197,5 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                     console.log("Debug info: " + JSON.stringify(error.debugInfo));
                 }
             });
-    },
-
-
-
-
-    
+    }
 });

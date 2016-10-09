@@ -180,12 +180,14 @@ Ext.define('Utility.grid', {
         },
 
 
-        loadGrid: function (grid, resultArray, store, button, win, isAfterReset) {
+        loadGrid: function (grid, resultArray, store, button, win, isAfterReset,_noSelectFirst) {
 
+
+            var noSelectFirst=_noSelectFirst||false;
             store.removeAll();
             store.loadData(resultArray);
-            if (resultArray.length > 0)
-                grid.getSelectionModel().select(0, true);
+            if (resultArray.length > 0 && !noSelectFirst)
+                    grid.getSelectionModel().select(0, true);
             // Loading artifact stop on button (save or quit)
             if (!Ext.isEmpty(button)) {
                 Utility.loading.end(button);

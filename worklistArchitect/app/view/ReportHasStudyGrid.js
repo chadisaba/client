@@ -19,16 +19,21 @@ Ext.define('MyApp.view.ReportHasStudyGrid', {
 
     requires: [
         'MyApp.view.ReportHasStudyGridViewModel',
+        'MyApp.view.ReportHasStudyGridViewController',
         'Ext.grid.column.Column',
         'Ext.view.Table',
         'Ext.selection.CheckboxModel'
     ],
 
+    controller: 'reporthasstudygrid',
     viewModel: {
         type: 'reporthasstudygrid'
     },
     title: 'Select associated studies',
 
+    bind: {
+        store: '{ReportHasStudyStore}'
+    },
     columns: [
         {
             xtype: 'gridcolumn',
@@ -39,6 +44,9 @@ Ext.define('MyApp.view.ReportHasStudyGrid', {
     ],
     selModel: {
         selType: 'checkboxmodel'
+    },
+    listeners: {
+        select: 'onGridpanelSelect'
     }
 
 });

@@ -347,7 +347,81 @@ func.Report={
                 }
             });
     },
-    saveReport:function(_doctorId,_visitId,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
+
+    createNewReport:function(_siteId,_userId,myMask)
+    {
+        var me=this;
+        var siteId=_siteId;
+        var userId= _visitId;
+        // get the report header and footer by userId
+        var headerOoxml="";
+        var footerOoxml="";
+        var bodyOoxml="";
+
+        var filterArray= [{
+            name:"userId",
+            value:userId}
+        ];
+
+        myMask.show();
+
+        CommonDirect.getData('report_hf',filterArray)
+            .then(function(_resultsArray)
+            {
+                _resultsArray.forEach(
+                    function(_item)
+                    {
+                        if(_item.reporthfType==1)
+                        {
+                            // we get the header by the visit site if exists
+                            if(_item.siteId && _item.siteId==siteId)
+                            {
+                                headerOoxml= _item.reporthfContent;
+                            }
+                        }
+
+                        if(_item.reporthfType==2)
+                        {
+                            // we get the footer by site if exists
+                            if(_item.siteId && _item.siteId==siteId)
+                            {
+                                footerOoxml= _item.reporthfContent;
+                            }
+                        }
+                    });
+                if(!headerOoxml || !footerOoxml) // we didn't find a header or a  footer for the visit site
+                {
+                    _resultsArray.forEach(
+                        function(_item)
+                        {
+                            if(!headerOoxml &&_item.reporthfType==1)
+                            {
+                                // we get the header  with siteId is null
+                                if(!_item.siteId)
+                                {
+                                    headerOoxml= _item.reporthfContent;
+                                }
+                            }
+
+                            if(!footerOoxml && _item.reporthfType==2)
+                            {
+                                // we get the footer with siteId is null
+                                if(!_item.siteId)
+                                {
+                                    footerOoxml= _item.reporthfContent;
+                                }
+                            }
+                        });
+                }
+                if(headerOoxml||footerOoxml)
+                    func.Report.fillReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
+                else
+                    myMask.hide();
+            })
+
+    },
+
+    saveReport:function(_doctorId,_visitId,_selectedStudyRecArray,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
     {
         Word.run(function (context) {
                 // Create a proxy sectionsCollection object.
@@ -408,8 +482,16 @@ func.Report={
 
                         }
                         reportHeader.reportHeaderContent=headerContent.value;
+                        var selectedStudyArray=[];
+                        _selectedStudyRecArray.forEach(function(_rec)
+                        {
+                            selectedStudyArray.push({
+                                reportId:reportBody.reportId,
+                                studyId:_rec.get('studyId')
+                        })
 
-                        return ReportDirect.saveReport(reportBody,reportHeader)
+                        });
+                        return ReportDirect.saveReport(reportBody,reportHeader,selectedStudyArray)
                             .then(function()
                             {
                                 _myMask.hide();

@@ -1,20 +1,19 @@
 Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
     override: 'MyApp.view.ReportHasStudyGridViewController',
-    initGrid: function (_filters, _readOnlyGrid, _visitId) {
+    initGrid: function (_filters,_visitId,_studyVisitDataArray) {
         var me = this;
-        UserDirect.getUserByCat(3, true)// 3 for Technician
-            .then(function (_resultArray) {
-                me.getViewModel().getStore('TechnicianComboStore').loadData(_resultArray);
-            });
         if (_visitId) {
             me.filters = _filters || [];
             me.filters.push({name: "visitId", value: _visitId});
             var view = this.getView();
-            if (!_readOnlyGrid)
-                view.getPlugin('gridediting').lockGrid(false);
+            if(_studyVisitDataArray)
+            {
+                me.studyVisitDataArray=_studyVisitDataArray;
+                Utility.grid.loadGrid(view, _studyVisitDataArray, view.getViewModel().getStore('ReportHasStudyStore'),null,null,null,true);
+            }
             this.getResultArray(me.filters).then(
                 function (data) {
-                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('StudyVisitStore'));
+                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportHasStudyStore'),null,null,null,true);
 
                 }
             );
@@ -24,31 +23,58 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
 
+    selectAll:function()
+    {
+
+        var view = this.getView();
+        view.getSelectionModel().selectAll();
+    },
+    selectedStudiesByReport:function(_reportId)
+    {
+        var view = this.getView();
+        view.getSelectionModel().deselectAll();
+        var store=view.getViewModel().getStore('ReportHasStudyStore');
+        CommonDirect.getData('REPORT_HAS_STUDY',[{name:'reportId',value:_reportId}])
+          .then(
+              function(_resultArray)
+          {
+              _resultArray.forEach(
+                  function(_item)
+                  {
+                      var rec=store.findRecord('studyId',_item.studyId);
+                      if(rec)
+                      {
+                          view.getSelectionModel().select(rec);
+
+                      }
+
+                  }
+              )
+          })
+
+    },
+
     refreshGrid: function () {
-        this.initGrid(this.filters);
+        if(this.studyVisitDataArray)
+            this.initGrid(this.filters,this.studyVisitDataArray);
+        else
+            this.initGrid(this.filters);
     },
     getResultArray: function (filters) {
         var me = this;
 
-        var promise = new Promise(
+       var promise = new Promise(
             function (resolve, reject) {
                 var mainTableObject = {};
                 mainTableObject.tableName = 'STUDY_VISIT';
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
-                joinTablesArray.push({tableName: 'DEVICE'}, {
-                    tableName: 'USER',
-                    required: false
-                }, {tableName: 'VISIT'}, {tableName: 'STUDY'});
+                joinTablesArray.push({tableName: 'STUDY'});
 
                 CommonDirect.getDataWidthJoin(mainTableObject, joinTablesArray)
                     .then(
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
-                                _result[i].userFName = _result[i]['User.userFName'];
-                                _result[i].userLName = _result[i]['User.userLName'];
-                                _result[i].deviceName = _result[i]['Device.deviceName'];
-                                _result[i].deviceCode = _result[i]['Device.deviceCode'];
                                 _result[i].studyCode = _result[i]['Study.studyCode'];
                                 _result[i].studyName = _result[i]['Study.studyName'];
 
@@ -64,6 +90,6 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
         );
         return promise;
 
-    },
+    }
     
 });
