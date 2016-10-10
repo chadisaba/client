@@ -21,15 +21,23 @@ Ext.define('MyApp.view.ReportFormViewController', {
         'MyApp.view.override.ReportFormViewController'
     ],
 
-    onSaveBtnItemIdClick: function(button, e, eOpts) {
-
-    },
-
     onGridpanelSelectReportEvent: function(gridpanel) {
 
     },
 
     onGridpanelAddReportEvent: function(gridpanel) {
+
+    },
+
+    onGridpanelSaveReportEvent: function(gridpanel) {
+
+    },
+
+    onGridpanelValidateReportEvent: function(gridpanel) {
+
+    },
+
+    onGridpanelReviewReportEvent: function(gridpanel) {
 
     }
 

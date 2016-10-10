@@ -11,12 +11,15 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
                 me.studyVisitDataArray=_studyVisitDataArray;
                 Utility.grid.loadGrid(view, _studyVisitDataArray, view.getViewModel().getStore('ReportHasStudyStore'),null,null,null,true);
             }
-            this.getResultArray(me.filters).then(
-                function (data) {
-                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportHasStudyStore'),null,null,null,true);
+            else{
+                this.getResultArray(me.filters).then(
+                    function (data) {
+                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportHasStudyStore'),null,null,null,true);
 
-                }
-            );
+                    }
+                );
+            }
+
         }
     },
     getDataToBeSaved: function () {

@@ -348,19 +348,19 @@ func.Report={
             });
     },
 
-    createNewReport:function(_siteId,_userId,myMask)
+    createNewReport:function(_siteId,_doctorId,myMask)
     {
         var me=this;
         var siteId=_siteId;
-        var userId= _visitId;
+        var doctorId= _doctorId;
         // get the report header and footer by userId
         var headerOoxml="";
         var footerOoxml="";
         var bodyOoxml="";
 
         var filterArray= [{
-            name:"userId",
-            value:userId}
+            name:"doctorId",
+            value:doctorId}
         ];
 
         myMask.show();
@@ -421,7 +421,7 @@ func.Report={
 
     },
 
-    saveReport:function(_doctorId,_visitId,_selectedStudyRecArray,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
+    saveReport:function(_reportRec,_selectedStudyRecArray,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
     {
         Word.run(function (context) {
                 // Create a proxy sectionsCollection object.
@@ -453,13 +453,10 @@ func.Report={
 
 
                         /** report body**/
-                        var reportBody={};
-                        reportBody.doctorId=_doctorId;
-                        reportBody.reportId=UUID();
-                        reportBody.visitId=_visitId;
+                        var reportBody=_reportRec.getData();
                         reportBody.reportContentIsHtml=false;
-                        reportBody.reportStatus=_reportStatut;
-                        reportBody.reportName="report "+reportBody.doctorId;
+                        if(_reportStatut)
+                            reportBody.reportStatus=_reportStatut;
                         if(_bodyIsHtml)
                         {
                             reportBody.reportContentIsHtml=true;
@@ -494,6 +491,8 @@ func.Report={
                         return ReportDirect.saveReport(reportBody,reportHeader,selectedStudyArray)
                             .then(function()
                             {
+                                _reportRec.set('modified',false);
+                                _reportRec.set('added',false);
                                 _myMask.hide();
                             })
                             .catch(function(_err)

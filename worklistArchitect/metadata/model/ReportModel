@@ -45,6 +45,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "visitId"
+            },
+            "name": "MyField7",
+            "designerId": "4577d512-f1dc-4545-a39f-2a4083af2635"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "doctor"
             },
             "name": "MyField2",

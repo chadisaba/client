@@ -23,7 +23,6 @@ Ext.define('MyApp.view.ReportForm', {
         'MyApp.view.ReportGridPanel',
         'MyApp.view.ReportHasStudyGrid',
         'Ext.toolbar.Toolbar',
-        'Ext.button.Button',
         'Ext.toolbar.Spacer',
         'Ext.form.field.ComboBox',
         'Ext.grid.Panel'
@@ -49,41 +48,16 @@ Ext.define('MyApp.view.ReportForm', {
                     },
                     items: [
                         {
-                            xtype: 'button',
-                            itemId: 'saveBtnItemId',
-                            iconCls: 'fa fa-floppy-o',
-                            text: 'save',
-                            listeners: {
-                                click: 'onSaveBtnItemIdClick'
-                            }
-                        },
-                        {
                             xtype: 'tbspacer',
                             width: 10
                         },
                         {
-                            xtype: 'button',
-                            itemId: 'validateBtnItemId',
-                            iconCls: 'fa fa-check',
-                            text: 'validate'
-                        },
-                        {
                             xtype: 'tbspacer',
                             width: 10
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'reviewBtnItemId',
-                            iconCls: 'fa fa-exclamation-triangle',
-                            text: 'review'
                         }
                     ]
                 }
             ]
-        },
-        {
-            xtype: 'toolbar',
-            dock: 'top'
         }
     ],
     items: [
@@ -114,7 +88,11 @@ Ext.define('MyApp.view.ReportForm', {
                     width: 415,
                     manageHeight: false,
                     listeners: {
-                        selectReportEvent: 'onGridpanelSelectReportEvent'
+                        selectReportEvent: 'onGridpanelSelectReportEvent',
+                        addReportEvent: 'onGridpanelAddReportEvent',
+                        saveReportEvent: 'onGridpanelSaveReportEvent',
+                        validateReportEvent: 'onGridpanelValidateReportEvent',
+                        reviewReportEvent: 'onGridpanelReviewReportEvent'
                     }
                 },
                 {
@@ -126,10 +104,7 @@ Ext.define('MyApp.view.ReportForm', {
                     flex: 1,
                     itemId: 'reportHasStudyItemId',
                     width: 147,
-                    manageHeight: false,
-                    listeners: {
-                        addReportEvent: 'onGridpanelAddReportEvent'
-                    }
+                    manageHeight: false
                 }
             ]
         }

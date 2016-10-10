@@ -47,38 +47,6 @@
                     "designerId": "f02522f6-3ba8-42a7-b3a9-2e078dcbbe59",
                     "cn": [
                         {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconCls": "fa fa-floppy-o",
-                                "itemId": "saveBtnItemId",
-                                "text": "save"
-                            },
-                            "name": "MyButton6",
-                            "designerId": "f9ed4c4c-f4c5-4dd3-9d04-24e8f9ca0f6a",
-                            "cn": [
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onSaveBtnItemIdClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onSaveBtnItemIdClick",
-                                    "designerId": "8744b7a3-32c7-445b-beb9-18da47464f65"
-                                }
-                            ]
-                        },
-                        {
                             "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
@@ -92,21 +60,6 @@
                             "designerId": "39020760-710c-4f90-a3fe-0e41e987ea92"
                         },
                         {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconCls": "fa fa-check",
-                                "itemId": "validateBtnItemId",
-                                "text": "validate"
-                            },
-                            "name": "MyButton8",
-                            "designerId": "22dc28e5-e819-4791-ae16-bfc79f0f7b14"
-                        },
-                        {
                             "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
@@ -118,38 +71,10 @@
                             },
                             "name": "MySpacer11",
                             "designerId": "b61bcb61-ad04-4524-982b-5d60670725ff"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconCls": "fa fa-exclamation-triangle",
-                                "itemId": "reviewBtnItemId",
-                                "text": "review"
-                            },
-                            "name": "MyButton9",
-                            "designerId": "1fc66640-5677-47cf-a282-afba4f38a160"
                         }
                     ]
                 }
             ]
-        },
-        {
-            "type": "Ext.toolbar.Toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top"
-            },
-            "name": "MyToolbar4",
-            "designerId": "40796754-1dc4-41c5-9a37-a40d52d605ef"
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -233,6 +158,78 @@
                             },
                             "name": "onGridpanelSelectReportEvent",
                             "designerId": "307ede0b-f851-4f5b-a0bd-2609a2e25f5d"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelAddReportEvent",
+                                "name": "addReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelAddReportEvent",
+                            "designerId": "9d018847-a866-4ab6-b320-419b2a4fa1dc"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelSaveReportEvent",
+                                "name": "saveReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelSaveReportEvent",
+                            "designerId": "c817a9bf-0106-4c08-80ce-c59b6b310430"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelValidateReportEvent",
+                                "name": "validateReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelValidateReportEvent",
+                            "designerId": "3f23ac4c-842f-4bcf-aad5-16dd17e2d411"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "gridpanel"
+                                ],
+                                "fn": "onGridpanelReviewReportEvent",
+                                "name": "reviewReportEvent",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelReviewReportEvent",
+                            "designerId": "2719aa27-f100-46f0-a31b-e7c2dc4ec004"
                         }
                     ]
                 },
@@ -265,27 +262,7 @@
                     },
                     "name": "reporthasstudygrid",
                     "designerId": "93e8b618-45b2-4aaf-ba9c-b1af2b141305",
-                    "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|params": [
-                                    "gridpanel"
-                                ],
-                                "fn": "onGridpanelAddReportEvent",
-                                "name": "addReportEvent",
-                                "scope": "me"
-                            },
-                            "name": "onGridpanelAddReportEvent",
-                            "designerId": "8ef42c66-ecf6-4c6a-957a-1407d42793cb"
-                        }
-                    ]
+                    "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0"
                 }
             ]
         }

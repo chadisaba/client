@@ -26,10 +26,13 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
         }
     },
-    getDataToBeSaved: function () {
-        return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
-    },
+    reportStatusRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+            var rend=func.Report.reportRenderer(value);
+        metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(rend.tooltip) + '"';
+        var result=Utility.renderer.btnRenderer(rend.color,rend.icon);
 
+        return result;
+    },
     refreshGrid: function () {
         if(this.reportDataArray)
             this.initGrid(this.filters,this.reportDataArray);
@@ -43,7 +46,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
             function (resolve, reject) {
                 var mainTableObject = {};
                 mainTableObject.tableName = 'REPORT';
-                mainTableObject.fieldsArray=['reportId','reportName','reportDate','reportStatus'];
+                mainTableObject.fieldsArray=['reportId','reportName','reportDate','reportStatus','visitId','doctorId'];
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
                 joinTablesArray.push(
@@ -54,7 +57,6 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
                                 _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
-
                             }
                             resolve(_result);
                         })
@@ -73,19 +75,33 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
           var me=this;
           var grid=me.getView();
-          view.getViewModel().getStore('ReportGridStore');
+         grid.getViewModel().getStore('ReportGridStore');
           var selectedRec;
           if(grid.getSelectionModel().hasSelection())
           {
-                selectedRec=grid.getSelectionModel().getSelection()[0];
+              selectedRec=grid.getSelectionModel().getSelection()[0];
+              if(selectedRec.get('added')||selectedRec.get('modified'))
+                    me.fireViewEvent('saveReportEvent',selectedRec);
+              else
+              {
+                  Ext.MessageBox.alert('Info','Click on the modifiy button to edit the report');
+              }
           }
-         selectedRec.set('modified',false);
-         selectedRec.set('added',false);
+
     },
 
 
     onValidateBtnItemIdClick: function(button, e, eOpts) {
 
+        var me=this;
+        var grid=me.getView();
+        view.getViewModel().getStore('ReportGridStore');
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            me.fireViewEvent('validateReportEvent',selectedRec);
+        }
     },
 
     onModifyBtnItemIdClick: function(button, e, eOpts) {
@@ -103,6 +119,15 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
     onReviewBtnItemIdClick: function(button, e, eOpts) {
 
+        var me=this;
+        var grid=me.getView();
+        view.getViewModel().getStore('ReportGridStore');
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            me.fireViewEvent('reviewReportEvent',selectedRec);
+        }
 
     },
     onGridpanelSelectionChange: function(model, selected, eOpts) {

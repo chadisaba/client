@@ -31,6 +31,9 @@ Ext.define('MyApp.model.ReportModel', {
             name: 'doctorId'
         },
         {
+            name: 'visitId'
+        },
+        {
             name: 'doctor'
         },
         {

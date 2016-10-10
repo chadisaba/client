@@ -6,7 +6,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
         studyVisitController.selectedStudiesByReport(_selectedRec.get('reportId'));
 
-        me.editReport(_selectedRec.get('reportId'),me.userId,me.siteId);
+        me.editReport(_selectedRec.get('reportId'),me.doctorId,me.siteId);
     },
     onGridpanelAddReportEvent: function(_grid,_selectedRec) {
         var me=this;
@@ -14,7 +14,28 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
         me.getView().down('#reportHasStudyItemId').getSelectionModel().selectAll();
 
-        func.Report.createNewReport(me.siteId,me.userId,myMask);
+        func.Report.createNewReport(me.siteId,me.doctorId,myMask);
+    },
+    onGridpanelSaveReportEvent: function(gridpanel,_selectedRec) {
+
+        var me=this;
+        var html=
+            '<h1 style="color: #5e9ca0;font-size: 30px;" xmlns="http://www.w3.org/1999/html">'+
+            'Le compte rendu a &eacute;t&eacute; enregistr&eacute;</style></h1>';
+
+        var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
+        myMask.show();
+        var selectedStudyRec=me.getView().down('#reportHasStudyItemId').getSelectionModel().getSelection();
+
+        func.Report.saveReport(_selectedRec,selectedStudyRec,1,false,true,myMask);
+    },
+
+    onGridpanelValidateReportEvent: function(gridpanel,_selectedRec) {
+
+    },
+
+    onGridpanelReviewReportEvent: function(gridpanel,_selectedRec) {
+
     },
 
     initForm:function(_visitId,_doctorId,_siteId)
@@ -93,13 +114,13 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
      * open an existing report
      * @param _reportId
      */
-    editReport:function(_reportId,_userId,_siteId)
+    editReport:function(_reportId,_doctorId,_siteId)
     {
         var me=this;
         var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
         var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");
         var reportFooterPromise=CommonDirect.getData('report_hf',
-            [{name:'userId',value:_userId},
+            [{name:'doctorId',value:_doctorId},
             {name:'reporthfType',value:2}]
         );
         var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
@@ -161,18 +182,6 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 myMask.hide();
             });
     },
-     onSaveBtnItemIdClick: function(button, e, eOpts) {
-         var me=this;
-         var html=
-             '<h1 style="color: #5e9ca0;font-size: 30px;" xmlns="http://www.w3.org/1999/html">'+
-             'Le compte rendu a &eacute;t&eacute; enregistr&eacute;</style></h1>';
-
-         var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
-         myMask.show();
-         var selectedStudyRec=me.getView().down('#reportHasStudyItemId').getSelectionModel().getSelection();
-         func.Report.saveReport(me.doctorId,me.visitId,selectedStudyRec,1,false,true,myMask);
-    },
-
 
     writeBodyMessage:function(msg)
     {
