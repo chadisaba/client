@@ -19,8 +19,6 @@ Ext.Loader.setConfig({
 });
 
 
-Ext.Loader.setPath('Ext.ux.inputs.AdvancedCombobox','packages/AdvancedCombobox/src/AdvancedCombobox.js');
-
 Ext.application({
 
     requires: [
@@ -78,12 +76,23 @@ Ext.application({
     ],
 
     launch: function() {
-         if(appType==="office")
-                    Ext.create('MyApp.view.OfficeViewport');
-                else
-                    Ext.create('MyApp.view.MyViewport1');
 
+
+        if(appType==="office"){
+            Office.initialize = function (reason) {
+
+                Ext.create('MyApp.view.OfficeViewport');
                 Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
+            }
+
+        }
+        else{
+            Ext.create('MyApp.view.MyViewport1');
+            Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
+        }
+
+
+
     }
 
 });
