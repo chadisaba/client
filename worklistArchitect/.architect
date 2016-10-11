@@ -2476,15 +2476,16 @@
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "5e3dbabe-784f-4b37-bc41-cc39c3565974",
             "a8892df7-c6d1-4fee-a793-5de2fdeedc79",
-            "cabc7be2-a2f3-42a9-b874-0abfb76aabf2"
+            "cabc7be2-a2f3-42a9-b874-0abfb76aabf2",
+            "application"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "5e3dbabe-784f-4b37-bc41-cc39c3565974",
-        "selectedInstance": "eb946346-3c92-4499-9a17-60581d0c3444"
+        "topInstance": "application",
+        "selectedInstance": "031d32a2-5475-4136-8387-c5d66d538904"
     },
     "editMode": "code",
     "userSettings": {
