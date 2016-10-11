@@ -39,6 +39,10 @@ Ext.define('MyApp.view.ReportFormViewController', {
 
     onGridpanelReviewReportEvent: function(gridpanel) {
 
+    },
+
+    onFormAfterRender: function(component, eOpts) {
+
     }
 
 });

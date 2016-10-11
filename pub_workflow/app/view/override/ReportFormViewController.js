@@ -1,6 +1,15 @@
 Ext.define('MyApp.view.override.ReportFormViewController', {
     override: 'MyApp.view.ReportFormViewController',
 
+    onFormAfterRender: function(component, eOpts) {
+
+        var me=this;
+        Ext.on('reportSavedEvent',function()
+        {
+            this.getView().down('#reportGridItemId').getController().quitEdit();
+        },me);
+
+    },
     onGridpanelSelectReportEvent: function(_grid,_selectedRec) {
         var me=this;
         var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();

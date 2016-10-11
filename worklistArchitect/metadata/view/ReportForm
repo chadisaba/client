@@ -265,6 +265,21 @@
                     "masterInstanceId": "64b307cb-5940-4443-90d5-6c5089ed03e0"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onFormAfterRender",
+            "designerId": "eb946346-3c92-4499-9a17-60581d0c3444"
         }
     ]
 }

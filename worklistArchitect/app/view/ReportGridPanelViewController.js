@@ -55,6 +55,10 @@ Ext.define('MyApp.view.ReportGridPanelViewController', {
 
     onGridpanelBeforeSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onGridpanelAfterRender: function(component, eOpts) {
+
     }
 
 });

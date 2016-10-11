@@ -499,6 +499,21 @@
             },
             "name": "onGridpanelBeforeSelect",
             "designerId": "4aea3744-390f-4685-aaca-0c7acd4cced5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onGridpanelAfterRender",
+            "designerId": "bf782465-8a06-48d5-8ff8-cb8951030f13"
         }
     ]
 }

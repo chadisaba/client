@@ -108,6 +108,9 @@ Ext.define('MyApp.view.ReportForm', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        afterrender: 'onFormAfterRender'
+    }
 
 });

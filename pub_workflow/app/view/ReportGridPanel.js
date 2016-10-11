@@ -167,7 +167,8 @@ Ext.define('MyApp.view.ReportGridPanel', {
     },
     listeners: {
         selectionchange: 'onGridpanelSelectionChange',
-        beforeselect: 'onGridpanelBeforeSelect'
+        beforeselect: 'onGridpanelBeforeSelect',
+        afterrender: 'onGridpanelAfterRender'
     },
 
     initConfig: function(instanceConfig) {
