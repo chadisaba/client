@@ -388,6 +388,53 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "2b1f7061-b179-415f-bd4a-336d2b047293",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "glyph": "xf0e2@FontAwesome",
+                                "itemId": "cancelBtnItemId",
+                                "text": "cancel"
+                            },
+                            "name": "MyButton",
+                            "designerId": "0d682c1c-0dab-40f4-a77b-c753aac0ed42",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCancelBtnItemIdClick",
+                                    "designerId": "638c6242-17a1-49a3-95a3-1690881451f0"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

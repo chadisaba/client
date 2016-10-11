@@ -45,6 +45,10 @@ Ext.define('MyApp.view.ReportGridPanelViewController', {
 
     },
 
+    onCancelBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onGridpanelSelectionChange: function(model, selected, eOpts) {
 
     },
