@@ -11,22 +11,42 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
             if(_reportDataArray)
             {
                 me.reportDataArray=_reportDataArray;
-                Utility.grid.loadGrid(view, _reportDataArray, view.getViewModel().getStore('ReportGridStore'));
+                Utility.grid.loadGrid(view, _reportDataArray, me.getStore());
             }
             else
             {
                 this.getResultArray(me.filters).then(
                     function (data) {
-                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ReportGridStore'));
+                        Utility.grid.loadGrid(view, data, me.getStore());
                     }
                 );
             }
         }
     },
+    getStore:function(){
+        var me=this;
+        var view = me.getView();
+        return view.getViewModel().getStore('ReportGridStore');
+    },
+    /**
+     * this methode is called when adding report form the 2nd report
+     * @param _reportObj
+     */
+    addReport:function(_reportObj)
+    {
+        var me=this,view=this.getView();
+
+        var store=me.getStore();
+        store.insert(0,_reportObj);
+        view.getSelectionModel().select(0);
+        me.enterEditMode();
+
+
+
+    },
     onSaveBtnItemIdClick: function(button, e, eOpts) {
         var me=this;
         var grid=me.getView();
-        grid.getViewModel().getStore('ReportGridStore');
         var selectedRec;
         if(grid.getSelectionModel().hasSelection())
         {
@@ -43,7 +63,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
         var me=this;
         var grid=me.getView();
-        grid.getViewModel().getStore('ReportGridStore');
+
         var selectedRec;
         if(grid.getSelectionModel().hasSelection())
         {
@@ -64,11 +84,15 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
         }
 
     },
+    onAddBtnItemIdClick: function(button, e, eOpts) {
+        this.fireViewEvent('addReportEvent');
+    },
+
     onReviewBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
         var grid=me.getView();
-        grid.getViewModel().getStore('ReportGridStore');
+
         var selectedRec;
         if(grid.getSelectionModel().hasSelection())
         {
@@ -93,7 +117,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
             }
             else
             {
-                me.fireViewEvent('addReportEvent',selected[0]);
+               // me.fireViewEvent('addReportEvent',selected[0]);
 
 
             }
@@ -115,8 +139,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     },
     onGridpanelBeforeSelect: function(rowmodel, record, index, eOpts) {
         var me=this;
-        var grid=me.getView();
-        var store= grid.getViewModel().getStore('ReportGridStore');
+        var store= me.getStore();
         var result=true;
         store.each(function(_rec)
         {
@@ -180,7 +203,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     {
         var me=this;
         var grid=me.getView();
-       var store= grid.getViewModel().getStore('ReportGridStore');
+       var store= me.getStore();
         var recToRemove=[];
         var selectedRec;
         if(grid.getSelectionModel().hasSelection())
@@ -199,7 +222,6 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
             });
             store.remove(recToRemove);
         }
-
         grid.down('#saveBtnItemId').setDisabled(true);
         grid.down('#cancelBtnItemId').setDisabled(true);
         grid.down('#reviewBtnItemId').setDisabled(true);
@@ -207,10 +229,5 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
         grid.down('#addBtnItemId').setDisabled(false);
         grid.down('#modifyBtnItemId').setDisabled(false);
-
-
     }
-
-
-
 });
