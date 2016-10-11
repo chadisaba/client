@@ -491,8 +491,7 @@ func.Report={
                         return ReportDirect.saveReport(reportBody,reportHeader,selectedStudyArray)
                             .then(function()
                             {
-                                _reportRec.set('modified',false);
-                                _reportRec.set('added',false);
+                                Ext.GlobalEvents.fireEvent('reportSavedEvent');
                                 _myMask.hide();
                             })
                             .catch(function(_err)
