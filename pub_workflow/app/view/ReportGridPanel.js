@@ -143,6 +143,20 @@ Ext.define('MyApp.view.ReportGridPanel', {
                             }
                         }
                     ]
+                },
+                {
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'cancelBtnItemId',
+                            glyph: 'xf0e2@FontAwesome',
+                            text: 'cancel',
+                            listeners: {
+                                click: 'onCancelBtnItemIdClick'
+                            }
+                        }
+                    ]
                 }
             ]
         }

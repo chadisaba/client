@@ -79,6 +79,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                     });
                     reportGridController.initGrid(null,_visitId,[reportObject]);
+                    reportGridController.enterEditMode();
 
                 }
                 else
