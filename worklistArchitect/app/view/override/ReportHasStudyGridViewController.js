@@ -54,7 +54,22 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
                   }
               )
           })
-
+    },
+    selectStudies:function(_studiesArray)
+    {
+        var view = this.getView();
+        view.getSelectionModel().deselectAll();
+        var store=view.getViewModel().getStore('ReportHasStudyStore');
+        _studiesArray.forEach(
+            function(_item)
+            {
+                var rec=store.findRecord('studyId',_item.studyId);
+                if(rec)
+                {
+                    view.getSelectionModel().select(rec);
+                }
+            }
+        )
     },
 
     refreshGrid: function () {

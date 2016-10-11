@@ -21,7 +21,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         var me=this;
         var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
 
-        me.getView().down('#reportHasStudyItemId').getSelectionModel().selectAll();
+       // me.getView().down('#reportHasStudyItemId').getSelectionModel().selectAll();
 
         func.Report.createNewReport(me.siteId,me.doctorId,myMask);
     },
@@ -70,49 +70,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                 if( reportArray.length==0)
                 {
-                    var win=Ext.create('Ext.window.Window', {
-                        height:400,
-                        width:500,
-                        modal:true,
-                        items:[
-                            {
-                                xtype:'reporthasstudygrid',
-                                listeners: {
-                                    closeInfoWinEvent: function(){
-                                        this.up().close();
-                                    }
-                                }
-                            }
-                            ],
-                        dockedItems: [{
-                            xtype: 'toolbar',
-                            dock: 'bottom',
-                            items: [{
-                                xtype:'button',
-                                text:'OK'
-                            }]
-                        }]
-
-                    }).show();
-                    // in this case we create the first report for this visit
-
-                    var reportObject={
-                        doctorId:_doctorId,
-                        reportDate:new Date(),
-                        reportId:UUID(),
-                        visitId:_visitId,
-                        reportContentIsHtml:false,
-                        reportStatus:1,
-                        reportName:"",
-                        added:true
-                    };
-                    visitStudyArray.forEach(function(_item)
-                    {
-                        reportObject.reportName+=", "+ _item.studyCode;
-
-                    });
-                    reportGridController.initGrid(null,_visitId,[reportObject]);
-                    reportGridController.enterEditMode();
+                   me.addReport(_doctorId,_visitId);
 
                 }
                 else
@@ -144,9 +102,71 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         }*/
 
     },
+
+    addReport:function(_doctorId,_visitId,_isFirstReport)
+    {
+        var me=this;
+        var win=Ext.create('Ext.window.Window', {
+            height:400,
+            width:200,
+            modal:true,
+            items:[
+                {
+                    xtype:'reporthasstudygrid',
+                    itemId:'selectedStudyGridItemId'
+                }
+            ],
+            dockedItems: [{
+                xtype: 'toolbar',
+                dock: 'bottom',
+                items: [{
+                    xtype:'button',
+                    text:'OK',
+                    listeners:{
+                        click:function(_btn)
+                        {
+                            var reportObject={
+                                doctorId:_doctorId,
+                                reportDate:new Date(),
+                                reportId:UUID(),
+                                visitId:_visitId,
+                                reportContentIsHtml:false,
+                                reportStatus:1,
+                                reportName:"",
+                                added:true
+                            };
+                            var visitStudyArray=win.down("#selectedStudyGridItemId").getSelectionModel().getSelection();
+                            visitStudyArray.forEach(function(_item)
+                            {
+                                reportObject.reportName+=", "+ _item.studyCode;
+
+                            });
+                            var reportGridController = me.getView().down('#reportGridItemId').getController();
+                            if(_isFirstReport){
+
+                                reportGridController.initGrid(null,_visitId,[reportObject]);
+                                reportGridController.enterEditMode();
+
+                            }
+                            else
+                            {
+                                reportGridController.addReport(reportObject);
+                            }
+                            var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
+                            studyVisitController.selectStudies(visitStudyArray);
+
+                        }
+                    }
+                }]
+            }]
+
+        }).show()
+    },
     /**
      * open an existing report
      * @param _reportId
+     * @param _doctorId
+     * @param _siteId
      */
     editReport:function(_reportId,_doctorId,_siteId)
     {
