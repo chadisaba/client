@@ -70,6 +70,30 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                 if( reportArray.length==0)
                 {
+                    var win=Ext.create('Ext.window.Window', {
+                        height:400,
+                        width:500,
+                        modal:true,
+                        items:[
+                            {
+                                xtype:'reporthasstudygrid',
+                                listeners: {
+                                    closeInfoWinEvent: function(){
+                                        this.up().close();
+                                    }
+                                }
+                            }
+                            ],
+                        dockedItems: [{
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [{
+                                xtype:'button',
+                                text:'OK'
+                            }]
+                        }]
+
+                    }).show();
                     // in this case we create the first report for this visit
 
                     var reportObject={
