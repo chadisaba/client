@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporthfgrid",
+        "designer|userClassName": "ReportHFGridViewModel"
+    },
+    "designerId": "49596930-9b19-4df7-bdc5-10b4457f61ef",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReportHFModel",
+                "name": "ReportHFStore"
+            },
+            "name": "MyStore2",
+            "designerId": "583b2eba-a536-42d5-aadb-1474dbb31e7f"
+        }
+    ]
+}

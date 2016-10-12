@@ -1,0 +1,268 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporthfgrid",
+        "designer|userClassName": "ReportHFGrid",
+        "height": null,
+        "store": [
+            "{ReportHFStore}"
+        ],
+        "title": "Header & Footer templates",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "23efb3f9-587a-406c-9a2b-a43cbd607471",
+    "viewControllerInstanceId": "74858daa-842e-4e73-a38d-b2a23c84e4b8",
+    "viewModelInstanceId": "49596930-9b19-4df7-bdc5-10b4457f61ef",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable1",
+            "designerId": "cf348747-8dc5-44fc-84b3-c3c741ce7161"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "doctor",
+                "text": "doctor"
+            },
+            "name": "MyColumn4",
+            "designerId": "727b656b-4be9-409f-8f00-eb6d4eaa5425"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "site",
+                "text": "site"
+            },
+            "name": "MyColumn3",
+            "designerId": "e7b09de5-4f8d-4336-a6ec-19188a3a9df0"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "siteId",
+                "format": "00",
+                "hidden": true,
+                "text": "Site Id"
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "2b1a38fd-f446-4e69-9db3-7a1e3153b132"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "doctorId",
+                "format": "00",
+                "text": "Doctor Id"
+            },
+            "name": "MyNumberColumn3",
+            "designerId": "60f46632-f45c-40d9-a0eb-532cec9bdd3e"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "reporthfType",
+                "format": "00",
+                "text": "type"
+            },
+            "name": "MyNumberColumn2",
+            "designerId": "e4ba3273-838b-4edc-a5e0-0a8784782c75"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "reporthfName",
+                "text": "name"
+            },
+            "name": "MyColumn5",
+            "designerId": "335a2ea6-e467-4bfc-9d10-e2c3ed54e4df"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "10d59142-3bf9-4e6a-8b28-8ddcf1a1da0c",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "da56a9b5-6910-4134-8443-194f50e8f382",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-plus-circle",
+                                "itemId": "addButtonItemId",
+                                "text": "Add"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "9db30c65-eee1-4cdd-b38e-95792ed627df",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAddButtonItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAddButtonItemIdClick",
+                                    "designerId": "51215d90-6c0d-4696-93c6-788b8250350f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "21fe2a2d-1f74-483d-92c9-64c7c86b3ab3",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-edit",
+                                "itemId": "modifyBtnItemId",
+                                "text": "Modify"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "019a64dc-0c57-4f90-88ee-a244ac81288e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onModifyBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onModifyBtnItemIdClick",
+                                    "designerId": "ee13ce4d-fb7c-43d3-9542-1437632fdf49"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelectionChange",
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "0fdc3bf5-30c2-4e96-b57d-d50fda434bd9"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processReportHFGrid",
+                "implHandler": [
+                    "GridAddPlugins.addGridInfoColumnPlugin(this);"
+                ]
+            },
+            "name": "processReportHFGrid",
+            "designerId": "6f468d45-4bb2-4656-b627-1988ab4b49e4"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporthfgrid",
+        "designer|userClassName": "ReportHFGridViewController"
+    },
+    "designerId": "74858daa-842e-4e73-a38d-b2a23c84e4b8"
+}
