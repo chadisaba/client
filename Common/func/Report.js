@@ -491,8 +491,7 @@ func.Report={
                         return ReportDirect.saveReport(reportBody,reportHeader,selectedStudyArray)
                             .then(function()
                             {
-                                Ext.GlobalEvents.fireEvent('reportSavedEvent',_reportRec);
-
+                                Ext.GlobalEvents.fireEvent('reportSavedEvent');
                                 _myMask.hide();
                             })
                             .catch(function(_err)
