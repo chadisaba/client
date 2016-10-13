@@ -49,6 +49,10 @@ Ext.define('MyApp.view.ReportGridPanelViewController', {
 
     },
 
+    onTemplateSettingsBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onGridpanelSelectionChange: function(model, selected, eOpts) {
 
     },

@@ -39,6 +39,20 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
 
 
     },
+    onTemplateSettingsBtnItemIdClick: function(button, e, eOpts) {
+         Ext.create('Common.ux.window.FullScreenWindow', {
+                             title:translate('header & footer settings'),
+
+                             items:{
+                                 region: 'center',
+                                 header:false,
+                                 xtype:'reporthfgrid'
+
+                                 }
+                             }
+                         ).show();
+    },
+
     onSaveBtnItemIdClick: function(button, e, eOpts) {
         var me=this;
         var grid=me.getView();

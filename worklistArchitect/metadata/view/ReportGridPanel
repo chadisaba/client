@@ -435,6 +435,38 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "templateSettingsBtnItemId",
+                        "layout|flex": null,
+                        "text": "Template settings"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "57088de8-2969-4d25-bf1b-594cc9104713",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTemplateSettingsBtnItemIdClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onTemplateSettingsBtnItemIdClick",
+                            "designerId": "fef78205-577c-4c1d-a69d-9091e014f8c2"
+                        }
+                    ]
                 }
             ]
         },

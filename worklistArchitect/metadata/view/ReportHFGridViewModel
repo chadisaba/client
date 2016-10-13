@@ -24,6 +24,34 @@
             },
             "name": "MyStore2",
             "designerId": "583b2eba-a536-42d5-aadb-1474dbb31e7f"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorComboModel",
+                "name": "DoctorStore"
+            },
+            "name": "MyStore10",
+            "designerId": "3065b0f1-d955-476b-9209-347e5eb80630"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SiteStore"
+            },
+            "name": "MyStore11",
+            "designerId": "151c90a5-ab90-4ab3-b7cc-5c3673a29d7e"
         }
     ]
 }

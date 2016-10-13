@@ -157,6 +157,14 @@ Ext.define('MyApp.view.ReportGridPanel', {
                             }
                         }
                     ]
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'templateSettingsBtnItemId',
+                    text: 'Template settings',
+                    listeners: {
+                        click: 'onTemplateSettingsBtnItemIdClick'
+                    }
                 }
             ]
         }

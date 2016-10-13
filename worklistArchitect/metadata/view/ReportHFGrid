@@ -45,7 +45,29 @@
                 "text": "doctor"
             },
             "name": "MyColumn4",
-            "designerId": "727b656b-4be9-409f-8f00-eb6d4eaa5425"
+            "designerId": "727b656b-4be9-409f-8f00-eb6d4eaa5425",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "doctorComboItemId",
+                        "queryMode": "local",
+                        "store": [
+                            "{DoctorStore}"
+                        ]
+                    },
+                    "name": "MyComboBox6",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "12c66b78-b25d-4cda-8b54-b593c22f5aa5"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -59,7 +81,29 @@
                 "text": "site"
             },
             "name": "MyColumn3",
-            "designerId": "e7b09de5-4f8d-4336-a6ec-19188a3a9df0"
+            "designerId": "e7b09de5-4f8d-4336-a6ec-19188a3a9df0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteComboItemId",
+                        "queryMode": "local",
+                        "store": [
+                            "{SiteStore}"
+                        ]
+                    },
+                    "name": "MyComboBox7",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "d2685604-5f0f-4d34-974d-f271de06f417"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Number",
@@ -93,7 +137,7 @@
             "designerId": "60f46632-f45c-40d9-a0eb-532cec9bdd3e"
         },
         {
-            "type": "Ext.grid.column.Number",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -101,11 +145,39 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "reporthfType",
-                "format": "00",
                 "text": "type"
             },
-            "name": "MyNumberColumn2",
-            "designerId": "e4ba3273-838b-4edc-a5e0-0a8784782c75"
+            "name": "MyColumn6",
+            "designerId": "e4ba3273-838b-4edc-a5e0-0a8784782c75",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "            if(value==1)",
+                            "                return translate(\"header\");",
+                            "else return translate('footer');"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "ed2e85e2-3f72-4a2a-9cc0-9cbac0e48700"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -116,10 +188,26 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "reporthfName",
+                "flex": 1,
                 "text": "name"
             },
             "name": "MyColumn5",
-            "designerId": "335a2ea6-e467-4bfc-9d10-e2c3ed54e4df"
+            "designerId": "335a2ea6-e467-4bfc-9d10-e2c3ed54e4df",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "nameTextFieldItemId"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "fbed4b08-33a1-4d9d-b99e-864554e020cd"
+                }
+            ]
         },
         {
             "type": "Ext.toolbar.Toolbar",
@@ -225,6 +313,69 @@
                                     "designerId": "ee13ce4d-fb7c-43d3-9542-1437632fdf49"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator1",
+                    "designerId": "37278b9e-bb4f-4114-b20b-fae5e0bd692c"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Choisir le type",
+                        "itemId": "typeRadioBtnItemId",
+                        "layout|flex": null,
+                        "value": null,
+                        "width": 400
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "2fb47e82-2681-4728-96a2-6e48dc80cf60",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "header template",
+                                "checked": true,
+                                "fieldLabel": null,
+                                "inputValue": "1"
+                            },
+                            "name": "MyRadio",
+                            "designerId": "cceac897-86e0-4fb1-a066-02710212669e"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "footer template",
+                                "fieldLabel": null,
+                                "inputValue": "2"
+                            },
+                            "name": "MyRadio1",
+                            "designerId": "daf1fc72-2938-4092-a042-4bf865d0121b"
                         }
                     ]
                 }
