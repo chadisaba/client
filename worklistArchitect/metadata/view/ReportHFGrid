@@ -317,6 +317,100 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "4c9cba29-1b14-436b-a01d-b5d9a4ace19f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-edit",
+                                "itemId": "saveBtnItemId",
+                                "text": "save"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "dbb43d47-4047-49bb-816c-a35c490e1910",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSaveBtnItemIdClick",
+                                    "designerId": "52de95f7-b92b-43a0-867e-df265b944bef"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "5fa9ce2a-7049-43bc-a745-58ce4fecaacc",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-edit",
+                                "itemId": "cancelBtnItemId",
+                                "text": "cancel"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "ce4f9971-2efd-408b-970d-38ab3cbb2474",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCancelBtnItemIdClick",
+                                    "designerId": "6eddd3c6-4431-4393-b952-8d651416c962"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.toolbar.Separator",
                     "reference": {
                         "name": "items",
@@ -414,6 +508,21 @@
             },
             "name": "processReportHFGrid",
             "designerId": "6f468d45-4bb2-4656-b627-1988ab4b49e4"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBeforeSelect",
+                "name": "beforeselect",
+                "scope": "me"
+            },
+            "name": "onGridpanelBeforeSelect",
+            "designerId": "b35b79d9-b418-4c4b-9517-b56c2c0337bd"
         }
     ]
 }

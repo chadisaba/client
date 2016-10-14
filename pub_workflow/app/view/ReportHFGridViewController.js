@@ -29,7 +29,19 @@ Ext.define('MyApp.view.ReportHFGridViewController', {
 
     },
 
+    onSaveBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
+    onCancelBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onGridpanelSelectionChange: function(model, selected, eOpts) {
+
+    },
+
+    onGridpanelBeforeSelect: function(rowmodel, record, index, eOpts) {
 
     }
 

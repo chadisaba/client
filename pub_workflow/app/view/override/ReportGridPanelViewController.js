@@ -110,17 +110,14 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     },
 
     onReviewBtnItemIdClick: function(button, e, eOpts) {
-
         var me=this;
         var grid=me.getView();
-
         var selectedRec;
         if(grid.getSelectionModel().hasSelection())
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             me.fireViewEvent('reviewReportEvent',selectedRec);
         }
-
     },
     onCancelBtnItemIdClick: function(button, e, eOpts) {
         var me=this;

@@ -134,6 +134,34 @@ Ext.define('MyApp.view.ReportHFGrid', {
                     ]
                 },
                 {
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'saveBtnItemId',
+                            iconCls: 'fa fa-edit',
+                            text: 'save',
+                            listeners: {
+                                click: 'onSaveBtnItemIdClick'
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'cancelBtnItemId',
+                            iconCls: 'fa fa-edit',
+                            text: 'cancel',
+                            listeners: {
+                                click: 'onCancelBtnItemIdClick'
+                            }
+                        }
+                    ]
+                },
+                {
                     xtype: 'tbseparator'
                 },
                 {
@@ -159,7 +187,8 @@ Ext.define('MyApp.view.ReportHFGrid', {
         }
     ],
     listeners: {
-        selectionchange: 'onGridpanelSelectionChange'
+        selectionchange: 'onGridpanelSelectionChange',
+        beforeselect: 'onGridpanelBeforeSelect'
     },
 
     initConfig: function(instanceConfig) {

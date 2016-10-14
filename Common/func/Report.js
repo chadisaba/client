@@ -229,10 +229,14 @@ func.Report={
                 }
             });
     },
-
-    saveHeaderAndFooterTemplate:function(_headerIsHtml,_footerIsHtml,_view)
+    /**
+     * save header or footer template
+     * @param _reporthfObject : Object report template header or footer  object (reporthf)
+     * @param _view: Object
+     */
+    saveHeaderOrFooterTemplate:function(_reporthfObject,_view)
     {
-        var myMask = new Ext.LoadMask({msg:translate("Saving header and footer template"),target:_view});
+        var myMask = new Ext.LoadMask({msg:translate("Saving header & footer template"),target:_view});
         myMask.show();
         // Run a batch operation against the Word object model.
         Word.run(function (context) {
@@ -245,38 +249,27 @@ func.Report={
                 return context.sync().then(function () {
                     // Create a proxy object the primary header of the first section.
                     // Note that the header is a body object.
-                    var myHeader = mySections.items[0].getHeader("primary");
-                    // Queue a command to insert text at the end of the header.
-                    var headerContent;
-                    if(_headerIsHtml)
-                        headerContent = myHeader.getHtml();
+                    if(_reporthfObject.reporthfType==1){
+                        var myHeader = mySections.items[0].getHeader("primary");
+                        // Queue a command to insert text at the end of the header.
+
+                        if(_reporthfObject.reportContentIsHtml)
+                            _reporthfObject.reporthfContent = myHeader.getHtml();
                         else
-                         headerContent = myHeader.getOoxml();
+                            _reporthfObject.reporthfContent = myHeader.getOoxml();
+                    }
 
-                    var myFooter = mySections.items[0].getFooter("primary");
-                    var footerContent;
-                    if(_footerIsHtml)
-                        footerContent = myFooter.getHtml();
-                    else
-                        footerContent = myFooter.getOoxml();
-
+                    if(_reporthfObject.reporthfType==2){
+                        var myFooter = mySections.items[0].getFooter("primary");
+                        if(_reporthfObject.reportContentIsHtml)
+                            _reporthfObject.reporthfContent = myFooter.getHtml();
+                        else
+                            _reporthfObject.reporthfContent = myFooter.getOoxml();
+                    }
                     // Synchronize the document state by executing the queued commands,
                     // and return a promise to indicate task completion.
                     return context.sync().then(function () {
-                        // save the header into the database
-                        var reportHeader={};
-                        reportHeader.reporthfType=1;
-                        reportHeader.userId=window.localStorage.getItem('smartmed-userId');
-                        reportHeader.reporthfName="report Header  "+reportHeader.userId;
-                        reportHeader. reporthfContent=headerContent.value;
-
-                        var reportFooter={};
-                        reportFooter.reporthfType=2;
-                        reportFooter.userId=window.localStorage.getItem('smartmed-userId');
-                        reportFooter.reporthfName="report Footer "+reportHeader.userId;
-                        reportFooter. reporthfContent=footerContent.value;
-
-                        return Promise.all([CommonDirect.saveData(reportHeader,'report_hf'),CommonDirect.saveData(reportFooter,'report_hf')])
+                        return CommonDirect.saveData(_reporthfObject,'report_hf')
                             .then(function()
                             {
                                 myMask.hide();
