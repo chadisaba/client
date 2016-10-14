@@ -4,26 +4,30 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     onFormAfterRender: function(component, eOpts) {
 
         var me=this;
-        Ext.on('reportSavedEvent',function()
+        Ext.on('reportSavedEvent',function(_reportSaved)
         {
-            this.getView().down('#reportGridItemId').getController().quitEdit();
+            _reportSaved.set('added',false);
+            this.getView().down('#reportGridItemId').getController().quitEditMode();
         },me);
 
     },
-    onGridpanelSelectReportEvent: function(_grid,_selectedRec) {
+    onGridpanelSelectReportEvent: function(_reportGrid,_selectedRec) {
         var me=this;
         var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
         studyVisitController.selectedStudiesByReport(_selectedRec.get('reportId'));
-
+        _reportGrid.getController().quitEditMode();
         me.editReport(_selectedRec.get('reportId'),me.doctorId,me.siteId);
     },
-    onGridpanelAddReportEvent: function(_grid,_selectedRec) {
+    onGridpanelAddReportEvent: function(_grid) {
         var me=this;
-        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
+        var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
+        var studiesVisitArray=[];
+        studyVisitController.getStore().each(function(_rec)
+        {
+            studiesVisitArray.push(_rec.getData());
 
-       // me.getView().down('#reportHasStudyItemId').getSelectionModel().selectAll();
-
-        func.Report.createNewReport(me.siteId,me.doctorId,myMask);
+        });
+       me.addReport(me.doctorId,me.visitId,_grid.getController().getStore().count(),studiesVisitArray);
     },
     onGridpanelSaveReportEvent: function(gridpanel,_selectedRec) {
 
@@ -133,8 +137,6 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 reportGridController.addReport(reportObject);
             }
             studyVisitController.selectAll();
-
-
         }
         else
         {
@@ -174,7 +176,6 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                                 });
                                 if(_reportNumber==0){
-
                                     reportGridController.initGrid(null,_visitId,[reportObject]);
                                     reportGridController.enterEditMode();
                                 }
@@ -184,6 +185,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                 }
                                 var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
                                 studyVisitController.selectStudies(visitStudyArray);
+                                win.close();
 
                             }
                         }

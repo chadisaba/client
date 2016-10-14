@@ -80,14 +80,13 @@ Ext.application({
     ],
 
     launch: function() {
-
-
         if(appType==="office"){
             Office.initialize = function (reason) {
 
+                console.log(Office.context.requirememts);
                 Ext.create('MyApp.view.OfficeViewport');
                 Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
-            }
+            };
 
         }
         else{

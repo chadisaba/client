@@ -2636,17 +2636,18 @@
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "23efb3f9-587a-406c-9a2b-a43cbd607471",
             "49596930-9b19-4df7-bdc5-10b4457f61ef",
-            "a8892df7-c6d1-4fee-a793-5de2fdeedc79"
+            "a8892df7-c6d1-4fee-a793-5de2fdeedc79",
+            "application"
         ]
     },
     "canvasState": {
         "topInstance": "23efb3f9-587a-406c-9a2b-a43cbd607471"
     },
     "inspectorState": {
-        "topInstance": "23efb3f9-587a-406c-9a2b-a43cbd607471",
-        "selectedInstance": "cceac897-86e0-4fb1-a066-02710212669e"
+        "topInstance": "application",
+        "selectedInstance": "application"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": true
     }

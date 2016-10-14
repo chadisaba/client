@@ -25,6 +25,11 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
 
         }
     },
+    getStore:function()
+    {
+        var view=this.getView();
+        return view.getViewModel().getStore('ReportHasStudyStore');
+    },
     getDataToBeSaved: function () {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
@@ -63,16 +68,20 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
         var view = this.getView();
         view.getSelectionModel().deselectAll();
         var store=view.getViewModel().getStore('ReportHasStudyStore');
+        var recordsToSelect=[];
         _studiesArray.forEach(
             function(_item)
             {
-                var rec=store.findRecord('studyId',_item.studyId);
+                var rec=store.findRecord('studyId',_item.get('studyId'));
                 if(rec)
                 {
-                    view.getSelectionModel().select(rec);
+                    recordsToSelect.push(rec);
+
                 }
             }
         )
+        if(recordsToSelect.length>0)
+            view.getSelectionModel().select(recordsToSelect);
     },
     selectAll:function(){
         var view = this.getView();

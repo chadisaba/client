@@ -1,27 +1,20 @@
 Ext.define('MyApp.view.override.ReportHFGridViewController', {
     override: 'MyApp.view.ReportHFGridViewController',
 
-    initGrid: function (_filters, _visitId,_reportDataArray) {
+    initGrid: function (_filters ) {
         var me = this;
-        if (_visitId) {
-            me.visitId=_visitId;
             me.filters = _filters || [];
-            me.filters.push({name: "visitId", value: _visitId});
             var view = this.getView();
-            if(_reportDataArray)
-            {
-                me.reportDataArray=_reportDataArray;
-                Utility.grid.loadGrid(view, _reportDataArray, me.getStore());
-            }
-            else
-            {
+
                 this.getResultArray(me.filters).then(
                     function (data) {
                         Utility.grid.loadGrid(view, data, me.getStore());
                     }
                 );
-            }
-        }
+    },
+    refreshGrid: function () {
+
+        this.initGrid(this.filters);
     },
     getResultArray: function (filters) {
         var me = this;

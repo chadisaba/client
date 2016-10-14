@@ -28,9 +28,13 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
         var view = me.getView();
         return view.getViewModel().getStore('ReportGridStore');
     },
+    /**
+     * this methode is called when adding report form the 2nd report
+     * @param _reportObj
+     */
     addReport:function(_reportObj)
     {
-        var me=this;
+        var me=this,view=this.getView();
 
         var store=me.getStore();
         store.insert(0,_reportObj);
@@ -46,7 +50,15 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
                              items:{
                                  region: 'center',
                                  header:false,
-                                 xtype:'reporthfgrid'
+                                 xtype:'reporthfgrid',
+                                 listeners:
+                                 {
+                                     afterrender:function(_comp)
+                                     {
+                                         _comp.getController().initGrid();
+                                     }
+                                 }
+
 
                                  }
                              }
@@ -93,6 +105,10 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
         }
 
     },
+    onAddBtnItemIdClick: function(button, e, eOpts) {
+        this.fireViewEvent('addReportEvent');
+    },
+
     onReviewBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
@@ -122,7 +138,7 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
             }
             else
             {
-                me.fireViewEvent('addReportEvent',selected[0]);
+               // me.fireViewEvent('addReportEvent',selected[0]);
 
 
             }
