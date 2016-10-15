@@ -60,20 +60,21 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                             .then(function(_result)
                             {
                                 myMask.hide();
-                                if(appType=="office")
-                                {
-                                    window.open("../pub_workflow/indexOffice.html",'_self');
+                                /*if(appType=="office")
+                                 {
+                                 window.open("../pub_workflow/indexOffice.html",'_self');
 
-                                }
-                                else
-                                {
-                                     myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
-                                    InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
-                                     InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
-                                     InitApp.userId= user.userId;
+                                 }*/
+                                /* else
+                                 {*/
+                                myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
 
-                                    InitApp.initIndexedDB(myMask);
-                                }
+                                InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
+                                InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                                InitApp.userId= user.userId;
+
+                                InitApp.initIndexedDB(myMask,appType);
+                                /*  }*/
 
 
                             })
@@ -100,7 +101,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
             })
             .catch(function(_err)
             {
-              console.error(_err);
+                console.error(_err);
             });
 
     },
@@ -117,5 +118,5 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
     onPasswordItemIdKeydown: function(textfield, e, eOpts) {
         this.onEnterKey(e);
     }
-    
+
 });

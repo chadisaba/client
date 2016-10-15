@@ -45,6 +45,23 @@ return promise;
              });
          return promise;
     },
+    getSitesFromIndexDb:function()
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db.SITE.toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
+            });
+        return promise;
+    },
     getSites:function()
     {
         //Creating a promise

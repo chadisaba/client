@@ -60,21 +60,21 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                             .then(function(_result)
                             {
                                 myMask.hide();
-                                if(appType=="office")
+                                /*if(appType=="office")
                                 {
                                     window.open("../pub_workflow/indexOffice.html",'_self');
 
-                                }
-                                else
-                                {
+                                }*/
+                               /* else
+                                {*/
                                      myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
 
                                     InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
                                      InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
                                      InitApp.userId= user.userId;
 
-                                    InitApp.initIndexedDB(myMask);
-                                }
+                                    InitApp.initIndexedDB(myMask,appType);
+                              /*  }*/
 
 
                             })

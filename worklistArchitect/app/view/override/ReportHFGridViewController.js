@@ -6,7 +6,28 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
             me.filters = _filters || [];
             var view = this.getView();
 
-                this.getResultArray(me.filters).then(
+        var doctorComboStore=this.getViewModel().getStore('DoctorStore');
+        var siteComboStore=this.getViewModel().getStore('SiteStore');
+
+        DoctorDirect.getDoctorsFromIndexDb().then(
+            function(_resultArray)
+            {
+                for (var i = 0; i < _resultArray.length; i++) {
+                    _resultArray[i].userInitiales = _resultArray[i]['User.userInitiales'];
+                    // _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
+                }
+                doctorComboStore.loadData(_resultArray);
+
+            }
+        );
+        SiteDirect.getSitesFromIndexDb()
+            .then(function(_resultArray)
+            {
+                siteComboStore.loadData(_resultArray);
+
+            });
+
+        this.getResultArray(me.filters).then(
                     function (data) {
                         Utility.grid.loadGrid(view, data, me.getStore());
                     }
@@ -35,7 +56,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
                                 _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
-                                _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
+                               // _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
                             }
                             resolve(_result);
                         })
@@ -56,7 +77,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
         var me=this,view=this.getView();
 
-        var reportHFType=parseInt(view.down('#typeRadioBtnItemId').getValue());
+        var reportHFType=parseInt(view.down('#typeRadioBtnItemId').getValue().typeRadioBtn);
         var reporthfContentIsHtml=true;
 
         //TODO : manage html  formats of report header (to add to application config).
@@ -66,7 +87,6 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
         me.enterEditMode();
         var reportHFObject={
-            reporthfId:UUID(),
             reporthfType:reportHFType,
             reportContentIsHtml:reporthfContentIsHtml,
             added:true
@@ -113,7 +133,6 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
             }
         }
     },
-
     onGridpanelBeforeSelect: function(rowmodel, record, index, eOpts) {
         var me=this;
         var store= me.getStore();
@@ -125,7 +144,15 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         });
         return result;
     },
+    onDoctorComboItemIdSelect: function(combo, record, eOpts) {
+        var doctorTextFieldItemId=combo.up('roweditor').down('#doctorTextFieldItemId');
+        doctorTextFieldItemId.setValue(record.get('doctorId'));
+    },
 
+    onSiteComboItemIdSelect: function(combo, record, eOpts) {
+        var siteIdField=combo.up('roweditor').down('#siteTextFieldItemId');
+        siteIdField.setValue(record.get('siteId'));
+    },
     enterEditMode:function()
     {
         var me=this;

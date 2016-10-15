@@ -1,6 +1,6 @@
 var InitApp={
     siteId:null,
-    initIndexedDB:function(_myMask)
+    initIndexedDB:function(_myMask,_appType)
     {
         // retreive data from server db to update indexedDB
 
@@ -128,9 +128,15 @@ var InitApp={
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
                             {
-                                _myMask.hide();
-                               // alert('indexedDB tables updated');
+
+                                if(_appType=="office")
+                                {
+                                    window.open("../pub_workflow/indexOffice.html",'_self');
+
+                                }
+                               else
                                 window.open("../pub_workflow/#maintabpanel",'_self');
+                                _myMask.hide();
                             }).
                             catch(function(_err)
                         {

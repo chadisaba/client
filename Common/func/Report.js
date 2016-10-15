@@ -234,10 +234,11 @@ func.Report={
      * @param _reporthfObject : Object report template header or footer  object (reporthf)
      * @param _view: Object
      */
-    saveHeaderOrFooterTemplate:function(_reporthfObject,_view)
+    saveHeaderOrFooterTemplate:function(_reporthfRec,_view)
     {
         var myMask = new Ext.LoadMask({msg:translate("Saving header & footer template"),target:_view});
         myMask.show();
+        var reporthfObject=_reporthfRec.getData();
         // Run a batch operation against the Word object model.
         Word.run(function (context) {
                 // Create a proxy sectionsCollection object.
@@ -249,29 +250,30 @@ func.Report={
                 return context.sync().then(function () {
                     // Create a proxy object the primary header of the first section.
                     // Note that the header is a body object.
-                    if(_reporthfObject.reporthfType==1){
+                    if(reporthfObject.reporthfType==1){
                         var myHeader = mySections.items[0].getHeader("primary");
                         // Queue a command to insert text at the end of the header.
 
-                        if(_reporthfObject.reportContentIsHtml)
-                            _reporthfObject.reporthfContent = myHeader.getHtml();
+                        if(reporthfObject.reportContentIsHtml)
+                            reporthfObject.reporthfContent = myHeader.getHtml();
                         else
-                            _reporthfObject.reporthfContent = myHeader.getOoxml();
+                            reporthfObject.reporthfContent = myHeader.getOoxml();
                     }
 
-                    if(_reporthfObject.reporthfType==2){
+                    if(reporthfObject.reporthfType==2){
                         var myFooter = mySections.items[0].getFooter("primary");
-                        if(_reporthfObject.reportContentIsHtml)
-                            _reporthfObject.reporthfContent = myFooter.getHtml();
+                        if(reporthfObject.reportContentIsHtml)
+                            reporthfObject.reporthfContent = myFooter.getHtml();
                         else
-                            _reporthfObject.reporthfContent = myFooter.getOoxml();
+                            reporthfObject.reporthfContent = myFooter.getOoxml();
                     }
                     // Synchronize the document state by executing the queued commands,
                     // and return a promise to indicate task completion.
                     return context.sync().then(function () {
-                        return CommonDirect.saveData(_reporthfObject,'report_hf')
+                        return CommonDirect.saveData(reporthfObject,'report_hf')
                             .then(function()
                             {
+                                _reporthfRec.set('added',false);
                                 myMask.hide();
                             })
                             .catch(function(_err)

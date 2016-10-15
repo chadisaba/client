@@ -27,7 +27,8 @@ Ext.define('MyApp.view.ReportHFGrid', {
         'Ext.button.Button',
         'Ext.toolbar.Separator',
         'Ext.form.RadioGroup',
-        'Ext.form.field.Radio'
+        'Ext.form.field.Radio',
+        'Ext.grid.plugin.RowEditing'
     ],
 
     controller: 'reporthfgrid',
@@ -47,9 +48,17 @@ Ext.define('MyApp.view.ReportHFGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'doctorComboItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'userInitiales',
+                forceSelection: true,
                 queryMode: 'local',
+                valueField: 'userInitiales',
                 bind: {
                     store: '{DoctorStore}'
+                },
+                listeners: {
+                    select: 'onDoctorComboItemIdSelect'
                 }
             }
         },
@@ -60,24 +69,39 @@ Ext.define('MyApp.view.ReportHFGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteComboItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'siteCode',
+                forceSelection: true,
                 queryMode: 'local',
+                valueField: 'siteCode',
                 bind: {
                     store: '{SiteStore}'
+                },
+                listeners: {
+                    select: 'onSiteComboItemIdSelect'
                 }
             }
         },
         {
             xtype: 'numbercolumn',
-            hidden: true,
             dataIndex: 'siteId',
             text: 'Site Id',
-            format: '00'
+            format: '00',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'siteTextFieldItemId'
+            }
         },
         {
             xtype: 'numbercolumn',
             dataIndex: 'doctorId',
             text: 'Doctor Id',
-            format: '00'
+            format: '00',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'doctorTextFieldItemId'
+            }
         },
         {
             xtype: 'gridcolumn',
@@ -134,13 +158,17 @@ Ext.define('MyApp.view.ReportHFGrid', {
                     ]
                 },
                 {
+                    xtype: 'tbseparator'
+                },
+                {
                     xtype: 'container',
                     items: [
                         {
                             xtype: 'button',
                             itemId: 'saveBtnItemId',
-                            iconCls: 'fa fa-edit',
+                            iconCls: 'fa fa-floppy-o',
                             text: 'save',
+                            tooltip: 'save',
                             listeners: {
                                 click: 'onSaveBtnItemIdClick'
                             }
@@ -153,17 +181,20 @@ Ext.define('MyApp.view.ReportHFGrid', {
                         {
                             xtype: 'button',
                             itemId: 'cancelBtnItemId',
-                            iconCls: 'fa fa-edit',
+                            glyph: 'xf0e2@FontAwesome',
                             text: 'cancel',
                             listeners: {
                                 click: 'onCancelBtnItemIdClick'
                             }
                         }
                     ]
-                },
-                {
-                    xtype: 'tbseparator'
-                },
+                }
+            ]
+        },
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [
                 {
                     xtype: 'radiogroup',
                     itemId: 'typeRadioBtnItemId',
@@ -172,12 +203,14 @@ Ext.define('MyApp.view.ReportHFGrid', {
                     items: [
                         {
                             xtype: 'radiofield',
+                            name: 'typeRadioBtn',
                             boxLabel: 'header template',
                             checked: true,
                             inputValue: '1'
                         },
                         {
                             xtype: 'radiofield',
+                            name: 'typeRadioBtn',
                             boxLabel: 'footer template',
                             inputValue: '2'
                         }
@@ -190,6 +223,11 @@ Ext.define('MyApp.view.ReportHFGrid', {
         selectionchange: 'onGridpanelSelectionChange',
         beforeselect: 'onGridpanelBeforeSelect'
     },
+    plugins: [
+        {
+            ptype: 'rowediting'
+        }
+    ],
 
     initConfig: function(instanceConfig) {
         var me = this,

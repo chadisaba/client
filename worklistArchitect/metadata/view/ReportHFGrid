@@ -55,17 +55,39 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "userInitiales",
+                        "forceSelection": true,
                         "itemId": "doctorComboItemId",
                         "queryMode": "local",
+                        "selectOnFocus": true,
                         "store": [
                             "{DoctorStore}"
-                        ]
+                        ],
+                        "valueField": "userInitiales"
                     },
                     "name": "MyComboBox6",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "12c66b78-b25d-4cda-8b54-b593c22f5aa5"
+                    "designerId": "12c66b78-b25d-4cda-8b54-b593c22f5aa5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDoctorComboItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onDoctorComboItemIdSelect",
+                            "designerId": "29fdb343-bf7d-4c6e-8386-3879fc7de9d9"
+                        }
+                    ]
                 }
             ]
         },
@@ -91,17 +113,40 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "",
+                        "displayField": "siteCode",
+                        "forceSelection": true,
                         "itemId": "siteComboItemId",
                         "queryMode": "local",
+                        "selectOnFocus": true,
                         "store": [
                             "{SiteStore}"
-                        ]
+                        ],
+                        "valueField": "siteCode"
                     },
                     "name": "MyComboBox7",
                     "configAlternates": {
                         "store": "binding"
                     },
-                    "designerId": "d2685604-5f0f-4d34-974d-f271de06f417"
+                    "designerId": "d2685604-5f0f-4d34-974d-f271de06f417",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSiteComboItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onSiteComboItemIdSelect",
+                            "designerId": "69d57f3b-8a7d-4f0c-92bd-9fb246305031"
+                        }
+                    ]
                 }
             ]
         },
@@ -115,11 +160,25 @@
             "userConfig": {
                 "dataIndex": "siteId",
                 "format": "00",
-                "hidden": true,
                 "text": "Site Id"
             },
             "name": "MyNumberColumn1",
-            "designerId": "2b1a38fd-f446-4e69-9db3-7a1e3153b132"
+            "designerId": "2b1a38fd-f446-4e69-9db3-7a1e3153b132",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "siteTextFieldItemId"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "70ce705d-6e36-4dc8-937e-a7a2b5652154"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Number",
@@ -134,7 +193,22 @@
                 "text": "Doctor Id"
             },
             "name": "MyNumberColumn3",
-            "designerId": "60f46632-f45c-40d9-a0eb-532cec9bdd3e"
+            "designerId": "60f46632-f45c-40d9-a0eb-532cec9bdd3e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "doctorTextFieldItemId"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "e18efc52-8775-48c5-8ac6-e1ff01df7440"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -317,6 +391,19 @@
                     ]
                 },
                 {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator1",
+                    "designerId": "37278b9e-bb4f-4114-b20b-fae5e0bd692c"
+                },
+                {
                     "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
@@ -337,11 +424,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "fa fa-edit",
+                                "iconCls": "fa fa-floppy-o",
                                 "itemId": "saveBtnItemId",
-                                "text": "save"
+                                "text": "save",
+                                "tooltip": "save"
                             },
                             "name": "MyButton2",
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
                             "designerId": "dbb43d47-4047-49bb-816c-a35c490e1910",
                             "cn": [
                                 {
@@ -384,7 +475,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "fa fa-edit",
+                                "glyph": "xf0e2@FontAwesome",
+                                "iconCls": null,
                                 "itemId": "cancelBtnItemId",
                                 "text": "cancel"
                             },
@@ -407,69 +499,6 @@
                                     "designerId": "6eddd3c6-4431-4393-b952-8d651416c962"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.toolbar.Separator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
-                    },
-                    "name": "MySeparator1",
-                    "designerId": "37278b9e-bb4f-4114-b20b-fae5e0bd692c"
-                },
-                {
-                    "type": "Ext.form.RadioGroup",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Choisir le type",
-                        "itemId": "typeRadioBtnItemId",
-                        "layout|flex": null,
-                        "value": null,
-                        "width": 400
-                    },
-                    "name": "MyRadioGroup",
-                    "designerId": "2fb47e82-2681-4728-96a2-6e48dc80cf60",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Radio",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "header template",
-                                "checked": true,
-                                "fieldLabel": null,
-                                "inputValue": "1"
-                            },
-                            "name": "MyRadio",
-                            "designerId": "cceac897-86e0-4fb1-a066-02710212669e"
-                        },
-                        {
-                            "type": "Ext.form.field.Radio",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "footer template",
-                                "fieldLabel": null,
-                                "inputValue": "2"
-                            },
-                            "name": "MyRadio1",
-                            "designerId": "daf1fc72-2938-4092-a042-4bf865d0121b"
                         }
                     ]
                 }
@@ -523,6 +552,83 @@
             },
             "name": "onGridpanelBeforeSelect",
             "designerId": "b35b79d9-b418-4c4b-9517-b56c2c0337bd"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar6",
+            "designerId": "46bc3931-52b2-4b81-ae0e-801ec84ad691",
+            "cn": [
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Choisir le type",
+                        "itemId": "typeRadioBtnItemId",
+                        "layout|flex": null,
+                        "value": null,
+                        "width": 400
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "2fb47e82-2681-4728-96a2-6e48dc80cf60",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "header template",
+                                "checked": true,
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "typeRadioBtn"
+                            },
+                            "name": "MyRadio",
+                            "designerId": "cceac897-86e0-4fb1-a066-02710212669e"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "footer template",
+                                "fieldLabel": null,
+                                "inputValue": "2",
+                                "name": "typeRadioBtn"
+                            },
+                            "name": "MyRadio1",
+                            "designerId": "daf1fc72-2938-4092-a042-4bf865d0121b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyRowEditingPlugin",
+            "designerId": "740984bc-4a7d-43b8-8065-5ef26b7c6922"
         }
     ]
 }

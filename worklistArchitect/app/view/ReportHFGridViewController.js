@@ -21,6 +21,14 @@ Ext.define('MyApp.view.ReportHFGridViewController', {
         'MyApp.view.override.ReportHFGridViewController'
     ],
 
+    onDoctorComboItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onSiteComboItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     onAddButtonItemIdClick: function(button, e, eOpts) {
 
     },
