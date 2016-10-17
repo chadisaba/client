@@ -123,6 +123,9 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
             added:true
         };
 
+        var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
+
+
         if(_visitStudyArray.length==1)// Just one study is associated to the selected visit
         {
             reportObject.reportName=_visitStudyArray[0].studyCode;
@@ -136,6 +139,8 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
             {
                 reportGridController.addReport(reportObject);
             }
+             myMask.show();
+            func.Report.createNewReport(me.siteId,me.doctorId,myMask)
             studyVisitController.selectAll();
         }
         else
@@ -182,6 +187,8 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                 else
                                 {
                                     reportGridController.addReport(reportObject);
+                                    myMask.show();
+                                    func.Report.createNewReport(me.siteId,me.doctorId,myMask)
                                 }
                                 var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
                                 studyVisitController.selectStudies(visitStudyArray);

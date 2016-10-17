@@ -221,11 +221,13 @@ Ext.define('MyApp.view.ReportHFGrid', {
     ],
     listeners: {
         selectionchange: 'onGridpanelSelectionChange',
-        beforeselect: 'onGridpanelBeforeSelect'
+        beforeselect: 'onGridpanelBeforeSelect',
+        beforeedit: 'onGridpanelBeforeEdit'
     },
     plugins: [
         {
-            ptype: 'rowediting'
+            ptype: 'rowediting',
+            pluginId: 'rowEdit'
         }
     ],
 

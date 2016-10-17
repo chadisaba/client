@@ -241,6 +241,7 @@ func.Report={
         var reporthfObject=_reporthfRec.getData();
         // Run a batch operation against the Word object model.
         Word.run(function (context) {
+            var templateContent;
                 // Create a proxy sectionsCollection object.
                 var mySections = context.document.sections;
                 // Queue a commmand to load the sections.
@@ -255,21 +256,22 @@ func.Report={
                         // Queue a command to insert text at the end of the header.
 
                         if(reporthfObject.reportContentIsHtml)
-                            reporthfObject.reporthfContent = myHeader.getHtml();
+                            templateContent = myHeader.getHtml();
                         else
-                            reporthfObject.reporthfContent = myHeader.getOoxml();
+                            templateContent = myHeader.getOoxml();
                     }
 
                     if(reporthfObject.reporthfType==2){
                         var myFooter = mySections.items[0].getFooter("primary");
                         if(reporthfObject.reportContentIsHtml)
-                            reporthfObject.reporthfContent = myFooter.getHtml();
+                            templateContent = myFooter.getHtml();
                         else
-                            reporthfObject.reporthfContent = myFooter.getOoxml();
+                            templateContent = myFooter.getOoxml();
                     }
                     // Synchronize the document state by executing the queued commands,
                     // and return a promise to indicate task completion.
                     return context.sync().then(function () {
+                        reporthfObject.reporthfContent=templateContent.value;
                         return CommonDirect.saveData(reporthfObject,'report_hf')
                             .then(function()
                             {

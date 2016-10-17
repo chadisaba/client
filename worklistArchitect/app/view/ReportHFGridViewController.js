@@ -51,6 +51,10 @@ Ext.define('MyApp.view.ReportHFGridViewController', {
 
     onGridpanelBeforeSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onGridpanelBeforeEdit: function(editor, context) {
+
     }
 
 });

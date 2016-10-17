@@ -95,6 +95,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         var store=me.getStore();
         store.insert(0,reportHFObject);
         view.getSelectionModel().select(0);
+        view.getPlugin('rowEdit').startEdit(view.getSelectionModel().getSelection()[0], 0);
     },
 
     onModifyBtnItemIdClick: function(button, e, eOpts) {
@@ -122,7 +123,12 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         }
 
     },
+    onGridpanelBeforeEdit: function(editor, context) {
 
+        var rec=context.record;
+        if(!rec.get('added')||!!rec.get('modified'))
+            return false;
+    },
     onGridpanelSelectionChange: function(model, selected, eOpts) {
         var me=this;
         if(selected.length>0)
