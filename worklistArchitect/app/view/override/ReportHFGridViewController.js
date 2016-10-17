@@ -43,11 +43,11 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
             function (resolve, reject) {
                 var mainTableObject = {};
                 mainTableObject.tableName = 'REPORT_HF';
-               // mainTableObject.fieldsArray=['reportId','reportName','reportDate','reportStatus','visitId','doctorId'];
+                mainTableObject.fieldsArray=['reporthfId','doctorId','siteId','reporthfType','reporthfName','reporthfContentIsHtml'];
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
                 joinTablesArray.push(
-                    {tableName: 'DOCTOR',fieldsArray:[],joinObject:{tableName:'USER',fieldsArray:['userLName','userFName']}},
+                    {tableName: 'DOCTOR',fieldsArray:[],joinObject:{tableName:'USER',fieldsArray:['userInitiales']}},
                     {tableName: 'SITE',required:false,fieldsArray:['siteName','siteCode']}
 
                 );
@@ -55,8 +55,8 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                     .then(
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
-                                _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
-                               // _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
+                                _result[i].doctor = _result[i]['Doctor.User.userInitiales'];
+                                _result[i].siteCode = _result[i]['Site.siteCode'];
                             }
                             resolve(_result);
                         })
@@ -129,6 +129,29 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         if(!rec.get('added')||!!rec.get('modified'))
             return false;
     },
+    onGridpanelValidateEdit: function(editor, context) {
+        var me =this,doctorId,siteId;
+        var store=me.getStore();
+        var newModel = context.record.copy();
+        newModel.set(context.newValues); //set the values from the editing plugin form
+        if (!newModel.isValid() || !editor.editor.form.isValid())
+            return false;//prevent the editing plugin from closing
+        else {
+            var res=true;
+            store.each(
+                function(_rec)
+                {
+                    doctorId=_rec.get('doctorId');
+                    siteId=_rec.get('siteId');
+                    if(_rec.get('reporthfId')!=newModel.get('reporthfId')&&(doctorId==newModel.get('doctorId'))&&(siteId==newModel.get('siteId')))
+                    {
+                        res=false;
+                    }
+                });
+                return res;
+        }
+    },
+
     onGridpanelSelectionChange: function(model, selected, eOpts) {
         var me=this;
         if(selected.length>0)

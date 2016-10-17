@@ -140,7 +140,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 reportGridController.addReport(reportObject);
             }
              myMask.show();
-            func.Report.createNewReport(me.siteId,me.doctorId,myMask)
+            func.Report.createNewReport(me.siteId,me.doctorId,myMask);
             studyVisitController.selectAll();
         }
         else
