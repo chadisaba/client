@@ -99,7 +99,14 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
     },
 
     onModifyBtnItemIdClick: function(button, e, eOpts) {
-
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            selectedRec.set('modified',true);
+        }
     },
 
     onCancelBtnItemIdClick: function(button, e, eOpts) {
@@ -158,7 +165,31 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         {
             if(!selected[0].get('added'))
             {
-                me.fireViewEvent('selectReportEvent',selected[0]);
+                var myMask = new Ext.LoadMask({msg:translate("Loading Template"),target:me.getView()});
+                myMask.show();
+                var templateContent;
+                CommonDirect.getDataById('reporthfId',selected[0].get('reporthfId'),"REPORT_HF")
+                    .then(function(_result)
+                    {
+
+                        var reporthfObject=_result[0],headerContent="",footerContent="",headerIsOoxml=true;
+                        ['reporthfId','doctorId','siteId','reporthfType','reporthfName','reporthfContentIsHtml'];
+                        if(reporthfObject.reporthfType==1)// header
+                        {
+                            headerContent=reporthfObject.reporthfContent;
+                            headerIsOoxml=!reporthfObject.reporthfContentIsHtml;
+                        }
+                        else
+                        {
+                            //footer
+                            footerContent=reporthfObject.reporthfContent;
+                        }
+                        // fill the word document with the selected template
+                        func.Report.fillReport(headerContent,'',footerContent,headerIsOoxml,false,true,myMask);
+
+                    });
+                // display the header or footer template
+
             }
         }
     },

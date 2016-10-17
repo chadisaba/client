@@ -417,7 +417,6 @@ func.Report={
             })
 
     },
-
     saveReport:function(_reportRec,_selectedStudyRecArray,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)
     {
         Word.run(function (context) {
