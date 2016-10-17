@@ -234,7 +234,7 @@ func.Report={
      * @param _reporthfObject : Object report template header or footer  object (reporthf)
      * @param _view: Object
      */
-    saveHeaderOrFooterTemplate:function(_reporthfRec,_view)
+    saveHeaderOrFooterTemplate:function(_reporthfRec,_view,_scope)
     {
         var myMask = new Ext.LoadMask({msg:translate("Saving header & footer template"),target:_view});
         myMask.show();
@@ -276,6 +276,8 @@ func.Report={
                             .then(function()
                             {
                                 _reporthfRec.set('added',false);
+                                _reporthfRec.set('modified',false);
+                                _scope.initGrid();
                                 myMask.hide();
                             })
                             .catch(function(_err)

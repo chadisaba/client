@@ -3,6 +3,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
     initGrid: function (_filters ) {
         var me = this;
+        me.quitEditMode();
             me.filters = _filters || [];
             var view = this.getView();
 
@@ -56,7 +57,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
                                 _result[i].doctor = _result[i]['Doctor.User.userInitiales'];
-                                _result[i].siteCode = _result[i]['Site.siteCode'];
+                                _result[i].site = _result[i]['Site.siteCode'];
                             }
                             resolve(_result);
                         })
@@ -98,6 +99,25 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         view.getPlugin('rowEdit').startEdit(view.getSelectionModel().getSelection()[0], 0);
     },
 
+    onDeleteBtnItemIdClick: function(button, e, eOpts) {
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            Ext.Msg.confirm(translate("Confirmation"), translate("Do you want to delete selected row?"),
+                function(_btnText){
+                if(_btnText === "yes"){
+                    // TODO delete the selected row
+                   // CommonDirect.
+                }
+            }, me);
+
+            selectedRec.set('modified',true);
+            me.enterEditMode();
+        }
+    },
     onModifyBtnItemIdClick: function(button, e, eOpts) {
         var me=this;
         var grid=me.getView();
@@ -106,6 +126,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             selectedRec.set('modified',true);
+            me.enterEditMode();
         }
     },
 
@@ -122,10 +143,10 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             if(selectedRec.get('added')||selectedRec.get('modified'))
-                func.Report.saveHeaderOrFooterTemplate(selectedRec,grid);
+                func.Report.saveHeaderOrFooterTemplate(selectedRec,grid,me);
             else
             {
-                Ext.MessageBox.alert('Info','Click on the modifiy button to edit the report');
+                Ext.MessageBox.alert('Info','Click on the modify button to edit the report');
             }
         }
 
@@ -133,8 +154,8 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
     onGridpanelBeforeEdit: function(editor, context) {
 
         var rec=context.record;
-        if(!rec.get('added')||!!rec.get('modified'))
-            return false;
+        return (rec.get('added')||rec.get('modified'));
+
     },
     onGridpanelValidateEdit: function(editor, context) {
         var me =this,doctorId,siteId;
@@ -150,8 +171,11 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                 {
                     doctorId=_rec.get('doctorId');
                     siteId=_rec.get('siteId');
-                    if(_rec.get('reporthfId')!=newModel.get('reporthfId')&&(doctorId==newModel.get('doctorId'))&&(siteId==newModel.get('siteId')))
+                    if(_rec.get('reporthfId')!=newModel.get('reporthfId')&&
+                        _rec.get('reporthfType')==newModel.get('reporthfType')&&
+                        (doctorId==newModel.get('doctorId'))&&(siteId==newModel.get('siteId')))
                     {
+                        Ext.MessageBox.alert(translate("Info"),translate('The template si already associated with selected site and doctor'));
                         res=false;
                     }
                 });

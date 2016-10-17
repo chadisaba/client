@@ -3,6 +3,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
     initGrid: function (_filters ) {
         var me = this;
+        me.quitEditMode();
             me.filters = _filters || [];
             var view = this.getView();
 
@@ -43,11 +44,11 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
             function (resolve, reject) {
                 var mainTableObject = {};
                 mainTableObject.tableName = 'REPORT_HF';
-               // mainTableObject.fieldsArray=['reportId','reportName','reportDate','reportStatus','visitId','doctorId'];
+                mainTableObject.fieldsArray=['reporthfId','doctorId','siteId','reporthfType','reporthfName','reporthfContentIsHtml'];
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
                 joinTablesArray.push(
-                    {tableName: 'DOCTOR',fieldsArray:[],joinObject:{tableName:'USER',fieldsArray:['userLName','userFName']}},
+                    {tableName: 'DOCTOR',fieldsArray:[],joinObject:{tableName:'USER',fieldsArray:['userInitiales']}},
                     {tableName: 'SITE',required:false,fieldsArray:['siteName','siteCode']}
 
                 );
@@ -55,8 +56,8 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                     .then(
                         function (_result) {
                             for (var i = 0; i < _result.length; i++) {
-                                _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
-                               // _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
+                                _result[i].doctor = _result[i]['Doctor.User.userInitiales'];
+                                _result[i].site = _result[i]['Site.siteCode'];
                             }
                             resolve(_result);
                         })
@@ -99,7 +100,15 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
     },
 
     onModifyBtnItemIdClick: function(button, e, eOpts) {
-
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            selectedRec.set('modified',true);
+            me.enterEditMode();
+        }
     },
 
     onCancelBtnItemIdClick: function(button, e, eOpts) {
@@ -115,10 +124,10 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             if(selectedRec.get('added')||selectedRec.get('modified'))
-                func.Report.saveHeaderOrFooterTemplate(selectedRec,grid);
+                func.Report.saveHeaderOrFooterTemplate(selectedRec,grid,me);
             else
             {
-                Ext.MessageBox.alert('Info','Click on the modifiy button to edit the report');
+                Ext.MessageBox.alert('Info','Click on the modify button to edit the report');
             }
         }
 
@@ -126,16 +135,66 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
     onGridpanelBeforeEdit: function(editor, context) {
 
         var rec=context.record;
-        if(!rec.get('added')||!!rec.get('modified'))
-            return false;
+        return (rec.get('added')||rec.get('modified'));
+
     },
+    onGridpanelValidateEdit: function(editor, context) {
+        var me =this,doctorId,siteId;
+        var store=me.getStore();
+        var newModel = context.record.copy();
+        newModel.set(context.newValues); //set the values from the editing plugin form
+        if (!newModel.isValid() || !editor.editor.form.isValid())
+            return false;//prevent the editing plugin from closing
+        else {
+            var res=true;
+            store.each(
+                function(_rec)
+                {
+                    doctorId=_rec.get('doctorId');
+                    siteId=_rec.get('siteId');
+                    if(_rec.get('reporthfId')!=newModel.get('reporthfId')&&
+                        _rec.get('reporthfType')==newModel.get('reporthfType')&&
+                        (doctorId==newModel.get('doctorId'))&&(siteId==newModel.get('siteId')))
+                    {
+                        Ext.MessageBox.alert(translate("Info"),translate('The template si already associated with selected site and doctor'));
+                        res=false;
+                    }
+                });
+                return res;
+        }
+    },
+
     onGridpanelSelectionChange: function(model, selected, eOpts) {
         var me=this;
         if(selected.length>0)
         {
             if(!selected[0].get('added'))
             {
-                me.fireViewEvent('selectReportEvent',selected[0]);
+                var myMask = new Ext.LoadMask({msg:translate("Loading Template"),target:me.getView()});
+                myMask.show();
+                var templateContent;
+                CommonDirect.getDataById('reporthfId',selected[0].get('reporthfId'),"REPORT_HF")
+                    .then(function(_result)
+                    {
+
+                        var reporthfObject=_result[0],headerContent="",footerContent="",headerIsOoxml=true;
+                        ['reporthfId','doctorId','siteId','reporthfType','reporthfName','reporthfContentIsHtml'];
+                        if(reporthfObject.reporthfType==1)// header
+                        {
+                            headerContent=reporthfObject.reporthfContent;
+                            headerIsOoxml=!reporthfObject.reporthfContentIsHtml;
+                        }
+                        else
+                        {
+                            //footer
+                            footerContent=reporthfObject.reporthfContent;
+                        }
+                        // fill the word document with the selected template
+                        func.Report.fillReport(headerContent,'',footerContent,headerIsOoxml,false,true,myMask);
+
+                    });
+                // display the header or footer template
+
             }
         }
     },

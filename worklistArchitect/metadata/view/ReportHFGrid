@@ -319,7 +319,7 @@
                             "userConfig": {
                                 "iconCls": "fa fa-plus-circle",
                                 "itemId": "addButtonItemId",
-                                "text": "Add"
+                                "text": "add"
                             },
                             "name": "MyButton1",
                             "designerId": "9db30c65-eee1-4cdd-b38e-95792ed627df",
@@ -366,7 +366,7 @@
                             "userConfig": {
                                 "iconCls": "fa fa-edit",
                                 "itemId": "modifyBtnItemId",
-                                "text": "Modify"
+                                "text": "modify"
                             },
                             "name": "MyButton1",
                             "designerId": "019a64dc-0c57-4f90-88ee-a244ac81288e",
@@ -385,6 +385,53 @@
                                     },
                                     "name": "onModifyBtnItemIdClick",
                                     "designerId": "ee13ce4d-fb7c-43d3-9542-1437632fdf49"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer14",
+                    "designerId": "bead9362-5d5c-48fb-9002-1e6b1e238ab2",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-edit",
+                                "itemId": "deleteBtnItemId",
+                                "text": "delete"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "08a6cc56-a492-49d4-8aea-e1a2b54c8b86",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDeleteBtnItemIdClick",
+                                    "designerId": "3cca1e5b-1aef-4c38-859d-99697f4f2057"
                                 }
                             ]
                         }
@@ -651,6 +698,21 @@
             },
             "name": "onGridpanelBeforeEdit",
             "designerId": "b1620980-e225-4918-88c3-c5eb6a3a6170"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelValidateEdit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onGridpanelValidateEdit",
+            "designerId": "eeccf697-a169-4757-b2c4-d638073570c2"
         }
     ]
 }
