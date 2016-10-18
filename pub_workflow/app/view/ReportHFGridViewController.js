@@ -37,6 +37,10 @@ Ext.define('MyApp.view.ReportHFGridViewController', {
 
     },
 
+    onDeleteBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onSaveBtnItemIdClick: function(button, e, eOpts) {
 
     },

@@ -99,6 +99,25 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         view.getPlugin('rowEdit').startEdit(view.getSelectionModel().getSelection()[0], 0);
     },
 
+    onDeleteBtnItemIdClick: function(button, e, eOpts) {
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            Ext.Msg.confirm(translate("Confirmation"), translate("Do you want to delete selected row?"),
+                function(_btnText){
+                if(_btnText === "yes"){
+                    // TODO delete the selected row
+                   // CommonDirect.
+                }
+            }, me);
+
+            selectedRec.set('modified',true);
+            me.enterEditMode();
+        }
+    },
     onModifyBtnItemIdClick: function(button, e, eOpts) {
         var me=this;
         var grid=me.getView();

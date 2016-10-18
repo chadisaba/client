@@ -163,7 +163,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
                         {
                             xtype: 'button',
                             itemId: 'deleteBtnItemId',
-                            iconCls: 'fa fa-edit',
+                            glyph: 'xf014@FontAwesome',
                             text: 'delete',
                             listeners: {
                                 click: 'onDeleteBtnItemIdClick'

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporttemplategrid",
+        "designer|userClassName": "ReportTemplateGridViewController"
+    },
+    "designerId": "b525ad2e-845c-421a-8b1e-f2c762460487"
+}

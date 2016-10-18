@@ -136,7 +136,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
                             xtype: 'button',
                             itemId: 'addButtonItemId',
                             iconCls: 'fa fa-plus-circle',
-                            text: 'Add',
+                            text: 'add',
                             listeners: {
                                 click: 'onAddButtonItemIdClick'
                             }
@@ -150,9 +150,23 @@ Ext.define('MyApp.view.ReportHFGrid', {
                             xtype: 'button',
                             itemId: 'modifyBtnItemId',
                             iconCls: 'fa fa-edit',
-                            text: 'Modify',
+                            text: 'modify',
                             listeners: {
                                 click: 'onModifyBtnItemIdClick'
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'deleteBtnItemId',
+                            iconCls: 'fa fa-edit',
+                            text: 'delete',
+                            listeners: {
+                                click: 'onDeleteBtnItemIdClick'
                             }
                         }
                     ]

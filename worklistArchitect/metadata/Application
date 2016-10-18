@@ -28,7 +28,8 @@
             "DoctorComboModel",
             "ReportModel",
             "ReportHasStudyModel",
-            "ReportHFModel"
+            "ReportHFModel",
+            "ReportTemplateModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -55,7 +56,8 @@
             "ReportForm",
             "ReportGridPanel",
             "ReportHasStudyGrid",
-            "ReportHFGrid"
+            "ReportHFGrid",
+            "ReportTemplateGrid"
         ]
     },
     "name": "Application",

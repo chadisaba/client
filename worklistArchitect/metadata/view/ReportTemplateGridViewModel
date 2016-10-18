@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporttemplategrid",
+        "designer|userClassName": "ReportTemplateGridViewModel"
+    },
+    "designerId": "a936500c-eaf1-45d8-8764-708281ea9456",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReportTemplateModel",
+                "name": "ReportTemplateGridStore"
+            },
+            "name": "MyStore12",
+            "designerId": "0ddbc14e-0d1f-40c5-9184-3fa034a1725a"
+        }
+    ]
+}

@@ -411,7 +411,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "fa fa-edit",
+                                "glyph": "xf014@FontAwesome",
+                                "iconCls": null,
                                 "itemId": "deleteBtnItemId",
                                 "text": "delete"
                             },
