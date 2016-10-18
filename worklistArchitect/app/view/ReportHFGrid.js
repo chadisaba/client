@@ -69,10 +69,8 @@ Ext.define('MyApp.view.ReportHFGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteComboItemId',
-                allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'siteCode',
-                forceSelection: true,
                 queryMode: 'local',
                 valueField: 'siteCode',
                 bind: {

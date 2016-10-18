@@ -43,7 +43,8 @@ Ext.application({
         'DoctorComboModel',
         'ReportModel',
         'ReportHasStudyModel',
-        'ReportHFModel'
+        'ReportHFModel',
+        'ReportTemplateModel'
     ],
     views: [
         'WorklistGrid',
@@ -66,7 +67,8 @@ Ext.application({
         'ReportForm',
         'ReportGridPanel',
         'ReportHasStudyGrid',
-        'ReportHFGrid'
+        'ReportHFGrid',
+        'ReportTemplateGrid'
     ],
     controllers: [
         'MainController'

@@ -54,6 +54,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "itemId": "doctorTextFieldItemId"
+                    },
                     "name": "MyTextField5",
                     "designerId": "87f45790-0bf6-4b9a-8358-0be1da70d54e"
                 }
@@ -158,8 +161,40 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "userInitiales",
+                        "forceSelection": true,
+                        "itemId": "doctorComboItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{DoctorStore}"
+                        ],
+                        "valueField": "userInitiales"
+                    },
                     "name": "MyComboBox8",
-                    "designerId": "3e4060da-48a0-4064-9bd7-37e2beb30280"
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "3e4060da-48a0-4064-9bd7-37e2beb30280",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDoctorComboItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onDoctorComboItemIdSelect",
+                            "designerId": "ed7863b0-48ed-4b3f-bd8d-5e80a999c27e"
+                        }
+                    ]
                 }
             ]
         },
@@ -197,10 +232,28 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "addBtnItemId",
                                 "text": "add"
                             },
                             "name": "MyButton9",
-                            "designerId": "3658f216-1711-49a1-a30d-794587ff80b5"
+                            "designerId": "3658f216-1711-49a1-a30d-794587ff80b5",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAddBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAddBtnItemIdClick",
+                                    "designerId": "4e401f12-24f1-4e7e-b0bd-40c4082a60a3"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -225,10 +278,28 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "modifyBtnItemId",
                                 "text": "modify"
                             },
                             "name": "MyButton9",
-                            "designerId": "13070c51-765c-4da9-a00b-bcdc762fcdce"
+                            "designerId": "13070c51-765c-4da9-a00b-bcdc762fcdce",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onModifyBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onModifyBtnItemIdClick",
+                                    "designerId": "87798aff-2c98-4821-87e5-ee9d4d834052"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -253,10 +324,28 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "deleteBtnItemId",
                                 "text": "delete"
                             },
                             "name": "MyButton9",
-                            "designerId": "7d4cbd5e-96e2-41cf-a489-4b15b1defd34"
+                            "designerId": "7d4cbd5e-96e2-41cf-a489-4b15b1defd34",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDeleteBtnItemIdClick",
+                                    "designerId": "09a3e5c4-4926-4a5b-96ad-7572b0e449ce"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -294,10 +383,28 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "saveBtnItemId",
                                 "text": "save"
                             },
                             "name": "MyButton9",
-                            "designerId": "a8994860-ee90-488a-8297-1d7d28a07368"
+                            "designerId": "a8994860-ee90-488a-8297-1d7d28a07368",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSaveBtnItemIdClick",
+                                    "designerId": "07e07e3f-c692-4a89-a169-ec3d41816b20"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -322,14 +429,105 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "cancelBtnItemId",
                                 "text": "cancel"
                             },
                             "name": "MyButton9",
-                            "designerId": "3c8d00d9-4d2a-4df9-8508-3155b92e943f"
+                            "designerId": "3c8d00d9-4d2a-4df9-8508-3155b92e943f",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCancelBtnItemIdClick",
+                                    "designerId": "1c556713-de45-4b20-97a0-bb4a0aba0fe6"
+                                }
+                            ]
                         }
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelectionChange",
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "2fd5fc45-d05b-4249-a9c5-68df60bc3b26"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBeforeSelect",
+                "name": "beforeselect",
+                "scope": "me"
+            },
+            "name": "onGridpanelBeforeSelect",
+            "designerId": "82276fd3-cede-4129-9861-9d151b880037"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin1",
+            "designerId": "f940ef6f-974f-4fd2-b56a-481c25b0f569"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onGridpanelBeforeEdit",
+            "designerId": "aa4b9b63-ddda-4754-b513-738a8635029c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelValidateEdit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onGridpanelValidateEdit",
+            "designerId": "357036fe-be1d-4600-a05f-00ab4bf6a376"
         }
     ]
 }

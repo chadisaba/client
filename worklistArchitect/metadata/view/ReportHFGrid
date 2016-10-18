@@ -113,10 +113,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
                         "designer|displayName": "",
                         "displayField": "siteCode",
-                        "forceSelection": true,
                         "itemId": "siteComboItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,

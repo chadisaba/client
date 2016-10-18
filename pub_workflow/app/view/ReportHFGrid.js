@@ -69,10 +69,8 @@ Ext.define('MyApp.view.ReportHFGrid', {
             editor: {
                 xtype: 'combobox',
                 itemId: 'siteComboItemId',
-                allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'siteCode',
-                forceSelection: true,
                 queryMode: 'local',
                 valueField: 'siteCode',
                 bind: {
@@ -163,7 +161,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
                         {
                             xtype: 'button',
                             itemId: 'deleteBtnItemId',
-                            iconCls: 'fa fa-edit',
+                            glyph: 'xf014@FontAwesome',
                             text: 'delete',
                             listeners: {
                                 click: 'onDeleteBtnItemIdClick'

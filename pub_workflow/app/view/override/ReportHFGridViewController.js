@@ -191,13 +191,11 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
             {
                 var myMask = new Ext.LoadMask({msg:translate("Loading Template"),target:me.getView()});
                 myMask.show();
-                var templateContent;
                 CommonDirect.getDataById('reporthfId',selected[0].get('reporthfId'),"REPORT_HF")
                     .then(function(_result)
                     {
 
                         var reporthfObject=_result[0],headerContent="",footerContent="",headerIsOoxml=true;
-                        ['reporthfId','doctorId','siteId','reporthfType','reporthfName','reporthfContentIsHtml'];
                         if(reporthfObject.reporthfType==1)// header
                         {
                             headerContent=reporthfObject.reporthfContent;
@@ -246,6 +244,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
         grid.down('#addButtonItemId').setDisabled(true);
         grid.down('#modifyBtnItemId').setDisabled(true);
+        grid.down('#deleteBtnItemId').setDisabled(true);
     },
     quitEditMode:function()
     {
@@ -276,6 +275,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
 
         grid.down('#addButtonItemId').setDisabled(false);
         grid.down('#modifyBtnItemId').setDisabled(false);
+        grid.down('#deleteBtnItemId').setDisabled(false);
     }
     
 });
