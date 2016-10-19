@@ -50,13 +50,13 @@ Ext.define('MyApp.view.override.ReportGridPanelViewController', {
                              items:{
                                  region: 'center',
                                  header:false,
-                                 xtype:'reporthfgrid',
+                                 xtype:'reporttemplatetabpanel',
                                  listeners:
                                  {
-                                     afterrender:function(_comp)
+                                    /* afterrender:function(_comp)
                                      {
                                          _comp.getController().initGrid();
-                                     }
+                                     }*/
                                  }
 
 

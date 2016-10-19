@@ -103,17 +103,27 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
         var me=this;
         var grid=me.getView();
         var selectedRec;
+        var store=me.getStore();
         if(grid.getSelectionModel().hasSelection())
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             Ext.Msg.confirm(translate("Confirmation"), translate("Do you want to delete selected row?"),
                 function(_btnText){
                 if(_btnText === "yes"){
-                    // TODO delete the selected row
-                   // CommonDirect.
+                    CommonDirect.deleteRecordById('REPORT_HF','reporthfId',selectedRec.get('reporthfId'))
+                        .then(function(_result)
+                        {
+                            store.remove(selectedRec);
+                            me.quitEditMode();
+                        })
+                        .catch(function(_err)
+                        {
+                            console.error(_err);
+
+                        })
                 }
             }, me);
-            me.enterEditMode();
+
         }
     },
     onModifyBtnItemIdClick: function(button, e, eOpts) {
@@ -205,7 +215,7 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                             footerContent=reporthfObject.reporthfContent;
                         }
                         // fill the word document with the selected template
-                        func.Report.fillReport(headerContent,'',footerContent,headerIsOoxml,false,true,myMask);
+                        func.Report.fillReport(headerContent,'',footerContent,headerIsOoxml,false,false,myMask);
 
                     });
                 // display the header or footer template

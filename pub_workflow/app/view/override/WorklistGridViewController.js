@@ -474,7 +474,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
 
         metaData.tdAttr = 'data-qtip="' + tooltip + '"';
-        
+
         return Utility.renderer.textHrefRenderer("#31b0d5",record.get('patientLName')+' '+record.get('patientFname'));
     },
 

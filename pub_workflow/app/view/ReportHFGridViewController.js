@@ -29,7 +29,7 @@ Ext.define('MyApp.view.ReportHFGridViewController', {
 
     },
 
-    onAddButtonItemIdClick: function(button, e, eOpts) {
+    onAddBtnItemIdClick: function(button, e, eOpts) {
 
     },
 

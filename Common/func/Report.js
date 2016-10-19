@@ -172,13 +172,15 @@ func.Report={
                 return context.sync().then(function () {
 
                     /***we handle the header****/
+                    var myHeader = mySections.items[0].getHeader("primary");
+                    myHeader.clear();
                     if(_headerOoxml)
                     {
                         // Create a proxy object the primary header of the first section.
                         // Note that the header is a body object.
-                        var myHeader = mySections.items[0].getHeader("primary");
+
                         // Queue a command to clear text in the header
-                        myHeader.clear();
+
                         // Queue a command to insert text at the end of the header.
                         if(_headerIsOoxml)
                             myHeader.insertOoxml(_headerOoxml,Word.InsertLocation.end);
@@ -190,21 +192,23 @@ func.Report={
                     }
 
                     /***we handle the body****/
+                    // Create a proxy object for the document body.
+                    var body = context.document.body;
+                    // Queue a commmand to clear the contents of the body.
+                    body.clear();
                     if(_bodyOoxml) {
-                        // Create a proxy object for the document body.
-                        var body = context.document.body;
-                        // Queue a commmand to clear the contents of the body.
-                        body.clear();
+
                         if(_bodyIsOoxml)
                             body.insertOoxml(_bodyOoxml, Word.InsertLocation.start);
                         else
                             body.insertHtml(_bodyOoxml, Word.InsertLocation.start);
                     }
 
+                    var myFooter = mySections.items[0].getFooter("primary");
+                    myFooter.clear();
                     /***we handle the footer****/
                     if(_footerOoxml) {
-                        var myFooter = mySections.items[0].getFooter("primary");
-                        myFooter.clear();
+
                         if(_footerIsOoxml)
                             myFooter.insertOoxml(_footerOoxml, Word.InsertLocation.start);
                         else
@@ -231,7 +235,7 @@ func.Report={
     },
     /**
      * save header or footer template
-     * @param _reporthfObject : Object report template header or footer  object (reporthf)
+     * @param _reporthfRec : Object report template header or footer  object (reporthf)
      * @param _view: Object
      */
     saveHeaderOrFooterTemplate:function(_reporthfRec,_view,_scope)

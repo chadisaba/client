@@ -304,8 +304,8 @@
                     "userConfig": {
                         "layout|flex": null
                     },
-                    "name": "MyContainer4",
-                    "designerId": "da56a9b5-6910-4134-8443-194f50e8f382",
+                    "name": "MyContainer20",
+                    "designerId": "75d463dd-bfd1-463c-91e9-a0db8bbd117e",
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -315,12 +315,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "fa fa-plus-circle",
-                                "itemId": "addButtonItemId",
+                                "iconCls": "fa fa-plus",
+                                "itemId": "addBtnItemId",
                                 "text": "add"
                             },
                             "name": "MyButton1",
-                            "designerId": "9db30c65-eee1-4cdd-b38e-95792ed627df",
+                            "designerId": "9835fe25-939f-43b7-a659-69b58e7005d6",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -330,12 +330,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onAddButtonItemIdClick",
+                                        "fn": "onAddBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
                                     },
-                                    "name": "onAddButtonItemIdClick",
-                                    "designerId": "51215d90-6c0d-4696-93c6-788b8250350f"
+                                    "name": "onAddBtnItemIdClick",
+                                    "designerId": "b89fdf1f-edf1-4840-8190-283e6b70eab8"
                                 }
                             ]
                         }

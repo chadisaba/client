@@ -1,0 +1,70 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "designer|userAlias": "reporttemplatetabpanel",
+        "designer|userClassName": "ReportTemplateTabPanel",
+        "height": null,
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "2190139f-cda5-49ce-bc4b-73e145f60b2d",
+    "viewControllerInstanceId": "83824cb6-0c78-4623-8e77-431da681d76f",
+    "viewModelInstanceId": "2fb9bd70-84cc-4245-bf8e-8bd6c01dcf56",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "reporthfgrid",
+            "designerId": "80cd4324-b211-43cf-9422-79ab295e367c",
+            "masterInstanceId": "23efb3f9-587a-406c-9a2b-a43cbd607471",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "08514315-348e-4c67-8771-52e35f1e8b40"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Report template"
+            },
+            "name": "reporttemplategrid",
+            "designerId": "488224a0-f404-46e1-9f67-284b820a7b98",
+            "masterInstanceId": "39177dc5-5060-4e1f-988b-a79c4a3eb3da",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig4",
+                    "designerId": "cbc1b328-6196-49d5-ad6d-0a61db721fea"
+                }
+            ]
+        }
+    ]
+}

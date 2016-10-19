@@ -21,24 +21,6 @@ var CommonDirect={
             });
         return promise;
     },
-    saveDataWithCallback:function(_dataObject,_tableName,_comment,_cb)
-    {
-        var params={};
-        params.table=_tableName;
-        params.dataToBeSaved=_dataObject;
-        params.comment=_comment||null;
-        Server.CommonQueries.saveRecord(params,
-            function(_result){
-                if(_result.success){
-                    _cb(null,_result.data);
-                }
-                else{
-                    console.error(_result.msg);
-                    _cb(new Error(_result.msg));
-                }
-            }
-        );
-    },
 
     saveDataArray:function(_dataToBySaved,_tableName,_idName,_comment)
     {
@@ -176,31 +158,31 @@ var CommonDirect={
             });
         return promise;
     },
-    getDataCallback:function(_tableName,_filtersArray,_limit,cb)
+
+    deleteRecordById:function(_tableName,_IdName,_idValue)
     {
         //Creating a promise
-
-
+        var promise=new Promise(
+            function(resolve, reject) {
                 var params;
                 params={
                     table:_tableName,
-                    limit:_limit||100
+                    recordIdName:_IdName,
+                    recordIdValue:_idValue
                 };
-                if(_filtersArray)
-                    params.filters=_filtersArray;
-                Server.CommonQueries.read(params,
+                Server.CommonQueries.deleteRecordById(params,
                     function(res){
                         if(res.success){
-                            cb(null,res.data);
+                            resolve(res.data);
                         }
                         else{
                             console.error(res.msg);
-                            cb(res.msg);
+                            reject(res.msg);
                         }
                     }
                 )
-
-
+            });
+        return promise;
     },
     getData:function(_tableName,_filtersArray,_limit)
     {

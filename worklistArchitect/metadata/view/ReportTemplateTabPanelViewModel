@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporttemplatetabpanel",
+        "designer|userClassName": "ReportTemplateTabPanelViewModel"
+    },
+    "designerId": "2fb9bd70-84cc-4245-bf8e-8bd6c01dcf56"
+}
