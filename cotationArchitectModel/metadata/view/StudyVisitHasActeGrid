@@ -98,7 +98,22 @@
                 "text": "Type"
             },
             "name": "MystudyVisitHasActeTypeCol1",
-            "designerId": "0dc4efd1-718c-4d42-b9ee-08b1555a5e3e"
+            "designerId": "0dc4efd1-718c-4d42-b9ee-08b1555a5e3e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyVisitHAsActeTypeTextFieldItemId"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "7b594ac8-7c13-4086-a06b-702e41556962"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",

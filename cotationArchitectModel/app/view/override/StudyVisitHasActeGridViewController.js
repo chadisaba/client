@@ -43,7 +43,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                                       for (var i = 0; i < _data.length; i++) {
                                            //   _data[i].userFName = 1;
                                           //    _result[i].userFName = _result[i]['User.userFName'];
-
+                                       //   _data[i].studyVisitId=_data[i]['StudyVisits.studyVisitId'];
                                           _data[i].studyVisitId=_data[i]['StudyVisits.studyVisitId'];
                                           _data[i].studyActeId=_data[i]['StudyActes.studyActeId'];
                                           _data[i].studyVisitHasActeCode=_data[i]['StudyActes.studyActeCode'];
@@ -119,6 +119,56 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
             }
 
         }
+
+        var nbActes=_data.length;
+
+
+        var actesBucco=[];
+        var actesIRM=[];
+        var actesScan=[];
+        var actesImmagerieInterventionnelle=[];
+        var actesSupplements=[];
+
+
+        var mainTable={};
+
+
+        mainTable.tableName="CCAM_CONFIG";
+
+        CommonDirect.getData(mainTable)
+            .then(
+                function (_result) {
+                    for (var i = 0; i < _result.length; i++) {
+                        switch(_result[i].ccam){
+                            case 's':
+                                actesScan.push(_result[i].ccamCode);
+                                break;
+                            case 'i':
+                                actesIRM.push(_result[i].ccamCode);
+                                break;
+                            case '7':
+                                actesImmagerieInterventionnelle.push(_result[i].ccamCode);
+                                break;
+                            case 'b':
+                                actesBucco.push(_result[i].ccamCode);
+                                break;
+                            default:
+                                break
+
+                        }
+
+
+
+                    }
+
+                })
+            .catch(function (_err) {
+                console.error(_err);
+                reject(_err);
+            });
+
+
+
         //get scan actes
         //get IRM actes
         //get actes appareil circulatoire and imagerie interventionnelle
@@ -127,11 +177,6 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
 
 
-        var actesBucco=[];
-        var actesIRM=[];
-        var actesScan=[];
-        var actesImmagerieInterventionnelle=[];
-        var actesSupplements=[];
 
 
         for (var i = 0; i < _data.length; i++) {
@@ -171,6 +216,27 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
         }
 
 
+        if(nbActes<2){
+            if(actesBucco.length>0){
+
+                for (var i = 0; i < _data.length; i++) {
+
+                    if(actesBucco.indexOf(_data[i].studyVisitHasActeCode)  >-1){
+                        _data[i].studyVisitHasActeAssociationNonPrevu=4;
+
+                    }
+
+                }
+
+
+            }
+
+
+
+
+        }
+
+
         return _data;
 
     },
@@ -201,7 +267,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
    onStudyVisitHasActeGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
   
 	            var me=this;
-	            CommonDirect.saveData(dataToBeSaved, "STUDY_VISIT_HAS_ACTE", comment)
+       CommonDirect.saveDataArray(dataToBeSaved, "STUDY_VISIT_HAS_ACTE","studyVisitHasActeId", comment)
 	                .then(function(_result)
 	                {
 	                  me.refreshGrid()  
@@ -289,6 +355,46 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                             function (_result) {
                                 for (var i = 0; i < _result.length; i++) {
                                 //    _result[i].studyVisitId = _result[i]['User.studyVisitId'];
+                                    _result[i].studyActeId = _result[i]['StudyVisitHasActes.studyActeId'];
+                                    _result[i].studyVisitHasActeAcceptedModificators = _result[i]['StudyVisitHasActes.studyVisitHasActeAcceptedModificators'];
+                                    _result[i].studyVisitHasActeAmount = _result[i]['StudyVisitHasActes.studyVisitHasActeAmount'];
+                                    _result[i].studyVisitHasActeAmountDepassement = _result[i]['StudyVisitHasActes.studyVisitHasActeAmountDepassement'];
+                                    _result[i].studyVisitHasActeCode = _result[i]['StudyVisitHasActes.studyVisitHasActeCode'];
+                                    _result[i].studyVisitHasActeId = _result[i]['StudyVisitHasActes.studyVisitHasActeId'];
+                                    _result[i].studyVisitHasActeType = _result[i]['StudyVisitHasActes.studyVisitHasActeType'];
+                                    _result[i].studyVisitHasActeArchivingActeAddedAuto = _result[i]['StudyVisitHasActes.studyVisitHasActeArchivingActeAddedAuto'];
+                                    _result[i].studyVisitHasActeAssociationNonPrevu = _result[i]['StudyVisitHasActes.studyVisitHasActeAssociationNonPrevu'];
+                                    _result[i].studyVisitHasActeCodeAccEntentePrealable = _result[i]['StudyVisitHasActes.studyVisitHasActeCodeAccEntentePrealable'];
+                                    _result[i].studyVisitHasActeCodeAffine = _result[i]['StudyVisitHasActes.studyVisitHasActeCodeAffine'];
+                                    _result[i].studyVisitHasActeCoefficient = _result[i]['StudyVisitHasActes.studyVisitHasActeCoefficient'];
+                                    _result[i].studyVisitHasActeIsDomicile = _result[i]['StudyVisitHasActes.studyVisitHasActeIsDomicile'];
+                                    _result[i].studyVisitHasActeIsEmergency = _result[i]['StudyVisitHasActes.studyVisitHasActeIsEmergency'];
+                                    _result[i].studyVisitHasActeIsHoliday = _result[i]['StudyVisitHasActes.studyVisitHasActeIsHoliday'];
+                                    _result[i].studyVisitHasActeIsNight = _result[i]['StudyVisitHasActes.studyVisitHasActeIsNight'];
+
+
+
+
+                                    _result[i].studyVisitHasActeDateEntentePrealable = _result[i]['StudyVisitHasActes.studyVisitHasActeDateEntentePrealable'];
+                                    _result[i].studyVisitHasActeDenombrement = _result[i]['StudyVisitHasActes.studyVisitHasActeDenombrement'];
+                                    _result[i].studyVisitHasActeDepense = _result[i]['StudyVisitHasActes.studyVisitHasActeDepense'];
+                                    _result[i].studyVisitHasActeExceptionalRefunding = _result[i]['StudyVisitHasActes.studyVisitHasActeExceptionalRefunding'];
+                                    _result[i].studyVisitHasActeExoParticuliere = _result[i]['StudyVisitHasActes.studyVisitHasActeExoParticuliere'];
+                                    _result[i].studyVisitHasActeIsMultiple = _result[i]['StudyVisitHasActes.studyVisitHasActeIsMultiple'];
+                                    _result[i].studyVisitHasActeModificators = _result[i]['StudyVisitHasActes.studyVisitHasActeModificators'];
+                                    _result[i].studyVisitHasActeQuantity = _result[i]['StudyVisitHasActes.studyVisitHasActeQuantity'];
+
+
+
+
+                                    _result[i].studyVisitHasActeRefundingCode = _result[i]['StudyVisitHasActes.studyVisitHasActeRefundingCode'];
+                                    _result[i].studyVisitHasActeSoumisEntentePrealable = _result[i]['StudyVisitHasActes.studyVisitHasActeSoumisEntentePrealable'];
+                                    _result[i].studyVisitHasActeSuppCharge = _result[i]['StudyVisitHasActes.studyVisitHasActeSuppCharge'];
+                                    _result[i].studyVisitHasActeType = _result[i]['StudyVisitHasActes.studyVisitHasActeType'];
+                                    _result[i].studyVisitId = _result[i]['StudyVisitHasActes.studyVisitId'];
+
+
+
 
                                 }
                                 resolve(_result);

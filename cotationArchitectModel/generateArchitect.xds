@@ -23,20 +23,27 @@
         "genTimestamps": false,
         "cacheBust": false,
         "installStatus": "Not Installed",
-        "urlPrefixTemplate": "http://localhost:8888/clientch/cotation_pub/",
-        "displayfield-ExtBox1-1170-inputEl": "a new version of the framework is available"
+        "urlPrefixTemplate": "http://localhost:8888/clientN/cotation_pub/",
+        "displayfield-ExtBox1-1170-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1117-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1174-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1227-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1280-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1401-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1454-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1507-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1560-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1613-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1126-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "4.0.1",
-    "xdsBuild": 190,
+    "xdsVersion": "4.0.2",
+    "xdsBuild": 209,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
-            "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
-            "79e1aecd-2f22-4511-bab4-a79afe9fcedd",
             "04066d1c-7822-46e5-825a-1d1d52b03901",
-            "336fbfe5-7283-4080-94fd-711d8dcd1477",
             "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
             "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm",
             "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
@@ -64,7 +71,7 @@
             "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f"
         ],
         "resource": [
-            "614b1371-c3d6-4987-8837-deb62ffcfdf8"
+            "43afb4f6-cf2b-444c-917a-7c06e0852da9"
         ],
         "app": [
             "application"
