@@ -69,11 +69,23 @@ Ext.define('Utility.renderer', {
 			return '<a href="#" onclick="return;" style="color:'+color+
 				';font-size:13px;">'+value+'</a>';
 		},
+		textHrefBadgeRenderer:function(color,value,badgeText)
+		{
+			badgeText=badgeText||'';
+			return '<span class="mdl-badge" data-badge="'+badgeText+'"><a href="#" onclick="return;" style="color:'+color+
+				';font-size:13px;">'+value+'</a></span>';
+		},
 		btnRenderer:function(color,icon)
 		{
 			return '<button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
 				'<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
 				' </button>';
+		},
+		btnBadgeRenderer:function(color,icon,badgeText)
+		{
+			return '<span class="mdl-badge mdl-badge--overlap" data-badge="4"><button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">' +
+				'<i class="'+icon+'" style="color:'+color+ ';font-size:14px;"></i>' +
+				' </button></span>';
 		},
 		htmlTagRenderer:function(htmlTag,color,icon)
 		{

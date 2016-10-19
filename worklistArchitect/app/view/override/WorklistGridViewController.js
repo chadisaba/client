@@ -455,12 +455,33 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     },
     patientRenderer: function(value, metaData, record) {
+        var tooltip="<lu>";
+        tooltip+='<li>'+translate('patient') +': '+ record.get('patientLName')+' '+record.get('patientFname') +' '+record.get('patientBirthday') +'</li>';
+        tooltip+='<li>'+translate('worklistStudies') +': '+ record.get('worklistStudies') +'</li>';
+        tooltip+='<li>'+translate('visit number') +': '+ record.get('patientNbVisit') +'</li>';
+        if(record.get('worklistVisitComment'))
+            tooltip+='<li>'+translate('comment') +': '+ record.get('worklistVisitComment') +'</li>';
+        if(record.get('visitIsHospitalized'))
+            tooltip+='<li>'+translate('patient hospitalized')  +'</li>';
+        if(record.get('worklistMedPresc'))
+            tooltip+='<li>'+translate('prescripteurs') +': '+ record.get('worklistMedPresc') +'</li>';
+
+        if(record.get('worklistVisitInfo'))
+            tooltip+='<li>'+translate('info visit') +': '+ record.get('worklistVisitInfo') +'</li>';
+        if(record.get('worklistPatientInfo'))
+            tooltip+='<li>'+translate('info patient') +': '+ record.get('worklistPatientInfo') +'</li>';
+
+
+
+        metaData.tdAttr = 'data-qtip="' + tooltip + '"';
+
         return Utility.renderer.textHrefRenderer("#31b0d5",record.get('patientLName')+' '+record.get('patientFname'));
     },
 
     dictationRenderer: function(value, metaData, record) {
         var result;
-        result='<span style="color:#27b6af">'+record.get('worklistDictationsNb')+'&nbsp;<span/><a href="#" onclick="return;" style="color:#27b6af;font-size:17px;"><i class="fa fa-bullhorn"></i></a>';
+        var dicateNumber=record.get('worklistDictationsNb')||0;
+        result='<span class="mdl-badge" style="color:#27b6af" data-badge="'+dicateNumber+'">&nbsp;<span/><a href="#" onclick="return;" style="color:#27b6af;font-size:17px;"><i class="fa fa-bullhorn"></i></a></span>';
         return result;
     },
     CRRenderer: function(value, metaData, record) {
@@ -521,7 +542,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result=Utility.renderer.btnRenderer(color,icon);
+        var result=Utility.renderer.btnBadgeRenderer(color,icon,'5');
 
         return result;
     },
@@ -640,13 +661,13 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
             var exArray=value.split("|");
             if(exArray.length>1)
             {
-                examen=exArray.length+" "+exArray[0]+"...";
+                examen=" "+exArray[0]+"...";
             }
             else
                 examen=value;
 
         }
-        return Utility.renderer.textHrefRenderer(color,examen);
+        return Utility.renderer.textHrefBadgeRenderer(color,examen,exArray.length);
         //return '<a href="#" onclick="return;" style="color:'+color+';font-size:13px;">'+examen+'</a>';
     },
     emailRenderer:function(value,metadata){

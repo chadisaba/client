@@ -113,8 +113,6 @@ Ext.define('MyApp.view.override.ReportHFGridViewController', {
                    // CommonDirect.
                 }
             }, me);
-
-            selectedRec.set('modified',true);
             me.enterEditMode();
         }
     },

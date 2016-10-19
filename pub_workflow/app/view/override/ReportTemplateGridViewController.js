@@ -9,25 +9,16 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         var view = this.getView();
 
         var doctorComboStore=this.getViewModel().getStore('DoctorStore');
-
         DoctorDirect.getDoctorsFromIndexDb().then(
             function(_resultArray)
             {
                 for (var i = 0; i < _resultArray.length; i++) {
                     _resultArray[i].userInitiales = _resultArray[i]['User.userInitiales'];
-                    // _result[i].doctor = _result[i]['Doctor.User.userFName']+" "+_result[i]['Doctor.User.userLName'];
                 }
                 doctorComboStore.loadData(_resultArray);
 
             }
         );
-        SiteDirect.getSitesFromIndexDb()
-            .then(function(_resultArray)
-            {
-                siteComboStore.loadData(_resultArray);
-
-            });
-
         this.getResultArray(me.filters).then(
             function (data) {
                 Utility.grid.loadGrid(view, data, me.getStore());
@@ -38,17 +29,81 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
 
         this.initGrid(this.filters);
     },
-
+    getResultArray: function (filters) {
+        var me = this;
+        var promise = new Promise(
+            function (resolve, reject) {
+                var mainTableObject = {};
+                mainTableObject.tableName = 'REPORT_TEMPLATE';
+                mainTableObject.fieldsArray=['reportTemplateId','doctorId','reportTemplateName','reportTemplateContentIsHtml','reportTemplateIsPublic'];
+                mainTableObject.filters = filters;
+                var joinTablesArray = [];
+                joinTablesArray.push(
+                    {tableName: 'DOCTOR',fieldsArray:[],joinObject:{tableName:'USER',fieldsArray:['userInitiales']}}
+                );
+                CommonDirect.getDataWidthJoin(mainTableObject, joinTablesArray)
+                    .then(
+                        function (_result) {
+                            for (var i = 0; i < _result.length; i++) {
+                                _result[i].doctor = _result[i]['Doctor.User.userInitiales'];
+                            }
+                            resolve(_result);
+                        })
+                    .catch(function (_err) {
+                        console.error(_err);
+                        reject(_err);
+                    });
+            }
+        );
+        return promise;
+    },
+    getStore:function(){
+        var me=this;
+        var view = me.getView();
+        return view.getViewModel().getStore('ReportTemplateGridStore');
+    },
     onAddBtnItemIdClick: function(button, e, eOpts) {
+        var me=this;
+        me.enterEditMode();
+        var reportTemplateObject={
+            added:true
+        };
+        var store=me.getStore();
+        store.insert(0,reportTemplateObject);
+        view.getSelectionModel().select(0);
+        view.getPlugin('rowEdit').startEdit(view.getSelectionModel().getSelection()[0], 0);
 
     },
 
     onModifyBtnItemIdClick: function(button, e, eOpts) {
-
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            selectedRec.set('modified',true);
+            me.enterEditMode();
+        }
     },
 
     onDeleteBtnItemIdClick: function(button, e, eOpts) {
 
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            Ext.Msg.confirm(translate("Confirmation"), translate("Do you want to delete selected row?"),
+                function(_btnText){
+                    if(_btnText === "yes"){
+                        // TODO delete the selected row
+                        // CommonDirect.
+                    }
+                }, me);
+            me.enterEditMode();
+        }
     },
 
     onSaveBtnItemIdClick: function(button, e, eOpts) {
@@ -56,7 +111,8 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
     },
 
     onCancelBtnItemIdClick: function(button, e, eOpts) {
-
+        var me=this;
+        me.quitEditMode();
     },
 
     onGridpanelSelectionChange: function(model, selected, eOpts) {
@@ -95,7 +151,8 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
     },
 
     onGridpanelBeforeEdit: function() {
-
+        var rec=context.record;
+        return (rec.get('added')||rec.get('modified'));
     },
 
     onGridpanelValidateEdit: function() {
