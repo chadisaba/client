@@ -92,20 +92,28 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         var me=this;
         var grid=me.getView();
         var selectedRec;
+        var store=me.getStore();
         if(grid.getSelectionModel().hasSelection())
         {
             selectedRec=grid.getSelectionModel().getSelection()[0];
             Ext.Msg.confirm(translate("Confirmation"), translate("Do you want to delete selected row?"),
                 function(_btnText){
                     if(_btnText === "yes"){
-                        // TODO delete the selected row
-                        // CommonDirect.
+                        CommonDirect.deleteRecordById('REPORT_TEMPLATE','reportTemplateId',selectedRec.get('reportTemplateId'))
+                            .then(function(_result)
+                            {
+                                store.remove(selectedRec);
+                                me.quitEditMode();
+                            })
+                            .catch(function(_err)
+                            {
+                                console.error(_err);
+
+                            })
                     }
                 }, me);
-            me.enterEditMode();
         }
     },
-
     onSaveBtnItemIdClick: function(button, e, eOpts) {
 
     },
