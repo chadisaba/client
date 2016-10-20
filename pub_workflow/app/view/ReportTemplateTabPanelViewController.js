@@ -15,5 +15,18 @@
 
 Ext.define('MyApp.view.ReportTemplateTabPanelViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.reporttemplatetabpanel'
+    alias: 'controller.reporttemplatetabpanel',
+
+    requires: [
+        'MyApp.view.override.ReportTemplateTabPanelViewController'
+    ],
+
+    onReportHFTemplateGridAfterRender: function(component, eOpts) {
+
+    },
+
+    onReportTemplateGridAfterRender: function(component, eOpts) {
+
+    }
+
 });

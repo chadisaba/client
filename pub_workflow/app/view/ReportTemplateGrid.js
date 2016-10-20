@@ -107,6 +107,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
                         {
                             xtype: 'button',
                             itemId: 'addBtnItemId',
+                            iconCls: 'fa fa-plus',
                             text: 'add',
                             listeners: {
                                 click: 'onAddBtnItemIdClick'
@@ -120,6 +121,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
                         {
                             xtype: 'button',
                             itemId: 'modifyBtnItemId',
+                            iconCls: 'fa fa-edit',
                             text: 'modify',
                             listeners: {
                                 click: 'onModifyBtnItemIdClick'
@@ -133,6 +135,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
                         {
                             xtype: 'button',
                             itemId: 'deleteBtnItemId',
+                            glyph: 'xf014@FontAwesome',
                             text: 'delete',
                             listeners: {
                                 click: 'onDeleteBtnItemIdClick'
@@ -149,6 +152,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
                         {
                             xtype: 'button',
                             itemId: 'saveBtnItemId',
+                            iconCls: 'fa fa-floppy-o',
                             text: 'save',
                             listeners: {
                                 click: 'onSaveBtnItemIdClick'
@@ -162,6 +166,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
                         {
                             xtype: 'button',
                             itemId: 'cancelBtnItemId',
+                            glyph: 'xf0e2@FontAwesome',
                             text: 'cancel',
                             listeners: {
                                 click: 'onCancelBtnItemIdClick'

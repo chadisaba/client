@@ -10,6 +10,7 @@
         "designer|userAlias": "reporttemplatetabpanel",
         "designer|userClassName": "ReportTemplateTabPanel",
         "height": null,
+        "itemId": "reportTemplateTabPanelItemId",
         "width": null
     },
     "name": "MyTabPanel",
@@ -24,6 +25,9 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "itemId": "reporthfTemplateGrid"
+            },
             "name": "reporthfgrid",
             "designerId": "80cd4324-b211-43cf-9422-79ab295e367c",
             "masterInstanceId": "23efb3f9-587a-406c-9a2b-a43cbd607471",
@@ -37,6 +41,21 @@
                     "codeClass": null,
                     "name": "TabConfig",
                     "designerId": "08514315-348e-4c67-8771-52e35f1e8b40"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onReportHFTemplateGridAfterRender",
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onReportHFTemplateGridAfterRender",
+                    "designerId": "6c0e2340-baea-4ca1-834a-d0ef00779e93"
                 }
             ]
         },
@@ -48,6 +67,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "reportTemplateGrid",
                 "title": "Report template"
             },
             "name": "reporttemplategrid",
@@ -63,6 +83,21 @@
                     "codeClass": null,
                     "name": "TabConfig4",
                     "designerId": "cbc1b328-6196-49d5-ad6d-0a61db721fea"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onReportTemplateGridAfterRender",
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onReportTemplateGridAfterRender",
+                    "designerId": "de35c897-0d93-42d8-929c-31646a0552c8"
                 }
             ]
         }

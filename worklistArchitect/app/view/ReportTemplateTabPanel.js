@@ -19,24 +19,35 @@ Ext.define('MyApp.view.ReportTemplateTabPanel', {
 
     requires: [
         'MyApp.view.ReportTemplateTabPanelViewModel',
+        'MyApp.view.ReportTemplateTabPanelViewController',
         'MyApp.view.ReportHFGrid',
         'MyApp.view.ReportTemplateGrid',
         'Ext.grid.Panel',
         'Ext.tab.Tab'
     ],
 
+    controller: 'reporttemplatetabpanel',
     viewModel: {
         type: 'reporttemplatetabpanel'
     },
+    itemId: 'reportTemplateTabPanelItemId',
     activeTab: 0,
 
     items: [
         {
-            xtype: 'reporthfgrid'
+            xtype: 'reporthfgrid',
+            itemId: 'reporthfTemplateGrid',
+            listeners: {
+                afterrender: 'onReportHFTemplateGridAfterRender'
+            }
         },
         {
             xtype: 'reporttemplategrid',
-            title: 'Report template'
+            itemId: 'reportTemplateGrid',
+            title: 'Report template',
+            listeners: {
+                afterrender: 'onReportTemplateGridAfterRender'
+            }
         }
     ]
 
