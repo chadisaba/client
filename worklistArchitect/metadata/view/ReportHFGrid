@@ -316,7 +316,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "iconCls": "fa fa-plus",
-                                "itemId": "addBtnItemId",
+                                "itemId": "addButtonItemId",
                                 "text": "add"
                             },
                             "name": "MyButton1",
@@ -330,12 +330,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onAddBtnItemIdClick",
+                                        "fn": "onAddButtonItemIdClick",
                                         "name": "click",
                                         "scope": "me"
                                     },
-                                    "name": "onAddBtnItemIdClick",
-                                    "designerId": "b89fdf1f-edf1-4840-8190-283e6b70eab8"
+                                    "name": "onAddButtonItemIdClick",
+                                    "designerId": "3d3b05f1-8853-4531-b2fa-4d02cd5e4ace"
                                 }
                             ]
                         }

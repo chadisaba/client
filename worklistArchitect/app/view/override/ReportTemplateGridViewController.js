@@ -34,7 +34,7 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         var promise = new Promise(
             function (resolve, reject) {
                 var mainTableObject = {};
-                mainTableObject.tableName = 'REPORT_TEMPLATE';
+                mainTableObject.tableName = 'report_template';
                 mainTableObject.fieldsArray=['reportTemplateId','doctorId','reportTemplateName','reportTemplateContentIsHtml','reportTemplateIsPublic'];
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
@@ -63,7 +63,7 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         return view.getViewModel().getStore('ReportTemplateGridStore');
     },
     onAddBtnItemIdClick: function(button, e, eOpts) {
-        var me=this;
+        var me=this,view=this.getView();
         me.enterEditMode();
         var reportTemplateObject={
             added:true
@@ -158,7 +158,7 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
 
     },
 
-    onGridpanelBeforeEdit: function() {
+    onGridpanelBeforeEdit: function(editor, context) {
         var rec=context.record;
         return (rec.get('added')||rec.get('modified'));
     },
@@ -177,7 +177,7 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         grid.down('#saveBtnItemId').setDisabled(false);
         grid.down('#cancelBtnItemId').setDisabled(false);
 
-        grid.down('#addButtonItemId').setDisabled(true);
+        grid.down('#addBtnItemId').setDisabled(true);
         grid.down('#modifyBtnItemId').setDisabled(true);
         grid.down('#deleteBtnItemId').setDisabled(true);
     },
@@ -208,7 +208,7 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         grid.down('#cancelBtnItemId').setDisabled(true);
 
 
-        grid.down('#addButtonItemId').setDisabled(false);
+        grid.down('#addBtnItemId').setDisabled(false);
         grid.down('#modifyBtnItemId').setDisabled(false);
         grid.down('#deleteBtnItemId').setDisabled(false);
     }

@@ -34,7 +34,7 @@
             "designerId": "47bcfe35-a3ca-4017-a995-a3f338bc73af"
         },
         {
-            "type": "Ext.grid.column.Number",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -44,7 +44,7 @@
                 "dataIndex": "doctorId",
                 "text": "Doctor Id"
             },
-            "name": "MyNumberColumn",
+            "name": "MyColumn10",
             "designerId": "a774c207-8c81-409b-b6e0-19be5df7eb61",
             "cn": [
                 {
@@ -89,7 +89,7 @@
             ]
         },
         {
-            "type": "Ext.grid.column.Boolean",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -99,7 +99,7 @@
                 "dataIndex": "reportTemplateContentIsHtml",
                 "text": "is HTML"
             },
-            "name": "MyBooleanColumn1",
+            "name": "MyColumn11",
             "designerId": "5c35882a-f3f3-4d57-bed9-5bfec5aff311",
             "cn": [
                 {
@@ -115,7 +115,7 @@
             ]
         },
         {
-            "type": "Ext.grid.column.Boolean",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -125,7 +125,7 @@
                 "dataIndex": "reportTemplateIsPublic",
                 "text": "public"
             },
-            "name": "MyBooleanColumn2",
+            "name": "MyColumn12",
             "designerId": "fa0214aa-9f6d-44a5-8acf-f471ec2e2a97",
             "cn": [
                 {
@@ -534,6 +534,25 @@
             },
             "name": "onGridpanelValidateEdit",
             "designerId": "357036fe-be1d-4600-a05f-00ab4bf6a376"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processReportTemplateGrid",
+                "implHandler": [
+                    "GridAddPlugins.addGridInfoColumnPlugin(this);"
+                ]
+            },
+            "name": "processReportTemplateGrid",
+            "designerId": "31c2382a-61a2-4c65-adc4-a972c1e5e7cf"
         }
     ]
 }

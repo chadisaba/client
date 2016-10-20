@@ -21,8 +21,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
         'MyApp.view.ReportTemplateGridViewModel',
         'MyApp.view.ReportTemplateGridViewController',
         'Ext.view.Table',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Boolean',
+        'Ext.grid.column.Column',
         'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
@@ -42,7 +41,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
     },
     columns: [
         {
-            xtype: 'numbercolumn',
+            xtype: 'gridcolumn',
             dataIndex: 'doctorId',
             text: 'Doctor Id',
             editor: {
@@ -59,7 +58,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
             }
         },
         {
-            xtype: 'booleancolumn',
+            xtype: 'gridcolumn',
             dataIndex: 'reportTemplateContentIsHtml',
             text: 'is HTML',
             editor: {
@@ -67,7 +66,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
             }
         },
         {
-            xtype: 'booleancolumn',
+            xtype: 'gridcolumn',
             dataIndex: 'reportTemplateIsPublic',
             text: 'public',
             editor: {
@@ -188,6 +187,20 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
             ptype: 'rowediting',
             pluginId: 'rowEdit'
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processReportTemplateGrid(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processReportTemplateGrid: function(config) {
+        GridAddPlugins.addGridInfoColumnPlugin(this);
+    }
 
 });

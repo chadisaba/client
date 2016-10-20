@@ -132,11 +132,11 @@ Ext.define('MyApp.view.ReportHFGrid', {
                     items: [
                         {
                             xtype: 'button',
-                            itemId: 'addBtnItemId',
+                            itemId: 'addButtonItemId',
                             iconCls: 'fa fa-plus',
                             text: 'add',
                             listeners: {
-                                click: 'onAddBtnItemIdClick'
+                                click: 'onAddButtonItemIdClick'
                             }
                         }
                     ]
