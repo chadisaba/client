@@ -83,6 +83,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false
+                    },
                     "name": "MyTextField4",
                     "designerId": "b8d24cbe-c336-44b8-8984-df3ef535d958"
                 }
@@ -111,6 +114,31 @@
                     "codeClass": null,
                     "name": "MyCheckbox1",
                     "designerId": "002253a9-1b7d-42b9-be32-72cb7faf757b"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "c6727797-73f3-4ccb-bbd7-a3c634d25044"
                 }
             ]
         },
@@ -137,6 +165,31 @@
                     "codeClass": null,
                     "name": "MyCheckbox",
                     "designerId": "c7425874-e55b-4229-84e0-9b248b189027"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "e510a9c3-21ee-4ab9-95c3-065d5cee1a27"
                 }
             ]
         },

@@ -54,11 +54,15 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
             dataIndex: 'reportTemplateName',
             text: 'name',
             editor: {
-                xtype: 'textfield'
+                xtype: 'textfield',
+                allowBlank: false
             }
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return Utility.renderer.checkBoxRenderer(value);
+            },
             dataIndex: 'reportTemplateContentIsHtml',
             text: 'is HTML',
             editor: {
@@ -67,6 +71,9 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
         },
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return Utility.renderer.checkBoxRenderer(value);
+            },
             dataIndex: 'reportTemplateIsPublic',
             text: 'public',
             editor: {

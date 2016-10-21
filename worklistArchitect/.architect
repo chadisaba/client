@@ -2007,6 +2007,9 @@
                     "cn": [
                         {
                             "id": "002253a9-1b7d-42b9-be32-72cb7faf757b"
+                        },
+                        {
+                            "id": "c6727797-73f3-4ccb-bbd7-a3c634d25044"
                         }
                     ]
                 },
@@ -2015,6 +2018,9 @@
                     "cn": [
                         {
                             "id": "c7425874-e55b-4229-84e0-9b248b189027"
+                        },
+                        {
+                            "id": "e510a9c3-21ee-4ab9-95c3-065d5cee1a27"
                         }
                     ]
                 },
@@ -2938,13 +2944,13 @@
         ]
     },
     "canvasState": {
-        "topInstance": "39177dc5-5060-4e1f-988b-a79c4a3eb3da"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "39177dc5-5060-4e1f-988b-a79c4a3eb3da",
-        "selectedInstance": "fa0214aa-9f6d-44a5-8acf-f471ec2e2a97"
+        "selectedInstance": "39177dc5-5060-4e1f-988b-a79c4a3eb3da"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": true
     }

@@ -233,6 +233,62 @@ func.Report={
                 }
             });
     },
+
+
+    saveReportBodyTemplate:function(_reportTemplateRec,_view,_scope)
+    {
+        var myMask = new Ext.LoadMask({msg:translate("Saving header & footer template"),target:_view});
+        myMask.show();
+        var reportTemplateObject=_reportTemplateRec.getData();
+
+        Word.run(function (context) {
+            var templateContent;
+            // Create a proxy sectionsCollection object.
+            var mySections = context.document.sections;
+            // Queue a commmand to load the sections.
+            context.load(mySections, 'body/style');
+            // Synchronize the document state by executing the queued commands,
+            // and return a promise to indicate task completion.
+            return context.sync().then(function () {
+                // Create a proxy object the primary header of the first section.
+                // Note that the header is a body object.
+                var body = context.document.body;
+                var bodyContent;
+                if(reportTemplateObject.reportTemplateContentIsHtml)
+                         bodyContent = body.getHtml();
+                else
+                        bodyContent = body.getOoxml();
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+
+                    reportTemplateObject.reportTemplateContent=bodyContent.value;
+
+                    return CommonDirect.saveData(reportTemplateObject,'report_template')
+                        .then(function()
+                        {
+                            _reportTemplateRec.set('added',false);
+                            _reportTemplateRec.set('modified',false);
+                            _scope.initGrid();
+                            myMask.hide();
+                        })
+                        .catch(function(_err)
+                        {
+                            Ext.MessageBox.alert('Error',_err);
+                            myMask.hide();
+                        });
+                });
+            });
+        })
+            .catch(function (error) {
+                Ext.MessageBox.alert('Error',JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    Ext.MessageBox.alert('Error',JSON.stringify(error.debugInfo));
+                    myMask.hide();
+                }
+            });
+    },
     /**
      * save header or footer template
      * @param _reporthfRec : Object report template header or footer  object (reporthf)
