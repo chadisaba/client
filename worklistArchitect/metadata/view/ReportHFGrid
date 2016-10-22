@@ -42,7 +42,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "doctor",
-                "text": "doctor"
+                "text": "doctor",
+                "width": 120
             },
             "name": "MyColumn4",
             "designerId": "727b656b-4be9-409f-8f00-eb6d4eaa5425",
@@ -100,7 +101,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "site",
-                "text": "site"
+                "text": "site",
+                "width": 100
             },
             "name": "MyColumn3",
             "designerId": "e7b09de5-4f8d-4336-a6ec-19188a3a9df0",
@@ -158,6 +160,7 @@
             "userConfig": {
                 "dataIndex": "siteId",
                 "format": "00",
+                "hidden": true,
                 "text": "Site Id"
             },
             "name": "MyNumberColumn1",
@@ -188,6 +191,7 @@
             "userConfig": {
                 "dataIndex": "doctorId",
                 "format": "00",
+                "hidden": true,
                 "text": "Doctor Id"
             },
             "name": "MyNumberColumn3",
@@ -712,6 +716,34 @@
             },
             "name": "onGridpanelValidateEdit",
             "designerId": "eeccf697-a169-4757-b2c4-d638073570c2"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature2",
+            "designerId": "a5c05423-c7ab-4a94-85ce-e756740a4397",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            " {name}"
+                        ]
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "d2413d70-43a3-4c78-a71b-3200a994a1a9"
+                }
+            ]
         }
     ]
 }

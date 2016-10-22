@@ -53,7 +53,7 @@ Ext.define('MyApp.view.ReportTemplateGridViewController', {
 
     },
 
-    onGridpanelBeforeEdit: function() {
+    onGridpanelBeforeEdit: function(editor, context) {
 
     },
 

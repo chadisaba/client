@@ -28,7 +28,9 @@ Ext.define('MyApp.view.ReportHFGrid', {
         'Ext.toolbar.Separator',
         'Ext.form.RadioGroup',
         'Ext.form.field.Radio',
-        'Ext.grid.plugin.RowEditing'
+        'Ext.grid.plugin.RowEditing',
+        'Ext.grid.feature.Grouping',
+        'Ext.XTemplate'
     ],
 
     controller: 'reporthfgrid',
@@ -43,6 +45,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            width: 120,
             dataIndex: 'doctor',
             text: 'doctor',
             editor: {
@@ -64,6 +67,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 100,
             dataIndex: 'site',
             text: 'site',
             editor: {
@@ -83,6 +87,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
         },
         {
             xtype: 'numbercolumn',
+            hidden: true,
             dataIndex: 'siteId',
             text: 'Site Id',
             format: '00',
@@ -93,6 +98,7 @@ Ext.define('MyApp.view.ReportHFGrid', {
         },
         {
             xtype: 'numbercolumn',
+            hidden: true,
             dataIndex: 'doctorId',
             text: 'Doctor Id',
             format: '00',
@@ -241,6 +247,14 @@ Ext.define('MyApp.view.ReportHFGrid', {
         {
             ptype: 'rowediting',
             pluginId: 'rowEdit'
+        }
+    ],
+    features: [
+        {
+            ftype: 'grouping',
+            groupHeaderTpl: [
+                ' {name}'
+            ]
         }
     ],
 

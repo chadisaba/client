@@ -115,6 +115,19 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
         }
     },
     onSaveBtnItemIdClick: function(button, e, eOpts) {
+        var me=this;
+        var grid=me.getView();
+        var selectedRec;
+        if(grid.getSelectionModel().hasSelection())
+        {
+            selectedRec=grid.getSelectionModel().getSelection()[0];
+            if(selectedRec.get('added')||selectedRec.get('modified'))
+                func.Report.saveReportBodyTemplate(selectedRec,grid,me);
+            else
+            {
+                Ext.MessageBox.alert('Info','Click on the modify button to edit the report');
+            }
+        }
 
     },
 
@@ -135,10 +148,10 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
                     .then(function(_result)
                     {
                         var reportTemplateObject=_result[0],bodyContent,bodyIshtml;
-                        bodyIshtml=reportTemplateObject.reportTemplateContentIsHtml;
+                       var  bodyIsOoxml=!reportTemplateObject.reportTemplateContentIsHtml;
                         bodyContent=reportTemplateObject.reportTemplateContent;
                         // fill the word document with the selected body template
-                        func.Report.fillReport('',bodyContent,'',false,false,bodyIshtml,myMask);
+                        func.Report.fillReport('',bodyContent,'',false,bodyIsOoxml,false,myMask);
                     });
             }
         }

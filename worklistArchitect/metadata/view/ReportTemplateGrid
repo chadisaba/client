@@ -42,6 +42,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "doctorId",
+                "hidden": true,
                 "text": "Doctor Id"
             },
             "name": "MyColumn10",
@@ -70,7 +71,68 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "doctor",
+                "flex": null,
+                "text": "doctor",
+                "width": 120
+            },
+            "name": "MyColumn9",
+            "designerId": "f3fb0fc5-1a3e-4786-9887-a11dceb941c9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "userInitiales",
+                        "forceSelection": true,
+                        "itemId": "doctorComboItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{DoctorStore}"
+                        ],
+                        "valueField": "userInitiales"
+                    },
+                    "name": "MyComboBox8",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "3e4060da-48a0-4064-9bd7-37e2beb30280",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDoctorComboItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onDoctorComboItemIdSelect",
+                            "designerId": "ed7863b0-48ed-4b3f-bd8d-5e80a999c27e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "reportTemplateName",
+                "flex": 1,
                 "text": "name"
             },
             "name": "MyColumn8",
@@ -190,64 +252,6 @@
                     },
                     "name": "renderer",
                     "designerId": "e510a9c3-21ee-4ab9-95c3-065d5cee1a27"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "doctor",
-                "text": "doctor"
-            },
-            "name": "MyColumn9",
-            "designerId": "f3fb0fc5-1a3e-4786-9887-a11dceb941c9",
-            "cn": [
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "displayField": "userInitiales",
-                        "forceSelection": true,
-                        "itemId": "doctorComboItemId",
-                        "queryMode": "local",
-                        "selectOnFocus": true,
-                        "store": [
-                            "{DoctorStore}"
-                        ],
-                        "valueField": "userInitiales"
-                    },
-                    "name": "MyComboBox8",
-                    "configAlternates": {
-                        "store": "binding"
-                    },
-                    "designerId": "3e4060da-48a0-4064-9bd7-37e2beb30280",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onDoctorComboItemIdSelect",
-                                "name": "select",
-                                "scope": "me"
-                            },
-                            "name": "onDoctorComboItemIdSelect",
-                            "designerId": "ed7863b0-48ed-4b3f-bd8d-5e80a999c27e"
-                        }
-                    ]
                 }
             ]
         },
@@ -566,6 +570,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
                 "fn": "onGridpanelBeforeEdit",
                 "name": "beforeedit",
                 "scope": "me"
@@ -606,6 +614,34 @@
             },
             "name": "processReportTemplateGrid",
             "designerId": "31c2382a-61a2-4c65-adc4-a972c1e5e7cf"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature1",
+            "designerId": "20bf7cc0-d08b-41c1-9a28-fcb46b2c28f7",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            " {name}"
+                        ]
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "75065476-7472-4434-9fb6-db47b37749dd"
+                }
+            ]
         }
     ]
 }

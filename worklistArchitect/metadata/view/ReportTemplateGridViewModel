@@ -19,6 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "groupField": "doctor",
                 "model": "ReportTemplateModel",
                 "name": "ReportTemplateGridStore"
             },

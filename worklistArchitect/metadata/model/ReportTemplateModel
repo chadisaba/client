@@ -101,6 +101,32 @@
             },
             "name": "MyField25",
             "designerId": "76a6482a-1632-489a-b9b7-ce7f9d6c5269"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "name": "MyBoolean7",
+            "designerId": "5067f4ac-cdaf-4d96-81d8-b13f5941aa3f"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "name": "MyBoolean8",
+            "designerId": "0773b629-0048-4000-8aac-c5753779f62a"
         }
     ]
 }

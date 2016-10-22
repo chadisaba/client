@@ -22,12 +22,14 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
         'MyApp.view.ReportTemplateGridViewController',
         'Ext.view.Table',
         'Ext.grid.column.Column',
-        'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.Checkbox',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.toolbar.Separator',
-        'Ext.grid.plugin.RowEditing'
+        'Ext.grid.plugin.RowEditing',
+        'Ext.grid.feature.Grouping',
+        'Ext.XTemplate'
     ],
 
     controller: 'reporttemplategrid',
@@ -42,6 +44,7 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'doctorId',
             text: 'Doctor Id',
             editor: {
@@ -51,6 +54,29 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 120,
+            dataIndex: 'doctor',
+            text: 'doctor',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'doctorComboItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'userInitiales',
+                forceSelection: true,
+                queryMode: 'local',
+                valueField: 'userInitiales',
+                bind: {
+                    store: '{DoctorStore}'
+                },
+                listeners: {
+                    select: 'onDoctorComboItemIdSelect'
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'reportTemplateName',
             text: 'name',
             editor: {
@@ -78,27 +104,6 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
             text: 'public',
             editor: {
                 xtype: 'checkboxfield'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'doctor',
-            text: 'doctor',
-            editor: {
-                xtype: 'combobox',
-                itemId: 'doctorComboItemId',
-                allowBlank: false,
-                selectOnFocus: true,
-                displayField: 'userInitiales',
-                forceSelection: true,
-                queryMode: 'local',
-                valueField: 'userInitiales',
-                bind: {
-                    store: '{DoctorStore}'
-                },
-                listeners: {
-                    select: 'onDoctorComboItemIdSelect'
-                }
             }
         }
     ],
@@ -193,6 +198,14 @@ Ext.define('MyApp.view.ReportTemplateGrid', {
         {
             ptype: 'rowediting',
             pluginId: 'rowEdit'
+        }
+    ],
+    features: [
+        {
+            ftype: 'grouping',
+            groupHeaderTpl: [
+                ' {name}'
+            ]
         }
     ],
 

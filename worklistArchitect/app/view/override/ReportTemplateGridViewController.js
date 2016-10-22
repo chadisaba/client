@@ -148,10 +148,10 @@ Ext.define('MyApp.view.override.ReportTemplateGridViewController', {
                     .then(function(_result)
                     {
                         var reportTemplateObject=_result[0],bodyContent,bodyIshtml;
-                        bodyIshtml=reportTemplateObject.reportTemplateContentIsHtml;
+                       var  bodyIsOoxml=!reportTemplateObject.reportTemplateContentIsHtml;
                         bodyContent=reportTemplateObject.reportTemplateContent;
                         // fill the word document with the selected body template
-                        func.Report.fillReport('',bodyContent,'',false,false,bodyIshtml,myMask);
+                        func.Report.fillReport('',bodyContent,'',false,bodyIsOoxml,false,myMask);
                     });
             }
         }

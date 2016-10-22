@@ -23,6 +23,7 @@ Ext.define('MyApp.view.ReportTemplateGridViewModel', {
 
     stores: {
         ReportTemplateGridStore: {
+            groupField: 'doctor',
             model: 'MyApp.model.ReportTemplateModel'
         },
         DoctorStore: {

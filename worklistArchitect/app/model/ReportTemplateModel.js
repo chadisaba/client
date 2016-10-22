@@ -45,6 +45,14 @@ Ext.define('MyApp.model.ReportTemplateModel', {
         },
         {
             name: 'doctor'
+        },
+        {
+            type: 'boolean',
+            name: 'added'
+        },
+        {
+            type: 'boolean',
+            name: 'modified'
         }
     ]
 });
