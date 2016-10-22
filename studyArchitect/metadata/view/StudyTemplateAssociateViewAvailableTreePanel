@@ -1,0 +1,228 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studytemplateassociateviewavailabletreepanel",
+        "designer|userClassName": "StudyTemplateAssociateViewAvailableTreePanel",
+        "height": 250,
+        "hideHeaders": true,
+        "itemId": "availableTreePanel",
+        "root": [
+            " {",
+            " text: 'Root',",
+            "                expanded: true,",
+            "                children: []",
+            "                }"
+        ],
+        "rootVisible": false,
+        "store": [
+            "{AvailableTreeStore}"
+        ],
+        "title": "all report templates",
+        "width": 400
+    },
+    "name": "MyTreePanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "b2b26701-9fd6-4b2f-a673-0ec863cd1787",
+    "viewControllerInstanceId": "93a62a75-edee-43e5-bb30-869799773e60",
+    "viewModelInstanceId": "edfba29e-426f-4ea9-99cf-b3f804040e9d",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTreeView",
+            "designerId": "4cb535a2-fcc1-4564-9a6c-39abfe367dd6"
+        },
+        {
+            "type": "Ext.tree.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "MyTreeColumn"
+            },
+            "name": "MyTreeColumn",
+            "designerId": "45461d4c-0a53-463e-86f4-39abfe367dd6"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "xXfields",
+                "text": "MyColumn"
+            },
+            "name": "MyColumn",
+            "designerId": "4f46b797-6b9d-491f-9319-39abfe367dd6"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "9d350cf7-95be-480d-a637-39abfe367dd6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAvailableTreePanelSelect",
+                "implHandler": [
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onAvailableTreePanelSelect",
+            "designerId": "5dcc703c-1c7e-4146-acfb-39abfe367dd6"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "da00c0a0-9c06-4f90-997a-39abfe367dd6",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Filter",
+                        "itemId": "filterField",
+                        "layout|flex": null
+                    },
+                    "name": "MyTextField",
+                    "designerId": "87e3c12c-68ec-4d86-ab7b-39abfe367dd6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.trigger.Trigger",
+                            "reference": {
+                                "name": "triggers",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "x-form-clear-trigger",
+                                "name": "mytrigger"
+                            },
+                            "name": "MyTrigger",
+                            "designerId": "574c75d6-f66d-4371-a372-39abfe367dd6",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "field",
+                                            "trigger",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "field.setValue('');"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "7ff30b3f-c85d-4480-b523-39abfe367dd6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFilterFieldChange",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onFilterFieldChange",
+                            "designerId": "a984a622-a270-4f76-afc2-39abfe367dd6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudyTemplateAssociateViewAvailableTreePanel",
+                "implHandler": [
+                    "Utility.grid.addInfoCol(this);"
+                ]
+            },
+            "name": "processStudyTemplateAssociateViewAvailableTreePanel",
+            "designerId": "66f24a49-854b-4654-813f-39abfe367dd6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAvailableTreePanelAvailableTreeSelectEvent",
+                "name": "availableTreeSelectEvent",
+                "scope": "me"
+            },
+            "name": "onAvailableTreePanelAvailableTreeSelectEvent",
+            "designerId": "86c36a73-c2bb-489b-ae91-39abfe367dd6"
+        }
+    ]
+}

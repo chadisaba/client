@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studytemplateassociateviewassociatepanel",
+        "designer|userClassName": "StudyTemplateAssociateViewAssociatePanelViewModel"
+    },
+    "designerId": "33083e5c-5d73-4dad-8312-a895edf563f4",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyTemplateAssociateViewAssociateComboModel",
+                "name": "AssociateComboStore"
+            },
+            "name": "MyStore",
+            "designerId": "cdd33c48-43db-4d2c-ad6e-39abfe367dd6"
+        }
+    ]
+}

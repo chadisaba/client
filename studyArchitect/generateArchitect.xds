@@ -25,13 +25,22 @@
         "installStatus": "Not Installed",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.0.1",
-    "xdsBuild": 190,
+    "xdsVersion": "4.0.2",
+    "xdsBuild": 209,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "b2b26701-9fd6-4b2f-a673-0ec863cd1787",
+            "ee4bcd12-5cc3-45ce-9e2f-5b819358a958",
+            "39fde463-f237-4137-949c-1cee24adcbb2",
+            "edfba29e-426f-4ea9-99cf-b3f804040e9d",
+            "93a62a75-edee-43e5-bb30-869799773e60",
+            "471ff1fc-b6e0-4eb1-8def-19261ccccc7d",
+            "33083e5c-5d73-4dad-8312-a895edf563f4",
+            "5183fc41-ddcb-415a-8749-9cd06580bc39",
+            "79f36a5d-5720-4229-8215-39abfe367dd6",
             "9mncvu2e-30f3-47f9-817b-7ikhwqculvwb",
             "3g77udty-1873-423d-bf99-fi1n4sscw5ut",
             "mipldfxw-e4ba-4c1c-bd1c-9h1isf52wel3",
@@ -62,6 +71,9 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "ec5af962-8072-4469-a76a-79b4035cf24f",
+            "3ab80332e492-159e-428a-b6e8-39abfe367dd6",
+            "3ab80332e492-1e0b-4444-b244-39abfe367dd6",
             "b1c711ea-159e-428a-b6e8-17g9qupiqtea",
             "19141f7c-1e0b-4444-b244-17g9qupiqtea",
             "x85ag7ld-1d4f-4fb9-9364-6m66qa452rwd",

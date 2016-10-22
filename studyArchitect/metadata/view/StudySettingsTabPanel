@@ -27,7 +27,7 @@
             "userConfig": {
                 "title": "Examens"
             },
-            "name": "studygrid1",
+            "name": "studygrid",
             "designerId": "fbdac91c-db2b-40e3-abba-42c720a53045",
             "masterInstanceId": "v94d1euu-8c41-4643-a8f8-p3lbcbqd24t7",
             "cn": [
@@ -53,7 +53,7 @@
             "userConfig": {
                 "title": "Type"
             },
-            "name": "studytypegrid1",
+            "name": "studytypegrid",
             "designerId": "90b2f489-f880-496d-bf38-8dca90681240",
             "masterInstanceId": "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
             "cn": [
@@ -79,7 +79,7 @@
             "userConfig": {
                 "title": "Questions"
             },
-            "name": "studyquestiongrid1",
+            "name": "studyquestiongrid",
             "designerId": "016b2abb-9c05-4dc2-b4d9-3563cf2e4dc4",
             "masterInstanceId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a",
             "cn": [
@@ -103,7 +103,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Examen &Questions"
+                "title": "Examens &Questions"
             },
             "name": "studyhasquestionsviewassociatepanel",
             "designerId": "79791448-a478-4f22-905d-5c373ec241d3",
@@ -118,6 +118,32 @@
                     "codeClass": null,
                     "name": "TabConfig2",
                     "designerId": "d1e0c905-1dfe-43c8-82c4-076e9d198eed"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Examens & Modèles"
+            },
+            "name": "studytemplateassociateviewassociatepanel",
+            "designerId": "64a186a5-baa8-4ef2-95ac-ef72ca84b17d",
+            "masterInstanceId": "79f36a5d-5720-4229-8215-39abfe367dd6",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig4",
+                    "designerId": "030cd29a-bef5-4301-a306-c2a49ad98cb5"
                 }
             ]
         }

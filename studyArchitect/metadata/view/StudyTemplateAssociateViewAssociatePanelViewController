@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studytemplateassociateviewassociatepanel",
+        "designer|userClassName": "StudyTemplateAssociateViewAssociatePanelViewController"
+    },
+    "designerId": "5183fc41-ddcb-415a-8749-9cd06580bc39"
+}

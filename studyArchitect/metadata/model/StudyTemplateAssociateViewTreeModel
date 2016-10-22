@@ -1,0 +1,189 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StudyTemplateAssociateViewTreeModel"
+    },
+    "name": "StudyTemplateAssociateViewTreeModel",
+    "designerId": "3ab80332e492-1e0b-4444-b244-39abfe367dd6",
+    "cn": [
+    
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField",
+            "designerId": "3ab80332e492-4978-4180-aab6-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "parentId"
+            },
+            "name": "MyField1",
+            "designerId": "3ab80332e492-fc66-4df7-ba55-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField2",
+            "designerId": "3ab80332e492-5075-4b31-a626-39abfe367dd6"
+        },
+          {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "reportTemplateHasStudyId"
+                },
+                "name": "MyreportTemplateHasStudyId",
+                "designerId": "fb1468e7-c3ea-406c-b4a3-d3e679641534"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "doctorId"
+                },
+                "name": "MydoctorId",
+                "designerId": "d9538148-799b-4a4f-9c4f-a58cccf07c04"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "doctor"
+                },
+                "name": "Mydoctor",
+                "designerId": "3cc6e9ca-3366-4e28-aae2-c099167e24f2"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "reportTemplateId"
+                },
+                "name": "MyreportTemplateId",
+                "designerId": "c5fba709-1feb-46af-91b8-dd84f9dc4a3a"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "studyId"
+                },
+                "name": "MystudyId",
+                "designerId": "64f903f2-cdcb-45bd-8e08-89bb860df62d"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "study"
+                },
+                "name": "Mystudy",
+                "designerId": "b71a8cdd-1106-422c-99a2-f0412162026c"
+            },
+                    {
+                "type": "Ext.data.field.Field",
+                "reference": {
+                "name": "fields",
+                "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                "name": "reportTemplateName"
+                },
+                "name": "MyreportTemplateName",
+                "designerId": "c7d9ddb9-4809-48c5-b546-b4d0ab72e27c"
+            },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "leaf"
+            },
+            "name": "MyBoolean",
+            "designerId": "3ab80332e492-381f-4db1-8551-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "name": "MyBoolean1",
+            "designerId": "3ab80332e492-eecd-4faf-b7fd-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "true",
+                    ""
+                ],
+                "name": "expanded"
+            },
+            "name": "MyBoolean2",
+            "designerId": "3ab80332e492-3ef0-4a1a-84d2-39abfe367dd6"
+        }
+    ]
+}

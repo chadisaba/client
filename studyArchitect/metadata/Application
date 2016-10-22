@@ -13,7 +13,10 @@
             "StudyQuestionModel",
             "StudyTypeComboModel",
             "StudyHasQuestionsViewAssociateComboModel",
-            "StudyHasQuestionsViewTreeModel"
+            "StudyHasQuestionsViewTreeModel",
+			"DoctorComboModel",
+			"StudyTemplateAssociateViewAssociateComboModel",
+			"StudyTemplateAssociateViewTreeModel"
         ],
         "name": "MyApp",
         "views": [
@@ -23,7 +26,10 @@
             "StudyGrid",
             "StudyHasQuestionsViewAssociatePanel",
             "StudyHasQuestionsViewLeftTreePanel",
-            "StudyHasQuestionsViewRightTreePanel"
+            "StudyHasQuestionsViewRightTreePanel",
+			"StudyTemplateAssociateViewAssociatePanel",
+			"StudyTemplateAssociateViewAvailableTreePanel",
+			"StudyTemplateAssociateViewSelectedTreePanel",
         ]
     },
     "name": "Application",
