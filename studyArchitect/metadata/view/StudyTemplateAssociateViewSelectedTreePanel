@@ -339,6 +339,36 @@
             "codeClass": null,
             "name": "MyRowEditingPlugin1",
             "designerId": "23ad91b5-b6f2-4f50-a5c4-b9f26b0b425b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectedTreePanelBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onSelectedTreePanelBeforeEdit",
+            "designerId": "0d91e3fa-f276-46b7-9050-075f3913d69c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectedTreePanelEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onSelectedTreePanelEdit",
+            "designerId": "17b2c01b-a0cd-4b8e-90f4-7d7b7419046f"
         }
     ]
 }

@@ -50,6 +50,17 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
                 me.leafAvailableArray=availableLeafArray;
                 me.parentsArray=parentsArray;
 
+                // get the userInitiales for every doctorId in associatedLeafArray
+                var doctorComboStore=me.selectedTree.getViewModel().getStore('DoctorComboStore');
+                var recDocotr;
+                associatedLeafArray.forEach(
+                    function(_item)
+                {
+                    recDocotr= doctorComboStore.findRecord('doctorId',_item.doctorId);
+                    if(recDocotr)
+                        _item.doctor=recDocotr.get('doctor');
+
+                });
                 Utility.tree.loadTree(selectedStore,parentsArray,associatedLeafArray);
                 Utility.tree.loadTree(availableStore,parentsArray,availableLeafArray);
 
@@ -160,6 +171,7 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
                 for (var i = 0; i < doctorsData.length; i++) {
                     doctorsData[i].doctor = doctorsData[i]['User.userInitiales'];
                 }
+                doctorsData.unshift({doctorId:0,doctor:translate('ALL')});
                 doctorComboStore.loadData(doctorsData);
                 me.quitEdit();
 

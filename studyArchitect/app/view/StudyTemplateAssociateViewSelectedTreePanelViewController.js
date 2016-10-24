@@ -32,6 +32,14 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanelViewController
 
     onSelectedTreePanelSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onSelectedTreePanelBeforeEdit: function() {
+
+    },
+
+    onSelectedTreePanelEdit: function() {
+
     }
 
 });

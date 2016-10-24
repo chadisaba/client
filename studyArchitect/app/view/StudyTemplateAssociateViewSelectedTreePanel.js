@@ -137,7 +137,9 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
         }
     ],
     listeners: {
-        select: 'onSelectedTreePanelSelect'
+        select: 'onSelectedTreePanelSelect',
+        beforeedit: 'onSelectedTreePanelBeforeEdit',
+        edit: 'onSelectedTreePanelEdit'
     },
     plugins: [
         {
