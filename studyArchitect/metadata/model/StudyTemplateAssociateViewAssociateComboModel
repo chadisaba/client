@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "xxAssosComboValueField"
+                "name": "studyId"
             },
             "name": "MyField4",
             "designerId": "3ab80332e492-572b-4376-bd2b-39abfe367dd6"
@@ -32,10 +32,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "xxAssosComboDisplayField"
+                "name": "studyCode"
             },
             "name": "MyField5",
             "designerId": "3ab80332e492-6de0-4b46-b8cd-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyName"
+            },
+            "name": "MyField8",
+            "designerId": "edd61ad9-8859-4028-b370-dc59f0d59fe8"
         }
     ]
 }

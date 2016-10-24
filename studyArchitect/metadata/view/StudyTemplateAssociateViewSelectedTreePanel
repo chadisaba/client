@@ -9,7 +9,7 @@
         "designer|userAlias": "studytemplateassociateviewselectedtreepanel",
         "designer|userClassName": "StudyTemplateAssociateViewSelectedTreePanel",
         "height": 250,
-        "hideHeaders": true,
+        "hideHeaders": false,
         "itemId": "selectedTreePanel",
         "root": [
             " {text: 'Root',",
@@ -52,7 +52,9 @@
             "userConfig": {
                 "dataIndex": "name",
                 "flex": 1,
-                "text": "MyTreeColumn1"
+                "minWidth": 100,
+                "text": "",
+                "width": null
             },
             "name": "MyTreeColumn1",
             "designerId": "1e603175-03ec-4a1d-a866-39abfe367dd6"
@@ -65,11 +67,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "reportTemplateHasStudyId",
-                "text": "ID"
+                "dataIndex": "reportTemplateName",
+                "hidden": true,
+                "text": "template name",
+                "width": 136
             },
-            "name": "MyreportTemplateHasStudyIdCol",
-            "designerId": "3baaa83f-fcfd-435d-9edf-051f9454bda4"
+            "name": "MyreportTemplateNameCol",
+            "designerId": "b79c5da0-0270-4b82-ae8c-6da7a78f7786"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -80,10 +84,23 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "doctorId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MydoctorIdCol",
-            "designerId": "9e6498d0-4d3e-4b16-a4cc-a1ac18616adf"
+            "designerId": "9e6498d0-4d3e-4b16-a4cc-a1ac18616adf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTextField4",
+                    "designerId": "bfa1999d-1f0e-43a4-928f-c5d8a48c3fb2"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -94,7 +111,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "doctor",
-                "text": ""
+                "text": "doctor"
             },
             "name": "MydoctorCol",
             "designerId": "b2c26717-0104-4039-a7ea-137f0c3d447b",
@@ -151,6 +168,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "reportTemplateId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MyreportTemplateIdCol",
@@ -165,38 +183,11 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyId",
+                "hidden": true,
                 "text": ""
             },
             "name": "MystudyIdCol",
             "designerId": "c8572f2a-061d-4402-8297-5c0dfa5d4aea"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "study",
-                "text": ""
-            },
-            "name": "MystudyCol",
-            "designerId": "c85e4ec9-f510-4161-b21a-ad7e87ac9805"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "reportTemplateName",
-                "text": ""
-            },
-            "name": "MyreportTemplateNameCol",
-            "designerId": "b79c5da0-0270-4b82-ae8c-6da7a78f7786"
         },
         {
             "type": "Ext.selection.RowModel",
@@ -335,6 +326,16 @@
             },
             "name": "processStudyTemplateAssociateViewSelectedTreePanel",
             "designerId": "b814da48-215d-4860-8e29-39abfe367dd6"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyRowEditingPlugin1",
+            "designerId": "23ad91b5-b6f2-4f50-a5c4-b9f26b0b425b"
         }
     ]
 }

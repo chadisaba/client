@@ -465,7 +465,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "xxAssosComboDisplayField",
+                        "displayField": "studyCode",
                         "fieldLabel": "select a study",
                         "forceSelection": true,
                         "itemId": "associateCombo",
@@ -476,7 +476,7 @@
                             "{AssociateComboStore}"
                         ],
                         "typeAhead": true,
-                        "valueField": "xxAssosComboValueField"
+                        "valueField": "studyId"
                     },
                     "name": "MyComboBox",
                     "configAlternates": {

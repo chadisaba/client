@@ -144,11 +144,11 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewAssociatePanel', {
                     itemId: 'associateCombo',
                     fieldLabel: 'select a study',
                     labelWidth: 150,
-                    displayField: 'xxAssosComboDisplayField',
+                    displayField: 'studyCode',
                     forceSelection: true,
                     queryMode: 'local',
                     typeAhead: true,
-                    valueField: 'xxAssosComboValueField',
+                    valueField: 'studyId',
                     bind: {
                         store: '{AssociateComboStore}'
                     },

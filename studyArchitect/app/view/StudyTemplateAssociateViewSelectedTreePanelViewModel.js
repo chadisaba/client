@@ -25,6 +25,9 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanelViewModel', {
         SelectedTreeStore: {
             type: 'tree',
             model: 'MyApp.model.StudyTemplateAssociateViewTreeModel'
+        },
+        DoctorComboStore: {
+            model: 'MyApp.model.DoctorComboModel'
         }
     }
 

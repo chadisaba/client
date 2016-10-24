@@ -25,7 +25,8 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
         'Ext.form.field.ComboBox',
         'Ext.selection.RowModel',
         'Ext.toolbar.Toolbar',
-        'Ext.form.trigger.Trigger'
+        'Ext.form.trigger.Trigger',
+        'Ext.grid.plugin.RowEditing'
     ],
 
     controller: 'studytemplateassociateviewselectedtreepanel',
@@ -36,7 +37,7 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
     itemId: 'selectedTreePanel',
     width: 400,
     title: 'associated report template',
-    hideHeaders: true,
+    hideHeaders: false,
     root: {
         text: 'Root',
         expanded: true,
@@ -53,23 +54,30 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
         {
             xtype: 'treecolumn',
             flex: 1,
+            minWidth: 100,
             dataIndex: 'name',
-            text: 'MyTreeColumn1'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'reportTemplateHasStudyId',
-            text: 'ID'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'doctorId',
             text: ''
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'doctor',
+            hidden: true,
+            width: 136,
+            dataIndex: 'reportTemplateName',
+            text: 'template name'
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'doctorId',
             text: '',
+            editor: {
+                xtype: 'textfield'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'doctor',
+            text: 'doctor',
             editor: {
                 xtype: 'combobox',
                 itemId: 'doctorComboBoxEditorItemId',
@@ -88,22 +96,14 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'reportTemplateId',
             text: ''
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyId',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'study',
-            text: ''
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'reportTemplateName',
             text: ''
         }
     ],
@@ -138,6 +138,11 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
     listeners: {
         select: 'onSelectedTreePanelSelect'
     },
+    plugins: [
+        {
+            ptype: 'rowediting'
+        }
+    ],
 
     initConfig: function(instanceConfig) {
         var me = this,

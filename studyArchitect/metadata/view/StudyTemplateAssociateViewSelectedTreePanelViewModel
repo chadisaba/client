@@ -24,6 +24,20 @@
             },
             "name": "MyTreeStore1",
             "designerId": "78bbf289-8469-410f-9714-39abfe367dd6"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorComboModel",
+                "name": "DoctorComboStore"
+            },
+            "name": "MyStore1",
+            "designerId": "5bba9d37-3ea8-447f-883d-5cd6057e82be"
         }
     ]
 }

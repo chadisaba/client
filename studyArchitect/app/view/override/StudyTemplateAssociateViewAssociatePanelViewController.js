@@ -2,76 +2,35 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
     override: 'MyApp.view.StudyTemplateAssociateViewAssociatePanelViewController',
       initView: function(associateId) {
 
-
          var me=this;
          me.selectedTree.unmask();//selectedTree
          me.availableTree.unmask();//availableTree
          me.associateId=associateId;
          var selectedStore=me.selectedStore;
          var availableStore=me.availableStore;
-         
-         /**
-          *  uncomment the following if you  need to retrieve parents node form server side
-          */
 
-         	//var parentsArray=[];
-         /**
-          *  end
-          */
-         
-       
-         
+          var parentsArray=[
+              {
+                  'id':1,
+                  'name':translate('template'),
+                  'leaf':false,
+                  'children': []
+
+              }
+          ];
+
          /**
           *  uncomment the following if you don't need to retrieve parents node form server side
           */
-
-         var parentsArray=[
-             {
-                 'id':1,
-                 'name':'Questions',
-                 'leaf':false,
-                 'children': []
-
-             }
-         ];
-         /**
-          *  end
-          */
-         
-         var params;
-         
-         
-         /**
-          *  uncomment the following if you  need to retrieve parents node form server side
-          */
-        /* params={
-           associationIdValue:associateId,
-           associationIdName:"xxAssociationFieldIdName", // studyId
-           associationTable:"xxSelectedTableName",//"DOC_HAS_STUDY",
-           availablesTable:"xxAvailableTableName",//"STUDY",
-             nameField:"xxNameFieldName", // studyQuestionText
-              parentTable:"xxParentTable", // the table for parents nodes STUDY_TYPE
-             availableIdName:"availableIdName",//studyQuestId
-             parentIdName:"parentId",//"studyTypeId",
-             parentNameField:'parentLabel'// studyTypeCode
-         };*/
-         /**
-          *  end
-          */
-      
-         /**
-          *  uncomment the following if you don't need to retrieve parents node form server side
-          */
-         
-                /* params={
+                var  params={
                    associationIdValue:associateId,
-                   associationIdName:"xxAssociationFieldIdName", // studyId
-                   associationTable:"xxSelectedTableName",
-                   availablesTable:"xxAvailableTableName",
-                     nameField:"xxNameFieldName", // studyQuestionText
-                     parentIdValue:1,
-                     availableIdName:"availableIdName"//studyQuestId
-                 };*/
+                   associationIdName:"studyId",
+                   associationTable:"report_template_has_study",
+                   availablesTable:"report_template",
+                  nameField:"reportTemplateName",
+                  parentIdValue:1,
+                 availableIdName:"reportTemplateId"
+                 };
                  /**
                   *  end
                   */
@@ -102,46 +61,6 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
             {
                 console.error(res.msg);
             });
-
-              /*  var availableLeafArray=[
-                {
-                    'id':6,
-                    'name':'child1',
-                    'duration':50,
-                    'parentId':2,
-                    'leaf':true
-                },
-                {
-                    'id':7,
-                    'name':'child2',
-                    'duration':50,
-                    'parentId':2,
-                    'leaf':true
-                }
-
-                ];
-
-                var associatedLeafArray=[
-                {
-                    'id':11,
-                    'name':'child3',
-                    'duration':50,
-                    'parentId':3,
-                    'leaf':true
-                },
-                {
-                    'id':12,
-                    'name':'child4',
-                    'duration':50,
-                    'parentId':3,
-                    'leaf':true
-                }
-
-                ];*/
-        // delete up to here
-
-
-
     },
 
     getTreeMultiSelectPlugin: function() {
@@ -216,13 +135,23 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
         this.userCanModify=userCanModify;
        var  associateComboDataArray=[];
         var me=this;
-    
-                CommonDirect.getData("AssociationTableName",[]).// ex: Study,Doctor,Device
-                then(function(_result)
+
+        var p1=CommonDirect.getData("STUDY",[],"no");
+        var p2= DoctorDirect.getDoctorsFromIndexDb();
+
+        var doctorComboStore=me.selectedTree.getViewModel().getStore('DoctorComboStore');
+                Promise.all([p1,p2]).
+                then(function(_resultArray)
             {
-                associateComboDataArray=_result;
+                associateComboDataArray=_resultArray[0];
                 var associateComboStore=me.getViewModel().getStore('AssociateComboStore');
                 associateComboStore.loadData(associateComboDataArray);
+                var doctorsData=_resultArray[1];
+                for (var i = 0; i < doctorsData.length; i++) {
+                    doctorsData[i].doctor = doctorsData[i]['User.userInitiales'];
+                }
+                doctorComboStore.loadData(doctorsData);
+                debugger;
                 me.quitEdit();
 
             });
@@ -250,7 +179,7 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
     onAssociatePanelSaveEdit: function(panel, promptWin, dataToBeSaved, comment) {
 
         var me=this;
-        CommonDirect.saveDataArray(dataToBeSaved,"AssociationTable","AssociationTableIdName",comment)// Ex :DEVICE_HAS_STUDYer
+        CommonDirect.saveDataArray(dataToBeSaved,"report_template_has_study","reportTemplateHasStudyId",comment)// Ex :DEVICE_HAS_STUDYer
         .then(function(_result)
         {
             me.refreshView();

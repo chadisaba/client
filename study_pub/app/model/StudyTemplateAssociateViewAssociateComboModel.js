@@ -22,10 +22,13 @@ Ext.define('MyApp.model.StudyTemplateAssociateViewAssociateComboModel', {
 
     fields: [
         {
-            name: 'xxAssosComboValueField'
+            name: 'studyId'
         },
         {
-            name: 'xxAssosComboDisplayField'
+            name: 'studyCode'
+        },
+        {
+            name: 'studyName'
         }
     ]
 });
