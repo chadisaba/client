@@ -23,7 +23,6 @@ Ext.define('MyApp.view.UserTabPanel', {
         'MyApp.view.UserGrid',
         'MyApp.view.DoctorGrid',
         'MyApp.view.DoctorHasExamensViewAssociatePanel',
-        'MyApp.view.ReferringPhysicianGrid',
         'Ext.grid.Panel',
         'Ext.tab.Tab'
     ],
@@ -49,10 +48,6 @@ Ext.define('MyApp.view.UserTabPanel', {
         {
             xtype: 'doctorhasexamensviewassociatepanel',
             title: 'Médecins & Examens'
-        },
-        {
-            xtype: 'referringphysiciangrid',
-            title: 'Manipulateurs'
         }
     ]
 

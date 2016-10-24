@@ -6,7 +6,30 @@
     },
     "codeClass": null,
     "userConfig": {
-        "name": "MyApp"
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+              "UserModel",
+                    "CityModel",
+                    "DoctorModel",
+                    "UserCatModel",
+                    "UserInitialComboModel",
+                    "DoctorHasExamensViewAssociateComboModel",
+                    "DoctorHasExamensViewTreeModel",
+
+                    "CityNaComboModel"
+        ],
+        "name": "MyApp",
+        "views": [
+          "UserGrid",
+                  "UserTabPanel",
+                  "UserCatGrid",
+                  "DoctorGrid",
+                  "DoctorHasExamensViewAssociatePanel",
+                  "DoctorHasExamensViewAvailableTreePanel",
+                  "DoctorHasExamensViewSelectedTreePanel"
+        ]
     },
     "name": "Application",
     "designerId": "application"
