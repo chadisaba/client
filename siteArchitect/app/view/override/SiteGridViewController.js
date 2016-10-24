@@ -134,6 +134,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
             modified: false,
             addedAndValidated:false,
             toDelete: false,
+            active:true,
             notValid: true,
             notValidTip:'Veuillez configurer le site'
 
