@@ -151,7 +151,6 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
                     doctorsData[i].doctor = doctorsData[i]['User.userInitiales'];
                 }
                 doctorComboStore.loadData(doctorsData);
-                debugger;
                 me.quitEdit();
 
             });
