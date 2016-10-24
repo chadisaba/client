@@ -4,6 +4,8 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     onDoctorGridIdChHist: function() {
 
     },
+
+
     onDoctorGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
 
@@ -72,7 +74,8 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
             added: true,
             modified: false,
             addedAndValidated:false,
-            toDelete: false
+            toDelete: false,
+            active:true
         });
         Utility.grid.addItem(this.getView(),rec);
     },
@@ -185,18 +188,8 @@ Ext.define('MyApp.view.override.DoctorGridViewController', {
     },
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
-
-  onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
-
-  },
-
-    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
-
-    },
-
-    onTechnicianComboboxItemIdSelect: function(combo, record, eOpts) {
-
-    },
+    
+ 
     
 
 });
