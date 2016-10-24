@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userAlias": "usergrid",
         "designer|userClassName": "UserGrid",
-        "forceFit": true,
+        "forceFit": false,
         "itemId": "userGridId",
         "reference": "userGridRef",
         "resizable": [
@@ -253,6 +253,7 @@
                         "displayField": "cityName",
                         "forceSelection": true,
                         "itemId": "userCityComboBoxItemId",
+                        "queryMode": "local",
                         "store": [
                             "{CityComboStore}"
                         ],
@@ -293,8 +294,10 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userAddress",
+                "flex": 1,
+                "minWidth": 200,
                 "text": "Adresse",
-                "width": 200
+                "width": null
             },
             "name": "MyuserAddressCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ucdkebt6dcf8",

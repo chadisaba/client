@@ -39,6 +39,7 @@ Ext.define('MyApp.view.UserTabPanel', {
         },
         {
             xtype: 'usergrid',
+            flex: 1,
             title: 'Utilisateurs'
         },
         {

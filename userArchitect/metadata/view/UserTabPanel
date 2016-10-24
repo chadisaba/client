@@ -51,6 +51,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "flex": 1,
                 "title": "Utilisateurs"
             },
             "name": "usergrid",

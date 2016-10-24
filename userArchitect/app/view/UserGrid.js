@@ -37,7 +37,7 @@ Ext.define('MyApp.view.UserGrid', {
     itemId: 'userGridId',
     resizable: false,
     title: '',
-    forceFit: true,
+    forceFit: false,
 
     bind: {
         store: '{UserStore}'
@@ -119,6 +119,7 @@ Ext.define('MyApp.view.UserGrid', {
                 allowBlank: false,
                 displayField: 'cityName',
                 forceSelection: true,
+                queryMode: 'local',
                 valueField: 'cityName',
                 bind: {
                     store: '{CityComboStore}'
@@ -130,7 +131,8 @@ Ext.define('MyApp.view.UserGrid', {
         },
         {
             xtype: 'gridcolumn',
-            width: 200,
+            flex: 1,
+            minWidth: 200,
             dataIndex: 'userAddress',
             text: 'Adresse',
             editor: {
