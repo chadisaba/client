@@ -71,7 +71,8 @@ Ext.define('MyApp.view.StudyTemplateAssociateViewSelectedTreePanel', {
             dataIndex: 'doctorId',
             text: '',
             editor: {
-                xtype: 'textfield'
+                xtype: 'textfield',
+                itemId: 'doctorTextFieldItemId'
             }
         },
         {

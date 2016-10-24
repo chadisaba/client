@@ -119,6 +119,14 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
         Utility.tree.onSelectAvailableTreeEvent(this.getView(),this.selectedTree);
     },
 
+    onSelectedTreeEditEvent:function(selectedGrid,editor,context)
+    {
+        var columnsNameArray=["doctor"];
+
+        Utility.tree.edit(editor,context,columnsNameArray);
+        this.getTreeMultiSelectPlugin().checkIfModifications(this.availableTree.getStore(),this.selectedTree.getStore());
+    },
+
     onAssociatePanelAfterRender: function(component, eOpts) {
         var refs=this.getReferences();
         this.availableTree=refs.availableTreePanel;
@@ -126,6 +134,8 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
 
         this.availableTree.mask();
         this.selectedTree.mask();
+
+        this.selectedTree.on('selectedTreeEditEvent',this.onSelectedTreeEditEvent,this);
 
         this.selectedStore=this.selectedTree.getViewModel().getStore('SelectedTreeStore');
         this.availableStore=this.availableTree.getViewModel().getStore('AvailableTreeStore');
@@ -151,12 +161,12 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewAssociatePanelViewCont
                     doctorsData[i].doctor = doctorsData[i]['User.userInitiales'];
                 }
                 doctorComboStore.loadData(doctorsData);
-                debugger;
                 me.quitEdit();
 
             });
 
     },
+
 
     onAssociatePanelQuitEdit: function() {
         var selectedStore=this.selectedStore;

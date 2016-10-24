@@ -11,6 +11,21 @@ Ext.define('MyApp.view.override.StudyTemplateAssociateViewSelectedTreePanelViewC
 
         Utility.tree.select(tree,record);
         this.fireViewEvent('selectedTreeSelectEvent');
+    },
+    onSelectedTreePanelEdit: function(editor,  context) {
+        this.fireViewEvent("selectedTreeEditEvent",editor,context);
+    },
+    onSelectedTreePanelBeforeEdit: function(editor, context) {
+        if(!context.record.get('leaf'))
+            return false;
+        if(!this.getView().up().inEdition)
+            return false;
+
+
+    },
+    onDoctorComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var doctorTextFieldItemId=combo.up('roweditor').down('#doctorTextFieldItemId');
+        doctorTextFieldItemId.setValue(record.get('doctorId'));
     }
     
 });

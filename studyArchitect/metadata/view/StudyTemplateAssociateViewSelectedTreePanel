@@ -97,6 +97,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "itemId": "doctorTextFieldItemId"
+                    },
                     "name": "MyTextField4",
                     "designerId": "bfa1999d-1f0e-43a4-928f-c5d8a48c3fb2"
                 }
