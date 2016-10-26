@@ -406,8 +406,15 @@ func.Report={
                 }
             });
     },
-
-    createNewReport:function(_siteId,_doctorId,myMask)
+    /**
+     *
+     * @param _siteId
+     * @param _doctorId
+     * @param _visitId
+     * @param _visitStudyArray
+     * @param myMask
+     */
+    createNewReport:function(_siteId,_doctorId,_visitId,_visitStudyArray,myMask)
     {
         var me=this;
         var siteId=_siteId;
@@ -417,6 +424,10 @@ func.Report={
         var footerOoxml="";
         var bodyOoxml="";
 
+        var headerIsOoxml=true;
+        var bodyIsOoxml=true;
+
+
         var filterArray= [{
             name:"doctorId",
             value:doctorId}
@@ -424,10 +435,26 @@ func.Report={
 
         myMask.show();
 
-        CommonDirect.getData('report_hf',filterArray)
+        var promiseArray=[];
+        promiseArray.push(CommonDirect.getData('report_hf',filterArray));
+        promiseArray.push(CommonDirect.getInfoToFillReportFields({visitId:_visitId,visitStudyArray:_visitStudyArray}));
+
+        if(_visitStudyArray.length==1)
+        {
+            // get the report template associated to the study
+            promiseArray.push(ReportDirect.getReportTemplateContentByStudyAndDoctor(_visitStudyArray[0].studyId,_doctorId));
+        }
+
+       /* if(_visitStudyArray.length>0)
+            var pVisitArray=*/
+       Promise.all(promiseArray)
             .then(function(_resultsArray)
             {
-                _resultsArray.forEach(
+                /**
+                 * Get the header and footer
+                 */
+                var reportHfArray=_resultsArray[0];
+                reportHfArray.forEach(
                     function(_item)
                     {
                         if(_item.reporthfType==1)
@@ -436,6 +463,7 @@ func.Report={
                             if(_item.siteId && _item.siteId==siteId)
                             {
                                 headerOoxml= _item.reporthfContent;
+                                headerIsOoxml=!_item.reporthfContentIsHtml;
                             }
                         }
 
@@ -450,7 +478,7 @@ func.Report={
                     });
                 if(!headerOoxml || !footerOoxml) // we didn't find a header or a  footer for the visit site
                 {
-                    _resultsArray.forEach(
+                    reportHfArray.forEach(
                         function(_item)
                         {
                             if(!headerOoxml &&_item.reporthfType==1)
@@ -459,6 +487,7 @@ func.Report={
                                 if(!_item.siteId)
                                 {
                                     headerOoxml= _item.reporthfContent;
+                                    headerIsOoxml=!_item.reporthfContentIsHtml;
                                 }
                             }
 
@@ -472,11 +501,71 @@ func.Report={
                             }
                         });
                 }
-                if(headerOoxml||footerOoxml)
-                    func.Report.fillReport(headerOoxml,'',footerOoxml,true,true,false,myMask);
+
+                /**
+                 * Get the body of report if just one study is associated to the current visit
+                 */
+                if(_visitStudyArray.length==1)
+                {
+                    var reportTemplateArray=_resultsArray[2];
+                    if(reportTemplateArray.length)
+                    {
+                        bodyOoxml=reportTemplateArray[0].reportTemplateContent;
+                        bodyIsOoxml=!reportTemplateArray[0].reportTemplateContentIsHtml;
+                    }
+
+                }
+
+                var infoToFillReportFieldsArray=_resultsArray[1];
+
+
+
+                if(headerOoxml||footerOoxml||bodyOoxml)
+                    func.Report.fillReport(headerOoxml,bodyOoxml,footerOoxml,headerIsOoxml,bodyIsOoxml,false,myMask);
                 else
                     myMask.hide();
             })
+
+    },
+    replaceReportFields:function(_content,_infosArray)
+    {
+       return  new Promise(
+            function (resolve, reject) {
+                var result;
+                TfieldDirect.getFieldsFromIndexDb()
+                    .then(function(_fieldsArray)
+                    {
+                        var result;
+                        _fieldsArray.forEach(
+                            function(_field) // find the value form infosArray corresponding to the _field.tfieldDbName
+                            {
+                                // _infosArray is an array of arrays
+                                _infosArray.forEach(
+                                    function(_rowsArray)
+                                    {
+                                        _rowsArray.forEach(
+                                            function(_rowObj)
+                                            {
+                                                for (var key in _rowObj)
+                                                {
+                                                    if( _rowObj.hasOwnProperty( key ) ) {
+                                                        if(_field.tfieldDbName==key)
+                                                        {
+                                                            _field.value=_rowObj[key];
+                                                            result.push(_field);
+                                                        }
+                                                    }
+                                                }
+                                            })
+                                    }
+                                )
+                            });
+                        resolve(result);
+                    })
+
+            }
+        );
+
 
     },
     saveReport:function(_reportRec,_selectedStudyRecArray,_reportStatut,_headerIsHtml,_bodyIsHtml,_myMask)

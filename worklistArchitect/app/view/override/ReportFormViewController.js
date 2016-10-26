@@ -81,7 +81,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                 }
                 else
-                    reportGridController.initGrid(null,_visitId,);
+                    reportGridController.initGrid(null,_visitId);
             });
 
        /* if(_newReport)
@@ -143,7 +143,8 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 reportGridController.addReport(reportObject);
             }
              myMask.show();
-            func.Report.createNewReport(me.siteId,me.doctorId,myMask);
+            // if just one study is associated to the visit, we display into the word document the template associated to the study
+            func.Report.createNewReport(me.siteId,me.doctorId,_visitId,_visitStudyArray,myMask);
             studyVisitController.selectAll();
         }
         else
@@ -191,7 +192,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                 {
                                     reportGridController.addReport(reportObject);
                                     myMask.show();
-                                    func.Report.createNewReport(me.siteId,me.doctorId,myMask)
+                                    func.Report.createNewReport(me.siteId,me.doctorId,_visitId,visitStudyArray,myMask)
                                 }
                                 var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
                                 studyVisitController.selectStudies(visitStudyArray);

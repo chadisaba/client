@@ -1,7 +1,7 @@
 var ReportDirect={
 saveReport:function(_reportObject,_reportHeaderObject,_selectedStudyArray)
 {
-  var promise = new Promise(
+   return new Promise(
     function (resolve, reject) {
         var params={};
         params.reportObj=_reportObject;
@@ -19,6 +19,53 @@ saveReport:function(_reportObject,_reportHeaderObject,_selectedStudyArray)
             }
         );
     });
-    return promise;
-}
+},
+    getInfoToFillReportFields:function(_visitId,_visitStudyArray)
+    {
+        //Creating a promise
+        return new Promise(
+            function(resolve, reject) {
+
+                var params;
+                params={
+                    visitId:_visitId,
+                    visitStudyArray:_visitStudyArray
+                };
+                Server.Report.getInfosForReportTemplateFields(params,
+                    function(res){
+                        if(res.success){
+                            resolve(res.data);
+                        }
+                        else{
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    }
+                )
+            });
+    },
+    getReportTemplateContentByStudyAndDoctor:function(_studyId,_doctorId)
+    {
+        return new Promise(
+            function(resolve, reject) {
+
+                var params;
+                params={
+                    studyId:_studyId,
+                    doctorId:_doctorId
+                };
+                Server.Report.getReportTemplateContentByStudyAndDoctor(params,
+                    function(res){
+                        if(res.success){
+                            resolve(res.data);
+                        }
+                        else{
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    }
+                )
+            });
+
+    }
 };
