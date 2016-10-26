@@ -8,12 +8,10 @@
     "userConfig": {
         "designer|userAlias": "studygrid",
         "designer|userClassName": "StudyGrid",
-        "forceFit": true,
+        "forceFit": null,
         "itemId": "studyGridId",
         "reference": "studyGridRef",
-        "resizable": [
-            "false"
-        ],
+        "resizable": null,
         "store": [
             "{StudyStore}"
         ],
@@ -162,6 +160,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyName",
+                "flex": 1,
+                "minWidth": 100,
                 "text": "Nom"
             },
             "name": "MystudyNameCol",
@@ -382,7 +382,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyGenerateDicomWL",
+                "dataIndex": "studyGenerateDicomWl",
                 "text": "Génère <br/>Worklist"
             },
             "name": "MystudyGenerateDicomWLCol",
@@ -484,6 +484,36 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "studyInvoiceCat",
+                "text": "Invoice Cat"
+            },
+            "name": "MystudyInvoiceCatCol",
+            "designerId": "7c6bec59-5c6a-4872-9cec-lq559dsk1fd4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "studyInvoiceCatTextFieldItemId"
+                    },
+                    "name": "MystudyInvoiceCatTextField",
+                    "designerId": "73e1ef6a-05cb-4aa6-aacc-jr2jm7meh9lh"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
             },
@@ -524,36 +554,6 @@
                     },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-cr4bpnj2qsnv"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyInvoiceCat",
-                "text": "Invoice Cat"
-            },
-            "name": "MystudyInvoiceCatCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-lq559dsk1fd4",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "itemId": "studyInvoiceCatTextFieldItemId"
-                    },
-                    "name": "MystudyInvoiceCatTextField",
-                    "designerId": "73e1ef6a-05cb-4aa6-aacc-jr2jm7meh9lh"
                 }
             ]
         },

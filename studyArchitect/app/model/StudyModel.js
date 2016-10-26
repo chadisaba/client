@@ -70,7 +70,7 @@ Ext.define('MyApp.model.StudyModel', {
         },
         {
             type: 'boolean',
-            name: 'studyGenerateDicomWL'
+            name: 'studyGenerateDicomWl'
         },
         {
             type: 'boolean',

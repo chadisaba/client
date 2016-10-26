@@ -62,7 +62,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
             [{name: "visitId", value: _visitId}]);
         var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
         var pStudyVisit=studyVisitController.getResultArray([
-            {name: "visitId", value: _visitId},{name:'studyGenerateDicomWl',value:true}
+            {name: "visitId", value: _visitId}
         ]);
 
         var reportArray,visitStudyArray;

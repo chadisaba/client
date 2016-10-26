@@ -79,7 +79,8 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
             added: true,
             modified: false,
             addedAndValidated: false,
-            toDelete: false
+            toDelete: false,
+            active:true
         });
         Utility.grid.addItem(this.getView(), rec);
     },

@@ -35,9 +35,7 @@ Ext.define('MyApp.view.StudyGrid', {
     },
     reference: 'studyGridRef',
     itemId: 'studyGridId',
-    resizable: false,
     title: '',
-    forceFit: true,
 
     bind: {
         store: '{StudyStore}'
@@ -88,6 +86,8 @@ Ext.define('MyApp.view.StudyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
+            minWidth: 100,
             dataIndex: 'studyName',
             text: 'Nom',
             editor: {
@@ -152,7 +152,7 @@ Ext.define('MyApp.view.StudyGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            dataIndex: 'studyGenerateDicomWL',
+            dataIndex: 'studyGenerateDicomWl',
             text: 'Génère <br/>Worklist',
             editor: {
                 xtype: 'checkboxfield'
@@ -171,6 +171,16 @@ Ext.define('MyApp.view.StudyGrid', {
         },
         {
             xtype: 'gridcolumn',
+            dataIndex: 'studyInvoiceCat',
+            text: 'Invoice Cat',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyInvoiceCatTextFieldItemId',
+                allowBlank: false
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
@@ -178,16 +188,6 @@ Ext.define('MyApp.view.StudyGrid', {
             text: 'Active',
             editor: {
                 xtype: 'checkboxfield'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyInvoiceCat',
-            text: 'Invoice Cat',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyInvoiceCatTextFieldItemId',
-                allowBlank: false
             }
         }
     ],

@@ -109,7 +109,7 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
     onStudyGridIdEdit: function(editor,context) {
  // var columnsName=['name','text'];
     	
-    	var columnsName=['studyTypeId','studyCode','studyName','studyFtNumber','studyDuration','studyDaysNbToSendSms','studyIsDosimetry','studyIsInjected','studyGenerateDicomWL','studyMultiSegment','active','studyInvoiceCat'];
+    	var columnsName=['studyTypeId','studyCode','studyName','studyFtNumber','studyDuration','studyDaysNbToSendSms','studyIsDosimetry','studyIsInjected','studyGenerateDicomWl','studyMultiSegment','active','studyInvoiceCat'];
         Utility.grid.edit(editor, context, columnsName);
     },
 

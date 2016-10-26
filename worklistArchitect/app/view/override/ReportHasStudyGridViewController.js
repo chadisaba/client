@@ -102,7 +102,7 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
                 mainTableObject.tableName = 'STUDY_VISIT';
                 mainTableObject.filters = filters;
                 var joinTablesArray = [];
-                joinTablesArray.push({tableName: 'STUDY'});
+                joinTablesArray.push({tableName: 'STUDY',filters:[{name:'studyGenerateDicomWl',value:true}]});
 
                 CommonDirect.getDataWidthJoin(mainTableObject, joinTablesArray)
                     .then(
@@ -110,6 +110,7 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
                             for (var i = 0; i < _result.length; i++) {
                                 _result[i].studyCode = _result[i]['Study.studyCode'];
                                 _result[i].studyName = _result[i]['Study.studyName'];
+                                _result[i].studyGenerateDicomWl = _result[i]['Study.studyGenerateDicomWl'];
 
                             }
                             resolve(_result);

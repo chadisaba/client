@@ -437,7 +437,7 @@ func.Report={
 
         var promiseArray=[];
         promiseArray.push(CommonDirect.getData('report_hf',filterArray));
-        promiseArray.push(CommonDirect.getInfoToFillReportFields({visitId:_visitId,visitStudyArray:_visitStudyArray}));
+        promiseArray.push(ReportDirect.getInfoToFillReportFields(_visitId,_visitStudyArray));
 
         if(_visitStudyArray.length==1)
         {
