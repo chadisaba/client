@@ -48,7 +48,8 @@ var InitApp={
 
         var p11=CommonDirect.getData("SITE");
 
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11])
+        var p12=CommonDirect.getData('TFIELD');
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -94,6 +95,7 @@ var InitApp={
                         for (var i = 0; i < doctorsArray.length; i++) {
                             doctorsArray[i].userLName=doctorsArray[i]['User.userLName'];
                             doctorsArray[i].userFName=doctorsArray[i]['User.userFName'];
+                            doctorsArray[i].userInitiales=doctorsArray[i]['User.userInitiales'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DOCTOR',doctorsArray));
 
@@ -124,6 +126,9 @@ var InitApp={
                              deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
+
+                        var tFieldArray=values[10];
+                        indexDBPromiseArray.push(IndexedDB.populateData('TFIELD',tFieldArray));
 
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)

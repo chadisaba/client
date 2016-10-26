@@ -58,9 +58,12 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         me.visitId=_visitId;
         me.siteId=_siteId;
         var reportGridController = me.getView().down('#reportGridItemId').getController();
-        var pReport= reportGridController.getResultArray([{name: "visitId", value: _visitId}]);
+        var pReport= reportGridController.getResultArray(
+            [{name: "visitId", value: _visitId}]);
         var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
-        var pStudyVisit=studyVisitController.getResultArray([{name: "visitId", value: _visitId}]);
+        var pStudyVisit=studyVisitController.getResultArray([
+            {name: "visitId", value: _visitId},{name:'studyGenerateDicomWl',value:true}
+        ]);
 
         var reportArray,visitStudyArray;
 
@@ -78,7 +81,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                 }
                 else
-                    reportGridController.initGrid(null,_visitId,reportArray);
+                    reportGridController.initGrid(null,_visitId,);
             });
 
        /* if(_newReport)

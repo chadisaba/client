@@ -25,12 +25,13 @@ var IndexedDB={
                         CITY: "++id,cityId,cityName,cityZipCode",
                         DEVICE: "++id,deviceId,deviceName,modalityId,siteId",
                         STUDY: "++id,studyId,studyCode,studyName",
-                        DOCTOR: "++id,doctorId,userFName,userLName",
+                        DOCTOR: "++id,doctorId,userFName,userLName,userInitiales",
                         ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceName,siteId",
                         ROOM: "++id,roomId,roomCode,roomName,siteId",
                         REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle,referringPhysicianSearch",
                         DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
-                        SITE: "++id,siteId,siteCode,siteName"
+                        SITE: "++id,siteId,siteCode,siteName",
+                        TFIELD:'++id,tfieldName,tfieldDbName'
 
                     });
                     me.db.open();
