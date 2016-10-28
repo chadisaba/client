@@ -445,6 +445,10 @@ func.Report={
             promiseArray.push(ReportDirect.getReportTemplateContentByStudyAndDoctor(_visitStudyArray[0].studyId,_doctorId));
         }
 
+
+       // TODO Later with indexeddb : find the solution to do working dexie and internet explorer
+       /* promiseArray.push(TfieldDirect.getFieldsFromIndexDb());// get fieldToReplace form the indexedDB*/
+        promiseArray.push(CommonDirect.getData('TFIELD'));
        /* if(_visitStudyArray.length>0)
             var pVisitArray=*/
        Promise.all(promiseArray)
@@ -507,18 +511,23 @@ func.Report={
                  */
                 if(_visitStudyArray.length==1)
                 {
-                    var reportTemplateArray=_resultsArray[2];
-                    if(reportTemplateArray.length)
+                    var reportTemplateObject=_resultsArray[2];
+                    if(reportTemplateObject)
                     {
-                        bodyOoxml=reportTemplateArray[0].reportTemplateContent;
-                        bodyIsOoxml=!reportTemplateArray[0].reportTemplateContentIsHtml;
+                        bodyOoxml=reportTemplateObject.reportTemplateContent;
+                        bodyIsOoxml=!reportTemplateObject.reportTemplateContentIsHtml;
                     }
 
                 }
 
                 var infoToFillReportFieldsArray=_resultsArray[1];
-
-
+                var fieldsValuesArray=func.Report.getFieldsAndVlues(infoToFillReportFieldsArray,_resultsArray[3]);
+                fieldsValuesArray.forEach(function(_fieldValueObj)
+                {
+                    var bdBame='{'+_fieldValueObj.tfieldName+'}';
+                    bodyOoxml=bodyOoxml.replace(new RegExp(bdBame, 'g'),_fieldValueObj.value);
+                    headerOoxml=headerOoxml.replace(new RegExp(bdBame, 'g'),_fieldValueObj.value);
+                });
 
                 if(headerOoxml||footerOoxml||bodyOoxml)
                     func.Report.fillReport(headerOoxml,bodyOoxml,footerOoxml,headerIsOoxml,bodyIsOoxml,false,myMask);
@@ -527,44 +536,40 @@ func.Report={
             })
 
     },
-    replaceReportFields:function(_content,_infosArray)
+    /**
+     * return an array of fields  to replace and their value
+     * @param _infosArray
+     * @param _fieldsArray
+     * @returns {Array}
+     */
+    getFieldsAndVlues:function(_infosArray,_fieldsArray)
     {
-       return  new Promise(
-            function (resolve, reject) {
-                var result;
-                TfieldDirect.getFieldsFromIndexDb()
-                    .then(function(_fieldsArray)
+        var resultArray=[];
+        _fieldsArray.forEach(
+            function(_field) // find the value form infosArray corresponding to the _field.tfieldDbName
+            {
+                // _infosArray is an array of arrays
+                _infosArray.forEach(
+                    function(_rowsArray)
                     {
-                        var result;
-                        _fieldsArray.forEach(
-                            function(_field) // find the value form infosArray corresponding to the _field.tfieldDbName
+                        _rowsArray.forEach(
+                            function(_rowObj)
                             {
-                                // _infosArray is an array of arrays
-                                _infosArray.forEach(
-                                    function(_rowsArray)
-                                    {
-                                        _rowsArray.forEach(
-                                            function(_rowObj)
-                                            {
-                                                for (var key in _rowObj)
-                                                {
-                                                    if( _rowObj.hasOwnProperty( key ) ) {
-                                                        if(_field.tfieldDbName==key)
-                                                        {
-                                                            _field.value=_rowObj[key];
-                                                            result.push(_field);
-                                                        }
-                                                    }
-                                                }
-                                            })
+                                for (var key in _rowObj)
+                                {
+                                    if( _rowObj.hasOwnProperty( key ) ) {
+                                        if(_field.tfieldDbName==key)
+                                        {
+                                            _field.value=_rowObj[key];
+                                            resultArray.push(_field);
+                                        }
                                     }
-                                )
-                            });
-                        resolve(result);
-                    })
-
-            }
-        );
+                                }
+                            })
+                    }
+                )
+            });
+        return resultArray;
 
 
     },
