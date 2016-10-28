@@ -34,7 +34,7 @@ Ext.define('MyApp.view.MyPanelCotation', {
     items: [
         {
             xtype: 'button',
-            text: 'MyButton',
+            text: 'Cotation',
             listeners: {
                 click: 'onButtonClick'
             }
