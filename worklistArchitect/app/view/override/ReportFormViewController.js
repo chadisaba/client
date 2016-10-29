@@ -178,10 +178,12 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                             click:function(_btn)
                             {
 
-                                var visitStudyArray=win.down("#selectedStudyGridItemId").getSelectionModel().getSelection();
-                                visitStudyArray.forEach(function(_rec)
+                                var visitStudyRecArray=win.down("#selectedStudyGridItemId").getSelectionModel().getSelection();
+                                var visitStudyArray=[];
+                                    visitStudyRecArray.forEach(function(_rec)
                                 {
                                     reportObject.reportName+=", "+ _rec.get('studyCode');
+                                    visitStudyArray.push(_rec.getData());
 
                                 });
                                 if(_reportNumber==0){
@@ -191,11 +193,12 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                 else
                                 {
                                     reportGridController.addReport(reportObject);
-                                    myMask.show();
-                                    func.Report.createNewReport(me.siteId,me.doctorId,_visitId,visitStudyArray,myMask)
+
                                 }
+                                myMask.show();
+                                func.Report.createNewReport(me.siteId,me.doctorId,_visitId,visitStudyArray,myMask);
                                 var studyVisitController = me.getView().down('#reportHasStudyItemId').getController();
-                                studyVisitController.selectStudies(visitStudyArray);
+                                studyVisitController.selectStudies(visitStudyRecArray);
                                 win.close();
 
                             }

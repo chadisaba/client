@@ -438,17 +438,18 @@ func.Report={
         var promiseArray=[];
         promiseArray.push(CommonDirect.getData('report_hf',filterArray));
         promiseArray.push(ReportDirect.getInfoToFillReportFields(_visitId,_visitStudyArray));
+        promiseArray.push(CommonDirect.getData('TFIELD'));
 
-        if(_visitStudyArray.length==1)
-        {
-            // get the report template associated to the study
+       /* if(_visitStudyArray.length==1)
+       {*/
+            // get the report template associated to the first selected study
             promiseArray.push(ReportDirect.getReportTemplateContentByStudyAndDoctor(_visitStudyArray[0].studyId,_doctorId));
-        }
+       // }
 
 
        // TODO Later with indexeddb : find the solution to do working dexie and internet explorer
        /* promiseArray.push(TfieldDirect.getFieldsFromIndexDb());// get fieldToReplace form the indexedDB*/
-        promiseArray.push(CommonDirect.getData('TFIELD'));
+
        /* if(_visitStudyArray.length>0)
             var pVisitArray=*/
        Promise.all(promiseArray)
@@ -506,22 +507,18 @@ func.Report={
                         });
                 }
 
-                /**
-                 * Get the body of report if just one study is associated to the current visit
-                 */
-                if(_visitStudyArray.length==1)
-                {
-                    var reportTemplateObject=_resultsArray[2];
+
+                    var reportTemplateObject=_resultsArray[3];
                     if(reportTemplateObject)
                     {
                         bodyOoxml=reportTemplateObject.reportTemplateContent;
                         bodyIsOoxml=!reportTemplateObject.reportTemplateContentIsHtml;
                     }
 
-                }
+
 
                 var infoToFillReportFieldsArray=_resultsArray[1];
-                var fieldsValuesArray=func.Report.getFieldsAndVlues(infoToFillReportFieldsArray,_resultsArray[3]);
+                var fieldsValuesArray=func.Report.getFieldsAndVlues(infoToFillReportFieldsArray,_resultsArray[2]);
                 fieldsValuesArray.forEach(function(_fieldValueObj)
                 {
                     var bdBame='{'+_fieldValueObj.tfieldName+'}';
