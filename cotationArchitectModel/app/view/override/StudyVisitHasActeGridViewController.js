@@ -35,107 +35,96 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                     mainTable.tableName="STUDY";
 
 
-                    var joinTablesArray=[ {tableName:"STUDY_ACTE",
-                        joinObject:{tableName:"ACTE",fieldsArray:['acteCodeGroupement'],required:false}},{tableName:'STUDY_VISIT',filters:[{
-                        name:'visitId',value:_visitId}]}];
-                    CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
+                    var joinTablesArray=[
+                        {
+                            tableName:"STUDY_ACTE",
+                            joinObject:
+                            {
+                                tableName:"ACTE",fieldsArray:['acteCodeGroupement'],required:false
+                            }
+                        },
+                        {
+                            tableName:'STUDY_VISIT',
+                            filters:[
+                                {
+                                name:'visitId',value:_visitId
+                                }
+                            ]
+                        }
+                    ];
+                    var promiseArray=[];
+                    promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
+                    promiseArray.push(CommonDirect.getData("ccam_config"));
+                    Promise.all(promiseArray)
                         .then(
-                            function (_data) {
-                                for (var i = 0; i < _data.length; i++) {
+                            function (_resultArray) {
+                                var resultStudyActeArray=_resultArray[0];
+                               var  resultCCAMConfig=_resultArray[1];
 
-                                    _data[i].studyVisitId=_data[i]['StudyVisits.studyVisitId'];
-                                    _data[i].studyActeId=_data[i]['StudyActes.studyActeId'];
-                                    _data[i].studyVisitHasActeCode=_data[i]['StudyActes.studyActeCode'];
-                                    _data[i].studyVisitHasActeModificators=_data[i]['StudyActes.studyActeModificators'];
-                                    _data[i].studyVisitHasActeAcceptedModificators=_data[i]['StudyActes.studyActeAcceptedModificators'];
-                                    _data[i].studyVisitHasActeQuantity=_data[i]['StudyActes.studyActeQuantity'];
-                                    _data[i].studyVisitHasActeAmount=_data[i]['StudyActes.studyActeAmount'];
-                                    _data[i].studyVisitHasActeAmountDepassement=_data[i]['StudyActes.studyActeAmountDepassement'];
-                                    _data[i].studyVisitHasActeAssociationNonPrevu=_data[i]['StudyActes.studyActeAssociationNonPrevu'];
-                                    _data[i].studyVisitHasActeType=_data[i]['StudyActes.studyActeType'];
-                                    _data[i].studyVisitHasActeDepense=_data[i]['StudyActes.studyActeDepense'];
-                                    _data[i].studyVisitHasActeExoParticuliere=0;
-                                    _data[i].studyVisitHasActeSoumisEntentePrealable=_data[i]['StudyActes.studyActeEntentePrealable'];
-                                    _data[i].studyVisitHasActeRefundingCode=_data[i]['StudyActes.studyActeRefundingCode'];
-                                    _data[i].studyVisitHasActeCoefficient=_data[i]['StudyActes.studyActeCoefficient'];
-                                    _data[i].studyVisitHasActeIsHoliday=0;
-                                    _data[i].studyVisitHasActeIsEmergency=0;
-                                    _data[i].studyVisitHasActeIsNight=0;
-                                    _data[i].studyVisitHasActeSuppCharge=0;
-                                    _data[i].studyVisitHasActeIsDomicile=0;
-                                    _data[i].studyVisitHasActeIsMultiple=0;
-                                    _data[i].studyVisitHasActeArchivingActeAddedAuto=0;
-                                    _data[i].studyVisitHasActeDenombrement=0;
-                                    _data[i].studyVisitHasActeCodeAffine="";
-                                    _data[i].studyVisitHasActeCodeAccEntentePrealable="";
-                                    _data[i].studyVisitHasActeExtensionDoc="";
-                                    _data[i].added=true;
-                                    _data[i].toDelete=false;
-                                    _data[i].addedAndValidated=false;
-                                    _data[i].modified=false;
-                                    _data[i].acteCodeGroupement=_data[i]['StudyActes.Acte.acteCodeGroupement'];
+                                for (var i = 0; i < resultStudyActeArray.length; i++) {
 
+                                    resultStudyActeArray[i].studyVisitId=resultStudyActeArray[i]['StudyVisits.studyVisitId'];
+                                    resultStudyActeArray[i].studyActeId=resultStudyActeArray[i]['StudyActes.studyActeId'];
+                                    resultStudyActeArray[i].studyVisitHasActeCode=resultStudyActeArray[i]['StudyActes.studyActeCode'];
+                                    resultStudyActeArray[i].studyVisitHasActeModificators=resultStudyActeArray[i]['StudyActes.studyActeModificators'];
+                                    resultStudyActeArray[i].studyVisitHasActeAcceptedModificators=resultStudyActeArray[i]['StudyActes.studyActeAcceptedModificators'];
+                                    resultStudyActeArray[i].studyVisitHasActeQuantity=resultStudyActeArray[i]['StudyActes.studyActeQuantity'];
+                                    resultStudyActeArray[i].studyVisitHasActeAmount=resultStudyActeArray[i]['StudyActes.studyActeAmount'];
+                                    resultStudyActeArray[i].studyVisitHasActeAmountDepassement=resultStudyActeArray[i]['StudyActes.studyActeAmountDepassement'];
+                                    resultStudyActeArray[i].studyVisitHasActeAssociationNonPrevu=resultStudyActeArray[i]['StudyActes.studyActeAssociationNonPrevu'];
+                                    resultStudyActeArray[i].studyVisitHasActeType=resultStudyActeArray[i]['StudyActes.studyActeType'];
+                                    resultStudyActeArray[i].studyVisitHasActeDepense=resultStudyActeArray[i]['StudyActes.studyActeDepense'];
+                                    resultStudyActeArray[i].studyVisitHasActeExoParticuliere=0;
+                                    resultStudyActeArray[i].studyVisitHasActeSoumisEntentePrealable=resultStudyActeArray[i]['StudyActes.studyActeEntentePrealable'];
+                                    resultStudyActeArray[i].studyVisitHasActeRefundingCode=resultStudyActeArray[i]['StudyActes.studyActeRefundingCode'];
+                                    resultStudyActeArray[i].studyVisitHasActeCoefficient=resultStudyActeArray[i]['StudyActes.studyActeCoefficient'];
+                                    resultStudyActeArray[i].studyVisitHasActeIsHoliday=0;
+                                    resultStudyActeArray[i].studyVisitHasActeIsEmergency=0;
+                                    resultStudyActeArray[i].studyVisitHasActeIsNight=0;
+                                    resultStudyActeArray[i].studyVisitHasActeSuppCharge=0;
+                                    resultStudyActeArray[i].studyVisitHasActeIsDomicile=0;
+                                    resultStudyActeArray[i].studyVisitHasActeIsMultiple=0;
+                                    resultStudyActeArray[i].studyVisitHasActeArchivingActeAddedAuto=0;
+                                    resultStudyActeArray[i].studyVisitHasActeDenombrement=0;
+                                    resultStudyActeArray[i].studyVisitHasActeCodeAffine="";
+                                    resultStudyActeArray[i].studyVisitHasActeCodeAccEntentePrealable="";
+                                    resultStudyActeArray[i].studyVisitHasActeExtensionDoc="";
+                                    resultStudyActeArray[i].added=true;
+                                    resultStudyActeArray[i].toDelete=false;
+                                    resultStudyActeArray[i].addedAndValidated=false;
+                                    resultStudyActeArray[i].modified=false;
+                                    resultStudyActeArray[i].acteCodeGroupement=resultStudyActeArray[i]['StudyActes.Acte.acteCodeGroupement'];
                                 }
-
-                                var mainTable="ccam_config";
-                                if(_data.length>0){
-
-                                    CommonDirect.getData(mainTable)
-                                        .then(
-                                            function (_result) {
-
-                                                resultCCAMConfig=_result;
-                                                Utility.grid.loadGrid(view, _data, view.getViewModel().getStore('StudyVisitHasActeStore'));
-                                                console.log(resultCCAMConfig);
-                                                me.getANP(_data,resultCCAMConfig);
-
-                                            })
-                                        .catch(function (_err) {
-                                            console.error(_err);
-                                            reject(_err);
-                                        });
-
-
+                                if(resultStudyActeArray.length>0) {
+                                    Utility.grid.loadGrid(view, resultStudyActeArray, view.getViewModel().getStore('StudyVisitHasActeStore'));
+                                    me.getANP(resultStudyActeArray, resultCCAMConfig);
                                 }
-
                             })
                         .catch(function (_err) {
                                 console.error(_err);
-                                 reject(_err);
                             }
                         );
-
                 }
-
-
             }
         );
     },
 
-
     getANP:function(actes,ccamConfig)
     {
-
-        console.log(actes);
-        console.log(ccamConfig);
         for (var i = 0; i < actes.length; i++) {
 
             if(actes[i].studyVisitHasActeType == 2){//NGAP
                 actes[i].studyVisitHasActeAssociationNonPrevu="";
-
             }
 
         }
-
         var nbActes=actes.length;
-
 
         var actesBucco=[];
         var actesIRM=[];
         var actesScan=[];
         var actesImagerieInterventionnelle=[];
         var actesSupplements=[];
-
 
         var actesBuccoStudy=[];
         var actesIRMStudy=[];
@@ -166,19 +155,14 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
 
             }
         }
-
         for (var i = 0; i < actes.length; i++) {
-
             if(actesBucco.indexOf(actes[i].studyVisitHasActeCode)  >-1){
                 actesBuccoStudy.push(actes[i]);
                 actes[i].studyVisitHasActeAssociationNonPrevu=4;
-
             }else if(actesSupplements.indexOf(actes[i].studyVisitHasActeCode)  >-1){
                 actesSupplementsStudy.push(actes[i]);
                 actes[i].studyVisitHasActeAssociationNonPrevu=1;
-
             }else {
-
 
                  switch (actes[i].acteCodeGroupement) {
                 case 'ADI':
@@ -190,12 +174,10 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                     if (actesScan.indexOf(actes[i].studyVisitHasActeCode) > -1) {
                         actesScanStudy.push(actes[i]);
                         actes[i].studyVisitHasActeAssociationNonPrevu = 1;
-
                     }
                     if (actesImagerieInterventionnelle.indexOf(actes[i].studyVisitHasActeCode) > -1) {
                         actesImagerieInterventionnelleStudy.push(actes[i]);
                         actes[i].studyVisitHasActeAssociationNonPrevu = 1;
-
                     }
                     break;
                 case 'ADE':
@@ -208,41 +190,23 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                 default:
                     actesOtherStudy.push(actes[i]);
                     break
-
             }
-
-
-
             }
-
-
-
-
         }
-
         for (var i = 0; i < actes.length; i++) {
-
             if(actes[i].studyVisitHasActeType == 1){//CCAM
                 actes[i].studyVisitHasActeAssociationNonPrevu="";
-
             }
-
         }
-
-
         if(nbActes<2){
             if(actesBucco.length>0){
 
                 for (var i = 0; i < actes.length; i++) {
 
-                    if(actesBucco.indexOf(actes[i].studyVisitHasActeCode )  >-1){
+                    if(actesBucco.indexOf(actes[i].studyVisitHasActeCode )>-1){
                         actes[i].studyVisitHasActeAssociationNonPrevu=4;
-
                     }
-
                 }
-
-
             }
 
 
@@ -284,28 +248,11 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
                         actes[i].studyVisitHasActeAssociationNonPrevu=1;
 
                     }
-
                 }
-
-
             }
-
-
-
-
         }
-
-
-
-
-
         return actes;
-
     },
-
-
-
-
     getDataToBeSaved: function () {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
