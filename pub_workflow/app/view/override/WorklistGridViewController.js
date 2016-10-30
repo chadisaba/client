@@ -494,6 +494,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
          4- wainting for approuval
          5-approved
          6- printed.
+         7- report  to review
          */
         var result;
         var color;
@@ -538,6 +539,11 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 color="#27b6af";
                 icon="fa fa-print";
                 tooltip="Imprimé";
+                break;
+            case 7:
+                color="red";
+                icon="fa fa-exclamation-triangle";
+                tooltip=translate("report to review");
                 break;
 
         }

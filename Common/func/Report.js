@@ -96,6 +96,7 @@ func.Report={
          4- wainting for approuval
          5-approved
          6- printed.
+         7- to review.
          */
 
         var color;
@@ -140,6 +141,11 @@ func.Report={
                 color="#27b6af";
                 icon="fa fa-print";
                 tooltip="Imprimé";
+                break;
+            case 7:
+                color="red";
+                icon="fa fa-exclamation-triangle";
+                tooltip=translate("report to review");
                 break;
 
         }
@@ -394,7 +400,7 @@ func.Report={
                     // Synchronize the document state by executing the queued commands,
                     // and return a promise to indicate task completion.
                     return context.sync().then(function () {
-                        Ext.MessageBox.alert('','header was retreived');
+                       // Ext.MessageBox.alert('','header was retreived');
 
                     });
                 });
@@ -642,6 +648,7 @@ func.Report={
                             {
                                 Ext.GlobalEvents.fireEvent('reportSavedEvent',_reportRec);
 
+                                _reportRec.set('reportStatus',_reportStatut)
                                 _myMask.hide();
                             })
                             .catch(function(_err)

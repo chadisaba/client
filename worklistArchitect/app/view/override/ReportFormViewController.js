@@ -8,6 +8,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         {
             _reportSaved.set('added',false);
             this.getView().down('#reportGridItemId').getController().quitEditMode();
+            Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
         },me);
 
     },
@@ -44,11 +45,21 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     },
 
     onGridpanelValidateReportEvent: function(gridpanel,_selectedRec) {
+        var me=this;
+        var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
+        myMask.show();
+        var selectedStudyRec=me.getView().down('#reportHasStudyItemId').getSelectionModel().getSelection();
 
+        func.Report.saveReport(_selectedRec,selectedStudyRec,3,false,true,myMask);
     },
 
     onGridpanelReviewReportEvent: function(gridpanel,_selectedRec) {
+        var me=this;
+        var myMask = new Ext.LoadMask({msg:translate("Saving Report"),target:me.getView()});
+        myMask.show();
+        var selectedStudyRec=me.getView().down('#reportHasStudyItemId').getSelectionModel().getSelection();
 
+        func.Report.saveReport(_selectedRec,selectedStudyRec,7,false,true,myMask);
     },
 
     initForm:function(_visitId,_doctorId,_siteId)
