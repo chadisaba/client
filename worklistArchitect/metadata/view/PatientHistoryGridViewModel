@@ -6,19 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "data": [
-            "{",
-            "trans:{",
-            "type:translate('type'),",
-            "history:translate('history'),",
-            "path:translate('path'),",
-            "name:translate('name'),",
-            "type:translate('type'),",
-            "pdf:translate('pdf')",
-            "",
-            "}",
-            "}"
-        ],
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGridViewModel"
     },
@@ -48,7 +35,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "directFn": "Server.Patients.Patient.getPatientHistory",
+                        "directFn": "Server.Patient.getPatientHistory",
                         "metadata": [
                             "{patientId:'1'}"
                         ]

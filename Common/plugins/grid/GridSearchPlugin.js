@@ -240,7 +240,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			items:[{
 				xtype: 'button',
 				text: '',
-				tooltip: 'Delete All Search Criteria',
+				tooltip: translate('Delete All Search Criteria'),
 				itemId: 'resetSearchBtn',
 				glyph: 'xf014@FontAwesome',
 				listeners: {
@@ -259,8 +259,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 
 			items:[{
 				xtype: 'button',
-				text: 'Apply Search',
-				tooltip: 'Apply Search',
+				text: translate('Apply Search'),
+				tooltip: translate('Apply Search'),
 				itemId: 'applySearchBtn',
 				glyph: 'xf002@FontAwesome',
 				listeners: {
@@ -283,7 +283,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				itemId: 'addSearchBtn',
 				glyph: 'xf00e@FontAwesome',
 				text: '',
-				tooltip: 'Add Search Criteria',
+				tooltip: translate('Add Search Criteria'),
 				listeners: {
 					click: function (){
 
@@ -309,7 +309,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				itemId: 'deleteSearchBtn',
 				glyph: 'xf010@FontAwesome',
 				text: '',
-				tooltip: 'Delete selected Criteria',
+				tooltip: translate('Delete selected Criteria'),
 				listeners: {
 					click: function (button, e, options){
 

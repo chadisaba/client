@@ -35,6 +35,7 @@ function translate(text)
         "no":"Non",
         "add form":"Formulaire d'ajout",
         "edit form":"Formulaire de modification",
+        "All":"Tous",
 
         "the referring physicians":"Les Prescripteurs",
 
@@ -54,6 +55,17 @@ function translate(text)
         "msg.comment":"Commentaire",
         "liveSearch":"Recherche rapide",
 
+        /**** Grid Search plugin****/
+        "Delete selected Criteria":"Supprimer les critères de recherche sélectionnées",
+        "Delete All Search Criteria":"Supprimer toutes les critères de recherche",
+        "Apply Search":"Rechercher",
+        "Add Search Criteria":"Ajouter une ligne de critère de recherche",
+        "StartBy":"Commence Par",
+        "Contains":"Contient",
+        "ALL":"Tous",
+        "No":"Non",
+        "Yes":"Oui",
+        "diff":"Différent",
         /**** menu**/
         "home":"Accueil",
         "menu.settings":"Paramétrage",
@@ -186,12 +198,30 @@ function translate(text)
 
         /******* Referring physicina*****/
         "identifying referring physician":"Identification  prescripteur",
-        "referring physician form":"Formulaire des préscripteurs"
+        "referring physician form":"Formulaire des préscripteurs",
 
 
+        /*****Report************/
+            /***crStatus***/
+
+            "noreport":"Aucun",
+        "Reportintyping":"En cours",
+        "waitingforvalidation":"Att. validation",
+        "validated":"Validé",
+        "waintingforapprouval":"Att. approbation",
+        "approved":"Approuvé",
+        "printed":"Imprimé",
+        "review":"A Corriger",
 
 
+        /*****Cotations************/
+        /***cotationStatus***/
 
+        "notQuoted":"Aucun",
+        "quot. waiting":"En Attente",
+        "quot. saved":"Enregistrée",
+        "quot. approved":"Validée",
+        "quot.disapproved":"Dévalidée"
 
 
         };

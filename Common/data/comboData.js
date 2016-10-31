@@ -25,18 +25,18 @@ var ComboData= {
             id:0,text :translate('notQuoted')
         },
         {
-            id:1,text :translate('saved')
+            id:1,text :translate('quot. saved')
 
         },
         {
-            id:2,text :translate('disapproved')
+            id:2,text :translate('quot.disapproved')
 
         },
         {
-            id:3,text :translate('approved')
+            id:3,text :translate('quot. approved')
         }
         ,  {
-            id:4,text :translate('waiting')
+            id:4,text :translate('quot. waiting')
         }
     ],
     crStatus:[
@@ -62,6 +62,9 @@ var ComboData= {
         },
         {
             id:6,text :translate('printed')
+        },
+        {
+            id:6,text :translate('review')
         }
     ],
     dictationStatus:[

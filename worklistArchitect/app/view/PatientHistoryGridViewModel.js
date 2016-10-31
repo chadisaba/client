@@ -23,24 +23,13 @@ Ext.define('MyApp.view.PatientHistoryGridViewModel', {
         'Ext.data.reader.Json'
     ],
 
-    data: {
-        trans: {
-            type: translate('type'),
-            history: translate('history'),
-            path: translate('path'),
-            name: translate('name'),
-            type: translate('type'),
-            pdf: translate('pdf')
-        }
-    },
-
     stores: {
         PatientHistoryStore: {
             groupField: 'docDate',
             model: 'MyApp.model.PatientHistoryModel',
             proxy: {
                 type: 'direct',
-                directFn: 'Server.Patients.Patient.getPatientHistory',
+                directFn: 'Server.Patient.getPatientHistory',
                 metadata: {
                     patientId: '1'
                 },

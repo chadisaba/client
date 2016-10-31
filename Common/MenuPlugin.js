@@ -207,7 +207,7 @@ Ext.define('menu.MenuPlugin', {
                         }],
                         proxy: {
                             type: 'direct',
-                            directFn: 'Server.Patients.Patient.searchPatient',
+                            directFn: 'Server.Patient.searchPatient',
                             reader: {
                                 type: 'json',
                                 rootProperty: 'data'
