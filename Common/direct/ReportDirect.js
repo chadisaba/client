@@ -1,25 +1,64 @@
 var ReportDirect={
 saveReport:function(_reportObject,_reportHeaderObject,_selectedStudyArray)
-{
-   return new Promise(
-    function (resolve, reject) {
-        var params={};
-        params.reportObj=_reportObject;
-        params.reportHeaderObj=_reportHeaderObject;
-        params.reportStudyArray=_selectedStudyArray;
-        Server.Report.saveReport(params,
-            function(_result){
-                if(_result.success){
-                    resolve(_result.data);
-                }
-                else{
-                    console.error(_result.msg);
-                    reject(_result.msg);
-                }
-            }
-        );
-    });
-},
+    {
+        return new Promise(
+            function (resolve, reject) {
+                var params={};
+                params.reportObj=_reportObject;
+                params.reportHeaderObj=_reportHeaderObject;
+                params.reportStudyArray=_selectedStudyArray;
+                Server.Report.saveReport(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+    },
+    getReportBodyContent:function(_reportId)
+    {
+        return new Promise(
+            function (resolve, reject) {
+                var params={};
+                params.reportId=_reportId;
+                Server.Report.getReportBodyContent(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+    },
+    getHeaderBodyContent:function(_reportId)
+    {
+        return new Promise(
+            function (resolve, reject) {
+                var params={};
+                params.reportId=_reportId;
+                Server.Report.getHeaderBodyContent(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+    },
+
     getInfoToFillReportFields:function(_visitId,_visitStudyArray)
     {
         //Creating a promise
