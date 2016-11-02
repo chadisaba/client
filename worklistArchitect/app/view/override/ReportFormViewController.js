@@ -230,8 +230,10 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     editReport:function(_reportId,_doctorId,_siteId)
     {
         var me=this;
-        var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
-        var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");
+        /*var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
+        var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");*/
+
+        var reportPromise=ReportDirect.getReportBodyAndHeaderContent();
         var reportFooterPromise=CommonDirect.getData('report_hf',
             [{name:'doctorId',value:_doctorId},
             {name:'reporthfType',value:2}]
@@ -239,13 +241,13 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         var myMask = new Ext.LoadMask({msg:translate("Openning Report"),target:me.getView()});
         myMask.show();
 
-        Promise.all([reportHeaderPromise,reportPromise,reportFooterPromise])
+        Promise.all([reportPromise,reportFooterPromise])
             .then(function(_resultArray)
             {
-                if(_resultArray[1].length>0)
+                if(_resultArray[0].length>0)
                 {
-                    var reportObject=_resultArray[1][0];
-                    var reportHeaderObject=_resultArray[0][0];
+                    var reportObject=_resultArray[0][0];
+                    var reportHeaderObject=_resultArray[0][1];
                     var reportContent;
 
                    var reportIsHtml=reportObject.reportContentIsHtml;
@@ -254,7 +256,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
                     // get The footer content
                     var footerContent='';
-                    var reportFooterArray=_resultArray[2];
+                    var reportFooterArray=_resultArray[1];
 
                     reportFooterArray.forEach(
                         function(_item)
