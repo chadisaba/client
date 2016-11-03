@@ -16,7 +16,7 @@ Ext.define('MyApp.view.override.PatientHistoryGridViewController', {
                 params={
                     path:record.get('htmlPath')
                 };
-                Server.CommonUtil.getFileContent(params,
+                Server.CommonUtil.getReportFileContent(params,
                     function(res){
                         if(res.success){
                             me.fireViewEvent('displayFileContentEvent',res.data);

@@ -287,7 +287,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 }
                 else
                 {
-                   throw Error('The report is not exists');
+                   throw Error('The report doesn\'t exist');
                 }
 
             })
