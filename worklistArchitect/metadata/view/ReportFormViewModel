@@ -9,5 +9,54 @@
         "designer|userAlias": "reportform",
         "designer|userClassName": "ReportFormViewModel"
     },
-    "designerId": "92692d24-49c0-437b-a395-8bf469e94624"
+    "designerId": "92692d24-49c0-437b-a395-8bf469e94624",
+    "cn": [
+        {
+            "type": "directstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReportKeywordComboModel",
+                "name": "ReportKeywordComboStore"
+            },
+            "name": "MyDirectStore1",
+            "designerId": "3e3e712f-eade-421b-ab09-d7cf9a48fe67",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "directFn": "Server.Report.searchKeyword",
+                        "metadata": [
+                            "{doctorId:1}"
+                        ]
+                    },
+                    "name": "MyDirectProxy1",
+                    "designerId": "02d7a906-4837-4640-8df7-b7bb6cc89ef9",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data"
+                            },
+                            "name": "MyJsonReader1",
+                            "designerId": "958d9dfe-f821-4579-92db-57fb02335aa2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

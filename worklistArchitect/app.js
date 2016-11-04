@@ -46,7 +46,8 @@ Ext.application({
         'ReportModel',
         'ReportHasStudyModel',
         'ReportHFModel',
-        'ReportTemplateModel'
+        'ReportTemplateModel',
+        'ReportKeywordComboModel'
     ],
     views: [
         'WorklistGrid',

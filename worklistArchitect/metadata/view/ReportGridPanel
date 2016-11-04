@@ -12,7 +12,7 @@
         "store": [
             "{ReportGridStore}"
         ],
-        "title": "Report",
+        "title": "report.Reports",
         "width": null
     },
     "name": "MyGridPanel1",
@@ -444,6 +444,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "fa fa-cogs",
                         "itemId": "templateSettingsBtnItemId",
                         "layout|flex": null,
                         "text": "Template settings"
@@ -545,7 +546,7 @@
                 "scope": "me"
             },
             "name": "onGridpanelAfterRender",
-            "designerId": "bf782465-8a06-48d5-8ff8-cb8951030f13"
+            "designerId": "759895cd-4ce0-47da-839d-5c3900f0e6db"
         }
     ]
 }

@@ -212,6 +212,20 @@ function translate(text)
         "approved":"Approuvé",
         "printed":"Imprimé",
         "review":"A Corriger",
+        "report to review":"A Corriger",
+        "add shortcut":"Ajouter raccourci",
+        "new report":"Ajouter",
+        "search a shortcut":"\uF002 Rechercher raccourci",
+        "Enter shortcut name":"Nom du raccourci",
+        "report":"C.R.",
+        "report.Reports":"Les comptes rendus",
+        "Template settings":"Modèles",
+        "reportDate":"Date",
+        "reportName":"Libellé",
+        "reportDoctor":"Médecin",
+        "reportStatus":"Statut",
+        "Select associated studies":"Choisir les examens associé",
+        "report.study":"Examens",
 
 
         /*****Cotations************/

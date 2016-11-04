@@ -31,7 +31,7 @@ Ext.define('MyApp.view.ReportGridPanel', {
     viewModel: {
         type: 'reportgridpanel'
     },
-    title: 'Report',
+    title: 'report.Reports',
 
     bind: {
         store: '{ReportGridStore}'
@@ -161,6 +161,7 @@ Ext.define('MyApp.view.ReportGridPanel', {
                 {
                     xtype: 'button',
                     itemId: 'templateSettingsBtnItemId',
+                    iconCls: 'fa fa-cogs',
                     text: 'Template settings',
                     listeners: {
                         click: 'onTemplateSettingsBtnItemIdClick'

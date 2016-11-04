@@ -39,14 +39,15 @@ Ext.define('MyApp.view.ReportHasStudyGrid', {
             xtype: 'gridcolumn',
             flex: 1,
             dataIndex: 'studyName',
-            text: 'study'
+            text: 'report.study'
         }
     ],
     selModel: {
         selType: 'checkboxmodel'
     },
     listeners: {
-        select: 'onGridpanelSelect'
+        select: 'onGridpanelSelect',
+        afterrender: 'onGridpanelAfterRender'
     }
 
 });

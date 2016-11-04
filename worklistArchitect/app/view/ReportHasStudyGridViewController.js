@@ -23,6 +23,10 @@ Ext.define('MyApp.view.ReportHasStudyGridViewController', {
 
     onGridpanelSelect: function(rowmodel, record, index, eOpts) {
 
+    },
+
+    onGridpanelAfterRender: function(component, eOpts) {
+
     }
 
 });

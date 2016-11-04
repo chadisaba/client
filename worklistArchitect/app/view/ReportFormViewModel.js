@@ -15,6 +15,29 @@
 
 Ext.define('MyApp.view.ReportFormViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.reportform'
+    alias: 'viewmodel.reportform',
+
+    requires: [
+        'Ext.data.Store',
+        'Ext.data.proxy.Direct',
+        'Ext.data.reader.Json'
+    ],
+
+    stores: {
+        ReportKeywordComboStore: {
+            model: 'MyApp.model.ReportKeywordComboModel',
+            proxy: {
+                type: 'direct',
+                directFn: 'Server.Report.searchKeyword',
+                metadata: {
+                    doctorId: 1
+                },
+                reader: {
+                    type: 'json',
+                    rootProperty: 'data'
+                }
+            }
+        }
+    }
 
 });

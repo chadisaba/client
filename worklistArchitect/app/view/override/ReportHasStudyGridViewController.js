@@ -25,6 +25,13 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
 
         }
     },
+    
+      onGridpanelAfterRender: function(component, eOpts) {
+          translateUtil.transGrid(component);
+
+    },
+
+    
     getStore:function()
     {
         var view=this.getView();
@@ -60,8 +67,8 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
                       }
 
                   }
-              )
-          })
+              );
+          });
     },
     selectStudies:function(_studiesArray)
     {
@@ -79,14 +86,11 @@ Ext.define('MyApp.view.override.ReportHasStudyGridViewController', {
 
                 }
             }
-        )
+        );
         if(recordsToSelect.length>0)
             view.getSelectionModel().select(recordsToSelect);
     },
-    selectAll:function(){
-        var view = this.getView();
-        view.getSelectionModel().selectAll();
-    },
+  
     refreshGrid: function () {
         if(this.studyVisitDataArray)
             this.initGrid(this.filters,this.studyVisitDataArray);

@@ -29,7 +29,8 @@
             "ReportModel",
             "ReportHasStudyModel",
             "ReportHFModel",
-            "ReportTemplateModel"
+            "ReportTemplateModel",
+            "ReportKeywordComboModel"
         ],
         "name": "MyApp",
         "requires": [

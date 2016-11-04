@@ -4,6 +4,9 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
     onFormAfterRender: function(component, eOpts) {
 
         var me=this;
+        translateUtil.transForm(component);
+     
+        
         Ext.on('reportSavedEvent',function(_reportSaved)
         {
             _reportSaved.set('added',false);
@@ -61,6 +64,71 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
 
         func.Report.saveReport(_selectedRec,selectedStudyRec,7,false,true,myMask);
     },
+      onShortcutNameTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+         
+          if(newValue.length>0)
+              this.getView().down('#addShortcutBtnItemId').setDisabled(false);
+          else
+               this.getView().down('#addShortcutBtnItemId').setDisabled(true);
+    },
+    
+     onShortcutsComboItemIdSelect: function(combo, record, eOpts) {
+         ReportDirect.getReportKeywordContent(record.get('reportKeywordId'))
+         .then(function(_resultString)
+               {
+                   func.Report.writeTextToSelection(_resultString);
+                   
+               }
+              );
+
+    },
+    
+      onAddShortcutBtnItemIdClick: function(button, e, eOpts) {
+          var me=this;
+          var shorcutName=me.getView().down('#shortcutNameTextFieldItemId').getValue();
+            var myMask = new Ext.LoadMask({msg:translate("Saving shortcut...."),target:me.getView()});
+        myMask.show();
+          
+          func.Report.getSelectedTextFormWord(
+              function(_err,_result)
+                                             {
+                                                 if(_err)
+                                                     Ext.Msg.alert('Error', _err);
+                                                 else
+                                                     {
+                                                         if(_result.length>0)
+                                                             {
+                                                                 reportKeywordObj={};
+                                                             reportKeywordObj.doctorId=me.doctorId;
+                                                             reportKeywordObj.reportKeywordName=shorcutName;
+                                                             reportKeywordObj.reportKeywordContent=_result;
+                                                             reportKeywordObj.reportKeywordContentIsHtml=true;
+                                                             CommonDirect.saveData(reportKeywordObj,'report_keyword')
+                                                                .then(function()
+                                                                {
+
+                                                                    myMask.hide();
+                                                                })
+                                                                .catch(function(_err)
+                                                                {
+                                                                    Ext.MessageBox.alert('Error',_err);
+                                                                    myMask.hide();
+                                                                }); 
+                                                                }
+                                                         else
+                                                             {
+                                                              Ext.MessageBox.alert('Error',translate('select a text please'));   
+                                                             }
+                                                         
+                                                        
+                                                     }
+                                          
+                                                 
+                                             });
+
+    },
+
 
     initForm:function(_visitId,_doctorId,_siteId)
     {
@@ -68,6 +136,11 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
          me.doctorId=_doctorId;
         me.visitId=_visitId;
         me.siteId=_siteId;
+        
+          var keywordComboStore = me.getViewModel().getStore('ReportKeywordComboStore');
+          keywordComboStore.getProxy().setMetadata({doctorId:me.doctorId});
+        
+        
         var reportGridController = me.getView().down('#reportGridItemId').getController();
         var pReport= reportGridController.getResultArray(
             [{name: "visitId", value: _visitId}]);
@@ -86,7 +159,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                 visitStudyArray=_resultArray[1];
                 studyVisitController.initGrid(null,_visitId,visitStudyArray);
 
-                if(reportArray.length==0)
+                if(reportArray.length===0)
                 {
                    me.addReport(_doctorId,_visitId,reportArray.length,visitStudyArray);
 
@@ -144,7 +217,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         {
             reportObject.reportName=_visitStudyArray[0].studyCode;
 
-            if(_reportNumber==0){// we are creating the first report for the selected visit
+            if(_reportNumber===0){// we are creating the first report for the selected visit
 
                 reportGridController.initGrid(null,_visitId,[reportObject]);
                 reportGridController.enterEditMode();
@@ -197,7 +270,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                                     visitStudyArray.push(_rec.getData());
 
                                 });
-                                if(_reportNumber==0){
+                                if(_reportNumber===0){
                                     reportGridController.initGrid(null,_visitId,[reportObject]);
                                     reportGridController.enterEditMode();
                                 }
@@ -233,7 +306,7 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
         /*var reportHeaderPromise= CommonDirect.getData("report_header",[{name:"reportId",value:_reportId}]);
         var reportPromise=CommonDirect.getDataById("reportId",_reportId,"report");*/
 
-        var reportPromise=ReportDirect.getReportBodyAndHeaderContent();
+        var reportPromise=ReportDirect.getReportBodyAndHeaderContent(_reportId);
         var reportFooterPromise=CommonDirect.getData('report_hf',
             [{name:'doctorId',value:_doctorId},
             {name:'reporthfType',value:2}]
@@ -246,13 +319,12 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
             {
                 if(_resultArray[0].length>0)
                 {
-                    var reportObject=_resultArray[0][0];
-                    var reportHeaderObject=_resultArray[0][1];
-                    var reportContent;
+                    var reportBodyContent=_resultArray[0][0];
+                    var reportHeaderContent=_resultArray[0][1];
+                    var reportIsHtml=_resultArray[0][2];
+                    var reportHeaderContentIsHtml=_resultArray[0][3];
 
-                   var reportIsHtml=reportObject.reportContentIsHtml;
 
-                        reportContent=reportObject.reportContent;
 
                     // get The footer content
                     var footerContent='';
@@ -281,8 +353,8 @@ Ext.define('MyApp.view.override.ReportFormViewController', {
                             });
                     }
 
-                    func.Report.fillReport(reportHeaderObject.reportHeaderContent,reportContent,footerContent,
-                        !reportHeaderObject.reportHeaderContentIsHtml,!reportIsHtml,false,myMask)
+                    func.Report.fillReport(reportHeaderContent,reportBodyContent,footerContent,
+                        !reportHeaderContentIsHtml,!reportIsHtml,false,myMask);
 
                 }
                 else

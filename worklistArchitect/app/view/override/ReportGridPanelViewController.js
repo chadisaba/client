@@ -1,6 +1,10 @@
 Ext.define('MyApp.view.override.ReportGridPanelViewController', {
     override: 'MyApp.view.ReportGridPanelViewController',
 
+       onGridpanelAfterRender: function(component, eOpts) {
+           translateUtil.transGrid(component);
+
+    },  
     initGrid: function (_filters, _visitId,_reportDataArray) {
         var me = this;
         if (_visitId) {

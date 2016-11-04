@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportKeywordComboModel"
+    },
+    "name": "MyModel",
+    "designerId": "982932b3-aa2f-41cc-9fe5-d1f1427a50c1",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "reportKeywordId"
+            },
+            "name": "MyField33",
+            "designerId": "f2983f3a-177e-449e-86d9-b87c79bc5594"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "reportKeywordName"
+            },
+            "name": "MyField34",
+            "designerId": "e3e51380-fd94-49dc-9361-a5a2a36bab7f"
+        }
+    ]
+}

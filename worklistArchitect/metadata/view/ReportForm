@@ -40,6 +40,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "flex": 1,
                         "layout": "hbox",
                         "layout|flex": null
                     },
@@ -60,6 +61,51 @@
                             "designerId": "39020760-710c-4f90-a3fe-0e41e987ea92"
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "reportKeywordName",
+                                "emptyText": "search a shortcut",
+                                "fieldLabel": "",
+                                "fieldStyle": "font-family: FontAwesome",
+                                "hideTrigger": true,
+                                "itemId": "shortcutsComboItemId",
+                                "layout|flex": 2,
+                                "minChars": 4,
+                                "pageSize": 10,
+                                "store": [
+                                    "{ReportKeywordComboStore}"
+                                ],
+                                "valueField": "reportKeywordId"
+                            },
+                            "name": "MyComboBox4",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onShortcutsComboItemIdSelect",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onShortcutsComboItemIdSelect",
+                                    "designerId": "7c37de50-02e6-499d-9ad8-50b95ff4dd83"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
@@ -67,10 +113,78 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "width": 10
+                                "width": 20
                             },
                             "name": "MySpacer11",
                             "designerId": "b61bcb61-ad04-4524-982b-5d60670725ff"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Enter shortcut name",
+                                "fieldLabel": "",
+                                "itemId": "shortcutNameTextFieldItemId",
+                                "layout|flex": 1
+                            },
+                            "name": "MyTextField",
+                            "designerId": "4ec620a7-1f81-4d1a-bafc-2234cdb0cfed",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onShortcutNameTextFieldItemIdChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onShortcutNameTextFieldItemIdChange",
+                                    "designerId": "7743cec3-adb1-4b3b-837c-fc2db256e2a6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "iconCls": "fa fa-plus-circle",
+                                "itemId": "addShortcutBtnItemId",
+                                "layout|flex": null,
+                                "text": "add shortcut",
+                                "width": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "67a9edcf-36cc-4b78-8f39-a9a41938cac2",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAddShortcutBtnItemIdClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAddShortcutBtnItemIdClick",
+                                    "designerId": "63790679-797d-4fce-9508-1c099a497752"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -85,26 +199,12 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "modeles",
+                "hidden": true,
                 "itemId": "modelesComboItemId",
                 "layout|anchor": "100%"
             },
             "name": "MyComboBox2",
             "designerId": "597d8325-71b5-4969-8473-6c71bbf3b0ea"
-        },
-        {
-            "type": "Ext.form.field.ComboBox",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "shortcuts",
-                "itemId": "shortcutsComboItemId",
-                "layout|anchor": "100%"
-            },
-            "name": "MyComboBox4",
-            "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77"
         },
         {
             "type": "Ext.container.Container",

@@ -33,7 +33,7 @@
             "userConfig": {
                 "dataIndex": "studyName",
                 "flex": 1,
-                "text": "study"
+                "text": "report.study"
             },
             "name": "MyColumn",
             "designerId": "9c7bc8e6-40f7-4961-b8b5-ff8a85573008"
@@ -72,6 +72,21 @@
             },
             "name": "onGridpanelSelect",
             "designerId": "934c9726-c9ad-4506-939b-c8233ddcbfad"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onGridpanelAfterRender",
+            "designerId": "c6e5187a-69f9-4290-9982-2c515c21a6bd"
         }
     ]
 }

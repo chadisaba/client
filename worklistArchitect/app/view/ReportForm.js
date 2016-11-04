@@ -25,6 +25,7 @@ Ext.define('MyApp.view.ReportForm', {
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Spacer',
         'Ext.form.field.ComboBox',
+        'Ext.button.Button',
         'Ext.grid.Panel'
     ],
 
@@ -42,6 +43,7 @@ Ext.define('MyApp.view.ReportForm', {
             items: [
                 {
                     xtype: 'container',
+                    flex: 1,
                     layout: {
                         type: 'hbox',
                         align: 'stretch'
@@ -52,8 +54,47 @@ Ext.define('MyApp.view.ReportForm', {
                             width: 10
                         },
                         {
+                            xtype: 'combobox',
+                            flex: 2,
+                            itemId: 'shortcutsComboItemId',
+                            fieldLabel: '',
+                            fieldStyle: 'font-family: FontAwesome',
+                            emptyText: 'search a shortcut',
+                            hideTrigger: true,
+                            displayField: 'reportKeywordName',
+                            minChars: 4,
+                            pageSize: 10,
+                            valueField: 'reportKeywordId',
+                            bind: {
+                                store: '{ReportKeywordComboStore}'
+                            },
+                            listeners: {
+                                select: 'onShortcutsComboItemIdSelect'
+                            }
+                        },
+                        {
                             xtype: 'tbspacer',
-                            width: 10
+                            width: 20
+                        },
+                        {
+                            xtype: 'textfield',
+                            flex: 1,
+                            itemId: 'shortcutNameTextFieldItemId',
+                            fieldLabel: '',
+                            emptyText: 'Enter shortcut name',
+                            listeners: {
+                                change: 'onShortcutNameTextFieldItemIdChange'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            itemId: 'addShortcutBtnItemId',
+                            iconCls: 'fa fa-plus-circle',
+                            text: 'add shortcut',
+                            listeners: {
+                                click: 'onAddShortcutBtnItemIdClick'
+                            }
                         }
                     ]
                 }
@@ -64,14 +105,9 @@ Ext.define('MyApp.view.ReportForm', {
         {
             xtype: 'combobox',
             anchor: '100%',
+            hidden: true,
             itemId: 'modelesComboItemId',
             fieldLabel: 'modeles'
-        },
-        {
-            xtype: 'combobox',
-            anchor: '100%',
-            itemId: 'shortcutsComboItemId',
-            fieldLabel: 'shortcuts'
         },
         {
             xtype: 'container',

@@ -548,7 +548,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
         }
         metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode(tooltip) + '"';
-        var result=Utility.renderer.btnBadgeRenderer(color,icon,'5');
+        var result=Utility.renderer.btnRenderer(color,icon);
 
         return result;
     },

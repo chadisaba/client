@@ -21,6 +21,18 @@ Ext.define('MyApp.view.ReportFormViewController', {
         'MyApp.view.override.ReportFormViewController'
     ],
 
+    onShortcutsComboItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onShortcutNameTextFieldItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onAddShortcutBtnItemIdClick: function(button, e, eOpts) {
+
+    },
+
     onGridpanelSelectReportEvent: function(gridpanel) {
 
     },

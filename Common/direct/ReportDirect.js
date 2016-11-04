@@ -86,5 +86,28 @@ saveReport:function(_reportObject,_reportHeaderObject,_selectedStudyArray)
                 )
             });
 
+
+
+    },
+    getReportKeywordContent:function(_reportKeywordId)
+    {
+        return new Promise(
+            function(resolve, reject) {
+                var params;
+                params={
+                    reportKeywordId:_reportKeywordId
+                };
+                Server.Report.getReportKeywordContent(params,
+                    function(res){
+                        if(res.success){
+                            resolve(res.data);
+                        }
+                        else{
+                            console.error(res.msg);
+                            reject(res.msg);
+                        }
+                    }
+                )
+            });
     }
 };
