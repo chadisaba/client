@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "worklisthistorypanel",
+        "designer|userClassName": "WorklistHistoryPanelViewController"
+    },
+    "name": "WorklistPanelViewController1",
+    "designerId": "6cca55f3-6ae6-4180-b543-9a27380ccf3d"
+}

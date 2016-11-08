@@ -59,7 +59,8 @@
             "ReportHasStudyGrid",
             "ReportHFGrid",
             "ReportTemplateGrid",
-            "ReportTemplateTabPanel"
+            "ReportTemplateTabPanel",
+            "WorklistHistoryPanel"
         ]
     },
     "name": "Application",

@@ -72,7 +72,8 @@ Ext.application({
         'ReportHasStudyGrid',
         'ReportHFGrid',
         'ReportTemplateGrid',
-        'ReportTemplateTabPanel'
+        'ReportTemplateTabPanel',
+        'WorklistHistoryPanel'
     ],
     controllers: [
         'MainController'

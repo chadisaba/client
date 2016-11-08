@@ -14,27 +14,37 @@
  */
 
 Ext.define('MyApp.view.mainTabPanel', {
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.tab.Panel',
     alias: 'widget.maintabpanel',
 
     requires: [
         'MyApp.view.mainTabPanelViewModel',
         'MyApp.view.WorklistPanel',
-        'Ext.panel.Panel'
+        'MyApp.view.WorklistHistoryPanel',
+        'MyApp.view.PatientDetailSearchForm',
+        'Ext.tab.Tab',
+        'Ext.form.Panel'
     ],
 
     viewModel: {
         type: 'maintabpanel'
     },
-    layout: 'border',
     header: false,
+    activeTab: 0,
 
     items: [
         {
             xtype: 'worklistpanel',
             header: false,
-            title: 'Salle attente',
-            region: 'center'
+            title: 'Salle attente du jour'
+        },
+        {
+            xtype: 'worklisthistorypanel',
+            title: 'Historique salle attente'
+        },
+        {
+            xtype: 'patientdetailsearchform',
+            title: 'Historique patients'
         }
     ]
 
