@@ -3,6 +3,81 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	alias:'widget.plugin.searchgrid',
 
 		statics:{
+		getRemoteFilter:function(searchGrid)
+		{
+			var searchGridStore=searchGrid.getStore();
+			var resultArray=[];
+			var filterValue;
+			var filterOp;
+			var filterName;
+			var addFilter;
+			var i=0;
+			searchGridStore.each(function(_searchRec)
+			{
+				var data=_searchRec.getData();
+				resultArray[i]=[];
+				for (var key in data) {
+					if(data[key]){
+						if (key!='id')
+						{
+							 filterValue=data[key].filterValue;
+							 filterOp=data[key].filterOp;
+							filterName=data[key].filterName;
+
+							switch (filterOp)
+							{
+								case 'eq': // string
+									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+									break;
+								case 'eqBool':
+									var all=filterValue=="all";
+									if(!all)
+										resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+									break;
+								case 'diff': // string
+										resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
+									break;
+								case 'start': // string
+									resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
+									break;
+								case 'contains': // string : we don't use  contains with remote filter
+									resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
+									break;
+								case 'end':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'endBy'});
+									break;
+
+								case 'eqDate':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+									break;
+
+								case 'eqNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+									break;
+								case 'gtNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
+									break;
+								case 'lteNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
+									break;
+								case 'gteNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
+									break;
+								case 'ltNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
+									break;
+								case 'diffNbr':
+									resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
+									break;
+							}
+						}
+
+					}
+				}
+				i++;
+			});
+			return resultArray;
+		},
 		doLocalSearch: function(masterGrid,searchGrid){
 			var searchGridStore=searchGrid.getStore();
 			var masterGridStore=masterGrid.getStore();
