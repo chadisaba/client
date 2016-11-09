@@ -17,6 +17,8 @@ Ext.define('MyApp.view.override.WorklistHistoryPanelViewController', {
         var searchGrid=me.getView().down('#worklistFilterGridItemId');
         var worklistGrid=me.getView().down('#worklistGridId');
 
+        var filtersArray=Plugins.grid.GridSearchPlugin.getRemoteFilter(searchGrid);
+
         worklistGrid.getController().initGrid(false);
 
 

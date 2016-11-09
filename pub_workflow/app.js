@@ -19,8 +19,6 @@ Ext.Loader.setConfig({
 });
 
 
-Ext.Loader.setPath('Ext.ux.inputs.AdvancedCombobox','packages/AdvancedCombobox/src/AdvancedCombobox.js');
-
 Ext.application({
 
     requires: [
