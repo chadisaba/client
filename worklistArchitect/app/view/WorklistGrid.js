@@ -77,7 +77,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             renderer: 'visitTimeRenderer',
-            filterType: 'hour',
+            filterType: 'time',
             createFilter: true,
             width: 60,
             dataIndex: 'visitTime',

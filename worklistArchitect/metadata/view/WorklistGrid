@@ -205,7 +205,7 @@
             "userConfig": {
                 "createFilter": true,
                 "dataIndex": "visitTime",
-                "filterType": "hour",
+                "filterType": "time",
                 "minWidth": null,
                 "text": "time",
                 "width": 60

@@ -125,6 +125,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 var worklistFilters=[];
                 var visitFilters=[];
                 var patientFilters=[];
+                var siteFilters=[];
                 var promiseArray=[];
 
                 var mainTable={
@@ -157,6 +158,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         worklistFilters=[];
                         visitFilters=[];
                         patientFilters=[];
+                        siteFilters=[];
                         _array.forEach(
                             function(_item)
                         {
@@ -168,7 +170,11 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             {
                                 worklistFilters.push(_item);
                             }
-                            if(_item['name'].startsWith("patient"))
+                            else if(_item['name'].startsWith("site"))
+                            {
+                                siteFilters.push(_item);
+                            }
+                            else if(_item['name'].startsWith("patient"))
                             {
                                 patientFilters.push(_item);
                             }
@@ -176,6 +182,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         mainTable.filters=worklistFilters;
                         joinTablesArray[0].filters=visitFilters;
                         joinTablesArray[1].filters=patientFilters;
+                        joinTablesArray[2].filters=siteFilters;
                         promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
                     })
                 }

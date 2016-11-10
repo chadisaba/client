@@ -14,9 +14,11 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
                         {name: 'text',  type: 'string'}
                     ],
                     data : [
-                        {id: 'eq', text: translate('=')},
-                        {id: 'diff',text: translate('diff')}
-
+                        {id: 'eqTime',text: translate('=')},
+                        {id: 'gtTime',text: translate('>')},
+                        {id: 'lteTime', text: translate('<=')},
+                        {id: 'gteTime',text: translate('>=')},
+                        {id: 'ltTime', text: translate('<')}
                     ]
                 });
             me.comboCompare=Ext.create('Ext.form.field.ComboBox',
@@ -40,20 +42,13 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
                         {name: 'text',  type: 'string'}
                     ]
                 });
-            filterStore.loadData(me.filterValues[0]);//filterValues[0] is array of objects (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
-            filterStore.insert(0,{id:50000,text:translate('All')});
-            me.filterCombo=Ext.create('Ext.form.field.ComboBox',
+            me.filterTime=Ext.create('Ext.form.field.Time',
                 {
-                    fieldLabel: '',
-                    height:15,
-                    queryMode: 'local',
-                    store:filterStore,
-                    matchFieldWidth:true,
-                    forceSelection:true
+                    fieldLabel: ''
                 });
+            me.filterTime.on('change',me.onChangeHandler,me);
             me.comboCompare.on('change',me.onChangeHandler,me);
-            me.filterCombo.on('change',me.onChangeHandler,me);
-            me.items=[me.comboCompare,me.filterCombo];
+            me.items=[me.comboCompare,me.filterTime];
             me.callParent();
         },
         setValue:function(_obj)
@@ -64,8 +59,8 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
             else
                 me.comboCompare.setValue('eq');
             if(_obj.value)
-                me.filterCombo.setValue(_obj.value);
-            else me.filterCombo.setValue("");
+                me.filterTime.setValue(_obj.value);
+            else me.filterTime.setValue("");
         },
         onChangeHandler:function(_comp,_value)
         {
@@ -76,10 +71,19 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
             else
                 _comp.setFieldStyle({color: 'black'});
 
-            rec.set(me.dataIndex, {
-                filterValue:me.filterCombo.getValue(),
-                filterOp:me.comboCompare.getValue()
-            });
+            if(me.filterTime.getValue())
+            {
+                var filterValue=me.filterTime.getValue();
+                var hour=filterValue.getHours();
+                var minute=filterValue.getMinutes();
+                var sec='00';
+
+                rec.set(me.dataIndex, {
+                    filterValue:hour+":"+minute+":"+sec,
+                    filterOp:me.comboCompare.getValue()
+                });
+            }
+
 
         }
 
