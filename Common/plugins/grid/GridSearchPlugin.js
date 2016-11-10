@@ -32,7 +32,11 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 								case 'eqBool':
 									var all=filterValue=="all";
 									if(!all)
-										resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+									{
+										var value;
+                                        filterValue=="no"?value=false:true;
+										resultArray[i].push({name:filterName,value:value,compare:'eq'});
+									}
 									break;
 								case 'diff': // string
 										resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
@@ -48,8 +52,28 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 									break;
 
 								case 'eqDate':
+                                case 'eqTime':
 									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
 									break;
+                                case 'gtDate':
+                                case 'gtTime':
+                                    resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
+
+                                    break;
+                                case 'lteDate':
+                                case 'lteTime':
+                                    resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
+
+                                    break;
+                                case 'gteDate':
+                                case 'gteTime':
+                                    resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
+
+                                    break;
+                                case 'ltDate':
+                                case 'eqTime':
+                                    resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
+                                    break;
 
 								case 'eqNbr':
 									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
@@ -136,7 +160,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 										if(filterValue() !== recValue)
 											resultFilter=false;
 										break;
-									/* put date comparaison here*/
+                                   // TODO Dates Comparaison here
+
 
 
 									case 'eqNbr':

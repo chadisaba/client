@@ -174,8 +174,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             }
                         });
                         mainTable.filters=worklistFilters;
-                        joinTablesArray[1].filters=visitFilters;
-                        joinTablesArray[2].filters=patientFilters;
+                        joinTablesArray[0].filters=visitFilters;
+                        joinTablesArray[1].filters=patientFilters;
                         promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
                     })
                 }
