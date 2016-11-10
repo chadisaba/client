@@ -22,7 +22,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						{
 							 filterValue=data[key].filterValue;
 							 filterOp=data[key].filterOp;
-							filterName=data[key].filterName;
+							filterName=key;
 
 							switch (filterOp)
 							{

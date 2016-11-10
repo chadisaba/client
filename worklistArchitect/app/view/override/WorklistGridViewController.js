@@ -115,47 +115,79 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
 
     },
 
-    getResultArray:function(_today,_filtersObject)
+    getResultArray:function(_today,_filtersArray)
     {
         //Creating a promise
         var me=this;
         var promise=new Promise(
             function(resolve, reject) {
-                if(!_filtersObject)
-                    _filtersObject={};
-                var worklistFilters=_filtersObject.worklistFilters||[];
-                var visitFilters=_filtersObject.visitFilters||[];
-                var patientFilters=_filtersObject.patientFilters||[];
 
-                if(_today){
-                    worklistFilters=[];
-                    var today=Ext.Date.format(new Date(),"Y-m-d");
-                    visitFilters=[{name:"visitDate",value:today}];
-                    patientFilters=[];
-
-                    if(me.lastUpdateDate)
-                    {
-                        worklistFilters.push({name:'updatedAt', value:me.lastUpdateDate,compare:'gt'});
-                    }
-
-
-
-                }
+                var worklistFilters=[];
+                var visitFilters=[];
+                var patientFilters=[];
+                var promiseArray=[];
 
                 var mainTable={
-                    tableName:"WORKLIST",
-                    filters:worklistFilters
+                    tableName:"WORKLIST"
                 };
                 var joinTablesArray=[
-                    {tableName:"VISIT", filters:visitFilters},
+                    {tableName:"VISIT"},
                     {tableName:"PATIENT",fieldsArray:['patientLName','patientFname','patientBirthday','patientSearch','patientNbVisit','patientId'],
-                        filters:patientFilters,
                         joinObject:{tableName:"INFO",fieldsArray:['infoText','infoAlertLevel'],required:false}
                     },{tableName:"SITE",fieldsArray:['siteId','siteCode']}
                 ];
-                CommonDirect.getDataWidthJoin(mainTable,joinTablesArray)
-                    .then(function(_resultArray)
+
+                if(_today){ // we are displaying the current day worklist
+                    worklistFilters=[];
+                    var today=Ext.Date.format(new Date(),"Y-m-d");
+                    visitFilters.push({name:"visitDate",value:today});
+                    joinTablesArray[0].filters=visitFilters;
+                    if(me.lastUpdateDate)
                     {
+                        worklistFilters.push({name:'updatedAt', value:me.lastUpdateDate,compare:'gt'});
+                        mainTable.filters=worklistFilters;
+                    }
+                    promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
+                }
+                else
+                {
+
+                    _filtersArray.forEach(function(_array)
+                    {
+                        worklistFilters=[];
+                        visitFilters=[];
+                        patientFilters=[];
+                        _array.forEach(
+                            function(_item)
+                        {
+                            if(_item['name'].startsWith("visit"))
+                            {
+                                visitFilters.push(_item);
+                            }
+                           else if(_item['name'].startsWith("worklist"))
+                            {
+                                worklistFilters.push(_item);
+                            }
+                            if(_item['name'].startsWith("patient"))
+                            {
+                                patientFilters.push(_item);
+                            }
+                        });
+                        mainTable.filters=worklistFilters;
+                        joinTablesArray[1].filters=visitFilters;
+                        joinTablesArray[2].filters=patientFilters;
+                        promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
+                    })
+                }
+
+                Promise.all(promiseArray)
+                    .then(function(_valuesArray)
+                    {
+                        var _resultArray=[];
+                        _valuesArray.forEach(function(_array)
+                        {
+                            _resultArray=_resultArray.concat(_array);
+                        });
                         resolve(_resultArray);
                     })
                     .catch(function (_err) {
