@@ -133,8 +133,11 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 };
                 var joinTablesArray=[
                     {tableName:"VISIT"},
-                    {tableName:"PATIENT",fieldsArray:['patientLName','patientFname','patientBirthday','patientSearch','patientNbVisit','patientId'],
-                        joinObject:{tableName:"INFO",fieldsArray:['infoText','infoAlertLevel'],required:false}
+                    {tableName:"PATIENT",
+                        fieldsArray:['patientLName','patientFname','patientBirthday','patientSearch','patientNbVisit','patientId'],
+                        joinObject:{tableName:"INFO",
+                            fieldsArray:['infoText','infoAlertLevel'],required:false
+                        }
                     },{tableName:"SITE",fieldsArray:['siteId','siteCode']}
                 ];
 
@@ -183,19 +186,34 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         joinTablesArray[0].filters=visitFilters;
                         joinTablesArray[1].filters=patientFilters;
                         joinTablesArray[2].filters=siteFilters;
-                        promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));
+                        promiseArray.push(CommonDirect.getDataWidthJoin((JSON.parse(JSON.stringify(mainTable))),(JSON.parse(JSON.stringify(joinTablesArray)))));
                     })
                 }
 
                 Promise.all(promiseArray)
                     .then(function(_valuesArray)
                     {
-                        var _resultArray=[];
-                        _valuesArray.forEach(function(_array)
-                        {
-                            _resultArray=_resultArray.concat(_array);
-                        });
-                        resolve(_resultArray);
+                        var resultArray=[];
+                      var itemExist;
+                            _valuesArray.forEach(function(_array)
+                            {
+                                _array.forEach(function(_item)
+                                {
+                                    itemExist=false;
+                                    resultArray.forEach(function(_newItem)
+                                    {
+                                        if(_item.worklistId==_newItem.worklistId)
+                                            itemExist=true;
+
+                                    });
+                                    if(!itemExist)
+                                        resultArray.push(_item);
+
+
+                                });
+                            });
+
+                        resolve(resultArray);
                     })
                     .catch(function (_err) {
                         console.error(_err);

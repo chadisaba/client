@@ -206,13 +206,15 @@
                 "createFilter": true,
                 "dataIndex": "visitTime",
                 "filterType": "time",
+                "filterWidth": 100,
                 "minWidth": null,
                 "text": "time",
                 "width": 60
             },
             "name": "My\tworklistVisitInfoCol1",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "filterWidth": "number"
             },
             "designerId": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8",
             "customConfigs": [
@@ -224,6 +226,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterWidth",
                     "type": "string"
                 }
             ],
@@ -488,19 +495,26 @@
             "userConfig": {
                 "createFilter": true,
                 "dataIndex": "worklistDoctor",
+                "filterWidth": 120,
                 "minWidth": null,
                 "text": "worklistDoctor",
                 "width": 80
             },
             "name": "MyworklistMedRefCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "filterWidth": "number"
             },
             "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
                     "name": "createFilter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterWidth",
                     "type": "string"
                 }
             ]

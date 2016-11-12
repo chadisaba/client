@@ -16,6 +16,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			{
 				var data=_searchRec.getData();
 				resultArray[i]=[];
+				var boolValue;
 				for (var key in data) {
 					if(data[key]){
 						if (key!='id')
@@ -24,76 +25,77 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 							 filterOp=data[key].filterOp;
 							filterName=key;
 
-							switch (filterOp)
+							if(filterValue!="all")
 							{
-								case 'eq': // string
-									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
-									break;
-								case 'eqBool':
-									var all=filterValue=="all";
-									if(!all)
-									{
-										var value;
-                                        filterValue=="no"?value=false:true;
-										resultArray[i].push({name:filterName,value:value,compare:'eq'});
-									}
-									break;
-								case 'diff': // string
+								switch (filterOp)
+								{
+									case 'eq': // string
+										resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+										break;
+									case 'eqBool':
+
+											filterValue=="no"?boolValue=false:boolValue=true;
+											resultArray[i].push({name:filterName,value:boolValue,compare:'eq'});
+
+										break;
+									case 'diff': // string
 										resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
-									break;
-								case 'start': // string
-									resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
-									break;
-								case 'contains': // string : we don't use  contains with remote filter
-									resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
-									break;
-								case 'end':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'endBy'});
-									break;
+										break;
+									case 'start': // string
+										resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
+										break;
+									case 'contains': // string : we don't use  contains with remote filter
+										resultArray[i].push({name:filterName,value:filterValue,compare:'startBy'});
+										break;
+									case 'end':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'endBy'});
+										break;
 
-								case 'eqDate':
-                                case 'eqTime':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
-									break;
-                                case 'gtDate':
-                                case 'gtTime':
-                                    resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
+									case 'eqDate':
+									case 'eqTime':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+										break;
+									case 'gtDate':
+									case 'gtTime':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
 
-                                    break;
-                                case 'lteDate':
-                                case 'lteTime':
-                                    resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
+										break;
+									case 'lteDate':
+									case 'lteTime':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
 
-                                    break;
-                                case 'gteDate':
-                                case 'gteTime':
-                                    resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
+										break;
+									case 'gteDate':
+									case 'gteTime':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
 
-                                    break;
-                                case 'ltDate':
-                                case 'eqTime':
-                                    resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
-                                    break;
+										break;
+									case 'ltDate':
+									case 'ltTime':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
+										break;
 
-								case 'eqNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
-									break;
-								case 'gtNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
-									break;
-								case 'lteNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
-									break;
-								case 'gteNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
-									break;
-								case 'ltNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
-									break;
-								case 'diffNbr':
-									resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
-									break;
+									case 'eqNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'eq'});
+										break;
+									case 'gtNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'gt'});
+										break;
+									case 'lteNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'lte'});
+										break;
+									case 'gteNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'gte'});
+										break;
+									case 'ltNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'lt'});
+										break;
+									case 'diffNbr':
+										resultArray[i].push({name:filterName,value:filterValue,compare:'ne'});
+										break;
+								}
 							}
+
 						}
 
 					}

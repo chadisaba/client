@@ -79,6 +79,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             renderer: 'visitTimeRenderer',
             filterType: 'time',
             createFilter: true,
+            filterWidth: 100,
             width: 60,
             dataIndex: 'visitTime',
             text: 'time'
@@ -121,6 +122,7 @@ Ext.define('MyApp.view.WorklistGrid', {
         {
             xtype: 'gridcolumn',
             createFilter: true,
+            filterWidth: 120,
             width: 80,
             dataIndex: 'worklistDoctor',
             text: 'worklistDoctor'

@@ -29,7 +29,7 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
                     fieldLabel: '',
                     valueField:'id',
                     displayField:'text',
-                    value:'eq',
+                    value:'eqTime',
                     queryMode: 'local',
                     forceSelection:true,
                     store:comboCompareStore
@@ -57,7 +57,7 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
             if(_obj.op)
                 me.comboCompare.setValue(_obj.op);
             else
-                me.comboCompare.setValue('eq');
+                me.comboCompare.setValue('eqTime');
             if(_obj.value)
                 me.filterTime.setValue(_obj.value);
             else me.filterTime.setValue("");
@@ -71,9 +71,11 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
             else
                 _comp.setFieldStyle({color: 'black'});
 
-            if(me.filterTime.getValue())
+            var filterValue=me.filterTime.getValue();
+
+            if(filterValue)
             {
-                var filterValue=me.filterTime.getValue();
+
                 var hour=filterValue.getHours();
                 var minute=filterValue.getMinutes();
                 var sec='00';
@@ -83,6 +85,8 @@ Ext.define('Ext.ux.filterWidget.TimeFilter',
                     filterOp:me.comboCompare.getValue()
                 });
             }
+
+
 
 
         }
