@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitrefphgrid",
+        "designer|userClassName": "VisitRefPhGridViewController"
+    },
+    "designerId": "bb7f4247-3adb-44fd-917b-031d240ad964"
+}
