@@ -12,7 +12,7 @@
         "height": 500,
         "itemId": "visitFormId",
         "title": "My Form",
-        "width": 500
+        "width": null
     },
     "name": "MyForm",
     "designerId": "8a6339ea-a2d3-479a-ba3f-6890f5fa0caf",
@@ -190,8 +190,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "boxLabel": "",
-                                "fieldLabel": "Régime  obligatoire",
+                                "boxLabel": "Régime  obligatoire",
+                                "fieldLabel": "",
                                 "labelWidth": 150,
                                 "layout|flex": 1,
                                 "name": "visitIsAmo"
@@ -207,8 +207,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "boxLabel": "",
-                                "fieldLabel": "Régime complémentaire",
+                                "boxLabel": "Régime complémentaire",
+                                "fieldLabel": "",
                                 "labelWidth": 150,
                                 "layout|flex": 1,
                                 "name": "visitIsAmc"
@@ -225,8 +225,93 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
                     "name": "MyContainer6",
-                    "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8"
+                    "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Hospitalisé",
+                                "fieldLabel": [
+                                    "{trans.hospital}"
+                                ],
+                                "layout|flex": null,
+                                "name": "visitIsHospitalized",
+                                "width": 120
+                            },
+                            "name": "MyvisitIsHospitalizedCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Num séjour",
+                                "layout|flex": 1,
+                                "name": "visitHospitVisitNumber"
+                            },
+                            "name": "MyvisitHospitVisitNumberTextField",
+                            "designerId": "88d1dc9c-5616-4963-969b-17d48a98a092"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Urgence",
+                                "fieldLabel": [
+                                    "{trans.emergency}"
+                                ],
+                                "layout|flex": 1,
+                                "name": "visitIsUrgent"
+                            },
+                            "name": "MyvisitIsUrgentCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Gratuit",
+                                "fieldLabel": [
+                                    "{trans.free}"
+                                ],
+                                "layout|flex": 1,
+                                "name": "visitIsFree"
+                            },
+                            "name": "MyvisitIsFreeCheckBox",
+                            "configAlternates": {
+                                "fieldLabel": "binding"
+                            },
+                            "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -273,90 +358,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.free}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsFree"
-                    },
-                    "name": "MyvisitIsFreeCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
                         "fieldLabel": "Ft Gratuit",
                         "layout|anchor": "100%",
                         "name": "visitFtIsFree"
                     },
                     "name": "MyvisitFtIsFreeCheckBox",
                     "designerId": "36621a92-115d-4db8-a5f9-7c3dd3c8c952"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.hospital}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsHospitalized"
-                    },
-                    "name": "MyvisitIsHospitalizedCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": [
-                            "{trans.emergency}"
-                        ],
-                        "layout|anchor": "100%",
-                        "name": "visitIsUrgent"
-                    },
-                    "name": "MyvisitIsUrgentCheckBox",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
-                    "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Num hospitalisation",
-                        "layout|anchor": "100%",
-                        "name": "visitHospitVisitNumber"
-                    },
-                    "name": "MyvisitHospitVisitNumberTextField",
-                    "designerId": "88d1dc9c-5616-4963-969b-17d48a98a092"
                 },
                 {
                     "type": "Ext.form.field.Checkbox",

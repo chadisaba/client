@@ -31,7 +31,6 @@ Ext.define('MyApp.view.VisitForm', {
     },
     height: 500,
     itemId: 'visitFormId',
-    width: 500,
     bodyPadding: 10,
     title: 'My Form',
 
@@ -58,23 +57,62 @@ Ext.define('MyApp.view.VisitForm', {
                         {
                             xtype: 'checkboxfield',
                             flex: 1,
-                            fieldLabel: 'Régime  obligatoire',
+                            fieldLabel: '',
                             labelWidth: 150,
                             name: 'visitIsAmo',
-                            boxLabel: ''
+                            boxLabel: 'Régime  obligatoire'
                         },
                         {
                             xtype: 'checkboxfield',
                             flex: 1,
-                            fieldLabel: 'Régime complémentaire',
+                            fieldLabel: '',
                             labelWidth: 150,
                             name: 'visitIsAmc',
-                            boxLabel: ''
+                            boxLabel: 'Régime complémentaire'
                         }
                     ]
                 },
                 {
-                    xtype: 'container'
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            width: 120,
+                            name: 'visitIsHospitalized',
+                            boxLabel: 'Hospitalisé',
+                            bind: {
+                                fieldLabel: '{trans.hospital}'
+                            }
+                        },
+                        {
+                            xtype: 'textfield',
+                            flex: 1,
+                            fieldLabel: 'Num séjour',
+                            name: 'visitHospitVisitNumber'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            name: 'visitIsUrgent',
+                            boxLabel: 'Urgence',
+                            bind: {
+                                fieldLabel: '{trans.emergency}'
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            name: 'visitIsFree',
+                            boxLabel: 'Gratuit',
+                            bind: {
+                                fieldLabel: '{trans.free}'
+                            }
+                        }
+                    ]
                 },
                 {
                     xtype: 'textfield',
@@ -94,42 +132,9 @@ Ext.define('MyApp.view.VisitForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    name: 'visitIsFree',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.free}'
-                    }
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
                     fieldLabel: 'Ft Gratuit',
                     name: 'visitFtIsFree',
                     boxLabel: ''
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsHospitalized',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.hospital}'
-                    }
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsUrgent',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.emergency}'
-                    }
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Num hospitalisation',
-                    name: 'visitHospitVisitNumber'
                 },
                 {
                     xtype: 'checkboxfield',

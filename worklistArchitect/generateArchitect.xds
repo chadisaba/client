@@ -6,10 +6,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Medium",
+                "name": "Small",
                 "builtIn": true,
-                "height": 768,
-                "width": 1024
+                "height": 600,
+                "width": 800
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
