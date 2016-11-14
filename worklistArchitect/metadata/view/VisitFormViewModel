@@ -34,6 +34,35 @@
             },
             "name": "VisitPdsComboStore",
             "designerId": "f57ebc8c-7a78-4296-9407-732424ac95ff"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SiteComboStore"
+            },
+            "name": "MyStore",
+            "designerId": "8fbebd9d-460c-442c-9d7a-8efec74ba123",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "siteCode"
+                    },
+                    "name": "MySorter",
+                    "designerId": "08508d3f-76b0-4cfd-a568-9834bd52b1d9"
+                }
+            ]
         }
     ]
 }
