@@ -49,6 +49,34 @@ Ext.define('MyApp.view.VisitForm', {
             title: 'My Fields',
             items: [
                 {
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            fieldLabel: 'Régime  obligatoire',
+                            labelWidth: 150,
+                            name: 'visitIsAmo',
+                            boxLabel: ''
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            fieldLabel: 'Régime complémentaire',
+                            labelWidth: 150,
+                            name: 'visitIsAmc',
+                            boxLabel: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container'
+                },
+                {
                     xtype: 'textfield',
                     anchor: '100%',
                     name: 'visitDateTime',
@@ -106,20 +134,6 @@ Ext.define('MyApp.view.VisitForm', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
-                    fieldLabel: 'A.M.O',
-                    name: 'visitIsAmo',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'A.M.C',
-                    name: 'visitIsAmc',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
                     fieldLabel: 'Facturation A.M.C',
                     name: 'visitIsBillingAMC',
                     boxLabel: ''
@@ -143,19 +157,6 @@ Ext.define('MyApp.view.VisitForm', {
                     anchor: '100%',
                     fieldLabel: 'FT pour',
                     name: 'visitFtFor',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Pacs Id',
-                    name: 'visitPacsId'
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'Terminé',
-                    name: 'visitIsDone',
                     boxLabel: ''
                 }
             ]

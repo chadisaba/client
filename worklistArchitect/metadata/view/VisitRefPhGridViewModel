@@ -1,0 +1,44 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitrefphgrid",
+        "designer|userClassName": "VisitRefPhGridViewModel"
+    },
+    "designerId": "b0fa1372-a48b-4d71-9f5d-ea22f7e8764e",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "VisitRefPhGridModel",
+                "name": "VisitRefPhStore"
+            },
+            "name": "VisitRefPhStore",
+            "designerId": "244c596f-14c3-4ee5-9c9d-d9b183bb6e34"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianSearchComboModel",
+                "name": "ReferringPhysicianSearchComboStore"
+            },
+            "name": "ReferringPhysicianSearchComboStore",
+            "designerId": "d5cd413a-098c-46a7-a133-017bb0c174fe"
+        }
+               
+    ]
+}

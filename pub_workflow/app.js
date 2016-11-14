@@ -19,8 +19,6 @@ Ext.Loader.setConfig({
 });
 
 
-Ext.Loader.setPath('Ext.ux.inputs.AdvancedCombobox','packages/AdvancedCombobox/src/AdvancedCombobox.js');
-
 Ext.application({
 
     requires: [
@@ -47,7 +45,9 @@ Ext.application({
         'ReportHasStudyModel',
         'ReportHFModel',
         'ReportTemplateModel',
-        'ReportKeywordComboModel'
+        'ReportKeywordComboModel',
+        'VisitRefPhGridModel',
+        'ReferringPhysicianSearchComboModel'
     ],
     views: [
         'WorklistGrid',
@@ -73,7 +73,8 @@ Ext.application({
         'ReportHFGrid',
         'ReportTemplateGrid',
         'ReportTemplateTabPanel',
-        'WorklistHistoryPanel'
+        'WorklistHistoryPanel',
+        'VisitRefPhGrid'
     ],
     controllers: [
         'MainController'

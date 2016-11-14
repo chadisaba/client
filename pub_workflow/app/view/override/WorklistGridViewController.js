@@ -187,7 +187,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                         joinTablesArray[1].filters=patientFilters;
                         joinTablesArray[2].filters=siteFilters;
                         promiseArray.push(CommonDirect.getDataWidthJoin((JSON.parse(JSON.stringify(mainTable))),(JSON.parse(JSON.stringify(joinTablesArray)))));
-                    })
+                    });
                 }
 
                 Promise.all(promiseArray)

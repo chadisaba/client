@@ -169,6 +169,66 @@
             "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
             "cn": [
                 {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "1fa7b594-2894-40f9-bdf9-c9cba6764c0b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Régime  obligatoire",
+                                "labelWidth": 150,
+                                "layout|flex": 1,
+                                "name": "visitIsAmo"
+                            },
+                            "name": "MyvisitIsAmoCheckBox",
+                            "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Régime complémentaire",
+                                "labelWidth": 150,
+                                "layout|flex": 1,
+                                "name": "visitIsAmc"
+                            },
+                            "name": "MyvisitIsAmcCheckBox",
+                            "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer6",
+                    "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8"
+                },
+                {
                     "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
@@ -307,38 +367,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "A.M.O",
-                        "layout|anchor": "100%",
-                        "name": "visitIsAmo"
-                    },
-                    "name": "MyvisitIsAmoCheckBox",
-                    "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "A.M.C",
-                        "layout|anchor": "100%",
-                        "name": "visitIsAmc"
-                    },
-                    "name": "MyvisitIsAmcCheckBox",
-                    "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
                         "fieldLabel": "Facturation A.M.C",
                         "layout|anchor": "100%",
                         "name": "visitIsBillingAMC"
@@ -387,37 +415,6 @@
                     },
                     "name": "MyvisitFtForCheckBox",
                     "designerId": "afe44e0e-0eca-4958-92de-c985f5d48bcc"
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Pacs Id",
-                        "layout|anchor": "100%",
-                        "name": "visitPacsId"
-                    },
-                    "name": "MyvisitPacsIdTextField",
-                    "designerId": "bf67a3ab-4188-4462-8431-eda4a437415e"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "Terminé",
-                        "layout|anchor": "100%",
-                        "name": "visitIsDone"
-                    },
-                    "name": "MyvisitIsDoneCheckBox",
-                    "designerId": "9da88c14-b3d3-45ef-a533-dcc620ee75a1"
                 }
             ]
         }

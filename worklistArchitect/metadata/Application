@@ -30,7 +30,9 @@
             "ReportHasStudyModel",
             "ReportHFModel",
             "ReportTemplateModel",
-            "ReportKeywordComboModel"
+            "ReportKeywordComboModel",
+            "VisitRefPhGridModel",
+            "ReferringPhysicianSearchComboModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -60,7 +62,8 @@
             "ReportHFGrid",
             "ReportTemplateGrid",
             "ReportTemplateTabPanel",
-            "WorklistHistoryPanel"
+            "WorklistHistoryPanel",
+            "VisitRefPhGrid"
         ]
     },
     "name": "Application",
