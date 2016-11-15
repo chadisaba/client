@@ -159,10 +159,55 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 										break;
 
 									case 'eqDate':
-										if(filterValue() !== recValue)
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)!=0)
 											resultFilter=false;
 										break;
-                                   // TODO Dates Comparaison here
+
+									case 'gtDate':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>=0)
+											resultFilter=false;
+
+										break;
+									case 'lteDate':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<0)
+											resultFilter=false;
+
+										break;
+									case 'gteDate':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>0)
+											resultFilter=false;
+
+										break;
+									case 'ltDate':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<=0)
+											resultFilter=false;
+										break;
+
+									case 'eqTime':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)!=0)
+											resultFilter=false;
+										break;
+
+									case 'gtTime':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>=0)
+											resultFilter=false;
+
+										break;
+									case 'lteTime':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<0)
+											resultFilter=false;
+
+										break;
+									case 'gteTime':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>0)
+											resultFilter=false;
+
+										break;
+									case 'ltTime':
+										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<=0)
+											resultFilter=false;
+										break;
+
 
 
 
