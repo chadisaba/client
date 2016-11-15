@@ -207,7 +207,7 @@
                 "dataIndex": "visitTime",
                 "filterType": "time",
                 "filterWidth": 100,
-                "format": null,
+                "format": "H:i",
                 "minWidth": null,
                 "text": "time",
                 "width": 60
