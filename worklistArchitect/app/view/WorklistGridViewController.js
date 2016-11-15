@@ -29,10 +29,6 @@ Ext.define('MyApp.view.WorklistGridViewController', {
 
     },
 
-    visitTimeRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-    },
-
     infoPatientRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
     },

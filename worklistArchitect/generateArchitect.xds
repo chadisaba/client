@@ -6,10 +6,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Small",
+                "name": "Auto Expand",
                 "builtIn": true,
-                "height": 600,
-                "width": 800
+                "height": null,
+                "width": null
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
@@ -116,6 +116,7 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "6c624922-de2a-40c6-9fb6-8979f01b7ff4",
             "dba35c72-1ed1-4112-b868-76f1f1bdf208",
             "17a21afa-9d41-4b61-9531-af38fe8f0d40",
             "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
@@ -134,6 +135,8 @@
             "f8c4ef8d-71de-4b32-89c0-9f1a3cfac98c",
             "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
             "01a74622-2866-4229-a2a8-eb5a5f527c41",
+            "e6f6e3d5-d7ca-4553-9f82-625f6596b72d",
+            "588b18c2-f558-4f8d-8536-2a936edf89f4",
             "cabc7be2-a2f3-42a9-b874-0abfb76aabf2",
             "95195739-aae0-41c0-83b0-24175c8cb157",
             "e6133673-e9f4-4c36-9212-8e2220762754",

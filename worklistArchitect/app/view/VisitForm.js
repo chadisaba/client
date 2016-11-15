@@ -20,11 +20,15 @@ Ext.define('MyApp.view.VisitForm', {
     requires: [
         'MyApp.view.VisitFormViewModel',
         'MyApp.view.VisitFormViewController',
+        'MyApp.view.VisitRefPhGrid',
+        'MyApp.view.StudyVisitGrid',
         'Ext.form.FieldSet',
         'Ext.form.field.Checkbox',
         'Ext.toolbar.Spacer',
         'Ext.form.field.Date',
-        'Ext.form.field.Time'
+        'Ext.form.field.Time',
+        'Ext.ux.inputs.AdvancedCombobox',
+        'Ext.grid.Panel'
     ],
 
     controller: 'visitform',
@@ -141,7 +145,13 @@ Ext.define('MyApp.view.VisitForm', {
                             }
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            xtype: 'fieldset',
+            title: '',
+            items: [
                 {
                     xtype: 'tbspacer',
                     height: 5
@@ -155,10 +165,9 @@ Ext.define('MyApp.view.VisitForm', {
                     items: [
                         {
                             xtype: 'combobox',
+                            flex: 2,
                             itemId: 'siteIdComboBoxItemId',
-                            width: 306,
                             fieldLabel: 'Site',
-                            labelWidth: 130,
                             name: 'siteId',
                             allowBlank: false,
                             displayField: 'siteCode',
@@ -181,7 +190,6 @@ Ext.define('MyApp.view.VisitForm', {
                             xtype: 'datefield',
                             flex: 1,
                             fieldLabel: 'Date',
-                            labelWidth: 60,
                             name: 'visitDate',
                             allowBlank: false
                         },
@@ -204,12 +212,61 @@ Ext.define('MyApp.view.VisitForm', {
                 },
                 {
                     xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
                     items: [
                         {
                             xtype: 'combobox',
+                            flex: 1,
+                            itemId: 'doctorComboBoxItemId',
+                            fieldLabel: 'Radiologue',
+                            name: 'doctorId',
+                            allowBlank: false,
+                            displayField: 'userInitiales',
+                            forceSelection: true,
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{DoctorComboStore}'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'combobox',
+                            flex: 1,
+                            itemId: 'remplacantComboBoxItemId',
+                            fieldLabel: 'Remplaçant',
+                            name: 'remplacantId',
+                            displayField: 'userInitiales',
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{RemplacantComboStore}'
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'tbspacer',
+                    height: 5
+                },
+                {
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            flex: 1,
                             itemId: 'visitPdsComboBoxEditorItemId',
                             fieldLabel: 'Parcours soins',
-                            labelWidth: 130,
                             name: 'visitPds',
                             selectOnFocus: true,
                             displayField: 'visitPds',
@@ -217,6 +274,23 @@ Ext.define('MyApp.view.VisitForm', {
                             queryMode: 'local',
                             bind: {
                                 store: '{VisitPdsComboStore}'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'advancedCombobox',
+                            flex: 1,
+                            itemId: 'EstablishmentComboBoxItemId',
+                            fieldLabel: 'Etablissement',
+                            name: 'establishmentId',
+                            displayField: 'userInitiales',
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{RemplacantComboStore}'
                             }
                         }
                     ]
@@ -236,6 +310,18 @@ Ext.define('MyApp.view.VisitForm', {
                     xtype: 'container'
                 }
             ]
+        },
+        {
+            xtype: 'visitrefphgrid',
+            height: 115
+        },
+        {
+            xtype: 'studyvisitgrid',
+            height: 300,
+            listeners: {
+                studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent',
+                studyVisitGridStartEditEvent: 'onStudyVisitGridItemIdStudyVisitGridStartEditEvent'
+            }
         }
     ],
 

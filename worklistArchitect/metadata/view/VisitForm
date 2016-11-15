@@ -165,8 +165,8 @@
             "userConfig": {
                 "title": ""
             },
-            "name": "MyFieldSet",
-            "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
+            "name": "MyFieldSet1",
+            "designerId": "c931a733-ec36-41dc-91e5-4d91b1772abf",
             "cn": [
                 {
                     "type": "Ext.container.Container",
@@ -385,7 +385,22 @@
                             "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": ""
+            },
+            "name": "MyFieldSet",
+            "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
+            "cn": [
                 {
                     "type": "Ext.toolbar.Spacer",
                     "reference": {
@@ -426,8 +441,8 @@
                                 "fieldLabel": "Site",
                                 "forceSelection": true,
                                 "itemId": "siteIdComboBoxItemId",
-                                "labelWidth": 130,
-                                "layout|flex": null,
+                                "labelWidth": null,
+                                "layout|flex": 2,
                                 "name": "siteId",
                                 "queryMode": "local",
                                 "store": [
@@ -435,7 +450,7 @@
                                 ],
                                 "typeAhead": true,
                                 "valueField": "siteId",
-                                "width": 306
+                                "width": null
                             },
                             "name": "MyComboBox5",
                             "configAlternates": {
@@ -484,7 +499,7 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Date",
-                                "labelWidth": 60,
+                                "labelWidth": null,
                                 "layout|flex": 1,
                                 "name": "visitDate"
                             },
@@ -543,8 +558,107 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
                     "name": "MyContainer2",
                     "designerId": "95776d49-e563-4459-9f17-1e2e057f8511",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "userInitiales",
+                                "fieldLabel": "Radiologue",
+                                "forceSelection": true,
+                                "itemId": "doctorComboBoxItemId",
+                                "layout|flex": 1,
+                                "name": "doctorId",
+                                "store": [
+                                    "{DoctorComboStore}"
+                                ],
+                                "typeAhead": true,
+                                "valueField": "doctorId"
+                            },
+                            "name": "MyComboBox6",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "e08f2ba9-40f3-417d-bf60-c50f77ce5f30"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer12",
+                            "designerId": "ecd4bfa9-4fd1-44a3-9492-67a7963f92a7"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "userInitiales",
+                                "fieldLabel": "Remplaçant",
+                                "itemId": "remplacantComboBoxItemId",
+                                "layout|flex": 1,
+                                "name": "remplacantId",
+                                "store": [
+                                    "{RemplacantComboStore}"
+                                ],
+                                "typeAhead": true,
+                                "valueField": "doctorId"
+                            },
+                            "name": "MyComboBox7",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "99c5aab4-d5f3-411a-8d05-55a650fc0f67"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 5
+                    },
+                    "name": "MySpacer13",
+                    "designerId": "b7ba54d9-58ae-403a-a063-b35716f2e49e"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "592040f1-06f3-4daf-a59c-8c1fd1a411e0",
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -558,7 +672,8 @@
                                 "fieldLabel": "Parcours soins",
                                 "forceSelection": true,
                                 "itemId": "visitPdsComboBoxEditorItemId",
-                                "labelWidth": 130,
+                                "labelWidth": null,
+                                "layout|flex": 1,
                                 "name": "visitPds",
                                 "queryMode": "local",
                                 "selectOnFocus": true,
@@ -571,6 +686,45 @@
                                 "store": "binding"
                             },
                             "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer9",
+                            "designerId": "d03aeb96-2ed4-4e60-be20-e56df57dca20"
+                        },
+                        {
+                            "type": "Ext.ux.inputs.AdvancedCombobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "userInitiales",
+                                "fieldLabel": "Etablissement",
+                                "itemId": "EstablishmentComboBoxItemId",
+                                "layout|flex": 1,
+                                "name": "establishmentId",
+                                "store": [
+                                    "{RemplacantComboStore}"
+                                ],
+                                "typeAhead": true,
+                                "valueField": "doctorId"
+                            },
+                            "name": "MyadvancedCombobox",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "349f0a6a-13bd-43c0-a5d5-f4325e9e9b28"
                         }
                     ]
                 },
@@ -612,6 +766,72 @@
                     "codeClass": null,
                     "name": "MyContainer3",
                     "designerId": "ab6e9e80-f757-462f-9913-cebcc9a90b56"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 115
+            },
+            "name": "visitrefphgrid",
+            "designerId": "056ed7c0-3db3-4b84-809d-ddc0f0c573af",
+            "masterInstanceId": "da3d5a57-98c8-4c9e-a44b-199bc8c1fb78"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 300
+            },
+            "name": "studyvisitgrid",
+            "designerId": "3ea5c641-e929-43a9-968f-958175f3d3f1",
+            "masterInstanceId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel"
+                        ],
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                        "name": "studyVisitGridEndEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                    "designerId": "76576b25-7bd1-4dc0-84dd-dc1c3779cfd5"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel"
+                        ],
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                        "name": "studyVisitGridStartEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                    "designerId": "1bf7fbc2-b314-4c7f-88b1-c17308fec7a6"
                 }
             ]
         }

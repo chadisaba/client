@@ -35,7 +35,9 @@ Ext.define('MyApp.model.VisitModel', {
             name: 'visitDate'
         },
         {
-            name: 'visitTime'
+            type: 'date',
+            name: 'visitTime',
+            dateFormat: 'H:i'
         },
         {
             type: 'boolean',

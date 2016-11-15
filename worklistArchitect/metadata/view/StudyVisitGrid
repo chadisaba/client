@@ -812,6 +812,21 @@
             },
             "name": "onStudyVisitGridItemIdBoxReady",
             "designerId": "983728e1-ecc7-4a36-9557-eb0cc9efa5ec"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                "name": "studyVisitGridEndEditEvent",
+                "scope": "me"
+            },
+            "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+            "designerId": "cb3ba10c-be11-4ce9-ad26-fa0d6672b28b"
         }
     ]
 }

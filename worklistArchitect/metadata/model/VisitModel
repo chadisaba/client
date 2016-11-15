@@ -31,16 +31,17 @@
             "designerId": "d5192051-fc00-4299-ba85-7bffad66c183"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "H:i",
                 "name": "visitTime"
             },
-            "name": "MyField22",
+            "name": "MyDate3",
             "designerId": "12793a92-88e7-44f1-8a3b-8915c079c52c"
         },
         {

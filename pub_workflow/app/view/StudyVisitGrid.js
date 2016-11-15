@@ -195,7 +195,8 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         edit: 'onStudyVisitGridIdEdit',
         beforecellclick: 'onStudyVisitGridIdBeforeCellClick',
         validateedit: 'onStudyVisitGridIdValidateedit',
-        boxready: 'onStudyVisitGridItemIdBoxReady'
+        boxready: 'onStudyVisitGridItemIdBoxReady',
+        studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent'
     },
     selModel: {
         selType: 'rowmodel',

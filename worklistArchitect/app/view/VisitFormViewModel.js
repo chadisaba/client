@@ -41,6 +41,18 @@ Ext.define('MyApp.view.VisitFormViewModel', {
             sorters: {
                 property: 'siteCode'
             }
+        },
+        DoctorComboStore: {
+            model: 'MyApp.model.DoctorComboModel'
+        },
+        RemplacantComboStore: {
+            model: 'MyApp.model.RemplacantComboModel'
+        },
+        EstablishmentComboStore: {
+            model: 'MyApp.model.EstablishmentComboModel',
+            sorters: {
+                property: 'establishmentName'
+            }
         }
     }
 

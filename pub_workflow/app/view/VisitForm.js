@@ -20,9 +20,15 @@ Ext.define('MyApp.view.VisitForm', {
     requires: [
         'MyApp.view.VisitFormViewModel',
         'MyApp.view.VisitFormViewController',
+        'MyApp.view.VisitRefPhGrid',
+        'MyApp.view.StudyVisitGrid',
         'Ext.form.FieldSet',
         'Ext.form.field.Checkbox',
-        'Ext.form.field.ComboBox'
+        'Ext.toolbar.Spacer',
+        'Ext.form.field.Date',
+        'Ext.form.field.Time',
+        'Ext.ux.inputs.AdvancedCombobox',
+        'Ext.grid.Panel'
     ],
 
     controller: 'visitform',
@@ -31,7 +37,6 @@ Ext.define('MyApp.view.VisitForm', {
     },
     height: 500,
     itemId: 'visitFormId',
-    width: 500,
     bodyPadding: 10,
     title: 'My Form',
 
@@ -46,97 +51,253 @@ Ext.define('MyApp.view.VisitForm', {
     items: [
         {
             xtype: 'fieldset',
-            title: 'My Fields',
+            title: '',
             items: [
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    name: 'visitDateTime',
-                    bind: {
-                        fieldLabel: '{trans.date}'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'Tiers payant',
+                            labelWidth: 150,
+                            name: 'visitIsAmo',
+                            boxLabel: 'Part obligatoire'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 39
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            fieldLabel: '',
+                            labelWidth: 150,
+                            name: 'visitIsAmc',
+                            boxLabel: 'Mutuelle'
+                        }
+                    ]
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'Carte vitale',
-                    name: 'visitIsBySocialCard',
-                    boxLabel: ''
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsFree',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.free}'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            width: 300,
+                            fieldLabel: 'Gratuit ?',
+                            labelWidth: 150,
+                            name: 'visitIsFree',
+                            boxLabel: 'Part patient'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: '',
+                            name: 'visitFtIsFree',
+                            boxLabel: 'Forfait technique'
+                        }
+                    ]
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'Ft Gratuit',
-                    name: 'visitFtIsFree',
-                    boxLabel: ''
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            width: 155,
+                            name: 'visitIsHospitalized',
+                            boxLabel: 'Hospitalisation',
+                            bind: {
+                                fieldLabel: '{trans.hospital}'
+                            }
+                        },
+                        {
+                            xtype: 'textfield',
+                            width: 215,
+                            fieldLabel: 'Num séjour',
+                            labelWidth: 80,
+                            name: 'visitHospitVisitNumber'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            width: 100,
+                            name: 'visitIsUrgent',
+                            boxLabel: 'Urgence',
+                            bind: {
+                                fieldLabel: '{trans.emergency}'
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            xtype: 'fieldset',
+            title: '',
+            items: [
+                {
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsHospitalized',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.hospital}'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            flex: 2,
+                            itemId: 'siteIdComboBoxItemId',
+                            fieldLabel: 'Site',
+                            name: 'siteId',
+                            allowBlank: false,
+                            displayField: 'siteCode',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            typeAhead: true,
+                            valueField: 'siteId',
+                            bind: {
+                                store: '{SiteComboStore}'
+                            },
+                            listeners: {
+                                change: 'onSiteIdComboBoxItemIdChange'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'datefield',
+                            flex: 1,
+                            fieldLabel: 'Date',
+                            name: 'visitDate',
+                            allowBlank: false
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'timefield',
+                            flex: 1,
+                            fieldLabel: 'Heure',
+                            name: 'visitTime',
+                            allowBlank: false
+                        }
+                    ]
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    name: 'visitIsUrgent',
-                    boxLabel: '',
-                    bind: {
-                        fieldLabel: '{trans.emergency}'
-                    }
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Num hospitalisation',
-                    name: 'visitHospitVisitNumber'
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            flex: 1,
+                            itemId: 'doctorComboBoxItemId',
+                            fieldLabel: 'Radiologue',
+                            name: 'doctorId',
+                            allowBlank: false,
+                            displayField: 'userInitiales',
+                            forceSelection: true,
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{DoctorComboStore}'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'combobox',
+                            flex: 1,
+                            itemId: 'remplacantComboBoxItemId',
+                            fieldLabel: 'Remplaçant',
+                            name: 'remplacantId',
+                            displayField: 'userInitiales',
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{RemplacantComboStore}'
+                            }
+                        }
+                    ]
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'A.M.O',
-                    name: 'visitIsAmo',
-                    boxLabel: ''
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'A.M.C',
-                    name: 'visitIsAmc',
-                    boxLabel: ''
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            flex: 1,
+                            itemId: 'visitPdsComboBoxEditorItemId',
+                            fieldLabel: 'Parcours soins',
+                            name: 'visitPds',
+                            selectOnFocus: true,
+                            displayField: 'visitPds',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            bind: {
+                                store: '{VisitPdsComboStore}'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'advancedCombobox',
+                            flex: 1,
+                            itemId: 'EstablishmentComboBoxItemId',
+                            fieldLabel: 'Etablissement',
+                            name: 'establishmentId',
+                            displayField: 'userInitiales',
+                            typeAhead: true,
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{RemplacantComboStore}'
+                            }
+                        }
+                    ]
                 },
                 {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'Facturation A.M.C',
-                    name: 'visitIsBillingAMC',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'combobox',
-                    anchor: '100%',
-                    itemId: 'visitPdsComboBoxEditorItemId',
-                    fieldLabel: 'Parcours soins',
-                    name: 'visitPds',
-                    selectOnFocus: true,
-                    displayField: 'visitPds',
-                    forceSelection: true,
-                    queryMode: 'local',
-                    bind: {
-                        store: '{VisitPdsComboStore}'
-                    }
+                    xtype: 'tbspacer',
+                    height: 5
                 },
                 {
                     xtype: 'checkboxfield',
@@ -146,19 +307,21 @@ Ext.define('MyApp.view.VisitForm', {
                     boxLabel: ''
                 },
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Pacs Id',
-                    name: 'visitPacsId'
-                },
-                {
-                    xtype: 'checkboxfield',
-                    anchor: '100%',
-                    fieldLabel: 'Terminé',
-                    name: 'visitIsDone',
-                    boxLabel: ''
+                    xtype: 'container'
                 }
             ]
+        },
+        {
+            xtype: 'visitrefphgrid',
+            height: 115
+        },
+        {
+            xtype: 'studyvisitgrid',
+            height: 300,
+            listeners: {
+                studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent',
+                studyVisitGridStartEditEvent: 'onStudyVisitGridItemIdStudyVisitGridStartEditEvent'
+            }
         }
     ],
 

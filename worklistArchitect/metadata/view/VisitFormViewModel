@@ -63,6 +63,63 @@
                     "designerId": "08508d3f-76b0-4cfd-a568-9834bd52b1d9"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorComboModel",
+                "name": "DoctorComboStore"
+            },
+            "name": "MyStore1",
+            "designerId": "184f6cd2-72ce-4bab-8dcb-66ddaa206d99"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "RemplacantComboModel",
+                "name": "RemplacantComboStore"
+            },
+            "name": "MyStore9",
+            "designerId": "fd7322ff-30b2-412d-8df9-13b6c2b37623"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "EstablishmentComboModel",
+                "name": "EstablishmentComboStore"
+            },
+            "name": "MyStore10",
+            "designerId": "c143d4a8-7b83-4e97-b222-01af19099030",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "establishmentName"
+                    },
+                    "name": "MySorter1",
+                    "designerId": "7e75cf95-6c0a-4e4d-8235-a89301620cc6"
+                }
+            ]
         }
     ]
 }

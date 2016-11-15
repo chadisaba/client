@@ -109,6 +109,10 @@ Ext.define('MyApp.view.StudyVisitGridViewController', {
 
     onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
 
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridEndEditEvent: function() {
+
     }
 
 });

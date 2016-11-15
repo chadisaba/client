@@ -25,7 +25,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             _resultArray[i].patientId = _resultArray[i]['Patient.patientId'];
                             _resultArray[i].patientNbVisit = _resultArray[i]['Patient.patientNbVisit'];
                             _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
-                            _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                            _resultArray[i].visitTime = _resultArray[i]['Visit.visitDate']+'T'+_resultArray[i]['Visit.visitTime'];
                             _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
                             _resultArray[i].visitIsUrgent = _resultArray[i]['Visit.visitIsUrgent'];
                             _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
