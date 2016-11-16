@@ -75,14 +75,14 @@ Ext.define('MyApp.view.WorklistGrid', {
             text: 'C. Info'
         },
         {
-            xtype: 'gridcolumn',
-            renderer: 'visitTimeRenderer',
+            xtype: 'datecolumn',
             filterType: 'time',
             createFilter: true,
             filterWidth: 100,
             width: 60,
             dataIndex: 'visitTime',
-            text: 'time'
+            text: 'time',
+            format: 'H:i'
         },
         {
             xtype: 'datecolumn',

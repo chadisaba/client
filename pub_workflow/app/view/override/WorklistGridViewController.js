@@ -25,7 +25,8 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                             _resultArray[i].patientId = _resultArray[i]['Patient.patientId'];
                             _resultArray[i].patientNbVisit = _resultArray[i]['Patient.patientNbVisit'];
                             _resultArray[i].visitDate = _resultArray[i]['Visit.visitDate'];
-                            _resultArray[i].visitTime = _resultArray[i]['Visit.visitTime'];
+                            var visitDateTime=(_resultArray[i]['Visit.visitDate']).split('T')[0];
+                            _resultArray[i].visitTime = DateUtil.convertIsoToDate(visitDateTime+'T'+_resultArray[i]['Visit.visitTime']);
                             _resultArray[i].visitIsDone = _resultArray[i]['Visit.visitIsDone'];
                             _resultArray[i].visitIsUrgent = _resultArray[i]['Visit.visitIsUrgent'];
                             _resultArray[i].visitIsHospitalized = _resultArray[i]['Visit.visitIsHospitalized'];
@@ -40,14 +41,15 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                                 worklistUpdate= _resultArray[i]['updatedAt'];
                                 if(me.lastUpdateDate)
                                 {
-                                    if(Ext.Date.diff(new Date(worklistUpdate),me.lastUpdateDate,Ext.Date.SECOND)<0)
-                                        me.lastUpdateDate=new Date(worklistUpdate);// last update on the database
+                                    if(Ext.Date.diff(DateUtil.convertIsoToDate(worklistUpdate),me.lastUpdateDate,Ext.Date.SECOND)<0)
+                                        me.lastUpdateDate=DateUtil.convertIsoToDate(worklistUpdate);// last update on the database
                                 }
                                 else
-                                    me.lastUpdateDate= new Date(worklistUpdate);
+                                    me.lastUpdateDate= DateUtil.convertIsoToDate(worklistUpdate);
                             }
                         }
                         var worklistStore = me.getViewModel().getStore('WorklistStore');
+                        worklistStore.clearFilter();
                         if(!_today || worklistStore.count()==0)
                             worklistStore.loadData(_resultArray);// if we don't refresh the current day worklist
                         else
@@ -148,7 +150,7 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                     joinTablesArray[0].filters=visitFilters;
                     if(me.lastUpdateDate)
                     {
-                        worklistFilters.push({name:'updatedAt', value:me.lastUpdateDate,compare:'gt'});
+                        worklistFilters.push({name:'updatedAt', value:Ext.Date.format(me.lastUpdateDate,'Y-m-d H:i:s'),compare:'gt'});
                         mainTable.filters=worklistFilters;
                     }
                     promiseArray.push(CommonDirect.getDataWidthJoin(mainTable,joinTablesArray));

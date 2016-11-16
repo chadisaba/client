@@ -890,6 +890,7 @@
         },
         "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe": {
             "id": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
+            "expanded": false,
             "cn": [
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik"
@@ -914,12 +915,7 @@
                 },
                 {
                     "id": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8",
-                    "expanded": false,
-                    "cn": [
-                        {
-                            "id": "34de43d6-1aa1-4663-8f8d-794d9956e08a"
-                        }
-                    ]
+                    "expanded": false
                 },
                 {
                     "id": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194"
@@ -1244,15 +1240,18 @@
             ]
         },
         "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k": {
-            "id": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
-            "expanded": false
+            "id": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k"
         },
         "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn": {
             "id": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
-            "expanded": false,
             "cn": [
                 {
-                    "id": "g44blag4-c056-4140-9039-83s6s9uhj9yg"
+                    "id": "g44blag4-c056-4140-9039-83s6s9uhj9yg",
+                    "cn": [
+                        {
+                            "id": "c3ad7598-056f-405d-9e05-697f8cc2b592"
+                        }
+                    ]
                 }
             ]
         },
@@ -3290,15 +3289,17 @@
         "openTabs": [
             "8a6339ea-a2d3-479a-ba3f-6890f5fa0caf",
             "3733e66d-16cf-4e71-a701-95f14282e3e4",
-            "336fbfe5-7283-4080-94fd-711d8dcd1477"
+            "336fbfe5-7283-4080-94fd-711d8dcd1477",
+            "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
+            "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn"
         ]
     },
     "canvasState": {
         "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
     },
     "inspectorState": {
-        "topInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
-        "selectedInstance": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe"
+        "topInstance": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
+        "selectedInstance": "c3ad7598-056f-405d-9e05-697f8cc2b592"
     },
     "editMode": "design",
     "userSettings": {

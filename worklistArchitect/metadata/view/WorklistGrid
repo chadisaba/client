@@ -196,7 +196,7 @@
             ]
         },
         {
-            "type": "Ext.grid.column.Column",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -207,11 +207,12 @@
                 "dataIndex": "visitTime",
                 "filterType": "time",
                 "filterWidth": 100,
+                "format": "H:i",
                 "minWidth": null,
                 "text": "time",
                 "width": 60
             },
-            "name": "My\tworklistVisitInfoCol1",
+            "name": "MyDateColumn",
             "configAlternates": {
                 "createFilter": "boolean",
                 "filterWidth": "number"
@@ -232,32 +233,6 @@
                     "group": "(Custom Properties)",
                     "name": "filterWidth",
                     "type": "string"
-                }
-            ],
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "designer|viewControllerFn": "visitTimeRenderer",
-                        "fn": "renderer",
-                        "implHandler": null
-                    },
-                    "name": "renderer",
-                    "designerId": "34de43d6-1aa1-4663-8f8d-794d9956e08a"
                 }
             ]
         },

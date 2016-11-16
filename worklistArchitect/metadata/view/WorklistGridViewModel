@@ -56,7 +56,23 @@
                 "name": "WorklistStore"
             },
             "name": "WorklistStore",
-            "designerId": "g44blag4-c056-4140-9039-83s6s9uhj9yg"
+            "designerId": "g44blag4-c056-4140-9039-83s6s9uhj9yg",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "direction": "DESC",
+                        "property": "visitTime"
+                    },
+                    "name": "MySorter1",
+                    "designerId": "c3ad7598-056f-405d-9e05-697f8cc2b592"
+                }
+            ]
         }
     ]
 }

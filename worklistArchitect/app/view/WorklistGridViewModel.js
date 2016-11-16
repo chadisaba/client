@@ -18,7 +18,8 @@ Ext.define('MyApp.view.WorklistGridViewModel', {
     alias: 'viewmodel.worklistgrid',
 
     requires: [
-        'Ext.data.Store'
+        'Ext.data.Store',
+        'Ext.util.Sorter'
     ],
 
     data: {
@@ -56,7 +57,11 @@ Ext.define('MyApp.view.WorklistGridViewModel', {
 
     stores: {
         WorklistStore: {
-            model: 'MyApp.model.WorklistModel'
+            model: 'MyApp.model.WorklistModel',
+            sorters: {
+                direction: 'DESC',
+                property: 'visitTime'
+            }
         }
     }
 
