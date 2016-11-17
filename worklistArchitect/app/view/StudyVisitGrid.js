@@ -45,7 +45,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
-            flex: 1,
+            flex: 2,
             dataIndex: 'studyCode',
             text: 'study',
             editor: {
@@ -78,6 +78,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'deviceName',
             text: 'device',
             editor: {
@@ -121,6 +122,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'userLName',
             text: 'technician',
             editor: {
@@ -158,6 +160,7 @@ Ext.define('MyApp.view.StudyVisitGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             width: 70,
             dataIndex: 'studyVisitPrice',
             text: 'price',

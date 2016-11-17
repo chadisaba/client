@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EstHasServComboModel"
+    },
+    "name": "EstablishmentComboModel1",
+    "designerId": "deb628f0-6486-4de3-a21d-d38c5007c578",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estHasServId"
+            },
+            "name": "MyField35",
+            "designerId": "c3b683f7-6edb-46cd-abad-c5f5436b7d0b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "establishmentId"
+            },
+            "name": "MyField14",
+            "designerId": "f508dcea-173a-43fd-aae8-340f482373bc"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estHasServCode"
+            },
+            "name": "MyField36",
+            "designerId": "f7671951-f908-464a-b95e-32c5f25d1e56"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estHasServName"
+            },
+            "name": "MyField15",
+            "designerId": "a8bb4d16-3187-4284-9ae5-721b1dae002c"
+        }
+    ]
+}

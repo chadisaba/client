@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EstablishmentComboModel"
+    },
+    "name": "RemplacantComboModel1",
+    "designerId": "2fb6f2bf-cb2d-4e60-b6f5-bff35826077e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "establishmentId"
+            },
+            "name": "MyField35",
+            "designerId": "421494fc-4fc6-4a63-8cfe-9e76ade3cfb4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "establishmentCode"
+            },
+            "name": "MyField14",
+            "designerId": "6bea920c-0c96-4785-8194-e0a78181799a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "establishmentName"
+            },
+            "name": "MyField15",
+            "designerId": "8757889a-1f31-4288-bafe-cbe398814d3e"
+        }
+    ]
+}

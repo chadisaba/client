@@ -47,6 +47,18 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     onSiteIdComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
 
+    },
+
+    onDoctorComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridEndEditEvent: function(gridpanel) {
+
+    },
+
+    onStudyVisitGridItemIdStudyVisitGridStartEditEvent: function(gridpanel) {
+
     }
 
 });

@@ -78,8 +78,9 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
             title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
             items:{
                 region: 'center',
-                xtype:'patientreceivepanel',
-                patientId:record.get('patientId')
+                xtype:'accueilpatientpanel',
+                patientId:record.get('patientId'),
+                header:false
                 /*plugins:[
                  new Plugins.form.FormEditingPlugin({
                  withValidation: false,

@@ -49,7 +49,10 @@ Ext.application({
         'ReportTemplateModel',
         'ReportKeywordComboModel',
         'VisitRefPhGridModel',
-        'ReferringPhysicianSearchComboModel'
+        'ReferringPhysicianSearchComboModel',
+        'RemplacantComboModel',
+        'EstablishmentComboModel',
+        'EstHasServComboModel'
     ],
     views: [
         'WorklistGrid',
@@ -67,7 +70,6 @@ Ext.application({
         'VisitSimplifiedForm',
         'StudyVisitGrid',
         'WorklistFiltreGridPanel',
-        'MyPanel5',
         'OfficeViewport',
         'ReportForm',
         'ReportGridPanel',
@@ -76,7 +78,8 @@ Ext.application({
         'ReportTemplateGrid',
         'ReportTemplateTabPanel',
         'WorklistHistoryPanel',
-        'VisitRefPhGrid'
+        'VisitRefPhGrid',
+        'AccueilPatientPanel'
     ],
     controllers: [
         'MainController'

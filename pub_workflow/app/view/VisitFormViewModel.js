@@ -18,7 +18,8 @@ Ext.define('MyApp.view.VisitFormViewModel', {
     alias: 'viewmodel.visitform',
 
     requires: [
-        'Ext.data.Store'
+        'Ext.data.Store',
+        'Ext.util.Sorter'
     ],
 
     data: {
@@ -34,6 +35,36 @@ Ext.define('MyApp.view.VisitFormViewModel', {
     stores: {
         VisitPdsComboStore: {
             model: 'MyApp.model.VisitPdsComboModel'
+        },
+        SiteComboStore: {
+            model: 'MyApp.model.SiteComboModel',
+            sorters: {
+                property: 'siteCode'
+            }
+        },
+        DoctorComboStore: {
+            model: 'MyApp.model.DoctorComboModel',
+            sorters: {
+                property: 'userInitiales'
+            }
+        },
+        EstablishmentComboStore: {
+            model: 'MyApp.model.EstablishmentComboModel',
+            sorters: {
+                property: 'establishmentCode'
+            }
+        },
+        EstHasServComboStore: {
+            model: 'MyApp.model.EstHasServComboModel',
+            sorters: {
+                property: 'estHasServCode'
+            }
+        },
+        RemplacantComboStore: {
+            model: 'MyApp.model.RemplacantComboModel',
+            sorters: {
+                property: 'userInitiales'
+            }
         }
     }
 

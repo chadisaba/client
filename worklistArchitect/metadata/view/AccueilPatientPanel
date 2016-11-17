@@ -1,0 +1,325 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "accueilpatientpanel",
+        "designer|userClassName": "AccueilPatientPanel",
+        "height": null,
+        "layout": "card",
+        "title": "Accueil Patient",
+        "width": null
+    },
+    "name": "MyPanel1",
+    "designerId": "9689e3b8-c255-4a61-b9e3-3531dbaae6f8",
+    "viewControllerInstanceId": "715ffdd8-d20b-48c3-b97d-a3c151be9bbf",
+    "viewModelInstanceId": "8c2dac4a-cc99-4bd0-9142-f42f0296abfb",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "header": false,
+                "title": "My Form"
+            },
+            "name": "MyForm",
+            "designerId": "8fffc184-c2ef-4335-9433-ac71190901eb",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "patientform",
+                    "designerId": "ee8b2495-d786-4ee4-a9cc-ce6e38eaa208",
+                    "masterInstanceId": "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPatientFormIdAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onPatientFormIdAfterRender",
+                            "designerId": "5601db4a-b2f0-4399-b1ad-058008eb207b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar10",
+                    "designerId": "299b4831-c694-4bd4-b838-c6d5ceb32403",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill1",
+                            "designerId": "dbfac8b2-38b9-4eef-9897-46cccaec0b54"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "savePatientBtnCtnItemId",
+                                "layout|flex": null
+                            },
+                            "name": "MyContainer7",
+                            "designerId": "10be2533-d667-4b31-ac19-6471ce1b9a79",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "glyph": "xf0c7@FontAwesome",
+                                        "itemId": "savePatientBtn",
+                                        "text": [
+                                            "{trans.save}"
+                                        ]
+                                    },
+                                    "name": "MyButton6",
+                                    "configAlternates": {
+                                        "text": "binding"
+                                    },
+                                    "designerId": "f4512612-5218-49cb-a7b0-3c56e676f254",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSavePatientBtnClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSavePatientBtnClick",
+                                            "designerId": "7173a71f-a873-42b2-be48-28d391664beb"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "header": false,
+                "layout": "border",
+                "scrollable": null,
+                "title": "My Form"
+            },
+            "name": "MyForm1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "8388bf1d-cf03-409d-9983-76940767859e",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "header": false,
+                        "layout|region": "center",
+                        "scrollable": true
+                    },
+                    "name": "visitform",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "07ba1a08-7f7c-4355-8643-c4e6481c0082",
+                    "masterInstanceId": "8a6339ea-a2d3-479a-ba3f-6890f5fa0caf",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onVisitFormIdAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onVisitFormIdAfterRender",
+                            "designerId": "a91b93aa-c0cc-48ee-a037-2e26ef5deae1"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "form"
+                                ],
+                                "fn": "onVisitFormIdStudyVisitGridEndEditEvent",
+                                "name": "studyVisitGridEndEditEvent",
+                                "scope": "me"
+                            },
+                            "name": "onVisitFormIdStudyVisitGridEndEditEvent",
+                            "designerId": "f7d7e56f-ec0a-4603-a2d4-a119ce5189c8"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "form"
+                                ],
+                                "fn": "onVisitFormIdStudyVisitGridStartEditEvent",
+                                "name": "StudyVisitGridStartEditEvent",
+                                "scope": "me"
+                            },
+                            "name": "onVisitFormIdStudyVisitGridStartEditEvent",
+                            "designerId": "f3e2f06a-bd45-4248-bec0-157a497c3a6f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar11",
+                    "designerId": "59875f0a-f0c3-4cef-855d-b89fca2cea3b",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill1",
+                            "designerId": "d6019734-70a5-48fd-a896-8016184a1099"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveVisitBtnCtnItemId",
+                                "layout|flex": null
+                            },
+                            "name": "MyContainer7",
+                            "designerId": "a5ad49a7-469a-4fda-82ae-e7845cc39525",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "glyph": "xf0c7@FontAwesome",
+                                        "itemId": "saveVisitBtn",
+                                        "text": [
+                                            "{trans.save}"
+                                        ]
+                                    },
+                                    "name": "MyButton6",
+                                    "configAlternates": {
+                                        "text": "binding"
+                                    },
+                                    "designerId": "9ea743b3-8721-4f25-b88a-4eb81e3dc83c",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSaveVisitBtnClick",
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSaveVisitBtnClick",
+                                            "designerId": "8af5d570-16bb-4574-8c7a-ea72bb4fc7dd"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

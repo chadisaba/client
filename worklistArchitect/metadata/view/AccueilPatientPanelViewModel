@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "accueilpatientpanel",
+        "designer|userClassName": "AccueilPatientPanelViewModel"
+    },
+    "designerId": "8c2dac4a-cc99-4bd0-9142-f42f0296abfb"
+}

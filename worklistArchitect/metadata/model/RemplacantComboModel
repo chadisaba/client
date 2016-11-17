@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RemplacantComboModel"
+    },
+    "name": "DoctorComboModel1",
+    "designerId": "31a69e7a-10e3-4192-aa13-85d3ee475e27",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "doctorId"
+            },
+            "name": "MyInteger6",
+            "designerId": "c5f34718-4ee3-443f-90a1-39c704d07de6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userFName"
+            },
+            "name": "MyField14",
+            "designerId": "6cc8aaa0-1c85-4ff7-b5f9-e562f7601060"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userLName"
+            },
+            "name": "MyField15",
+            "designerId": "bd303dee-aee6-4bd3-a170-a55e8fae3e18"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userInitiales"
+            },
+            "name": "MyField18",
+            "designerId": "287d8d4b-9641-40b3-8805-0acd20ca93e9"
+        }
+    ]
+}

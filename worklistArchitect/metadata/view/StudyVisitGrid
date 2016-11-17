@@ -39,7 +39,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyCode",
-                "flex": 1,
+                "flex": 2,
                 "text": "study"
             },
             "name": "MystudyNameCol",
@@ -160,6 +160,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "deviceName",
+                "flex": 1,
                 "text": "device"
             },
             "name": "MydeviceNameCol",
@@ -280,6 +281,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "userLName",
+                "flex": 1,
                 "text": "technician"
             },
             "name": "MyuserLastNameCol",
@@ -402,6 +404,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitPrice",
                 "defaultWidth": null,
+                "hidden": true,
                 "text": "price",
                 "width": 70
             },

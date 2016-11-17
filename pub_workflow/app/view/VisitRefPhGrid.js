@@ -58,7 +58,7 @@ Ext.define('MyApp.view.VisitRefPhGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'patientIsOrientedBy',
-            text: 'patient is oriented by',
+            text: 'Prescripteur?',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -66,7 +66,7 @@ Ext.define('MyApp.view.VisitRefPhGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'referringPhysicianSearch',
-            text: 'referring physician',
+            text: 'Coresspondants',
             editor: {
                 xtype: 'combobox',
                 itemId: 'referringPhysicianSearchComboBoxEditorItemId',

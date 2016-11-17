@@ -129,11 +129,17 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 									var filterOp=data[key].filterOp;
 									var recValue=_masterRec.get(key);
 
+									if(recValue){
 									switch (filterOp)
 									{
 										case 'eq':
-											if(filterValue.toUpperCase() != recValue.toUpperCase())
-												resultFilter=false;
+											var all=filterValue=="all";
+
+												if(typeof recValue==='string')
+													recValue=recValue.toUpperCase();
+												if(!all && (filterValue.toUpperCase() != recValue))
+													resultFilter=false;
+
 											break;
 										case 'eqBool':
 											var all=filterValue=="all";
@@ -143,7 +149,11 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 												resultFilter=false;
 											break;
 										case 'diff':
-											if(filterValue.toUpperCase()== recValue.toUpperCase())
+											var all=filterValue=="all";
+
+											if(typeof recValue==='string')
+												recValue=recValue.toUpperCase();
+											if(!all && (filterValue.toUpperCase() == recValue))
 												resultFilter=false;
 											break;
 										case 'start':
@@ -246,6 +256,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 											if(filterValue() == recValue)
 												resultFilter=false;
 											break;
+									}
 									}
 								}
 

@@ -6,10 +6,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Small",
+                "name": "Auto Expand",
                 "builtIn": true,
-                "height": 600,
-                "width": 800
+                "height": null,
+                "width": null
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
@@ -86,9 +86,6 @@
             "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2",
             "ab9d6573-f890-480a-92e4-c7e3debdf66d",
             "36c197d6-107d-4b51-98a9-3aba4e809c9b",
-            "acd669aa-d6ed-4125-8f11-08b94b94e666",
-            "6587c30b-0ad3-4bbe-a30a-f2e8c68d8fad",
-            "0c2a3c44-b0d2-4cd2-86a7-85ede29ff929",
             "98634705-127d-4bfc-a7b8-2d9aed3c6171",
             "0255783a-1ef2-4479-8c11-25323ee7ea8b",
             "bcf1efca-9e53-44a2-a0af-112a000c90f1",
@@ -109,7 +106,10 @@
             "b525ad2e-845c-421a-8b1e-f2c762460487",
             "2190139f-cda5-49ce-bc4b-73e145f60b2d",
             "2fb9bd70-84cc-4245-bf8e-8bd6c01dcf56",
-            "83824cb6-0c78-4623-8e77-431da681d76f"
+            "83824cb6-0c78-4623-8e77-431da681d76f",
+            "9689e3b8-c255-4a61-b9e3-3531dbaae6f8",
+            "8c2dac4a-cc99-4bd0-9142-f42f0296abfb",
+            "715ffdd8-d20b-48c3-b97d-a3c151be9bbf"
         ],
         "store": [],
         "controller": [
@@ -134,6 +134,9 @@
             "f8c4ef8d-71de-4b32-89c0-9f1a3cfac98c",
             "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
             "01a74622-2866-4229-a2a8-eb5a5f527c41",
+            "31a69e7a-10e3-4192-aa13-85d3ee475e27",
+            "2fb6f2bf-cb2d-4e60-b6f5-bff35826077e",
+            "deb628f0-6486-4de3-a21d-d38c5007c578",
             "cabc7be2-a2f3-42a9-b874-0abfb76aabf2",
             "95195739-aae0-41c0-83b0-24175c8cb157",
             "e6133673-e9f4-4c36-9212-8e2220762754",

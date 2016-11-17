@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
+        "collapsed": false,
         "designer|userAlias": "visitform",
         "designer|userClassName": "VisitForm",
         "height": 500,
@@ -19,30 +20,6 @@
     "viewControllerInstanceId": "a1dc7b28-132b-4d9d-945f-b3e518294321",
     "viewModelInstanceId": "3733e66d-16cf-4e71-a701-95f14282e3e4",
     "cn": [
-        {
-            "type": "processcfgfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "config"
-                ],
-                "fn": "processVisitForm",
-                "implHandler": [
-                    "  config.plugins = new Plugins.form.FormEditingPlugin({",
-                    "            withValidation: false,",
-                    "            showConfirmationOnSave: true",
-                    "        });",
-                    "",
-                    "        return config;"
-                ]
-            },
-            "name": "processVisitForm",
-            "designerId": "db07c2ec-9f8c-45c7-9009-4a2777980446"
-        },
         {
             "type": "viewcontrollereventbinding",
             "reference": {
@@ -163,417 +140,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "visitFieldSetItemId",
                 "title": ""
             },
             "name": "MyFieldSet",
             "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
             "cn": [
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "height": null,
-                        "layout": "hbox"
-                    },
-                    "name": "MyContainer5",
-                    "designerId": "1fa7b594-2894-40f9-bdf9-c9cba6764c0b",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Part obligatoire",
-                                "fieldLabel": "Tiers payant",
-                                "labelWidth": 150,
-                                "layout|flex": null,
-                                "name": "visitIsAmo"
-                            },
-                            "name": "MyvisitIsAmoCheckBox",
-                            "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
-                        },
-                        {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "width": 39
-                            },
-                            "name": "MySpacer6",
-                            "designerId": "d77226b3-e4f3-4735-b506-bab089747e05"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Mutuelle",
-                                "fieldLabel": "",
-                                "labelWidth": 150,
-                                "layout|flex": 1,
-                                "name": "visitIsAmc"
-                            },
-                            "name": "MyvisitIsAmcCheckBox",
-                            "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.toolbar.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "height": 5
-                    },
-                    "name": "MySpacer3",
-                    "designerId": "5a9e9636-3a84-47b1-9e14-6e588b3eae2d"
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "layout": "hbox"
-                    },
-                    "name": "MyContainer1",
-                    "designerId": "c212a7a6-2488-46d8-a6d7-b189f2f47454",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Part patient",
-                                "fieldLabel": "Gratuit ?",
-                                "labelWidth": 150,
-                                "layout|flex": null,
-                                "name": "visitIsFree",
-                                "width": 300
-                            },
-                            "name": "MyvisitIsFreeCheckBox",
-                            "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Forfait technique",
-                                "fieldLabel": "",
-                                "name": "visitFtIsFree"
-                            },
-                            "name": "MyvisitFtIsFreeCheckBox",
-                            "designerId": "36621a92-115d-4db8-a5f9-7c3dd3c8c952"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "layout": "hbox"
-                    },
-                    "name": "MyContainer6",
-                    "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Hospitalisation",
-                                "fieldLabel": [
-                                    "{trans.hospital}"
-                                ],
-                                "layout|flex": null,
-                                "name": "visitIsHospitalized",
-                                "width": 155
-                            },
-                            "name": "MyvisitIsHospitalizedCheckBox",
-                            "configAlternates": {
-                                "fieldLabel": "binding"
-                            },
-                            "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Num séjour",
-                                "labelWidth": 80,
-                                "layout|flex": null,
-                                "name": "visitHospitVisitNumber",
-                                "width": 215
-                            },
-                            "name": "MyvisitHospitVisitNumberTextField",
-                            "designerId": "88d1dc9c-5616-4963-969b-17d48a98a092"
-                        },
-                        {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "width": 10
-                            },
-                            "name": "MySpacer",
-                            "designerId": "b0b3bfbe-3719-47b7-b8bc-314a68b4f9a5"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "Urgence",
-                                "fieldLabel": [
-                                    "{trans.emergency}"
-                                ],
-                                "layout|flex": null,
-                                "name": "visitIsUrgent",
-                                "width": 100
-                            },
-                            "name": "MyvisitIsUrgentCheckBox",
-                            "configAlternates": {
-                                "fieldLabel": "binding"
-                            },
-                            "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.toolbar.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "height": 5
-                    },
-                    "name": "MySpacer4",
-                    "designerId": "edadd378-83fb-4e97-95d2-a56dcdf0cbcd"
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "layout": "hbox"
-                    },
-                    "name": "MyContainer",
-                    "designerId": "f472369b-27d6-4e4e-86b1-354c525781a0",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "displayField": "siteCode",
-                                "fieldLabel": "Site",
-                                "forceSelection": true,
-                                "itemId": "siteIdComboBoxItemId",
-                                "labelWidth": 130,
-                                "layout|flex": null,
-                                "name": "siteId",
-                                "queryMode": "local",
-                                "store": [
-                                    "{SiteComboStore}"
-                                ],
-                                "typeAhead": true,
-                                "valueField": "siteId",
-                                "width": 306
-                            },
-                            "name": "MyComboBox5",
-                            "configAlternates": {
-                                "store": "binding"
-                            },
-                            "designerId": "9a2ffe13-2c94-41af-8a92-4bfa896939a8",
-                            "cn": [
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onSiteIdComboBoxItemIdChange",
-                                        "name": "change",
-                                        "scope": "me"
-                                    },
-                                    "name": "onSiteIdComboBoxItemIdChange",
-                                    "designerId": "9a79bb54-0005-4b6b-9a66-a7a50ff33c86"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "width": 10
-                            },
-                            "name": "MySpacer1",
-                            "designerId": "e82f9dcd-be08-49ac-8281-d92fb58a2004"
-                        },
-                        {
-                            "type": "Ext.form.field.Date",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "fieldLabel": "Date",
-                                "labelWidth": 60,
-                                "layout|flex": 1,
-                                "name": "visitDate"
-                            },
-                            "name": "MyDateField",
-                            "designerId": "8ba177a1-c58b-4268-ab74-213736ce8d22"
-                        },
-                        {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "width": 10
-                            },
-                            "name": "MySpacer2",
-                            "designerId": "bfaa815b-9948-4f66-b2ff-5adb967d5fae"
-                        },
-                        {
-                            "type": "Ext.form.field.Time",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "fieldLabel": "Heure",
-                                "layout|flex": 1,
-                                "name": "visitTime"
-                            },
-                            "name": "MyTimeField1",
-                            "designerId": "e388d8e7-2197-4320-9602-98400d01e9ee"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.toolbar.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "height": 5
-                    },
-                    "name": "MySpacer7",
-                    "designerId": "194fa5ff-c40c-4c58-9ab0-c8fcac19b7ba"
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "name": "MyContainer2",
-                    "designerId": "95776d49-e563-4459-9f17-1e2e057f8511",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "displayField": "visitPds",
-                                "fieldLabel": "Parcours soins",
-                                "forceSelection": true,
-                                "itemId": "visitPdsComboBoxEditorItemId",
-                                "labelWidth": 130,
-                                "name": "visitPds",
-                                "queryMode": "local",
-                                "selectOnFocus": true,
-                                "store": [
-                                    "{VisitPdsComboStore}"
-                                ]
-                            },
-                            "name": "MyvisitPdsComboBox",
-                            "configAlternates": {
-                                "store": "binding"
-                            },
-                            "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7"
-                        }
-                    ]
-                },
                 {
                     "type": "Ext.toolbar.Spacer",
                     "reference": {
@@ -588,30 +160,837 @@
                     "designerId": "324b6c41-596c-47b0-86c3-99cbf2ee88a3"
                 },
                 {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "FT pour",
-                        "layout|anchor": "100%",
-                        "name": "visitFtFor"
-                    },
-                    "name": "MyvisitFtForCheckBox",
-                    "designerId": "afe44e0e-0eca-4958-92de-c985f5d48bcc"
-                },
-                {
                     "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
                     "name": "MyContainer3",
-                    "designerId": "ab6e9e80-f757-462f-9913-cebcc9a90b56"
+                    "designerId": "ab6e9e80-f757-462f-9913-cebcc9a90b56",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "layout|flex": 1,
+                                "title": "Tiers Payant"
+                            },
+                            "name": "MyFieldSet2",
+                            "designerId": "1a412b12-b391-44d2-9169-1e093471091d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "AMO",
+                                        "fieldLabel": "",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "visitIsAmo"
+                                    },
+                                    "name": "MyvisitIsAmoCheckBox",
+                                    "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "AMC",
+                                        "fieldLabel": "",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "visitIsAmc"
+                                    },
+                                    "name": "MyvisitIsAmcCheckBox",
+                                    "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 5,
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer7",
+                            "designerId": "194fa5ff-c40c-4c58-9ab0-c8fcac19b7ba"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "layout|flex": 1,
+                                "title": "Type"
+                            },
+                            "name": "MyFieldSet3",
+                            "designerId": "118e24bf-0fc2-4b25-87ec-ca4edb82da4a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Gratuit",
+                                        "fieldLabel": "",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "visitIsFree",
+                                        "width": null
+                                    },
+                                    "name": "MyvisitIsFreeCheckBox",
+                                    "designerId": "461847a6-dca2-417e-9c49-3f338fed91f5"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Urgence",
+                                        "fieldLabel": null,
+                                        "layout|flex": null,
+                                        "name": "visitIsUrgent",
+                                        "width": 100
+                                    },
+                                    "name": "MyvisitIsUrgentCheckBox",
+                                    "designerId": "3ba3098e-94b9-4761-96fb-fc50a8b962fe"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 5,
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "name": "MySpacer13",
+                            "designerId": "a59614a3-cf8c-4285-88f5-3bd4a672c5b4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Etablissement hospitalier ou autre"
+                    },
+                    "name": "MyFieldSet5",
+                    "designerId": "e5b8d7a6-8a45-40bb-a10b-0a0248aeff69",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer6",
+                            "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Hospitalisation",
+                                        "fieldLabel": null,
+                                        "layout|flex": null,
+                                        "name": "visitIsHospitalized",
+                                        "width": 155
+                                    },
+                                    "name": "MyvisitIsHospitalizedCheckBox",
+                                    "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Num séjour",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "visitHospitVisitNumber",
+                                        "width": 215
+                                    },
+                                    "name": "MyvisitHospitVisitNumberTextField",
+                                    "designerId": "88d1dc9c-5616-4963-969b-17d48a98a092"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "IPP",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "visitHospitVisitNumber",
+                                        "width": 215
+                                    },
+                                    "name": "MyvisitHospitVisitNumberTextField1",
+                                    "designerId": "bcd13a6d-aa14-461c-a205-81cd21edef9f"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "name": "MySpacer",
+                                    "designerId": "b0b3bfbe-3719-47b7-b8bc-314a68b4f9a5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 5
+                            },
+                            "name": "MySpacer4",
+                            "designerId": "edadd378-83fb-4e97-95d2-a56dcdf0cbcd"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer21",
+                            "designerId": "6ec766d8-f734-4bae-8ef4-a17d2f901556",
+                            "cn": [
+                                {
+                                    "type": "Ext.ux.inputs.AdvancedCombobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "establishmentCode",
+                                        "fieldLabel": "Etablissement",
+                                        "itemId": "establishmentComboBoxEditorItemId",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "establishmentId",
+                                        "queryMode": "local",
+                                        "selectOnFocus": true,
+                                        "store": [
+                                            "{EstablishmentComboStore}"
+                                        ],
+                                        "valueField": "establishmentId"
+                                    },
+                                    "name": "MyadvancedCombobox",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "d8d81848-a3cd-4a05-aed3-c632e5f16c07"
+                                },
+                                {
+                                    "type": "Ext.ux.inputs.AdvancedCombobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "estHasServCode",
+                                        "fieldLabel": "Service",
+                                        "itemId": "estHasServComboBoxEditorItemId",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "estHasServId",
+                                        "queryMode": "local",
+                                        "selectOnFocus": true,
+                                        "store": [
+                                            "{EstHasServComboStore}"
+                                        ],
+                                        "valueField": "estHasServCode"
+                                    },
+                                    "name": "MyadvancedCombobox3",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "ddaee674-1957-4706-a01f-231281134cc2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsed": true,
+                        "collapsible": true,
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "title": "Forfait technique"
+                    },
+                    "name": "MyFieldSet6",
+                    "designerId": "53c19c48-10d3-4569-855f-900210193f53",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Gratuit",
+                                "fieldLabel": "",
+                                "layout|flex": null,
+                                "name": "visitFtIsFree",
+                                "width": null
+                            },
+                            "name": "MyvisitFtIsFreeCheckBox",
+                            "designerId": "36621a92-115d-4db8-a5f9-7c3dd3c8c952"
+                        },
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "layout|flex": 1
+                            },
+                            "name": "MyRadioGroup2",
+                            "designerId": "b3b8096b-33be-4e1f-9910-dd79f0306abd",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Patient",
+                                        "fieldLabel": "Concerne"
+                                    },
+                                    "name": "MyRadio6",
+                                    "designerId": "7f6fb72e-adff-42f7-933f-1d297bfb0530"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "A.M.O",
+                                        "fieldLabel": null
+                                    },
+                                    "name": "MyRadio7",
+                                    "designerId": "38cb100b-3979-42a7-bc14-2deffcc36496"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.ux.inputs.AdvancedCombobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "establishmentCode",
+                                "fieldLabel": "Caisse ",
+                                "itemId": "orgFtComboBoxEditorItemId",
+                                "labelWidth": 50,
+                                "layout|flex": 1,
+                                "name": "organismeFtId",
+                                "queryMode": "local",
+                                "selectOnFocus": true,
+                                "store": [
+                                    "{EstablishmentComboStore}"
+                                ],
+                                "valueField": "establishmentId"
+                            },
+                            "name": "MyadvancedCombobox4",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "47fecb69-86ae-4f5f-aa85-e4f0435f3240"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "title": "Information consultation"
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "1d3075fb-58ff-4486-888e-315d58c24349",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer",
+                            "designerId": "f472369b-27d6-4e4e-86b1-354c525781a0",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "displayField": "siteCode",
+                                        "fieldLabel": "Site",
+                                        "forceSelection": true,
+                                        "itemId": "siteIdComboBoxItemId",
+                                        "labelWidth": 50,
+                                        "layout|flex": 1,
+                                        "name": "siteId",
+                                        "queryMode": "local",
+                                        "store": [
+                                            "{SiteComboStore}"
+                                        ],
+                                        "typeAhead": true,
+                                        "valueField": "siteId",
+                                        "width": null
+                                    },
+                                    "name": "MyComboBox5",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "9a2ffe13-2c94-41af-8a92-4bfa896939a8",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSiteIdComboBoxItemIdChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSiteIdComboBoxItemIdChange",
+                                            "designerId": "9a79bb54-0005-4b6b-9a66-a7a50ff33c86"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "name": "MySpacer1",
+                                    "designerId": "e82f9dcd-be08-49ac-8281-d92fb58a2004"
+                                },
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "fieldLabel": "Date",
+                                        "labelWidth": 50,
+                                        "layout|flex": 1,
+                                        "name": "visitDate"
+                                    },
+                                    "name": "MyDateField",
+                                    "designerId": "8ba177a1-c58b-4268-ab74-213736ce8d22"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "name": "MySpacer2",
+                                    "designerId": "bfaa815b-9948-4f66-b2ff-5adb967d5fae"
+                                },
+                                {
+                                    "type": "Ext.form.field.Time",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "fieldLabel": "Heure",
+                                        "labelWidth": 50,
+                                        "layout|flex": 1,
+                                        "name": "visitTime"
+                                    },
+                                    "name": "MyTimeField1",
+                                    "designerId": "e388d8e7-2197-4320-9602-98400d01e9ee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 5
+                            },
+                            "name": "MySpacer3",
+                            "designerId": "5a9e9636-3a84-47b1-9e14-6e588b3eae2d"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer2",
+                            "designerId": "95776d49-e563-4459-9f17-1e2e057f8511",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "displayField": "visitPds",
+                                        "fieldLabel": "Parcours soins",
+                                        "forceSelection": true,
+                                        "itemId": "visitPdsComboBoxEditorItemId",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "visitPds",
+                                        "queryMode": "local",
+                                        "selectOnFocus": true,
+                                        "store": [
+                                            "{VisitPdsComboStore}"
+                                        ]
+                                    },
+                                    "name": "MyvisitPdsComboBox",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "name": "MySpacer14",
+                                    "designerId": "a60411df-1f38-489d-8636-9cb1f538f60a"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "displayField": "userInitiales",
+                                        "fieldLabel": "Rad.",
+                                        "forceSelection": true,
+                                        "itemId": "doctorComboBoxEditorItemId",
+                                        "labelWidth": 50,
+                                        "layout|flex": 1,
+                                        "name": "doctorId",
+                                        "queryMode": "local",
+                                        "selectOnFocus": true,
+                                        "store": [
+                                            "{DoctorComboStore}"
+                                        ],
+                                        "valueField": "doctorId"
+                                    },
+                                    "name": "MyvisitPdsComboBox1",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "71f6894a-c5db-42ff-9db0-5d7d3dd4d699",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onDoctorComboBoxEditorItemIdChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onDoctorComboBoxEditorItemIdChange",
+                                            "designerId": "69d086da-68a0-4ac3-bf90-c8f27a6f6ddf"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "name": "MySpacer15",
+                                    "designerId": "34393c7b-694e-4d47-81b8-7e21a38e00a0"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "userInitiales",
+                                        "fieldLabel": "Remp.",
+                                        "itemId": "remplacantComboBoxEditorItemId",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "name": "remplacantId",
+                                        "queryMode": "local",
+                                        "selectOnFocus": true,
+                                        "store": [
+                                            "{RemplacantComboStore}"
+                                        ],
+                                        "valueField": "doctorId"
+                                    },
+                                    "name": "MyvisitPdsComboBox4",
+                                    "configAlternates": {
+                                        "store": "binding"
+                                    },
+                                    "designerId": "eaa33bbb-c15a-4abe-a15f-37aca7599393"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "externalEditingPlugin": [
+                            "{",
+                            " pluginId: 'gridediting',",
+                            "                onlyADM: true",
+                            "}"
+                        ]
+                    },
+                    "name": "visitrefphgrid",
+                    "configAlternates": {
+                        "externalEditingPlugin": "object"
+                    },
+                    "designerId": "e0680e93-e26c-4c65-bda2-8a110fd89464",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "externalEditingPlugin",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "da3d5a57-98c8-4c9e-a44b-199bc8c1fb78"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "externalEditingPlugin": [
+                    "{pluginId: 'gridediting',",
+                    "                onlyADM: true}"
+                ],
+                "header": false
+            },
+            "name": "studyvisitgrid",
+            "configAlternates": {
+                "externalEditingPlugin": "object"
+            },
+            "designerId": "3cfb1b92-280a-4dd2-8165-4421d85681b6",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "externalEditingPlugin",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel"
+                        ],
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                        "name": "studyVisitGridEndEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
+                    "designerId": "6700cfc5-1521-472f-bf2c-288d40546b8f"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "gridpanel"
+                        ],
+                        "fn": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                        "name": "studyVisitGridStartEditEvent",
+                        "scope": "me"
+                    },
+                    "name": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
+                    "designerId": "13bba4ea-044a-4164-92e7-f00abdab06f4"
                 }
             ]
         }
