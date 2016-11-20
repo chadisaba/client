@@ -98,9 +98,6 @@ Ext.define('Utility.renderer', {
 			return '<'+htmlTagType+' style="cursor:help;color:'+color+
 				';font-size:13px;">'+value+'</i></'+htmlTagType+'>';
 		}
-			
-
-
 
 		}
 

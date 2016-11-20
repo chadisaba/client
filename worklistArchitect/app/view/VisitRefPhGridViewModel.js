@@ -26,7 +26,7 @@ Ext.define('MyApp.view.VisitRefPhGridViewModel', {
             model: 'MyApp.model.VisitRefPhGridModel'
         },
         ReferringPhysicianSearchComboStore: {
-            model: 'MyApp.model.ReferringPhysicianSearchComboModel'
+            model: 'MyApp.model.ReferringPhysicianNameComboModel'
         }
     }
 

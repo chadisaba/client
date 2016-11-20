@@ -88,6 +88,7 @@ Ext.define('MyApp.view.override.VisitSimplifiedFormViewController', {
         return this.getView().getRecord().get('visitId')
     },
     visitFormSave: function(button) {
+
         var me=this;
         var form=me.getView();
         var rec=form.getRecord();

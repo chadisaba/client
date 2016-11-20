@@ -32,7 +32,6 @@
             "ReportTemplateModel",
             "ReportKeywordComboModel",
             "VisitRefPhGridModel",
-            "ReferringPhysicianSearchComboModel",
             "RemplacantComboModel",
             "EstablishmentComboModel",
             "EstHasServComboModel"

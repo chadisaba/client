@@ -24,8 +24,8 @@
             },
             "name": "VisitRefPhStore",
             "designerId": "244c596f-14c3-4ee5-9c9d-d9b183bb6e34"
-        }
-        ,{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -33,12 +33,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "ReferringPhysicianSearchComboModel",
+                "model": "ReferringPhysicianNameComboModel",
                 "name": "ReferringPhysicianSearchComboStore"
             },
             "name": "ReferringPhysicianSearchComboStore",
             "designerId": "d5cd413a-098c-46a7-a133-017bb0c174fe"
         }
-               
     ]
 }

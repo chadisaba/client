@@ -1,7 +1,6 @@
 var FormAddPlugins={
     addPlugins:function(_scope)
         {
-
             _scope.plugins=[];
             if(_scope.initialConfig.noPlugin)
             {
@@ -22,6 +21,12 @@ var FormAddPlugins={
             {
                 _scope.plugins.push (new Plugins.form.FormPlugin(_scope.initialConfig.externalEditingPlugin));
             }
-
-        }
+        },
+    addCheckDirtyPlugin:function(_scope)
+    {
+        _scope.plugins=[];
+        _scope.plugins.push (
+            new Plugins.form.CheckDirtyPlugin()
+        );
+    }
 };

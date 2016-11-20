@@ -10,7 +10,13 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
             throw Error('_patientId can\'t be undefined');
         //rec.set('patientId',_patientId);
 
-        view.down("#studyVisitGridItemId").mask();
+        var studyVisitGridView = view.down('#studyVisitGridItemId');
+        var studyVisitController = studyVisitGridView.getController();
+
+        var visitRefPhGridView=view.down('#visitRefPhGridId');
+        var visitRefPhGridController = visitRefPhGridView.getController();
+
+        studyVisitGridView.mask();
         var viewModel=me.getViewModel();
         var visitId=null;
         if(_visitId)
@@ -24,6 +30,8 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
         var joinTablesArray=[{
             tableName:"USER"
         }];
+
+
         var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
         Promise.all([p1,p2])
             .then(function(_resultArray)
@@ -55,9 +63,15 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                             var visitRec=new MyApp.model.VisitModel(_resultValue[0]);
 
                             view.loadRecord(visitRec);
-                            var studyVisitController = view.down('#studyVisitGridItemId').getController();
+
                             studyVisitController.initGrid([],true,_visitId);
-                            view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
+                            studyVisitGridView.getPlugin('gridediting').lockGrid(false);
+
+
+                            visitRefPhGridController.initGrid([],true,_visitId);
+                          visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
+
+                            view.getPlugin('formcheckdirty').addFieldsCnangeListener();
                         });
                 }
 
@@ -75,9 +89,12 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                     visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
                     view.loadRecord(visitRec);
 
-                    view.down('#studyVisitGridItemId').getController().initGrid();
+                    studyVisitController.initGrid();
+                    studyVisitGridView.getPlugin('gridediting').lockGrid(false);
 
-                    view.down('#studyVisitGridItemId').getPlugin('gridediting').lockGrid(false);
+                    visitRefPhGridController.initGrid();
+                    visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
+                    view.getPlugin('formcheckdirty').addFieldsCnangeListener();
                 }
             });
 
@@ -94,7 +111,51 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     onVisitFormItemIdInEdit: function(form) {
 
     },
+    visitFormSave: function(button){
+        var me=this;
+        //Creating a promise
+        return new Promise(
+            function(resolve, reject) {
+                var form=me.getView();
+                var rec=form.getRecord();
+                form.updateRecord(rec); // update the record with the formvisitFormSave
+                var dataToSave=rec.data;
+                var visitTimeHour=dataToSave.visitTime.getHours();
+                var visitTimeMinutes=dataToSave.visitTime.getMinutes();
+                dataToSave.visitTime=visitTimeHour+":"+visitTimeMinutes;
 
+                var studyVisitCtr = me.getStudyVisitGrid().getController();
+                var studyVisitDataToBeSaved=studyVisitCtr.getDataToBeSaved();
+                studyVisitDataToBeSaved.forEach(
+                    function(_item)
+                    {
+                        _item.visitId=rec.get('visitId');
+                    });
+                var studiesArray=studyVisitCtr.getStudiesArray();
+
+                var worklistDoctor=form.down("#doctorComboBoxEditorItemId").getSelection().get('userInitiales');
+                VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor)
+                    .then(function(_result)
+                    {
+                        resolve();
+                    })
+                    .catch(function(_err)
+                    {
+                        console.error(_err);
+                        reject();
+                    });
+             });
+
+
+    },
+    getStudyVisitGrid:function()
+    {
+        return this.getView().down('#studyVisitGridItemId');
+    },
+    getVisitId:function()
+    {
+        return this.getView().getRecord().get('visitId')
+    },
     onVisitFormItemIdSaveEdit: function(form, promptWin, comment) {
 
     },

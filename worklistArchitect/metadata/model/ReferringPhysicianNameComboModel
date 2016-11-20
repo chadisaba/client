@@ -49,6 +49,45 @@
             },
             "name": "MyField8",
             "designerId": "1cd2942d-5874-4c48-b76e-3a33d64bb2f3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "referringPhysicianAddress"
+            },
+            "name": "MyField37",
+            "designerId": "23e909b7-be4c-40ec-a0a8-1bc8a676babb"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "city"
+            },
+            "name": "MyField38",
+            "designerId": "b762a987-3241-4648-bc1d-286a89d7222b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "referringPhysicianZipCode"
+            },
+            "name": "MyField39",
+            "designerId": "dab59d09-fed9-447d-bae6-3336074fe730"
         }
     ]
 }

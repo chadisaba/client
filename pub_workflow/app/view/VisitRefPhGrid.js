@@ -21,8 +21,10 @@ Ext.define('MyApp.view.VisitRefPhGrid', {
         'MyApp.view.VisitRefPhGridViewModel',
         'MyApp.view.VisitRefPhGridViewController',
         'Ext.grid.column.Column',
-        'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
+        'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
         'Ext.selection.RowModel'
@@ -44,10 +46,46 @@ Ext.define('MyApp.view.VisitRefPhGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            dataIndex: 'referringPhysicianSearch',
+            text: 'Coresspondants',
+            editor: {
+                xtype: 'combobox',
+                itemId: 'referringPhysicianSearchComboBoxEditorItemId',
+                allowBlank: false,
+                selectOnFocus: true,
+                displayField: 'referringPhysicianSearch',
+                displayTpl: [
+                    '<tpl for=".">{referringPhysicianLName} : {referringPhysicianFName}</tpl>'
+                ],
+                queryMode: 'local',
+                valueField: 'referringPhysicianSearch',
+                bind: {
+                    store: '{ReferringPhysicianSearchComboStore}'
+                },
+                listeners: {
+                    select: 'onReferringPhysicianSearchComboBoxEditorItemIdSelect',
+                    change: 'onReferringPhysicianSearchComboBoxEditorItemIdChange'
+                },
+                listConfig: {
+                    xtype: 'boundlist',
+                    itemSelector: 'div',
+                    itemTpl: [
+                        '<span style="font-weight:bold"> {referringPhysicianLName} : {referringPhysicianFName}</span><br/>,',
+                        '                         Adresse :',
+                        '                        {referringPhysicianAddress}<br/>',
+                        '                        {referringPhysicianZipCode} {city}'
+                    ]
+                }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'referringPhysicianId',
             text: 'refPhId',
             editor: {
                 xtype: 'textfield',
+                hidden: true,
                 itemId: 'referringPhysicianIdTextFieldItemId',
                 allowBlank: false
             }
@@ -58,30 +96,9 @@ Ext.define('MyApp.view.VisitRefPhGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'patientIsOrientedBy',
-            text: 'Prescripteur?',
+            text: ' Prescripteur',
             editor: {
                 xtype: 'checkboxfield'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'referringPhysicianSearch',
-            text: 'Coresspondants',
-            editor: {
-                xtype: 'combobox',
-                itemId: 'referringPhysicianSearchComboBoxEditorItemId',
-                allowBlank: false,
-                selectOnFocus: true,
-                displayField: 'referringPhysicianSearch',
-                forceSelection: true,
-                queryMode: 'local',
-                valueField: 'referringPhysicianSearch',
-                bind: {
-                    store: '{ReferringPhysicianSearchComboStore}'
-                },
-                listeners: {
-                    select: 'onReferringPhysicianSearchComboBoxEditorItemIdSelect'
-                }
             }
         }
     ],

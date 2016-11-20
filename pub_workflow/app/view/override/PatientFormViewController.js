@@ -26,7 +26,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
                     var rec=Ext.create('MyApp.model.PatientModel',_resultObject.record);
                     view.loadRecord(rec);
-
+                    view.getPlugin('formcheckdirty').addFieldsCnangeListener();
                 });
         }
         else
@@ -35,6 +35,7 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
             var rec=Ext.create('MyApp.model.PatientModel');
             rec.set('patientId',UUID());
             view.loadRecord(rec);
+            view.getPlugin('formcheckdirty').addFieldsCnangeListener();
         }
 
     },

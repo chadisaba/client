@@ -25,6 +25,10 @@ Ext.define('MyApp.view.VisitRefPhGridViewController', {
 
     },
 
+    onReferringPhysicianSearchComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);

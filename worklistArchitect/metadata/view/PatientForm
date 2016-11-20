@@ -36,7 +36,7 @@
                 ],
                 "fn": "processPatientForm",
                 "implHandler": [
-                    ""
+                    "FormAddPlugins.addCheckDirtyPlugin(this);"
                 ]
             },
             "name": "processPatientForm",
@@ -91,14 +91,9 @@
                         "defaults": [
                             "{name : 'patientGender'}"
                         ],
-                        "fieldLabel": [
-                            "{trans.gender}"
-                        ]
+                        "fieldLabel": "gender"
                     },
                     "name": "MyRadioGroup1",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
                     "designerId": "c5f7855d-14a7-4753-955b-4d417908a9ac",
                     "cn": [
                         {
@@ -158,9 +153,7 @@
                     "userConfig": {
                         "allowBlank": false,
                         "displayField": "patientTitle",
-                        "fieldLabel": [
-                            "{trans.civility}"
-                        ],
+                        "fieldLabel": "civility",
                         "forceSelection": true,
                         "itemId": "patientTitleComboBoxEditorItemId",
                         "layout|anchor": "100%",
@@ -174,8 +167,7 @@
                     },
                     "name": "MypatientTitleComboBox",
                     "configAlternates": {
-                        "store": "binding",
-                        "fieldLabel": "binding"
+                        "store": "binding"
                     },
                     "designerId": "026413d7-d184-43f9-876e-5029eef26a72"
                 },
@@ -188,16 +180,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "fieldLabel": [
-                            "{trans.lastName}"
-                        ],
+                        "fieldLabel": "lastName",
                         "layout|anchor": "100%",
                         "name": "patientLName"
                     },
                     "name": "MypatientLNameTextField",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
                     "designerId": "5ad54f22-7cef-4ebd-a274-0941c9687bbd"
                 },
                 {
@@ -209,16 +196,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "fieldLabel": [
-                            "{trans.firstName}"
-                        ],
+                        "fieldLabel": "firstName",
                         "layout|anchor": "100%",
                         "name": "patientFname"
                     },
                     "name": "MypatientFnameTextField",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
                     "designerId": "024c7a80-5605-4738-99d3-51c8430b4a80"
                 },
                 {
@@ -229,17 +211,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": [
-                            "{trans.birthday}"
-                        ],
+                        "fieldLabel": "birthday",
                         "format": "d/m/Y",
                         "layout|anchor": "100%",
                         "name": "patientBirthday"
                     },
                     "name": "MyDateField1",
-                    "configAlternates": {
-                        "fieldLabel": "binding"
-                    },
                     "designerId": "ac1b50ae-07ff-409b-aad3-18281acafa4f"
                 },
                 {

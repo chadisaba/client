@@ -35,7 +35,131 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "referringPhysicianSearch",
+                "text": "Coresspondants"
+            },
+            "name": "MyreferringPhysicianSearchCol",
+            "designerId": "08e11ff5-a705-4e09-95ce-da04d57e687f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "referringPhysicianSearch",
+                        "forceSelection": null,
+                        "itemId": "referringPhysicianSearchComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{ReferringPhysicianSearchComboStore}"
+                        ],
+                        "valueField": "referringPhysicianSearch"
+                    },
+                    "name": "MyreferringPhysicianSearchComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "0daebc32-7c13-4935-820a-c648413341d0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
+                            "designerId": "8f0ff19c-dacb-4065-8c05-502b54b61675"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
+                            "designerId": "54e7c054-85db-486c-9a55-45c40dfad5ac"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList",
+                            "designerId": "4771366e-4f03-44b0-ad5b-07efd07cf28e",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<span style=\"font-weight:bold\"> {referringPhysicianLName} : {referringPhysicianFName}</span><br/>,",
+                                            "                         Adresse :",
+                                            "                        {referringPhysicianAddress}<br/>",
+                                            "                        {referringPhysicianZipCode} {city}"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "7da9f1a8-7aef-4de2-9c6a-3ed5f9d44b57"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    "<tpl for=\".\">{referringPhysicianLName} : {referringPhysicianFName}</tpl>"
+                                ]
+                            },
+                            "name": "displayTpl",
+                            "designerId": "9d816424-fcda-4f06-89f2-7c059b79acaa"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "referringPhysicianId",
+                "hidden": true,
                 "text": "refPhId"
             },
             "name": "MyreferringPhysicianIdCol",
@@ -50,6 +174,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
+                        "hidden": true,
                         "itemId": "referringPhysicianIdTextFieldItemId"
                     },
                     "name": "MyreferringPhysicianIdTextField",
@@ -66,7 +191,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "patientIsOrientedBy",
-                "text": "Prescripteur?"
+                "text": " Prescripteur"
             },
             "name": "MypatientIsOrientedByCol",
             "designerId": "3e5246c3-fb9f-4b82-8d80-24e53192b2d7",
@@ -105,64 +230,6 @@
                     },
                     "name": "renderer",
                     "designerId": "768710af-d9d4-4eaf-bce9-3b91f22ca7b7"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "referringPhysicianSearch",
-                "text": "Coresspondants"
-            },
-            "name": "MyreferringPhysicianSearchCol",
-            "designerId": "08e11ff5-a705-4e09-95ce-da04d57e687f",
-            "cn": [
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "displayField": "referringPhysicianSearch",
-                        "forceSelection": true,
-                        "itemId": "referringPhysicianSearchComboBoxEditorItemId",
-                        "queryMode": "local",
-                        "selectOnFocus": true,
-                        "store": [
-                            "{ReferringPhysicianSearchComboStore}"
-                        ],
-                        "valueField": "referringPhysicianSearch"
-                    },
-                    "name": "MyreferringPhysicianSearchComboBox",
-                    "configAlternates": {
-                        "store": "binding"
-                    },
-                    "designerId": "0daebc32-7c13-4935-820a-c648413341d0",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
-                                "name": "select",
-                                "scope": "me"
-                            },
-                            "name": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
-                            "designerId": "8f0ff19c-dacb-4065-8c05-502b54b61675"
-                        }
-                    ]
                 }
             ]
         },

@@ -49,7 +49,6 @@ Ext.application({
         'ReportTemplateModel',
         'ReportKeywordComboModel',
         'VisitRefPhGridModel',
-        'ReferringPhysicianSearchComboModel',
         'RemplacantComboModel',
         'EstablishmentComboModel',
         'EstHasServComboModel'

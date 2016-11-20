@@ -36,7 +36,7 @@
                 "patientId": null,
                 "titleCollapse": false
             },
-            "name": "patientform1",
+            "name": "patientform",
             "designerId": "5cc49028-14a1-4119-ac8f-13514ccc00a2",
             "customConfigs": [
                 {

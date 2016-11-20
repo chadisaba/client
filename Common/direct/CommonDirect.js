@@ -234,11 +234,17 @@ var CommonDirect={
             });
          return promise;
     },
-      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh,_searchFieldName2)
+
+      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh,_searchFieldName2,_inGridEditor)
         {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue))
+            var inGridEditor=_inGridEditor||false;
+            var newCond=true;
+            if(inGridEditor)
+                 newCond=(_field.getRawValue().indexOf(":")<0);
+
+        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&&newCond)
         {
         if(_searchValue.length>=searchLengh)
         {

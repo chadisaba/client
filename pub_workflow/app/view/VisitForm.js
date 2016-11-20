@@ -54,7 +54,7 @@ Ext.define('MyApp.view.VisitForm', {
         {
             xtype: 'fieldset',
             itemId: 'visitFieldSetItemId',
-            title: '',
+            title: 'Consultation',
             items: [
                 {
                     xtype: 'tbspacer',
@@ -159,7 +159,7 @@ Ext.define('MyApp.view.VisitForm', {
                                     width: 215,
                                     fieldLabel: 'IPP',
                                     labelWidth: 80,
-                                    name: 'visitHospitVisitNumber'
+                                    name: 'visitIppPatient'
                                 },
                                 {
                                     xtype: 'tbspacer',
@@ -333,7 +333,6 @@ Ext.define('MyApp.view.VisitForm', {
                                     itemId: 'visitPdsComboBoxEditorItemId',
                                     fieldLabel: 'Parcours soins',
                                     name: 'visitPds',
-                                    allowBlank: false,
                                     selectOnFocus: true,
                                     displayField: 'visitPds',
                                     forceSelection: true,
@@ -399,16 +398,30 @@ Ext.define('MyApp.view.VisitForm', {
         },
         {
             xtype: 'studyvisitgrid',
-            header: false,
             externalEditingPlugin: {
                 pluginId: 'gridediting',
                 onlyADM: true
             },
+            header: false,
             listeners: {
                 studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent',
                 studyVisitGridStartEditEvent: 'onStudyVisitGridItemIdStudyVisitGridStartEditEvent'
             }
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processVisitForm(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processVisitForm: function(config) {
+        FormAddPlugins.addCheckDirtyPlugin(this);
+    }
 
 });

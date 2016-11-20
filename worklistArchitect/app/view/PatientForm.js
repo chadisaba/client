@@ -63,9 +63,7 @@ Ext.define('MyApp.view.PatientForm', {
                     defaults: {
                         name: 'patientGender'
                     },
-                    bind: {
-                        fieldLabel: '{trans.gender}'
-                    },
+                    fieldLabel: 'gender',
                     items: [
                         {
                             xtype: 'radiofield',
@@ -86,6 +84,7 @@ Ext.define('MyApp.view.PatientForm', {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'patientTitleComboBoxEditorItemId',
+                    fieldLabel: 'civility',
                     name: 'patientTitle',
                     allowBlank: false,
                     selectOnFocus: true,
@@ -94,36 +93,29 @@ Ext.define('MyApp.view.PatientForm', {
                     queryMode: 'local',
                     valueField: 'patientTitleId',
                     bind: {
-                        fieldLabel: '{trans.civility}',
                         store: '{PatientTitleComboStore}'
                     }
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    fieldLabel: 'lastName',
                     name: 'patientLName',
-                    allowBlank: false,
-                    bind: {
-                        fieldLabel: '{trans.lastName}'
-                    }
+                    allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    fieldLabel: 'firstName',
                     name: 'patientFname',
-                    allowBlank: false,
-                    bind: {
-                        fieldLabel: '{trans.firstName}'
-                    }
+                    allowBlank: false
                 },
                 {
                     xtype: 'datefield',
                     anchor: '100%',
+                    fieldLabel: 'birthday',
                     name: 'patientBirthday',
-                    format: 'd/m/Y',
-                    bind: {
-                        fieldLabel: '{trans.birthday}'
-                    }
+                    format: 'd/m/Y'
                 },
                 {
                     xtype: 'textfield',
@@ -371,7 +363,7 @@ Ext.define('MyApp.view.PatientForm', {
     },
 
     processPatientForm: function(config) {
-
+        FormAddPlugins.addCheckDirtyPlugin(this);
     }
 
 });

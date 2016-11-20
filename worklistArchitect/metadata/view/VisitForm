@@ -141,7 +141,7 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "visitFieldSetItemId",
-                "title": ""
+                "title": "Consultation"
             },
             "name": "MyFieldSet",
             "designerId": "8040b3f5-b848-4137-b6b0-a80051fe7024",
@@ -384,7 +384,7 @@
                                         "fieldLabel": "IPP",
                                         "labelWidth": 80,
                                         "layout|flex": null,
-                                        "name": "visitHospitVisitNumber",
+                                        "name": "visitIppPatient",
                                         "width": 215
                                     },
                                     "name": "MyvisitHospitVisitNumberTextField1",
@@ -772,7 +772,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowBlank": false,
                                         "displayField": "visitPds",
                                         "fieldLabel": "Parcours soins",
                                         "forceSelection": true,
@@ -993,6 +992,25 @@
                     "designerId": "13bba4ea-044a-4164-92e7-f00abdab06f4"
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processVisitForm",
+                "implHandler": [
+                    "FormAddPlugins.addCheckDirtyPlugin(this);"
+                ]
+            },
+            "name": "processVisitForm",
+            "designerId": "960c4a96-0a89-4de3-b1d7-2a383ab48402"
         }
     ]
 }
