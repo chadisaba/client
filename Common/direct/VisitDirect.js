@@ -45,6 +45,32 @@ return promise;
             });
         return promise;
     },
+    saveVisitAndStudyVisitAndRefPh:function(_visitObject,_studiesVisitArray,_studiesArray,_worklistDoctor,_visitRefPhDataObject,_refPhArray)
+    {
+        var promise = new Promise(
+            function (resolve, reject) {
+                var params={
+                    visitObj:_visitObject,
+                    studyVisitDataToBeSaved:_studiesVisitArray,
+                    studiesArray:_studiesArray,
+                    worklistDoctor:_worklistDoctor,
+                    visitRefPhDataToBeSaved:_visitRefPhDataObject,
+                    refPhArray:_refPhArray
+                };
+                Server.Visit.saveVisitAndStudyVisitAndRefPh(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+        return promise;
+    },
     getPatientAndCityAndReferringPhy:function(_patientId)
     {
         //Creating a promise

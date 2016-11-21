@@ -134,7 +134,12 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                 var studiesArray=studyVisitCtr.getStudiesArray();
 
                 var worklistDoctor=form.down("#doctorComboBoxEditorItemId").getSelection().get('userInitiales');
-                VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor)
+
+                var visitRefPhCtr = me.getVisitRefPhGrid().getController();
+                var visitRefPhDataToBeSaved=visitRefPhCtr.getDataToBeSaved();
+
+                var refphArray=visitRefPhCtr.getRefPhArray();
+                VisitDirect.saveVisitAndStudyVisitAndRefPh(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor,visitRefPhDataToBeSaved,refphArray)
                     .then(function(_result)
                     {
                         resolve();
@@ -151,6 +156,10 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     getStudyVisitGrid:function()
     {
         return this.getView().down('#studyVisitGridItemId');
+    },
+    getVisitRefPhGrid:function()
+    {
+        return this.getView().down('#visitRefPhGridId');
     },
     getVisitId:function()
     {
