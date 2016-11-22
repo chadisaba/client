@@ -26,7 +26,7 @@ Ext.define('Plugins.form.CheckDirtyPlugin', {
 		return true;
 
 	},
-	addFieldsCnangeListener:function () {
+	addFieldsChangeListener:function () {
 		var plugin = this;
 		// Change event on all fields in order to mark changes
 		var fields = plugin.form.query('field');

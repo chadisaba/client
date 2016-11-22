@@ -63,7 +63,7 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                             var visitRec=new MyApp.model.VisitModel(_resultValue[0]);
 
                             view.loadRecord(visitRec);
-
+                            me.originalValues=view.getValues();
                             studyVisitController.initGrid([],true,_visitId);
                             studyVisitGridView.getPlugin('gridediting').lockGrid(false);
 
@@ -71,10 +71,9 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                             visitRefPhGridController.initGrid([],true,_visitId);
                           visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
 
-                            view.getPlugin('formcheckdirty').addFieldsCnangeListener();
+                            view.getPlugin('formcheckdirty').addFieldsChangeListener();
                         });
                 }
-
                 else
                 {
                     // we create a new visit
@@ -88,13 +87,13 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
                     visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
                     view.loadRecord(visitRec);
-
+                    me.originalValues= {visitId:visitRec.get('patientId')};
                     studyVisitController.initGrid();
                     studyVisitGridView.getPlugin('gridediting').lockGrid(false);
 
                     visitRefPhGridController.initGrid();
                     visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
-                    view.getPlugin('formcheckdirty').addFieldsCnangeListener();
+                    view.getPlugin('formcheckdirty').addFieldsChangeListener();
                 }
             });
 
@@ -119,11 +118,24 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                 var form=me.getView();
                 var rec=form.getRecord();
                 form.updateRecord(rec); // update the record with the formvisitFormSave
-                var dataToSave=rec.data;
-                var visitTimeHour=dataToSave.visitTime.getHours();
-                var visitTimeMinutes=dataToSave.visitTime.getMinutes();
-                dataToSave.visitTime=visitTimeHour+":"+visitTimeMinutes;
 
+                // check if the visit form values have been changed
+                var  currentValues = form.getValues();
+                if(JSON.stringify(me.originalValues) == JSON.stringify(currentValues)){
+                    dataToSave=null;
+                }
+                else{
+
+                    var dataToSave=rec.data;
+                    var visitTimeHour=dataToSave.visitTime.getHours();
+                    var visitTimeMinutes=dataToSave.visitTime.getMinutes();
+                    dataToSave.visitTime=visitTimeHour+":"+visitTimeMinutes;
+                }
+
+
+
+
+                /** getting study visit data to save****/
                 var studyVisitCtr = me.getStudyVisitGrid().getController();
                 var studyVisitDataToBeSaved=studyVisitCtr.getDataToBeSaved();
                 studyVisitDataToBeSaved.forEach(
@@ -134,9 +146,28 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                 var studiesArray=studyVisitCtr.getStudiesArray();
 
                 var worklistDoctor=form.down("#doctorComboBoxEditorItemId").getSelection().get('userInitiales');
-                VisitDirect.saveVisitAndStudyVisit(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor)
+
+                /** getting visit referring physician data to save****/
+                var visitRefPhCtr = me.getVisitRefPhGrid().getController();
+                var visitRefPhDataToBeSaved=visitRefPhCtr.getDataToBeSaved();
+                visitRefPhDataToBeSaved.forEach(
+                    function(_item)
+                    {
+                        _item.visitId=rec.get('visitId');
+                    });
+
+                var refphArray=visitRefPhCtr.getRefPhArray();
+
+                VisitDirect.saveVisitAndStudyVisitAndRefPh(dataToSave,studyVisitDataToBeSaved,studiesArray,worklistDoctor,
+                    visitRefPhDataToBeSaved,
+                    refphArray,rec.get('visitId'),rec.get('patientId'),rec.get('siteId'))
                     .then(function(_result)
                     {
+                        me.originalValues=me.getView().getValues();
+                        // refresh visit referring phycisan grid
+                        visitRefPhCtr.initGrid([],true,rec.get('visitId'));
+                        // refresh study visit grid
+                        studyVisitCtr.initGrid([],true,rec.get('visitId'));
                         resolve();
                     })
                     .catch(function(_err)
@@ -151,6 +182,10 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     getStudyVisitGrid:function()
     {
         return this.getView().down('#studyVisitGridItemId');
+    },
+    getVisitRefPhGrid:function()
+    {
+        return this.getView().down('#visitRefPhGridId');
     },
     getVisitId:function()
     {

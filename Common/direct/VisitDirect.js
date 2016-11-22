@@ -45,7 +45,8 @@ return promise;
             });
         return promise;
     },
-    saveVisitAndStudyVisitAndRefPh:function(_visitObject,_studiesVisitArray,_studiesArray,_worklistDoctor,_visitRefPhDataObject,_refPhArray)
+    saveVisitAndStudyVisitAndRefPh:function(_visitObject,_studiesVisitArray,_studiesArray,_worklistDoctor
+        ,_visitRefPhDataObject,_refPhArray,_visitId,_patientId,_siteId)
     {
         var promise = new Promise(
             function (resolve, reject) {
@@ -55,7 +56,10 @@ return promise;
                     studiesArray:_studiesArray,
                     worklistDoctor:_worklistDoctor,
                     visitRefPhDataToBeSaved:_visitRefPhDataObject,
-                    refPhArray:_refPhArray
+                    refPhArray:_refPhArray,
+                    visitId:_visitId,
+                    patientId:_patientId,
+                    siteId:_siteId
                 };
                 Server.Visit.saveVisitAndStudyVisitAndRefPh(params,
                     function(_result){

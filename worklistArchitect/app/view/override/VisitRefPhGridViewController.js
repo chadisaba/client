@@ -30,7 +30,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     getDataToBeSaved: function () {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
-    getrefArray: function () {
+    getRefPhArray: function () {
         var view = this.getView();
         var studiesStore = view.getViewModel().getStore('VisitRefPhStore');
         var result = [];
@@ -66,7 +66,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
    onVisitRefPhGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
 	            var me=this;
-	            // TODO
+
 	            CommonDirect.saveDataArray(dataToBeSaved, "VISIT_HAS_RPH","visitHasRphId", comment)
 	                .then(function(_result)
 	                {
@@ -152,7 +152,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     getResultArray:function(filters)
     {
     	var me=this;
-    	   var promise = new Promise(
+    	  return  new Promise(
     	            function (resolve, reject) {
     	                var mainTableObject = {};
     	                mainTableObject.tableName = 'VISIT_HAS_RPH';
@@ -177,7 +177,6 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
 
     	            }
     	        );
-    	        return promise;
     },
     /*********************** combo onSelectHandler****************************************************/
   onReferringPhysicianSearchComboBoxEditorItemIdSelect: function(combo, record, eOpts) {

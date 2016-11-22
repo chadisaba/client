@@ -13,17 +13,6 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
 
     initGrid: function (_filters, _readOnlyGrid, _visitId) {
         var me = this;
-
-            /*var filtersArray=[{
-            name:"",
-            value:""
-            }];// if you filters are not nedded delete the filtersArray
-
-            var referringPhysicianSearchComboStore=this.getViewModel().getStore('ReferringPhysicianSearchComboStore');
-            CommonDirect.getData("xxTableName",filtersArray)
-            .then(function (_resultArray) {
-                referringPhysicianSearchComboStore.loadData(_resultArray);
-             });*/
         if (_visitId) {
             me.filters = _filters || [];
             me.filters.push({name: "visitId", value: _visitId});
@@ -41,6 +30,23 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     getDataToBeSaved: function () {
         return this.getView().getPlugin('gridediting').getDataToBeSaved().dataToBeSaved;
     },
+    getRefPhArray: function () {
+        var view = this.getView();
+        var studiesStore = view.getViewModel().getStore('VisitRefPhStore');
+        var result = [];
+        studiesStore.each(
+            function (_record) {
+                if(!_record.get('toDelete'))
+                {
+                    result.push({
+                        referringPhysicianSearch: _record.get('referringPhysicianSearch')
+                    })
+                }
+
+            });
+        return result;
+    },
+
     refreshGrid: function () {
         this.initGrid(this.filters);
     },
@@ -54,19 +60,17 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     },
 
     onVisitRefPhGridIdResetEdit: function(gridpanel,promptWin) {
-    	 this.onQuitEdit(gridpanel,promptWin);
+        Utility.grid.resetEdit(this.getView(), this.refreshGrid(), this.getView().getViewModel().getStore('VisitRefPhStore'), promptWin);
     },
 
    onVisitRefPhGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
 	            var me=this;
-	            // TODO
-	            CommonDirect.saveDataArray(dataToBeSaved, "xxTableName","xxFieldIdName", comment)
+
+	            CommonDirect.saveDataArray(dataToBeSaved, "VISIT_HAS_RPH","visitHasRphId", comment)
 	                .then(function(_result)
 	                {
 	                  me.refreshGrid();
-	                  gridpanel.getPlugin('gridediting').quitEditMode();
-	                  promptWin.close();
 	                })
 	                .catch(function(_err)
 	               {
@@ -81,7 +85,8 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
             added: true,
             modified: false,
             addedAndValidated:false,
-            toDelete: false
+            toDelete: false,
+            active:true
         });
         Utility.grid.addItem(this.getView(),rec);
     },
@@ -95,19 +100,16 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     },
     onVisitRefPhGridIdDuplicateItem: function() {
     	//TODO
-        Utility.grid.duplicateItemItem(this.getView(),'xxFieldIdName');
-        grid.getPlugin('gridediting').checkIfModifications();
+        Utility.grid.duplicateItemItem(this.getView(),'visitHasRphId');
+        this.getView().getPlugin('gridediting').checkIfModifications();
     },
 
     onQuitEdit:function(gridpanel,promptWin)
     {
 
    	 var me=this;
-        me.getResultArray(me.filters).then(
-            function (data) {
-                Utility.grid.quitEdit(me.getView(),data,me.getView().getViewModel().getStore('VisitRefPhStore'),promptWin);
-            }
-        );
+        Utility.grid.quitEdit(this.getView(), this.refreshGrid(), this.getView().getViewModel().getStore('VisitRefPhStore'), promptWin);
+
     },
     onVisitRefPhGridIdQuitEdit: function(gridpanel,promptWin) {
 
@@ -150,7 +152,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     getResultArray:function(filters)
     {
     	var me=this;
-    	   var promise = new Promise(
+    	  return  new Promise(
     	            function (resolve, reject) {
     	                var mainTableObject = {};
     	                mainTableObject.tableName = 'VISIT_HAS_RPH';
@@ -175,7 +177,6 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
 
     	            }
     	        );
-    	        return promise;
     },
     /*********************** combo onSelectHandler****************************************************/
   onReferringPhysicianSearchComboBoxEditorItemIdSelect: function(combo, record, eOpts) {

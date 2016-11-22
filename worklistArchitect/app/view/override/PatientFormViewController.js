@@ -2,8 +2,8 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
     override: 'MyApp.view.PatientFormViewController',
     initForm: function(_patientId) {
         var me=this;
-
         var view=me.getView();
+
         view.down('#cityNameComboBoxEditorItemId').setEmptyText(translate('enterAtLeast4Characters'));
         var viewModel=me.getViewModel();
         var patientId=null;
@@ -26,7 +26,8 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
 
                     var rec=Ext.create('MyApp.model.PatientModel',_resultObject.record);
                     view.loadRecord(rec);
-                    view.getPlugin('formcheckdirty').addFieldsCnangeListener();
+                    me.originalValues = me.getView().getValues();
+                    view.getPlugin('formcheckdirty').addFieldsChangeListener();
                 });
         }
         else
@@ -35,7 +36,8 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
             var rec=Ext.create('MyApp.model.PatientModel');
             rec.set('patientId',UUID());
             view.loadRecord(rec);
-            view.getPlugin('formcheckdirty').addFieldsCnangeListener();
+            me.originalValues = {patientId:rec.get('patientId')};
+            view.getPlugin('formcheckdirty').addFieldsChangeListener();
         }
 
     },
@@ -88,15 +90,26 @@ Ext.define('MyApp.view.override.PatientFormViewController', {
         //Creating a promise
         var promise=new Promise(
             function(resolve, reject) {
-                var rec=me.getView().getRecord();
-                var form=me.getView();
-                form.updateRecord(rec); // update the record with the form data
-                var dataToSave=rec.data;
-                PatientDirect.savePatient(dataToSave)
-                    .then(function()
-                    {
-                        resolve();
-                    });
+
+                 var    currentValues = me.getView().getValues();
+                // check if the form values have been changed
+                if(JSON.stringify(me.originalValues) == JSON.stringify(currentValues)){
+                   // Ext.MessageBox.alert(translate('Info'),translate('no change on the form'));
+                    resolve();
+                }
+                else
+                {
+                    var rec=me.getView().getRecord();
+                    var form=me.getView();
+                    form.updateRecord(rec); // update the record with the form data
+                    var dataToSave=rec.data;
+                    PatientDirect.savePatient(dataToSave)
+                        .then(function()
+                        {
+                            resolve();
+                        });
+                }
+
              });
          return promise;
     },
