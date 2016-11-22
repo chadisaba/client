@@ -65,7 +65,8 @@
             "ReportTemplateTabPanel",
             "WorklistHistoryPanel",
             "VisitRefPhGrid",
-            "AccueilPatientPanel"
+            "AccueilPatientPanel",
+            "AmoForm"
         ]
     },
     "name": "Application",

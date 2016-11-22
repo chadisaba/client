@@ -78,7 +78,8 @@ Ext.application({
         'ReportTemplateTabPanel',
         'WorklistHistoryPanel',
         'VisitRefPhGrid',
-        'AccueilPatientPanel'
+        'AccueilPatientPanel',
+        'AmoForm'
     ],
     controllers: [
         'MainController'

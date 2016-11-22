@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "amoform",
+        "designer|userClassName": "AmoFormViewController"
+    },
+    "designerId": "667ca9a8-cb97-41c0-86fb-3baacf4b4b21"
+}
