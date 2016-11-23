@@ -19,6 +19,7 @@ Ext.define('MyApp.view.AmoForm', {
 
     requires: [
         'MyApp.view.AmoFormViewModel',
+        'MyApp.view.AmoFormViewController',
         'Ext.form.FieldSet',
         'Ext.form.field.Tag',
         'Ext.form.field.Checkbox',
@@ -26,6 +27,7 @@ Ext.define('MyApp.view.AmoForm', {
         'Ext.form.field.TextArea'
     ],
 
+    controller: 'amoform',
     viewModel: {
         type: 'amoform'
     },
@@ -44,14 +46,22 @@ Ext.define('MyApp.view.AmoForm', {
                         {
                             xtype: 'tagfield',
                             anchor: '100%',
+                            itemId: 'typeAssCombo',
                             fieldLabel: 'Type assurance',
-                            name: 'typeAssurance'
+                            name: 'typeAssurance',
+                            listeners: {
+                                change: 'onTypeAssComboChange'
+                            }
                         },
                         {
                             xtype: 'tagfield',
                             anchor: '100%',
+                            itemId: 'pecCombo',
                             fieldLabel: 'Prise en charge',
-                            name: 'pec'
+                            name: 'pec',
+                            listeners: {
+                                change: 'onPecComboChange'
+                            }
                         },
                         {
                             xtype: 'x',

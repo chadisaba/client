@@ -53,11 +53,29 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Type assurance",
+                                "itemId": "typeAssCombo",
                                 "layout|anchor": "100%",
                                 "name": "typeAssurance"
                             },
                             "name": "MyTagField",
-                            "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee"
+                            "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTypeAssComboChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTypeAssComboChange",
+                                    "designerId": "c2699ad2-619a-43e8-b092-23159340b83d"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Tag",
@@ -68,11 +86,29 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Prise en charge",
+                                "itemId": "pecCombo",
                                 "layout|anchor": "100%",
                                 "name": "pec"
                             },
                             "name": "MyTagField1",
-                            "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c"
+                            "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPecComboChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPecComboChange",
+                                    "designerId": "b7778a2d-1ac4-4a87-bd52-8acf81efd668"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Checkbox",

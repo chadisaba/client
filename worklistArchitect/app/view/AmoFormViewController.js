@@ -15,5 +15,18 @@
 
 Ext.define('MyApp.view.AmoFormViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.amoform'
+    alias: 'controller.amoform',
+
+    requires: [
+        'MyApp.view.override.AmoFormViewController'
+    ],
+
+    onTypeAssComboChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onPecComboChange: function(field, newValue, oldValue, eOpts) {
+
+    }
+
 });

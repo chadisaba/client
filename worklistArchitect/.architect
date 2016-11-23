@@ -2650,10 +2650,20 @@
                             "id": "bd7ca367-9210-4a82-ac24-fa9c6fd3a994",
                             "cn": [
                                 {
-                                    "id": "570f103b-fe26-43c1-b1a7-1f76baa957ee"
+                                    "id": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
+                                    "cn": [
+                                        {
+                                            "id": "c2699ad2-619a-43e8-b092-23159340b83d"
+                                        }
+                                    ]
                                 },
                                 {
-                                    "id": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c"
+                                    "id": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c",
+                                    "cn": [
+                                        {
+                                            "id": "b7778a2d-1ac4-4a87-bd52-8acf81efd668"
+                                        }
+                                    ]
                                 },
                                 {
                                     "id": "08028dc8-ad45-4fd6-9a28-de274a35f1dc"
@@ -3748,7 +3758,7 @@
     },
     "inspectorState": {
         "topInstance": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
-        "selectedInstance": "59dda4a0-7994-447b-aff7-94a41fa3a2be"
+        "selectedInstance": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c"
     },
     "editMode": "design",
     "userSettings": {
