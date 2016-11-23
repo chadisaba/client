@@ -34,7 +34,8 @@
             "VisitRefPhGridModel",
             "RemplacantComboModel",
             "EstablishmentComboModel",
-            "EstHasServComboModel"
+            "EstHasServComboModel",
+            "RegoModel"
         ],
         "name": "MyApp",
         "requires": [

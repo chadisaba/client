@@ -69,10 +69,73 @@
                             "userConfig": {
                                 "fieldLabel": "Prise en charge",
                                 "layout|anchor": "100%",
-                                "name": "typeAssurance"
+                                "name": "pec"
                             },
                             "name": "MyTagField1",
                             "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "designer|createAlias": "x",
+                                "fieldLabel": "Forçage ALD",
+                                "labelWidth": null,
+                                "name": "regoForcageAld"
+                            },
+                            "name": "MyCheckbox1",
+                            "designerId": "08028dc8-ad45-4fd6-9a28-de274a35f1dc"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Forçage fin maternité",
+                                "labelWidth": 120,
+                                "name": "regoForcageMaternite"
+                            },
+                            "name": "MyCheckbox2",
+                            "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Date maternité",
+                                "labelWidth": null,
+                                "name": "regoDateMaternite"
+                            },
+                            "name": "MyDateField4",
+                            "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Droit commun",
+                                "labelWidth": null,
+                                "name": "regoDateAccDroitCommun"
+                            },
+                            "name": "MyDateField5",
+                            "designerId": "648f9947-7656-472d-b565-19b6ea90260a"
                         },
                         {
                             "type": "Ext.container.Container",
@@ -147,7 +210,8 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Du:",
                                 "labelWidth": 40,
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "name": "regoDu"
                             },
                             "name": "MyDateField2",
                             "designerId": "f6a550d8-917e-4fd0-a79e-1b2c3e850551"
@@ -163,7 +227,8 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Au:",
                                 "labelWidth": 40,
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "name": "regoAu"
                             },
                             "name": "MyDateField3",
                             "designerId": "d374cdbc-fe92-4748-a31a-3cc6cb50ab09"
@@ -262,9 +327,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "allowBlank": false,
                                         "fieldLabel": "Régime",
                                         "labelWidth": 50,
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "maxLength": 2,
+                                        "name": "regoCodeRegime"
                                     },
                                     "name": "MyTextField5",
                                     "designerId": "719d77ef-7dc9-4e01-b788-816a562ee6c8"
@@ -277,9 +345,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "allowBlank": false,
                                         "fieldLabel": "Caisse",
                                         "labelWidth": 40,
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "maxLength": 3,
+                                        "name": "regoCodeCaisse"
                                     },
                                     "name": "MyTextField6",
                                     "designerId": "a8bfab12-6bd2-4198-ab6c-b6b770e234e3"
@@ -292,14 +363,132 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "allowBlank": false,
                                         "fieldLabel": "Centre",
                                         "labelWidth": 40,
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "maxLength": 4,
+                                        "name": "regoCodeCentre"
                                     },
                                     "name": "MyTextField7",
                                     "designerId": "2c1b7047-1855-4df7-8fbc-50e5dd62c53f"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Bénéficiaire"
+                    },
+                    "name": "MyFieldSet11",
+                    "designerId": "dc2b2398-7a5d-438a-aae0-cd747652db38",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Tag",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Qualité bénéf.",
+                                "layout|anchor": "100%",
+                                "name": "regoQualiteBenef"
+                            },
+                            "name": "MyTagField2",
+                            "designerId": "f32c050a-d329-4ad3-8438-1339e831f215"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Rang gémelaire",
+                                "labelWidth": null,
+                                "maxLength": 2,
+                                "name": "regoRangGemBenef"
+                            },
+                            "name": "MyTextField8",
+                            "designerId": "bc249dda-602d-4e92-8f73-02952582b677"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Ass .Rang gémelaire",
+                                "labelWidth": null,
+                                "maxLength": 2,
+                                "name": "regoRangGemAssure"
+                            },
+                            "name": "MyTextField9",
+                            "designerId": "17b39252-ed90-4f8f-857f-a987511304b7"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nom",
+                                "labelWidth": null,
+                                "maxLength": 2,
+                                "name": "regoNomAssure"
+                            },
+                            "name": "MyTextField10",
+                            "designerId": "cd14075b-4cc1-44ec-9317-e58473c1076d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Prenom",
+                                "labelWidth": 50,
+                                "maxLength": 2,
+                                "name": "regoPrenomAssure"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "0d80cdc7-8024-4c08-8023-b88f5ebd8c1a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Date naissance ",
+                                "labelWidth": null,
+                                "maxLength": 2,
+                                "name": "regoDateNaissAss"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "59dda4a0-7994-447b-aff7-94a41fa3a2be"
                         }
                     ]
                 }

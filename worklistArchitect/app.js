@@ -51,7 +51,8 @@ Ext.application({
         'VisitRefPhGridModel',
         'RemplacantComboModel',
         'EstablishmentComboModel',
-        'EstHasServComboModel'
+        'EstHasServComboModel',
+        'RegoModel'
     ],
     views: [
         'WorklistGrid',

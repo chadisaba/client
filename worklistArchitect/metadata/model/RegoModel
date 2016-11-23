@@ -1,0 +1,470 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RegoModel"
+    },
+    "name": "MyModel",
+    "designerId": "73629766-1dc7-4e6d-8626-54a1c1eb56d0",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoId"
+            },
+            "name": "MyField3",
+            "designerId": "fda3c149-2262-47c1-ab93-e8c604207f58"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientId"
+            },
+            "name": "MyField4",
+            "designerId": "5b4e12d1-6430-4911-b452-9ad255c65618"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitId"
+            },
+            "name": "MyField5",
+            "designerId": "4aae1706-4498-4ae2-aaac-6f2416e907f2"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoNumSecu"
+            },
+            "name": "MyField6",
+            "designerId": "93213501-24b5-4954-83b0-8343f09cd194"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCleSecu"
+            },
+            "name": "MyField7",
+            "designerId": "56273d2b-b711-4bf1-bad4-73b039ad4a96"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCodeRegime"
+            },
+            "name": "MyField9",
+            "designerId": "93b1c624-c993-4bed-87da-2bf509726940"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCodeCaisse"
+            },
+            "name": "MyField17",
+            "designerId": "629ebb5b-2860-4776-aa5b-93c926626fb4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCodeCentre"
+            },
+            "name": "MyField19",
+            "designerId": "36f8cdde-ae0c-4a13-8218-8014dc8134d3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoDateNaiss"
+            },
+            "name": "MyField20",
+            "designerId": "c9844b60-8dd8-4075-bc57-c208657ea35f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoTauxRemboursement"
+            },
+            "name": "MyField21",
+            "designerId": "caae49ea-a836-4686-bea7-5babdaf5cffc"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCmu"
+            },
+            "name": "MyBoolean1",
+            "designerId": "d66c6a75-b35f-4624-bd90-e86a8233387b"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAld"
+            },
+            "name": "MyBoolean2",
+            "designerId": "46f533a4-b3af-4fe2-9b0b-ec6da96a6598"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoForcageAld"
+            },
+            "name": "MyBoolean3",
+            "designerId": "61e78991-bff8-4682-a452-5b2304bb24dd"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAutrePec"
+            },
+            "name": "MyBoolean4",
+            "designerId": "bdc4f6b7-dd2c-4392-9b88-7406e54e28aa"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAme"
+            },
+            "name": "MyBoolean5",
+            "designerId": "32ff893c-1839-48c8-81d8-8b6cb1202738"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAmeComp"
+            },
+            "name": "MyBoolean6",
+            "designerId": "05bb645a-62eb-4d4b-9a38-38b470002a0b"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoInvalidite"
+            },
+            "name": "MyBoolean7",
+            "designerId": "266b8c0c-aba7-40a7-a0b2-c221e2c30e53"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoDepistage"
+            },
+            "name": "MyBoolean8",
+            "designerId": "16690661-3ca7-4631-bae9-92b1fbf90b7d"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAccDroitCommun"
+            },
+            "name": "MyBoolean9",
+            "designerId": "e7803b95-c0b8-41cd-b1d6-1f170696661c"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoDateAccDroitCommun"
+            },
+            "name": "MyDate",
+            "designerId": "a747f1e6-ed99-470b-ae29-2e7d26989558"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoMaternite"
+            },
+            "name": "MyBoolean10",
+            "designerId": "b4e137e0-657e-449e-a834-b838194145dc"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoForcageMaternite"
+            },
+            "name": "MyBoolean11",
+            "designerId": "c8121896-c360-415d-a1fa-801934df2dc4"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoDateMaternite"
+            },
+            "name": "MyDate1",
+            "designerId": "73317897-8854-4855-a074-710df99fabf8"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoSmg"
+            },
+            "name": "MyBoolean12",
+            "designerId": "3a9ba60e-ccae-4881-a075-64b5136e6335"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoRegimeAlsace"
+            },
+            "name": "MyBoolean13",
+            "designerId": "f24069a1-b861-4e0c-bc9e-dbb0462679f9"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoQualiteBenef"
+            },
+            "name": "MyField47",
+            "designerId": "eab2c08f-47ab-4848-866f-b6f5325d999b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoRangGemBenef"
+            },
+            "name": "MyInteger3",
+            "designerId": "f09ce904-e05c-47d5-a985-4ffa202a5152"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoNomAssure"
+            },
+            "name": "MyField49",
+            "designerId": "f9dee639-e818-460f-a0ec-02cb865f2eaf"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoPrenomAssure"
+            },
+            "name": "MyField50",
+            "designerId": "8e32e2f9-8f91-4a02-b6f4-05418bfc3538"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoRangGemAssure"
+            },
+            "name": "MyInteger11",
+            "designerId": "9c19b6d3-22da-4d1b-9d9e-7b12829d8cf0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoCodeCouverture"
+            },
+            "name": "MyField52",
+            "designerId": "5a0996df-a014-4fd1-8702-6ab3abcbed26"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoFns"
+            },
+            "name": "MyField53",
+            "designerId": "7285de6c-fb78-493c-ba65-80e593a72c7b"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoDu"
+            },
+            "name": "MyDate2",
+            "designerId": "2ecb340e-02ad-49bf-87b2-5d4463ae7ece"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAu"
+            },
+            "name": "MyDate3",
+            "designerId": "c4bd7db6-ff2f-4e93-b75e-fcb38602d1dd"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "active"
+            },
+            "name": "MyBoolean14",
+            "designerId": "767730df-2bdf-41f6-8034-d217fb32db84"
+        }
+    ]
+}
