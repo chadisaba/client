@@ -52,9 +52,14 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                         site=siteResult[0];
 
 
+
                         window.localStorage.setItem('smartmed-jsDavUrl', site['SiteConfig.siteConfigJSDavUrl']);
                         window.localStorage.setItem('smartmed-wordPath', site['SiteConfig.siteConfigWordPath']);
                         window.localStorage.setItem('smartmed-userId', user.userId);
+
+                        window.localStorage.setItem('smartmed-siteConfigAmoDefault', site['SiteConfig.siteConfigAmoDefault']);
+                        window.localStorage.setItem('smartmed-siteConfigAmcDefault', site['SiteConfig.siteConfigAmcDefault']);
+
 
                         StateProvider.restoreState(user.userId)
                             .then(function(_result)

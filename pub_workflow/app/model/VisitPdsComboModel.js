@@ -22,10 +22,10 @@ Ext.define('MyApp.model.VisitPdsComboModel', {
 
     fields: [
         {
-            name: ''
+            name: 'id'
         },
         {
-            name: 'visitPds'
+            name: 'text'
         }
     ]
 });

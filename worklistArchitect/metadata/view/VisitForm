@@ -318,7 +318,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "collapsed": true,
                         "collapsible": true,
                         "title": "Etablissement hospitalier ou autre"
                     },
@@ -499,7 +498,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "collapsed": true,
                         "collapsible": true,
                         "container|align": "stretch",
                         "layout": "hbox",
@@ -772,7 +770,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "displayField": "visitPds",
                                         "fieldLabel": "Parcours soins",
                                         "forceSelection": true,
                                         "itemId": "visitPdsComboBoxEditorItemId",
@@ -783,7 +780,8 @@
                                         "selectOnFocus": true,
                                         "store": [
                                             "{VisitPdsComboStore}"
-                                        ]
+                                        ],
+                                        "valueField": "id"
                                     },
                                     "name": "MyvisitPdsComboBox",
                                     "configAlternates": {

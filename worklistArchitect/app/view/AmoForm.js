@@ -37,7 +37,7 @@ Ext.define('MyApp.view.AmoForm', {
     items: [
         {
             xtype: 'fieldset',
-            title: '',
+            title: 'A.M.O',
             items: [
                 {
                     xtype: 'fieldset',
@@ -64,15 +64,16 @@ Ext.define('MyApp.view.AmoForm', {
                             }
                         },
                         {
-                            xtype: 'x',
-                            fieldLabel: 'Forçage ALD',
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'Forçage A.L.D',
+                            labelWidth: 120,
                             name: 'regoForcageAld',
                             boxLabel: ''
                         },
                         {
                             xtype: 'checkboxfield',
                             fieldLabel: 'Forçage fin maternité',
-                            labelWidth: 120,
+                            labelWidth: 130,
                             name: 'regoForcageMaternite',
                             boxLabel: ''
                         },

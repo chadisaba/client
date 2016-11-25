@@ -26,7 +26,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": ""
+                "title": "A.M.O"
             },
             "name": "MyFieldSet7",
             "designerId": "852d5da5-dbfe-4744-beb4-da5ba4b886af",
@@ -119,13 +119,12 @@
                             "codeClass": null,
                             "userConfig": {
                                 "boxLabel": "",
-                                "designer|createAlias": "x",
-                                "fieldLabel": "Forçage ALD",
-                                "labelWidth": null,
+                                "fieldLabel": "Forçage A.L.D",
+                                "labelWidth": 120,
                                 "name": "regoForcageAld"
                             },
-                            "name": "MyCheckbox1",
-                            "designerId": "08028dc8-ad45-4fd6-9a28-de274a35f1dc"
+                            "name": "MyCheckbox2",
+                            "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -137,11 +136,11 @@
                             "userConfig": {
                                 "boxLabel": "",
                                 "fieldLabel": "Forçage fin maternité",
-                                "labelWidth": 120,
+                                "labelWidth": 130,
                                 "name": "regoForcageMaternite"
                             },
-                            "name": "MyCheckbox2",
-                            "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
+                            "name": "MyCheckbox3",
+                            "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
                         },
                         {
                             "type": "Ext.form.field.Date",

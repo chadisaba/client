@@ -360,19 +360,20 @@ Ext.define('MyApp.view.override.WorklistGridViewController', {
                 }).show();
                 break;
             case 'visitTime':
+                var items={
+                    region: 'center',
+
+                    visitId:record.get('visitId'),
+                    patientId:record.get('patientId')
+                };
+                if(appStandard)
+                    items.xtype= "patientreceivepanel";
+                else
+                    items.xtype= "accueilpatientpanel";
+
                 Ext.create('Common.ux.window.FullScreenWindow', {
                     title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
-                    items:{
-                        region: 'center',
-                        xtype:'patientreceivepanel',
-                        visitId:record.get('visitId'),
-                        patientId:record.get('patientId')
-                        /*plugins:[
-                         new Plugins.form.FormEditingPlugin({
-                         withValidation: false,
-                         showConfirmationOnSave: true
-                         })]*/
-                    }
+                    items:items
                 }).show();
                 break;
             case 'worklistLastCrStatus':

@@ -40,7 +40,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "name": "patientform1",
+                    "name": "patientform",
                     "designerId": "ee8b2495-d786-4ee4-a9cc-ce6e38eaa208",
                     "masterInstanceId": "bfd83a4d-2cd2-405e-a0a4-1caadcfc8596",
                     "cn": [
@@ -173,8 +173,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "flex": 1,
                         "header": false,
                         "layout|region": "center",
+                        "layout|split": true,
                         "scrollable": true
                     },
                     "name": "visitform",

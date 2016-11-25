@@ -11,7 +11,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
         translateUtil.transGrid(component);
         },
 
-    initGrid: function (_filters, _readOnlyGrid, _visitId) {
+    initGrid: function (_filters, _readOnlyGrid, _visitId,_refPhDataArray) {
         var me = this;
         if (_visitId) {
             me.filters = _filters || [];
@@ -19,12 +19,19 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
             var view = this.getView();
             if (!_readOnlyGrid)
                 view.getPlugin('gridediting').lockGrid(false);
-            this.getResultArray(me.filters).then(
-                function (data) {
-                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('VisitRefPhStore'));
 
-                }
-            );
+            if(_refPhDataArray)
+            {
+                me.refPhDataArray=_refPhDataArray;
+                Utility.grid.loadGrid(view, _refPhDataArray, view.getViewModel().getStore('VisitRefPhStore'),null,null,null,true);
+            }
+            else{
+                this.getResultArray(me.filters).then(
+                    function (data) {
+                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('VisitRefPhStore'));
+                    }
+                );
+            }
         }
     },
     getDataToBeSaved: function () {

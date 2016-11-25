@@ -73,20 +73,20 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     receiveExistingPatient:function(record)
     {
         var me=this;
+        var items={
+            region: 'center',
+            visitId:false,
+            patientId:record.get('patientId')
+        };
+        if(appStandard)
+            items.xtype= "patientreceivepanel";
+        else
+            items.xtype= "accueilpatientpanel";
+
         Ext.create('Common.ux.window.FullScreenWindow', {
 
             title:translate("recieving")+" "+record.get('patientLName')+ " "+record.get('patientFname'),
-            items:{
-                region: 'center',
-                xtype:'accueilpatientpanel',
-                patientId:record.get('patientId'),
-                header:false
-                /*plugins:[
-                 new Plugins.form.FormEditingPlugin({
-                 withValidation: false,
-                 showConfirmationOnSave: true
-                 })]*/
-            },
+            items:items,
             listeners:{
                 afterrender:function(_comp)
                 {
@@ -109,18 +109,18 @@ Ext.define('MyApp.view.override.PatientDetailSearchFormViewController', {
     onNouveauPatientBtnItemIdClick: function(button, e, eOpts) {
 
         var me=this;
+        var items={
+            region: 'center'
+        };
+        if(appStandard)
+            items.xtype= "patientreceivepanel";
+        else
+            items.xtype= "accueilpatientpanel";
+
         Ext.create('Common.ux.window.FullScreenWindow',{
             // animateTarget:'comboSearchPatient',
-            title:translate('patientInformations'),//"Informations du patient",
-            items:{
-                region: 'center',
-                xtype:'patientreceivepanel'
-                /*plugins:[
-                    new Plugins.form.FormEditingPlugin({
-                    withValidation: false,
-                    showConfirmationOnSave: true
-                })]*/
-            },
+            title:translate('receiving new patient'),//"Informations du patient",
+            items:items,
             listeners:{
                 afterrender:function(_comp)
                 {

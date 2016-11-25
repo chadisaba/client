@@ -130,7 +130,6 @@ Ext.define('MyApp.view.VisitForm', {
                 },
                 {
                     xtype: 'fieldset',
-                    collapsed: true,
                     collapsible: true,
                     title: 'Etablissement hospitalier ou autre',
                     items: [
@@ -212,7 +211,6 @@ Ext.define('MyApp.view.VisitForm', {
                 },
                 {
                     xtype: 'fieldset',
-                    collapsed: true,
                     collapsible: true,
                     title: 'Forfait technique',
                     layout: {
@@ -334,9 +332,9 @@ Ext.define('MyApp.view.VisitForm', {
                                     fieldLabel: 'Parcours soins',
                                     name: 'visitPds',
                                     selectOnFocus: true,
-                                    displayField: 'visitPds',
                                     forceSelection: true,
                                     queryMode: 'local',
+                                    valueField: 'id',
                                     bind: {
                                         store: '{VisitPdsComboStore}'
                                     }

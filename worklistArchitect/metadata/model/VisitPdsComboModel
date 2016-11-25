@@ -19,7 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": ""
+                "name": "id"
             },
             "name": "MyField1",
             "designerId": "3e4cf61d-5d9b-43fa-94c7-e8a496c054c9"
@@ -32,7 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "visitPds"
+                "name": "text"
             },
             "name": "MyField2",
             "designerId": "14427555-5166-4615-980e-986471ddf34e"

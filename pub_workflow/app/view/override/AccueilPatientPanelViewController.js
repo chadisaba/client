@@ -37,7 +37,7 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
             component.getController().initForm(this.getView().visitId,this.getView().patientId);
         else
         {
-            this.getView().down('#visitFormId').setDisabled(true);
+            component.setDisabled(true);
         }
     },
 

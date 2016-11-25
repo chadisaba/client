@@ -52,29 +52,34 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                         site=siteResult[0];
 
 
+
                         window.localStorage.setItem('smartmed-jsDavUrl', site['SiteConfig.siteConfigJSDavUrl']);
                         window.localStorage.setItem('smartmed-wordPath', site['SiteConfig.siteConfigWordPath']);
                         window.localStorage.setItem('smartmed-userId', user.userId);
+
+                        window.localStorage.setItem('smartmed-siteConfigAmoDefault', site['SiteConfig.siteConfigAmoDefault']);
+                        window.localStorage.setItem('smartmed-siteConfigAmcDefault', site['SiteConfig.siteConfigAmcDefault']);
+
 
                         StateProvider.restoreState(user.userId)
                             .then(function(_result)
                             {
                                 myMask.hide();
                                 /*if(appType=="office")
-                                {
-                                    window.open("../pub_workflow/indexOffice.html",'_self');
+                                 {
+                                 window.open("../pub_workflow/indexOffice.html",'_self');
 
-                                }*/
-                               /* else
-                                {*/
-                                     myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
+                                 }*/
+                                /* else
+                                 {*/
+                                myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
 
-                                    InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
-                                     InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
-                                     InitApp.userId= user.userId;
+                                InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
+                                InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                                InitApp.userId= user.userId;
 
-                                    InitApp.initIndexedDB(myMask,appType);
-                              /*  }*/
+                                InitApp.initIndexedDB(myMask,appType);
+                                /*  }*/
 
 
                             })
@@ -101,7 +106,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
             })
             .catch(function(_err)
             {
-              console.error(_err);
+                console.error(_err);
             });
 
     },
@@ -118,5 +123,5 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
     onPasswordItemIdKeydown: function(textfield, e, eOpts) {
         this.onEnterKey(e);
     }
-    
+
 });

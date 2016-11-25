@@ -108,7 +108,80 @@ var ComboData= {
             id:'ame',text :'A.M.E'
         }
 
-    ]
+    ],
+    pds:[
+        {
+            id:'11',text :'Médecin orienté par le M.T'
+        },
+        {
+            id:'12',text :'Médecin orienté par un médecin autre que le M.T'
+        },
+        {
+            id:'13',text :'Non respect du parcours de soins'
+        },
+        {
+            id:'1',text :'Exclusion du parcours de soins'
+        },
+        {
+            id:'2',text :'Urgence'
+        },
+        {
+            id:'3',text :'Médecin traitant'
+        },
+        {
+            id:'4',text :'Nouveau médecin traitant'
+        },
+        {
+            id:'5',text :'Médecin traitant de substitution'
+        },
+        {
+            id:'6',text :'Généraliste récemment installé'
+        },
+        {
+            id:'7',text :'Médecin installé en zone sous médicalisée'
 
+        },
+        {
+            id:'8',text :'Hors résidence habituelle du patient'
+        },
+        {
+            id:'9',text :'Accès direct spécifique'
+        },
+        {
+            id:'10',text :'Hors accès direct spécifique'
+        }
+    ],
+    qualiteBenef:[
+        {
+            id:'0',text :'Assuré'
+        },
+        {
+            id:'1',text :'Ascendant'
+        },
+        {
+            id:'2',text :'Conjoint'
+        },
+        {
+            id:'3',text :'Conjoint divorcé'
+        },
+        {
+            id:'4',text :'Concubin'
+        },
+        {
+            id:'5',text :'Conjoint séparé'
+        },
+        {
+            id:'6',text :'Enfant'
+        },
+        {
+            id:'7',text :'Bénéficiaire hors article 313'
+        },
+        {
+            id:'8',text :'Conjoint veuf'
+        },
+        {
+            id:'9',text :'Autre ayant-droit'
+        }
+    ]
 
 };

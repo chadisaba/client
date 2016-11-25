@@ -45,11 +45,11 @@ var InitApp={
             tableName:"DEVICE"
         }];
         var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
-
         var p11=CommonDirect.getData("SITE");
-
         var p12=CommonDirect.getData('TFIELD');
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12])
+        var p13=CommonDirect.getData('ESTABLISHMENT');
+        var p14=CommonDirect.getData('EST_HAS_SERV');
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -129,6 +129,12 @@ var InitApp={
 
                         var tFieldArray=values[10];
                         indexDBPromiseArray.push(IndexedDB.populateData('TFIELD',tFieldArray));
+
+                        var establissementArray=values[11];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ESTABLISHMENT',establissementArray));
+
+                        var estServiceArray=values[12];
+                        indexDBPromiseArray.push(IndexedDB.populateData('EST_HAS_SERV',estServiceArray));
 
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
