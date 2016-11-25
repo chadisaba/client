@@ -28,5 +28,13 @@ var FormAddPlugins={
         _scope.plugins.push (
             new Plugins.form.CheckDirtyPlugin()
         );
+    },
+
+    addResetComboPlugin:function(_scope)
+    {
+        _scope.plugins=[];
+        _scope.plugins.push (
+            new Plugins.combobox.ResetTrigger()
+        );
     }
 };

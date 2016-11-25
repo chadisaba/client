@@ -319,6 +319,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "collapsible": true,
+                        "itemId": "etablissementContainerItemId",
                         "title": "Etablissement hospitalier ou autre"
                     },
                     "name": "MyFieldSet5",
@@ -348,12 +349,30 @@
                                     "userConfig": {
                                         "boxLabel": "Hospitalisation",
                                         "fieldLabel": null,
+                                        "itemId": "visitIsHospitalizedCbItemId",
                                         "layout|flex": null,
                                         "name": "visitIsHospitalized",
                                         "width": 155
                                     },
                                     "name": "MyvisitIsHospitalizedCheckBox",
-                                    "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb"
+                                    "designerId": "1f12141b-81d9-405e-9f06-669e75b68bcb",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVisitIsHospitalizedCbItemIdChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onVisitIsHospitalizedCbItemIdChange",
+                                            "designerId": "2e8e13d0-2fbb-40de-a54d-3fbe9d8e2a45"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -364,6 +383,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fieldLabel": "Num séjour",
+                                        "itemId": "visitHospitVisitNumberItemId",
                                         "labelWidth": 80,
                                         "layout|flex": null,
                                         "name": "visitHospitVisitNumber",
@@ -500,6 +520,7 @@
                     "userConfig": {
                         "collapsible": true,
                         "container|align": "stretch",
+                        "itemId": "ftContainerItemId",
                         "layout": "hbox",
                         "title": "Forfait technique"
                     },
@@ -776,6 +797,12 @@
                                         "labelWidth": null,
                                         "layout|flex": 1,
                                         "name": "visitPds",
+                                        "plugins": [
+                                            "[{",
+                                            "ptype:'resetTrigger'",
+                                            "",
+                                            "}]"
+                                        ],
                                         "queryMode": "local",
                                         "selectOnFocus": true,
                                         "store": [
@@ -785,9 +812,34 @@
                                     },
                                     "name": "MyvisitPdsComboBox",
                                     "configAlternates": {
-                                        "store": "binding"
+                                        "store": "binding",
+                                        "plugins": "array"
                                     },
-                                    "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7"
+                                    "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "plugins",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVisitPdsComboBoxEditorItemIdSelect",
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onVisitPdsComboBoxEditorItemIdSelect",
+                                            "designerId": "adbc6006-ff17-44bf-8c8a-e59272f894b6"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.toolbar.Spacer",

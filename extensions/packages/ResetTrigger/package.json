@@ -1,0 +1,27 @@
+{
+    "name": "ResetTrigger",
+    "type": "code",
+    "creator": "anonymous",
+    "summary": "Reset Trigger ",
+    "detailedDescription": "Add a reset trigger to combobox or text field",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "local": true,
+    "requires": [],
+	"architect": {
+        "compatFrameworks": [
+                "ext51"
+        ],
+        "classes": [{
+                "definition": "ResetTrigger.Definition.js",
+                "className": "Ext.ux.inputs.ResetTrigger",
+                "js": [
+                        "ResetTrigger.js"
+                ],
+                "css": [
+                ]
+        }]
+}
+}
+

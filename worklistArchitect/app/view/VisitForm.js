@@ -130,6 +130,7 @@ Ext.define('MyApp.view.VisitForm', {
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'etablissementContainerItemId',
                     collapsible: true,
                     title: 'Etablissement hospitalier ou autre',
                     items: [
@@ -142,12 +143,17 @@ Ext.define('MyApp.view.VisitForm', {
                             items: [
                                 {
                                     xtype: 'checkboxfield',
+                                    itemId: 'visitIsHospitalizedCbItemId',
                                     width: 155,
                                     name: 'visitIsHospitalized',
-                                    boxLabel: 'Hospitalisation'
+                                    boxLabel: 'Hospitalisation',
+                                    listeners: {
+                                        change: 'onVisitIsHospitalizedCbItemIdChange'
+                                    }
                                 },
                                 {
                                     xtype: 'textfield',
+                                    itemId: 'visitHospitVisitNumberItemId',
                                     width: 215,
                                     fieldLabel: 'Num séjour',
                                     labelWidth: 80,
@@ -211,6 +217,7 @@ Ext.define('MyApp.view.VisitForm', {
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'ftContainerItemId',
                     collapsible: true,
                     title: 'Forfait technique',
                     layout: {
@@ -328,6 +335,11 @@ Ext.define('MyApp.view.VisitForm', {
                                 {
                                     xtype: 'combobox',
                                     flex: 1,
+                                    plugins: [
+                                        {
+                                            ptype: 'resetTrigger'
+                                        }
+                                    ],
                                     itemId: 'visitPdsComboBoxEditorItemId',
                                     fieldLabel: 'Parcours soins',
                                     name: 'visitPds',
@@ -337,6 +349,9 @@ Ext.define('MyApp.view.VisitForm', {
                                     valueField: 'id',
                                     bind: {
                                         store: '{VisitPdsComboStore}'
+                                    },
+                                    listeners: {
+                                        select: 'onVisitPdsComboBoxEditorItemIdSelect'
                                     }
                                 },
                                 {

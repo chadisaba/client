@@ -45,7 +45,15 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     },
 
+    onVisitIsHospitalizedCbItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onSiteIdComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onVisitPdsComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 

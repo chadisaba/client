@@ -81,11 +81,20 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
                     var selectAmo=parseInt(window.localStorage.getItem('smartmed-siteConfigAmoDefault'));
                     var selectAmc=parseInt(window.localStorage.getItem('smartmed-siteConfigAmcDefault'));
+                    var pdsMandatory=parseInt(window.localStorage.getItem('smartmed-siteConfigPdsMandatory'));
+
 
                     if(selectAmo)
                          visitRec.set('visitIsAmo',true);
                     if(selectAmc)
                         visitRec.set('visitIsAmc',true);
+
+
+                        var pdsCombo = view.down('#visitPdsComboBoxEditorItemId');
+                        pdsCombo.allowBlank=false;
+                        pdsCombo.setFieldLabel(pdsCombo.fieldLabel+'<span style="color:red;font-weight:bold" data-qtip="Required">*</span>');
+
+
 
                     // s'il s'agit d'un accueil depuis Hprim ou hl7 l'établissement du patient peut être connu
                     if(_establishmentId)
@@ -113,11 +122,6 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                             visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
                         }
 
-
-                        visitRec.set('doctorId',_rdvObject.doctorId);
-                        visitRec.set('doctorId',_rdvObject.doctorId);
-                        visitRec.set('doctorId',_rdvObject.doctorId);
-                        visitRec.set('doctorId',_rdvObject.doctorId);
                     }
                     else
                     {
@@ -144,6 +148,12 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     },
 
     onVisitFormItemIdInEdit: function(form) {
+
+    },
+    visitFormValidate:function()
+    {
+        var errorMsg='';
+
 
     },
     visitFormSave: function(button){
@@ -265,6 +275,17 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     onStudyVisitGridItemIdStudyVisitGridStartEditEvent: function(gridpanel) {
         this.getView().down("#visitFieldSetItemId").mask();
         this.fireViewEvent('studyVisitGridStartEditEvent');
-    }
+    },
+    onVisitIsHospitalizedCbItemIdChange: function(field, newValue, oldValue, eOpts)
+    {
+        var me=this;
+        var form=me.getView();
+       form.down('#visitHospitVisitNumberItemId').setValue('');
+    },
+    onVisitPdsComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var me=this;
+        me.fireViewEvent('selectPdsEvent',combo.getValue());
+    },
 
-    });
+
+});

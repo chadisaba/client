@@ -59,6 +59,8 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
 
                         window.localStorage.setItem('smartmed-siteConfigAmoDefault', site['SiteConfig.siteConfigAmoDefault']);
                         window.localStorage.setItem('smartmed-siteConfigAmcDefault', site['SiteConfig.siteConfigAmcDefault']);
+                        window.localStorage.setItem('smartmed-siteConfigPdsMandatory', site['SiteConfig.siteConfigPdsMandatory']);
+
 
 
                         StateProvider.restoreState(user.userId)
