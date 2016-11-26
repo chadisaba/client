@@ -33,6 +33,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         type: 'accueilpatientpanel'
     },
     layout: 'card',
+    header: false,
     title: 'Accueil Patient',
 
     items: [
@@ -44,6 +45,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
             items: [
                 {
                     xtype: 'patientform',
+                    noPlugin: true,
                     listeners: {
                         afterrender: 'onPatientFormIdAfterRender'
                     }
@@ -93,6 +95,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     header: false,
                     region: 'center',
                     split: true,
+                    noPlugin: true,
                     listeners: {
                         afterrender: 'onVisitFormIdAfterRender',
                         studyVisitGridEndEditEvent: 'onVisitFormIdStudyVisitGridEndEditEvent',

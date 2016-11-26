@@ -46,7 +46,9 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
                 if(!_record.get('toDelete'))
                 {
                     result.push({
-                        referringPhysicianSearch: _record.get('referringPhysicianSearch')
+                        referringPhysicianSearch: _record.get('referringPhysicianSearch'),
+                        referringPhysicianId: _record.get('referringPhysicianId'),
+                        patientIsOrientedBy: _record.get('patientIsOrientedBy')
                     })
                 }
 

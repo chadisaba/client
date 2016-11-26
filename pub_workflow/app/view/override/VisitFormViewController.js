@@ -71,6 +71,7 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
                     var  visitId=UUID();
                     visitRec.set('visitId',visitId);
+                    visitRec.set('patientId',_patientId);
                     visitRec.set('visitDate',new Date());
                     visitRec.set('visitTime',new Date());
                     visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
@@ -91,9 +92,10 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
 
                         var pdsCombo = view.down('#visitPdsComboBoxEditorItemId');
-                        pdsCombo.allowBlank=false;
-                        pdsCombo.setFieldLabel(pdsCombo.fieldLabel+'<span style="color:red;font-weight:bold" data-qtip="Required">*</span>');
-
+                        if(pdsMandatory){
+                            pdsCombo.allowBlank=false;
+                            pdsCombo.setFieldLabel(pdsCombo.fieldLabel+'<span style="color:red;font-weight:bold" data-qtip="Required">*</span>');
+                        }
 
 
                     // s'il s'agit d'un accueil depuis Hprim ou hl7 l'établissement du patient peut être connu
@@ -153,7 +155,40 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     visitFormValidate:function()
     {
         var errorMsg='';
+        var pdsCombo = this.getView().down('#visitPdsComboBoxEditorItemId');
 
+        var visitRefPhGridView=view.down('#visitRefPhGridId');
+        var visitRefPhGridController = visitRefPhGridView.getController();
+
+         if (pdsCombo.getValue()=== "11") {
+        if (visitRefPhGridController.getRefPhArray().length == 0) {
+            var errorMsg='';
+            errorMsg= "Vous devez renseinger le prescripteur ayant orienté le patient";
+
+        }
+
+    }
+    else if (pdsCombo.getValue() == "12") // médecin orienté par un autre médecin que le médecin traitant
+    {
+        // we check if just one prescripteur is checked(concerné par le pds)
+        var prescripteurIsChecked = false;
+        if (visitRefPhGridController.getRefPhArray().length.length == 0) {
+            errorMsg= "Vous devez renseinger le prescripteur ayant orienté le patient";
+
+        }
+        else
+            var refPhDataArray=visitRefPhGridController.getRefPhArray();
+            refPhDataArray.forEach(function(_item)
+            {
+               if(_item.patientIsOrientedBy)
+                   prescripteurIsChecked=true;
+
+            })
+        if(!prescripteurIsChecked)
+            errorMsg="Vous devez cocher le prescripteur ayant orienté le patient";
+
+
+    }
 
     },
     visitFormSave: function(button){

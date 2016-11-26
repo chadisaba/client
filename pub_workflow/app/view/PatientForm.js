@@ -177,6 +177,7 @@ Ext.define('MyApp.view.PatientForm', {
                         },
                         {
                             xtype: 'textfield',
+                            noReset: true,
                             itemId: 'patientSocialKey',
                             width: 40,
                             fieldLabel: '',
@@ -363,7 +364,7 @@ Ext.define('MyApp.view.PatientForm', {
     },
 
     processPatientForm: function(config) {
-        FormAddPlugins.addCheckDirtyPlugin(this);
+        FormAddPlugins.addPlugins(this);
     }
 
 });
