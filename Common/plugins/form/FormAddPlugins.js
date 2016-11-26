@@ -4,7 +4,7 @@ var FormAddPlugins={
             _scope.plugins=[];
             if(_scope.initialConfig.noPlugin)
             {
-
+                FormAddPlugins.addCheckDirtyPlugin(_scope);
             }
             else if(!_scope.initialConfig.externalEditingPlugin)
             {
@@ -21,10 +21,12 @@ var FormAddPlugins={
             {
                 _scope.plugins.push (new Plugins.form.FormPlugin(_scope.initialConfig.externalEditingPlugin));
             }
+            FormAddPlugins.addResetComboPlugin(_scope);
+            FormAddPlugins.addResetTextField(_scope);
         },
+
     addCheckDirtyPlugin:function(_scope)
     {
-        _scope.plugins=[];
         _scope.plugins.push (
             new Plugins.form.CheckDirtyPlugin()
         );
@@ -32,9 +34,14 @@ var FormAddPlugins={
 
     addResetComboPlugin:function(_scope)
     {
-        _scope.plugins=[];
         _scope.plugins.push (
-            new Plugins.combobox.ResetTrigger()
+            new Plugins.form.ResetComboTrigger()
+        );
+    },
+    addResetTextField:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.ResetTextFieldTrigger()
         );
     }
 };
