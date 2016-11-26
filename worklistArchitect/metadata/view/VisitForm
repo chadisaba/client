@@ -797,12 +797,6 @@
                                         "labelWidth": null,
                                         "layout|flex": 1,
                                         "name": "visitPds",
-                                        "plugins": [
-                                            "[{",
-                                            "ptype:'resetTrigger'",
-                                            "",
-                                            "}]"
-                                        ],
                                         "queryMode": "local",
                                         "selectOnFocus": true,
                                         "store": [
@@ -1056,7 +1050,7 @@
                 ],
                 "fn": "processVisitForm",
                 "implHandler": [
-                    "FormAddPlugins.addCheckDirtyPlugin(this);"
+                    "FormAddPlugins.addPlugins(this);"
                 ]
             },
             "name": "processVisitForm",

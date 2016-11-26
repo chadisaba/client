@@ -36,7 +36,7 @@
                 ],
                 "fn": "processPatientForm",
                 "implHandler": [
-                    "FormAddPlugins.addCheckDirtyPlugin(this);"
+                    "FormAddPlugins.addPlugins(this);"
                 ]
             },
             "name": "processPatientForm",
@@ -420,10 +420,21 @@
                                 "itemId": "patientSocialKey",
                                 "maxLength": 2,
                                 "name": "patientSocialKey",
+                                "noReset": true,
                                 "width": 40
                             },
                             "name": "MypatientSocialKeyTextField",
-                            "designerId": "c069fedc-1d7b-49df-93db-a0a751c358a1"
+                            "configAlternates": {
+                                "noReset": "boolean"
+                            },
+                            "designerId": "c069fedc-1d7b-49df-93db-a0a751c358a1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "noReset",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },

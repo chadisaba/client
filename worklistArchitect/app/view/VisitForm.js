@@ -335,11 +335,6 @@ Ext.define('MyApp.view.VisitForm', {
                                 {
                                     xtype: 'combobox',
                                     flex: 1,
-                                    plugins: [
-                                        {
-                                            ptype: 'resetTrigger'
-                                        }
-                                    ],
                                     itemId: 'visitPdsComboBoxEditorItemId',
                                     fieldLabel: 'Parcours soins',
                                     name: 'visitPds',
@@ -434,7 +429,7 @@ Ext.define('MyApp.view.VisitForm', {
     },
 
     processVisitForm: function(config) {
-        FormAddPlugins.addCheckDirtyPlugin(this);
+        FormAddPlugins.addPlugins(this);
     }
 
 });

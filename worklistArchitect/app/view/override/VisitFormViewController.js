@@ -71,6 +71,7 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
                     var  visitId=UUID();
                     visitRec.set('visitId',visitId);
+                    visitRec.set('patientId',_patientId);
                     visitRec.set('visitDate',new Date());
                     visitRec.set('visitTime',new Date());
                     visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
