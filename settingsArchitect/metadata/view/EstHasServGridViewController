@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "esthasservgrid",
+        "designer|userClassName": "EstHasServGridViewController"
+    },
+    "designerId": "08bdaebf-ca9c-4c40-8f6c-933afe04f9c2"
+}

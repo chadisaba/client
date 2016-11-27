@@ -47,7 +47,8 @@ Ext.define('MyApp.view.PatientForm', {
         align: 'stretch'
     },
     listeners: {
-        afterrender: 'onPatientFormItemIdAfterRender'
+        afterrender: 'onPatientFormItemIdAfterRender',
+        boxready: 'onPatientFormIdBoxReady'
     },
     items: [
         {

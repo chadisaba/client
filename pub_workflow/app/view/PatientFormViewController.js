@@ -63,6 +63,10 @@ Ext.define('MyApp.view.PatientFormViewController', {
 
     onSaveFormBtnItemIdClick: function(button, e, eOpts) {
 
+    },
+
+    onPatientFormIdBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

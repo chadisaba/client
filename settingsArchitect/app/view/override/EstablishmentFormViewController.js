@@ -3,7 +3,6 @@ Ext.define('MyApp.view.override.EstablishmentFormViewController', {
 
     onEstablishmentFormIdBoxReady: function(component, width, height, eOpts) {
     translateUtil.transForm(component);
-        Plugins.form.AddAsterixPlugin.addAsterix(component);
 
 },
     initForm: function(_formId) {
@@ -68,11 +67,11 @@ Ext.define('MyApp.view.override.EstablishmentFormViewController', {
         }
     },
 
-    enterEditMode: function(form) {
+    enterEditMode: function() {
     	this.getView().getPlugin('formediting').enterEditMode(this.getView());
     },
 
-    quitEditMode: function(form, promptWin) {
+    quitEditMode: function() {
     	this.fireViewEvent('quitFormEvent');
     },
 
@@ -82,14 +81,14 @@ Ext.define('MyApp.view.override.EstablishmentFormViewController', {
 
     saveForm:function(comment){
         var me=this;
-        var promise=new Promise(
-            function(resolve, reject) {
+       return new Promise(
+            function(resolve) {
                 var form=me.getView();
                 var rec=form.getRecord();
                 form.updateRecord(rec); // update the record with the form
                 var dataToSave=rec.data;
                 CommonDirect.saveData(dataToSave,'ESTABLISHMENT',comment)
-                    .then(function(_res)
+                    .then(function()
                     {
                         IndexedDB.updateRecord("ESTABLISHMENT","establishmentId",rec.get('establishmentId'), dataToSave).
                         then(function(_result)
@@ -100,13 +99,13 @@ Ext.define('MyApp.view.override.EstablishmentFormViewController', {
                     });
 
              });
-         return promise;
+
     },
 
     onEstablishmentFormItemIdSaveEdit: function(form, promptWin, comment) {
     	  var me=this;
           me.saveForm(comment)
-              .then(function(_result)
+              .then(function()
               {
                   if(promptWin.isButton)
                       Utility.loading.end(promptWin);
@@ -132,10 +131,10 @@ Ext.define('MyApp.view.override.EstablishmentFormViewController', {
 
     },
 
-    onEstablishmentFormItemIdQuitEdit: function(form, promptWin) {
+    onEstablishmentFormItemIdQuitEdit: function() {
     	this.quitEditMode();
     },
-    onZipCodeTextFieldChange: function(field, newValue, oldValue, eOpts) {
+    onZipCodeTextFieldChange: function(field, newValue) {
         if(!this.firstCityLoad)
             Utility.form.fillCityFromZipCode(this,"CityComboStore","cityComboBoxEditorItemId",field,newValue);
         this.firstCityLoad=false;

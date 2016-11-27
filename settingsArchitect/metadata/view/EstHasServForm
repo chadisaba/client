@@ -1,0 +1,201 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "esthasservform",
+        "designer|userClassName": "EstHasServForm",
+        "height": 500,
+        "itemId": "estHasServFormId",
+        "title": "My Form",
+        "width": 500
+    },
+    "name": "MyForm",
+    "designerId": "94e83516-f6e6-41e3-9bb9-8afdd1c91a5c",
+    "viewControllerInstanceId": "afa7009b-999e-47d9-8537-d7eafbb891f8",
+    "viewModelInstanceId": "7383a4ce-0668-4d12-93b7-0639df97b7ef",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processEstHasServForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
+            },
+            "name": "processEstHasServForm",
+            "designerId": "0b2b6fef-71e4-4832-b1fd-b24a6ab8302e"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onEstHasServFormItemIdBoxReady",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdBoxReady",
+            "designerId": "069e5a99-848c-4350-abe9-caa93a4a6a9f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onEstHasServFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdInEdit",
+            "designerId": "7a49eb2a-a30c-46eb-a995-265f6540c15b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onEstHasServFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdSaveEdit",
+            "designerId": "$0e492017-0dbd-4644-8a80-53b94a80b97f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onEstHasServFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdResetEdit",
+            "designerId": "1548c138-91ea-41fe-9c23-2c76fa52aa86"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onEstHasServFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdChHist",
+            "designerId": "53ef045f-4032-4aa0-b49a-721a41f99f6c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onEstHasServFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onEstHasServFormItemIdQuitEdit",
+            "designerId": "0b640a8f-3e0f-43a4-85ab-466b859446ab"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Service"
+            },
+            "name": "MyFieldSet",
+            "designerId": "e8a400a1-c553-4fab-9f26-c061cd48c7f5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "code",
+                        "layout|anchor": "100%",
+                        "name": "estHasServCode"
+                    },
+                    "name": "MyestHasServCodeTextField",
+                    "designerId": "4af0b2db-87bc-4c2c-9e88-ca36a4cb19ca"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "name",
+                        "layout|anchor": "100%",
+                        "name": "estHasServName"
+                    },
+                    "name": "MyestHasServNameTextField",
+                    "designerId": "be6bea80-1426-4175-ad4e-6e1a718ccf22"
+                }
+            ]
+        }
+    ]
+}

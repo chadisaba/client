@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "esthasservform",
+        "designer|userClassName": "EstHasServFormViewController"
+    },
+    "designerId": "afa7009b-999e-47d9-8537-d7eafbb891f8"
+ 
+}

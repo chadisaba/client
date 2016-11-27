@@ -1,0 +1,44 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "esthasservgrid",
+        "designer|userClassName": "EstHasServGridViewModel"
+    },
+    "designerId": "6fa53409-2342-4adf-98fd-68a38cae74e0",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "EstbHasServModel",
+                "name": "EstHasServStore"
+            },
+            "name": "EstHasServStore",
+            "designerId": "b9c6f999-6456-4434-a0e3-04420384cce7"
+        }
+        ,{
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "EstablishmentCodeComboModel",
+                "name": "EstablishmentCodeComboStore"
+            },
+            "name": "EstablishmentCodeComboStore",
+            "designerId": "dfa31400-51f8-449b-879b-a0e47d49d496"
+        }
+               
+    ]
+}

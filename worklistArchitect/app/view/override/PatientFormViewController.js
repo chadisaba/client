@@ -1,5 +1,9 @@
 Ext.define('MyApp.view.override.PatientFormViewController', {
     override: 'MyApp.view.PatientFormViewController',
+
+    onPatientFormIdBoxReady: function(component, width, height, eOpts) {
+        translateUtil.transForm(component);
+    },
     initForm: function(_patientId) {
         var me=this;
         var view=me.getView();

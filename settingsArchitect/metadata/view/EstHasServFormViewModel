@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "esthasservform",
+        "designer|userClassName": "EstHasServFormViewModel"
+    },
+    "designerId": "7383a4ce-0668-4d12-93b7-0639df97b7ef",
+      "cn": [
+       
+        
+    ]
+}

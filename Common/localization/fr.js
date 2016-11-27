@@ -108,7 +108,6 @@ function translate(text)
         "allStudy":"Tous les examens",
         "Doctor":"Médecin",
         "patientIdentity":"Identité patient",
-        "gender":"Sexe",
         "civility":"Civilité",
         "recieving": "Accueil de ",
 
@@ -123,9 +122,8 @@ function translate(text)
         "address":"Adresse",
         "zipCode":"Code postal",
         "city ":"Commune",
-        "phone":"Tél",
         "mobile":"Portable",
-        "email":"E-mail",
+
          "contactInformation":"Coordonnées",
 
 
@@ -134,10 +132,10 @@ function translate(text)
         "date":"Date",
         "hour":"Heure",
         "addStudy":"Ajouter un examen",
-        "free":"Gratuit",
+
         "hospitalized":"Hospitalisé",
         "emergency":"Urgence",
-        "studies":"Les examens",
+        "the studies":"Les examens",
         "price":"Prix",
         "device":"Appareil",
         "hospitVisitNumber":"N° séjour",
@@ -153,7 +151,7 @@ function translate(text)
         "C. Info":"C.info",
         "P.Info":"P.Info",
 
-        "birthday":"Naissance",
+        "birthdayAbrev":"Naissance",
         "studies":"Examens",
         "worklistDoctor":"Méd.",
         "consultant Ph.":"Traitant",

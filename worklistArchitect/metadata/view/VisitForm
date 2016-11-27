@@ -1093,6 +1093,21 @@
             },
             "name": "processVisitForm",
             "designerId": "960c4a96-0a89-4de3-b1d7-2a383ab48402"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onVisitFormIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onVisitFormIdBoxReady",
+            "designerId": "d3dedabe-c0e3-43b1-bb97-aa2f962beed9"
         }
     ]
 }

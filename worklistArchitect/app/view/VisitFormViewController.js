@@ -75,6 +75,10 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     onStudyVisitGridItemIdStudyVisitGridStartEditEvent: function(gridpanel) {
 
+    },
+
+    onVisitFormIdBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

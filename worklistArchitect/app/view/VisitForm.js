@@ -48,7 +48,8 @@ Ext.define('MyApp.view.VisitForm', {
         saveEdit: 'onVisitFormItemIdSaveEdit',
         resetEdit: 'onVisitFormItemIdResetEdit',
         chHist: 'onVisitFormItemIdChHist',
-        quitEdit: 'onVisitFormItemIdQuitEdit'
+        quitEdit: 'onVisitFormItemIdQuitEdit',
+        boxready: 'onVisitFormIdBoxReady'
     },
     items: [
         {

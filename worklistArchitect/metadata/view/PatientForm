@@ -874,6 +874,21 @@
                     "designerId": "c83c93f9-1263-4231-bc91-c6d43e4f1259"
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPatientFormIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onPatientFormIdBoxReady",
+            "designerId": "e810773e-7869-4eb5-a795-b45c0bfec530"
         }
     ]
 }

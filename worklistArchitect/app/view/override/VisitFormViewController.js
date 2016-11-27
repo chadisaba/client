@@ -1,6 +1,9 @@
 Ext.define('MyApp.view.override.VisitFormViewController', {
     override: 'MyApp.view.VisitFormViewController',
 
+    onVisitFormIdBoxReady: function(component, width, height, eOpts) {
+        translateUtil.transForm(component);
+    },
     initForm: function(_visitId,_patientId,_establishmentId,_rdvObject,_ftArray) {
 
         var me=this;
@@ -358,4 +361,5 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
     onEstablishmentComboBoxComboEditEvent: function(combo, value) {
         this.openEstablishmentWin(value, "edit form");
     }
+
 });
