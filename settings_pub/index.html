@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>generateArchitect</title>
     <script>
+        var appType="desktop";
+        var appStandard=false;
         var Ext = Ext || {};
         Ext.theme = {
             name: ""
@@ -25,6 +27,7 @@
     <script type="text/javascript" src="../Common/ext/ux/filterWidget/DateFilter.js"></script>
     <script type="text/javascript" src="../Common/ext/ux/filterWidget/NumericFilter.js"></script>
     <script type="text/javascript" src="../Common/ext/ux/filterWidget/TextFilter.js"></script>
+    <script type="text/javascript" src="../Common/ext/ux/filterWidget/TimeFilter.js"></script>
 
     <script src="../Common/utility/StateProvider.js"></script>
     <script src="../Common/utility/ServerStateProvider.js"></script>
@@ -40,10 +43,13 @@
     <script src="../Common/plugins/grid/GridEditingPlugin.js"></script>
     <script src="../Common/plugins/grid/GridAddPlugins.js"></script>
     <script src="../Common/plugins/grid/GridSearchPlugin.js"></script>
+    <script src="../Common/plugins/grid/GridInfoColumnPlugin.js"></script>
     <script src="../Common/plugins/form/FormPlugin.js"></script>
+    <script src="../Common/plugins/form/FormCheckDirtyPlugin.js"></script>
     <script src="../Common/plugins/form/FormAddPlugins.js"></script>
     <script src="../Common/plugins/KeyDownPlugin.js"></script>
-
+    <script src="../Common/plugins/form/ResetComboTrigger.js"></script>
+    <script src="../Common/plugins/form/ResetTextFieldTrigger.js"></script>
     <script src="../Common/plugins/Clock.js"></script>
     <script src="../Common/MenuPlugin.js"></script>
     <script src="../Common/plugins/MainContainerWrap.js"></script>
@@ -57,7 +63,7 @@
     <script src="../Common/utility/tree.js"></script>
     <script src="../Common/utility/uuid-v4.js"></script>
     <script src="../Common/utility/stringUtil.js"></script>
-
+    <script src="../Common/utility/DateUtil.js"></script>
     <script src="../Common/vtype/AdvancedVType.js"></script>
 
     <script src="../Common/direct/CityDirect.js"></script>
@@ -68,11 +74,10 @@
     <script src="../Common/direct/StudyDirect.js"></script>
     <script src="../Common/direct/UserDirect.js"></script>
     <script src="../Common/direct/DeviceDirect.js"></script>
-
-    <script src="../Common/uiHelper/VisitHelper.js"></script>
-    <script src="../Common/uiHelper/StudyHelper.js"></script>
-
-    <script src="../Common/func/Report.js"></script>
+    <script src="../Common/direct/ReportDirect.js"></script>
+    <script src="../Common/direct/DoctorDirect.js"></script>
+    <script src="../Common/direct/SiteDirect.js"></script>
+    <script src="../Common/direct/TfieldDirect.js"></script>
     <!--End order is important for theses files-->
 
     <link rel="stylesheet" href="../extjs61/classic/theme-triton/resources/theme-triton-all.css">
@@ -86,7 +91,24 @@
     <link rel="stylesheet" href="../Common/resources/css/themeStyle.css"/>
 
 
+    <!-- include UI Helper form other modules-->
+    <script src="../Common/uiHelper/VisitHelper.js"></script>
+    <script src="../Common/uiHelper/StudyHelper.js"></script>
+    <script src="../Common/func/Report.js"></script>
+
+    <!-- include form other modules-->
+    <!-- settings Module-->
+    <script type="text/javascript" src="../settings_pub/app/view/RefPhyForm.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/view/RefPhyFormViewController.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/view/RefPhyFormViewModel.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/view/override/RefPhyFormViewController.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/model/ReferringPhysicianGenderComboModel.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/model/ReferringPhysicianTitleComboModel.js"></script>
+    <script type="text/javascript" src="../settings_pub/app/model/RefPhyModel.js"></script>
+
+
     <script type="text/javascript" src="app.js"></script>
+
 
 
 

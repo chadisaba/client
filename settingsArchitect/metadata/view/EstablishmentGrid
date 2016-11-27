@@ -1,0 +1,699 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "establishmentgrid",
+        "designer|userClassName": "EstablishmentGrid",
+        "forceFit": true,
+        "itemId": "establishmentGridId",
+        "reference": "establishmentGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{EstablishmentStore}"
+        ],
+        "title": ""
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding"
+    },
+    "designerId": "359fa9f9-bb12-4582-b6d9-b30be5d4b96c",
+    "viewControllerInstanceId": "2fed9375-620d-4a0f-80b8-cb625e624ea6",
+    "viewModelInstanceId": "82399751-ef66-4166-ae95-7dff2509f02d",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "cityId",
+                "text": "cityId"
+            },
+            "name": "MycityIdCol",
+            "designerId": "886c6371-bacc-449c-ae7f-756d0e0c298a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "cityIdTextFieldItemId"
+                    },
+                    "name": "MycityIdTextField",
+                    "designerId": "087db929-1bcc-4d24-9ef7-9cf20e068526"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "city",
+                "text": "city"
+            },
+            "name": "MycityCol",
+            "designerId": "8c7fa7b8-b0ab-4644-abf0-1d9748c5cce9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": null,
+                        "forceSelection": true,
+                        "itemId": "cityComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CityComboStore}"
+                        ],
+                        "valueField": null
+                    },
+                    "name": "MycityComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "8f3efc95-afdb-4fb4-9f4f-b5eac3bdebe2",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCityComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCityComboBoxEditorItemIdSelect",
+                            "designerId": "929bf33f-47cd-492a-8cc4-c9ee3e012839"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentCode",
+                "text": "code"
+            },
+            "name": "MyestablishmentCodeCol",
+            "designerId": "48ab4a86-9765-4192-806b-3c30ef0e649e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "establishmentCodeTextFieldItemId"
+                    },
+                    "name": "MyestablishmentCodeTextField",
+                    "designerId": "c65f71df-f4f9-4f53-b3cd-c87814b5e285"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentName",
+                "text": "name"
+            },
+            "name": "MyestablishmentNameCol",
+            "designerId": "c614dede-f7b7-4490-903d-233ffd7fb516",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "establishmentNameTextFieldItemId"
+                    },
+                    "name": "MyestablishmentNameTextField",
+                    "designerId": "581e5419-f8c9-4e77-a465-cfb5a364f14f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentZipCode",
+                "text": "zip code"
+            },
+            "name": "MyestablishmentZipCodeCol",
+            "designerId": "788d0be6-1ad2-45a0-9a77-fb30e4ed5cd4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "establishmentZipCodeTextFieldItemId"
+                    },
+                    "name": "MyestablishmentZipCodeTextField",
+                    "designerId": "8a4a87b1-ab82-49bd-b3c9-562079aad18f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentAddress",
+                "text": "address"
+            },
+            "name": "MyestablishmentAddressCol",
+            "designerId": "678f4ef5-3774-4676-a9a5-fae16315308f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "establishmentAddressTextTextAreaItemId"
+                    },
+                    "name": "MyestablishmentAddressTextArea",
+                    "designerId": "e1f01b9b-3472-4bf9-a1d6-2355e80bb4f2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentPhoneNumber",
+                "text": "phone"
+            },
+            "name": "MyestablishmentPhoneNumberCol",
+            "designerId": "e9ebda59-4d6c-4607-81a8-6a56be640255",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "establishmentPhoneNumberTextFieldItemId"
+                    },
+                    "name": "MyestablishmentPhoneNumberTextField",
+                    "designerId": "60dd3100-5ee1-4ab5-8b7f-ec51b114f610"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentFaxNumber",
+                "text": "fax"
+            },
+            "name": "MyestablishmentFaxNumberCol",
+            "designerId": "6718518c-112f-43e5-87a3-70d9925c9907",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "establishmentFaxNumberTextFieldItemId"
+                    },
+                    "name": "MyestablishmentFaxNumberTextField",
+                    "designerId": "2b88ea94-837b-4342-9ac5-4ace0a9d41d1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "establishmentEmail",
+                "text": "email"
+            },
+            "name": "MyestablishmentEmailCol",
+            "designerId": "4ab62150-07f8-4fef-8065-a564b6c342c9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "establishmentEmailTextFieldItemId"
+                    },
+                    "name": "MyestablishmentEmailTextField",
+                    "designerId": "b91d7208-9cc8-4f7d-b18c-bbb5c92642bf"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "9b97a823-0fe6-43fe-91a9-c8c7b917f6d6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "select",
+            "designerId": "73c9b6ff-1ed1-4dd1-a886-edda78815718"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "33cd6f66-8872-41b2-9978-eea05129b1bb"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processEstablishmentGrid",
+                "implHandler": [
+                    "GridAddPlugins.addPlugins(this);",
+                    ""
+                ]
+            },
+            "name": "processEstablishmentGrid",
+            "designerId": "b15257ed-a59a-4fe8-99c1-6d794a670322"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdChHist",
+            "designerId": "0f7b9aba-ecd6-4198-8152-f65251351c09"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdAfterRender",
+            "designerId": "09cacd7f-d0d7-44e1-89a4-f72bf34898ba"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onEstablishmentGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdInEdit",
+            "designerId": "6af09964-26c4-44c2-be8d-945cdec2468a"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onEstablishmentGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdResetEdit",
+            "designerId": "ede8985e-6abe-461c-97f6-f65f16482755"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onEstablishmentGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdSaveEdit",
+            "designerId": "36f19689-bad2-4400-9308-497f2379ca81"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onEstablishmentGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdAddItem",
+            "designerId": "7f2d0502-9374-4f02-9525-9aa8b864e380"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdDeleteItem",
+            "designerId": "ed35be5a-df77-4682-ab22-025f30fb3900"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdDuplicateItem",
+                "name": "duplicateItem",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdDuplicateItem",
+            "designerId": "4c36c4a7-eef1-4d8f-a36f-2966a7d21c2b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdModifyItem",
+            "designerId": "4645593c-d73a-4be7-8c69-1450ef7e4bdd"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onEstablishmentGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdQuitEdit",
+            "designerId": "b5d86e86-cde9-4793-b947-9e66a3e48bd0"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "0d651589-80b0-4c30-bc48-6ecd29802b33"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onEstablishmentGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdBeforeEdit",
+            "designerId": "3f855c2e-f4b8-4a5f-992b-8bc9fe71d67b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onEstablishmentGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdCanceledit",
+            "designerId": "223c835d-1061-4cba-b1a1-8c227eb4730d"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdContainerClick",
+            "designerId": "1bf48705-0f04-42d6-a9e8-873d596a06a5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onEstablishmentGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdEdit",
+            "designerId": "d1ac08eb-1acc-4560-bbf4-8c6743ed8594"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEstablishmentGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdBeforeCellClick",
+            "designerId": "$96af6279-9089-484f-b7fc-0db2c8bcbfe0"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onEstablishmentGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "name": "onEstablishmentGridIdValidateedit",
+            "designerId": "a5017c9f-3339-413a-bfe0-ca693298fce7"
+        }
+    ]
+}

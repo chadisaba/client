@@ -321,6 +321,41 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
         var me=this;
         me.fireViewEvent('selectPdsEvent',combo.getValue());
     },
+    openEstablishmentWin:function(refPhyId,title)
+    {
+        var me=this;
+        Ext.create('Common.ux.window.FullScreenWindow', {
+            title:translate(title),
+            items:{
+                region: 'center',
+                xtype:'establishmentform',
+                header:false,
+                listeners:{
+                    afterrender:function(_comp)
+                    {
+                        _comp.getController().initForm(refPhyId);
+                    },
+                    formSavedEvent:function(_comp,_rec)
+                    {
+                        var store=me.getViewModel().getStore('EstablishmentComboStore');
+                        store.removeAll();
 
+                        store.loadData([_rec.getData()]);
+                        me.getView().down('#establishmentComboBoxEditorItemId').select(store.getAt(0));
+                    },
+                    quitFormEvent:function()
+                    {
+                        this.up('window').close();
+                    }
+                }
+            }
+        }).show();
+    },
+    onEstablishmentComboBoxComboAddEvent: function(combo, text) {
+        this.openEstablishmentWin(null,"add form");
+    },
 
+    onEstablishmentComboBoxComboEditEvent: function(combo, value) {
+        this.openEstablishmentWin(value, "edit form");
+    }
 });

@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "establishmentform",
+        "designer|userClassName": "EstablishmentFormViewModel"
+    },
+    "designerId": "065790c0-6151-4298-abe8-42e8a067b546",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CityNameComboModel",
+                "name": "CityComboStore"
+            },
+            "name": "CityComboStore",
+            "designerId": "de2febf2-aaa2-4c96-ba56-7ae501202b02"
+        }
+    ]
+}

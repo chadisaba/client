@@ -5,27 +5,8 @@ Ext.define('Plugins.form.CheckDirtyPlugin', {
 	init:function (form) {
 		var plugin = this;
 		plugin.form = form;
-		plugin.asterisk='<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
-		plugin.form.on('beforerender', plugin.onBeforeRender, this);
 	},
-	/**
-	 * @private
-	 * Adds asterisk to labels.
-	 */
-	onBeforeRender: function(formPanel) {
 
-		var i, len, items;
-
-		items = formPanel.query('[allowBlank=false]');
-		var item;
-		for (i = 0, len = items.length; i < len; i++) {
-			 item = items[i];
-			item.afterLabelTextTpl = (item.afterLabelTextTpl || "") + this.asterisk;
-		}
-
-		return true;
-
-	},
 	addFieldsChangeListener:function () {
 		var plugin = this;
 		// Change event on all fields in order to mark changes

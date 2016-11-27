@@ -67,6 +67,9 @@ var translateUtil={
                 _btn.setFieldLabel(translate(_btn.fieldLabel));
             if(_btn.emptyText)
                 _btn.setEmptyText(translate(_btn.emptyText));
+
+            _btn.setAfterLabelTextTpl("xxx") ;
+
         });
     },
     transPanel:function(_comp)

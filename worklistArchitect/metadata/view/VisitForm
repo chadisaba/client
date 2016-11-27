@@ -477,7 +477,45 @@
                                     "configAlternates": {
                                         "store": "binding"
                                     },
-                                    "designerId": "d8d81848-a3cd-4a05-aed3-c632e5f16c07"
+                                    "designerId": "d8d81848-a3cd-4a05-aed3-c632e5f16c07",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "text"
+                                                ],
+                                                "fn": "onEstablishmentComboBoxComboAddEvent",
+                                                "name": "comboAddEvent",
+                                                "scope": "me"
+                                            },
+                                            "name": "onEstablishmentComboBoxComboAddEvent",
+                                            "designerId": "a967d4be-6d31-4c6f-8e75-f8027c66d0d7"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "value"
+                                                ],
+                                                "fn": "onEstablishmentComboBoxComboEditEvent",
+                                                "name": "comboEditEvent",
+                                                "scope": "me"
+                                            },
+                                            "name": "onEstablishmentComboBoxComboEditEvent",
+                                            "designerId": "aeb367bc-60ea-43f8-9210-32193a1f0062"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.ux.inputs.AdvancedCombobox",

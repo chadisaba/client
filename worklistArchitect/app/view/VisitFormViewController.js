@@ -49,6 +49,14 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     },
 
+    onEstablishmentComboBoxComboAddEvent: function(text) {
+
+    },
+
+    onEstablishmentComboBoxComboEditEvent: function(value) {
+
+    },
+
     onSiteIdComboBoxItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

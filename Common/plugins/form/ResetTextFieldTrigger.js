@@ -28,7 +28,7 @@ Ext.define('Plugins.form.ResetTextFieldTrigger', {
                     };
                     _textField.setTriggers(triggers);
                     _textField.on('change', function (_textField, _newValue, _oldValue) {
-                        if (_newValue)
+                        if (_newValue && _newValue!="")
                             _textField.getTrigger('clear').show();
                         else
                             _textField.getTrigger('clear').hide();

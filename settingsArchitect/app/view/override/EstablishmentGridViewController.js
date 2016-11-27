@@ -1,10 +1,10 @@
-Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
-    override: 'MyApp.view.VisitRefPhGridViewController',
+Ext.define('MyApp.view.override.EstablishmentGridViewController', {
+    override: 'MyApp.view.EstablishmentGridViewController',
 
-    onVisitRefPhGridIdChHist: function() {
+    onEstablishmentGridIdChHist: function() {
 
     },
-    onVisitRefPhGridIdBoxReady: function(component, width, height, eOpts) {
+    onEstablishmentGridIdBoxReady: function(component, width, height, eOpts) {
         translateUtil.transGrid(component);
         },
 
@@ -17,10 +17,10 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
             value:""
             }];// if you filters are not nedded delete the filtersArray
             
-            var referringPhysicianSearchComboStore=this.getViewModel().getStore('ReferringPhysicianSearchComboStore');
+            var cityComboStore=this.getViewModel().getStore('CityComboStore');
             CommonDirect.getData("xxTableName",filtersArray)
             .then(function (_resultArray) {
-             me.getViewModel().getStore('ReferringPhysicianSearchComboStore').loadData(_resultArray);
+             me.getViewModel().getStore('CityComboStore').loadData(_resultArray);
              });
         
         
@@ -31,7 +31,7 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
 
             this.getResultArray(me.filters).then(
                 function (data) {
-                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('VisitRefPhStore'));
+                    Utility.grid.loadGrid(view, data, view.getViewModel().getStore('EstablishmentStore'));
 
                 }
             );
@@ -43,19 +43,19 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
         this.initGrid(this.filters);
     },
     
-    onVisitRefPhGridIdAfterRender: function(component, eOpts) {
+    onEstablishmentGridIdAfterRender: function(component, eOpts) {
      
     },
 
-    onVisitRefPhGridIdInEdit: function() {
+    onEstablishmentGridIdInEdit: function() {
 
     },
 
-    onVisitRefPhGridIdResetEdit: function(gridpanel,promptWin) {
+    onEstablishmentGridIdResetEdit: function(gridpanel,promptWin) {
     	 this.onQuitEdit(gridpanel,promptWin);
     },
 
-   onVisitRefPhGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
+   onEstablishmentGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
   
 	            var me=this;
 	            // TODO
@@ -73,9 +73,9 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
 	     
     },
 
-    onVisitRefPhGridIdAddItem: function() {
+    onEstablishmentGridIdAddItem: function() {
 
-        var rec = new MyApp.model.VisitRefPhGridModel({
+        var rec = new MyApp.model.EstablishmentModel({
             added: true,
             modified: false,
             addedAndValidated:false,
@@ -84,14 +84,14 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
         Utility.grid.addItem(this.getView(),rec);
     },
 
-    onVisitRefPhGridIdDeleteItem: function() {
+    onEstablishmentGridIdDeleteItem: function() {
         Utility.grid.deleteItem(this.getView());
     },
 
-    onVisitRefPhGridIdModifyItem: function() {
+    onEstablishmentGridIdModifyItem: function() {
         Utility.grid.modifyItem(this.getView());
     },
-    onVisitRefPhGridIdDuplicateItem: function() {
+    onEstablishmentGridIdDuplicateItem: function() {
     	//TODO
         Utility.grid.duplicateItemItem(this.getView(),'xxFieldIdName');
         grid.getPlugin('gridediting').checkIfModifications();
@@ -103,41 +103,41 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
    	 var me=this;
         me.getResultArray(me.filters).then(
             function (data) {
-                Utility.grid.quitEdit(me.getView(),data,me.getView().getViewModel().getStore('VisitRefPhStore'),promptWin);
+                Utility.grid.quitEdit(me.getView(),data,me.getView().getViewModel().getStore('EstablishmentStore'),promptWin);
             }
         );
     },
-    onVisitRefPhGridIdQuitEdit: function(gridpanel,promptWin) {
+    onEstablishmentGridIdQuitEdit: function(gridpanel,promptWin) {
     	
     	 this.onQuitEdit(gridpanel,promptWin);
         },
-    onVisitRefPhGridIdBeforeEdit: function(editor,context) {
+    onEstablishmentGridIdBeforeEdit: function(editor,context) {
         return (Utility.grid.beforeEdit(editor,context));
     },
 
  
 
-    onVisitRefPhGridIdCanceledit: function(editor,context) {
+    onEstablishmentGridIdCanceledit: function(editor,context) {
         return(Utility.grid.cancelEdit(editor,context));
     },
 
-    onVisitRefPhGridIdContainerClick: function(dataview, e, eOpts) {
+    onEstablishmentGridIdContainerClick: function(dataview, e, eOpts) {
         return(Utility.grid.gridContainerClick(this.getView()));
     },
 
-    onVisitRefPhGridIdEdit: function(editor,context) {
+    onEstablishmentGridIdEdit: function(editor,context) {
  // var columnsName=['name','text'];
     	
-    	var columnsName=['visitHasRphId','visitId','referringPhysicianId','patientIsOrientedBy','referringPhysicianSearch'];
+    	var columnsName=['cityId','city','establishmentCode','establishmentName','establishmentZipCode','establishmentAddress','establishmentPhoneNumber','establishmentFaxNumber','establishmentEmail'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
-    onVisitRefPhGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+    onEstablishmentGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
         Utility.grid.viewBeforeCellClick(this.getView());
     },
     
 
-    onVisitRefPhGridIdValidateedit: function(editor, context) {
+    onEstablishmentGridIdValidateedit: function(editor, context) {
         
         var check;
         check=true;
@@ -179,9 +179,9 @@ Ext.define('MyApp.view.override.VisitRefPhGridViewController', {
     	        return promise;
     },
     /*********************** combo onSelectHandler****************************************************/
-  onReferringPhysicianSearchComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
-        var idField=combo.up('roweditor').down('#referringPhysicianSearchComboBoxEditorItemId');
-        idField.setValue(record.get('referringPhysicianId'));
+  onCityComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+        var idField=combo.up('roweditor').down('#cityComboBoxEditorItemId');
+        idField.setValue(record.get('cityId'));
     },
             
 });

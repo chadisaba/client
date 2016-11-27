@@ -23,6 +23,7 @@ var FormAddPlugins={
             }
             FormAddPlugins.addResetComboPlugin(_scope);
             FormAddPlugins.addResetTextField(_scope);
+           // FormAddPlugins.addAsterixPlugin(_scope);
         },
 
     addCheckDirtyPlugin:function(_scope)
@@ -42,6 +43,12 @@ var FormAddPlugins={
     {
         _scope.plugins.push (
             new Plugins.form.ResetTextFieldTrigger()
+        );
+    },
+    addAsterixPlugin:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.AddAsterixPlugin()
         );
     }
 };

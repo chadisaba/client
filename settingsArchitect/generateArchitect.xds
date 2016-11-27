@@ -25,13 +25,19 @@
         "installStatus": "Not Installed",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.0.0",
-    "xdsBuild": 168,
+    "xdsVersion": "4.0.2",
+    "xdsBuild": 209,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
+            "82399751-ef66-4166-ae95-7dff2509f02d",
+            "2fed9375-620d-4a0f-80b8-cb625e624ea6",
+            "359fa9f9-bb12-4582-b6d9-b30be5d4b96c",
+            "065790c0-6151-4298-abe8-42e8a067b546",
+            "0d8269d5-5a68-4778-a645-5e6b3db1e533",
+            "7048a089-8f9c-40ac-9154-ff9195f342ac",
             "455b1a7a-3569-4ce4-a4a3-440be9416758",
             "b1e95721-c6b7-470b-ad6b-fd859060ef69",
             "419cb704-c086-41cf-b5db-d03d0d916cf0",
@@ -50,6 +56,7 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "d3dca200-d304-4a0c-88ea-ca4b6a23d7e9",
             "0d48d189-b33d-411c-8462-10b967325818",
             "568b5eeb-6216-4e32-bfa5-657d9322373f",
             "53de0be1-1f16-47c5-a23c-b289e56d27fc",

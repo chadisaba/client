@@ -52,6 +52,7 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
 
 
                 rec=Ext.create('MyApp.model.RefPhyModel',_result[0]);
+                me.firstCityLoad=true;
                 view.loadRecord(rec);
                 if(view.getPlugin('formediting'))
                      me.enterEditMode();
@@ -66,6 +67,7 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
             // we create a new record
             rec=Ext.create('MyApp.model.RefPhyModel');
             rec.set('referringPhysicianId',UUID());
+            rec.set('active',true);
             view.loadRecord(rec);
             if(view.getPlugin('formediting'))
                  me.enterEditMode();
@@ -134,7 +136,9 @@ Ext.define('MyApp.view.override.RefPhyFormViewController', {
     },
 
     onRefPhyZipCodeChange: function(field, newValue, oldValue, eOpts) {
-        Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
+        if(!this.firstCityLoad)
+            Utility.form.fillCityFromZipCode(this,"CityNameComboStore","cityNameComboBoxEditorItemId",field,newValue);
+        this.firstCityLoad=false;
     },
 
     onRefPhyFormItemIdResetEdit: function(form, promptWin) {

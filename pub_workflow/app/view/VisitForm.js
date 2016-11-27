@@ -195,6 +195,10 @@ Ext.define('MyApp.view.VisitForm', {
                                     valueField: 'establishmentId',
                                     bind: {
                                         store: '{EstablishmentComboStore}'
+                                    },
+                                    listeners: {
+                                        comboAddEvent: 'onEstablishmentComboBoxComboAddEvent',
+                                        comboEditEvent: 'onEstablishmentComboBoxComboEditEvent'
                                     }
                                 },
                                 {

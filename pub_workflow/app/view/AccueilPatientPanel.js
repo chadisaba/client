@@ -90,12 +90,12 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
             items: [
                 {
                     xtype: 'visitform',
+                    noPlugin: true,
                     flex: 1,
                     scrollable: true,
                     header: false,
                     region: 'center',
                     split: true,
-                    noPlugin: true,
                     listeners: {
                         afterrender: 'onVisitFormIdAfterRender',
                         studyVisitGridEndEditEvent: 'onVisitFormIdStudyVisitGridEndEditEvent',
