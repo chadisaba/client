@@ -34,31 +34,33 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             fields:storefields
         });
         var searchGridColumn=[];
-        searchFields.forEach(function(_searchField)
+        me.searchFields.forEach(function(_searchField)
         {
             searchGridColumn.push({
+                xtype: 'gridcolumn',
             text: _searchField.text, dataIndex: _searchField.name,filter: {
                     type: 'string'
                 }
             });
         });
 
-        var searhcGrid=Ext.create('Ext.grid.Grid', {
-            store: me.searchStore,
-            columns: searchGridColumn,
-            height: 200,
-            layout: 'fit',
-            fullscreen: true,
-            loadMask: true,
-            features: [{
-                ftype: 'filters',
-                // encode and local configuration options defined previously for easier reuse
-                encode: true, // json encode the filter query
-                local: me.local   // defaults to false (remote filtering)
+        me.searchStore.loadData([{Lname:'saba'}]);
+
+        Ext.create('Common.ux.window.FullScreenWindow', {
+            title:'',
+            items:[{
+                region: 'center',
+                xtype: 'grid',
+                store: me.searchStore,
+                columns: searchGridColumn,
+                loadMask: true,
+                plugins: [
+                    {
+                        ptype: 'gridfilters'
+                    }]
 
             }]
-        });
-        me.searchStore.loadData(storeData);
+        }).show();
     },
     createPicker: function() {
         var me = this,
@@ -94,10 +96,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             },
             comboSearchEvent: function(){
                 var me=this;
-                if(me.getValue())
-                    me.fireEvent('comboEditEvent', me,me.getValue());
-                else
-                    Ext.MessageBox.alert('Warring',translate('no item selected to edit'));
+                me.createSearchGrid();
 
 
             },

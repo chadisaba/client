@@ -259,6 +259,14 @@
                         "name": "referringPhysicianId",
                         "queryDelay": 500,
                         "queryMode": "local",
+                        "searchData": [
+                            "[]"
+                        ],
+                        "searchFields": [
+                            "[",
+                            "{text:'F Name',name:'FName'},{text:'L Name',name:'LName'}",
+                            "]"
+                        ],
                         "selectOnFocus": true,
                         "store": [
                             "{ReferringPhysicianNameComboStore}"
@@ -270,13 +278,25 @@
                     "configAlternates": {
                         "store": "binding",
                         "fieldLabel": "binding",
-                        "advancedListConfig": "object"
+                        "advancedListConfig": "object",
+                        "searchData": "array",
+                        "searchFields": "array"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "advancedListConfig",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "searchData",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "searchFields",
                             "type": "string"
                         }
                     ],
