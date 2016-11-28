@@ -16,13 +16,56 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
     selectOnFocus:true,
     queryMode: 'local',
     initComponent: function () {
-        this.callParent();
+        var me=this;
+        me.local=me.local||false;
+        me.callParent();
+    },
+    createSearchGrid:function()
+    {
+        var me = this;
+        var storefields=me.searchFields.map(function(_obj)
+        {
+           return _obj.name
+        });
+        var storeData=me.searchData;
+
+         me.searchStore=Ext.create('Ext.data.Store', {
+            storeId:'searchStoreId',
+            fields:storefields
+        });
+        var searchGridColumn=[];
+        searchFields.forEach(function(_searchField)
+        {
+            searchGridColumn.push({
+            text: _searchField.text, dataIndex: _searchField.name,filter: {
+                    type: 'string'
+                }
+            });
+        });
+
+        var searhcGrid=Ext.create('Ext.grid.Grid', {
+            store: me.searchStore,
+            columns: searchGridColumn,
+            height: 200,
+            layout: 'fit',
+            fullscreen: true,
+            loadMask: true,
+            features: [{
+                ftype: 'filters',
+                // encode and local configuration options defined previously for easier reuse
+                encode: true, // json encode the filter query
+                local: me.local   // defaults to false (remote filtering)
+
+            }]
+        });
+        me.searchStore.loadData(storeData);
     },
     createPicker: function() {
         var me = this,
             picker,
             pickerConf = Ext.apply({
                 xtype: 'btnboundlist',
+                enableSearchBtn:me.enableSearchBtn,
                 pickerField: me,
                 selectionModel: me.pickerSelectionModel,
                 floating: true,
@@ -41,6 +84,15 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
                 me.fireEvent('comboAddEvent', me, me.rawValue);
             },
             comboEditItemEvent: function(){
+                var me=this;
+                if(me.getValue())
+                    me.fireEvent('comboEditEvent', me,me.getValue());
+                else
+                    Ext.MessageBox.alert('Warring',translate('no item selected to edit'));
+
+
+            },
+            comboSearchEvent: function(){
                 var me=this;
                 if(me.getValue())
                     me.fireEvent('comboEditEvent', me,me.getValue());
@@ -80,6 +132,16 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
                         glyph: 'xf040@FontAwesome',
                         handler: function() {
                                 me.fireEvent('comboEditItemEvent', me, me.rawValue);
+
+                        }
+
+                    },
+                    {
+                        xtype:'button',
+                        glyph: 'xf002@FontAwesome',
+                        hidden:me.enableSearchBtn,
+                        handler: function() {
+                            me.fireEvent('comboSearchEvent', me, me.pickerField.getValue());
 
                         }
                     }
