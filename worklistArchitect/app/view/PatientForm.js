@@ -128,7 +128,6 @@ Ext.define('MyApp.view.PatientForm', {
                 },
                 {
                     xtype: 'advancedCombobox',
-                    anchor: '100%',
                     searchData: [
                         
                     ],
@@ -142,6 +141,10 @@ Ext.define('MyApp.view.PatientForm', {
                             name: 'LName'
                         }
                     ],
+                    anchor: '100%',
+                    mainTableObject: {
+                        tableName: 'REFERRING_PHYSICIAN'
+                    },
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,

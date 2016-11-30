@@ -255,6 +255,11 @@
                         "hideTrigger": null,
                         "itemId": "referringPhysicianNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
+                        "mainTableObject": [
+                            "{",
+                            "tableName:'REFERRING_PHYSICIAN'",
+                            "}"
+                        ],
                         "minChars": 4,
                         "name": "referringPhysicianId",
                         "queryDelay": 500,
@@ -280,7 +285,8 @@
                         "fieldLabel": "binding",
                         "advancedListConfig": "object",
                         "searchData": "array",
-                        "searchFields": "array"
+                        "searchFields": "array",
+                        "mainTableObject": "object"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
                     "customConfigs": [
@@ -297,6 +303,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "searchFields",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "mainTableObject",
                             "type": "string"
                         }
                     ],

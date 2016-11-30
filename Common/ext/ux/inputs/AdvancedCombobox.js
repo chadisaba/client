@@ -36,8 +36,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
              proxy: {
                  type: 'direct',
                  directFn: 'Server.GridFilter.getResultData',
-                 // Parameter name to send filtering information in
-                 filterParam: 'metadata',
+
                  reader: {
                      type: 'json',
                      rootProperty: 'data'
@@ -45,10 +44,27 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
              }
         });
         me.searchStore.on('beforeload',function ( store , operation , eOpts ){
-            "use strict";
-            var metadata= store.getProxy().getMetadata();
-            metadata.table="patient";
-            store.getProxy().setMetadata(metadata);
+            if(store.getFilters().items.length)
+            {
+                var metadata={};
+                var filtersArray=[];
+                metadata.params={};
+                store.getFilters().items.forEach(
+                    function(_filter)
+                    {
+                        filtersArray.push({name:_filter.getProperty(),value:_filter.getValue(),operator:_filter.getOperator()})
+                    });
+                metadata.params.filtersArray=filtersArray;
+                metadata.params.mainTableObject=me.mainTableObject;
+                if(me.joinTablesArray)
+                {
+                    metadata.params.joinTablesArray=me.joinTablesArray;
+                }
+                store.getProxy().setMetadata(metadata);
+            }
+            else
+                return false;
+
         });
         var searchGridColumn=[];
         me.searchFields.forEach(function(_searchField)
