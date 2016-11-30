@@ -269,7 +269,7 @@
                         ],
                         "searchFields": [
                             "[",
-                            "{text:'F Name',name:'FName'},{text:'L Name',name:'LName'}",
+                            "{text:'F Name',name:'referringPhysicianFName'},{text:'L Name',name:'referringPhysicianLName'}",
                             "]"
                         ],
                         "selectOnFocus": true,

@@ -47,14 +47,15 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             if(store.getFilters().items.length)
             {
                 var metadata={};
-                var filtersArray=[];
                 metadata.params={};
+               /* var filtersArray=[];
+
                 store.getFilters().items.forEach(
                     function(_filter)
                     {
                         filtersArray.push({name:_filter.getProperty(),value:_filter.getValue(),operator:_filter.getOperator()})
                     });
-                metadata.params.filtersArray=filtersArray;
+                metadata.params.filtersArray=filtersArray;*/
                 metadata.params.mainTableObject=me.mainTableObject;
                 if(me.joinTablesArray)
                 {

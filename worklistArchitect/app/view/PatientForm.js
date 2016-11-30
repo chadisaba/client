@@ -134,17 +134,17 @@ Ext.define('MyApp.view.PatientForm', {
                     searchFields: [
                         {
                             text: 'F Name',
-                            name: 'FName'
+                            name: 'referringPhysicianFName'
                         },
                         {
                             text: 'L Name',
-                            name: 'LName'
+                            name: 'referringPhysicianLName'
                         }
                     ],
-                    anchor: '100%',
                     mainTableObject: {
                         tableName: 'REFERRING_PHYSICIAN'
                     },
+                    anchor: '100%',
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,
