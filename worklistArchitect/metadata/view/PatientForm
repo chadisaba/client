@@ -248,7 +248,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "advancedListConfig": null,
-                        "directFn": "Server.GridFilter.getResultData",
                         "displayField": "referringPhysicianSearch",
                         "fieldLabel": [
                             "{trans.referringDoctor}"
@@ -256,13 +255,9 @@
                         "hideTrigger": null,
                         "itemId": "referringPhysicianNameComboBoxEditorItemId",
                         "layout|anchor": "100%",
-                        "mainTableObject": [
-                            "{",
-                            "tableName:'REFERRING_PHYSICIAN'",
-                            "}"
-                        ],
                         "minChars": 4,
                         "name": "referringPhysicianId",
+                        "proxyUrl": "Server.GridFilter.getResultData",
                         "queryDelay": 500,
                         "queryMode": "local",
                         "searchData": [
@@ -277,6 +272,7 @@
                         "store": [
                             "{ReferringPhysicianNameComboStore}"
                         ],
+                        "tableName": "REFERRING_PHYSICIAN",
                         "typeAhead": true,
                         "valueField": "referringPhysicianId"
                     },
@@ -308,12 +304,12 @@
                         },
                         {
                             "group": "(Custom Properties)",
-                            "name": "mainTableObject",
+                            "name": "tableName",
                             "type": "string"
                         },
                         {
                             "group": "(Custom Properties)",
-                            "name": "directFn",
+                            "name": "proxyUrl",
                             "type": "string"
                         }
                     ],

@@ -23,7 +23,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
     createSearchGrid:function()
     {
         var me = this;
-        var storefields=me.searchFields.map(function(_obj)
+        me.storefields=me.searchFields.map(function(_obj)
         {
            return _obj.name
         });
@@ -31,11 +31,11 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
 
          me.searchStore=Ext.create('Ext.data.Store', {
             storeId:'searchStoreId',
-            fields:storefields,
+            fields:me.storefields,
              remoteFilter:true,
              proxy: {
                  type: 'direct',
-                 directFn: me.directFn,
+                 directFn: me.proxyUrl,
 
                  reader: {
                      type: 'json',
@@ -56,11 +56,8 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
                         filtersArray.push({name:_filter.getProperty(),value:_filter.getValue(),operator:_filter.getOperator()})
                     });
                 metadata.params.filtersArray=filtersArray;*/
-                metadata.params.mainTableObject=me.mainTableObject;
-                if(me.joinTablesArray)
-                {
-                    metadata.params.joinTablesArray=me.joinTablesArray;
-                }
+                metadata.params.tableName=me.tableName;
+                metadata.params.fieldsArray=me.storefields;
                 store.getProxy().setMetadata(metadata);
             }
             else
