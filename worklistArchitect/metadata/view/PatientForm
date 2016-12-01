@@ -248,6 +248,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "advancedListConfig": null,
+                        "directFn": "Server.GridFilter.getResultData",
                         "displayField": "referringPhysicianSearch",
                         "fieldLabel": [
                             "{trans.referringDoctor}"
@@ -308,6 +309,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "mainTableObject",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "directFn",
                             "type": "string"
                         }
                     ],

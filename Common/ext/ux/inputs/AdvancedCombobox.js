@@ -35,7 +35,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
              remoteFilter:true,
              proxy: {
                  type: 'direct',
-                 directFn: 'Server.GridFilter.getResultData',
+                 directFn: me.directFn,
 
                  reader: {
                      type: 'json',
