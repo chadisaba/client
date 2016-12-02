@@ -15,6 +15,16 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
     multiSelect: false,
     selectOnFocus:true,
     queryMode: 'local',
+    config :
+    {
+        local : false,
+        storeFields : [],
+        searchStore:[],
+        proxyUrl:'',
+        tableName:'',
+        windowTitle:translate("Rechercher puis double cliquer sur une ligne pour la sélectionner"),
+        searchBtn:false
+    },
     initComponent: function () {
         var me=this;
         me.local=me.local||false;
@@ -27,8 +37,6 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
         {
            return _obj.name
         });
-        var storeData=me.searchData;
-
          me.searchStore=Ext.create('Ext.data.Store', {
             storeId:'searchStoreId',
             fields:me.storefields,
@@ -48,14 +56,6 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             {
                 var metadata={};
                 metadata.params={};
-               /* var filtersArray=[];
-
-                store.getFilters().items.forEach(
-                    function(_filter)
-                    {
-                        filtersArray.push({name:_filter.getProperty(),value:_filter.getValue(),operator:_filter.getOperator()})
-                    });
-                metadata.params.filtersArray=filtersArray;*/
                 metadata.params.tableName=me.tableName;
                 metadata.params.fieldsArray=me.storefields;
                 store.getProxy().setMetadata(metadata);
@@ -69,16 +69,19 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
         {
             searchGridColumn.push({
                 xtype: 'gridcolumn',
-            text: _searchField.text, dataIndex: _searchField.name,filter: {
+                width:_searchField.colWidth||120,
+                text: _searchField.text, dataIndex: _searchField.name,filter: {
                     type: 'string'
                 }
             });
         });
 
-       // me.searchStore.loadData([{LName:'saba',FName:'fadi'},{LName:'saba',FName:'fadi'}]);
-
-        Ext.create('Common.ux.window.FullScreenWindow', {
-            title:'',
+        var win=Ext.create('Ext.window.Window', {
+            title:me.windowTitle,
+            maximizable: true,
+            animateTarget:me,
+            height:500,
+            width:700,
             items:[{
                 region: 'center',
                 xtype: 'grid',
@@ -94,9 +97,16 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
                     {
                         me.searchStore.load();
 
-                    }
-                }
+                    },
+                    celldblclick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+                        me.getStore().loadData([record]);
+                        me.select(me.getStore().first());
 
+                        win.close();
+                        me.searchStore.destroy();
+                    }
+
+    }
             }]
         }).show();
     },
@@ -105,7 +115,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             picker,
             pickerConf = Ext.apply({
                 xtype: 'btnboundlist',
-                enableSearchBtn:me.enableSearchBtn,
+                searchBtn:me.searchBtn,
                 pickerField: me,
                 selectionModel: me.pickerSelectionModel,
                 floating: true,
@@ -172,21 +182,25 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
 
                         }
 
-                    },
-                    {
-                        xtype:'button',
-                        glyph: 'xf002@FontAwesome',
-                        hidden:me.enableSearchBtn,
-                        handler: function() {
-                            me.fireEvent('comboSearchEvent', me, me.pickerField.getValue());
-
-                        }
                     }
+
                 ],
                 bindStore : function(store, initial) {
 
                 }
             });
+        if(me.searchBtn)
+        {
+            me.pagingToolbar.items.items.push[{
+                xtype:'button',
+                glyph: 'xf002@FontAwesome',
+                hidden:me.enableSearchBtn,
+                handler: function() {
+                    me.fireEvent('comboSearchEvent', me, me.pickerField.getValue());
+
+                }
+            }]
+        }
 
         me.callParent();
 

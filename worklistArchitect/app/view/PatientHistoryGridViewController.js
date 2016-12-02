@@ -39,6 +39,10 @@ Ext.define('MyApp.view.PatientHistoryGridViewController', {
 
     onGridpanelCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
+    },
+
+    onGridpanelCellDblClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
     }
 
 });

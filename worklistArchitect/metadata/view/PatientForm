@@ -260,13 +260,12 @@
                         "proxyUrl": "Server.GridFilter.getResultData",
                         "queryDelay": 500,
                         "queryMode": "local",
-                        "searchData": [
-                            "[]"
-                        ],
+                        "searchBtn": true,
                         "searchFields": [
-                            "[",
-                            "{text:'F Name',name:'referringPhysicianFName'},{text:'L Name',name:'referringPhysicianLName'}",
-                            "]"
+                            "[{text:translate('firstName'),name:'referringPhysicianFName'},",
+                            "{text:translate('lastName'),name:'referringPhysicianLName'},",
+                            "{text:translate('zipCode'),name:'referringPhysicianZipCode'},",
+                            "{text:translate('city'),name:'cityName',colWidth:200}]"
                         ],
                         "selectOnFocus": true,
                         "store": [
@@ -283,7 +282,8 @@
                         "advancedListConfig": "object",
                         "searchData": "array",
                         "searchFields": "array",
-                        "mainTableObject": "object"
+                        "mainTableObject": "object",
+                        "searchBtn": "boolean"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
                     "customConfigs": [
@@ -310,6 +310,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "proxyUrl",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "searchBtn",
                             "type": "string"
                         }
                     ],

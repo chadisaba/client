@@ -26,7 +26,7 @@ function translate(text)
         "last name":"Nom",
         "gender":"Sexe",
         "title":"Civilité",
-        "city":"Ville",
+        "city":"Commune",
         "zip code":"C.P",
         "phone":"Tél.",
         "fax":"Fax",

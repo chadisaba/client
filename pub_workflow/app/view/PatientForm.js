@@ -128,22 +128,29 @@ Ext.define('MyApp.view.PatientForm', {
                 },
                 {
                     xtype: 'advancedCombobox',
-                    searchData: [
-                        
-                    ],
                     searchFields: [
                         {
-                            text: 'F Name',
+                            text: translate('firstName'),
                             name: 'referringPhysicianFName'
                         },
                         {
-                            text: 'L Name',
+                            text: translate('lastName'),
                             name: 'referringPhysicianLName'
+                        },
+                        {
+                            text: translate('zipCode'),
+                            name: 'referringPhysicianZipCode'
+                        },
+                        {
+                            text: translate('city'),
+                            name: 'cityName',
+                            colWidth: 200
                         }
                     ],
                     anchor: '100%',
                     tableName: 'REFERRING_PHYSICIAN',
                     proxyUrl: 'Server.GridFilter.getResultData',
+                    searchBtn: true,
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,

@@ -302,6 +302,21 @@
             },
             "name": "onGridpanelCellClick",
             "designerId": "fe58d742-a348-4da9-a248-c4a0e5c3d949"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelCellDblClick",
+                "name": "celldblclick",
+                "scope": "me"
+            },
+            "name": "onGridpanelCellDblClick",
+            "designerId": "78fe84c6-5fd9-4779-a14a-4acdfa7dce15"
         }
     ]
 }

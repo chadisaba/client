@@ -93,7 +93,8 @@ Ext.define('MyApp.view.PatientHistoryGrid', {
     ],
     listeners: {
         afterrender: 'onGridpanelAfterRender',
-        cellclick: 'onGridpanelCellClick'
+        cellclick: 'onGridpanelCellClick',
+        celldblclick: 'onGridpanelCellDblClick'
     }
 
 });
