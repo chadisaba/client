@@ -86,26 +86,40 @@ var ComboData= {
             id:4,text :translate('waiting')
         }
     ],
-    pec:[
-        {
-            id:'cmu',text :'C.M.U'
-        },
+    typeAssurance:[
         {
             id:'at',text :'A.T'
-
         },
         {
-            id:'dep',text :'Dép'
-
+            id:'mater',text :'Maternité'
         },
         {
-            id:'mater',text :'Mater'
-        }
-        ,  {
+            id:'smg',text :'S.M.G'
+        }],
+    pec:[
+        {
+            id:'cmu',text :'C.M.U-C'
+        },
+        {
+            id:'dep',text :'Dépistage'
+        },
+        {
+            id:'inv',text :'Invalidité'
+        },
+        {
+            id:'ameb',text :'A.M.E-B'
+        },
+        {
+            id:'amec',text :'A.M.E-C'
+        },
+        {
             id:'ald',text :'A.L.D'
         },
         {
-            id:'ame',text :'A.M.E'
+            id:'adc',text :'Accident droit commun'
+        },
+        {
+            id:'autreex',text :'Autre exonérations'
         }
 
     ],

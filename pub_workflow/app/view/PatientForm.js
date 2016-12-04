@@ -150,7 +150,7 @@ Ext.define('MyApp.view.PatientForm', {
                     anchor: '100%',
                     tableName: 'REFERRING_PHYSICIAN',
                     proxyUrl: 'Server.GridFilter.getResultData',
-                    searchBtn: true,
+                    enableSearchBtn: true,
                     itemId: 'referringPhysicianNameComboBoxEditorItemId',
                     name: 'referringPhysicianId',
                     selectOnFocus: true,

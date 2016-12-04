@@ -461,23 +461,69 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "displayField": "establishmentCode",
+                                        "enableSearchBtn": true,
                                         "fieldLabel": "Etablissement",
                                         "itemId": "establishmentComboBoxEditorItemId",
                                         "labelWidth": null,
                                         "layout|flex": 1,
                                         "name": "establishmentId",
+                                        "proxyUrl": "Server.GridFilter.getResultData",
                                         "queryMode": "local",
+                                        "searchFields": [
+                                            "                        [{",
+                                            "                            text: translate('name'),",
+                                            "                            name: 'establishmentName'",
+                                            "                        },",
+                                            "                        {",
+                                            "                            text: translate('code'),",
+                                            "                            name: 'establishmentCode'",
+                                            "                        },",
+                                            "                        {",
+                                            "                            text: translate('zipCode'),",
+                                            "                            name: 'establishmentZipCode'",
+                                            "                        },",
+                                            "                        {",
+                                            "                            text: translate('city'),",
+                                            "                            name: 'cityName',",
+                                            "                            colWidth: 200",
+                                            "                        }]"
+                                        ],
                                         "selectOnFocus": true,
                                         "store": [
                                             "{EstablishmentComboStore}"
                                         ],
+                                        "tableName": "ESTABLISHMENT",
                                         "valueField": "establishmentId"
                                     },
                                     "name": "MyadvancedCombobox",
                                     "configAlternates": {
-                                        "store": "binding"
+                                        "store": "binding",
+                                        "searchFields": "array",
+                                        "enableSearchBtn": "boolean"
                                     },
                                     "designerId": "d8d81848-a3cd-4a05-aed3-c632e5f16c07",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "searchFields",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "tableName",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "proxyUrl",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "enableSearchBtn",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "viewcontrollereventbinding",

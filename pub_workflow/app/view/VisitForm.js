@@ -187,6 +187,28 @@ Ext.define('MyApp.view.VisitForm', {
                                 {
                                     xtype: 'advancedCombobox',
                                     flex: 1,
+                                    searchFields: [
+                                        {
+                                            text: translate('name'),
+                                            name: 'establishmentName'
+                                        },
+                                        {
+                                            text: translate('code'),
+                                            name: 'establishmentCode'
+                                        },
+                                        {
+                                            text: translate('zipCode'),
+                                            name: 'establishmentZipCode'
+                                        },
+                                        {
+                                            text: translate('city'),
+                                            name: 'cityName',
+                                            colWidth: 200
+                                        }
+                                    ],
+                                    tableName: 'ESTABLISHMENT',
+                                    proxyUrl: 'Server.GridFilter.getResultData',
+                                    enableSearchBtn: true,
                                     itemId: 'establishmentComboBoxEditorItemId',
                                     fieldLabel: 'Etablissement',
                                     name: 'establishmentId',

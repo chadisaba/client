@@ -23,7 +23,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
         proxyUrl:'',
         tableName:'',
         windowTitle:translate("Rechercher puis double cliquer sur une ligne pour la sélectionner"),
-        searchBtn:false
+        enableSearchBtn:false
     },
     initComponent: function () {
         var me=this;
@@ -80,6 +80,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             title:me.windowTitle,
             maximizable: true,
             animateTarget:me,
+            modal:true,
             height:500,
             width:700,
             items:[{
@@ -115,7 +116,7 @@ Ext.define('Ext.ux.inputs.AdvancedCombobox', {
             picker,
             pickerConf = Ext.apply({
                 xtype: 'btnboundlist',
-                searchBtn:me.searchBtn,
+                enableSearchBtn:me.enableSearchBtn,
                 pickerField: me,
                 selectionModel: me.pickerSelectionModel,
                 floating: true,
@@ -182,25 +183,21 @@ Ext.define('Ext.ux.inputs.ComboBoundList', {
 
                         }
 
-                    }
+                    },
+                    {
+                        xtype:'button',
+                        glyph: 'xf002@FontAwesome',
+                        hidden:!me.enableSearchBtn,
+                        handler: function() {
+                            me.fireEvent('comboSearchEvent', me, me.pickerField.getValue());
 
+                        }
+                    }
                 ],
                 bindStore : function(store, initial) {
 
                 }
             });
-        if(me.searchBtn)
-        {
-            me.pagingToolbar.items.items.push[{
-                xtype:'button',
-                glyph: 'xf002@FontAwesome',
-                hidden:me.enableSearchBtn,
-                handler: function() {
-                    me.fireEvent('comboSearchEvent', me, me.pickerField.getValue());
-
-                }
-            }]
-        }
 
         me.callParent();
 

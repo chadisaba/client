@@ -12,6 +12,9 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             throw Error('_patientId can\'t be undefined');
         //rec.set('patientId',_patientId);
 
+        me.getViewModel().getStore('TypeAssStore').loadData(ComboData.typeAssurance);
+        me.getViewModel().getStore('PecStore').loadData(ComboData.pec);
+
         var studyVisitGridView = view.down('#studyVisitGridItemId');
         var studyVisitController = studyVisitGridView.getController();
 

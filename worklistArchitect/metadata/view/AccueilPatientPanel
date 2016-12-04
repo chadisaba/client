@@ -187,7 +187,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "flex": 1,
+                        "flex": 2,
                         "header": false,
                         "layout|region": "center",
                         "layout|split": true,
@@ -343,6 +343,22 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "header": false,
+                        "layout|region": "west"
+                    },
+                    "name": "amoform",
+                    "designerId": "e20fc22b-c4a0-4235-bf62-0bebf2dde185",
+                    "masterInstanceId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e"
                 }
             ]
         }

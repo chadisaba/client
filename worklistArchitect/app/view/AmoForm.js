@@ -64,26 +64,38 @@ Ext.define('MyApp.view.AmoForm', {
                             }
                         },
                         {
+                            xtype: 'container',
+                            itemId: 'materniteContainerItemId',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    fieldLabel: 'Forçage fin maternité',
+                                    labelWidth: 130,
+                                    name: 'regoForcageMaternite',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    fieldLabel: 'Date maternité',
+                                    name: 'regoDateMaternite'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'checkboxfield',
+                            itemId: 'forcageAldItemID',
                             fieldLabel: 'Forçage A.L.D',
                             labelWidth: 120,
                             name: 'regoForcageAld',
                             boxLabel: ''
                         },
                         {
-                            xtype: 'checkboxfield',
-                            fieldLabel: 'Forçage fin maternité',
-                            labelWidth: 130,
-                            name: 'regoForcageMaternite',
-                            boxLabel: ''
-                        },
-                        {
                             xtype: 'datefield',
-                            fieldLabel: 'Date maternité',
-                            name: 'regoDateMaternite'
-                        },
-                        {
-                            xtype: 'datefield',
+                            itemId: 'droitCommunDateItemId',
                             fieldLabel: 'Droit commun',
                             name: 'regoDateAccDroitCommun'
                         },
@@ -95,14 +107,14 @@ Ext.define('MyApp.view.AmoForm', {
                             },
                             items: [
                                 {
-                                    xtype: 'checkboxfield',
-                                    fieldLabel: 'Alsace-Moselle',
-                                    boxLabel: ''
-                                },
-                                {
                                     xtype: 'textfield',
                                     flex: 1,
                                     fieldLabel: 'Code couverture'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    fieldLabel: 'Alsace-Moselle',
+                                    boxLabel: ''
                                 }
                             ]
                         }

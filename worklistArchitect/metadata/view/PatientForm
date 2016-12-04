@@ -249,6 +249,7 @@
                     "userConfig": {
                         "advancedListConfig": null,
                         "displayField": "referringPhysicianSearch",
+                        "enableSearchBtn": true,
                         "fieldLabel": [
                             "{trans.referringDoctor}"
                         ],
@@ -260,7 +261,6 @@
                         "proxyUrl": "Server.GridFilter.getResultData",
                         "queryDelay": 500,
                         "queryMode": "local",
-                        "searchBtn": true,
                         "searchFields": [
                             "[{text:translate('firstName'),name:'referringPhysicianFName'},",
                             "{text:translate('lastName'),name:'referringPhysicianLName'},",
@@ -283,7 +283,8 @@
                         "searchData": "array",
                         "searchFields": "array",
                         "mainTableObject": "object",
-                        "searchBtn": "boolean"
+                        "searchBtn": "boolean",
+                        "enableSearchBtn": "boolean"
                     },
                     "designerId": "dddb3c34-bf04-4f3e-a100-f4f4166fdc7f",
                     "customConfigs": [
@@ -314,7 +315,7 @@
                         },
                         {
                             "group": "(Custom Properties)",
-                            "name": "searchBtn",
+                            "name": "enableSearchBtn",
                             "type": "string"
                         }
                     ],

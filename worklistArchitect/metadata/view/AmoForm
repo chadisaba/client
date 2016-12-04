@@ -111,6 +111,54 @@
                             ]
                         },
                         {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "itemId": "materniteContainerItemId",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer10",
+                            "designerId": "4ae180cc-74ec-4a2d-b7be-13007fd75a9c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "Forçage fin maternité",
+                                        "labelWidth": 130,
+                                        "name": "regoForcageMaternite"
+                                    },
+                                    "name": "MyCheckbox3",
+                                    "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Date maternité",
+                                        "labelWidth": null,
+                                        "name": "regoDateMaternite"
+                                    },
+                                    "name": "MyDateField4",
+                                    "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",
@@ -120,42 +168,12 @@
                             "userConfig": {
                                 "boxLabel": "",
                                 "fieldLabel": "Forçage A.L.D",
+                                "itemId": "forcageAldItemID",
                                 "labelWidth": 120,
                                 "name": "regoForcageAld"
                             },
                             "name": "MyCheckbox2",
                             "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "boxLabel": "",
-                                "fieldLabel": "Forçage fin maternité",
-                                "labelWidth": 130,
-                                "name": "regoForcageMaternite"
-                            },
-                            "name": "MyCheckbox3",
-                            "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
-                        },
-                        {
-                            "type": "Ext.form.field.Date",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Date maternité",
-                                "labelWidth": null,
-                                "name": "regoDateMaternite"
-                            },
-                            "name": "MyDateField4",
-                            "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
                         },
                         {
                             "type": "Ext.form.field.Date",
@@ -166,6 +184,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Droit commun",
+                                "itemId": "droitCommunDateItemId",
                                 "labelWidth": null,
                                 "name": "regoDateAccDroitCommun"
                             },
@@ -187,6 +206,20 @@
                             "designerId": "a18e7c9a-69d2-4d89-8625-70ee2f5c4ed8",
                             "cn": [
                                 {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Code couverture",
+                                        "layout|flex": 1
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
+                                },
+                                {
                                     "type": "Ext.form.field.Checkbox",
                                     "reference": {
                                         "name": "items",
@@ -200,20 +233,6 @@
                                     },
                                     "name": "MyCheckbox",
                                     "designerId": "c4940913-a4ab-4eba-8f33-179a4dc4c1e8"
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Code couverture",
-                                        "layout|flex": 1
-                                    },
-                                    "name": "MyTextField",
-                                    "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
                                 }
                             ]
                         }

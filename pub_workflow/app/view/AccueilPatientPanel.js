@@ -22,6 +22,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         'MyApp.view.AccueilPatientPanelViewController',
         'MyApp.view.PatientForm',
         'MyApp.view.VisitForm',
+        'MyApp.view.AmoForm',
         'Ext.form.Panel',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
@@ -91,7 +92,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 {
                     xtype: 'visitform',
                     noPlugin: true,
-                    flex: 1,
+                    flex: 2,
                     scrollable: true,
                     header: false,
                     region: 'center',
@@ -101,6 +102,12 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                         studyVisitGridEndEditEvent: 'onVisitFormIdStudyVisitGridEndEditEvent',
                         StudyVisitGridStartEditEvent: 'onVisitFormIdStudyVisitGridStartEditEvent'
                     }
+                },
+                {
+                    xtype: 'amoform',
+                    region: 'west',
+                    flex: 1,
+                    header: false
                 }
             ],
             dockedItems: [
