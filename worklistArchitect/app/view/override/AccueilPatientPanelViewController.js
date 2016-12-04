@@ -32,7 +32,6 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
     onVisitFormIdAfterRender: function(component, eOpts) {
 
         this.visitView=component;
-        //  this.visitView.down('#patientFormToolbarItemId').setHidden(true);
         if(this.getView().patientId)
             component.getController().initForm(this.getView().visitId,this.getView().patientId);
         else
@@ -40,8 +39,9 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
             component.setDisabled(true);
         }
     },
+    onAmoFormItemIdAfterRender: function(component, eOpts) {
 
-
+    },
     onVisitFormIdStudyVisitGridEndEditEvent: function(form) {
         this.getView().down('#saveVisitBtnCtnItemId').setDisabled(false);
     },

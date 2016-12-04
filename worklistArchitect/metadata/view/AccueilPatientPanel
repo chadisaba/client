@@ -354,11 +354,29 @@
                     "userConfig": {
                         "flex": 1,
                         "header": false,
+                        "itemId": "amoFormItemId",
                         "layout|region": "west"
                     },
                     "name": "amoform",
                     "designerId": "e20fc22b-c4a0-4235-bf62-0bebf2dde185",
-                    "masterInstanceId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e"
+                    "masterInstanceId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAmoFormItemIdAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onAmoFormItemIdAfterRender",
+                            "designerId": "8a1af017-3fef-42f6-8a91-660dc827284f"
+                        }
+                    ]
                 }
             ]
         }

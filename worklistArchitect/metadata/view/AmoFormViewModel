@@ -9,5 +9,35 @@
         "designer|userAlias": "amoform",
         "designer|userClassName": "AmoFormViewModel"
     },
-    "designerId": "ed3f89c2-5f98-4c1f-9ce9-e961ecef7ece"
+    "designerId": "ed3f89c2-5f98-4c1f-9ce9-e961ecef7ece",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "VisitPdsComboModel",
+                "name": "TypeAssStore"
+            },
+            "name": "MyStore17",
+            "designerId": "8ca576d6-0683-4353-9ed3-9262a65766cb"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "VisitPdsComboModel",
+                "name": "PecStore"
+            },
+            "name": "MyStore18",
+            "designerId": "aede92be-5e4f-4dd4-9f1a-8040f867309f"
+        }
+    ]
 }

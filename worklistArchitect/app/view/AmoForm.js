@@ -31,6 +31,7 @@ Ext.define('MyApp.view.AmoForm', {
     viewModel: {
         type: 'amoform'
     },
+    itemId: 'amoFormItemId',
     bodyPadding: 10,
     title: 'My Form',
 

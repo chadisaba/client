@@ -10,6 +10,7 @@
         "designer|userAlias": "amoform",
         "designer|userClassName": "AmoForm",
         "height": null,
+        "itemId": "amoFormItemId",
         "title": "My Form",
         "width": null
     },
