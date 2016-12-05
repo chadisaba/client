@@ -21,9 +21,10 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
             var patientId=patientViewController.getPatientId();
             if(me.getView().visitId) // on modifie la visite
             {
-                me.visitView.getController().initForm(me.getView().visitId,patientId);
-                me.regoView.getController().initForm(me.getView().visitId,patientId);
-               // me.regcView.getController().initForm(me.getView().visitId,patientId);
+                var visitId=me.getView().visitId;
+                me.visitView.getController().initForm(visitId,patientId);
+                me.regoView.getController().initForm(visitId,patientId);
+               // me.regcView.getController().initForm(visitId,patientId);
             }
             else
             {
