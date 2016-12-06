@@ -1,6 +1,6 @@
 Ext.define('MyApp.view.override.AmoFormViewController', {
     override: 'MyApp.view.AmoFormViewController',
-    initForm: function(_regoId,_visitId,_patientId) {
+    initForm: function(_visitId,_patientId) {
         var me=this;
         var view=me.getView();
         if(!_patientId)
@@ -9,12 +9,13 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
 
         viewModel.getStore('TypeAssStore').loadData(ComboData.typeAssurance);
         viewModel.getStore('PecStore').loadData(ComboData.pec);
-        var regoId=null;
-        if(_regoId)
-            regoId=_regoId;
-        if(regoId)
+        var visitId=null;
+        if(_visitId)
+            visitId=_visitId;
+        if(visitId)
         {
-            CommonDirect.getDataById("regoId",regoId,'REGO')
+
+            CommonDirect.getData('REGO',{name:'visitId',value:visitId})
                 .then(function(_resultValue)
                 {
                     var regoRec=new MyApp.model.RegoModel(_resultValue[0]);
@@ -25,19 +26,34 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         }
         else
         {
-            // we create a new visit
-            var regoModel=Ext.create('MyApp.model.RegoModel');
-            regoModel.set('regoId',UUID());
-            regoModel.set('patientId',_patientId);
-            regoModel.set('visitId',_visitId);
-            me.originalValues= {visitId:visitRec.get('patientId')};
-            view.getPlugin('formcheckdirty').addFieldsChangeListener();
+            // we create a new rego
+            // Check if a rego existe for the current patient
+            CommonDirect.getData('REGO',{name:'patientId',value:_patientId},{name:'visitId',value:null})
+                .then(function(_resultValue)
+                {
+                    if(_resultValue.length)
+                    {
+                        var regoRec=new MyApp.model.RegoModel(_resultValue[0]);
+                        view.loadRecord(regoRec);
+                        me.originalValues=view.getValues();
+                        view.getPlugin('formcheckdirty').addFieldsChangeListener();
+                    }
+                    else
+                    {
+                        var regoModel=Ext.create('MyApp.model.RegoModel');
+                        regoModel.set('regoId',UUID());
+                        regoModel.set('patientId',_patientId);
+                        regoModel.set('visitId',_visitId);
+                        me.originalValues= {visitId:visitRec.get('patientId')};
+                        view.getPlugin('formcheckdirty').addFieldsChangeListener();
+                    }
+                });
         }
     },
     amoFormSave: function() {
         var me=this;
         //Creating a promise
-        var promise=new Promise(
+        return new Promise(
             function(resolve, reject) {
                 var    currentValues = me.getView().getValues();
                 // check if the form values have been changed
@@ -58,7 +74,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                         });
                 }
             });
-        return promise;
+
     },
     onTypeAssComboChange: function(field, newValue, oldValue, eOpts) {
 
