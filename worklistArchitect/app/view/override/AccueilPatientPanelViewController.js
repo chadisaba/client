@@ -70,8 +70,16 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
         p1.then(
             function(_result)
             {
-                Utility.loading.end(button);
-                Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                var regoViewController = me.regoView.getController();
+                var pAmo=regoViewController.amoFormSave();
+               // var pAmc=regcViewController.amcFormSave();
+                Promise.all([pAmo])
+                    .then(function(_resultArray)
+                    {
+                        Utility.loading.end(button);
+                        Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                    });
+
             })
             .catch(function(_err)
             {

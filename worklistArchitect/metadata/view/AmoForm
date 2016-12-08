@@ -46,7 +46,7 @@
                     "designerId": "bd7ca367-9210-4a82-ac24-fa9c6fd3a994",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Tag",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -56,9 +56,17 @@
                                 "fieldLabel": "Type assurance",
                                 "itemId": "typeAssCombo",
                                 "layout|anchor": "100%",
-                                "name": "typeAssurance"
+                                "name": "typeAssurance",
+                                "queryMode": "local",
+                                "store": [
+                                    "{TypeAssStore}"
+                                ],
+                                "valueField": "id"
                             },
-                            "name": "MyTagField",
+                            "name": "MyComboBox2",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
                             "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
                             "cn": [
                                 {
@@ -89,9 +97,17 @@
                                 "fieldLabel": "Prise en charge",
                                 "itemId": "pecCombo",
                                 "layout|anchor": "100%",
-                                "name": "pec"
+                                "name": "pec",
+                                "queryMode": "local",
+                                "store": [
+                                    "{PecStore}"
+                                ],
+                                "valueField": "id"
                             },
                             "name": "MyTagField1",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
                             "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c",
                             "cn": [
                                 {
@@ -215,7 +231,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fieldLabel": "Code couverture",
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "name": "regoCodeCouverture"
                                     },
                                     "name": "MyTextField",
                                     "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
@@ -230,7 +247,8 @@
                                     "userConfig": {
                                         "boxLabel": "",
                                         "fieldLabel": "Alsace-Moselle",
-                                        "labelWidth": null
+                                        "labelWidth": null,
+                                        "name": "regoRegimeAlsace"
                                     },
                                     "name": "MyCheckbox",
                                     "designerId": "c4940913-a4ab-4eba-8f33-179a4dc4c1e8"
@@ -298,6 +316,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "collapsed": true,
                         "collapsible": true,
                         "title": "Coordonnées organisme A.M.O"
                     },
@@ -387,6 +406,7 @@
                                         "labelWidth": 50,
                                         "layout|flex": 1,
                                         "maxLength": 2,
+                                        "minLength": 2,
                                         "name": "regoCodeRegime"
                                     },
                                     "name": "MyTextField5",
@@ -471,7 +491,8 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Rang gémelaire",
                                 "labelWidth": null,
-                                "maxLength": 2,
+                                "maxLength": 1,
+                                "minLength": 1,
                                 "name": "regoRangGemBenef"
                             },
                             "name": "MyTextField8",
@@ -488,7 +509,8 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Ass .Rang gémelaire",
                                 "labelWidth": null,
-                                "maxLength": 2,
+                                "maxLength": 1,
+                                "minLength": 1,
                                 "name": "regoRangGemAssure"
                             },
                             "name": "MyTextField9",
@@ -505,7 +527,7 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Nom",
                                 "labelWidth": null,
-                                "maxLength": 2,
+                                "maxLength": null,
                                 "name": "regoNomAssure"
                             },
                             "name": "MyTextField10",
@@ -522,7 +544,7 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Prenom",
                                 "labelWidth": 50,
-                                "maxLength": 2,
+                                "maxLength": null,
                                 "name": "regoPrenomAssure"
                             },
                             "name": "MyTextField11",
@@ -539,7 +561,7 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Date naissance ",
                                 "labelWidth": null,
-                                "maxLength": 2,
+                                "maxLength": null,
                                 "name": "regoDateNaissAss"
                             },
                             "name": "MyTextField12",
@@ -548,6 +570,25 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processAmoForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
+            },
+            "name": "processAmoForm",
+            "designerId": "c4029418-8781-49c0-8fe5-4d704aaf4d3d"
         }
     ]
 }

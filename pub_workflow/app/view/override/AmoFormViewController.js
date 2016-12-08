@@ -1,111 +1,78 @@
 Ext.define('MyApp.view.override.AmoFormViewController', {
     override: 'MyApp.view.AmoFormViewController',
-
-
-
     initForm: function(_visitId,_patientId) {
-
         var me=this;
         var view=me.getView();
-        // var rec=view.getRecord();
+        me.hidePecFieldOnInitForm();
+        me.hideTypeAssuranceOnInitForm();
         if(!_patientId)
             throw Error('_patientId can\'t be undefined');
-        //rec.set('patientId',_patientId);
-
-        var studyVisitGridView = view.down('#studyVisitGridItemId');
-        var studyVisitController = studyVisitGridView.getController();
-
-        var visitRefPhGridView=view.down('#visitRefPhGridId');
-        var visitRefPhGridController = visitRefPhGridView.getController();
-
-        studyVisitGridView.mask();
         var viewModel=me.getViewModel();
+
+        viewModel.getStore('TypeAssStore').loadData(ComboData.typeAssurance);
+        viewModel.getStore('PecStore').loadData(ComboData.pec);
         var visitId=null;
         if(_visitId)
             visitId=_visitId;
+        if(visitId)
+        {
 
-
-        var p1=CommonDirect.getData("SITE");
-        var mainTableObject={
-            tableName:"DOCTOR"
-        };
-        var joinTablesArray=[{
-            tableName:"USER"
-        }];
-
-
-        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
-        Promise.all([p1,p2])
-            .then(function(_resultArray)
-            {
-                if(_resultArray[0].length>0)
+            CommonDirect.getData('REGO',{name:'visitId',value:visitId})
+                .then(function(_resultValue)
                 {
-                    var siteStore = viewModel.getStore('SiteComboStore');
-                    siteStore.loadData(_resultArray[0]);
-                }
-
-                var doctorsDataArray=_resultArray[1];
-                for (var i = 0; i < doctorsDataArray.length; i++) {
-                    doctorsDataArray[i].userLName=doctorsDataArray[i]['User.userLName'];
-                    doctorsDataArray[i].userFName=doctorsDataArray[i]['User.userFName'];
-                    doctorsDataArray[i].userInitiales=doctorsDataArray[i]['User.userInitiales'];
-
-                }
-                var doctorStore = viewModel.getStore('DoctorComboStore');
-                doctorStore.loadData(doctorsDataArray);
-
-                var visitRec=Ext.create('MyApp.model.VisitModel');
-                if(visitId)
-                {
-                    CommonDirect.getDataById("visitId",visitId,'VISIT')
-                        .then(function(_resultValue)
-                        {
-                            var timeArray=_resultValue[0]['visitTime'].split(":");
-                            _resultValue[0].visitTime=timeArray[0]+":"+timeArray[1];
-                            var visitRec=new MyApp.model.VisitModel(_resultValue[0]);
-
-                            view.loadRecord(visitRec);
-                            me.originalValues=view.getValues();
-                            studyVisitController.initGrid([],true,_visitId);
-                            studyVisitGridView.getPlugin('gridediting').lockGrid(false);
-
-
-                            visitRefPhGridController.initGrid([],true,_visitId);
-                            visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
-
-                            view.getPlugin('formcheckdirty').addFieldsChangeListener();
-                        });
-                }
-                else
-                {
-                    // we create a new visit
-
-                    visitRec.set('visitId',UUID());
-                    visitRec.set('visitDate',new Date());
-                    visitRec.set('visitTime',new Date());
-                    visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
-
-                    visitRec.set('patientId',_patientId);
-
-                    visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
-                    view.loadRecord(visitRec);
-                    me.originalValues= {visitId:visitRec.get('patientId')};
-                    studyVisitController.initGrid();
-                    studyVisitGridView.getPlugin('gridediting').lockGrid(false);
-
-                    visitRefPhGridController.initGrid();
-                    visitRefPhGridView.getPlugin('gridediting').lockGrid(false);
+                    var regoRec=new MyApp.model.RegoModel(_resultValue[0]);
+                    view.loadRecord(regoRec);
+                    me.originalValues=view.getValues();
                     view.getPlugin('formcheckdirty').addFieldsChangeListener();
-                }
-            });
+                });
+        }
+        else
+        {
+            // we create a new rego
+            // Check if a rego existe for the current patient
+            CommonDirect.getData('REGO',[{name:'patientId',value:_patientId},{name:'visitId',value:null}])
+                .then(function(_resultValue)
+                {
+                    if(_resultValue.length)
+                    {
+                        var regoRec=new MyApp.model.RegoModel(_resultValue[0]);
+                        view.loadRecord(regoRec);
+                        me.originalValues=view.getValues();
+                        view.getPlugin('formcheckdirty').addFieldsChangeListener();
+                    }
+                    else
+                    {
+                        var regoModel=Ext.create('MyApp.model.RegoModel');
+                        regoModel.set('regoId',UUID());
+                        regoModel.set('patientId',_patientId);
+                        regoModel.set('visitId',_visitId);
+                        me.originalValues= {visitId:regoModel.get('patientId')};
+                        view.loadRecord(regoModel);
+                        view.getPlugin('formcheckdirty').addFieldsChangeListener();
+                    }
+                });
+        }
+    },
+    hidePecFieldOnInitForm:function()
+    {
+        var view=this.getView();
+        var forcageAldCheckBox= view.down('#forcageAldItemID');
+        forcageAldCheckBox.setHidden(true);
+        var droitCommunDateField=view.down('#droitCommunDateItemId');
+        droitCommunDateField.setHidden(true);
 
+    },
+    hideTypeAssuranceOnInitForm:function()
+    {
+        var view=this.getView();
+        var materniteContainer= view.down('#materniteContainerItemId');
+        materniteContainer.setHidden(true);
     },
     amoFormSave: function() {
         var me=this;
         //Creating a promise
-        var promise=new Promise(
+        return new Promise(
             function(resolve, reject) {
-
                 var    currentValues = me.getView().getValues();
                 // check if the form values have been changed
                 if(JSON.stringify(me.originalValues) == JSON.stringify(currentValues)){
@@ -118,21 +85,61 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                     var form=me.getView();
                     form.updateRecord(rec); // update the record with the form data
                     var dataToSave=rec.data;
-                    PatientDirect.savePatient(dataToSave)
+                    CommonDirect.saveData(dataToSave,'REGO')
                         .then(function()
                         {
                             resolve();
                         });
                 }
-
             });
-        return promise;
+
     },
     onTypeAssComboChange: function(field, newValue, oldValue, eOpts) {
 
+        var view=this.getView();
+        this.hideTypeAssuranceOnInitForm();
+       var materniteContainer= view.down('#materniteContainerItemId');
+
+        switch (newValue)
+        {
+            case 'at' :
+                break;
+            case 'mater' :
+                materniteContainer.setHidden(false);
+                break;
+            case 'smg' :
+                break;
+
+        }
     },
 
     onPecComboChange: function(field, newValue, oldValue, eOpts) {
+
+        var view=this.getView();
+        this.hidePecFieldOnInitForm();
+        var forcageAldCheckBox= view.down('#forcageAldItemID');
+        var droitCommunDateField=view.down('#droitCommunDateItemId');
+        var valuesArray=[];
+
+        if(!Array.isArray(newValue))
+            valuesArray.push(newValue);
+        else
+            valuesArray=newValue;
+
+
+        valuesArray.forEach(function(_item)
+        {
+            switch (newValue)
+            {
+                case 'adc' :
+                    droitCommunDateField.setHidden(false);
+                    break;
+                case 'ald' :
+                    forcageAldCheckBox.setHidden(false);
+                    break;
+
+            }
+        });
 
     }
 

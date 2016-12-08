@@ -105,9 +105,13 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 },
                 {
                     xtype: 'amoform',
-                    region: 'west',
                     flex: 1,
-                    header: false
+                    itemId: 'amoFormItemId',
+                    header: false,
+                    region: 'west',
+                    listeners: {
+                        afterrender: 'onAmoFormItemIdAfterRender'
+                    }
                 }
             ],
             dockedItems: [

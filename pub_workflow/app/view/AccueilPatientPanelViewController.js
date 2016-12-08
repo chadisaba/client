@@ -43,6 +43,10 @@ Ext.define('MyApp.view.AccueilPatientPanelViewController', {
 
     onSaveVisitBtnClick: function(button, e, eOpts) {
 
+    },
+
+    onAmoFormItemIdAfterRender: function(component, eOpts) {
+
     }
 
 });

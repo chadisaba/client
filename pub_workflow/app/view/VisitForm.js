@@ -186,7 +186,6 @@ Ext.define('MyApp.view.VisitForm', {
                             items: [
                                 {
                                     xtype: 'advancedCombobox',
-                                    flex: 1,
                                     searchFields: [
                                         {
                                             text: translate('name'),
@@ -209,6 +208,7 @@ Ext.define('MyApp.view.VisitForm', {
                                     tableName: 'ESTABLISHMENT',
                                     proxyUrl: 'Server.GridFilter.getResultData',
                                     enableSearchBtn: true,
+                                    flex: 1,
                                     itemId: 'establishmentComboBoxEditorItemId',
                                     fieldLabel: 'Etablissement',
                                     name: 'establishmentId',

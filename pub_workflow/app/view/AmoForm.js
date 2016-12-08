@@ -31,6 +31,7 @@ Ext.define('MyApp.view.AmoForm', {
     viewModel: {
         type: 'amoform'
     },
+    itemId: 'amoFormItemId',
     bodyPadding: 10,
     title: 'My Form',
 
@@ -44,11 +45,16 @@ Ext.define('MyApp.view.AmoForm', {
                     title: 'Assurance',
                     items: [
                         {
-                            xtype: 'tagfield',
+                            xtype: 'combobox',
                             anchor: '100%',
                             itemId: 'typeAssCombo',
                             fieldLabel: 'Type assurance',
                             name: 'typeAssurance',
+                            queryMode: 'local',
+                            valueField: 'id',
+                            bind: {
+                                store: '{TypeAssStore}'
+                            },
                             listeners: {
                                 change: 'onTypeAssComboChange'
                             }
@@ -59,31 +65,48 @@ Ext.define('MyApp.view.AmoForm', {
                             itemId: 'pecCombo',
                             fieldLabel: 'Prise en charge',
                             name: 'pec',
+                            queryMode: 'local',
+                            valueField: 'id',
+                            bind: {
+                                store: '{PecStore}'
+                            },
                             listeners: {
                                 change: 'onPecComboChange'
                             }
                         },
                         {
+                            xtype: 'container',
+                            itemId: 'materniteContainerItemId',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    fieldLabel: 'Forçage fin maternité',
+                                    labelWidth: 130,
+                                    name: 'regoForcageMaternite',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    fieldLabel: 'Date maternité',
+                                    name: 'regoDateMaternite'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'checkboxfield',
+                            itemId: 'forcageAldItemID',
                             fieldLabel: 'Forçage A.L.D',
                             labelWidth: 120,
                             name: 'regoForcageAld',
                             boxLabel: ''
                         },
                         {
-                            xtype: 'checkboxfield',
-                            fieldLabel: 'Forçage fin maternité',
-                            labelWidth: 130,
-                            name: 'regoForcageMaternite',
-                            boxLabel: ''
-                        },
-                        {
                             xtype: 'datefield',
-                            fieldLabel: 'Date maternité',
-                            name: 'regoDateMaternite'
-                        },
-                        {
-                            xtype: 'datefield',
+                            itemId: 'droitCommunDateItemId',
                             fieldLabel: 'Droit commun',
                             name: 'regoDateAccDroitCommun'
                         },
@@ -95,14 +118,14 @@ Ext.define('MyApp.view.AmoForm', {
                             },
                             items: [
                                 {
-                                    xtype: 'checkboxfield',
-                                    fieldLabel: 'Alsace-Moselle',
-                                    boxLabel: ''
-                                },
-                                {
                                     xtype: 'textfield',
                                     flex: 1,
                                     fieldLabel: 'Code couverture'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    fieldLabel: 'Alsace-Moselle',
+                                    boxLabel: ''
                                 }
                             ]
                         }
@@ -173,7 +196,8 @@ Ext.define('MyApp.view.AmoForm', {
                                     labelWidth: 50,
                                     name: 'regoCodeRegime',
                                     allowBlank: false,
-                                    maxLength: 2
+                                    maxLength: 2,
+                                    minLength: 2
                                 },
                                 {
                                     xtype: 'textfield',
@@ -212,41 +236,54 @@ Ext.define('MyApp.view.AmoForm', {
                             fieldLabel: 'Rang gémelaire',
                             name: 'regoRangGemBenef',
                             allowBlank: false,
-                            maxLength: 2
+                            maxLength: 1,
+                            minLength: 1
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Ass .Rang gémelaire',
                             name: 'regoRangGemAssure',
                             allowBlank: false,
-                            maxLength: 2
+                            maxLength: 1,
+                            minLength: 1
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Nom',
                             name: 'regoNomAssure',
-                            allowBlank: false,
-                            maxLength: 2
+                            allowBlank: false
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Prenom',
                             labelWidth: 50,
                             name: 'regoPrenomAssure',
-                            allowBlank: false,
-                            maxLength: 2
+                            allowBlank: false
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Date naissance ',
                             name: 'regoDateNaissAss',
-                            allowBlank: false,
-                            maxLength: 2
+                            allowBlank: false
                         }
                     ]
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processAmoForm(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processAmoForm: function(config) {
+        FormAddPlugins.addPlugins(this);
+    }
 
 });

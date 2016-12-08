@@ -18,13 +18,27 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
         p1.then(
             function(_result)
         {
+            var patientId=patientViewController.getPatientId();
+            if(me.getView().visitId) // on modifie la visite
+            {
+                var visitId=me.getView().visitId;
+                me.visitView.getController().initForm(visitId,patientId);
+                me.regoView.getController().initForm(visitId,patientId);
+               // me.regcView.getController().initForm(visitId,patientId);
+            }
+            else
+            {
+                // on crée une visite
+                me.visitView.getController().initForm(null,patientId);
+                me.regoView.getController().initForm(null,patientId);
+                // me.regcView.getController().initForm(me.getView().visitId,patientId);
+            }
             me.getView().setActiveItem(1);
             Utility.loading.end(button);
         })
             .catch(function(_err)
             {
                console.error(_err);
-
             });
 
     },
@@ -32,7 +46,6 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
     onVisitFormIdAfterRender: function(component, eOpts) {
 
         this.visitView=component;
-        //  this.visitView.down('#patientFormToolbarItemId').setHidden(true);
         if(this.getView().patientId)
             component.getController().initForm(this.getView().visitId,this.getView().patientId);
         else
@@ -40,8 +53,9 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
             component.setDisabled(true);
         }
     },
-
-
+    onAmoFormItemIdAfterRender: function(component, eOpts) {
+        this.regoView=component;
+    },
     onVisitFormIdStudyVisitGridEndEditEvent: function(form) {
         this.getView().down('#saveVisitBtnCtnItemId').setDisabled(false);
     },
@@ -56,8 +70,16 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
         p1.then(
             function(_result)
             {
-                Utility.loading.end(button);
-                Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                var regoViewController = me.regoView.getController();
+                var pAmo=regoViewController.amoFormSave();
+               // var pAmc=regcViewController.amcFormSave();
+                Promise.all([pAmo])
+                    .then(function(_resultArray)
+                    {
+                        Utility.loading.end(button);
+                        Ext.GlobalEvents.fireEvent('refreshWorklistEvent');
+                    });
+
             })
             .catch(function(_err)
             {

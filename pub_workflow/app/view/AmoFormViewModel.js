@@ -15,6 +15,19 @@
 
 Ext.define('MyApp.view.AmoFormViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.amoform'
+    alias: 'viewmodel.amoform',
+
+    requires: [
+        'Ext.data.Store'
+    ],
+
+    stores: {
+        TypeAssStore: {
+            model: 'MyApp.model.VisitPdsComboModel'
+        },
+        PecStore: {
+            model: 'MyApp.model.VisitPdsComboModel'
+        }
+    }
 
 });
