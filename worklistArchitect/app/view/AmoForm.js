@@ -32,6 +32,7 @@ Ext.define('MyApp.view.AmoForm', {
         type: 'amoform'
     },
     itemId: 'amoFormItemId',
+    scrollable: true,
     bodyPadding: 10,
     title: 'My Form',
 
@@ -121,7 +122,10 @@ Ext.define('MyApp.view.AmoForm', {
                                     xtype: 'textfield',
                                     flex: 1,
                                     fieldLabel: 'Code couverture',
-                                    name: 'regoCodeCouverture'
+                                    name: 'regoCodeCouverture',
+                                    enforceMaxLength: true,
+                                    maskRe: /[0-9]/,
+                                    maxLength: 5
                                 },
                                 {
                                     xtype: 'checkboxfield',
@@ -161,7 +165,6 @@ Ext.define('MyApp.view.AmoForm', {
                 },
                 {
                     xtype: 'fieldset',
-                    collapsed: true,
                     collapsible: true,
                     title: 'Coordonnées organisme A.M.O',
                     items: [
@@ -199,6 +202,8 @@ Ext.define('MyApp.view.AmoForm', {
                                     labelWidth: 50,
                                     name: 'regoCodeRegime',
                                     allowBlank: false,
+                                    enforceMaxLength: true,
+                                    maskRe: /[0-9]/,
                                     maxLength: 2,
                                     minLength: 2
                                 },
@@ -209,6 +214,8 @@ Ext.define('MyApp.view.AmoForm', {
                                     labelWidth: 40,
                                     name: 'regoCodeCaisse',
                                     allowBlank: false,
+                                    enforceMaxLength: true,
+                                    maskRe: /[0-9]/,
                                     maxLength: 3
                                 },
                                 {
@@ -218,6 +225,8 @@ Ext.define('MyApp.view.AmoForm', {
                                     labelWidth: 40,
                                     name: 'regoCodeCentre',
                                     allowBlank: false,
+                                    enforceMaxLength: true,
+                                    maskRe: /[0-9]/,
                                     maxLength: 4
                                 }
                             ]
@@ -229,16 +238,21 @@ Ext.define('MyApp.view.AmoForm', {
                     title: 'Bénéficiaire',
                     items: [
                         {
-                            xtype: 'tagfield',
+                            xtype: 'combobox',
                             anchor: '100%',
                             fieldLabel: 'Qualité bénéf.',
-                            name: 'regoQualiteBenef'
+                            name: 'regoQualiteBenef',
+                            valueField: 'id',
+                            bind: {
+                                store: '{QualiteBenefStore}'
+                            }
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Rang gémelaire',
                             name: 'regoRangGemBenef',
                             allowBlank: false,
+                            enforceMaxLength: true,
                             maxLength: 1,
                             minLength: 1
                         },
@@ -246,22 +260,18 @@ Ext.define('MyApp.view.AmoForm', {
                             xtype: 'textfield',
                             fieldLabel: 'Ass .Rang gémelaire',
                             name: 'regoRangGemAssure',
-                            allowBlank: false,
                             maxLength: 1,
                             minLength: 1
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Nom',
-                            name: 'regoNomAssure',
-                            allowBlank: false
+                            name: 'regoNomAssure'
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Prenom',
-                            labelWidth: 50,
-                            name: 'regoPrenomAssure',
-                            allowBlank: false
+                            name: 'regoPrenomAssure'
                         },
                         {
                             xtype: 'textfield',
@@ -274,6 +284,9 @@ Ext.define('MyApp.view.AmoForm', {
             ]
         }
     ],
+    listeners: {
+        boxready: 'onAmoFormItemIdBoxReady'
+    },
 
     initConfig: function(instanceConfig) {
         var me = this,

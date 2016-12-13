@@ -27,6 +27,10 @@ Ext.define('MyApp.view.AmoFormViewController', {
 
     onPecComboChange: function(field, newValue, oldValue, eOpts) {
 
+    },
+
+    onAmoFormItemIdBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

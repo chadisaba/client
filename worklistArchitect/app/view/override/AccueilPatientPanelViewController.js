@@ -67,11 +67,13 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
         Utility.loading.start(button);
         var visitViewController = me.visitView.getController();
         var p1=visitViewController.visitFormSave();
+        var visitId=visitViewController.getVisitId();
         p1.then(
             function(_result)
             {
                 var regoViewController = me.regoView.getController();
-                var pAmo=regoViewController.amoFormSave();
+
+                var pAmo=regoViewController.amoFormSave(visitId);
                // var pAmc=regcViewController.amcFormSave();
                 Promise.all([pAmo])
                     .then(function(_resultArray)

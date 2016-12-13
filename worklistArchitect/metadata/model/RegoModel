@@ -142,6 +142,58 @@
             "designerId": "caae49ea-a836-4686-bea7-5babdaf5cffc"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAtNumero"
+            },
+            "name": "MyField41",
+            "designerId": "d0e3eab6-3f33-401a-915c-f4d53a634e82"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAtEmployeur"
+            },
+            "name": "MyField42",
+            "designerId": "a7376f2a-3679-44e3-84bd-e88f20c3ce45"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAtOrganisme"
+            },
+            "name": "MyField43",
+            "designerId": "31493f22-910e-4ac7-a623-304996866920"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regoAtDate"
+            },
+            "name": "MyDate5",
+            "designerId": "c2369d92-5c93-42cb-bb26-e2d1b1c5847c"
+        },
+        {
             "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
@@ -149,6 +201,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoCmu"
             },
             "name": "MyBoolean1",
@@ -162,6 +217,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoAld"
             },
             "name": "MyBoolean2",
@@ -175,6 +233,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoForcageAld"
             },
             "name": "MyBoolean3",
@@ -188,6 +249,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoAutrePec"
             },
             "name": "MyBoolean4",
@@ -201,6 +265,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoAme"
             },
             "name": "MyBoolean5",
@@ -214,6 +281,39 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "regoAt"
+            },
+            "name": "MyBoolean15",
+            "designerId": "06f35890-114b-4cd5-a941-cc779152b3d1"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "regoPresentationFeuilletAt"
+            },
+            "name": "MyBoolean16",
+            "designerId": "284c0fa6-8519-42d0-bf69-df59bc278393"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoAmeComp"
             },
             "name": "MyBoolean6",
@@ -227,6 +327,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoInvalidite"
             },
             "name": "MyBoolean7",
@@ -240,6 +343,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoDepistage"
             },
             "name": "MyBoolean8",
@@ -253,6 +359,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoAccDroitCommun"
             },
             "name": "MyBoolean9",
@@ -279,6 +388,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoMaternite"
             },
             "name": "MyBoolean10",
@@ -318,6 +430,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoSmg"
             },
             "name": "MyBoolean12",
@@ -383,6 +498,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "regoDateNaissAss"
+            },
+            "name": "MyField40",
+            "designerId": "1b976d31-2638-4645-8850-8a97f392b9b4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regoPrenomAssure"
             },
             "name": "MyField50",
@@ -415,16 +543,19 @@
             "designerId": "5a0996df-a014-4fd1-8702-6ab3abcbed26"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
                 "name": "regoFns"
             },
-            "name": "MyField53",
+            "name": "MyBoolean17",
             "designerId": "7285de6c-fb78-493c-ba65-80e593a72c7b"
         },
         {

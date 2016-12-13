@@ -27,6 +27,9 @@ Ext.define('MyApp.view.AmoFormViewModel', {
         },
         PecStore: {
             model: 'MyApp.model.VisitPdsComboModel'
+        },
+        QualiteBenefStore: {
+            model: 'MyApp.model.VisitPdsComboModel'
         }
     }
 

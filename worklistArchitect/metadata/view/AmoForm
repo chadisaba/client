@@ -11,10 +11,14 @@
         "designer|userClassName": "AmoForm",
         "height": null,
         "itemId": "amoFormItemId",
+        "scrollable": true,
         "title": "My Form",
         "width": null
     },
     "name": "MyForm",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
     "viewControllerInstanceId": "667ca9a8-cb97-41c0-86fb-3baacf4b4b21",
     "viewModelInstanceId": "ed3f89c2-5f98-4c1f-9ce9-e961ecef7ece",
@@ -230,11 +234,16 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "enforceMaxLength": true,
                                         "fieldLabel": "Code couverture",
+                                        "hideTrigger": null,
                                         "layout|flex": 1,
-                                        "name": "regoCodeCouverture"
+                                        "maskRe": "/[0-9]/",
+                                        "maxLength": 5,
+                                        "name": "regoCodeCouverture",
+                                        "repeatTriggerClick": null
                                     },
-                                    "name": "MyTextField",
+                                    "name": "MyTextField13",
                                     "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
                                 },
                                 {
@@ -316,7 +325,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "collapsed": true,
                         "collapsible": true,
                         "title": "Coordonnées organisme A.M.O"
                     },
@@ -402,9 +410,11 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
+                                        "enforceMaxLength": true,
                                         "fieldLabel": "Régime",
                                         "labelWidth": 50,
                                         "layout|flex": 1,
+                                        "maskRe": "/[0-9]/",
                                         "maxLength": 2,
                                         "minLength": 2,
                                         "name": "regoCodeRegime"
@@ -421,9 +431,11 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
+                                        "enforceMaxLength": true,
                                         "fieldLabel": "Caisse",
                                         "labelWidth": 40,
                                         "layout|flex": 1,
+                                        "maskRe": "/[0-9]/",
                                         "maxLength": 3,
                                         "name": "regoCodeCaisse"
                                     },
@@ -439,9 +451,11 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
+                                        "enforceMaxLength": true,
                                         "fieldLabel": "Centre",
                                         "labelWidth": 40,
                                         "layout|flex": 1,
+                                        "maskRe": "/[0-9]/",
                                         "maxLength": 4,
                                         "name": "regoCodeCentre"
                                     },
@@ -466,7 +480,7 @@
                     "designerId": "dc2b2398-7a5d-438a-aae0-cd747652db38",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Tag",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -475,9 +489,16 @@
                             "userConfig": {
                                 "fieldLabel": "Qualité bénéf.",
                                 "layout|anchor": "100%",
-                                "name": "regoQualiteBenef"
+                                "name": "regoQualiteBenef",
+                                "store": [
+                                    "{QualiteBenefStore}"
+                                ],
+                                "valueField": "id"
                             },
-                            "name": "MyTagField2",
+                            "name": "MyComboBox9",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
                             "designerId": "f32c050a-d329-4ad3-8438-1339e831f215"
                         },
                         {
@@ -489,6 +510,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
+                                "enforceMaxLength": true,
                                 "fieldLabel": "Rang gémelaire",
                                 "labelWidth": null,
                                 "maxLength": 1,
@@ -506,7 +528,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
+                                "allowBlank": null,
                                 "fieldLabel": "Ass .Rang gémelaire",
                                 "labelWidth": null,
                                 "maxLength": 1,
@@ -524,7 +546,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
+                                "allowBlank": null,
                                 "fieldLabel": "Nom",
                                 "labelWidth": null,
                                 "maxLength": null,
@@ -541,9 +563,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
+                                "allowBlank": null,
                                 "fieldLabel": "Prenom",
-                                "labelWidth": 50,
+                                "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoPrenomAssure"
                             },
@@ -589,6 +611,21 @@
             },
             "name": "processAmoForm",
             "designerId": "c4029418-8781-49c0-8fe5-4d704aaf4d3d"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAmoFormItemIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "name": "onAmoFormItemIdBoxReady",
+            "designerId": "f93c52cc-0083-4845-aa56-02798b90eee1"
         }
     ]
 }

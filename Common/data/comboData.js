@@ -98,7 +98,7 @@ var ComboData= {
         }],
     pec:[
         {
-            id:'cmu',text :'C.M.U-C'
+            id:'cmu',text :'CMU-C'
         },
         {
             id:'dep',text :'Dépistage'
@@ -107,7 +107,7 @@ var ComboData= {
             id:'inv',text :'Invalidité'
         },
         {
-            id:'ameb',text :'A.M.E-B'
+            id:'ameb',text :'AME-B'
         },
         {
             id:'amec',text :'A.M.E-C'
@@ -120,6 +120,9 @@ var ComboData= {
         },
         {
             id:'autreex',text :'Autre exonérations'
+        },
+        {
+            id:'fns',text :'Fonds National de Solidarité'
         }
 
     ],

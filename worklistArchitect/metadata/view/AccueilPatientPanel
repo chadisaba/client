@@ -27,7 +27,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "bodyPadding": 10,
+                "bodyPadding": null,
                 "header": false,
                 "title": "My Form"
             },
@@ -167,7 +167,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "bodyPadding": 10,
+                "bodyPadding": null,
                 "header": false,
                 "layout": "border",
                 "scrollable": null,
@@ -355,10 +355,21 @@
                         "flex": 1,
                         "header": false,
                         "itemId": "amoFormItemId",
-                        "layout|region": "west"
+                        "layout|region": "west",
+                        "noPlugin": true
                     },
                     "name": "amoform",
+                    "configAlternates": {
+                        "noPlugin": "boolean"
+                    },
                     "designerId": "e20fc22b-c4a0-4235-bf62-0bebf2dde185",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "noPlugin",
+                            "type": "string"
+                        }
+                    ],
                     "masterInstanceId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
                     "cn": [
                         {

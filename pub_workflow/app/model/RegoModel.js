@@ -17,8 +17,8 @@ Ext.define('MyApp.model.RegoModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Boolean',
         'Ext.data.field.Date',
+        'Ext.data.field.Boolean',
         'Ext.data.field.Integer'
     ],
 
@@ -54,39 +54,70 @@ Ext.define('MyApp.model.RegoModel', {
             name: 'regoTauxRemboursement'
         },
         {
+            name: 'regoAtNumero'
+        },
+        {
+            name: 'regoAtEmployeur'
+        },
+        {
+            name: 'regoAtOrganisme'
+        },
+        {
+            type: 'date',
+            name: 'regoAtDate'
+        },
+        {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoCmu'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoAld'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoForcageAld'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoAutrePec'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoAme'
         },
         {
             type: 'boolean',
+            defaultValue: false,
+            name: 'regoAt'
+        },
+        {
+            type: 'boolean',
+            name: 'regoPresentationFeuilletAt'
+        },
+        {
+            type: 'boolean',
+            defaultValue: false,
             name: 'regoAmeComp'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoInvalidite'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoDepistage'
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoAccDroitCommun'
         },
         {
@@ -95,6 +126,7 @@ Ext.define('MyApp.model.RegoModel', {
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoMaternite'
         },
         {
@@ -107,6 +139,7 @@ Ext.define('MyApp.model.RegoModel', {
         },
         {
             type: 'boolean',
+            defaultValue: false,
             name: 'regoSmg'
         },
         {
@@ -124,6 +157,9 @@ Ext.define('MyApp.model.RegoModel', {
             name: 'regoNomAssure'
         },
         {
+            name: 'regoDateNaissAss'
+        },
+        {
             name: 'regoPrenomAssure'
         },
         {
@@ -134,6 +170,8 @@ Ext.define('MyApp.model.RegoModel', {
             name: 'regoCodeCouverture'
         },
         {
+            type: 'boolean',
+            defaultValue: false,
             name: 'regoFns'
         },
         {

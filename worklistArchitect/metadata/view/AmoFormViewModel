@@ -38,6 +38,20 @@
             },
             "name": "MyStore18",
             "designerId": "aede92be-5e4f-4dd4-9f1a-8040f867309f"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "VisitPdsComboModel",
+                "name": "QualiteBenefStore"
+            },
+            "name": "MyStore1",
+            "designerId": "2a880159-a7d4-4730-a6cf-ad6d4b2104f8"
         }
     ]
 }

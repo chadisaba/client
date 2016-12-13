@@ -40,7 +40,6 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
     items: [
         {
             xtype: 'form',
-            bodyPadding: 10,
             header: false,
             title: 'My Form',
             items: [
@@ -85,7 +84,6 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         {
             xtype: 'form',
             layout: 'border',
-            bodyPadding: 10,
             header: false,
             title: 'My Form',
             items: [
@@ -105,6 +103,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 },
                 {
                     xtype: 'amoform',
+                    noPlugin: true,
                     flex: 1,
                     itemId: 'amoFormItemId',
                     header: false,
