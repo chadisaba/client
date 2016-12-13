@@ -1,0 +1,119 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AmoComboModel"
+    },
+    "name": "MyModel",
+    "designerId": "8895a80e-2629-4bac-85b7-cf6a49c75dfb",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoId"
+            },
+            "name": "MyField44",
+            "designerId": "7bab5f42-e90c-40f0-bced-70fea881b322"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoName"
+            },
+            "name": "MyField45",
+            "designerId": "43eef62f-7a9f-4a5d-88b6-ac6f20f8cb69"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoCodeRegime"
+            },
+            "name": "MyField46",
+            "designerId": "9aa0ac2e-390f-446a-8c36-5e63013a3940"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoCodeCaisse"
+            },
+            "name": "MyField48",
+            "designerId": "5d8a2c1c-d562-42b7-828c-40a7f3ac0ebb"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoCodeCentre"
+            },
+            "name": "MyField51",
+            "designerId": "9c00d55e-068d-41bf-8bfa-8d02e15550c2"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoZipCode"
+            },
+            "name": "MyField53",
+            "designerId": "b880d1c4-0c3c-474f-95b0-094bb8716aaa"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoAddress1"
+            },
+            "name": "MyField54",
+            "designerId": "9accdd83-23ce-4f8d-8725-7b3ab544db0b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amoCity"
+            },
+            "name": "MyField55",
+            "designerId": "4a729103-4cf4-4623-982d-8d639d8fb972"
+        }
+    ]
+}

@@ -13,7 +13,6 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         viewModel.getStore('TypeAssStore').loadData(ComboData.typeAssurance);
         viewModel.getStore('PecStore').loadData(ComboData.pec);
         viewModel.getStore('QualiteBenefStore').loadData(ComboData.qualiteBenef);
-
         var visitId=null;
         if(_visitId)
             visitId=_visitId;
@@ -258,6 +257,10 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             }
         });
 
+    },
+    onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
+        var me=this;
+        CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,true,4);
     }
 
 });

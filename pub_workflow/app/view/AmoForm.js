@@ -24,7 +24,7 @@ Ext.define('MyApp.view.AmoForm', {
         'Ext.form.field.Tag',
         'Ext.form.field.Checkbox',
         'Ext.form.field.Date',
-        'Ext.form.field.TextArea'
+        'Ext.ux.inputs.AdvancedCombobox'
     ],
 
     controller: 'amoform',
@@ -169,24 +169,18 @@ Ext.define('MyApp.view.AmoForm', {
                     title: 'Coordonnées organisme A.M.O',
                     items: [
                         {
-                            xtype: 'textfield',
+                            xtype: 'advancedCombobox',
                             anchor: '100%',
-                            fieldLabel: 'Nom'
-                        },
-                        {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            fieldLabel: 'Code Postal'
-                        },
-                        {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            fieldLabel: 'Commune'
-                        },
-                        {
-                            xtype: 'textareafield',
-                            anchor: '100%',
-                            fieldLabel: 'Adresse'
+                            itemId: 'amoComboItemId',
+                            fieldLabel: 'Nom',
+                            displayField: 'amoName',
+                            valueField: 'amoId',
+                            bind: {
+                                store: '{AmoComboStore}'
+                            },
+                            listeners: {
+                                change: 'onAmoComboItemIdChange'
+                            }
                         },
                         {
                             xtype: 'container',

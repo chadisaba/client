@@ -52,6 +52,20 @@
             },
             "name": "MyStore1",
             "designerId": "2a880159-a7d4-4730-a6cf-ad6d4b2104f8"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "AmoComboModel",
+                "name": "AmoComboStore"
+            },
+            "name": "MyStore19",
+            "designerId": "b311690a-85dc-401a-8f29-6c02f13aa1c1"
         }
     ]
 }

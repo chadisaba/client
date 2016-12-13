@@ -29,6 +29,10 @@ Ext.define('MyApp.view.AmoFormViewController', {
 
     },
 
+    onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onAmoFormItemIdBoxReady: function(component, width, height, eOpts) {
 
     }

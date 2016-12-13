@@ -332,60 +332,53 @@
                     "designerId": "cac93940-8537-4412-8e63-e6e7948ee3a1",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.ux.inputs.AdvancedCombobox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "displayField": "amoName",
+                                "enableSearchBtn": true,
                                 "fieldLabel": "Nom",
-                                "layout|anchor": "100%"
+                                "itemId": "amoComboItemId",
+                                "layout|anchor": "100%",
+                                "store": [
+                                    "{AmoComboStore}"
+                                ],
+                                "valueField": "amoId"
                             },
-                            "name": "MyTextField1",
-                            "designerId": "967e47d0-f7e7-4073-b09e-123412857a7d"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
+                            "name": "MyadvancedCombobox5",
+                            "configAlternates": {
+                                "store": "binding",
+                                "enableSearchBtn": "boolean"
                             },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Code Postal",
-                                "layout|anchor": "100%"
-                            },
-                            "name": "MyTextField2",
-                            "designerId": "512a6802-546d-4fe6-9ada-8b7a1ef9306d"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Commune",
-                                "layout|anchor": "100%"
-                            },
-                            "name": "MyTextField3",
-                            "designerId": "1f3cba10-31d2-4f4f-bfb6-a7b57c6d6fa0"
-                        },
-                        {
-                            "type": "Ext.form.field.TextArea",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Adresse",
-                                "layout|anchor": "100%"
-                            },
-                            "name": "MyTextArea",
-                            "designerId": "aaa8ca7a-3bdd-4db8-8e55-375f85ecdb62"
+                            "designerId": "967e47d0-f7e7-4073-b09e-123412857a7d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "enableSearchBtn",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAmoComboItemIdChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onAmoComboItemIdChange",
+                                    "designerId": "f194e963-694b-4f32-931b-f001bee9a9a9"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.container.Container",

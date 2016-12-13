@@ -52,7 +52,8 @@ Ext.application({
         'RemplacantComboModel',
         'EstablishmentComboModel',
         'EstHasServComboModel',
-        'RegoModel'
+        'RegoModel',
+        'AmoComboModel'
     ],
     views: [
         'WorklistGrid',

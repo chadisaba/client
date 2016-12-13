@@ -35,7 +35,8 @@
             "RemplacantComboModel",
             "EstablishmentComboModel",
             "EstHasServComboModel",
-            "RegoModel"
+            "RegoModel",
+            "AmoComboModel"
         ],
         "name": "MyApp",
         "requires": [
