@@ -260,7 +260,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     },
     onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;
-        CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,true,4);
+        CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,false,4);
     }
 
 });
