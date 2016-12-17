@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "ReportHasStudyModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "95195739-aae0-41c0-83b0-24175c8cb157",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportHasStudyId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField1",
             "designerId": "95c0eec5-d005-431b-a4c1-d95149d8a1fd"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "reportId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField5",
             "designerId": "aa464545-dc45-46d5-b761-b5c46dbd9898"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger",
             "designerId": "328a380d-4f41-4b57-9716-7e5ebb1a3f53"
@@ -60,6 +72,9 @@
             "userConfig": {
                 "name": "studyCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField8",
             "designerId": "af34a8ed-46d5-4454-88a9-8461c2381dd7"
         },
@@ -72,6 +87,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField9",
             "designerId": "59155bf7-1882-47a5-89fb-fed3a2c5944e"

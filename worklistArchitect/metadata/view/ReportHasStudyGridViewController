@@ -9,5 +9,9 @@
         "designer|userAlias": "reporthasstudygrid",
         "designer|userClassName": "ReportHasStudyGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "1a027b84-8a56-4da6-bf98-236fbffa5f28"
 }

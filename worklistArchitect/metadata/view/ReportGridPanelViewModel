@@ -9,6 +9,10 @@
         "designer|userAlias": "reportgridpanel",
         "designer|userClassName": "ReportGridPanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "55c8bfa1-9cbf-4335-a829-0cd7d6c880ac",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "ReportModel",
                 "name": "ReportGridStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore",
             "designerId": "0dda5719-f3c5-4822-a405-e7d0deddaed1"

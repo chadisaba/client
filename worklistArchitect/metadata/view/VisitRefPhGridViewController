@@ -9,5 +9,9 @@
         "designer|userAlias": "visitrefphgrid",
         "designer|userClassName": "VisitRefPhGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "bb7f4247-3adb-44fd-917b-031d240ad964"
 }

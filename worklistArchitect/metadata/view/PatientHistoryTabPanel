@@ -12,6 +12,13 @@
         "itemId": "patientHistoryTabPanelItemId",
         "width": null
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "5a81f144-2a84-45fb-a6b0-e601c7a09a74",
     "viewControllerInstanceId": "d675c38e-ec78-469f-b621-7bccddd827c0",
@@ -27,10 +34,11 @@
             "userConfig": {
                 "title": "Historique C.R"
             },
-            "name": "patienthistorypanel",
             "configAlternates": {
-                "patientId": "number"
+                "patientId": "number",
+                "title": "string"
             },
+            "name": "patienthistorypanel",
             "designerId": "d18a5851-9f08-41fa-a2dc-eb8c3d4799e9",
             "customConfigs": [
                 {
@@ -63,6 +71,9 @@
             "userConfig": {
                 "title": "Historique consultations"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "MyPanel2",
             "designerId": "8429cf75-45bc-4954-ad11-3634efb77981",
             "cn": [
@@ -87,6 +98,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Fiche patient"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "MyPanel4",
             "designerId": "00f82438-44ee-4c08-89f8-6d38c0bfec29",

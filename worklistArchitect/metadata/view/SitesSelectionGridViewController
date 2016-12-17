@@ -9,5 +9,9 @@
         "designer|userAlias": "sitesselectiongrid",
         "designer|userClassName": "SitesSelectionGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "2ee92070-302b-4657-bd13-72448db922c4"
 }

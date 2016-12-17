@@ -13,6 +13,14 @@
         "height": null,
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
     "designerId": "d2513b3b-aa92-42b6-b39c-5e2481a58f40",
     "viewControllerInstanceId": "21b13316-4486-4869-8fe6-d00b04a31608",
     "viewModelInstanceId": "740892d8-4bdb-4ad9-bbf3-160c554ae31b",
@@ -27,6 +35,10 @@
             "userConfig": {
                 "header": false,
                 "title": "Salle attente du jour"
+            },
+            "configAlternates": {
+                "header": "boolean",
+                "title": "string"
             },
             "name": "worklistpanel",
             "designerId": "21b3def1-3975-4a95-8a8b-5fc5f8366e13",
@@ -54,6 +66,9 @@
             "userConfig": {
                 "title": "Historique salle attente"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "worklisthistorypanel",
             "designerId": "f2d2480c-016e-4cd7-a351-304e8f0d8041",
             "masterInstanceId": "2c08d0f7-24df-4e85-8381-90ce32f004ac",
@@ -79,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Historique patients"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "patientdetailsearchform",
             "designerId": "167a698f-bf44-4680-b373-679970d58f21",

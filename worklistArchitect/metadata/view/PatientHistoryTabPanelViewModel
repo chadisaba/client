@@ -9,5 +9,9 @@
         "designer|userAlias": "patienthistorytabpanel",
         "designer|userClassName": "PatientHistoryTabPanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "b8ed1b6c-3f72-4208-baa3-e46c342fd1a2"
 }

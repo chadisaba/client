@@ -9,5 +9,9 @@
         "designer|userAlias": "maintabpanel",
         "designer|userClassName": "mainTabPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "21b13316-4486-4869-8fe6-d00b04a31608"
 }

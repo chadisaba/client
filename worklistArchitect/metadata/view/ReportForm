@@ -13,6 +13,14 @@
         "title": "reports",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "5e3dbabe-784f-4b37-bc41-cc39c3565974",
     "viewControllerInstanceId": "00b9645d-0d73-41ba-af9e-32d28866eebb",
@@ -27,6 +35,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar3",
             "designerId": "3f913d70-5128-4ea0-ba71-2a5806bccac9",
@@ -44,6 +55,12 @@
                         "layout": "hbox",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "flex": "number",
+                        "layout": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyContainer8",
                     "designerId": "f02522f6-3ba8-42a7-b3a9-2e078dcbbe59",
                     "cn": [
@@ -56,6 +73,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
                             },
                             "name": "MySpacer10",
                             "designerId": "39020760-710c-4f90-a3fe-0e41e987ea92"
@@ -82,10 +102,20 @@
                                 ],
                                 "valueField": "reportKeywordId"
                             },
-                            "name": "MyComboBox4",
                             "configAlternates": {
-                                "store": "binding"
+                                "store": "binding",
+                                "displayField": "datafield",
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "fieldStyle": "string",
+                                "hideTrigger": "boolean",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "minChars": "number",
+                                "pageSize": "number",
+                                "valueField": "datafield"
                             },
+                            "name": "MyComboBox4",
                             "designerId": "7b9d0817-50b6-4f88-9d32-85fd1e63cd77",
                             "cn": [
                                 {
@@ -99,6 +129,11 @@
                                         "fn": "onShortcutsComboItemIdSelect",
                                         "name": "select",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onShortcutsComboItemIdSelect",
                                     "designerId": "7c37de50-02e6-499d-9ad8-50b95ff4dd83"
@@ -114,6 +149,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": 20
+                            },
+                            "configAlternates": {
+                                "width": "auto"
                             },
                             "name": "MySpacer11",
                             "designerId": "b61bcb61-ad04-4524-982b-5d60670725ff"
@@ -131,6 +169,12 @@
                                 "itemId": "shortcutNameTextFieldItemId",
                                 "layout|flex": 1
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "layout|flex": "number"
+                            },
                             "name": "MyTextField",
                             "designerId": "4ec620a7-1f81-4d1a-bafc-2234cdb0cfed",
                             "cn": [
@@ -145,6 +189,11 @@
                                         "fn": "onShortcutNameTextFieldItemIdChange",
                                         "name": "change",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onShortcutNameTextFieldItemIdChange",
                                     "designerId": "7743cec3-adb1-4b3b-837c-fc2db256e2a6"
@@ -166,6 +215,14 @@
                                 "text": "add shortcut",
                                 "width": null
                             },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "width": "auto"
+                            },
                             "name": "MyButton1",
                             "designerId": "67a9edcf-36cc-4b78-8f39-a9a41938cac2",
                             "cn": [
@@ -180,6 +237,11 @@
                                         "fn": "onAddShortcutBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onAddShortcutBtnItemIdClick",
                                     "designerId": "63790679-797d-4fce-9508-1c099a497752"
@@ -203,6 +265,12 @@
                 "itemId": "modelesComboItemId",
                 "layout|anchor": "100%"
             },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "itemId": "string",
+                "layout|anchor": "string"
+            },
             "name": "MyComboBox2",
             "designerId": "597d8325-71b5-4969-8473-6c71bbf3b0ea"
         },
@@ -220,6 +288,13 @@
                 "layout": "hbox",
                 "layout|anchor": null
             },
+            "configAlternates": {
+                "anchor": "string",
+                "container|align": "string",
+                "height": "auto",
+                "layout": "string",
+                "layout|anchor": "string"
+            },
             "name": "MyContainer2",
             "designerId": "a72b2f22-84dc-4eee-adf4-a78de1e3684d",
             "cn": [
@@ -236,6 +311,13 @@
                         "itemId": "reportGridItemId",
                         "manageHeight": false,
                         "width": 415
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "height": "auto",
+                        "itemId": "string",
+                        "manageHeight": "boolean",
+                        "width": "auto"
                     },
                     "name": "reportgridpanel",
                     "designerId": "23d883d4-1e4c-43bd-9348-02d5176babc3",
@@ -256,6 +338,12 @@
                                 "name": "selectReportEvent",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onGridpanelSelectReportEvent",
                             "designerId": "307ede0b-f851-4f5b-a0bd-2609a2e25f5d"
                         },
@@ -273,6 +361,12 @@
                                 "fn": "onGridpanelAddReportEvent",
                                 "name": "addReportEvent",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onGridpanelAddReportEvent",
                             "designerId": "9d018847-a866-4ab6-b320-419b2a4fa1dc"
@@ -292,6 +386,12 @@
                                 "name": "saveReportEvent",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onGridpanelSaveReportEvent",
                             "designerId": "c817a9bf-0106-4c08-80ce-c59b6b310430"
                         },
@@ -309,6 +409,12 @@
                                 "fn": "onGridpanelValidateReportEvent",
                                 "name": "validateReportEvent",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onGridpanelValidateReportEvent",
                             "designerId": "3f23ac4c-842f-4bcf-aad5-16dd17e2d411"
@@ -328,6 +434,12 @@
                                 "name": "reviewReportEvent",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onGridpanelReviewReportEvent",
                             "designerId": "2719aa27-f100-46f0-a31b-e7c2dc4ec004"
                         }
@@ -344,6 +456,10 @@
                         "layout|flex": null,
                         "width": 20
                     },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
                     "name": "MySpacer",
                     "designerId": "841b4bd7-b1a6-4b79-9777-83ca587c65de"
                 },
@@ -359,6 +475,12 @@
                         "itemId": "reportHasStudyItemId",
                         "manageHeight": false,
                         "width": 147
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "itemId": "string",
+                        "manageHeight": "boolean",
+                        "width": "auto"
                     },
                     "name": "reporthasstudygrid",
                     "designerId": "93e8b618-45b2-4aaf-ba9c-b1af2b141305",
@@ -377,6 +499,11 @@
                 "fn": "onFormAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onFormAfterRender",
             "designerId": "eb946346-3c92-4499-9a17-60581d0c3444"

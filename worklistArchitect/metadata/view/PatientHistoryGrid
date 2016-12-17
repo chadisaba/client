@@ -20,11 +20,16 @@
         ],
         "width": null
     },
-    "name": "MyGridPanel",
     "configAlternates": {
         "store": "binding",
-        "title": "binding"
+        "title": "binding",
+        "cls": "typedarray",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
     },
+    "name": "MyGridPanel",
     "designerId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
     "viewControllerInstanceId": "aac31181-09fc-4522-852d-05c72b1059da",
     "viewModelInstanceId": "ccbdb707-6f9a-4a65-87a6-8c4e2cbdfbdb",
@@ -41,6 +46,12 @@
                 "format": "d/m/Y",
                 "hidden": true,
                 "text": "Date"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "format": "string",
+                "hidden": "boolean",
+                "text": "string"
             },
             "name": "MyDateColumn",
             "designerId": "2c65edce-97a3-4c4a-9b56-e20640757dc4"
@@ -60,10 +71,13 @@
                 ],
                 "width": 40
             },
-            "name": "MyColumn2",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "dataIndex": "datafield",
+                "flex": "number",
+                "width": "auto"
             },
+            "name": "MyColumn2",
             "designerId": "691b4603-c6fa-4054-a6d3-1f5bd47359f7",
             "cn": [
                 {
@@ -88,6 +102,11 @@
                             "return '<i class=\"fa fa-file-text-o\" style=\"color:#428bca;font-size: 16px\"/> ';"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "1e1ac822-6e36-4146-bfa7-244cd1376876"
                 }
@@ -107,10 +126,12 @@
                     "{trans.name}"
                 ]
             },
-            "name": "MyColumn5",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "dataIndex": "datafield",
+                "flex": "number"
             },
+            "name": "MyColumn5",
             "designerId": "080e54df-f635-48a0-a055-b2119c75a5cc",
             "cn": [
                 {
@@ -134,6 +155,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "00d1b457-d46a-4c11-adec-9e12223de341"
                 }
@@ -154,10 +181,13 @@
                 ],
                 "width": 50
             },
-            "name": "MyColumn4",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "dataIndex": "datafield",
+                "flex": "number",
+                "width": "auto"
             },
+            "name": "MyColumn4",
             "designerId": "e133221a-9980-453e-bfef-4e437089bfaa",
             "cn": [
                 {
@@ -181,6 +211,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "dbf78030-b7df-4817-bbfc-25eafb648512"
                 }
@@ -200,10 +236,12 @@
                 ],
                 "width": 50
             },
-            "name": "MyColumn6",
             "configAlternates": {
-                "text": "binding"
+                "text": "binding",
+                "dataIndex": "datafield",
+                "width": "auto"
             },
+            "name": "MyColumn6",
             "designerId": "e41d7873-f226-4964-96ea-30c4859e48ff",
             "cn": [
                 {
@@ -226,6 +264,12 @@
                         "designer|viewControllerFn": "pdfRenderer",
                         "fn": "renderer",
                         "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
                     },
                     "name": "renderer",
                     "designerId": "22cba5c4-de34-4185-bd80-93635f718709"
@@ -265,6 +309,10 @@
                             "Consultation du {name}"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
                     "name": "groupHeaderTpl",
                     "designerId": "32b98ebb-5eb7-4fd4-aa94-b9329861fc1a"
                 }
@@ -285,6 +333,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onGridpanelAfterRender",
             "designerId": "c43c4e97-a464-448a-9d7f-5a6f2051b496"
         },
@@ -300,6 +354,11 @@
                 "name": "cellclick",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onGridpanelCellClick",
             "designerId": "fe58d742-a348-4da9-a248-c4a0e5c3d949"
         },
@@ -314,6 +373,11 @@
                 "fn": "onGridpanelCellDblClick",
                 "name": "celldblclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onGridpanelCellDblClick",
             "designerId": "78fe84c6-5fd9-4779-a14a-4acdfa7dce15"

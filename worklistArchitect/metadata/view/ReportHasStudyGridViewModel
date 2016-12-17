@@ -9,6 +9,10 @@
         "designer|userAlias": "reporthasstudygrid",
         "designer|userClassName": "ReportHasStudyGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "05a22c55-e232-44ea-ba0d-ec5e8e9c0255",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "ReportHasStudyModel",
                 "name": "ReportHasStudyStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore1",
             "designerId": "daa818bb-a69c-4e47-abdc-1bab89e260c6"

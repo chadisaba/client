@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "PatientHistoryModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "31119146-7002-4b82-a0a8-477db96a9d1d",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "docDate"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyDate1",
             "designerId": "d7147047-c12f-420c-8d20-9862cde68700"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "type"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField2",
             "designerId": "f4a7064d-0c10-4ddf-9caa-6121aab98ddd"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "htmlPath"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField3",
             "designerId": "c984a80a-1378-4aae-b447-048e65b370ed"
@@ -60,6 +72,9 @@
             "userConfig": {
                 "name": "path"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField4",
             "designerId": "9d7f2057-f3ef-4056-8f31-db22f26aebe1"
         },
@@ -72,6 +87,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "name"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField5",
             "designerId": "a265fcfa-4ac4-4f9f-8909-da3800b1c492"

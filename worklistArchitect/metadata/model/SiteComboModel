@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "SiteComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "9d12509b-71be-4c74-8e94-8c832006b458",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "siteId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField",
             "designerId": "5ced8c6a-d3fc-43a4-8886-6e317f13ee10"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField1",
             "designerId": "8924ecd1-18be-4cf0-bac9-c6be19980607"

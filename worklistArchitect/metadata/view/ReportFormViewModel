@@ -9,6 +9,10 @@
         "designer|userAlias": "reportform",
         "designer|userClassName": "ReportFormViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "92692d24-49c0-437b-a395-8bf469e94624",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "ReportKeywordComboModel",
                 "name": "ReportKeywordComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyDirectStore1",
             "designerId": "3e3e712f-eade-421b-ab09-d7cf9a48fe67",
@@ -38,6 +46,10 @@
                             "{doctorId:1}"
                         ]
                     },
+                    "configAlternates": {
+                        "directFn": "direct",
+                        "metadata": "object"
+                    },
                     "name": "MyDirectProxy1",
                     "designerId": "02d7a906-4837-4640-8df7-b7bb6cc89ef9",
                     "cn": [
@@ -50,6 +62,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "rootProperty": "data"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string"
                             },
                             "name": "MyJsonReader1",
                             "designerId": "958d9dfe-f821-4579-92db-57fb02335aa2"

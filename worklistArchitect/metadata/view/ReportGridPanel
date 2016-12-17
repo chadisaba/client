@@ -15,10 +15,15 @@
         "title": "report.Reports",
         "width": null
     },
-    "name": "MyGridPanel1",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyGridPanel1",
     "designerId": "a8892df7-c6d1-4fee-a793-5de2fdeedc79",
     "viewControllerInstanceId": "94ee2bfb-9f6e-420c-99bb-552e96ac326b",
     "viewModelInstanceId": "55c8bfa1-9cbf-4335-a829-0cd7d6c880ac",
@@ -35,6 +40,11 @@
                 "text": "reportDate",
                 "width": 120
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyDateColumn3",
             "designerId": "55922909-f442-4951-bc73-db298ec17f6d"
         },
@@ -49,6 +59,11 @@
                 "dataIndex": "reportName",
                 "flex": 1,
                 "text": "reportName"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
             },
             "name": "MyColumn7",
             "designerId": "b7d0a806-0ae8-4313-801f-00294dd39e83"
@@ -65,6 +80,11 @@
                 "flex": 1,
                 "text": "reportDoctor"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MyColumn2",
             "designerId": "761aea75-a6a9-4af8-bbe5-1a6dc8c95d2c"
         },
@@ -79,6 +99,11 @@
                 "dataIndex": "reportStatus",
                 "text": "reportStatus",
                 "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyColumn1",
             "designerId": "47f02bcf-9e5a-407d-b33a-e63198744b77",
@@ -106,6 +131,12 @@
                             "      "
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "fa20e2ac-e72d-4ca8-bc7e-5b0b3343492d"
                 }
@@ -131,6 +162,9 @@
             "userConfig": {
                 "dock": "top"
             },
+            "configAlternates": {
+                "dock": "string"
+            },
             "name": "MyToolbar5",
             "designerId": "8e47373a-f45a-471b-b932-ade9f8566e3e",
             "cn": [
@@ -143,6 +177,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MyContainer1",
                     "designerId": "c9561e1c-6073-4190-849a-4572f9c10f5f",
@@ -163,6 +200,12 @@
                                     ""
                                 ]
                             },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "tooltip": "object"
+                            },
                             "name": "MyButton10",
                             "designerId": "1195e89e-856d-47d9-95e9-acbe63ecc9f9",
                             "cn": [
@@ -177,6 +220,11 @@
                                         "fn": "onAddBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onAddBtnItemIdClick",
                                     "designerId": "c173e42e-8e52-423a-8d63-4932c6e3bd68"
@@ -197,6 +245,11 @@
                         "layout|flex": null,
                         "width": null
                     },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
                     "name": "MyContainer",
                     "designerId": "89e77e70-9f9e-4854-a992-278e117d6121",
                     "cn": [
@@ -215,6 +268,12 @@
                                     "Modify the selected report"
                                 ]
                             },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "tooltip": "object"
+                            },
                             "name": "MyButton10",
                             "designerId": "49951258-1e0f-4fa4-acda-27aee4aa9a35",
                             "cn": [
@@ -229,6 +288,11 @@
                                         "fn": "onModifyBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onModifyBtnItemIdClick",
                                     "designerId": "ff3616be-c702-484b-9d59-df44af328c41"
@@ -248,6 +312,10 @@
                         "layout|flex": null,
                         "width": null
                     },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
                     "name": "MyContainer11",
                     "designerId": "00a6a71d-f97e-43d6-a4c0-874ebaeaab56",
                     "cn": [
@@ -266,6 +334,12 @@
                                     "Save"
                                 ]
                             },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "tooltip": "object"
+                            },
                             "name": "MyButton10",
                             "designerId": "e2da38e9-8ac2-4311-b2fc-4d55d9a1d6ff",
                             "cn": [
@@ -280,6 +354,11 @@
                                         "fn": "onSaveBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onSaveBtnItemIdClick",
                                     "designerId": "a5213f79-dbbd-4f9a-bbb9-aba0a5dd74f9"
@@ -297,6 +376,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MyContainer12",
                     "designerId": "c8d42c2f-09ca-435a-8222-d1fe76f51479",
@@ -316,6 +398,12 @@
                                     "Validate"
                                 ]
                             },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "tooltip": "object"
+                            },
                             "name": "MyButton10",
                             "designerId": "6cb46846-89ea-465a-92c6-21e82758b36b",
                             "cn": [
@@ -330,6 +418,11 @@
                                         "fn": "onValidateBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onValidateBtnItemIdClick",
                                     "designerId": "dc7ebe13-de69-4af1-9acd-0975f2da71e1"
@@ -349,6 +442,10 @@
                         "layout|flex": null,
                         "width": null
                     },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
                     "name": "MyContainer13",
                     "designerId": "5b4b46c8-50e4-458c-8677-d5909e4a563b",
                     "cn": [
@@ -367,6 +464,12 @@
                                     "Review"
                                 ]
                             },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "tooltip": "object"
+                            },
                             "name": "MyButton10",
                             "designerId": "74f4a16c-f53a-4af6-b837-76aa74089212",
                             "cn": [
@@ -381,6 +484,11 @@
                                         "fn": "onReviewBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onReviewBtnItemIdClick",
                                     "designerId": "80fc16b5-61b2-480b-86d3-40e3f0c9457d"
@@ -399,6 +507,9 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
                     "name": "MyContainer3",
                     "designerId": "2b1f7061-b179-415f-bd4a-336d2b047293",
                     "cn": [
@@ -414,6 +525,11 @@
                                 "itemId": "cancelBtnItemId",
                                 "text": "cancel"
                             },
+                            "configAlternates": {
+                                "glyph": "auto",
+                                "itemId": "string",
+                                "text": "string"
+                            },
                             "name": "MyButton",
                             "designerId": "0d682c1c-0dab-40f4-a77b-c753aac0ed42",
                             "cn": [
@@ -428,6 +544,11 @@
                                         "fn": "onCancelBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onCancelBtnItemIdClick",
                                     "designerId": "638c6242-17a1-49a3-95a3-1690881451f0"
@@ -449,6 +570,12 @@
                         "layout|flex": null,
                         "text": "Template settings"
                     },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
                     "name": "MyButton8",
                     "designerId": "57088de8-2969-4d25-bf1b-594cc9104713",
                     "cn": [
@@ -463,6 +590,11 @@
                                 "fn": "onTemplateSettingsBtnItemIdClick",
                                 "name": "click",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onTemplateSettingsBtnItemIdClick",
                             "designerId": "fef78205-577c-4c1d-a69d-9091e014f8c2"
@@ -487,6 +619,11 @@
                     "GridAddPlugins.addGridInfoColumnPlugin(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processReportGridPanel",
             "designerId": "e6d2f0b5-e5ce-4735-add8-b6c9c8c6e9a2"
         },
@@ -499,6 +636,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "SINGLE"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "e953848a-2b20-4f2b-af6d-22f921803bc7"
@@ -515,6 +655,11 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onGridpanelSelectionChange",
             "designerId": "42376fa5-416d-48db-aa9a-67d313bf4576"
         },
@@ -530,6 +675,11 @@
                 "name": "beforeselect",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onGridpanelBeforeSelect",
             "designerId": "4aea3744-390f-4685-aaca-0c7acd4cced5"
         },
@@ -544,6 +694,11 @@
                 "fn": "onGridpanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onGridpanelAfterRender",
             "designerId": "759895cd-4ce0-47da-839d-5c3900f0e6db"

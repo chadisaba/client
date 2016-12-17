@@ -9,5 +9,9 @@
         "designer|userAlias": "reporttemplatetabpanel",
         "designer|userClassName": "ReportTemplateTabPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "83824cb6-0c78-4623-8e77-431da681d76f"
 }

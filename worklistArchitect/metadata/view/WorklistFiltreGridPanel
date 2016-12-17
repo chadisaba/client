@@ -18,11 +18,16 @@
         ],
         "width": null
     },
-    "name": "MyGridPanel1",
     "configAlternates": {
         "store": "binding",
-        "title": "binding"
+        "title": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "stateId": "string",
+        "width": "auto"
     },
+    "name": "MyGridPanel1",
     "designerId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2",
     "viewControllerInstanceId": "36c197d6-107d-4b51-98a9-3aba4e809c9b",
     "viewModelInstanceId": "ab9d6573-f890-480a-92e4-c7e3debdf66d",
@@ -38,6 +43,10 @@
                 "dataIndex": "bool",
                 "text": "Boolean"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyColumn3",
             "designerId": "7fd07a5f-cbad-42ca-8ba7-7ca3d52aaba2"
         },
@@ -50,6 +59,9 @@
             "codeClass": null,
             "userConfig": {
                 "markDirty": false
+            },
+            "configAlternates": {
+                "markDirty": "boolean"
             },
             "name": "MyTable4",
             "designerId": "c3c32407-0dcf-4b23-bec0-8d9df5f9aa8b"
@@ -70,6 +82,11 @@
                     "GridAddPlugins.addSearchPlugin(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processWorklistFiltreGridPanel",
             "designerId": "fb0f8513-9d5c-4163-90d0-c418c68bf508"
         },
@@ -84,6 +101,11 @@
                 "fn": "onGridpanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onGridpanelAfterRender",
             "designerId": "0fba75ac-89a3-4bad-9ecc-e7d36f30d3ea"

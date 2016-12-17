@@ -17,6 +17,18 @@
         "title": "Recherche patient",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "container|align": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "itemId": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "af6447b8-8c41-4643-a8f8-mx7brpkahtq7",
     "viewControllerInstanceId": "9fe5f93a-4ace-45f2-b4ee-8w4m5cwv6kfg",
@@ -35,6 +47,12 @@
                 "layout": null,
                 "title": "Cliquer sur la touche \"Entrée\" pour lancer la recherche"
             },
+            "configAlternates": {
+                "collapsible": "boolean",
+                "height": "auto",
+                "layout": "string",
+                "title": "string"
+            },
             "name": "MyFieldSet",
             "designerId": "11gcsm3p-7399-4b87-b85c-vvbf2k1ym8nf",
             "cn": [
@@ -48,6 +66,10 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string"
                     },
                     "name": "MyContainer1",
                     "designerId": "f848311c-8472-4a7e-9ba8-bd15af288a0c",
@@ -65,6 +87,12 @@
                                 "layout|flex": 1,
                                 "name": "patientLName"
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
+                            },
                             "name": "MypatientLNameTextField",
                             "designerId": "73e1ef6a-05cb-4aa6-aacc-lnswv64enlwv",
                             "cn": [
@@ -79,6 +107,11 @@
                                         "fn": "onTextfieldSpecialkey",
                                         "name": "specialkey",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onTextfieldSpecialkey",
                                     "designerId": "6911acf9-3335-4375-9fa4-fe148b855cab"
@@ -96,6 +129,10 @@
                                 "layout|flex": null,
                                 "width": 10
                             },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
                             "name": "MySpacer3",
                             "designerId": "aecdc326-6904-431f-92f8-dd3bd03776c1"
                         },
@@ -112,6 +149,12 @@
                                 "layout|flex": 1,
                                 "name": "patientFname"
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
+                            },
                             "name": "MypatientFnameTextField",
                             "designerId": "73e1ef6a-05cb-4aa6-aacc-j92xtxrny3pn",
                             "cn": [
@@ -126,6 +169,11 @@
                                         "fn": "onTextfieldSpecialkey",
                                         "name": "specialkey",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onTextfieldSpecialkey",
                                     "designerId": "7dce533a-6092-4b9a-a5eb-1971ed5f45b7"
@@ -144,6 +192,9 @@
                     "userConfig": {
                         "height": 5
                     },
+                    "configAlternates": {
+                        "height": "auto"
+                    },
                     "name": "MySpacer2",
                     "designerId": "08eddd40-8ff2-47f1-a84b-594dda8335ec"
                 },
@@ -157,6 +208,10 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string"
                     },
                     "name": "MyContainer",
                     "designerId": "0c3bedb0-dbf8-4b96-8d66-ccaea1becd2f",
@@ -176,6 +231,14 @@
                                 "name": "patientBirthday",
                                 "submitFormat": "Y-m-d"
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "format": "string",
+                                "layout|flex": "number",
+                                "name": "string",
+                                "submitFormat": "string"
+                            },
                             "name": "MyDateField",
                             "designerId": "73e1ef6a-05cb-4aa6-aacc-3lbu3jy5fcn5",
                             "cn": [
@@ -190,6 +253,11 @@
                                         "fn": "onDatefieldSpecialkey",
                                         "name": "specialkey",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onDatefieldSpecialkey",
                                     "designerId": "44f93969-d304-4fe1-92e8-e1839a0ce5a8"
@@ -207,6 +275,10 @@
                                 "layout|flex": null,
                                 "width": 10
                             },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
                             "name": "MySpacer4",
                             "designerId": "a66925d9-7805-4543-974d-e785fa518e47"
                         },
@@ -223,6 +295,12 @@
                                 "layout|flex": 1,
                                 "name": "patientSocialNumber"
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
+                            },
                             "name": "MypatientSocialNumberTextField",
                             "designerId": "73e1ef6a-05cb-4aa6-aacc-rf4e38r2pf99",
                             "cn": [
@@ -237,6 +315,11 @@
                                         "fn": "onTextfieldSpecialkey",
                                         "name": "specialkey",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onTextfieldSpecialkey",
                                     "designerId": "a1a27d52-e87e-4be5-9473-956db77e2613"
@@ -257,6 +340,13 @@
                                 "name": "patientSocialKey",
                                 "width": 50
                             },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "width": "auto"
+                            },
                             "name": "MypatientSocialKeyTextField",
                             "designerId": "73e1ef6a-05cb-4aa6-aacc-xsukc3llrkmb",
                             "cn": [
@@ -271,6 +361,11 @@
                                         "fn": "onTextfieldSpecialkey",
                                         "name": "specialkey",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onTextfieldSpecialkey",
                                     "designerId": "4e3cc9fd-ac60-4005-8090-af95e9b45c3c"
@@ -289,6 +384,9 @@
                     "userConfig": {
                         "height": 10
                     },
+                    "configAlternates": {
+                        "height": "auto"
+                    },
                     "name": "MySpacer",
                     "designerId": "6fd9ea0d-f371-43a6-9183-0686fd7951cc"
                 },
@@ -303,6 +401,10 @@
                         "container|align": "stretch",
                         "layout": "hbox"
                     },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string"
+                    },
                     "name": "MyContainer2",
                     "designerId": "458660e7-9c1f-488a-964a-799c427ab1fd",
                     "cn": [
@@ -315,6 +417,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
                             },
                             "name": "MySpacer1",
                             "designerId": "964ed324-f893-4c67-9915-0e9a877d8349"
@@ -333,6 +438,13 @@
                                 "layout|flex": null,
                                 "text": "Rechercher"
                             },
+                            "configAlternates": {
+                                "icon": "string",
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
                             "name": "MyButton",
                             "designerId": "7769a3e2-fa4b-4b22-b5e6-24ed9cd35c17",
                             "cn": [
@@ -347,6 +459,11 @@
                                         "fn": "onPatientSearchBtnItemIdClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onPatientSearchBtnItemIdClick",
                                     "designerId": "20fe066c-d985-4379-bfeb-d60b2c7a5177"
@@ -374,11 +491,15 @@
                 ],
                 "title": ""
             },
-            "name": "MyGridPanel",
             "configAlternates": {
                 "store": "binding",
-                "scrollable": "boolean"
+                "scrollable": "boolean",
+                "hideHeaders": "boolean",
+                "itemId": "string",
+                "layout|flex": "number",
+                "title": "string"
             },
+            "name": "MyGridPanel",
             "designerId": "2296b183-7ddd-46f6-b3d3-62d01f69668a",
             "cn": [
                 {
@@ -390,6 +511,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "searchGridItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTable3",
                     "designerId": "20ee450e-d720-4ca4-8fcb-3e9161ecefa4"
@@ -405,6 +529,11 @@
                         "dataIndex": "patientLName",
                         "flex": 1,
                         "text": "Résultats de la recherche"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "text": "string"
                     },
                     "name": "MyTemplateColumn",
                     "designerId": "3c5bc837-c1a6-466d-a0c7-a0a5c06ff9e6",
@@ -426,6 +555,10 @@
                                     "  "
                                 ]
                             },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
                             "name": "tpl",
                             "designerId": "96c40b3a-bff0-46d9-a5b9-5d51f8e34b4e"
                         }
@@ -443,6 +576,11 @@
                         "name": "itemdblclick",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onPatientSearchGridItemIdItemDblClick",
                     "designerId": "31813bab-61a1-4f9a-90da-606a6e85ca70"
                 },
@@ -455,6 +593,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
                     },
                     "name": "MyToolbar2",
                     "designerId": "6215cd21-38d1-4f9a-a651-3a2b4dc2dbb3",
@@ -470,6 +611,11 @@
                                 "container|align": "stretch",
                                 "layout": "hbox",
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string",
+                                "layout|flex": "number"
                             },
                             "name": "MyContainer4",
                             "designerId": "783639f9-da51-4991-af1a-6b084ef971d5",
@@ -487,6 +633,12 @@
                                         "layout|flex": null,
                                         "text": "Nouveau patient"
                                     },
+                                    "configAlternates": {
+                                        "disabled": "boolean",
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
                                     "name": "MyButton1",
                                     "designerId": "bdfe5018-bef2-4f25-ab80-9593d0251920",
                                     "cn": [
@@ -502,6 +654,11 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
                                             "name": "onNouveauPatientBtnItemIdClick",
                                             "designerId": "a9d860fa-f236-48d2-9c40-4c9f993c99ac"
                                         }
@@ -516,6 +673,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "width": 20
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
                                     },
                                     "name": "MySpacer7",
                                     "designerId": "7c24918f-0a05-4742-b71e-edca57e87e8b"
@@ -533,6 +693,12 @@
                                         "layout|flex": 1,
                                         "text": "Accueillir patient sélectionné"
                                     },
+                                    "configAlternates": {
+                                        "disabled": "boolean",
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
                                     "name": "MyButton2",
                                     "designerId": "42e352df-7084-4b43-bd4f-9c9afc431a10",
                                     "cn": [
@@ -548,6 +714,11 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
                                             "name": "onAccueilPatientBtnItemIdClick",
                                             "designerId": "f0395d29-9715-49ec-a428-b8edfe92f6da"
                                         }
@@ -562,6 +733,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "width": 20
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
                                     },
                                     "name": "MySpacer9",
                                     "designerId": "4067dbca-ce57-4623-8d25-ae32dc284ade"
@@ -579,6 +753,12 @@
                                         "layout|flex": 1,
                                         "text": "Accès historique"
                                     },
+                                    "configAlternates": {
+                                        "disabled": "boolean",
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
                                     "name": "MyButton3",
                                     "designerId": "7696ef16-c285-4a35-a29c-e2b3c873180b",
                                     "cn": [
@@ -594,6 +774,11 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
                                             "name": "onHistoriquePatientBtnItemIdClick",
                                             "designerId": "7bdd88a4-bb5c-4fd1-8a74-4c0e44691665"
                                         }
@@ -608,6 +793,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "width": 20
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
                                     },
                                     "name": "MySpacer8",
                                     "designerId": "ff6ce5e7-0334-4350-bfbc-8cf2f4e652e7"
@@ -625,6 +813,12 @@
                                         "layout|flex": 1,
                                         "text": "Accès Fiche patient"
                                     },
+                                    "configAlternates": {
+                                        "disabled": "boolean",
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
                                     "name": "MyButton4",
                                     "designerId": "3a9e4acc-7247-46d2-bb64-499fe85c1d3a",
                                     "cn": [
@@ -639,6 +833,11 @@
                                                 "fn": "onFichePatientBtnItemIdClick",
                                                 "name": "click",
                                                 "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
                                             },
                                             "name": "onFichePatientBtnItemIdClick",
                                             "designerId": "98ae4e6c-ec7a-4f5d-9fbd-63b5b71de228"
@@ -660,6 +859,11 @@
                         "fn": "onPatientSearchGridItemIdSelectionChange",
                         "name": "selectionchange",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onPatientSearchGridItemIdSelectionChange",
                     "designerId": "d69a404b-6c33-4a96-907b-09afefd76204"

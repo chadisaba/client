@@ -9,6 +9,10 @@
         "designer|userAlias": "visitrefphgrid",
         "designer|userClassName": "VisitRefPhGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "b0fa1372-a48b-4d71-9f5d-ea22f7e8764e",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "VisitRefPhGridModel",
                 "name": "VisitRefPhStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "VisitRefPhStore",
             "designerId": "244c596f-14c3-4ee5-9c9d-d9b183bb6e34"
@@ -35,6 +43,10 @@
             "userConfig": {
                 "model": "ReferringPhysicianNameComboModel",
                 "name": "ReferringPhysicianSearchComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "ReferringPhysicianSearchComboStore",
             "designerId": "d5cd413a-098c-46a7-a133-017bb0c174fe"

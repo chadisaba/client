@@ -9,5 +9,9 @@
         "designer|userAlias": "amoform",
         "designer|userClassName": "AmoFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "667ca9a8-cb97-41c0-86fb-3baacf4b4b21"
 }

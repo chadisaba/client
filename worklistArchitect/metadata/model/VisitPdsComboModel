@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "VisitPdsComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelVisitPdsComboModel",
     "designerId": "a1dbffd8-cc7e-4c3a-b920-1186d307aaa9",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "id"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "3e4cf61d-5d9b-43fa-94c7-e8a496c054c9"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "text"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "14427555-5166-4615-980e-986471ddf34e"

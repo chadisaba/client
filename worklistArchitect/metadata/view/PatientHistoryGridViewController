@@ -9,5 +9,9 @@
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "aac31181-09fc-4522-852d-05c72b1059da"
 }

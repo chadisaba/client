@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "WorklistModel",
     "designerId": "r8h3hui7-1d4f-4fb9-9364-xyhurc54yn3d",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistId",
             "designerId": "e96f8d89-803f-419a-a346-258ck2wymxgc"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "visitDate"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyDate4",
             "designerId": "e96f8d89-803f-419a-a346-1nt5y4bpp1mw"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitTime"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField19",
             "designerId": "1ec3b2f8-1f78-4fb7-8fbd-887b27d6d9d0"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "worklistStudies"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistStudies",
             "designerId": "e96f8d89-803f-419a-a346-fgysws5bj7dg"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistDoctor"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistMedRef",
             "designerId": "e96f8d89-803f-419a-a346-fes2pi7fra46"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "worklistMedPresc"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistMedPresc",
             "designerId": "e96f8d89-803f-419a-a346-m339q18s3y66"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistMedRecipient"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistMedRecipient",
             "designerId": "e96f8d89-803f-419a-a346-xp3vlbcir4t3"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "worklistDictationsNb"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistDictationsNb",
             "designerId": "e96f8d89-803f-419a-a346-l2e26k514ddw"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistCrsNb"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistCrsNb",
             "designerId": "e96f8d89-803f-419a-a346-hf78q86ba5h1"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "worklistLastCrStatus"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistCrsStatus",
             "designerId": "e96f8d89-803f-419a-a346-lpef6y6mak6b"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistLastDictationStatus"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistCotationStatus",
             "designerId": "e96f8d89-803f-419a-a346-avwq21kx3ips"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "worklistFTNum"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistFTNum",
             "designerId": "e96f8d89-803f-419a-a346-1983gerbxqhq"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistPatientInfo"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistPatientInfo",
             "designerId": "e96f8d89-803f-419a-a346-qlxqhanj9gfp"
@@ -196,6 +239,9 @@
             "userConfig": {
                 "name": "worklistVisitInfo"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "My\tworklistVisitInfo",
             "designerId": "e96f8d89-803f-419a-a346-ux1pihp9u3xg"
         },
@@ -208,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistVisitComment"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistVisitComment",
             "designerId": "e96f8d89-803f-419a-a346-r4j1itb6uapx"
@@ -222,6 +271,9 @@
             "userConfig": {
                 "name": "worklistPatientInfoAlertLevel"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistPatientInfoAlertLevel",
             "designerId": "e96f8d89-803f-419a-a346-27nq3fmumk9l"
         },
@@ -234,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistVisitInfoAlertLevel"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistVisitInfoAlertLevel",
             "designerId": "e96f8d89-803f-419a-a346-upeyl6p2wd52"
@@ -248,6 +303,9 @@
             "userConfig": {
                 "name": "worklistPriseEnCharge"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistPriseEnCharge",
             "designerId": "e96f8d89-803f-419a-a346-jtdd6qtb39gi"
         },
@@ -260,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistPatientDu"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistPatientDu",
             "designerId": "e96f8d89-803f-419a-a346-5bh111i7tq5a"
@@ -274,6 +335,9 @@
             "userConfig": {
                 "name": "worklisPatientPaid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklisPatientPaid",
             "designerId": "e96f8d89-803f-419a-a346-ddfeyhi1ji5m"
         },
@@ -286,6 +350,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklistFtDu"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklistFtDu",
             "designerId": "e96f8d89-803f-419a-a346-cnm1pdlenyv8"
@@ -300,6 +367,9 @@
             "userConfig": {
                 "name": "worklistFtPaid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklistFtPaid",
             "designerId": "e96f8d89-803f-419a-a346-8ihk2y3eqxe1"
         },
@@ -312,6 +382,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "worklisCrEmailedTo"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyworklisCrEmailedTo",
             "designerId": "e96f8d89-803f-419a-a346-5bw652dwlvum"
@@ -326,6 +399,9 @@
             "userConfig": {
                 "name": "worklisCrMailedTo"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyworklisCrMailedTo",
             "designerId": "e96f8d89-803f-419a-a346-u1g2ckmbngan"
         },
@@ -338,6 +414,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientLastName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientLastName",
             "designerId": "e96f8d89-803f-419a-a346-jmne438epe4p"
@@ -352,6 +431,9 @@
             "userConfig": {
                 "name": "patientFirstName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientFirstName",
             "designerId": "e96f8d89-803f-419a-a346-9k1a4qcrm4s6"
         },
@@ -364,6 +446,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientBirthday"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientBirthDay",
             "designerId": "e96f8d89-803f-419a-a346-kr3rhf4ab5ur"
@@ -378,6 +463,9 @@
             "userConfig": {
                 "name": "patientInfos"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientInfos",
             "designerId": "e96f8d89-803f-419a-a346-dnwp3vbm718u"
         },
@@ -390,6 +478,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitInfos"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitInfos",
             "designerId": "e96f8d89-803f-419a-a346-7941vye17b86"
@@ -404,6 +495,9 @@
             "userConfig": {
                 "name": "visitComment"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitComment",
             "designerId": "e96f8d89-803f-419a-a346-dsjdrh4a4dly"
         },
@@ -416,6 +510,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsBySocialCard"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "My\tvisitIsBySocialCard",
             "designerId": "e96f8d89-803f-419a-a346-79fypic84mkq"
@@ -430,6 +527,9 @@
             "userConfig": {
                 "name": "visitIsFree"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsFree",
             "designerId": "e96f8d89-803f-419a-a346-grv1i95qgcgf"
         },
@@ -442,6 +542,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsHospitalized"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsHospitalized",
             "designerId": "e96f8d89-803f-419a-a346-x56fjjpb8uvw"
@@ -456,6 +559,9 @@
             "userConfig": {
                 "name": "visitIsUrgent"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsUrgent",
             "designerId": "e96f8d89-803f-419a-a346-59qk95s5y21m"
         },
@@ -468,6 +574,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitHospitVisitNumber"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitHospitVisitNumber",
             "designerId": "e96f8d89-803f-419a-a346-19k4ycnirghe"
@@ -482,6 +591,9 @@
             "userConfig": {
                 "name": "visitIsDone"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsDone",
             "designerId": "e96f8d89-803f-419a-a346-9j11u6ddvb3s"
         },
@@ -494,6 +606,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsAmo"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsAmo",
             "designerId": "e96f8d89-803f-419a-a346-a8mup79n9j4u"
@@ -508,6 +623,9 @@
             "userConfig": {
                 "name": "visitIsAmc"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsAmc",
             "designerId": "e96f8d89-803f-419a-a346-4b2hefcxmt6v"
         },
@@ -520,6 +638,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitPds"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitPds",
             "designerId": "e96f8d89-803f-419a-a346-5ip7bgg8nhts"
@@ -534,6 +655,9 @@
             "userConfig": {
                 "name": "visitInvoiceType"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitInvoiceType",
             "designerId": "e96f8d89-803f-419a-a346-9abqt2jq8mie"
         },
@@ -546,6 +670,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitFtFor"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitFtFor",
             "designerId": "e96f8d89-803f-419a-a346-yn4h7ajd2qvy"
@@ -560,6 +687,9 @@
             "userConfig": {
                 "name": "visitPEC"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitPEC",
             "designerId": "e96f8d89-803f-419a-a346-7ihe4sj23d5h"
         },
@@ -572,6 +702,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteName",
             "designerId": "e96f8d89-803f-419a-a346-n9jsxbf9atke"
@@ -586,6 +719,9 @@
             "userConfig": {
                 "name": "siteCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteName1",
             "designerId": "432e396a-c6cb-4526-a46c-3dc5bdfaf807"
         },
@@ -598,6 +734,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteId",
             "designerId": "e96f8d89-803f-419a-a346-2sty13ltjfnt"
@@ -612,6 +751,9 @@
             "userConfig": {
                 "name": "visitId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitId",
             "designerId": "e96f8d89-803f-419a-a346-xl1dvle3vs5e"
         },
@@ -624,6 +766,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "lastUpdate"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyDate2",
             "designerId": "b23df6ll-ac56-469a-895f-p9tlyyy2jg9r"
@@ -638,6 +783,9 @@
             "userConfig": {
                 "name": "doctorId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger8",
             "designerId": "da47cb15-3227-4545-9398-78984b99a291"
         },
@@ -651,6 +799,9 @@
             "userConfig": {
                 "name": "patientId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField20",
             "designerId": "5a08b70c-e5da-4587-aee0-b1bb605d8f0b"
         },
@@ -663,6 +814,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientNbVisit"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger9",
             "designerId": "c4e2a1be-b07b-43b8-965c-42fd5cde7ad2"

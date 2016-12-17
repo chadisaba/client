@@ -9,6 +9,10 @@
         "designer|userAlias": "patienthistorygrid",
         "designer|userClassName": "PatientHistoryGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "ccbdb707-6f9a-4a65-87a6-8c4e2cbdfbdb",
     "cn": [
         {
@@ -23,6 +27,12 @@
                 "groupField": "docDate",
                 "model": "PatientHistoryModel",
                 "name": "PatientHistoryStore"
+            },
+            "configAlternates": {
+                "autoLoad": "boolean",
+                "groupField": "datafield",
+                "model": "model",
+                "name": "string"
             },
             "name": "MyDirectStore",
             "designerId": "8f48927d-6c74-4392-83bc-7391fb3eb197",
@@ -40,6 +50,10 @@
                             "{patientId:'1'}"
                         ]
                     },
+                    "configAlternates": {
+                        "directFn": "direct",
+                        "metadata": "object"
+                    },
                     "name": "MyDirectProxy",
                     "designerId": "a1afa8ef-233e-497e-9e63-90ede634fd6f",
                     "cn": [
@@ -53,6 +67,10 @@
                             "userConfig": {
                                 "messageProperty": null,
                                 "rootProperty": "data"
+                            },
+                            "configAlternates": {
+                                "messageProperty": "string",
+                                "rootProperty": "string"
                             },
                             "name": "MyJsonReader",
                             "designerId": "e3f61746-ca6f-4d43-b3b8-5039a1b00e93"

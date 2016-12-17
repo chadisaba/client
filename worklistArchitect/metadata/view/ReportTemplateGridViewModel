@@ -9,6 +9,10 @@
         "designer|userAlias": "reporttemplategrid",
         "designer|userClassName": "ReportTemplateGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "a936500c-eaf1-45d8-8764-708281ea9456",
     "cn": [
         {
@@ -23,6 +27,11 @@
                 "model": "ReportTemplateModel",
                 "name": "ReportTemplateGridStore"
             },
+            "configAlternates": {
+                "groupField": "datafield",
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore12",
             "designerId": "0ddbc14e-0d1f-40c5-9184-3fa034a1725a"
         },
@@ -36,6 +45,10 @@
             "userConfig": {
                 "model": "DoctorComboModel",
                 "name": "DoctorStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore",
             "designerId": "b1f608f5-d77f-4eef-bb56-a838cb69764e"

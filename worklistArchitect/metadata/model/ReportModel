@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "ReportModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "cabc7be2-a2f3-42a9-b874-0abfb76aabf2",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField",
             "designerId": "9e5a8771-2171-4aaa-b502-9a7fef97933f"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "doctorId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger4",
             "designerId": "0a518efd-8e46-411a-8cee-538eeec296d8"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField7",
             "designerId": "4577d512-f1dc-4545-a39f-2a4083af2635"
@@ -60,6 +72,9 @@
             "userConfig": {
                 "name": "doctor"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField2",
             "designerId": "ad3868eb-1234-4e23-9271-6cb7cb89a01f"
         },
@@ -72,6 +87,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField3",
             "designerId": "c1382e5f-9972-4a68-9893-9809ab27289a"
@@ -86,6 +104,9 @@
             "userConfig": {
                 "name": "reportContent"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField4",
             "designerId": "63624f80-0baa-45d2-927e-774133e6ca45"
         },
@@ -98,6 +119,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportContentIsHtml"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean",
             "designerId": "f18469b9-9bad-4332-81cc-7dfcac8b9a7a"
@@ -112,6 +136,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean1",
             "designerId": "d6a2536d-fb4f-4347-88fa-f12b82bf49fc"
         },
@@ -124,6 +151,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean2",
             "designerId": "c0b2cd0e-d7b4-4811-aaf7-f283ec8b451b"
@@ -138,6 +168,9 @@
             "userConfig": {
                 "name": "reportHtmlContent"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField6",
             "designerId": "e3c6798a-faec-4575-8233-49a3b3aa839b"
         },
@@ -151,6 +184,9 @@
             "userConfig": {
                 "name": "reportDate"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyDate",
             "designerId": "86fb8273-a396-4399-9c90-4a62ef2fd85d"
         },
@@ -163,6 +199,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportStatus"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger3",
             "designerId": "798f0fcb-8f23-4131-a12c-eb2e67b34083"

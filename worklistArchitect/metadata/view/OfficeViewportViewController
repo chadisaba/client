@@ -9,5 +9,9 @@
         "designer|userAlias": "officeviewport",
         "designer|userClassName": "OfficeViewportViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "bcf1efca-9e53-44a2-a0af-112a000c90f1"
 }

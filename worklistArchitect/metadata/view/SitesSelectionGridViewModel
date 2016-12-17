@@ -9,6 +9,10 @@
         "designer|userAlias": "sitesselectiongrid",
         "designer|userClassName": "SitesSelectionGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "0d069ca7-ea17-4818-92d1-c2fced6784a8",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "SiteComboModel",
                 "name": "SitesSelectionStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore",
             "designerId": "0f467296-d5c1-4b04-a81d-4cc61af39369"

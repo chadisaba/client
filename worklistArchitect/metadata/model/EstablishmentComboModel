@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "EstablishmentComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "RemplacantComboModel1",
     "designerId": "2fb6f2bf-cb2d-4e60-b6f5-bff35826077e",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "establishmentId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField35",
             "designerId": "421494fc-4fc6-4a63-8cfe-9e76ade3cfb4"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "establishmentCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField14",
             "designerId": "6bea920c-0c96-4785-8194-e0a78181799a"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "establishmentName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField15",
             "designerId": "8757889a-1f31-4288-bafe-cbe398814d3e"

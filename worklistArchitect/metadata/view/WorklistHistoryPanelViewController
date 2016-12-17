@@ -9,6 +9,10 @@
         "designer|userAlias": "worklisthistorypanel",
         "designer|userClassName": "WorklistHistoryPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "name": "WorklistPanelViewController1",
     "designerId": "6cca55f3-6ae6-4180-b543-9a27380ccf3d"
 }

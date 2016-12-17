@@ -15,10 +15,17 @@
         "title": "My Form",
         "width": null
     },
-    "name": "MyForm",
     "configAlternates": {
-        "scrollable": "boolean"
+        "scrollable": "boolean",
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyForm",
     "designerId": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
     "viewControllerInstanceId": "667ca9a8-cb97-41c0-86fb-3baacf4b4b21",
     "viewModelInstanceId": "ed3f89c2-5f98-4c1f-9ce9-e961ecef7ece",
@@ -33,6 +40,9 @@
             "userConfig": {
                 "title": "A.M.O"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "MyFieldSet7",
             "designerId": "852d5da5-dbfe-4744-beb4-da5ba4b886af",
             "cn": [
@@ -45,6 +55,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "title": "Assurance"
+                    },
+                    "configAlternates": {
+                        "title": "string"
                     },
                     "name": "MyFieldSet8",
                     "designerId": "bd7ca367-9210-4a82-ac24-fa9c6fd3a994",
@@ -67,10 +80,16 @@
                                 ],
                                 "valueField": "id"
                             },
-                            "name": "MyComboBox2",
                             "configAlternates": {
-                                "store": "binding"
+                                "store": "binding",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "name": "string",
+                                "queryMode": "string",
+                                "valueField": "datafield"
                             },
+                            "name": "MyComboBox2",
                             "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
                             "cn": [
                                 {
@@ -84,6 +103,11 @@
                                         "fn": "onTypeAssComboChange",
                                         "name": "change",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onTypeAssComboChange",
                                     "designerId": "c2699ad2-619a-43e8-b092-23159340b83d"
@@ -108,10 +132,16 @@
                                 ],
                                 "valueField": "id"
                             },
-                            "name": "MyTagField1",
                             "configAlternates": {
-                                "store": "binding"
+                                "store": "binding",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "name": "string",
+                                "queryMode": "string",
+                                "valueField": "datafield"
                             },
+                            "name": "MyTagField1",
                             "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c",
                             "cn": [
                                 {
@@ -125,6 +155,11 @@
                                         "fn": "onPecComboChange",
                                         "name": "change",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onPecComboChange",
                                     "designerId": "b7778a2d-1ac4-4a87-bd52-8acf81efd668"
@@ -143,6 +178,11 @@
                                 "itemId": "materniteContainerItemId",
                                 "layout": "hbox"
                             },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "itemId": "string",
+                                "layout": "string"
+                            },
                             "name": "MyContainer10",
                             "designerId": "4ae180cc-74ec-4a2d-b7be-13007fd75a9c",
                             "cn": [
@@ -159,6 +199,12 @@
                                         "labelWidth": 130,
                                         "name": "regoForcageMaternite"
                                     },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string"
+                                    },
                                     "name": "MyCheckbox3",
                                     "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
                                 },
@@ -173,6 +219,11 @@
                                         "fieldLabel": "Date maternité",
                                         "labelWidth": null,
                                         "name": "regoDateMaternite"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string"
                                     },
                                     "name": "MyDateField4",
                                     "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
@@ -193,6 +244,13 @@
                                 "labelWidth": 120,
                                 "name": "regoForcageAld"
                             },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "name": "string"
+                            },
                             "name": "MyCheckbox2",
                             "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
                         },
@@ -209,6 +267,12 @@
                                 "labelWidth": null,
                                 "name": "regoDateAccDroitCommun"
                             },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "name": "string"
+                            },
                             "name": "MyDateField5",
                             "designerId": "648f9947-7656-472d-b565-19b6ea90260a"
                         },
@@ -222,6 +286,10 @@
                             "userConfig": {
                                 "container|align": "stretch",
                                 "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
                             },
                             "name": "MyContainer1",
                             "designerId": "a18e7c9a-69d2-4d89-8625-70ee2f5c4ed8",
@@ -243,6 +311,16 @@
                                         "name": "regoCodeCouverture",
                                         "repeatTriggerClick": null
                                     },
+                                    "configAlternates": {
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "hideTrigger": "boolean",
+                                        "layout|flex": "number",
+                                        "maskRe": "regex",
+                                        "maxLength": "number",
+                                        "name": "string",
+                                        "repeatTriggerClick": "boolean"
+                                    },
                                     "name": "MyTextField13",
                                     "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
                                 },
@@ -258,6 +336,12 @@
                                         "fieldLabel": "Alsace-Moselle",
                                         "labelWidth": null,
                                         "name": "regoRegimeAlsace"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string"
                                     },
                                     "name": "MyCheckbox",
                                     "designerId": "c4940913-a4ab-4eba-8f33-179a4dc4c1e8"
@@ -278,6 +362,11 @@
                         "layout": "hbox",
                         "title": "Droits"
                     },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
                     "name": "MyFieldSet9",
                     "designerId": "07958990-6d7a-42f3-8048-0543a67ce714",
                     "cn": [
@@ -294,6 +383,13 @@
                                 "labelWidth": 40,
                                 "layout|flex": 1,
                                 "name": "regoDu"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|flex": "number",
+                                "name": "string"
                             },
                             "name": "MyDateField2",
                             "designerId": "f6a550d8-917e-4fd0-a79e-1b2c3e850551"
@@ -312,6 +408,13 @@
                                 "layout|flex": 1,
                                 "name": "regoAu"
                             },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|flex": "number",
+                                "name": "string"
+                            },
                             "name": "MyDateField3",
                             "designerId": "d374cdbc-fe92-4748-a31a-3cc6cb50ab09"
                         }
@@ -327,6 +430,10 @@
                     "userConfig": {
                         "collapsible": true,
                         "title": "Coordonnées organisme A.M.O"
+                    },
+                    "configAlternates": {
+                        "collapsible": "boolean",
+                        "title": "string"
                     },
                     "name": "MyFieldSet10",
                     "designerId": "cac93940-8537-4412-8e63-e6e7948ee3a1",
@@ -349,11 +456,16 @@
                                 ],
                                 "valueField": "amoId"
                             },
-                            "name": "MyadvancedCombobox5",
                             "configAlternates": {
                                 "store": "binding",
-                                "enableSearchBtn": "boolean"
+                                "enableSearchBtn": "boolean",
+                                "displayField": "datafield",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "valueField": "datafield"
                             },
+                            "name": "MyadvancedCombobox5",
                             "designerId": "967e47d0-f7e7-4073-b09e-123412857a7d",
                             "customConfigs": [
                                 {
@@ -375,6 +487,11 @@
                                         "name": "change",
                                         "scope": "me"
                                     },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
                                     "name": "onAmoComboItemIdChange",
                                     "designerId": "f194e963-694b-4f32-931b-f001bee9a9a9"
                                 }
@@ -390,6 +507,10 @@
                             "userConfig": {
                                 "container|align": "stretch",
                                 "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
                             },
                             "name": "MyContainer4",
                             "designerId": "f3fb4c18-8a48-421b-ad87-1369ee5c9415",
@@ -412,6 +533,17 @@
                                         "minLength": 2,
                                         "name": "regoCodeRegime"
                                     },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number",
+                                        "maskRe": "regex",
+                                        "maxLength": "number",
+                                        "minLength": "number",
+                                        "name": "string"
+                                    },
                                     "name": "MyTextField5",
                                     "designerId": "719d77ef-7dc9-4e01-b788-816a562ee6c8"
                                 },
@@ -431,6 +563,16 @@
                                         "maskRe": "/[0-9]/",
                                         "maxLength": 3,
                                         "name": "regoCodeCaisse"
+                                    },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number",
+                                        "maskRe": "regex",
+                                        "maxLength": "number",
+                                        "name": "string"
                                     },
                                     "name": "MyTextField6",
                                     "designerId": "a8bfab12-6bd2-4198-ab6c-b6b770e234e3"
@@ -452,6 +594,16 @@
                                         "maxLength": 4,
                                         "name": "regoCodeCentre"
                                     },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number",
+                                        "maskRe": "regex",
+                                        "maxLength": "number",
+                                        "name": "string"
+                                    },
                                     "name": "MyTextField7",
                                     "designerId": "2c1b7047-1855-4df7-8fbc-50e5dd62c53f"
                                 }
@@ -468,6 +620,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "title": "Bénéficiaire"
+                    },
+                    "configAlternates": {
+                        "title": "string"
                     },
                     "name": "MyFieldSet11",
                     "designerId": "dc2b2398-7a5d-438a-aae0-cd747652db38",
@@ -488,10 +643,14 @@
                                 ],
                                 "valueField": "id"
                             },
-                            "name": "MyComboBox9",
                             "configAlternates": {
-                                "store": "binding"
+                                "store": "binding",
+                                "fieldLabel": "string",
+                                "layout|anchor": "string",
+                                "name": "string",
+                                "valueField": "datafield"
                             },
+                            "name": "MyComboBox9",
                             "designerId": "f32c050a-d329-4ad3-8438-1339e831f215"
                         },
                         {
@@ -509,6 +668,15 @@
                                 "maxLength": 1,
                                 "minLength": 1,
                                 "name": "regoRangGemBenef"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "enforceMaxLength": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "maxLength": "number",
+                                "minLength": "number",
+                                "name": "string"
                             },
                             "name": "MyTextField8",
                             "designerId": "bc249dda-602d-4e92-8f73-02952582b677"
@@ -528,6 +696,14 @@
                                 "minLength": 1,
                                 "name": "regoRangGemAssure"
                             },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "maxLength": "number",
+                                "minLength": "number",
+                                "name": "string"
+                            },
                             "name": "MyTextField9",
                             "designerId": "17b39252-ed90-4f8f-857f-a987511304b7"
                         },
@@ -544,6 +720,13 @@
                                 "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoNomAssure"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "maxLength": "number",
+                                "name": "string"
                             },
                             "name": "MyTextField10",
                             "designerId": "cd14075b-4cc1-44ec-9317-e58473c1076d"
@@ -562,6 +745,13 @@
                                 "maxLength": null,
                                 "name": "regoPrenomAssure"
                             },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "maxLength": "number",
+                                "name": "string"
+                            },
                             "name": "MyTextField11",
                             "designerId": "0d80cdc7-8024-4c08-8023-b88f5ebd8c1a"
                         },
@@ -578,6 +768,13 @@
                                 "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoDateNaissAss"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "maxLength": "number",
+                                "name": "string"
                             },
                             "name": "MyTextField12",
                             "designerId": "59dda4a0-7994-447b-aff7-94a41fa3a2be"
@@ -602,6 +799,11 @@
                     "FormAddPlugins.addPlugins(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processAmoForm",
             "designerId": "c4029418-8781-49c0-8fe5-4d704aaf4d3d"
         },
@@ -616,6 +818,11 @@
                 "fn": "onAmoFormItemIdBoxReady",
                 "name": "boxready",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onAmoFormItemIdBoxReady",
             "designerId": "f93c52cc-0083-4845-aa56-02798b90eee1"

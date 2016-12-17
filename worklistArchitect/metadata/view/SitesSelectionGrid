@@ -15,10 +15,15 @@
         "title": "Filtre des sites",
         "width": 400
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyGridPanel",
     "designerId": "21db76f7-aea9-404e-8f1a-3084d23c43e0",
     "viewControllerInstanceId": "2ee92070-302b-4657-bd13-72448db922c4",
     "viewModelInstanceId": "0d069ca7-ea17-4818-92d1-c2fced6784a8",
@@ -33,6 +38,10 @@
             "userConfig": {
                 "dataIndex": "siteCode",
                 "text": "Tous"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyColumn",
             "designerId": "6551d52c-9409-4571-ab7c-ebc661c87726"
@@ -88,6 +97,12 @@
                 ],
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onGridpanelAfterRender",
             "designerId": "6da17136-ca5f-4e5d-8a6c-c640ce0fa929"

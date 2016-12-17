@@ -19,6 +19,11 @@
         "designer|userAlias": "visitform",
         "designer|userClassName": "VisitFormViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "3733e66d-16cf-4e71-a701-95f14282e3e4",
     "cn": [
         {
@@ -31,6 +36,10 @@
             "userConfig": {
                 "model": "VisitPdsComboModel",
                 "name": "VisitPdsComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "VisitPdsComboStore",
             "designerId": "f57ebc8c-7a78-4296-9407-732424ac95ff"
@@ -46,6 +55,10 @@
                 "model": "SiteComboModel",
                 "name": "SiteComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore",
             "designerId": "8fbebd9d-460c-442c-9d7a-8efec74ba123",
             "cn": [
@@ -58,6 +71,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "property": "siteCode"
+                    },
+                    "configAlternates": {
+                        "property": "string"
                     },
                     "name": "MySorter",
                     "designerId": "08508d3f-76b0-4cfd-a568-9834bd52b1d9"
@@ -75,6 +91,10 @@
                 "model": "DoctorComboModel",
                 "name": "DoctorComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore13",
             "designerId": "b1d334b7-0204-456f-b5a9-e1a44f09c7a4",
             "cn": [
@@ -87,6 +107,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "property": "userInitiales"
+                    },
+                    "configAlternates": {
+                        "property": "string"
                     },
                     "name": "MySorter2",
                     "designerId": "33a81e38-a74a-4773-9e6f-a9f549489eac"
@@ -104,6 +127,10 @@
                 "model": "EstablishmentComboModel",
                 "name": "EstablishmentComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore15",
             "designerId": "5c4bf52c-8716-4853-b311-e57ab5b29560",
             "cn": [
@@ -116,6 +143,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "property": "establishmentCode"
+                    },
+                    "configAlternates": {
+                        "property": "string"
                     },
                     "name": "MySorter2",
                     "designerId": "3d685ece-af8d-4583-997c-5f60e8bae474"
@@ -133,6 +163,10 @@
                 "model": "EstHasServComboModel",
                 "name": "EstHasServComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore16",
             "designerId": "f4ad0f88-4a68-4da4-b3eb-0400791d59b4",
             "cn": [
@@ -145,6 +179,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "property": "estHasServCode"
+                    },
+                    "configAlternates": {
+                        "property": "string"
                     },
                     "name": "MySorter2",
                     "designerId": "c25ac9e8-78e1-46a6-9cc7-4f5143c7fdeb"
@@ -162,6 +199,10 @@
                 "model": "RemplacantComboModel",
                 "name": "RemplacantComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore14",
             "designerId": "2acac9ba-d7fd-4320-9bc5-95ca76acb837",
             "cn": [
@@ -174,6 +215,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "property": "userInitiales"
+                    },
+                    "configAlternates": {
+                        "property": "string"
                     },
                     "name": "MySorter2",
                     "designerId": "bca8ab63-23f5-4a5f-b369-bae0b0d206fb"

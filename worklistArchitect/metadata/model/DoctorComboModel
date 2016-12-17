@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "DoctorComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "01a74622-2866-4229-a2a8-eb5a5f527c41",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger6",
             "designerId": "dda4120f-2ee7-4571-afc3-f845ceccd2f4"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "userFName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField14",
             "designerId": "08d99274-b665-4631-9934-d0b754e79fbc"
         },
@@ -47,6 +56,9 @@
             "userConfig": {
                 "name": "userLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField15",
             "designerId": "6606b356-9a34-4f56-bd2d-c119d8348109"
         },
@@ -59,6 +71,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userInitiales"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField18",
             "designerId": "55db348f-1a1d-4c38-a1fd-0d8e305e1768"

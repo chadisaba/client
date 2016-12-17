@@ -9,6 +9,10 @@
         "designer|userAlias": "worklisthistorypanel",
         "designer|userClassName": "WorklistHistoryPanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "name": "WorklistPanelViewModel1",
     "designerId": "b3500121-47ce-4bcf-a461-a8ada8a76384"
 }

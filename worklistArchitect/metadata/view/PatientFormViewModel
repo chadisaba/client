@@ -45,6 +45,11 @@
         "designer|userAlias": "patientform",
         "designer|userClassName": "PatientFormViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "6e2b36c6-38ef-47ee-bd2a-0c30707ed261",
     "cn": [
         {
@@ -57,6 +62,10 @@
             "userConfig": {
                 "model": "CityNameComboModel",
                 "name": "CityNameComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "CityNameComboStore",
             "designerId": "961927b5-34eb-4a9b-b536-4d7d26d1aa9f"
@@ -72,6 +81,10 @@
                 "model": "ReferringPhysicianNameComboModel",
                 "name": "ReferringPhysicianNameComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "ReferringPhysicianNameComboStore",
             "designerId": "08dd8ca9-9fb6-49e3-a5e5-efc0b4074b3a"
         },
@@ -85,6 +98,10 @@
             "userConfig": {
                 "model": "PatientTitleComboModel",
                 "name": "PatientTitleComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "PatientTitleComboStore",
             "designerId": "eefa4e16-cc9f-41b9-922b-4d7cf0416766"

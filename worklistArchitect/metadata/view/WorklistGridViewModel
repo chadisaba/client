@@ -42,6 +42,11 @@
         "designer|userAlias": "worklistgrid",
         "designer|userClassName": "WorklistGridViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
     "cn": [
         {
@@ -54,6 +59,10 @@
             "userConfig": {
                 "model": "WorklistModel",
                 "name": "WorklistStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "WorklistStore",
             "designerId": "g44blag4-c056-4140-9039-83s6s9uhj9yg",
@@ -68,6 +77,10 @@
                     "userConfig": {
                         "direction": "DESC",
                         "property": "visitTime"
+                    },
+                    "configAlternates": {
+                        "direction": "string",
+                        "property": "string"
                     },
                     "name": "MySorter1",
                     "designerId": "c3ad7598-056f-405d-9e05-697f8cc2b592"

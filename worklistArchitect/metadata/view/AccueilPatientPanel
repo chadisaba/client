@@ -14,6 +14,15 @@
         "title": "Accueil Patient",
         "width": null
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyPanel1",
     "designerId": "9689e3b8-c255-4a61-b9e3-3531dbaae6f8",
     "viewControllerInstanceId": "715ffdd8-d20b-48c3-b97d-a3c151be9bbf",
@@ -31,6 +40,11 @@
                 "header": false,
                 "title": "My Form"
             },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "header": "boolean",
+                "title": "string"
+            },
             "name": "MyForm",
             "designerId": "8fffc184-c2ef-4335-9433-ac71190901eb",
             "cn": [
@@ -44,10 +58,10 @@
                     "userConfig": {
                         "noPlugin": true
                     },
-                    "name": "patientform",
                     "configAlternates": {
                         "noPlugin": "boolean"
                     },
+                    "name": "patientform",
                     "designerId": "ee8b2495-d786-4ee4-a9cc-ce6e38eaa208",
                     "customConfigs": [
                         {
@@ -70,6 +84,11 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onPatientFormIdAfterRender",
                             "designerId": "5601db4a-b2f0-4399-b1ad-058008eb207b"
                         }
@@ -85,6 +104,9 @@
                     "userConfig": {
                         "dock": "top"
                     },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
                     "name": "MyToolbar10",
                     "designerId": "299b4831-c694-4bd4-b838-c6d5ceb32403",
                     "cn": [
@@ -97,6 +119,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
                             },
                             "name": "MyFill1",
                             "designerId": "dbfac8b2-38b9-4eef-9897-46cccaec0b54"
@@ -111,6 +136,10 @@
                             "userConfig": {
                                 "itemId": "savePatientBtnCtnItemId",
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number"
                             },
                             "name": "MyContainer7",
                             "designerId": "10be2533-d667-4b31-ac19-6471ce1b9a79",
@@ -130,10 +159,13 @@
                                             "{trans.save}"
                                         ]
                                     },
-                                    "name": "MyButton6",
                                     "configAlternates": {
-                                        "text": "binding"
+                                        "text": "binding",
+                                        "formBind": "boolean",
+                                        "glyph": "auto",
+                                        "itemId": "string"
                                     },
+                                    "name": "MyButton6",
                                     "designerId": "f4512612-5218-49cb-a7b0-3c56e676f254",
                                     "cn": [
                                         {
@@ -147,6 +179,11 @@
                                                 "fn": "onSavePatientBtnClick",
                                                 "name": "click",
                                                 "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
                                             },
                                             "name": "onSavePatientBtnClick",
                                             "designerId": "7173a71f-a873-42b2-be48-28d391664beb"
@@ -173,10 +210,14 @@
                 "scrollable": null,
                 "title": "My Form"
             },
-            "name": "MyForm1",
             "configAlternates": {
-                "scrollable": "boolean"
+                "scrollable": "boolean",
+                "bodyPadding": "auto",
+                "header": "boolean",
+                "layout": "string",
+                "title": "string"
             },
+            "name": "MyForm1",
             "designerId": "8388bf1d-cf03-409d-9983-76940767859e",
             "cn": [
                 {
@@ -194,11 +235,15 @@
                         "noPlugin": true,
                         "scrollable": true
                     },
-                    "name": "visitform",
                     "configAlternates": {
                         "scrollable": "boolean",
-                        "noPlugin": "boolean"
+                        "noPlugin": "boolean",
+                        "flex": "number",
+                        "header": "boolean",
+                        "layout|region": "string",
+                        "layout|split": "boolean"
                     },
+                    "name": "visitform",
                     "designerId": "07ba1a08-7f7c-4355-8643-c4e6481c0082",
                     "customConfigs": [
                         {
@@ -221,6 +266,11 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onVisitFormIdAfterRender",
                             "designerId": "a91b93aa-c0cc-48ee-a037-2e26ef5deae1"
                         },
@@ -238,6 +288,12 @@
                                 "fn": "onVisitFormIdStudyVisitGridEndEditEvent",
                                 "name": "studyVisitGridEndEditEvent",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onVisitFormIdStudyVisitGridEndEditEvent",
                             "designerId": "f7d7e56f-ec0a-4603-a2d4-a119ce5189c8"
@@ -257,6 +313,12 @@
                                 "name": "StudyVisitGridStartEditEvent",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onVisitFormIdStudyVisitGridStartEditEvent",
                             "designerId": "f3e2f06a-bd45-4248-bec0-157a497c3a6f"
                         }
@@ -272,6 +334,9 @@
                     "userConfig": {
                         "dock": "top"
                     },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
                     "name": "MyToolbar11",
                     "designerId": "59875f0a-f0c3-4cef-855d-b89fca2cea3b",
                     "cn": [
@@ -284,6 +349,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
                             },
                             "name": "MyFill1",
                             "designerId": "d6019734-70a5-48fd-a896-8016184a1099"
@@ -298,6 +366,10 @@
                             "userConfig": {
                                 "itemId": "saveVisitBtnCtnItemId",
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number"
                             },
                             "name": "MyContainer7",
                             "designerId": "a5ad49a7-469a-4fda-82ae-e7845cc39525",
@@ -317,10 +389,13 @@
                                             "{trans.save}"
                                         ]
                                     },
-                                    "name": "MyButton6",
                                     "configAlternates": {
-                                        "text": "binding"
+                                        "text": "binding",
+                                        "formBind": "boolean",
+                                        "glyph": "auto",
+                                        "itemId": "string"
                                     },
+                                    "name": "MyButton6",
                                     "designerId": "9ea743b3-8721-4f25-b88a-4eb81e3dc83c",
                                     "cn": [
                                         {
@@ -334,6 +409,11 @@
                                                 "fn": "onSaveVisitBtnClick",
                                                 "name": "click",
                                                 "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
                                             },
                                             "name": "onSaveVisitBtnClick",
                                             "designerId": "8af5d570-16bb-4574-8c7a-ea72bb4fc7dd"
@@ -358,10 +438,14 @@
                         "layout|region": "west",
                         "noPlugin": true
                     },
-                    "name": "amoform",
                     "configAlternates": {
-                        "noPlugin": "boolean"
+                        "noPlugin": "boolean",
+                        "flex": "number",
+                        "header": "boolean",
+                        "itemId": "string",
+                        "layout|region": "string"
                     },
+                    "name": "amoform",
                     "designerId": "e20fc22b-c4a0-4235-bf62-0bebf2dde185",
                     "customConfigs": [
                         {
@@ -383,6 +467,11 @@
                                 "fn": "onAmoFormItemIdAfterRender",
                                 "name": "afterrender",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onAmoFormItemIdAfterRender",
                             "designerId": "8a1af017-3fef-42f6-8a91-660dc827284f"

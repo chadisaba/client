@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "PatientModel",
     "designerId": "b3b628f2-2c0b-4f18-b9d5-45adb4275f43",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientId",
             "designerId": "2e6a8352-1c67-483b-8f56-2b843afe2747"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "cityName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField6",
             "designerId": "bccf5170-e746-49b1-81fc-8e4086a0236f"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger2",
             "designerId": "3f6e4820-5d37-4b53-a597-a2fc5dbf3aae"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "referringPhysicianLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianName",
             "designerId": "f9d78ca1-3a1c-4208-b690-b4113183dc29"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField9",
             "designerId": "1485bc95-2811-43d5-bc02-c088785ec471"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "patientIdReprise"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientIdReprise",
             "designerId": "b17b855a-e0e6-4aa2-942c-d0435508db70"
         },
@@ -105,6 +127,9 @@
             "userConfig": {
                 "name": "patientFname"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientFname",
             "designerId": "61667410-c257-49aa-b1e0-934b5b07af81"
         },
@@ -117,6 +142,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientLName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientLName",
             "designerId": "544e358d-55cc-4e97-9fd8-8a1f260442e9"
@@ -134,6 +162,10 @@
                 ],
                 "name": "patientSearch"
             },
+            "configAlternates": {
+                "defaultValue": "object",
+                "name": "string"
+            },
             "name": "MypatientLName1",
             "designerId": "31b7bb96-809e-4fd9-acff-01c270c70a2b"
         },
@@ -146,6 +178,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientGender"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger",
             "designerId": "b3dea9ae-728d-407f-b8d5-296991e6be01"
@@ -160,6 +195,9 @@
             "userConfig": {
                 "name": "patientTitle"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger1",
             "designerId": "119309e7-9201-4500-aa2c-ce3805efb43f"
         },
@@ -172,6 +210,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientIns"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientIns",
             "designerId": "f47312ca-420d-48e4-9504-2c4f9d2772f6"
@@ -186,6 +227,9 @@
             "userConfig": {
                 "name": "patientBirthday"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientBirthday",
             "designerId": "a7b5f124-9000-4b14-8de7-68b9975ada24"
         },
@@ -198,6 +242,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientBirthName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientBirthName",
             "designerId": "d9cf735e-2797-4b6d-8570-f421d1d8b74b"
@@ -212,6 +259,9 @@
             "userConfig": {
                 "name": "patientSocialNumber"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientSocialNumber",
             "designerId": "a4a87085-3d1a-4eef-9851-de2cd95f2349"
         },
@@ -224,6 +274,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientSocialKey"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientSocialKey",
             "designerId": "fb7eb9ec-6890-4be4-84a6-f66a5c5a4b3c"
@@ -238,6 +291,9 @@
             "userConfig": {
                 "name": "patientPhoneNumber"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientPhoneNumber",
             "designerId": "98e2a364-5844-471b-890c-01f77d7622ce"
         },
@@ -250,6 +306,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientMobileNumber"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientMobileNumber",
             "designerId": "30f29bd5-7d30-4e64-a259-8b91b45beb0f"
@@ -264,6 +323,9 @@
             "userConfig": {
                 "name": "patientFaxNumber"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientFaxNumber",
             "designerId": "7c2478a9-63c0-4ea8-ae1b-21bf218bb56f"
         },
@@ -276,6 +338,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientEmail"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientEmail",
             "designerId": "0df522bb-92e7-4595-ba2c-f5bfdc8836eb"
@@ -290,6 +355,9 @@
             "userConfig": {
                 "name": "patientZipCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientZipCode",
             "designerId": "778e5249-7cca-4c30-84f9-8489de7c6ec5"
         },
@@ -302,6 +370,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientAddress"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MypatientAddress",
             "designerId": "276b967b-38c7-4db0-b85a-691cd4c4e59f"
@@ -316,6 +387,9 @@
             "userConfig": {
                 "name": "patientPregnant"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MypatientPregnant",
             "designerId": "841bf4d1-7ac1-4e2a-89ca-92b6cfb672e6"
         },
@@ -328,6 +402,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "active"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Myactive",
             "designerId": "08fed2b6-03cd-4ab6-82a1-80388410efdc"
@@ -342,6 +419,9 @@
             "userConfig": {
                 "name": "toDelete"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField27",
             "designerId": "410aa3ae-24fd-438c-a01a-0f27d5411c13"
         },
@@ -354,6 +434,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField28",
             "designerId": "30d4d57d-da39-432f-ac6f-00d759bd9ccf"
@@ -368,6 +451,9 @@
             "userConfig": {
                 "name": "modified"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField29",
             "designerId": "a142df4c-fbfc-4dce-ac60-e79a41b510d0"
         },
@@ -381,6 +467,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "f4da4036-12b1-4dea-bc02-7a72543b424e"
         },
@@ -393,6 +482,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "d52d9dd8-28bc-4ea6-b280-fdbd038afe00"

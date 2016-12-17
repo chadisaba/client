@@ -9,5 +9,9 @@
         "designer|userAlias": "worklistgrid",
         "designer|userClassName": "WorklistGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k"
 }

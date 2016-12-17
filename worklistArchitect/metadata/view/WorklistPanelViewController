@@ -9,5 +9,9 @@
         "designer|userAlias": "worklistpanel",
         "designer|userClassName": "WorklistPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "239f74c6-d872-450e-b62f-cb9b214522d5"
 }

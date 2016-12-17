@@ -15,6 +15,16 @@
         "title": "My Form",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "af6447b8-8c41-4643-a8f8-p52htqgjc9ff",
     "viewControllerInstanceId": "9fe5f93a-4ace-45f2-b4ee-gny7elv44vth",
@@ -36,6 +46,11 @@
                     "FormAddPlugins.addPlugins(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processInfoForm",
             "designerId": "rdnbay8d-e849-4215-886f-cpk8fuee9yjm"
         },
@@ -54,6 +69,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onInfoFormItemIdAfterRender",
             "designerId": "4qm32frs-09ae-45ae-bebe-xc2yvpmxs1tq"
         },
@@ -71,6 +92,12 @@
                 "fn": "onInfoFormItemIdInEdit",
                 "name": "inEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onInfoFormItemIdInEdit",
             "designerId": "pucaw6ml-4ef8-4a15-b5fb-5qfjipvbqx1m"
@@ -92,6 +119,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onInfoFormItemIdSaveEdit",
             "designerId": "$meyvn658-b535-417d-9248-1vie1dvicryk"
         },
@@ -111,6 +144,12 @@
                 "name": "resetEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onInfoFormItemIdResetEdit",
             "designerId": "dgf57g6c-423e-4417-b19e-txwme252my2q"
         },
@@ -128,6 +167,12 @@
                 "fn": "onInfoFormItemIdChHist",
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onInfoFormItemIdChHist",
             "designerId": "pbaecybx-80c8-4c53-a419-1ali5edbh29c"
@@ -148,6 +193,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onInfoFormItemIdQuitEdit",
             "designerId": "lbfda5j9-a31a-4de9-a530-cweu6ggc9mdn"
         },
@@ -160,6 +211,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Saisie de l'information"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "MyFieldSet",
             "designerId": "m2a4qt6u-7399-4b87-b85c-aq63lcqa35n3",
@@ -176,6 +230,11 @@
                         "layout|anchor": "100%",
                         "name": "infoText"
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyinfoTextTextArea",
                     "designerId": "73y1ef6a-05cb-5aa6-aacc-18pbmftpng3h"
                 },
@@ -191,6 +250,10 @@
                             "{name:'infoAlertLevel'}"
                         ],
                         "fieldLabel": "Importance"
+                    },
+                    "configAlternates": {
+                        "defaults": "object",
+                        "fieldLabel": "string"
                     },
                     "name": "MyRadioGroup",
                     "designerId": "b2c4137d-9a49-42a0-9031-b20a82dcbe6d",
@@ -210,6 +273,14 @@
                                 "labelPad": null,
                                 "labelStyle": null
                             },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string",
+                                "labelCls": "string",
+                                "labelPad": "number",
+                                "labelStyle": "string"
+                            },
                             "name": "MyRadio",
                             "designerId": "3c32a0fc-3090-4a4b-9f3f-df42b5b0417f"
                         },
@@ -225,6 +296,11 @@
                                 "fieldLabel": null,
                                 "inputValue": "2"
                             },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string"
+                            },
                             "name": "MyRadio1",
                             "designerId": "7f5a340e-ff4e-4de0-81de-4d28644e4c75"
                         },
@@ -239,6 +315,11 @@
                                 "boxLabel": "<div style=\"color:red\"><i class=\"fa fa-circle\"></i></div>",
                                 "fieldLabel": null,
                                 "inputValue": "3"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string"
                             },
                             "name": "MyRadio2",
                             "designerId": "8a1c432e-0587-4ed1-a5b0-50ae06ddc0b1"

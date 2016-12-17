@@ -15,10 +15,15 @@
         "title": "Select associated studies",
         "width": null
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyGridPanel",
     "designerId": "64b307cb-5940-4443-90d5-6c5089ed03e0",
     "viewControllerInstanceId": "1a027b84-8a56-4da6-bf98-236fbffa5f28",
     "viewModelInstanceId": "05a22c55-e232-44ea-ba0d-ec5e8e9c0255",
@@ -34,6 +39,11 @@
                 "dataIndex": "studyName",
                 "flex": 1,
                 "text": "report.study"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
             },
             "name": "MyColumn",
             "designerId": "9c7bc8e6-40f7-4961-b8b5-ff8a85573008"
@@ -70,6 +80,11 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onGridpanelSelect",
             "designerId": "934c9726-c9ad-4506-939b-c8233ddcbfad"
         },
@@ -84,6 +99,11 @@
                 "fn": "onGridpanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onGridpanelAfterRender",
             "designerId": "c6e5187a-69f9-4290-9982-2c515c21a6bd"

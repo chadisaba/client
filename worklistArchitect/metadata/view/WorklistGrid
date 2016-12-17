@@ -24,11 +24,22 @@
         "title": "",
         "width": null
     },
-    "name": "MyGridPanel",
     "configAlternates": {
         "store": "binding",
-        "scrollable": "boolean"
+        "scrollable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "minWidth": "number",
+        "reference": "string",
+        "resizable": "object",
+        "stateId": "string",
+        "stateful": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyGridPanel",
     "designerId": "twaf2fhx-8c41-4643-a8f8-q9xwkgjexehe",
     "viewControllerInstanceId": "28hnyec8-4ace-45f2-b4ee-r92jerqrxx9k",
     "viewModelInstanceId": "y62stmhv-8a5d-4154-8917-ligfvt6kbnvn",
@@ -50,11 +61,17 @@
                 "text": "site",
                 "width": 100
             },
-            "name": "MysiteNameCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterWidth": "number"
+                "filterWidth": "number",
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "stateId": "string",
+                "stateful": "boolean",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MysiteNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-f411sc7qj4ik",
             "customConfigs": [
                 {
@@ -90,10 +107,16 @@
                 "text": "By Social Card",
                 "width": 50
             },
-            "name": "My\tvisitIsBySocialCardCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "My\tvisitIsBySocialCardCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ci4grf5d2mkp",
             "customConfigs": [
                 {
@@ -129,6 +152,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "f27cf00c-c949-48d3-a64a-1e88a9622467"
                 }
@@ -149,10 +178,15 @@
                 "text": "C. Info",
                 "width": 50
             },
-            "name": "My\tworklistVisitInfoCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "My\tworklistVisitInfoCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-sggdeay375eg",
             "customConfigs": [
                 {
@@ -190,6 +224,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "c5a876f3-1200-46fd-959b-478b19e80c9f"
                 }
@@ -212,11 +252,17 @@
                 "text": "time",
                 "width": 60
             },
-            "name": "MyDateColumn",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterWidth": "number"
+                "filterWidth": "number",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "format": "string",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MyDateColumn",
             "designerId": "fc7e96b1-78b2-4f89-ab7f-75c102dc37c8",
             "customConfigs": [
                 {
@@ -256,11 +302,18 @@
                 "text": "date",
                 "width": null
             },
-            "name": "MyDateColumn2",
             "configAlternates": {
                 "scrollable": "boolean",
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "format": "string",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MyDateColumn2",
             "designerId": "7c6bec59-5c6a-4872-9cec-enxdwqpc8194",
             "customConfigs": [
                 {
@@ -289,10 +342,14 @@
                 "text": "P.Info",
                 "width": 50
             },
-            "name": "MyworklistPatientInfoCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MyworklistPatientInfoCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-jc7rfiu7dyh7",
             "customConfigs": [
                 {
@@ -325,6 +382,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "8f397736-797c-4aba-907d-8a52a926140e"
                 }
@@ -344,10 +407,14 @@
                 "text": "patient",
                 "width": 150
             },
-            "name": "MypatientLastNameCol",
             "configAlternates": {
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MypatientLastNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gluvn9lnlwvi",
             "customConfigs": [
                 {
@@ -380,6 +447,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "49d38fdb-d314-4b03-befc-43bbd1abbc9e"
                 }
@@ -396,6 +469,11 @@
                 "dataIndex": "patientBirthday",
                 "minWidth": null,
                 "text": "birthday"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyDateColumn1",
             "designerId": "7c6bec59-5c6a-4872-9cec-qblkqechnbwe"
@@ -415,11 +493,16 @@
                 "text": "studies",
                 "width": 200
             },
-            "name": "MyworklistStudiesCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterValues": "array"
+                "filterValues": "array",
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MyworklistStudiesCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-8w9n7emg5mej",
             "customConfigs": [
                 {
@@ -455,6 +538,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "ab95b0c7-7fb7-4bd7-a811-aaf00f41a93e"
                 }
@@ -475,11 +564,15 @@
                 "text": "worklistDoctor",
                 "width": 80
             },
-            "name": "MyworklistMedRefCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterWidth": "number"
+                "filterWidth": "number",
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
+            "name": "MyworklistMedRefCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-j6bgl83ar8mq",
             "customConfigs": [
                 {
@@ -507,6 +600,12 @@
                 "minWidth": null,
                 "text": "consultant Ph."
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
+            },
             "name": "MyworklistMedPrescCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-efdd8cnx5q7v",
             "cn": [
@@ -531,6 +630,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2271779b-d457-42be-b19d-269a1b693a33"
                 }
@@ -548,6 +653,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "Recipient"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklistMedRecipientCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vw3kvkbpxpe8",
@@ -573,6 +684,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "753386ed-1916-424e-8077-35de611562ca"
                 }
@@ -589,6 +706,11 @@
                 "dataIndex": "worklistDictationsStatus",
                 "minWidth": null,
                 "text": "dictation"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyColumn1",
             "designerId": "7c6bec59-5c6a-4872-9cec-a884kx4gdafc",
@@ -616,6 +738,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "a7e4eb26-bc09-4ebf-8ee1-238033a6747f"
                 }
@@ -638,11 +766,15 @@
                 "minWidth": null,
                 "text": "worklist Report"
             },
-            "name": "MyworklistCrsStatusCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterValues": "array"
+                "filterValues": "array",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "minWidth": "number",
+                "text": "string"
             },
+            "name": "MyworklistCrsStatusCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-udqxppjjuvmk",
             "customConfigs": [
                 {
@@ -685,6 +817,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "dbfd0890-44df-4918-ad20-472ca9978902"
                 }
@@ -708,11 +846,16 @@
                 "minWidth": null,
                 "text": "worklist quotation"
             },
-            "name": "MyworklistCotationStatusCol",
             "configAlternates": {
                 "filterValues": "array",
-                "createFilter": "boolean"
+                "createFilter": "boolean",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
+            "name": "MyworklistCotationStatusCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-suh9qp59ml87",
             "customConfigs": [
                 {
@@ -755,6 +898,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "06580145-25bc-4422-9943-e07139525855"
                 }
@@ -772,6 +921,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "F.T"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklistFTNumCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ipy9kmhqkecb",
@@ -799,6 +954,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "58cfb2dc-3ee2-4dc7-8be5-2bb381a5fd64"
                 }
@@ -815,6 +976,11 @@
                 "dataIndex": "worklistVisitComment",
                 "minWidth": null,
                 "text": "comment"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklistVisitCommentCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-4w73tqb8g9j5",
@@ -842,6 +1008,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "a3b25347-c3e2-461f-94cd-43542ee5fb7c"
                 },
@@ -856,6 +1028,11 @@
                         "height": 100,
                         "itemId": "commentTextAreaEditor",
                         "width": 200
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "itemId": "string",
+                        "width": "auto"
                     },
                     "name": "MyTextArea2",
                     "designerId": "466567f1-60cd-4706-9cbf-0128955cdd68"
@@ -873,6 +1050,11 @@
                 "dataIndex": "worklistPatientDu",
                 "minWidth": null,
                 "text": "P. due"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklistPatientDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-6cb2xha7edb7",
@@ -898,6 +1080,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "3d2eda6e-284f-441b-a76b-49ce65c35632"
                 }
@@ -915,6 +1103,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "Dû F.T"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklistFtDuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vwmkyat8g8ju",
@@ -940,6 +1134,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "855daf04-737c-4b5d-9009-9ec7a354bf15"
                 }
@@ -964,11 +1164,15 @@
                 "minWidth": null,
                 "text": "<i class=\"fa fa-lock\"></i>"
             },
-            "name": "MyvisitIsDoneCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "initFilterValue": "object"
+                "initFilterValue": "object",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "minWidth": "number",
+                "text": "string"
             },
+            "name": "MyvisitIsDoneCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-idjasbj8vm5a",
             "customConfigs": [
                 {
@@ -1011,6 +1215,12 @@
                             ""
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "592f88b3-0c88-4eb3-9f50-f5b743e3d489"
                 }
@@ -1027,6 +1237,11 @@
                 "dataIndex": "worklisCrEmailedTo",
                 "minWidth": null,
                 "text": "<i class=\"fa fa-at\"></i>"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklisCrEmailedToCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-g1nftesgl979",
@@ -1052,6 +1267,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "4f4bda14-3d4d-4e83-9248-1d5f39e6e263"
                 }
@@ -1069,6 +1290,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "<i class=\"fa fa-envelope-o\"></i>"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyworklisCrMailedToCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-svcn8rv37l3s",
@@ -1094,6 +1321,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "fe8cf579-2552-4a5d-a63f-ee77906571b0"
                 }
@@ -1111,6 +1344,12 @@
                 "minWidth": null,
                 "text": "free",
                 "width": 60
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyvisitIsFreeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-lutcy48v89gc",
@@ -1136,6 +1375,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "de97b6e7-a114-479d-ace6-2c1d8b3fccd1"
                 }
@@ -1152,6 +1397,11 @@
                 "dataIndex": "visitIsHospitalized",
                 "minWidth": null,
                 "text": "hospit."
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyvisitIsHospitalizedCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-w5fq41xd34jq",
@@ -1177,6 +1427,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "7ab1369c-1561-45ed-b1fc-43c38eba79b8"
                 }
@@ -1193,6 +1449,11 @@
                 "dataIndex": "visitIsUrgent",
                 "minWidth": null,
                 "text": "urgent"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyvisitIsUrgentCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-wmxl9dljq4by",
@@ -1218,6 +1479,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "dc0be72c-d156-4ccb-bcfb-c7e7278610f9"
                 }
@@ -1235,6 +1502,11 @@
                 "minWidth": null,
                 "text": "Visit Numbers"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
+            },
             "name": "MyvisitHospitVisitNumberCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-jku13lsx7etv"
         },
@@ -1250,6 +1522,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "Invoice type"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyvisitInvoiceTypeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-9tvwdiexrk9b",
@@ -1275,6 +1553,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "518ca361-f295-4237-8412-5f471ca4cec6"
                 }
@@ -1292,6 +1576,12 @@
                 "hidden": true,
                 "minWidth": null,
                 "text": "F.T. Pour"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MyvisitFtForCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-uk4ywppcem4f"
@@ -1314,11 +1604,16 @@
                 "minWidth": null,
                 "text": "P.E.C"
             },
-            "name": "MyvisitPECCol",
             "configAlternates": {
                 "createFilter": "boolean",
-                "filterValues": "array"
+                "filterValues": "array",
+                "createType": "string",
+                "dataIndex": "datafield",
+                "filterType": "string",
+                "minWidth": "number",
+                "text": "string"
             },
+            "name": "MyvisitPECCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-u4hw8l7pjwg1",
             "customConfigs": [
                 {
@@ -1364,6 +1659,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "1e66a354-8df0-45fd-a77a-a651e828bdcc"
                 }
@@ -1378,6 +1679,9 @@
             "codeClass": null,
             "userConfig": {
                 "width": null
+            },
+            "configAlternates": {
+                "width": "auto"
             },
             "name": "MyTable",
             "designerId": "itqlgl94-ccc7-232C-1245-7q2pqifjnivb"
@@ -1401,6 +1705,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "nfa3ar1v-f393-483a-8425-7mn8fnk3pdi1"
         },
@@ -1418,6 +1728,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onWorklistGridIdChHist",
             "designerId": "y7sj5at8-1d4f-4fb9-9364-pd7f4vqhps34"
@@ -1438,6 +1754,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onWorklistGridIdAfterRender",
             "designerId": "vlue87mv-1f65-4972-a6e1-g4fqnwt5pnb9"
         },
@@ -1450,6 +1772,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-jfkb6aetghb5"
@@ -1464,6 +1789,10 @@
             "userConfig": {
                 "dock": "top",
                 "height": 40
+            },
+            "configAlternates": {
+                "dock": "string",
+                "height": "auto"
             },
             "name": "MyToolbar",
             "designerId": "a043d579-af23-4d9d-896a-5e1b4704821e",
@@ -1482,10 +1811,12 @@
                             "{trans.actions}"
                         ]
                     },
-                    "name": "MySplitButton",
                     "configAlternates": {
-                        "text": "binding"
+                        "text": "binding",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MySplitButton",
                     "designerId": "0970033b-8ebf-44ca-aa2b-6a125440bd5a",
                     "cn": [
                         {
@@ -1497,6 +1828,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": null
+                            },
+                            "configAlternates": {
+                                "width": "auto"
                             },
                             "name": "MyMenu",
                             "designerId": "4422ee9e-fec7-4209-b8f5-3ddae0389352",
@@ -1511,6 +1845,9 @@
                                     "userConfig": {
                                         "text": "F.S Cerfa"
                                     },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
                                     "name": "MyMenuItem",
                                     "designerId": "ac5e8516-e8bf-44f3-a8cd-09bda751ae2e"
                                 },
@@ -1523,6 +1860,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "text": "F.T Cerfa"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
                                     },
                                     "name": "MyMenuItem1",
                                     "designerId": "43b33cfe-329d-4c15-98da-7f2010c1ee0e"
@@ -1537,6 +1877,9 @@
                                     "userConfig": {
                                         "text": "Etiquette"
                                     },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
                                     "name": "MyMenuItem2",
                                     "designerId": "2a4aa723-aea7-45d7-94fb-ecb9aa4dffef"
                                 },
@@ -1549,6 +1892,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "text": "Fiche suiveuse"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
                                     },
                                     "name": "MyMenuItem3",
                                     "designerId": "5a64b136-573d-496f-abf3-ad9c72583278"
@@ -1571,10 +1917,12 @@
                             "{trans.print}"
                         ]
                     },
-                    "name": "MySplitButton1",
                     "configAlternates": {
-                        "text": "binding"
+                        "text": "binding",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MySplitButton1",
                     "designerId": "75927fc8-ffd0-4d9a-b1fd-3955f448ebad",
                     "cn": [
                         {
@@ -1586,6 +1934,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": null
+                            },
+                            "configAlternates": {
+                                "width": "auto"
                             },
                             "name": "MyMenu",
                             "designerId": "7d38168c-481d-4997-a50d-33e21b835c43",
@@ -1600,6 +1951,9 @@
                                     "userConfig": {
                                         "text": "F.S Cerfa"
                                     },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
                                     "name": "MyMenuItem",
                                     "designerId": "dc188fbc-b7de-4036-924a-42dd4e732288"
                                 },
@@ -1612,6 +1966,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "text": "F.T Cerfa"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
                                     },
                                     "name": "MyMenuItem1",
                                     "designerId": "ac4389b5-3b1f-429d-a590-b9c8411189ed"
@@ -1626,6 +1983,9 @@
                                     "userConfig": {
                                         "text": "Etiquette"
                                     },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
                                     "name": "MyMenuItem2",
                                     "designerId": "d3943736-ae01-4fb9-99d7-207c45ae40eb"
                                 },
@@ -1638,6 +1998,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "text": "Fiche suiveuse"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
                                     },
                                     "name": "MyMenuItem3",
                                     "designerId": "587e7c50-b768-4ca2-a2dc-2aa3b186b74b"
@@ -1656,6 +2019,9 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
                     "name": "MySeparator",
                     "designerId": "a7372db5-7fca-45a0-a10f-781c7890cd98"
                 },
@@ -1672,11 +2038,13 @@
                         "layout|flex": null,
                         "style": "color:'red'"
                     },
-                    "name": "MyComponent",
                     "configAlternates": {
                         "style": "string",
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent",
                     "designerId": "77220502-c254-4267-8a58-7a6e185b75d1"
                 },
                 {
@@ -1691,10 +2059,12 @@
                         "itemId": "freeIcon",
                         "layout|flex": null
                     },
-                    "name": "MyComponent1",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent1",
                     "designerId": "2e190d29-1146-4007-929b-44eb1bb84825"
                 },
                 {
@@ -1710,10 +2080,13 @@
                         "layout|flex": null,
                         "shadow": true
                     },
-                    "name": "MyComponent2",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "shadow": "auto"
                     },
+                    "name": "MyComponent2",
                     "designerId": "6d5cc0cb-25f8-47dc-90b9-9081230591aa"
                 },
                 {
@@ -1729,10 +2102,13 @@
                         "layout|flex": null,
                         "shadow": true
                     },
-                    "name": "MyComponent3",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "shadow": "auto"
                     },
+                    "name": "MyComponent3",
                     "designerId": "c7bd8bc0-7d8b-4e3c-a385-d5d5bb09a429"
                 },
                 {
@@ -1747,10 +2123,12 @@
                         "itemId": "ftIcon",
                         "layout|flex": null
                     },
-                    "name": "MyComponent4",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent4",
                     "designerId": "18fa6a0f-0c0d-4cd0-9239-1502f44b0fa1"
                 },
                 {
@@ -1765,10 +2143,12 @@
                         "itemId": "fsIcon",
                         "layout|flex": null
                     },
-                    "name": "MyComponent5",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent5",
                     "designerId": "eb130e9e-71cc-4581-aade-1d8c80cbe701"
                 },
                 {
@@ -1783,10 +2163,12 @@
                         "itemId": "fseIcon",
                         "layout|flex": null
                     },
-                    "name": "MyComponent6",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent6",
                     "designerId": "c45a6cdd-b33d-4a85-bebf-5a9fbd068411"
                 },
                 {
@@ -1801,10 +2183,12 @@
                         "itemId": "urgentIcon",
                         "layout|flex": null
                     },
-                    "name": "MyComponent7",
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
+                    "name": "MyComponent7",
                     "designerId": "ce884174-9b24-40ef-b370-4961190279da"
                 },
                 {
@@ -1816,6 +2200,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MySpacer12",
                     "designerId": "0431881e-c734-40c2-b70b-cc367e6c4ebe"
@@ -1829,6 +2216,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MyContainer7",
                     "designerId": "0e710faf-f211-43d1-af75-39ebb7efc091",
@@ -1846,10 +2236,13 @@
                                 "text": null,
                                 "tooltip": "clickToSavePreference"
                             },
-                            "name": "MyButton7",
                             "configAlternates": {
-                                "tooltip": "string"
+                                "tooltip": "string",
+                                "glyph": "auto",
+                                "itemId": "string",
+                                "text": "string"
                             },
+                            "name": "MyButton7",
                             "designerId": "5392b9fe-da9d-4d93-bcdb-abcf53c635f1",
                             "cn": [
                                 {
@@ -1866,6 +2259,12 @@
                                         ],
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onSavePreferenceItemIdClick",
                                     "designerId": "c3ca6b89-1df1-469e-8f89-f15f5ce0bf1c"
@@ -1888,6 +2287,11 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onWorklistGridIdSelectionChange",
             "designerId": "78f21e61-9408-4a11-b2e9-bccbeefa5156"
         },
@@ -1902,6 +2306,11 @@
                 "fn": "onWorklistGridIdCellClick",
                 "name": "cellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onWorklistGridIdCellClick",
             "designerId": "74390b28-172a-45cf-ad43-3ebe759c2500"
@@ -1931,6 +2340,12 @@
                 "fn": "onWorklistGridIdEdit",
                 "name": "edit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onWorklistGridIdEdit",
             "designerId": "2ec4ef51-d442-44ec-9692-871293fea28f"

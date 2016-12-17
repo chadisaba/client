@@ -9,6 +9,9 @@
         "designer|userAlias": "visitsimplifiedform",
         "designer|userClassName": "VisitSimplifiedFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "79e1aecd-2f22-4511-bab4-a79afe9fcedd"
- 
 }

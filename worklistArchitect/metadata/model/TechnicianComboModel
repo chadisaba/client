@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "TechnicianComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger5",
             "designerId": "22e21c99-cd52-4a1d-8701-b5b2c303618d"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "userLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField12",
             "designerId": "35f2a59c-671c-4fbe-a832-6f32246bb4f6"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userFName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField13",
             "designerId": "c4e56089-80e0-41b7-ad48-3cc17834c83f"

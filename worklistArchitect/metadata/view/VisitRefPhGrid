@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "da3d5a57-98c8-4c9e-a44b-199bc8c1fb78",
     "viewControllerInstanceId": "bb7f4247-3adb-44fd-917b-031d240ad964",
     "viewModelInstanceId": "b0fa1372-a48b-4d71-9f5d-ea22f7e8764e",
@@ -37,6 +44,10 @@
             "userConfig": {
                 "dataIndex": "referringPhysicianSearch",
                 "text": "Coresspondants"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyreferringPhysicianSearchCol",
             "designerId": "08e11ff5-a705-4e09-95ce-da04d57e687f",
@@ -60,10 +71,17 @@
                         ],
                         "valueField": "referringPhysicianSearch"
                     },
-                    "name": "MyreferringPhysicianSearchComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyreferringPhysicianSearchComboBox",
                     "designerId": "0daebc32-7c13-4935-820a-c648413341d0",
                     "cn": [
                         {
@@ -77,6 +95,11 @@
                                 "fn": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
                             "designerId": "8f0ff19c-dacb-4065-8c05-502b54b61675"
@@ -93,6 +116,11 @@
                                 "name": "change",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
                             "designerId": "54e7c054-85db-486c-9a55-45c40dfad5ac"
                         },
@@ -105,6 +133,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "itemSelector": "div"
+                            },
+                            "configAlternates": {
+                                "itemSelector": "string"
                             },
                             "name": "MyBoundList",
                             "designerId": "4771366e-4f03-44b0-ad5b-07efd07cf28e",
@@ -125,6 +156,10 @@
                                             "                        {referringPhysicianZipCode} {city}"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "itemTpl",
                                     "designerId": "7da9f1a8-7aef-4de2-9c6a-3ed5f9d44b57"
                                 }
@@ -142,6 +177,10 @@
                                 "implHandler": [
                                     "<tpl for=\".\">{referringPhysicianLName} : {referringPhysicianFName}</tpl>"
                                 ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
                             },
                             "name": "displayTpl",
                             "designerId": "9d816424-fcda-4f06-89f2-7c059b79acaa"
@@ -162,6 +201,11 @@
                 "hidden": true,
                 "text": "refPhId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MyreferringPhysicianIdCol",
             "designerId": "31ffc627-bf2e-4d83-a739-0165ce69082b",
             "cn": [
@@ -176,6 +220,11 @@
                         "allowBlank": false,
                         "hidden": true,
                         "itemId": "referringPhysicianIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "hidden": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianIdTextField",
                     "designerId": "4f6e4d13-0efd-4584-a591-9dff0e54b409"
@@ -192,6 +241,10 @@
             "userConfig": {
                 "dataIndex": "patientIsOrientedBy",
                 "text": " Prescripteur"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MypatientIsOrientedByCol",
             "designerId": "3e5246c3-fb9f-4b82-8d80-24e53192b2d7",
@@ -228,6 +281,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "768710af-d9d4-4eaf-bce9-3b91f22ca7b7"
                 }
@@ -262,6 +320,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "5e3b8944-42e6-4359-a477-4b571b60ad25"
         },
@@ -277,6 +341,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "79390434-cab8-4823-bbef-88a613143a71"
@@ -298,6 +368,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processVisitRefPhGrid",
             "designerId": "e0ba06a5-c7df-4450-ba84-4152f4dbf6f5"
         },
@@ -315,6 +390,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdChHist",
             "designerId": "a66f6058-772f-4aa8-9607-92fc6d9df20a"
@@ -335,6 +416,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdAfterRender",
             "designerId": "2b230945-523e-4f5e-9de0-3169212114bf"
         },
@@ -354,6 +441,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdInEdit",
             "designerId": "5bd1dee0-8716-4911-82c8-8b044ac53531"
         },
@@ -372,6 +465,12 @@
                 "fn": "onVisitRefPhGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdResetEdit",
             "designerId": "395cc568-3534-4ef0-a849-430fa0e36937"
@@ -393,6 +492,12 @@
                 "fn": "onVisitRefPhGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdSaveEdit",
             "designerId": "18b24d82-e316-4a0c-863d-ed2ccd7971b4"
@@ -416,6 +521,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdAddItem",
             "designerId": "7843e50a-921a-42ad-8589-72eed7d45997"
         },
@@ -431,6 +543,11 @@
                 "name": "deleteItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdDeleteItem",
             "designerId": "e5c25936-7ecb-46ec-8dee-297422d57ca6"
         },
@@ -445,6 +562,11 @@
                 "fn": "onVisitRefPhGridIdDuplicateItem",
                 "name": "duplicateItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdDuplicateItem",
             "designerId": "7ea766d3-510d-4efb-b0f6-708e99900785"
@@ -463,6 +585,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdModifyItem",
             "designerId": "0d88c2bb-e9aa-4b27-8e29-304ead005260"
@@ -486,6 +614,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdQuitEdit",
             "designerId": "69da22c2-27c7-4936-b89b-801d521882c4"
         },
@@ -498,6 +633,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "bb31a5e7-61eb-4304-91d2-977c04052e41"
@@ -518,6 +656,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdBeforeEdit",
             "designerId": "daca6f6f-c75e-446b-a3d1-1edee1a86f73"
         },
@@ -537,6 +681,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdCanceledit",
             "designerId": "f0eea0f3-d77f-4091-b734-ff6eb5129cfd"
         },
@@ -551,6 +701,11 @@
                 "fn": "onVisitRefPhGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdContainerClick",
             "designerId": "4c0dacdc-81ee-45b0-9ee7-881310481212"
@@ -571,6 +726,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitRefPhGridIdEdit",
             "designerId": "160b4de0-9014-4f69-8c53-f301c233189d"
         },
@@ -585,6 +746,11 @@
                 "fn": "onVisitRefPhGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdBeforeCellClick",
             "designerId": "$98b0a098-549b-46d7-90f3-176f010b6981"
@@ -604,6 +770,12 @@
                 "fn": "onVisitRefPhGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitRefPhGridIdValidateedit",
             "designerId": "4de19696-1cf8-4b11-8a99-67e06b1343b6"

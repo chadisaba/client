@@ -9,5 +9,9 @@
         "designer|userAlias": "patientreceivepanel",
         "designer|userClassName": "PatientReceivePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "325433eb-4403-4334-8e65-8730b9e911d4"
 }

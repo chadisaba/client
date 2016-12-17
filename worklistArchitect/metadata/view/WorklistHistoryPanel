@@ -15,6 +15,16 @@
         "title": "WorkList",
         "width": null
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "minWidth": "number",
+        "scrollable": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "WorklistPanel1",
     "designerId": "2c08d0f7-24df-4e85-8381-90ce32f004ac",
     "viewControllerInstanceId": "6cca55f3-6ae6-4180-b543-9a27380ccf3d",
@@ -33,6 +43,13 @@
                 "minWidth": null,
                 "scrollable": true,
                 "width": null
+            },
+            "configAlternates": {
+                "layout|region": "string",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "scrollable": "boolean",
+                "width": "auto"
             },
             "name": "worklistgrid1",
             "designerId": "0b8b9cd9-1472-46c3-808c-c1b7e6addccd",
@@ -54,6 +71,15 @@
                 "layout|split": true,
                 "layout|splitterResize": false
             },
+            "configAlternates": {
+                "animCollapse": "boolean",
+                "collapsed": "boolean",
+                "collapsible": "boolean",
+                "itemId": "string",
+                "layout|region": "string",
+                "layout|split": "boolean",
+                "layout|splitterResize": "boolean"
+            },
             "name": "worklistfiltregridpanel1",
             "designerId": "c7c20213-b0bc-4d92-89c8-d790ae2b7413",
             "masterInstanceId": "c14bb8c3-d1b7-4047-bff7-bce9a3dd31f2",
@@ -73,6 +99,12 @@
                         "name": "applySearch",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onGridpanelApplySearch",
                     "designerId": "29dc805a-0dda-47ca-b610-415e36e37ff9"
                 }
@@ -89,6 +121,11 @@
                 "fn": "onPanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onPanelAfterRender",
             "designerId": "ae1c3475-287a-4f5e-88ba-306528172475"

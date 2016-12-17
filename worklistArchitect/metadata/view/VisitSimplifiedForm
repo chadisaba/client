@@ -14,6 +14,15 @@
         "title": "My Form",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "336fbfe5-7283-4080-94fd-711d8dcd1477",
     "viewControllerInstanceId": "79e1aecd-2f22-4511-bab4-a79afe9fcedd",
@@ -36,6 +45,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitSimplifiedFormItemIdSaveEdit",
             "designerId": "$bf52d508-3827-404f-b3ab-c73227cff166"
         },
@@ -53,6 +68,12 @@
                 "fn": "onVisitSimplifiedFormItemIdChHist",
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onVisitSimplifiedFormItemIdChHist",
             "designerId": "6c078f5e-5832-4426-b1be-da75a6297273"
@@ -73,6 +94,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onVisitSimplifiedFormItemIdQuitEdit",
             "designerId": "65813084-8176-428c-bf81-27c835336236"
         },
@@ -89,10 +116,11 @@
                     "{trans.visitInformation}"
                 ]
             },
-            "name": "MyFieldSet",
             "configAlternates": {
-                "title": "binding"
+                "title": "binding",
+                "itemId": "string"
             },
+            "name": "MyFieldSet",
             "designerId": "0635298b-4c31-4d44-9d77-b0206ac7d989",
             "cn": [
                 {
@@ -105,6 +133,10 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string"
                     },
                     "name": "MyContainer9",
                     "designerId": "3dd218b9-ba07-44cd-86a1-3cf7ab55194f",
@@ -124,10 +156,13 @@
                                 "layout|flex": 1,
                                 "name": "visitIsUrgent"
                             },
-                            "name": "MyvisitIsUrgentCheckBox",
                             "configAlternates": {
-                                "fieldLabel": "binding"
+                                "fieldLabel": "binding",
+                                "boxLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
                             },
+                            "name": "MyvisitIsUrgentCheckBox",
                             "designerId": "040c9488-db6d-40e5-b956-b79be15ae7b3"
                         },
                         {
@@ -145,10 +180,13 @@
                                 "layout|flex": 1,
                                 "name": "visitIsFree"
                             },
-                            "name": "MyvisitIsFreeCheckBox",
                             "configAlternates": {
-                                "fieldLabel": "binding"
+                                "fieldLabel": "binding",
+                                "boxLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
                             },
+                            "name": "MyvisitIsFreeCheckBox",
                             "designerId": "4c09cb21-c8b1-47e4-95e6-aef3ed7c129d"
                         },
                         {
@@ -166,10 +204,13 @@
                                 "layout|flex": 1,
                                 "name": "visitIsHospitalized"
                             },
-                            "name": "MyvisitIsHospitalizedCheckBox",
                             "configAlternates": {
-                                "fieldLabel": "binding"
+                                "fieldLabel": "binding",
+                                "boxLabel": "string",
+                                "layout|flex": "number",
+                                "name": "string"
                             },
+                            "name": "MyvisitIsHospitalizedCheckBox",
                             "designerId": "aaf298b8-2e0c-45ff-8e83-7651f575170c"
                         }
                     ]
@@ -199,12 +240,21 @@
                         "value": "1",
                         "valueField": "siteId"
                     },
-                    "name": "MyComboBox2",
                     "configAlternates": {
                         "fieldLabel": "binding",
                         "store": "binding",
-                        "value": "string"
+                        "value": "string",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "typeAhead": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyComboBox2",
                     "designerId": "8582445f-4ea1-43bf-9332-63bbd80783a3",
                     "cn": [
                         {
@@ -218,6 +268,11 @@
                                 "fn": "onSiteIdComboBoxItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onSiteIdComboBoxItemIdChange",
                             "designerId": "e4399e00-1f50-4d50-87da-4b7db72a2814"
@@ -235,6 +290,11 @@
                         "container|align": "stretch",
                         "height": null,
                         "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "height": "auto",
+                        "layout": "string"
                     },
                     "name": "MyContainer8",
                     "designerId": "d5e9d872-23a6-437c-b6d3-e68df1ee35c6",
@@ -255,10 +315,14 @@
                                 "layout|flex": 2,
                                 "name": "visitDate"
                             },
-                            "name": "MyDateField2",
                             "configAlternates": {
-                                "fieldLabel": "binding"
+                                "fieldLabel": "binding",
+                                "allowBlank": "boolean",
+                                "format": "string",
+                                "layout|flex": "number",
+                                "name": "string"
                             },
+                            "name": "MyDateField2",
                             "designerId": "e79c0fe4-fb33-4967-84e8-713c6083225c"
                         },
                         {
@@ -271,6 +335,10 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "width": 10
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
                             },
                             "name": "MySpacer11",
                             "designerId": "b4b9edc6-9c2c-4a3a-ae7d-fb4e994b643f"
@@ -291,10 +359,14 @@
                                 "name": "visitTime",
                                 "width": 200
                             },
-                            "name": "MyTimeField",
                             "configAlternates": {
-                                "fieldLabel": "binding"
+                                "fieldLabel": "binding",
+                                "allowBlank": "boolean",
+                                "layout|flex": "number",
+                                "name": "string",
+                                "width": "auto"
                             },
+                            "name": "MyTimeField",
                             "designerId": "13a294c8-5cd6-461b-92b6-f2722499c6e2"
                         }
                     ]
@@ -308,6 +380,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": 5
+                    },
+                    "configAlternates": {
+                        "height": "auto"
                     },
                     "name": "MySpacer10",
                     "designerId": "8857e072-516d-4985-9f11-3b467e68ec2c"
@@ -336,11 +411,20 @@
                         ],
                         "valueField": "doctorId"
                     },
-                    "name": "MyComboBox4",
                     "configAlternates": {
                         "fieldLabel": "binding",
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyComboBox4",
                     "designerId": "0c36ab44-ebe4-4383-ab2b-d21d0ad70489",
                     "cn": [
                         {
@@ -352,6 +436,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "itemSelector": "div"
+                            },
+                            "configAlternates": {
+                                "itemSelector": "string"
                             },
                             "name": "MyBoundList",
                             "designerId": "1b8d9e16-f239-46aa-9333-72403bb0fc7f",
@@ -368,6 +455,10 @@
                                         "implHandler": [
                                             " {userLName} {userFName}"
                                         ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
                                     },
                                     "name": "itemTpl",
                                     "designerId": "9a71288c-1939-4a8a-aba4-6d3f75baf111"
@@ -387,6 +478,10 @@
                                     "<tpl for=\".\">{userLName} {userFName}</tpl>"
                                 ]
                             },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
                             "name": "displayTpl",
                             "designerId": "2416ab74-bd2a-4a21-b878-e029e5d1f18e"
                         },
@@ -401,6 +496,11 @@
                                 "fn": "onDoctorComboBoxItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onDoctorComboBoxItemIdChange",
                             "designerId": "37a0e4f7-14e6-474e-8730-bb0c3b71e0b9"
@@ -421,10 +521,12 @@
                         "layout|anchor": "100%",
                         "name": "visitHospitVisitNumber"
                     },
-                    "name": "MyvisitHospitVisitNumberTextField",
                     "configAlternates": {
-                        "fieldLabel": "binding"
+                        "fieldLabel": "binding",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
+                    "name": "MyvisitHospitVisitNumberTextField",
                     "designerId": "8cd845e7-1374-4ac2-8edd-36acf1deea82"
                 }
             ]
@@ -446,10 +548,11 @@
                 ],
                 "title": null
             },
-            "name": "studyvisitgrid1",
             "configAlternates": {
-                "externalEditingPlugin": "object"
+                "externalEditingPlugin": "object",
+                "title": "binding"
             },
+            "name": "studyvisitgrid1",
             "designerId": "d819db7b-9e36-44a4-b5c9-c054f65daa9a",
             "customConfigs": [
                 {
@@ -475,6 +578,12 @@
                         "name": "studyVisitGridEndEditEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
                     "designerId": "bb7b6f05-9e26-44cc-88ee-5a3c366561b8"
                 },
@@ -492,6 +601,12 @@
                         "fn": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
                         "name": "studyVisitGridStartEditEvent",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onStudyVisitGridItemIdStudyVisitGridStartEditEvent",
                     "designerId": "2b9fa52d-d4c4-430f-8369-4aa6e24a70b5"

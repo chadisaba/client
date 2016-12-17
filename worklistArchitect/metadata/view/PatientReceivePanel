@@ -14,6 +14,15 @@
         "title": "My Panel",
         "width": null
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "designerId": "ebfb2139-f633-46db-859d-eadce4515ce9",
     "viewControllerInstanceId": "325433eb-4403-4334-8e65-8730b9e911d4",
     "viewModelInstanceId": "bbbe7829-5c1f-400a-8670-203ad4766211",
@@ -35,6 +44,17 @@
                 "layout|split": true,
                 "patientId": null,
                 "titleCollapse": false
+            },
+            "configAlternates": {
+                "animCollapse": "boolean",
+                "collapseDirection": "string",
+                "collapsible": "boolean",
+                "layout|collapseMode": "string",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "layout|split": "boolean",
+                "patientId": "string",
+                "titleCollapse": "boolean"
             },
             "name": "patientform1",
             "designerId": "5cc49028-14a1-4119-ac8f-13514ccc00a2",
@@ -59,6 +79,11 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onPatientFormIdAfterRender",
                     "designerId": "b4ffd989-e634-4144-9ee7-d7fbd8f8fc10"
                 }
@@ -77,6 +102,12 @@
                 "layout|region": "east",
                 "layout|split": true
             },
+            "configAlternates": {
+                "header": "boolean",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "layout|split": "boolean"
+            },
             "name": "visitsimplifiedform",
             "designerId": "62775934-ca14-4182-9f80-f7b83f2c3994",
             "masterInstanceId": "336fbfe5-7283-4080-94fd-711d8dcd1477",
@@ -92,6 +123,11 @@
                         "fn": "onVisitSimplifiedFormIdAfterRender",
                         "name": "afterrender",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onVisitSimplifiedFormIdAfterRender",
                     "designerId": "0e6e2767-b4bf-40fc-8a71-87734ddb780b"
@@ -111,6 +147,12 @@
                         "name": "studyVisitGridEndEditEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onVisitSimplifiedFormIdStudyVisitGridEndEditEvent",
                     "designerId": "7ebb6bcb-039b-4848-b477-2f51ff4364e0"
                 },
@@ -128,6 +170,12 @@
                         "fn": "onVisitSimplifiedFormIdStudyVisitGridStartEditEvent",
                         "name": "studyVisitGridStartEditEvent",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onVisitSimplifiedFormIdStudyVisitGridStartEditEvent",
                     "designerId": "7ce7e6fd-ca7f-4841-8576-686863fafa3c"
@@ -147,6 +195,12 @@
                         "name": "visitDataSavedEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onVisitSimplifiedFormIdVisitDataSavedEvent",
                     "designerId": "3073a55c-1f92-44bd-a06c-a71ff9ed00bb"
                 }
@@ -162,6 +216,9 @@
             "userConfig": {
                 "dock": "top"
             },
+            "configAlternates": {
+                "dock": "string"
+            },
             "name": "MyToolbar4",
             "designerId": "e4d1b907-02c2-4f3d-a3dc-2a9ea591bdf4",
             "cn": [
@@ -174,6 +231,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MyFill1",
                     "designerId": "700c6b98-fdbb-4411-a79e-bd40664c08f6"
@@ -188,6 +248,10 @@
                     "userConfig": {
                         "itemId": "saveBtnCtnItemId",
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|flex": "number"
                     },
                     "name": "MyContainer7",
                     "designerId": "1a67a3f5-9c64-4528-91bb-638757b45eb0",
@@ -207,10 +271,13 @@
                                     "{trans.save}"
                                 ]
                             },
-                            "name": "MyButton6",
                             "configAlternates": {
-                                "text": "binding"
+                                "text": "binding",
+                                "formBind": "boolean",
+                                "glyph": "auto",
+                                "itemId": "string"
                             },
+                            "name": "MyButton6",
                             "designerId": "5a4cc97f-8dac-4250-833d-09f6d388cac8",
                             "cn": [
                                 {
@@ -224,6 +291,11 @@
                                         "fn": "onSaveAccueilPatientBtnClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onSaveAccueilPatientBtnClick",
                                     "designerId": "0dc9474b-a326-449b-97d2-e16858476ca0"

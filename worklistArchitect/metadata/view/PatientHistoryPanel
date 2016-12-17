@@ -10,6 +10,11 @@
         "designer|userClassName": "PatientHistoryPanel",
         "layout": "border"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string"
+    },
     "designerId": "387f02e7-c52d-4e89-819c-0e0df75df746",
     "viewControllerInstanceId": "55f63529-4015-4053-8220-0505eb76e672",
     "viewModelInstanceId": "53681c2f-d038-4e42-ad25-fdcdd2627555",
@@ -31,6 +36,16 @@
                 "titleCollapse": false,
                 "width": null
             },
+            "configAlternates": {
+                "animCollapse": "boolean",
+                "collapseDirection": "string",
+                "collapsible": "boolean",
+                "itemId": "string",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "titleCollapse": "boolean",
+                "width": "auto"
+            },
             "name": "patienthistorygrid",
             "designerId": "28dcdcb3-4f05-4f0c-ad53-9cb2628e14b3",
             "masterInstanceId": "8fdbfd3a-acf2-42ee-be9b-e33e8f168520",
@@ -51,6 +66,12 @@
                         "name": "displayFileContentEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onGridpanelDisplayFileContentEvent",
                     "designerId": "5ead78c6-098c-4f44-9d1d-15c73c03dd6f"
                 }
@@ -67,6 +88,11 @@
                 "fn": "onPanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onPanelAfterRender",
             "designerId": "0b398db6-0b41-4cf3-beeb-e13fc773bfbc"
@@ -92,10 +118,19 @@
                 ],
                 "width": null
             },
-            "name": "MyPanel",
             "configAlternates": {
-                "title": "binding"
+                "title": "binding",
+                "animCollapse": "boolean",
+                "collapsible": "boolean",
+                "html": "object",
+                "itemId": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "layout|split": "boolean",
+                "width": "auto"
             },
+            "name": "MyPanel",
             "designerId": "14278470-6efc-45c2-8036-91a2a6ff5df9",
             "cn": [
                 {
@@ -111,6 +146,13 @@
                         "height": null,
                         "itemId": "displayContentTextAreaItemId",
                         "width": null
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "fieldLabel": "string",
+                        "height": "auto",
+                        "itemId": "string",
+                        "width": "auto"
                     },
                     "name": "MyTextArea",
                     "designerId": "1d9ee087-299b-4162-8ca4-425d51088e16"

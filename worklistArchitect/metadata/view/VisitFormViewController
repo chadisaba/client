@@ -9,6 +9,9 @@
         "designer|userAlias": "visitform",
         "designer|userClassName": "VisitFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "a1dc7b28-132b-4d9d-945f-b3e518294321"
- 
 }

@@ -9,6 +9,9 @@
         "designer|userAlias": "infoform",
         "designer|userClassName": "InfoFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "9fe5f93a-4ace-45f2-b4ee-gny7elv44vth"
- 
 }

@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "RemplacantComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "DoctorComboModel1",
     "designerId": "31a69e7a-10e3-4192-aa13-85d3ee475e27",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger6",
             "designerId": "c5f34718-4ee3-443f-90a1-39c704d07de6"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "userFName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField14",
             "designerId": "6cc8aaa0-1c85-4ff7-b5f9-e562f7601060"
         },
@@ -47,6 +56,9 @@
             "userConfig": {
                 "name": "userLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField15",
             "designerId": "bd303dee-aee6-4bd3-a170-a55e8fae3e18"
         },
@@ -59,6 +71,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userInitiales"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField18",
             "designerId": "287d8d4b-9641-40b3-8805-0acd20ca93e9"

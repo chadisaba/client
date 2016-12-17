@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "EstHasServComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "EstablishmentComboModel1",
     "designerId": "deb628f0-6486-4de3-a21d-d38c5007c578",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "estHasServId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField35",
             "designerId": "c3b683f7-6edb-46cd-abad-c5f5436b7d0b"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "establishmentId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField14",
             "designerId": "f508dcea-173a-43fd-aae8-340f482373bc"
         },
@@ -47,6 +56,9 @@
             "userConfig": {
                 "name": "estHasServCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField36",
             "designerId": "f7671951-f908-464a-b95e-32c5f25d1e56"
         },
@@ -59,6 +71,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "estHasServName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField15",
             "designerId": "a8bb4d16-3187-4284-9ae5-721b1dae002c"

@@ -9,5 +9,9 @@
         "designer|userAlias": "worklistfiltregridpanel",
         "designer|userClassName": "WorklistFiltreGridPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "36c197d6-107d-4b51-98a9-3aba4e809c9b"
 }

@@ -13,6 +13,14 @@
         "itemId": "reportTemplateTabPanelItemId",
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "2190139f-cda5-49ce-bc4b-73e145f60b2d",
     "viewControllerInstanceId": "83824cb6-0c78-4623-8e77-431da681d76f",
@@ -27,6 +35,9 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "reporthfTemplateGrid"
+            },
+            "configAlternates": {
+                "itemId": "string"
             },
             "name": "reporthfgrid",
             "designerId": "80cd4324-b211-43cf-9422-79ab295e367c",
@@ -54,6 +65,11 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onReportHFTemplateGridAfterRender",
                     "designerId": "6c0e2340-baea-4ca1-834a-d0ef00779e93"
                 }
@@ -69,6 +85,10 @@
             "userConfig": {
                 "itemId": "reportTemplateGrid",
                 "title": "Report template"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "title": "string"
             },
             "name": "reporttemplategrid",
             "designerId": "488224a0-f404-46e1-9f67-284b820a7b98",
@@ -95,6 +115,11 @@
                         "fn": "onReportTemplateGridAfterRender",
                         "name": "afterrender",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onReportTemplateGridAfterRender",
                     "designerId": "de35c897-0d93-42d8-929c-31646a0552c8"

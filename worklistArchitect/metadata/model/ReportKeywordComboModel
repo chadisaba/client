@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "ReportKeywordComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "982932b3-aa2f-41cc-9fe5-d1f1427a50c1",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "reportKeywordId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField33",
             "designerId": "f2983f3a-177e-449e-86d9-b87c79bc5594"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "reportKeywordName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField34",
             "designerId": "e3e51380-fd94-49dc-9361-a5a2a36bab7f"

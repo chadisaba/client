@@ -30,6 +30,11 @@
         "designer|userAlias": "visitsimplifiedform",
         "designer|userClassName": "VisitSimplifiedFormViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "eae1df00-96bf-4d5e-8aa3-e53ced9ab8a7",
     "cn": [
         {
@@ -42,6 +47,10 @@
             "userConfig": {
                 "model": "VisitPdsComboModel",
                 "name": "VisitPdsComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "VisitPdsComboStore",
             "designerId": "9534df9b-9102-4259-9c6b-f1244394bf7d"
@@ -57,6 +66,10 @@
                 "model": "StudyVisitModel",
                 "name": "StudyVisitStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore2",
             "designerId": "71f16f40-610f-4822-bc34-eaa069c4143c"
         },
@@ -70,6 +83,10 @@
             "userConfig": {
                 "model": "StudyComboModel",
                 "name": "StudyComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore3",
             "designerId": "aa5b58e7-b7ab-406b-a890-8d1385086eb1"
@@ -85,6 +102,10 @@
                 "model": "SiteComboModel",
                 "name": "SiteComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore4",
             "designerId": "32e25522-ea5c-4a3c-b533-a757abddadaf"
         },
@@ -98,6 +119,10 @@
             "userConfig": {
                 "model": "DoctorComboModel",
                 "name": "DoctorComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore8",
             "designerId": "ed39cd02-7f21-4c80-8664-b815d32237f2"

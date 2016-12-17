@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "VisitModel",
     "designerId": "9bee4efc-c63b-47f8-a0fa-00866346a21c",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitDate"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyDate",
             "designerId": "d5192051-fc00-4299-ba85-7bffad66c183"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "visitTime"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField22",
             "designerId": "12793a92-88e7-44f1-8a3b-8915c079c52c"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsBySocialCard"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsBySocialCard",
             "designerId": "9ac1ef1c-904d-4a42-b756-90a94f285f74"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "visitIsFree"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsFree",
             "designerId": "a0de6dc1-daf2-490b-b61c-b6b75beaba90"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitFtIsFree"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitFtIsFree",
             "designerId": "92ecfb18-3492-465c-afc0-f9aeadb1a552"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "visitIsHospitalized"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsHospitalized",
             "designerId": "88d04cc1-2567-4889-ad8d-87a3a698a674"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsUrgent"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsUrgent",
             "designerId": "f6c0b7cc-8154-4989-b584-fc632b102cf5"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "visitHospitVisitNumber"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField7",
             "designerId": "9d0b0a7f-6361-49fb-8608-6f12623dc91c"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsAmo"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsAmo",
             "designerId": "b96dcebc-a58a-4142-b37b-2ad57b233374"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "visitIsAmc"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitIsAmc",
             "designerId": "000bf678-ed83-4715-b098-733723ad7687"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsBillingAMC"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsBillingAMC",
             "designerId": "3bffac62-22dc-442c-9bb6-1d37768f3a82"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "visitPds"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitPds",
             "designerId": "006c7ec3-a946-4776-aa0e-c98f9e3fa3a6"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitAldResponse"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitAldResponse",
             "designerId": "fae77270-7711-42db-944d-9d7eb0f5994c"
@@ -196,6 +239,9 @@
             "userConfig": {
                 "name": "visitInvoiceType"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitInvoiceType",
             "designerId": "bb913fe3-f58d-4380-ab41-8b354bf0be8c"
         },
@@ -208,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitFtFor"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitFtFor",
             "designerId": "94f445ac-745c-429a-89a6-f506964496fd"
@@ -222,6 +271,9 @@
             "userConfig": {
                 "name": "visitPacsId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitPacsId",
             "designerId": "3e64ba90-1abf-441f-aaef-112a17705dc0"
         },
@@ -234,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitIsDone"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitIsDone",
             "designerId": "309f8492-2eef-49ea-a6ff-bca602ab814b"
@@ -248,6 +303,9 @@
             "userConfig": {
                 "name": "visitLastCrStatus"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyvisitLastCrStatus",
             "designerId": "73f683f3-de49-4779-bddb-ffd4174a2e02"
         },
@@ -260,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visitLastCotationStatus"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyvisitLastCotationStatus",
             "designerId": "835262e5-1ae7-4641-83e8-32e9a41b10ac"
@@ -274,6 +335,9 @@
             "userConfig": {
                 "name": "toDelete"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField27",
             "designerId": "5cce4b5a-f6ea-413d-ae1e-50c05a0f4e89"
         },
@@ -286,6 +350,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField28",
             "designerId": "1c21ca68-b5b7-4ccd-be60-3f432587e68f"
@@ -300,6 +367,9 @@
             "userConfig": {
                 "name": "modified"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField29",
             "designerId": "9aa5cef2-61fe-4c2c-9f00-82ecfc11f2b2"
         },
@@ -312,6 +382,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "notValid"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField30",
             "designerId": "b4d81c94-f928-4ffc-be71-c18626e68c55"
@@ -326,6 +399,9 @@
             "userConfig": {
                 "name": "addedAndValidated"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField31",
             "designerId": "9f52f26b-b7e5-4bd9-8c17-95b38297aa73"
         },
@@ -338,6 +414,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "patientId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField23",
             "designerId": "5f651854-7f3a-4327-bf58-925ee2d1d5bc"
@@ -352,6 +431,9 @@
             "userConfig": {
                 "name": "visitId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField24",
             "designerId": "72398fe5-660b-45a7-8c2f-a84a0cbcf840"
         },
@@ -365,6 +447,9 @@
             "userConfig": {
                 "name": "siteId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger3",
             "designerId": "6eeba3c2-ff53-489b-bfd9-2901c92aa79e"
         },
@@ -377,6 +462,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger7",
             "designerId": "ff93eab0-25e5-43f0-b0a1-50bbbcee1f41"

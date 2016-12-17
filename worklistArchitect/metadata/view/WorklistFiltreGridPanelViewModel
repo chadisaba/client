@@ -16,6 +16,11 @@
         "designer|userAlias": "worklistfiltregridpanel",
         "designer|userClassName": "WorklistFiltreGridPanelViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "ab9d6573-f890-480a-92e4-c7e3debdf66d",
     "cn": [
         {
@@ -29,6 +34,10 @@
                 "model": null,
                 "name": "WorklistGridFilterStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore9",
             "designerId": "3e3cabe6-ac1c-408d-88c0-73adff2f8faa",
             "cn": [
@@ -41,6 +50,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "name": "value"
+                    },
+                    "configAlternates": {
+                        "name": "string"
                     },
                     "name": "MyField17",
                     "designerId": "b6c9755a-d6a5-45e1-aeed-5881f21c037b"

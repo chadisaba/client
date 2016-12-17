@@ -9,6 +9,9 @@
         "designer|userAlias": "patientdetailsearchform",
         "designer|userClassName": "PatientDetailSearchFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "9fe5f93a-4ace-45f2-b4ee-8w4m5cwv6kfg"
- 
 }

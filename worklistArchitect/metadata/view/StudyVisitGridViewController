@@ -9,5 +9,9 @@
         "designer|userAlias": "studyvisitgrid",
         "designer|userClassName": "StudyVisitGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm"
 }

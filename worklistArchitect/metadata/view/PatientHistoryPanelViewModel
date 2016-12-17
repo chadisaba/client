@@ -14,5 +14,10 @@
         "designer|userAlias": "patienthistorypanel",
         "designer|userClassName": "PatientHistoryPanelViewModel"
     },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "53681c2f-d038-4e42-ad25-fdcdd2627555"
 }

@@ -71,6 +71,13 @@
             "AmoForm"
         ]
     },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "requires": "typedarray",
+        "views": "typedarray"
+    },
     "name": "Application",
     "designerId": "application",
     "cn": [
@@ -101,6 +108,10 @@
                     "",
                     ""
                 ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "launch",
             "designerId": "031d32a2-5475-4136-8387-c5d66d538904"

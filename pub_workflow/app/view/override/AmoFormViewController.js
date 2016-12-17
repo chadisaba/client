@@ -19,7 +19,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         if(visitId)
         {
 
-            CommonDirect.getData('REGO',{name:'visitId',value:visitId})
+            CommonDirect.getData('REGO',[{name:'visitId',value:visitId}])
                 .then(function(_resultValue)
                 {
                     me.loadRegoRecord(_resultValue,_patientId,_visitId);
@@ -43,6 +43,11 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         if(_regoArray.length)
         {
             var regoRec=new MyApp.model.RegoModel(_regoArray[0]);
+            if(!regoRec.get('visitId')){ // dans ce cas on a récupéré le rego du patient et non pas celui de la visite
+                regoRec.set('visitId',_visitId);
+                regoRec.set('regoId',UUID());
+            }
+
             view.loadRecord(regoRec);
             me.originalValues=view.getValues();
         }
@@ -52,7 +57,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             regoModel.set('regoId',UUID());
             regoModel.set('patientId',_patientId);
             regoModel.set('visitId',_visitId);
-            me.originalValues= {visitId:regoModel.get('patientId')};
+            me.originalValues= {patientId:regoModel.get('patientId')};
             view.loadRecord(regoModel);
         }
         me.initComboAfterRecordLoading(_regoArray[0]);
@@ -80,36 +85,40 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         var view=me.getView();
         var typeAssurance=view.down('#typeAssCombo');
 
-        if(_data.regoAt)
-            typeAssurance.setValue('at');
-        else if(_data.regoMaternite)
-            typeAssurance.setValue('mater');
-        else if(_data.regoSmg)
-            typeAssurance.setValue('smg');
+        if(_data)
+        {
+            if(_data.regoAt)
+                typeAssurance.setValue('at');
+            else if(_data.regoMaternite)
+                typeAssurance.setValue('mater');
+            else if(_data.regoSmg)
+                typeAssurance.setValue('smg');
 
-        var pecCombo=view.down('#pecCombo');
-        var pecArray=[];
-        if(_data.regoCmu)
-            pecArray.push('cmu');
-        if(_data.regoDepistage)
-            pecArray.push('dep');
-        if(_data.regoInvalidite)
-            pecArray.push('inv');
-        if(_data.regoAme)
-            pecArray.push('ameb');
-        if(_data.regoAmeComp)
-            pecArray.push('amec');
-        if(_data.regoAld)
-            pecArray.push('ald');
-        if(_data.regoAccDroitCommun)
-            pecArray.push('adc');
-        if(_data.regoAutrePec)
-            pecArray.push('autreex');
-        if(_data.regoFns)
-            pecArray.push('fns');
+            var pecCombo=view.down('#pecCombo');
+            var pecArray=[];
+            if(_data.regoCmu)
+                pecArray.push('cmu');
+            if(_data.regoDepistage)
+                pecArray.push('dep');
+            if(_data.regoInvalidite)
+                pecArray.push('inv');
+            if(_data.regoAme)
+                pecArray.push('ameb');
+            if(_data.regoAmeComp)
+                pecArray.push('amec');
+            if(_data.regoAld)
+                pecArray.push('ald');
+            if(_data.regoAccDroitCommun)
+                pecArray.push('adc');
+            if(_data.regoAutrePec)
+                pecArray.push('autreex');
+            if(_data.regoFns)
+                pecArray.push('fns');
 
-        if(pecArray.length)
-            pecCombo.setValue(pecArray);
+            if(pecArray.length)
+                pecCombo.setValue(pecArray);
+        }
+
     },
     amoFormSave: function(_visitId) {
         var me=this;
@@ -200,8 +209,8 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
 
                         }
                     });
-
-                    CommonDirect.saveData(dataToSave,'REGO')
+                    dataToSave.visitId=_visitId;
+                    RegoDirect.saveRego(dataToSave)
                         .then(function()
                         {
                             resolve();
@@ -260,7 +269,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     },
     onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
         var me=this;
-        CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,true,4);
+        CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,false,4);
     }
 
 });

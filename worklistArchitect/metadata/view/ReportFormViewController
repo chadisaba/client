@@ -9,5 +9,9 @@
         "designer|userAlias": "reportform",
         "designer|userClassName": "ReportFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "00b9645d-0d73-41ba-af9e-32d28866eebb"
 }

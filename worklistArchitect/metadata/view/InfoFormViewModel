@@ -9,9 +9,9 @@
         "designer|userAlias": "infoform",
         "designer|userClassName": "InfoFormViewModel"
     },
-    "designerId": "0f511f8c-8a5d-4154-8917-3pln91bd687s",
-      "cn": [
-       
-        
-    ]
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "0f511f8c-8a5d-4154-8917-3pln91bd687s"
 }

@@ -9,6 +9,10 @@
         "designer|userAlias": "reporthfgrid",
         "designer|userClassName": "ReportHFGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "49596930-9b19-4df7-bdc5-10b4457f61ef",
     "cn": [
         {
@@ -22,6 +26,11 @@
                 "groupField": "doctor",
                 "model": "ReportHFModel",
                 "name": "ReportHFStore"
+            },
+            "configAlternates": {
+                "groupField": "datafield",
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore2",
             "designerId": "583b2eba-a536-42d5-aadb-1474dbb31e7f"
@@ -37,6 +46,10 @@
                 "model": "DoctorComboModel",
                 "name": "DoctorStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "MyStore10",
             "designerId": "3065b0f1-d955-476b-9209-347e5eb80630"
         },
@@ -50,6 +63,10 @@
             "userConfig": {
                 "model": "SiteComboModel",
                 "name": "SiteStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore11",
             "designerId": "151c90a5-ab90-4ab3-b7cc-5c3673a29d7e"

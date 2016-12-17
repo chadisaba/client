@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "StudyComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "CityNameComboModel1",
     "designerId": "298f1b8d-0f4d-4140-aed9-0d773aac986e",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField1",
             "designerId": "dcddc247-ba95-40ce-b881-f5a4c1f1b738"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "studyName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField2",
             "designerId": "82ff95a6-1f0f-4a1b-b1cc-5c865b46ed02"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField16",
             "designerId": "9c6d1581-cf3d-457c-ae53-994b7afd0e8c"
