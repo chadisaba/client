@@ -235,41 +235,60 @@ Ext.define('MyApp.view.AmoForm', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            itemId: 'qualiteBenefCombo',
                             fieldLabel: 'Qualité bénéf.',
                             name: 'regoQualiteBenef',
                             valueField: 'id',
                             bind: {
                                 store: '{QualiteBenefStore}'
+                            },
+                            listeners: {
+                                change: 'onQualiteBenefComboChange'
                             }
                         },
                         {
-                            xtype: 'textfield',
-                            fieldLabel: 'Rang gémelaire',
-                            name: 'regoRangGemBenef',
-                            allowBlank: false,
-                            enforceMaxLength: true,
-                            maxLength: 1,
-                            minLength: 1
+                            xtype: 'container',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    flex: 1,
+                                    fieldLabel: 'Rang gémelaire bénéf',
+                                    name: 'regoRangGemBenef',
+                                    enforceMaxLength: true,
+                                    maxLength: 1,
+                                    minLength: 1
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    flex: 1,
+                                    itemId: 'regoRangGemAssureTField',
+                                    fieldLabel: 'Rang gémelaire assuré',
+                                    name: 'regoRangGemAssure',
+                                    enforceMaxLength: true,
+                                    maxLength: 1,
+                                    minLength: 1
+                                }
+                            ]
                         },
                         {
                             xtype: 'textfield',
-                            fieldLabel: 'Ass .Rang gémelaire',
-                            name: 'regoRangGemAssure',
-                            maxLength: 1,
-                            minLength: 1
-                        },
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'Nom',
+                            itemId: 'regoNomAssureTField',
+                            fieldLabel: 'Nom assuré',
                             name: 'regoNomAssure'
                         },
                         {
                             xtype: 'textfield',
-                            fieldLabel: 'Prenom',
+                            itemId: 'regoPrenomAssureTField',
+                            fieldLabel: 'Prenom assuré',
                             name: 'regoPrenomAssure'
                         },
                         {
                             xtype: 'textfield',
+                            itemId: 'regoDateNaissAssTField',
                             fieldLabel: 'Date naissance ',
                             name: 'regoDateNaissAss',
                             allowBlank: false

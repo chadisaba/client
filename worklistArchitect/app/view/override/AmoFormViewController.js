@@ -57,6 +57,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             regoModel.set('regoId',UUID());
             regoModel.set('patientId',_patientId);
             regoModel.set('visitId',_visitId);
+            regoModel.set('regoQualiteBenef','0');
             me.originalValues= {patientId:regoModel.get('patientId')};
             view.loadRecord(regoModel);
         }
@@ -223,8 +224,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
 
         var view=this.getView();
         this.hideTypeAssuranceOnInitForm();
-       var materniteContainer= view.down('#materniteContainerItemId');
-
+        var materniteContainer= view.down('#materniteContainerItemId');
         switch (newValue)
         {
             case 'at' :
@@ -251,10 +251,9 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         else
             valuesArray=newValue;
 
-
         valuesArray.forEach(function(_item)
         {
-            switch (newValue)
+            switch (_item)
             {
                 case 'adc' :
                     droitCommunDateField.setHidden(false);
@@ -262,14 +261,144 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                 case 'ald' :
                     forcageAldCheckBox.setHidden(false);
                     break;
-
             }
         });
 
     },
-    onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    checkPecAndTypeAssuranceCompatibility:function()
+    {
+        var me=this;
+
+        var isCMU=false;
+        var isALD=false;
+        var isAmeB=false;
+        var isAmeC=false;
+        var isFNS=false;
+        var isInvalidite=false;
+        var isDepistage=false;
+        var isAccidentDroitCommun=false;
+        var isMaternite=false;
+        var isSMG=false;
+        var isAT=false;
+        var typeAssuranceValue=me.getView().down('#typeAssCombo').getValue();
+            switch (typeAssuranceValue)
+            {
+                case 'mater' :
+                    isMaternite=true;
+                    break;
+                case 'at' :
+                    isAT=true;
+                    break;
+                case 'smg' :
+                    isSMG=true;
+                    break;
+            }
+        var pecCombo=me.getView().down('#pecCombo');
+        var valuesArray=pecCombo.getValue();
+        var result=true;
+        if(valuesArray && valuesArray.length>0)
+        {
+            valuesArray.forEach(function(_item)
+            {
+                switch (_item)
+                {
+                    case 'adc' :
+                        isAccidentDroitCommun=true;
+                        break;
+                    case 'ald' :
+                        isALD=true;
+                        break;
+                    case 'cmu' :
+                        isCMU=true;
+                        break;
+                    case 'ameb' :
+                        isAmeB=true;
+                        break;
+                    case 'amec' :
+                        isAmeC=true;
+                        break;
+                    case 'fns' :
+                        isFNS=true;
+                        break;
+                    case 'inv' :
+                        isInvalidite=true;
+                        break;
+                    case 'dp' :
+                        isDepistage=true;
+                        break;
+
+                }
+            });
+        }
+
+        if(isCMU && (isAmeB || isAmeC || isFNS || isInvalidite ))
+        {
+            result=false;
+        }
+        else if(isAmeB && (isAmeC || isFNS || isInvalidite|| isCMU ))
+        {
+            result=false;
+        }
+        else if(isAmeC && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isDepistage && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isAccidentDroitCommun && (isDepistage ))
+        {
+            result=false;
+        }
+        else if(isFNS && (isAmeB || isAmeC  || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isInvalidite && (isAccidentDroitCommun || isMaternite ))
+        {
+            result=false;
+        }
+        else if(isMaternite && (isDepistage || isAccidentDroitCommun ))
+        {
+            result=false;
+        }
+        else if(isAccidentDroitCommun && (isDepistage || isMaternite ))
+        {
+            result=false;
+        }
+        return result;
+    },
+    onAmoComboItemIdChange: function(field, newValue) {
         var me=this;
         CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,false,4);
-    }
+    },
+    onQualiteBenefComboChange: function(field, newValue, oldValue, eOpts) {
 
+        var form=this.getView();
+       var regoRangGemAssureTField= form.down('#regoRangGemAssureTField');
+        var regoNomAssureTField=form.down('#regoNomAssureTField');
+        var regoPrenomAssureTField=form.down('#regoPrenomAssureTField');
+        var regoDateNaissAssTField=form.down('#regoDateNaissAssTField');
+        if(newValue==='0')
+        {
+            regoRangGemAssureTField.setValue(null);
+            regoNomAssureTField.setValue(null);
+            regoPrenomAssureTField.setValue(null);
+            regoDateNaissAssTField.setValue(null);
+            regoRangGemAssureTField.setHidden(true);
+            regoNomAssureTField.setHidden(true);
+            regoPrenomAssureTField.setHidden(true);
+            regoDateNaissAssTField.setHidden(true);
+        }
+        else
+        {
+            regoRangGemAssureTField.setHidden(false);
+            regoNomAssureTField.setHidden(false);
+            regoPrenomAssureTField.setHidden(false);
+            regoDateNaissAssTField.setHidden(false);
+        }
+
+    }
 });

@@ -57,6 +57,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             regoModel.set('regoId',UUID());
             regoModel.set('patientId',_patientId);
             regoModel.set('visitId',_visitId);
+            regoModel.set('regoQualiteBenef','0');
             me.originalValues= {patientId:regoModel.get('patientId')};
             view.loadRecord(regoModel);
         }
@@ -267,9 +268,35 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         });
 
     },
-    onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
+    onAmoComboItemIdChange: function(field, newValue) {
         var me=this;
         CommonDirect.autoComplete(me,"AMO",newValue,"amoName",'AmoComboStore',field,false,4);
-    }
+    },
+    onQualiteBenefComboChange: function(field, newValue, oldValue, eOpts) {
 
+        var form=this.getView();
+       var regoRangGemAssureTField= form.down('#regoRangGemAssureTField');
+        var regoNomAssureTField=form.down('#regoNomAssureTField');
+        var regoPrenomAssureTField=form.down('#regoPrenomAssureTField');
+        var regoDateNaissAssTField=form.down('#regoDateNaissAssTField');
+        if(newValue==='0')
+        {
+            regoRangGemAssureTField.setValue(null);
+            regoNomAssureTField.setValue(null);
+            regoPrenomAssureTField.setValue(null);
+            regoDateNaissAssTField.setValue(null);
+            regoRangGemAssureTField.setHidden(true);
+            regoNomAssureTField.setHidden(true);
+            regoPrenomAssureTField.setHidden(true);
+            regoDateNaissAssTField.setHidden(true);
+        }
+        else
+        {
+            regoRangGemAssureTField.setHidden(false);
+            regoNomAssureTField.setHidden(false);
+            regoPrenomAssureTField.setHidden(false);
+            regoDateNaissAssTField.setHidden(false);
+        }
+
+    }
 });

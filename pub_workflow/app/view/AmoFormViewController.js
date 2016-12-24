@@ -33,6 +33,10 @@ Ext.define('MyApp.view.AmoFormViewController', {
 
     },
 
+    onQualiteBenefComboChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onAmoFormItemIdBoxReady: function(component, width, height, eOpts) {
 
     }

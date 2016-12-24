@@ -636,6 +636,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Qualité bénéf.",
+                                "itemId": "qualiteBenefCombo",
                                 "layout|anchor": "100%",
                                 "name": "regoQualiteBenef",
                                 "store": [
@@ -648,38 +649,117 @@
                                 "fieldLabel": "string",
                                 "layout|anchor": "string",
                                 "name": "string",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "itemId": "string"
                             },
                             "name": "MyComboBox9",
-                            "designerId": "f32c050a-d329-4ad3-8438-1339e831f215"
+                            "designerId": "f32c050a-d329-4ad3-8438-1339e831f215",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onQualiteBenefComboChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onQualiteBenefComboChange",
+                                    "designerId": "3f574933-1c77-4826-8ff0-72a65860f97d"
+                                }
+                            ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
-                                "enforceMaxLength": true,
-                                "fieldLabel": "Rang gémelaire",
-                                "labelWidth": null,
-                                "maxLength": 1,
-                                "minLength": 1,
-                                "name": "regoRangGemBenef"
+                                "container|align": "stretch",
+                                "layout": "hbox"
                             },
                             "configAlternates": {
-                                "allowBlank": "boolean",
-                                "enforceMaxLength": "boolean",
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "maxLength": "number",
-                                "minLength": "number",
-                                "name": "string"
+                                "container|align": "string",
+                                "layout": "string"
                             },
-                            "name": "MyTextField8",
-                            "designerId": "bc249dda-602d-4e92-8f73-02952582b677"
+                            "name": "MyContainer8",
+                            "designerId": "2ac20123-2d99-40bd-9a50-f0f2ec967c04",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": null,
+                                        "enforceMaxLength": true,
+                                        "fieldLabel": "Rang gémelaire bénéf",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "maxLength": 1,
+                                        "minLength": 1,
+                                        "name": "regoRangGemBenef",
+                                        "width": null
+                                    },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "maxLength": "number",
+                                        "minLength": "number",
+                                        "name": "string",
+                                        "layout|flex": "number",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField8",
+                                    "designerId": "bc249dda-602d-4e92-8f73-02952582b677"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": null,
+                                        "enforceMaxLength": true,
+                                        "fieldLabel": "Rang gémelaire assuré",
+                                        "itemId": "regoRangGemAssureTField",
+                                        "labelWidth": null,
+                                        "layout|flex": 1,
+                                        "maxLength": 1,
+                                        "minLength": 1,
+                                        "name": "regoRangGemAssure"
+                                    },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "maxLength": "number",
+                                        "minLength": "number",
+                                        "name": "string",
+                                        "enforceMaxLength": "boolean",
+                                        "itemId": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyTextField9",
+                                    "designerId": "17b39252-ed90-4f8f-857f-a987511304b7"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -690,33 +770,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": null,
-                                "fieldLabel": "Ass .Rang gémelaire",
-                                "labelWidth": null,
-                                "maxLength": 1,
-                                "minLength": 1,
-                                "name": "regoRangGemAssure"
-                            },
-                            "configAlternates": {
-                                "allowBlank": "boolean",
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "maxLength": "number",
-                                "minLength": "number",
-                                "name": "string"
-                            },
-                            "name": "MyTextField9",
-                            "designerId": "17b39252-ed90-4f8f-857f-a987511304b7"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": null,
-                                "fieldLabel": "Nom",
+                                "fieldLabel": "Nom assuré",
+                                "itemId": "regoNomAssureTField",
                                 "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoNomAssure"
@@ -726,7 +781,8 @@
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "maxLength": "number",
-                                "name": "string"
+                                "name": "string",
+                                "itemId": "string"
                             },
                             "name": "MyTextField10",
                             "designerId": "cd14075b-4cc1-44ec-9317-e58473c1076d"
@@ -740,7 +796,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": null,
-                                "fieldLabel": "Prenom",
+                                "fieldLabel": "Prenom assuré",
+                                "itemId": "regoPrenomAssureTField",
                                 "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoPrenomAssure"
@@ -750,7 +807,8 @@
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "maxLength": "number",
-                                "name": "string"
+                                "name": "string",
+                                "itemId": "string"
                             },
                             "name": "MyTextField11",
                             "designerId": "0d80cdc7-8024-4c08-8023-b88f5ebd8c1a"
@@ -765,6 +823,7 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Date naissance ",
+                                "itemId": "regoDateNaissAssTField",
                                 "labelWidth": null,
                                 "maxLength": null,
                                 "name": "regoDateNaissAss"
@@ -774,7 +833,8 @@
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "maxLength": "number",
-                                "name": "string"
+                                "name": "string",
+                                "itemId": "string"
                             },
                             "name": "MyTextField12",
                             "designerId": "59dda4a0-7994-447b-aff7-94a41fa3a2be"
