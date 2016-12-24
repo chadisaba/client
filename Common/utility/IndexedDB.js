@@ -33,8 +33,8 @@ var IndexedDB={
                         SITE: "++id,siteId,siteCode,siteName",
                         TFIELD:'++id,tfieldName,tfieldDbName',
                         ESTABLISHMENT:'++id,establishmentId,establishmentCode,establishmentName',
-                        EST_HAS_SERV:'++id,estHasServId,establishmentId,estHasServCode,estHasServName'
-
+                        EST_HAS_SERV:'++id,estHasServId,establishmentId,estHasServCode,estHasServName',
+                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigPCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin',
                     });
                     me.db.open();
                     resolve();
