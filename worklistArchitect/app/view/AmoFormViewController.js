@@ -29,6 +29,14 @@ Ext.define('MyApp.view.AmoFormViewController', {
 
     },
 
+    onPecComboSelect: function(combo, record, eOpts) {
+
+    },
+
+    onPecComboBeforeSelect: function(combo, record, index, eOpts) {
+
+    },
+
     onAmoComboItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

@@ -2698,6 +2698,12 @@
                                     "cn": [
                                         {
                                             "id": "b7778a2d-1ac4-4a87-bd52-8acf81efd668"
+                                        },
+                                        {
+                                            "id": "6ff71b0c-4c47-4d95-80f4-1737e91756f0"
+                                        },
+                                        {
+                                            "id": "14b26b25-0c3d-4058-811c-99b5744406df"
                                         }
                                     ]
                                 },
@@ -3877,11 +3883,11 @@
         ]
     },
     "canvasState": {
-        "topInstance": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e",
-        "selectedInstance": "f725acb6-69b4-4e45-8bf5-9b65ccb8e38e"
+        "selectedInstance": "14b26b25-0c3d-4058-811c-99b5744406df"
     },
     "editMode": "code",
     "userSettings": {

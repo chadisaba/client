@@ -68,7 +68,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     hidePecFieldOnInitForm:function()
     {
         var view=this.getView();
-        var forcageAldCheckBox= view.down('#forcageAldItemID');
+        var forcageAldCheckBox= view.down('#forcageAldItemId');
         forcageAldCheckBox.setHidden(true);
         var droitCommunDateField=view.down('#droitCommunDateItemId');
         droitCommunDateField.setHidden(true);
@@ -225,6 +225,8 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         var view=this.getView();
         this.hideTypeAssuranceOnInitForm();
         var materniteContainer= view.down('#materniteContainerItemId');
+         view.down('#forcageMaterniteCb').setValue(false);
+        view.down('#dateMaterniteField').setValue("");
         switch (newValue)
         {
             case 'at' :
@@ -236,20 +238,20 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                 break;
 
         }
+        me.calculTiersPayantSelonPec();
     },
 
     onPecComboChange: function(field, newValue, oldValue, eOpts) {
 
-        var view=this.getView();
-        this.hidePecFieldOnInitForm();
-        var forcageAldCheckBox= view.down('#forcageAldItemID');
-        var droitCommunDateField=view.down('#droitCommunDateItemId');
-        var valuesArray=[];
+        var me=this;
+        var view=me.getView();
 
-        if(!Array.isArray(newValue))
-            valuesArray.push(newValue);
-        else
-            valuesArray=newValue;
+        me.hidePecFieldOnInitForm();
+        var forcageAldCheckBox= view.down('#forcageAldItemId');
+        var droitCommunDateField=view.down('#droitCommunDateItemId');
+        var valuesArray;
+
+        valuesArray=newValue;
 
         valuesArray.forEach(function(_item)
         {
@@ -263,40 +265,71 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                     break;
             }
         });
-
+        me.calculTiersPayantSelonPec();
+        var pec=me.getPecAndTypeAssurance();
     },
-
-    checkPecAndTypeAssuranceCompatibility:function()
-    {
+    onPecComboSelect: function(combo, record, eOpts) {
+        var valuesArray;
         var me=this;
-
-        var isCMU=false;
-        var isALD=false;
-        var isAmeB=false;
-        var isAmeC=false;
-        var isFNS=false;
-        var isInvalidite=false;
-        var isDepistage=false;
-        var isAccidentDroitCommun=false;
-        var isMaternite=false;
-        var isSMG=false;
-        var isAT=false;
-        var typeAssuranceValue=me.getView().down('#typeAssCombo').getValue();
-            switch (typeAssuranceValue)
+        valuesArray=combo.getValue();
+        var isAld=false;
+        valuesArray.forEach(function(_item)
+        {
+            switch (_item)
             {
-                case 'mater' :
-                    isMaternite=true;
-                    break;
-                case 'at' :
-                    isAT=true;
-                    break;
-                case 'smg' :
-                    isSMG=true;
+                case 'ald' :
+                    isAld=true;
                     break;
             }
+        });
+        if(isAld)
+        {
+            Ext.Msg.confirm("Confirmation", "Etes-vous sûr(e) de vouloir forcer l'ALD?", function(btnText){
+                if(btnText === "no"){
+                    me.getView().down('#forcageAldItemId').setValue(false);
+                    Ext.Array.remove(valuesArray,'ald');
+                    combo.select(valuesArray);
+
+                }
+                else if(btnText === "yes"){
+                    me.getView().down('#forcageAldItemId').setValue(true);
+                   // var eventObject:ForcageALDEvent = new ForcageALDEvent("forcageALDPatientAMOEvent", true);
+                }
+            }, me);
+        }
+
+    },
+    getPecAndTypeAssurance:function()
+    {
+        var me=this;
+        var resultObj={};
+        resultObj.isCMU=false;
+        resultObj.isALD=false;
+        resultObj.isAmeB=false;
+        resultObj.isAmeC=false;
+        resultObj.isFNS=false;
+        resultObj.isInvalidite=false;
+        resultObj.isDepistage=false;
+        resultObj.isAccidentDroitCommun=false;
+        resultObj.isMaternite=false;
+        resultObj.isSMG=false;
+        resultObj.isAT=false;
+        resultObj.isAutreExoneration=false;
+        var typeAssuranceValue=me.getView().down('#typeAssCombo').getValue();
+        switch (typeAssuranceValue)
+        {
+            case 'mater' :
+                resultObj.isMaternite=true;
+                break;
+            case 'at' :
+                resultObj.isAT=true;
+                break;
+            case 'smg' :
+                resultObj.isSMG=true;
+                break;
+        }
         var pecCombo=me.getView().down('#pecCombo');
         var valuesArray=pecCombo.getValue();
-        var result=true;
         if(valuesArray && valuesArray.length>0)
         {
             valuesArray.forEach(function(_item)
@@ -304,67 +337,81 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                 switch (_item)
                 {
                     case 'adc' :
-                        isAccidentDroitCommun=true;
+                        resultObj.isAccidentDroitCommun=true;
                         break;
                     case 'ald' :
-                        isALD=true;
+                        resultObj.isALD=true;
                         break;
                     case 'cmu' :
-                        isCMU=true;
+                        resultObj.isCMU=true;
                         break;
                     case 'ameb' :
-                        isAmeB=true;
+                        resultObj.isAmeB=true;
                         break;
                     case 'amec' :
-                        isAmeC=true;
+                        resultObj.isAmeC=true;
                         break;
                     case 'fns' :
-                        isFNS=true;
+                        resultObj.isFNS=true;
                         break;
                     case 'inv' :
-                        isInvalidite=true;
+                        resultObj.isInvalidite=true;
                         break;
                     case 'dp' :
-                        isDepistage=true;
+                        resultObj.isDepistage=true;
+                        break;
+                    case 'autreex' :
+                        resultObj.isAutreExoneration=true;
                         break;
 
                 }
             });
         }
+        return resultObj;
 
-        if(isCMU && (isAmeB || isAmeC || isFNS || isInvalidite ))
+    },
+    checkPecAndTypeAssuranceCompatibility:function()
+    {
+        var me=this;
+        var pec=me.getPecAndTypeAssurance();
+        var result=true;
+        if(pec.isCMU && (pec.isAmeB || pec.isAmeC || pec.isFNS || pec.isInvalidite ))
         {
             result=false;
         }
-        else if(isAmeB && (isAmeC || isFNS || isInvalidite|| isCMU ))
+        else if(pec.isAmeB && (pec.isAmeC || pec.isFNS || pec.isInvalidite|| pec.isCMU ))
         {
             result=false;
         }
-        else if(isAmeC && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        else if(pec.isAmeC && (pec.isAmeB || pec.isFNS || pec.isInvalidite|| pec.isCMU || pec.isALD ))
         {
             result=false;
         }
-        else if(isDepistage && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        else if(pec.isDepistage && (pec.isAmeB || pec.isFNS || pec.isInvalidite|| pec.isCMU || pec.isALD ))
         {
             result=false;
         }
-        else if(isAccidentDroitCommun && (isDepistage ))
+        else if(pec.isAccidentDroitCommun && (pec.isDepistage ))
         {
             result=false;
         }
-        else if(isFNS && (isAmeB || isAmeC  || isInvalidite|| isCMU || isALD ))
+        else if(pec.isFNS && (pec.isAmeB || pec.isAmeC  || pec.isInvalidite|| pec.isCMU || pec.isALD ))
         {
             result=false;
         }
-        else if(isInvalidite && (isAccidentDroitCommun || isMaternite ))
+        else if(pec.isInvalidite && (pec.isAccidentDroitCommun || pec.isMaternite ))
         {
             result=false;
         }
-        else if(isMaternite && (isDepistage || isAccidentDroitCommun ))
+        else if(pec.isMaternite && (pec.isDepistage || pec.isAccidentDroitCommun ))
         {
             result=false;
         }
-        else if(isAccidentDroitCommun && (isDepistage || isMaternite ))
+        else if(pec.isAccidentDroitCommun && (pec.isDepistage || pec.isMaternite ))
+        {
+            result=false;
+        }
+        else if(pec.isAutreExoneration && (pec.isSMG || pec.isMaternite ))
         {
             result=false;
         }
@@ -399,6 +446,28 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             regoPrenomAssureTField.setHidden(false);
             regoDateNaissAssTField.setHidden(false);
         }
+
+    },
+    calculTiersPayantSelonPec:function(){
+        var me=this;
+       var  pec=me.getPecAndTypeAssurance();
+       var resultObj={};
+        resultObj.TPAmo=false;
+        resultObj.TPAmc=false;
+       if(pec.isCMU || pec.isAmeC){
+           resultObj.TPAmo=true;
+           resultObj.TPAmc=true;
+       }
+       else if(pec.isAmeB)
+       {
+           resultObj.TPAmc=true;
+       }
+       else if(pec.isAT || pec.isSMG || pec.isMaternite || pec.isALD || pec.isInvalidite|| pec.isDepistage || pec.isFNS || pec.isAutreExoneration)
+       {
+           resultObj.TPAmo=true;
+       }
+
+        me.fireViewEvent('tpChangedEvent',resultObj);
 
     }
 });

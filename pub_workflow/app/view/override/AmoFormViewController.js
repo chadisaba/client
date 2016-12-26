@@ -68,7 +68,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     hidePecFieldOnInitForm:function()
     {
         var view=this.getView();
-        var forcageAldCheckBox= view.down('#forcageAldItemID');
+        var forcageAldCheckBox= view.down('#forcageAldItemId');
         forcageAldCheckBox.setHidden(true);
         var droitCommunDateField=view.down('#droitCommunDateItemId');
         droitCommunDateField.setHidden(true);
@@ -224,8 +224,9 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
 
         var view=this.getView();
         this.hideTypeAssuranceOnInitForm();
-       var materniteContainer= view.down('#materniteContainerItemId');
-
+        var materniteContainer= view.down('#materniteContainerItemId');
+         view.down('#forcageMaterniteCb').setValue(false);
+        view.down('#dateMaterniteField').setValue("");
         switch (newValue)
         {
             case 'at' :
@@ -243,7 +244,7 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
 
         var view=this.getView();
         this.hidePecFieldOnInitForm();
-        var forcageAldCheckBox= view.down('#forcageAldItemID');
+        var forcageAldCheckBox= view.down('#forcageAldItemId');
         var droitCommunDateField=view.down('#droitCommunDateItemId');
         var valuesArray=[];
 
@@ -252,10 +253,9 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         else
             valuesArray=newValue;
 
-
         valuesArray.forEach(function(_item)
         {
-            switch (newValue)
+            switch (_item)
             {
                 case 'adc' :
                     droitCommunDateField.setHidden(false);
@@ -263,10 +263,153 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
                 case 'ald' :
                     forcageAldCheckBox.setHidden(false);
                     break;
-
             }
         });
 
+    },
+    onPecComboSelect: function(combo, record, eOpts) {
+        var valuesArray=[];
+        var me=this;
+        valuesArray=combo.getValue();
+        var isAld=false;
+        valuesArray.forEach(function(_item)
+        {
+            switch (_item)
+            {
+                case 'ald' :
+                    isAld=true;
+                    break;
+            }
+        });
+
+        if(isAld)
+        {
+            Ext.Msg.confirm("Confirmation", "Etes-vous sûr(e) de vouloir forcer l'ALD?", function(btnText){
+                if(btnText === "no"){
+                    me.getView().down('#forcageAldItemId').setValue(false);
+                    Ext.Array.remove(valuesArray,'ald');
+                    combo.select(valuesArray);
+
+                }
+                else if(btnText === "yes"){
+                    me.getView().down('#forcageAldItemId').setValue(true);
+                   // var eventObject:ForcageALDEvent = new ForcageALDEvent("forcageALDPatientAMOEvent", true);
+                }
+            }, this);
+        }
+
+    },
+    checkPecAndTypeAssuranceCompatibility:function()
+    {
+        var me=this;
+
+        var isCMU=false;
+        var isALD=false;
+        var isAmeB=false;
+        var isAmeC=false;
+        var isFNS=false;
+        var isInvalidite=false;
+        var isDepistage=false;
+        var isAccidentDroitCommun=false;
+        var isMaternite=false;
+        var isSMG=false;
+        var isAT=false;
+        var isAutreExoneration=false;
+        var typeAssuranceValue=me.getView().down('#typeAssCombo').getValue();
+            switch (typeAssuranceValue)
+            {
+                case 'mater' :
+                    isMaternite=true;
+                    break;
+                case 'at' :
+                    isAT=true;
+                    break;
+                case 'smg' :
+                    isSMG=true;
+                    break;
+            }
+        var pecCombo=me.getView().down('#pecCombo');
+        var valuesArray=pecCombo.getValue();
+        var result=true;
+        if(valuesArray && valuesArray.length>0)
+        {
+            valuesArray.forEach(function(_item)
+            {
+                switch (_item)
+                {
+                    case 'adc' :
+                        isAccidentDroitCommun=true;
+                        break;
+                    case 'ald' :
+                        isALD=true;
+                        break;
+                    case 'cmu' :
+                        isCMU=true;
+                        break;
+                    case 'ameb' :
+                        isAmeB=true;
+                        break;
+                    case 'amec' :
+                        isAmeC=true;
+                        break;
+                    case 'fns' :
+                        isFNS=true;
+                        break;
+                    case 'inv' :
+                        isInvalidite=true;
+                        break;
+                    case 'dp' :
+                        isDepistage=true;
+                        break;
+                    case 'autreex' :
+                        isAutreExoneration=true;
+                        break;
+
+                }
+            });
+        }
+
+        if(isCMU && (isAmeB || isAmeC || isFNS || isInvalidite ))
+        {
+            result=false;
+        }
+        else if(isAmeB && (isAmeC || isFNS || isInvalidite|| isCMU ))
+        {
+            result=false;
+        }
+        else if(isAmeC && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isDepistage && (isAmeB || isFNS || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isAccidentDroitCommun && (isDepistage ))
+        {
+            result=false;
+        }
+        else if(isFNS && (isAmeB || isAmeC  || isInvalidite|| isCMU || isALD ))
+        {
+            result=false;
+        }
+        else if(isInvalidite && (isAccidentDroitCommun || isMaternite ))
+        {
+            result=false;
+        }
+        else if(isMaternite && (isDepistage || isAccidentDroitCommun ))
+        {
+            result=false;
+        }
+        else if(isAccidentDroitCommun && (isDepistage || isMaternite ))
+        {
+            result=false;
+        }
+        else if(isAutreExoneration && (isSMG || isMaternite ))
+        {
+            result=false;
+        }
+        return result;
     },
     onAmoComboItemIdChange: function(field, newValue) {
         var me=this;

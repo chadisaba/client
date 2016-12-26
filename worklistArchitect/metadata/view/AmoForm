@@ -163,6 +163,46 @@
                                     },
                                     "name": "onPecComboChange",
                                     "designerId": "b7778a2d-1ac4-4a87-bd52-8acf81efd668"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPecComboSelect",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPecComboSelect",
+                                    "designerId": "6ff71b0c-4c47-4d95-80f4-1737e91756f0"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPecComboBeforeSelect",
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPecComboBeforeSelect",
+                                    "designerId": "14b26b25-0c3d-4058-811c-99b5744406df"
                                 }
                             ]
                         },
@@ -196,6 +236,7 @@
                                     "userConfig": {
                                         "boxLabel": "",
                                         "fieldLabel": "Forçage fin maternité",
+                                        "itemId": "forcageMaterniteCb",
                                         "labelWidth": 130,
                                         "name": "regoForcageMaternite"
                                     },
@@ -203,7 +244,8 @@
                                         "boxLabel": "string",
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string"
                                     },
                                     "name": "MyCheckbox3",
                                     "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
@@ -217,13 +259,15 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fieldLabel": "Date maternité",
+                                        "itemId": "dateMaterniteField",
                                         "labelWidth": null,
                                         "name": "regoDateMaternite"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string"
                                     },
                                     "name": "MyDateField4",
                                     "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
@@ -240,7 +284,7 @@
                             "userConfig": {
                                 "boxLabel": "",
                                 "fieldLabel": "Forçage A.L.D",
-                                "itemId": "forcageAldItemID",
+                                "itemId": "forcageAldItemId",
                                 "labelWidth": 120,
                                 "name": "regoForcageAld"
                             },

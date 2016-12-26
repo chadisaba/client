@@ -72,7 +72,9 @@ Ext.define('MyApp.view.AmoForm', {
                                 store: '{PecStore}'
                             },
                             listeners: {
-                                change: 'onPecComboChange'
+                                change: 'onPecComboChange',
+                                select: 'onPecComboSelect',
+                                beforeselect: 'onPecComboBeforeSelect'
                             }
                         },
                         {
@@ -85,6 +87,7 @@ Ext.define('MyApp.view.AmoForm', {
                             items: [
                                 {
                                     xtype: 'checkboxfield',
+                                    itemId: 'forcageMaterniteCb',
                                     fieldLabel: 'Forçage fin maternité',
                                     labelWidth: 130,
                                     name: 'regoForcageMaternite',
@@ -92,6 +95,7 @@ Ext.define('MyApp.view.AmoForm', {
                                 },
                                 {
                                     xtype: 'datefield',
+                                    itemId: 'dateMaterniteField',
                                     fieldLabel: 'Date maternité',
                                     name: 'regoDateMaternite'
                                 }
@@ -99,7 +103,7 @@ Ext.define('MyApp.view.AmoForm', {
                         },
                         {
                             xtype: 'checkboxfield',
-                            itemId: 'forcageAldItemID',
+                            itemId: 'forcageAldItemId',
                             fieldLabel: 'Forçage A.L.D',
                             labelWidth: 120,
                             name: 'regoForcageAld',
