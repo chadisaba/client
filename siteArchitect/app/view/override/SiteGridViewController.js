@@ -48,14 +48,15 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
     },
  onSiteGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
         var me=this;
-        var dataToBeSaved1 = [],
-            dataType = ['added','modified'];
+        var dataToBeSaved1 = [];
         var siteConfigStore=this.getViewModel().getStore('SiteConfigStore');
-        Ext.Array.each(dataType, function(dtType){
-            Ext.each(siteConfigStore.query(dtType,true).items,function(record){
-                dataToBeSaved1.push(record.data);
-            });
-        });
+     siteConfigStore.each(function(_rec)
+     {
+         if(_rec.get('added')|| _rec.get('modified'))
+         {
+             dataToBeSaved1.push(_rec.data);
+         }
+     });
         CommonDirect.saveDataArray(dataToBeSaved,"SITE","siteId")
             .then(function()
             {
@@ -78,7 +79,6 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
         // get the last siteId
         var lastSiteId=new Date().getTime();
-        var siteStore=this.getViewModel().getStore('SiteStore');
        /* siteStore.each(function(siteRec){
            if(siteRec.get('siteId')>lastSiteId)
                lastSiteId=siteRec.get('siteId');
@@ -191,8 +191,10 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
             selectedSiteConfig =Ext.create('MyApp.model.SiteConfigModel',
                 {
                     siteId:record.get('siteId'),
+                    siteConfigId:new Date().getTime(),
                     added: true,
-                    modified: false
+                    modified: false,
+                    active:true
 
                 });
             siteConfigStore.add(selectedSiteConfig);
@@ -207,7 +209,6 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                     siteConfigStore.each(function(siteConfig){
                         if(siteConfig.get('siteId')==record.get('siteId')){
                             siteConfigStore.remove(siteConfig);
-                            record.set('siteConfigId',siteConfig.get('siteId'));
                             siteConfigStore.add(record);
                             //console.log(siteConfigStore.getCount());
                         }
