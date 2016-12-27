@@ -9,6 +9,10 @@
         "designer|userAlias": "sitegrid",
         "designer|userClassName": "SiteGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "SiteModel",
                 "name": "SiteStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "SiteStore",
             "designerId": "7bkfly7q-c056-4140-9039-y39whdqerd4k"
@@ -36,6 +44,10 @@
                 "model": "SiteConfigModel",
                 "name": "SiteConfigStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "SiteStore1",
             "designerId": "7b99e360-f609-414c-86e2-8d87f8b97f8e"
         },
@@ -49,6 +61,10 @@
             "userConfig": {
                 "model": "GroupIdComboModel",
                 "name": "GroupIdComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "GroupIdComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-7cvwwbfbxfwx"
@@ -64,6 +80,10 @@
                 "model": "SiteCategoryComboModel",
                 "name": "SiteCategoryComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "SiteCategoryComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-qc7xta9qipfp"
         },
@@ -77,6 +97,10 @@
             "userConfig": {
                 "model": "SiteCityIdComboModel",
                 "name": "SiteCityIdComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "SiteCityIdComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-p7jx2p55jwb7"

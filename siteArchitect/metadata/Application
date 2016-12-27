@@ -11,7 +11,7 @@
         ],
         "models": [
             "GroupIdComboModel",
-			"SiteCategoryComboModel",
+            "SiteCategoryComboModel",
             "SiteCityIdComboModel",
             "SiteModel",
             "SiteConfigModel",
@@ -28,6 +28,13 @@
             "SiteConfigForm",
             "SitesConfigTabPanel"
         ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "requires": "typedarray",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

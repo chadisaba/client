@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "SiteCityIdComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelSiteCityIdComboModel",
     "designerId": "040092bf-b6f4-441b-b581-g5rqmaw32rhy",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "cityId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-vmuqfhpisuyl"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-xmdqfn4jvlk7"

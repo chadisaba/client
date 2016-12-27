@@ -9,5 +9,9 @@
         "designer|userAlias": "sitegroupgrid",
         "designer|userClassName": "SiteGroupGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "4vw4y3bu-4ace-45f2-b4ee-lwng1fa4wxsp"
 }

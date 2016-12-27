@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "iuekgaab-8c41-4643-a8f8-iuekgaabsc3f",
     "viewControllerInstanceId": "4vw4y3bu-4ace-45f2-b4ee-lwng1fa4wxsp",
     "viewModelInstanceId": "lwng1fa4-8a5d-4154-8917-lwng1fa4wxsp",
@@ -37,6 +44,10 @@
             "userConfig": {
                 "dataIndex": "siteGroupName",
                 "text": "Group Name"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MysiteGroupNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-44m8s1scgq18",
@@ -63,6 +74,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyBooleanColumn",
             "designerId": "7c6bec59-5c6a-4872-9cec-k6ejuerjlr85",
@@ -98,6 +113,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "jwxaj27q-f393-483a-8425-2ypmke6x8ep5"
         },
@@ -113,6 +134,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "2v6whn9i-ccc7-465c-8662-2v6whn9ixdac"
@@ -136,6 +163,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processSiteGroupGrid",
             "designerId": "jwxaj27q-2054-459b-a4aa-jwxaj27q4eh8"
         },
@@ -153,6 +185,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdChHist",
             "designerId": "2ypmke6x-1d4f-4fb9-9364-j1gylr46dfw1"
@@ -173,6 +211,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdAfterRender",
             "designerId": "j1gylr46-1f65-4972-a6e1-j1gylr46dfw1"
         },
@@ -192,6 +236,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdInEdit",
             "designerId": "j1gylr46-1a08-4be0-b287-328cn63dhf5w"
         },
@@ -210,6 +260,12 @@
                 "fn": "onSiteGroupGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdResetEdit",
             "designerId": "328cn63d-2c80-456a-a5c5-328cn63dhf5w"
@@ -231,6 +287,12 @@
                 "fn": "onSiteGroupGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdSaveEdit",
             "designerId": "328cn63d-f0d5-4d89-a1bb-k41ppi2lmgcs"
@@ -254,6 +316,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdAddItem",
             "designerId": "k41ppi2l-ffc4-4ede-a9db-k41ppi2lmgcs"
         },
@@ -268,6 +337,11 @@
                 "fn": "onSiteGroupGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdDeleteItem",
             "designerId": "35r2qvyt-ac56-469a-895f-35r2qvytsgjp"
@@ -286,6 +360,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdModifyItem",
             "designerId": "35r2qvyt-6b6f-4377-998f-35r2qvytsgjp"
@@ -309,6 +389,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdQuitEdit",
             "designerId": "k6iesax2-746f-4da4-9f4d-k6iesax2whrk"
         },
@@ -321,6 +408,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-2ypmke6x8ep5"
@@ -341,6 +431,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdBeforeEdit",
             "designerId": "k6iesax2-4019-4a61-8c79-k6iesax2whrk"
         },
@@ -360,6 +456,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdCanceledit",
             "designerId": "48brtmv9-6686-46dd-bfe7-48brtmv93hyh"
         },
@@ -374,6 +476,11 @@
                 "fn": "onSiteGroupGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdContainerClick",
             "designerId": "48brtmv9-3079-420b-87bf-k935u1ug7i7d"
@@ -394,6 +501,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGroupGridIdEdit",
             "designerId": "k935u1ug-47bf-4b29-bb1d-k935u1ug7i7d"
         },
@@ -408,6 +521,11 @@
                 "fn": "onSiteGroupGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdBeforeCellClick",
             "designerId": "$k935u1ug-6a9c-488e-8122-4atgwdtpcjea"
@@ -427,6 +545,12 @@
                 "fn": "onSiteGroupGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGroupGridIdValidateedit",
             "designerId": "4atgwdtp-b2ec-4782-a56f-4atgwdtpcjea"

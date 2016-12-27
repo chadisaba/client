@@ -18,6 +18,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         };
         var groupComboStore=viewModel.getStore('GroupIdComboStore');
         var groupData=[];
+
         Server.CommonQueries.read(params,
             function(res){
                 if(res.success){
@@ -29,38 +30,12 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                 }
             },me
         );
-
-
         // categorie store
         var categorieStore=viewModel.getStore('SiteCategoryComboStore');
         categorieStore.loadData(ComboData.categorieSite);
-
-
-        // City store
-       /* var params={
-            table:"CITY"
-        };
-
-        var cityData=[];
-        var cityStore=viewModel.getStore('SiteCityIdComboStore');
-        Server.CommonQueries.read(params,
-            function(res){
-                if(res.success){
-                    cityData=res.data;
-                    cityStore.loadData(cityData);
-                }
-                else{
-                    console.log(res.msg);
-                }
-            },me
-        );*/
-
         this.getResultArray(function(data){
             Utility.grid.loadGrid(component,data,component.getViewModel().getStore('SiteStore'));
         },me);
-
-
-
     },
 
     onSiteGridIdInEdit: function() {
@@ -71,25 +46,8 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
         Utility.grid.resetEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('SiteStore'),promptWin);
 
     },
-
-
-
-
-
-    onSiteGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
-
-        var success=false;
-        // first save all data to the server side by calling ext.direct function or ajax query
-
+ onSiteGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
         var me=this;
-        var params={};
-        params.table="SITE";
-        params.idName="siteId";
-        params.dataToBeSaved=dataToBeSaved;
-        params.comment=comment;
-        params.table1="SITE_CONFIG";
-        params.idName1="siteConfigId";
-
         var dataToBeSaved1 = [],
             dataType = ['added','modified'];
         var siteConfigStore=this.getViewModel().getStore('SiteConfigStore');
@@ -98,42 +56,40 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                 dataToBeSaved1.push(record.data);
             });
         });
-
-        params.dataToBeSaved1=dataToBeSaved1;
-        console.log(dataToBeSaved);
-        console.log(dataToBeSaved1);
-
-
-        Server.CommonQueries.saveRecords(params,
-            function(_result){
-                if(_result.success){
-                    this.getResultArray(function(data){
-                        Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
-                    },this);
-                }
-                else{
-                    console.error(_result.msg);
-                    Ext.MessageBox.alert("Error","save Error "+_result.msg);
-                }
-            },me
-        );
+        CommonDirect.saveDataArray(dataToBeSaved,"SITE","siteId")
+            .then(function()
+            {
+                CommonDirect.saveDataArray(dataToBeSaved1,"SITE_CONFIG","siteConfigId")
+                    .then(function(_result)
+                    {
+                        me.getResultArray(function(data){
+                            Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('SiteStore'),promptWin);
+                        },me);
+                    })
+            })
+            .catch(function(_err)
+            {
+                console.error(_err);
+                Ext.MessageBox.alert("Error","save Error "+_err);
+            });
     },
 
     onSiteGridIdAddItem: function() {
 
         // get the last siteId
-        var lastSiteId=0;
+        var lastSiteId=new Date().getTime();
         var siteStore=this.getViewModel().getStore('SiteStore');
-        siteStore.each(function(siteRec){
+       /* siteStore.each(function(siteRec){
            if(siteRec.get('siteId')>lastSiteId)
                lastSiteId=siteRec.get('siteId');
-        });
+        });*/
         var rec = new MyApp.model.SiteModel({
-            siteId: lastSiteId+1,
+            siteId: lastSiteId,
             added: true,
             modified: false,
             addedAndValidated:false,
             toDelete: false,
+            active:true,
             notValid: true,
             notValidTip:'Veuillez configurer le site'
 
@@ -186,11 +142,6 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
 
         return(Utility.grid.validateedit(editor,context,check));
     },
-
-    onGroupIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
-       // alert(combo.getValue());
-    },
-
     getResultArray:function(callback)
     {
         var me=this;
@@ -256,6 +207,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
                     siteConfigStore.each(function(siteConfig){
                         if(siteConfig.get('siteId')==record.get('siteId')){
                             siteConfigStore.remove(siteConfig);
+                            record.set('siteConfigId',siteConfig.get('siteId'));
                             siteConfigStore.add(record);
                             //console.log(siteConfigStore.getCount());
                         }

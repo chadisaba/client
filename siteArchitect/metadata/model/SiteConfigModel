@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "AuthorizationGridModel1",
     "designerId": "vtd39c3u-1d4f-4fb9-9364-vtd39c3uuvsj",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteConfigId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteConfigId",
             "designerId": "e96f8d89-803f-419a-a346-du5eap13yv1f"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "siteId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteId",
             "designerId": "77e34a23-c461-43a9-8acb-00208a3ccaea"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteConfigStartHour"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteConfigStartHour",
             "designerId": "6c4bd588-771e-4184-8ade-1969f05fff26"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "siteConfigEndHour"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteConfigEndHour",
             "designerId": "e96f8d89-803f-419a-a346-vwvrb3ya5w8c"
         },
@@ -77,7 +93,44 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": null,
+                "name": "siteConfigCotNuitHeureDebut"
+            },
+            "configAlternates": {
+                "name": "string",
+                "defaultValue": "object"
+            },
+            "name": "MysiteConfigEndHour1",
+            "designerId": "ebc87be1-f069-4902-88bc-e60233fbd6a5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigCotNuitHeureFin"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigEndHour2",
+            "designerId": "f25e325b-78fc-4a0b-a55a-83c70a8927a8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "siteConfigPyxMode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteConfigPyxMode",
             "designerId": "c26d0dd3-084e-4aef-987c-3adef17014f1"
@@ -92,6 +145,9 @@
             "userConfig": {
                 "name": "siteConfigFseIsChecked"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteConfigFseIsChecked",
             "designerId": "720ed76d-40e6-40f2-b765-6c6a22aecab4"
         },
@@ -103,7 +159,122 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "siteConfigAmoDefault"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked1",
+            "designerId": "a18e101f-40fa-4b5f-be8a-0b9945f51a0e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigAmcDefault"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked2",
+            "designerId": "cc43c6d6-71d6-40ad-875e-5acbebedb30b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigPdsMandatory"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked3",
+            "designerId": "ff3fa4c0-7ec3-4879-9886-cab863e5a7e6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigCotFerieAuto"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked4",
+            "designerId": "21d51f07-3b76-414a-af65-383878db2060"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigCotUrgenceAuto"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked5",
+            "designerId": "247610b9-1e31-43b4-aaca-8b70e471610f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigCotEnfantAuto"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked6",
+            "designerId": "f5c4c251-4310-4cc5-af8b-97e82ac5ce26"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteConfigCotNuitAuto"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigFseIsChecked7",
+            "designerId": "cd867aea-44e5-4b57-b808-847774e66794"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "siteConfigUidSenolog"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteConfigUidSenolog",
             "designerId": "0f6fb48d-37ce-48ad-ac91-d2da94168ed5"
@@ -118,6 +289,9 @@
             "userConfig": {
                 "name": "siteConfigSenologType"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteConfigSenologType",
             "designerId": "5ac0b54f-e62d-41f1-9ed7-7080cbca3266"
         },
@@ -129,7 +303,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "siteConfigTranscriptionPath"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteConfigSenologType1",
+            "designerId": "2ea20bc6-3233-434c-b7f8-d2721f4c78b0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "created"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Mycreated",
             "designerId": "e49762ec-3d6f-4586-be66-4b0fc23db47d"
@@ -144,6 +337,9 @@
             "userConfig": {
                 "name": "lastupdated"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "Mylastupdated",
             "designerId": "0f99ae98-ce5b-4e07-ae82-3dcc2f8ccc1e"
         },
@@ -156,6 +352,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "vtd39c3u-1f65-4972-a6e1-vtd39c3uuvsj"
@@ -170,6 +369,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "vtd39c3u-1a08-4be0-b287-du5eap13yv1f"
         },
@@ -182,6 +384,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "du5eap13-2c80-456a-a5c5-du5eap13yv1f"
@@ -196,6 +401,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "du5eap13-f0d5-4d89-a1bb-du5eap13yv1f"
         },
@@ -208,6 +416,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "notValidTip"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField9",
             "designerId": "573f5c29-d5a6-4f8c-8614-ff5b2efb66ac"
@@ -222,6 +433,9 @@
             "userConfig": {
                 "name": "addedAndValidated"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField31",
             "designerId": "du5eap13-ac56-469a-895f-du5eap13yv1f"
         },
@@ -235,6 +449,9 @@
             "userConfig": {
                 "name": "siteConfigJSDavUrl"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField",
             "designerId": "5b7fa6e6-75f1-4fdb-91a0-ff2e50f7b362"
         },
@@ -247,6 +464,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteConfigWordPath"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField3",
             "designerId": "602d064a-d673-4995-9a33-32645f4b7677"

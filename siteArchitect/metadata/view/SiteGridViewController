@@ -9,5 +9,9 @@
         "designer|userAlias": "sitegrid",
         "designer|userClassName": "SiteGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "drlkncjy-4ace-45f2-b4ee-mxvre6tuu53r"
 }

@@ -9,5 +9,9 @@
         "designer|userAlias": "sitesconfigtabpanel",
         "designer|userClassName": "SitesConfigTabPanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "39e2fcf0-402b-4993-8cbe-ed9fe7452f1d"
 }
