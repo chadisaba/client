@@ -187,7 +187,7 @@ Ext.define('MyApp.view.SiteGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            defaultWidth: 50,
+            width: 50,
             dataIndex: 'active',
             text: 'Actif?',
             editor: {
@@ -196,7 +196,7 @@ Ext.define('MyApp.view.SiteGrid', {
         },
         {
             xtype: 'actioncolumn',
-            defaultWidth: 50,
+            width: 50,
             text: 'Config',
             iconCls: 'fa fa-pencil fa-2x',
             items: [

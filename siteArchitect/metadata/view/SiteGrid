@@ -595,13 +595,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
-                "defaultWidth": 50,
-                "text": "Actif?"
+                "defaultWidth": null,
+                "text": "Actif?",
+                "width": 50
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "defaultWidth": "number",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-rtn8w5err56y",
@@ -1127,14 +1129,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "defaultWidth": 50,
+                "defaultWidth": null,
                 "iconCls": "fa fa-pencil fa-2x",
-                "text": "Config"
+                "text": "Config",
+                "width": 50
             },
             "configAlternates": {
                 "defaultWidth": "number",
                 "iconCls": "string",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyActionColumn",
             "designerId": "bbd33456-daf6-4b85-a426-340cec1058dd",

@@ -110,7 +110,7 @@ Ext.define('MyApp.view.override.EstHasServFormViewController', {
                   console.error(_err);
                   Ext.Msg.alert('Error', translate('saveError'));
               });  
-    },r
+    },
 
     onEstHasServFormItemIdResetEdit: function(form, promptWin) {
 

@@ -31,354 +31,6 @@
     "viewModelInstanceId": "70a796ac-0912-44e3-a79f-141a9e312e55",
     "cn": [
         {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "Site Id     ",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "siteId"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField4",
-            "designerId": "c5309559-c3de-4e3b-bac6-4169e955810c"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "added",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "added"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField9",
-            "designerId": "9fdf6d3d-84b8-4c1e-9b84-5e3a75a234c8"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "modified",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "modified"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField10",
-            "designerId": "7734dda3-2177-4907-aeba-5b85048c5bc3"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "Site config id",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "siteConfigId"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField8",
-            "designerId": "87815a5d-1e80-46ba-8583-208febebf38a"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "allowBlank": false,
-                "fieldLabel": "Ouverture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
-                "inputType": "time",
-                "labelWidth": null,
-                "name": "siteConfigStartHour"
-            },
-            "configAlternates": {
-                "allowBlank": "boolean",
-                "fieldLabel": "string",
-                "inputType": "string",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField5",
-            "designerId": "effcabe5-f536-485c-9171-a13d03bba2c8"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "allowBlank": false,
-                "fieldLabel": "Fermeture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
-                "inputType": "time",
-                "labelWidth": null,
-                "name": "siteConfigEndHour"
-            },
-            "configAlternates": {
-                "allowBlank": "boolean",
-                "fieldLabel": "string",
-                "inputType": "string",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField6",
-            "designerId": "add78e05-931e-47a7-97a9-674545ea36ef"
-        },
-        {
-            "type": "Ext.form.field.Checkbox",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "boxLabel": "",
-                "fieldLabel": "PDS Obligatoire",
-                "labelWidth": null,
-                "name": "siteConfigPdsMandatory",
-                "width": 300
-            },
-            "configAlternates": {
-                "boxLabel": "string",
-                "fieldLabel": "string",
-                "labelWidth": "number",
-                "name": "string",
-                "width": "auto"
-            },
-            "name": "MyCheckbox4",
-            "designerId": "ee1b4077-2ffd-487d-b137-294fe5e987ad"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "Senolog UID",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "siteConfigUidSenolog"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyTextField7",
-            "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "allowBlank": false,
-                "fieldLabel": "Transcription path <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
-                "itemId": null,
-                "labelWidth": null,
-                "name": "siteConfigTranscriptionPath",
-                "vtype": null
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "itemId": "string",
-                "labelWidth": "number",
-                "name": "string",
-                "vtype": "string",
-                "allowBlank": "boolean"
-            },
-            "name": "MyTextField2",
-            "designerId": "9a1204ee-3e49-40f4-8b14-6e706dda5b95"
-        },
-        {
-            "type": "Ext.form.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "allowBlank": false,
-                "fieldLabel": "Word Path <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
-                "labelWidth": null,
-                "name": "siteConfigWordPath",
-                "vtype": null
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "labelWidth": "number",
-                "name": "string",
-                "vtype": "string",
-                "allowBlank": "boolean"
-            },
-            "name": "MyTextField3",
-            "designerId": "25f803b6-b93d-40b0-be31-7bfc15c581aa"
-        },
-        {
-            "type": "Ext.form.field.ComboBox",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fieldLabel": "Senolog type",
-                "hidden": true,
-                "labelWidth": null,
-                "name": "siteConfigSenologType"
-            },
-            "configAlternates": {
-                "fieldLabel": "string",
-                "hidden": "boolean",
-                "labelWidth": "number",
-                "name": "string"
-            },
-            "name": "MyComboBox",
-            "designerId": "3760c99a-5296-48bc-b78e-ba62e33577b2"
-        },
-        {
-            "type": "Ext.container.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "container|align": "stretch",
-                "layout": "hbox",
-                "layout|flex": null
-            },
-            "configAlternates": {
-                "container|align": "string",
-                "layout": "string",
-                "layout|flex": "number"
-            },
-            "name": "MyContainer",
-            "designerId": "5f6fe8e5-1c9f-4c27-a5de-4400f7c46091",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "Générer FSE par défaut",
-                        "labelWidth": null,
-                        "name": "siteConfigFseIsChecked",
-                        "width": 300
-                    },
-                    "configAlternates": {
-                        "boxLabel": "string",
-                        "fieldLabel": "string",
-                        "labelWidth": "number",
-                        "name": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyCheckbox1",
-                    "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "Cocher AMO:",
-                        "labelWidth": null,
-                        "name": "siteConfigAmoDefault",
-                        "width": 300
-                    },
-                    "configAlternates": {
-                        "boxLabel": "string",
-                        "fieldLabel": "string",
-                        "labelWidth": "number",
-                        "name": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyCheckbox2",
-                    "designerId": "7519012a-9347-4243-86cf-c19fb2813091"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "Cocher AMC",
-                        "labelWidth": null,
-                        "name": "siteConfigAmcDefault",
-                        "width": 300
-                    },
-                    "configAlternates": {
-                        "boxLabel": "string",
-                        "fieldLabel": "string",
-                        "labelWidth": "number",
-                        "name": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyCheckbox3",
-                    "designerId": "79178f0e-d576-4d85-8368-c8ac206b7d7c"
-                }
-            ]
-        },
-        {
             "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -386,7 +38,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom"
+                "dock": "top"
             },
             "configAlternates": {
                 "dock": "string"
@@ -532,16 +184,152 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "title": "Cotation : calcul modificateurs automatiques"
+                "layout|flex": 1,
+                "title": "Paramétrage du site"
             },
             "configAlternates": {
                 "layout|flex": "number",
                 "title": "string"
             },
-            "name": "MyFieldSet",
-            "designerId": "bea3ce8c-45ed-40d5-8794-5d351948786a",
+            "name": "MyFieldSet1",
+            "designerId": "9492b1ce-355b-4e5a-ab09-4cd309215f06",
             "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Site Id     ",
+                        "hidden": true,
+                        "labelWidth": null,
+                        "name": "siteId"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField4",
+                    "designerId": "c5309559-c3de-4e3b-bac6-4169e955810c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "added",
+                        "hidden": true,
+                        "labelWidth": null,
+                        "name": "added"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField9",
+                    "designerId": "9fdf6d3d-84b8-4c1e-9b84-5e3a75a234c8"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "modified",
+                        "hidden": true,
+                        "labelWidth": null,
+                        "name": "modified"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField10",
+                    "designerId": "7734dda3-2177-4907-aeba-5b85048c5bc3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Site config id",
+                        "hidden": true,
+                        "labelWidth": null,
+                        "name": "siteConfigId"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField8",
+                    "designerId": "87815a5d-1e80-46ba-8583-208febebf38a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Ouverture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
+                        "inputType": "time",
+                        "labelWidth": null,
+                        "name": "siteConfigStartHour"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "inputType": "string",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "effcabe5-f536-485c-9171-a13d03bba2c8"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Fermeture <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
+                        "inputType": "time",
+                        "labelWidth": null,
+                        "name": "siteConfigEndHour"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "inputType": "string",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "add78e05-931e-47a7-97a9-674545ea36ef"
+                },
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -551,9 +339,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "boxLabel": "",
-                        "fieldLabel": "Nuit",
+                        "fieldLabel": "PDS Obligatoire",
                         "labelWidth": null,
-                        "name": "siteConfigCotNuitAuto",
+                        "name": "siteConfigPdsMandatory",
                         "width": 300
                     },
                     "configAlternates": {
@@ -563,8 +351,8 @@
                         "name": "string",
                         "width": "auto"
                     },
-                    "name": "MyCheckbox7",
-                    "designerId": "7652bd65-7e55-4cb1-b2cf-eea9c84c12ee"
+                    "name": "MyCheckbox4",
+                    "designerId": "ee1b4077-2ffd-487d-b137-294fe5e987ad"
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -574,25 +362,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": null,
-                        "fieldLabel": "Nuit heure début",
-                        "inputType": "time",
+                        "fieldLabel": "Senolog UID",
+                        "hidden": true,
                         "labelWidth": null,
-                        "name": "siteConfigCotNuitHeureDebut",
-                        "value": [
-                            "23:00"
-                        ]
+                        "name": "siteConfigUidSenolog"
                     },
                     "configAlternates": {
-                        "allowBlank": "boolean",
                         "fieldLabel": "string",
-                        "inputType": "string",
+                        "hidden": "boolean",
                         "labelWidth": "number",
-                        "name": "string",
-                        "value": "object"
+                        "name": "string"
                     },
-                    "name": "MyTextField11",
-                    "designerId": "34c070e2-b5ad-4f48-9d13-a8984bb8996a"
+                    "name": "MyTextField7",
+                    "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -602,25 +384,69 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": null,
-                        "fieldLabel": "Nuit heure fin",
-                        "inputType": "time",
+                        "allowBlank": false,
+                        "fieldLabel": "Transcription path <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
+                        "itemId": null,
                         "labelWidth": null,
-                        "name": "siteConfigCotNuitHeureFin",
-                        "value": [
-                            "05:00"
-                        ]
+                        "name": "siteConfigTranscriptionPath",
+                        "vtype": null
                     },
                     "configAlternates": {
-                        "allowBlank": "boolean",
                         "fieldLabel": "string",
-                        "inputType": "string",
+                        "itemId": "string",
                         "labelWidth": "number",
                         "name": "string",
-                        "value": "object"
+                        "vtype": "string",
+                        "allowBlank": "boolean"
                     },
-                    "name": "MyTextField12",
-                    "designerId": "1dd2256f-db1c-47a5-8021-b89f959884ab"
+                    "name": "MyTextField2",
+                    "designerId": "9a1204ee-3e49-40f4-8b14-6e706dda5b95"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Word Path <span style=\"color: rgb(255, 0, 0); padding-left: 2px;\">*</span>",
+                        "labelWidth": null,
+                        "name": "siteConfigWordPath",
+                        "vtype": null
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "vtype": "string",
+                        "allowBlank": "boolean"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "25f803b6-b93d-40b0-be31-7bfc15c581aa"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Senolog type",
+                        "hidden": true,
+                        "labelWidth": null,
+                        "name": "siteConfigSenologType"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "3760c99a-5296-48bc-b78e-ba62e33577b2"
                 },
                 {
                     "type": "Ext.container.Container",
@@ -635,10 +461,11 @@
                     },
                     "configAlternates": {
                         "container|align": "string",
-                        "layout": "string"
+                        "layout": "string",
+                        "layout|flex": "number"
                     },
-                    "name": "MyContainer1",
-                    "designerId": "a033e322-9eda-4245-9840-5451fba5337c",
+                    "name": "MyContainer",
+                    "designerId": "5f6fe8e5-1c9f-4c27-a5de-4400f7c46091",
                     "cn": [
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -649,9 +476,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "boxLabel": "",
-                                "fieldLabel": "Férié",
+                                "fieldLabel": "Générer FSE par défaut",
                                 "labelWidth": null,
-                                "name": "siteConfigCotFerieAuto",
+                                "name": "siteConfigFseIsChecked",
                                 "width": 300
                             },
                             "configAlternates": {
@@ -661,8 +488,8 @@
                                 "name": "string",
                                 "width": "auto"
                             },
-                            "name": "MyCheckbox5",
-                            "designerId": "5eabe81e-addf-48d5-8be9-7ae12f15df2f"
+                            "name": "MyCheckbox1",
+                            "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -673,9 +500,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "boxLabel": "",
-                                "fieldLabel": "Enfant",
+                                "fieldLabel": "Cocher AMO:",
                                 "labelWidth": null,
-                                "name": "siteConfigCotEnfantAuto",
+                                "name": "siteConfigAmoDefault",
                                 "width": 300
                             },
                             "configAlternates": {
@@ -685,8 +512,8 @@
                                 "name": "string",
                                 "width": "auto"
                             },
-                            "name": "MyCheckbox6",
-                            "designerId": "ef18b5fd-5aa1-4315-aa98-c89c754c6af6"
+                            "name": "MyCheckbox2",
+                            "designerId": "7519012a-9347-4243-86cf-c19fb2813091"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -697,9 +524,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "boxLabel": "",
-                                "fieldLabel": "Urgence",
+                                "fieldLabel": "Cocher AMC",
                                 "labelWidth": null,
-                                "name": "siteConfigCotUrgenceAuto",
+                                "name": "siteConfigAmcDefault",
                                 "width": 300
                             },
                             "configAlternates": {
@@ -709,8 +536,199 @@
                                 "name": "string",
                                 "width": "auto"
                             },
-                            "name": "MyCheckbox8",
-                            "designerId": "98974a12-585e-4ac0-a0f0-195e6e167c84"
+                            "name": "MyCheckbox3",
+                            "designerId": "79178f0e-d576-4d85-8368-c8ac206b7d7c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Cotation : calcul modificateurs automatiques"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "bea3ce8c-45ed-40d5-8794-5d351948786a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Nuit",
+                                "labelWidth": null,
+                                "name": "siteConfigCotNuitAuto",
+                                "width": 300
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyCheckbox7",
+                            "designerId": "7652bd65-7e55-4cb1-b2cf-eea9c84c12ee"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": null,
+                                "fieldLabel": "Nuit heure début",
+                                "inputType": "time",
+                                "labelWidth": null,
+                                "name": "siteConfigCotNuitHeureDebut",
+                                "value": [
+                                    "23:00"
+                                ]
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "inputType": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "value": "object"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "34c070e2-b5ad-4f48-9d13-a8984bb8996a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": null,
+                                "fieldLabel": "Nuit heure fin",
+                                "inputType": "time",
+                                "labelWidth": null,
+                                "name": "siteConfigCotNuitHeureFin",
+                                "value": [
+                                    "05:00"
+                                ]
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "inputType": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "value": "object"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "1dd2256f-db1c-47a5-8021-b89f959884ab"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
+                            },
+                            "name": "MyContainer1",
+                            "designerId": "a033e322-9eda-4245-9840-5451fba5337c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "Férié",
+                                        "labelWidth": null,
+                                        "name": "siteConfigCotFerieAuto",
+                                        "width": 300
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyCheckbox5",
+                                    "designerId": "5eabe81e-addf-48d5-8be9-7ae12f15df2f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "Enfant",
+                                        "labelWidth": null,
+                                        "name": "siteConfigCotEnfantAuto",
+                                        "width": 300
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyCheckbox6",
+                                    "designerId": "ef18b5fd-5aa1-4315-aa98-c89c754c6af6"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "Urgence",
+                                        "labelWidth": null,
+                                        "name": "siteConfigCotUrgenceAuto",
+                                        "width": 300
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyCheckbox8",
+                                    "designerId": "98974a12-585e-4ac0-a0f0-195e6e167c84"
+                                }
+                            ]
                         }
                     ]
                 }

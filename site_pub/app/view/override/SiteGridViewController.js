@@ -191,7 +191,7 @@ Ext.define('MyApp.view.override.SiteGridViewController', {
             selectedSiteConfig =Ext.create('MyApp.model.SiteConfigModel',
                 {
                     siteId:record.get('siteId'),
-                    siteConfigId:new Date().getTime(),
+                    siteConfigId:record.get('siteId'),
                     added: true,
                     modified: false,
                     active:true

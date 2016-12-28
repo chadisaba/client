@@ -20,12 +20,12 @@ Ext.define('MyApp.view.SiteConfigForm', {
     requires: [
         'MyApp.view.SiteConfigFormViewModel',
         'MyApp.view.SiteConfigFormViewController',
-        'Ext.form.field.Checkbox',
-        'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
         'Ext.button.Button',
-        'Ext.form.FieldSet'
+        'Ext.form.FieldSet',
+        'Ext.form.field.Checkbox',
+        'Ext.form.field.ComboBox'
     ],
 
     controller: 'siteconfigform',
@@ -39,168 +39,10 @@ Ext.define('MyApp.view.SiteConfigForm', {
         type: 'vbox',
         align: 'stretch'
     },
-    items: [
-        {
-            xtype: 'textfield',
-            hidden: true,
-            fieldLabel: 'Site Id     ',
-            name: 'siteId'
-        },
-        {
-            xtype: 'textfield',
-            hidden: true,
-            fieldLabel: 'added',
-            name: 'added'
-        },
-        {
-            xtype: 'textfield',
-            hidden: true,
-            fieldLabel: 'modified',
-            name: 'modified'
-        },
-        {
-            xtype: 'textfield',
-            hidden: true,
-            fieldLabel: 'Site config id',
-            name: 'siteConfigId'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Ouverture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
-            name: 'siteConfigStartHour',
-            inputType: 'time',
-            allowBlank: false
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Fermeture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
-            name: 'siteConfigEndHour',
-            inputType: 'time',
-            allowBlank: false
-        },
-        {
-            xtype: 'checkboxfield',
-            width: 300,
-            fieldLabel: 'PDS Obligatoire',
-            name: 'siteConfigPdsMandatory',
-            boxLabel: ''
-        },
-        {
-            xtype: 'textfield',
-            hidden: true,
-            fieldLabel: 'Senolog UID',
-            name: 'siteConfigUidSenolog'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Transcription path <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
-            name: 'siteConfigTranscriptionPath',
-            allowBlank: false
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Word Path <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
-            name: 'siteConfigWordPath',
-            allowBlank: false
-        },
-        {
-            xtype: 'combobox',
-            hidden: true,
-            fieldLabel: 'Senolog type',
-            name: 'siteConfigSenologType'
-        },
-        {
-            xtype: 'container',
-            layout: {
-                type: 'hbox',
-                align: 'stretch'
-            },
-            items: [
-                {
-                    xtype: 'checkboxfield',
-                    width: 300,
-                    fieldLabel: 'Générer FSE par défaut',
-                    name: 'siteConfigFseIsChecked',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'checkboxfield',
-                    width: 300,
-                    fieldLabel: 'Cocher AMO:',
-                    name: 'siteConfigAmoDefault',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'checkboxfield',
-                    width: 300,
-                    fieldLabel: 'Cocher AMC',
-                    name: 'siteConfigAmcDefault',
-                    boxLabel: ''
-                }
-            ]
-        },
-        {
-            xtype: 'fieldset',
-            title: 'Cotation : calcul modificateurs automatiques',
-            items: [
-                {
-                    xtype: 'checkboxfield',
-                    width: 300,
-                    fieldLabel: 'Nuit',
-                    name: 'siteConfigCotNuitAuto',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'textfield',
-                    fieldLabel: 'Nuit heure début',
-                    name: 'siteConfigCotNuitHeureDebut',
-                    value: '23:00',
-                    inputType: 'time'
-                },
-                {
-                    xtype: 'textfield',
-                    fieldLabel: 'Nuit heure fin',
-                    name: 'siteConfigCotNuitHeureFin',
-                    value: '05:00',
-                    inputType: 'time'
-                },
-                {
-                    xtype: 'container',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'checkboxfield',
-                            width: 300,
-                            fieldLabel: 'Férié',
-                            name: 'siteConfigCotFerieAuto',
-                            boxLabel: ''
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            width: 300,
-                            fieldLabel: 'Enfant',
-                            name: 'siteConfigCotEnfantAuto',
-                            boxLabel: ''
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            width: 300,
-                            fieldLabel: 'Urgence',
-                            name: 'siteConfigCotUrgenceAuto',
-                            boxLabel: ''
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
     dockedItems: [
         {
             xtype: 'toolbar',
-            dock: 'bottom',
+            dock: 'top',
             items: [
                 {
                     xtype: 'tbfill'
@@ -226,6 +68,171 @@ Ext.define('MyApp.view.SiteConfigForm', {
                     listeners: {
                         click: 'onValidateBtnClick'
                     }
+                }
+            ]
+        }
+    ],
+    items: [
+        {
+            xtype: 'fieldset',
+            flex: 1,
+            title: 'Paramétrage du site',
+            items: [
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    fieldLabel: 'Site Id     ',
+                    name: 'siteId'
+                },
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    fieldLabel: 'added',
+                    name: 'added'
+                },
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    fieldLabel: 'modified',
+                    name: 'modified'
+                },
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    fieldLabel: 'Site config id',
+                    name: 'siteConfigId'
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Ouverture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
+                    name: 'siteConfigStartHour',
+                    inputType: 'time',
+                    allowBlank: false
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Fermeture <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
+                    name: 'siteConfigEndHour',
+                    inputType: 'time',
+                    allowBlank: false
+                },
+                {
+                    xtype: 'checkboxfield',
+                    width: 300,
+                    fieldLabel: 'PDS Obligatoire',
+                    name: 'siteConfigPdsMandatory',
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    fieldLabel: 'Senolog UID',
+                    name: 'siteConfigUidSenolog'
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Transcription path <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
+                    name: 'siteConfigTranscriptionPath',
+                    allowBlank: false
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Word Path <span style="color: rgb(255, 0, 0); padding-left: 2px;">*</span>',
+                    name: 'siteConfigWordPath',
+                    allowBlank: false
+                },
+                {
+                    xtype: 'combobox',
+                    hidden: true,
+                    fieldLabel: 'Senolog type',
+                    name: 'siteConfigSenologType'
+                },
+                {
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            width: 300,
+                            fieldLabel: 'Générer FSE par défaut',
+                            name: 'siteConfigFseIsChecked',
+                            boxLabel: ''
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            width: 300,
+                            fieldLabel: 'Cocher AMO:',
+                            name: 'siteConfigAmoDefault',
+                            boxLabel: ''
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            width: 300,
+                            fieldLabel: 'Cocher AMC',
+                            name: 'siteConfigAmcDefault',
+                            boxLabel: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldset',
+                    title: 'Cotation : calcul modificateurs automatiques',
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            width: 300,
+                            fieldLabel: 'Nuit',
+                            name: 'siteConfigCotNuitAuto',
+                            boxLabel: ''
+                        },
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'Nuit heure début',
+                            name: 'siteConfigCotNuitHeureDebut',
+                            value: '23:00',
+                            inputType: 'time'
+                        },
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'Nuit heure fin',
+                            name: 'siteConfigCotNuitHeureFin',
+                            value: '05:00',
+                            inputType: 'time'
+                        },
+                        {
+                            xtype: 'container',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    width: 300,
+                                    fieldLabel: 'Férié',
+                                    name: 'siteConfigCotFerieAuto',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    width: 300,
+                                    fieldLabel: 'Enfant',
+                                    name: 'siteConfigCotEnfantAuto',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    width: 300,
+                                    fieldLabel: 'Urgence',
+                                    name: 'siteConfigCotUrgenceAuto',
+                                    boxLabel: ''
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
