@@ -97,6 +97,10 @@ Ext.define('Utility.renderer', {
 			 var htmlTagType=htmlTag||"div";
 			return '<'+htmlTagType+' style="cursor:help;color:'+color+
 				';font-size:13px;">'+value+'</i></'+htmlTagType+'>';
+		},
+		mandatoryLabelRenderer:function()
+		{
+           return '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
 		}
 
 		}

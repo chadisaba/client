@@ -242,6 +242,8 @@ Ext.define('MyApp.view.AmoForm', {
                             itemId: 'qualiteBenefCombo',
                             fieldLabel: 'Qualité bénéf.',
                             name: 'regoQualiteBenef',
+                            allowBlank: false,
+                            queryMode: 'local',
                             valueField: 'id',
                             bind: {
                                 store: '{QualiteBenefStore}'
@@ -262,6 +264,7 @@ Ext.define('MyApp.view.AmoForm', {
                                     flex: 1,
                                     fieldLabel: 'Rang gémelaire bénéf',
                                     name: 'regoRangGemBenef',
+                                    allowBlank: false,
                                     enforceMaxLength: true,
                                     maxLength: 1,
                                     minLength: 1
@@ -294,8 +297,7 @@ Ext.define('MyApp.view.AmoForm', {
                             xtype: 'textfield',
                             itemId: 'regoDateNaissAssTField',
                             fieldLabel: 'Date naissance ',
-                            name: 'regoDateNaissAss',
-                            allowBlank: false
+                            name: 'regoDateNaissAss'
                         }
                     ]
                 }

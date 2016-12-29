@@ -679,10 +679,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowBlank": false,
                                 "fieldLabel": "Qualité bénéf.",
                                 "itemId": "qualiteBenefCombo",
                                 "layout|anchor": "100%",
                                 "name": "regoQualiteBenef",
+                                "queryMode": "local",
                                 "store": [
                                     "{QualiteBenefStore}"
                                 ],
@@ -694,7 +696,9 @@
                                 "layout|anchor": "string",
                                 "name": "string",
                                 "valueField": "datafield",
-                                "itemId": "string"
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "queryMode": "string"
                             },
                             "name": "MyComboBox9",
                             "designerId": "f32c050a-d329-4ad3-8438-1339e831f215",
@@ -747,7 +751,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowBlank": null,
+                                        "allowBlank": false,
                                         "enforceMaxLength": true,
                                         "fieldLabel": "Rang gémelaire bénéf",
                                         "labelWidth": null,
@@ -865,7 +869,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
+                                "allowBlank": null,
                                 "fieldLabel": "Date naissance ",
                                 "itemId": "regoDateNaissAssTField",
                                 "labelWidth": null,

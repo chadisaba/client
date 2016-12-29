@@ -111,6 +111,27 @@ var CommonDirect={
             });
         return promise;
     },
+    gethDataFromIndexedDBWithWhere:function(_tableName,_searchFieldName,_searchValue)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db[_tableName]
+                                .where(_searchFieldName)
+                                .equals(_searchValue)
+                                .toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
+
+            });
+        return promise;
+    },
 
     getAssociatedAndAvailable:function(params)
     {

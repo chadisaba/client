@@ -201,7 +201,7 @@ Ext.define('MyApp.view.override.StudyVisitGridViewController', {
 
             var deviceStore = me.getViewModel().getStore('DeviceComboStore');
             deviceStore.removeAll();
-            DeviceDirect.getDeviceBySiteAndStudy(record.get('studyId'), me.siteId, true)
+            DeviceDirect.getDeviceBySiteAndStudy(record.get('studyId'), Number(me.siteId), true)
                 .then(function (_resultArray) {
                     if (_resultArray.length > 0) {
                         deviceStore.loadData(_resultArray);

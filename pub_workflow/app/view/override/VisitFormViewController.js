@@ -22,6 +22,7 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
         studyVisitGridView.mask();
         var viewModel=me.getViewModel();
 
+        var userDefaultSiteId=parseInt(window.localStorage.getItem('smartmed-siteId'));
         /*** fill combobox stores* ************/
         var PdsStore = viewModel.getStore('VisitPdsComboStore');
         PdsStore.loadData(ComboData.pds);
@@ -31,7 +32,8 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
         var p2=CommonDirect.gethDataFromIndexedDB('DOCTOR');
         var p3=CommonDirect.gethDataFromIndexedDB("ESTABLISHMENT");
         var p4=CommonDirect.gethDataFromIndexedDB("EST_HAS_SERV");
-        Promise.all([p1,p2,p3,p4])
+        var p5=CommonDirect.gethDataFromIndexedDBWithWhere("SITE_CONFIG","siteId",userDefaultSiteId);
+        Promise.all([p1,p2,p3,p4,p5])
             .then(function(_resultArray)
             {
                 var siteStore = viewModel.getStore('SiteComboStore');
@@ -45,6 +47,8 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
 
                 var estServStore = viewModel.getStore('EstHasServComboStore');
                 estServStore.loadData(_resultArray[3]);
+
+                var userSiteObj=_resultArray[4];
 
                 var visitRec=Ext.create('MyApp.model.VisitModel');
                 if(_visitId)
@@ -77,15 +81,15 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                     visitRec.set('patientId',_patientId);
                     visitRec.set('visitDate',new Date());
                     visitRec.set('visitTime',new Date());
-                    visitRec.set('siteId',parseInt(window.localStorage.getItem('smartmed-siteId')));// TODO select the user site besides the  the first site
+                    visitRec.set('siteId',userDefaultSiteId);
 
 
 
                     visitRec.set('doctorId',doctorStore.first().get('doctorId'));// select the first doctor
 
-                    var selectAmo=parseInt(window.localStorage.getItem('smartmed-siteConfigAmoDefault'));
-                    var selectAmc=parseInt(window.localStorage.getItem('smartmed-siteConfigAmcDefault'));
-                    var pdsMandatory=parseInt(window.localStorage.getItem('smartmed-siteConfigPdsMandatory'));
+                    var selectAmo=parseInt(userSiteObj.siteConfigAmoDefault);
+                    var selectAmc=parseInt(userSiteObj.siteConfigAmcDefault);
+                    var pdsMandatory=parseInt(userSiteObj.siteConfigPdsMandatory);
 
 
                     if(selectAmo)
@@ -97,7 +101,7 @@ Ext.define('MyApp.view.override.VisitFormViewController', {
                         var pdsCombo = view.down('#visitPdsComboBoxEditorItemId');
                         if(pdsMandatory){
                             pdsCombo.allowBlank=false;
-                            pdsCombo.setFieldLabel(pdsCombo.fieldLabel+'<span style="color:red;font-weight:bold" data-qtip="Required">*</span>');
+                            pdsCombo.setFieldLabel(pdsCombo.fieldLabel+Utility.renderer.mandatoryLabelRenderer());
                         }
 
 

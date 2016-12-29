@@ -46,12 +46,12 @@ Ext.define('MyApp.view.override.AccueilPatientPanelViewController', {
     onVisitFormIdAfterRender: function(component, eOpts) {
 
         this.visitView=component;
-        if(this.getView().patientId)
+       /* if(this.getView().patientId)
             component.getController().initForm(this.getView().visitId,this.getView().patientId);
         else
         {
             component.setDisabled(true);
-        }
+        }*/
     },
     onAmoFormItemIdAfterRender: function(component, eOpts) {
         this.regoView=component;

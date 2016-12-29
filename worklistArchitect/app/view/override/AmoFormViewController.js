@@ -1,7 +1,9 @@
 Ext.define('MyApp.view.override.AmoFormViewController', {
     override: 'MyApp.view.AmoFormViewController',
 
-
+    onAmoFormItemIdBoxReady: function(component, width, height, eOpts) {
+        translateUtil.transForm(component);
+    },
     initForm: function(_visitId,_patientId) {
         var me=this;
         me.hidePecFieldOnInitForm();
@@ -9,6 +11,17 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
         if(!_patientId)
             throw Error('_patientId can\'t be undefined');
         var viewModel=me.getViewModel();
+
+        var form=this.getView();
+        var regoRangGemAssureTField= form.down('#regoRangGemAssureTField');
+        var regoNomAssureTField=form.down('#regoNomAssureTField');
+        var regoPrenomAssureTField=form.down('#regoPrenomAssureTField');
+        var regoDateNaissAssTField=form.down('#regoDateNaissAssTField');
+
+        regoRangGemAssureTField.setFieldLabel(regoRangGemAssureTField.fieldLabel+Utility.renderer.mandatoryLabelRenderer());
+        regoNomAssureTField.setFieldLabel(regoNomAssureTField.fieldLabel+Utility.renderer.mandatoryLabelRenderer());
+        regoPrenomAssureTField.setFieldLabel(regoPrenomAssureTField.fieldLabel+Utility.renderer.mandatoryLabelRenderer());
+        regoDateNaissAssTField.setFieldLabel(regoDateNaissAssTField.fieldLabel+Utility.renderer.mandatoryLabelRenderer());
 
         viewModel.getStore('TypeAssStore').loadData(ComboData.typeAssurance);
         viewModel.getStore('PecStore').loadData(ComboData.pec);
@@ -222,7 +235,9 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     },
     onTypeAssComboChange: function(field, newValue, oldValue, eOpts) {
 
-        var view=this.getView();
+
+        var me=this;
+        var view=me.getView();
         this.hideTypeAssuranceOnInitForm();
         var materniteContainer= view.down('#materniteContainerItemId');
          view.down('#forcageMaterniteCb').setValue(false);
@@ -424,20 +439,26 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
     onQualiteBenefComboChange: function(field, newValue, oldValue, eOpts) {
 
         var form=this.getView();
-       var regoRangGemAssureTField= form.down('#regoRangGemAssureTField');
+        var regoRangGemAssureTField= form.down('#regoRangGemAssureTField');
         var regoNomAssureTField=form.down('#regoNomAssureTField');
         var regoPrenomAssureTField=form.down('#regoPrenomAssureTField');
         var regoDateNaissAssTField=form.down('#regoDateNaissAssTField');
+
         if(newValue==='0')
         {
             regoRangGemAssureTField.setValue(null);
             regoNomAssureTField.setValue(null);
             regoPrenomAssureTField.setValue(null);
             regoDateNaissAssTField.setValue(null);
-            regoRangGemAssureTField.setHidden(true);
+           regoRangGemAssureTField.setHidden(true);
             regoNomAssureTField.setHidden(true);
             regoPrenomAssureTField.setHidden(true);
             regoDateNaissAssTField.setHidden(true);
+
+            regoRangGemAssureTField.allowBlank=true;
+            regoNomAssureTField.allowBlank=true;
+            regoPrenomAssureTField.allowBlank=true;
+            regoDateNaissAssTField.allowBlank=true;
         }
         else
         {
@@ -445,6 +466,11 @@ Ext.define('MyApp.view.override.AmoFormViewController', {
             regoNomAssureTField.setHidden(false);
             regoPrenomAssureTField.setHidden(false);
             regoDateNaissAssTField.setHidden(false);
+
+            regoRangGemAssureTField.allowBlank=false;
+            regoNomAssureTField.allowBlank=false;
+            regoPrenomAssureTField.allowBlank=false;
+            regoDateNaissAssTField.allowBlank=false;
         }
 
     },
