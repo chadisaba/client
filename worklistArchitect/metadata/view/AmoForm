@@ -38,10 +38,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "collapsible": true,
                 "title": "A.M.O"
             },
             "configAlternates": {
-                "title": "string"
+                "title": "string",
+                "collapsible": "boolean"
             },
             "name": "MyFieldSet7",
             "designerId": "852d5da5-dbfe-4744-beb4-da5ba4b886af",

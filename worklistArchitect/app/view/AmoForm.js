@@ -39,6 +39,7 @@ Ext.define('MyApp.view.AmoForm', {
     items: [
         {
             xtype: 'fieldset',
+            collapsible: true,
             title: 'A.M.O',
             items: [
                 {

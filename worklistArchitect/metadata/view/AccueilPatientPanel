@@ -228,7 +228,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "flex": 2,
+                        "flex": 3,
                         "header": false,
                         "layout|region": "center",
                         "layout|split": true,
@@ -432,7 +432,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "flex": 1,
+                        "flex": 2,
                         "header": false,
                         "itemId": "amoFormItemId",
                         "layout|region": "west",
@@ -477,6 +477,30 @@
                             "designerId": "8a1af017-3fef-42f6-8a91-660dc827284f"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsible": true,
+                        "layout|flex": 1,
+                        "layout|region": "west",
+                        "title": "AMC",
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "collapsible": "boolean",
+                        "layout|flex": "number",
+                        "layout|region": "string",
+                        "title": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyFieldSet12",
+                    "designerId": "5249b807-d92f-4f1f-879a-791e3f8eae87"
                 }
             ]
         }

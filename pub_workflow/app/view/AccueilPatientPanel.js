@@ -26,7 +26,8 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         'Ext.form.Panel',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.form.FieldSet'
     ],
 
     controller: 'accueilpatientpanel',
@@ -90,7 +91,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 {
                     xtype: 'visitform',
                     noPlugin: true,
-                    flex: 2,
+                    flex: 3,
                     scrollable: true,
                     header: false,
                     region: 'center',
@@ -104,13 +105,21 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 {
                     xtype: 'amoform',
                     noPlugin: true,
-                    flex: 1,
+                    flex: 2,
                     itemId: 'amoFormItemId',
                     header: false,
                     region: 'west',
                     listeners: {
                         afterrender: 'onAmoFormItemIdAfterRender'
                     }
+                },
+                {
+                    xtype: 'fieldset',
+                    flex: 1,
+                    region: 'west',
+                    width: 150,
+                    collapsible: true,
+                    title: 'AMC'
                 }
             ],
             dockedItems: [
