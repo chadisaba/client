@@ -1,0 +1,55 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "recform",
+        "designer|userClassName": "RecFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "d05a79ef-ee3b-4573-af0d-eee940c009a2",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "RegcFormuleComboModel",
+                "name": "RegcFormuleComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "RegcFormuleComboStore",
+            "designerId": "33c2bfc6-d67b-4869-91f5-a90ce6a9ffa5"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "AmcIdComboModel",
+                "name": "AmcIdComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "AmcIdComboStore",
+            "designerId": "32fbce46-bed5-4b89-a340-d4b0fa79c0f4"
+        }
+    ]
+}

@@ -23,11 +23,11 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         'MyApp.view.PatientForm',
         'MyApp.view.VisitForm',
         'MyApp.view.AmoForm',
+        'MyApp.view.RecForm',
         'Ext.form.Panel',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
-        'Ext.button.Button',
-        'Ext.form.FieldSet'
+        'Ext.button.Button'
     ],
 
     controller: 'accueilpatientpanel',
@@ -85,6 +85,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
         {
             xtype: 'form',
             layout: 'border',
+            collapsed: false,
             header: false,
             title: 'My Form',
             items: [
@@ -114,12 +115,12 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     }
                 },
                 {
-                    xtype: 'fieldset',
-                    flex: 1,
+                    xtype: 'recform',
                     region: 'west',
-                    width: 150,
-                    collapsible: true,
-                    title: 'AMC'
+                    split: true,
+                    flex: 1,
+                    itemId: 'regcFormItemId',
+                    header: false
                 }
             ],
             dockedItems: [

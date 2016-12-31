@@ -53,7 +53,10 @@ Ext.application({
         'EstablishmentComboModel',
         'EstHasServComboModel',
         'RegoModel',
-        'AmoComboModel'
+        'AmoComboModel',
+        'RegcModel',
+        'AmcIdComboModel',
+        'RegcFormuleComboModel'
     ],
     views: [
         'WorklistGrid',
@@ -81,7 +84,8 @@ Ext.application({
         'WorklistHistoryPanel',
         'VisitRefPhGrid',
         'AccueilPatientPanel',
-        'AmoForm'
+        'AmoForm',
+        'RecForm'
     ],
     controllers: [
         'MainController'

@@ -36,7 +36,10 @@
             "EstablishmentComboModel",
             "EstHasServComboModel",
             "RegoModel",
-            "AmoComboModel"
+            "AmoComboModel",
+            "RegcModel",
+            "AmcIdComboModel",
+            "RegcFormuleComboModel"
         ],
         "name": "MyApp",
         "requires": [
@@ -68,7 +71,8 @@
             "WorklistHistoryPanel",
             "VisitRefPhGrid",
             "AccueilPatientPanel",
-            "AmoForm"
+            "AmoForm",
+            "RecForm"
         ]
     },
     "configAlternates": {

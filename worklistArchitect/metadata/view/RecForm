@@ -1,0 +1,698 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "recform",
+        "designer|userClassName": "RecForm",
+        "height": null,
+        "itemId": "recFormId",
+        "scrollable": "true",
+        "title": "My Form",
+        "width": null
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "scrollable": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyForm",
+    "designerId": "a4ff2b4f-7eee-4150-a3b4-4319afd900fa",
+    "viewControllerInstanceId": "cc155522-10b4-4227-a4de-f9a0f559b61e",
+    "viewModelInstanceId": "d05a79ef-ee3b-4573-af0d-eee940c009a2",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processRecForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "processRecForm",
+            "designerId": "b41dd99c-c84d-4751-bd68-6787dd0c5689"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onRecFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormItemIdInEdit",
+            "designerId": "259a9e8f-88ef-486f-9246-f523afc5b2ea"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onRecFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormItemIdSaveEdit",
+            "designerId": "$29efda4a-a203-4b33-9167-4b32dcc4d065"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onRecFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormItemIdResetEdit",
+            "designerId": "176bac6c-6bde-428d-89a7-f78e904b3cdf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onRecFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormItemIdChHist",
+            "designerId": "d3fdd610-b545-4413-a34b-858273b40ea5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onRecFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormItemIdQuitEdit",
+            "designerId": "7a294439-dfb9-4b16-99ee-e6a4df062938"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "A.M.C"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "MyFieldSet",
+            "designerId": "907ec26a-ccfe-445a-b51d-10f5f1aa8461",
+            "cn": [
+                {
+                    "type": "Ext.ux.inputs.AdvancedCombobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "amcId",
+                        "fieldLabel": "Organisme AMC",
+                        "forceSelection": true,
+                        "itemId": "amcIdComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "amcId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{AmcIdComboStore}"
+                        ],
+                        "valueField": "amcName"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyadvancedCombobox6",
+                    "designerId": "6429f2a9-0fc1-4e9b-855e-d8647c8bce6d"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer9",
+                    "designerId": "6cbb6542-572d-436f-927d-5b352c4e8fb5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Unique",
+                                "fieldLabel": "Mode",
+                                "name": "regcMode",
+                                "value": [
+                                    "'U'"
+                                ]
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "name": "string",
+                                "value": "object"
+                            },
+                            "name": "MyRadio2",
+                            "designerId": "0c7be2a4-e093-43c5-bd36-1fe396185c49"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer8",
+                            "designerId": "5baf6152-7b73-46c9-aa88-283238fdc949"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Séparé",
+                                "fieldLabel": "",
+                                "name": "regcMode",
+                                "value": [
+                                    "S"
+                                ]
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "name": "string",
+                                "value": "object"
+                            },
+                            "name": "MyRadio5",
+                            "designerId": "8df86514-727f-4492-adb9-cf2acf4c216d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "N° mutuelle",
+                        "layout|anchor": "100%",
+                        "name": "regcNumMutuelle"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcNumMutuelleTextField",
+                    "designerId": "e4db9064-491b-4244-a9b7-799a261065b4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "N° AMC",
+                        "layout|anchor": "100%",
+                        "name": "regcNumAMC"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcNumAMCTextField",
+                    "designerId": "858c22f1-f8d5-43ef-8394-6748688680ee"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "regcFormule",
+                        "fieldLabel": "Formule",
+                        "forceSelection": true,
+                        "itemId": "regcFormuleComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "regcFormule",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{RegcFormuleComboStore}"
+                        ],
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyregcFormuleComboBox",
+                    "designerId": "b5a61a3c-f7d1-4318-b7b7-82e66777aa39"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Du ",
+                        "layout|anchor": "100%",
+                        "name": "regcDu"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcDuTextField",
+                    "designerId": "a24e9291-678a-45d9-8bb1-bffb0acd02e6"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Au",
+                        "layout|anchor": "100%",
+                        "name": "regcAu"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcAuTextField",
+                    "designerId": "04f30b7a-ec9e-4397-a05d-6ebdda929214"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "N° Adherent",
+                        "layout|anchor": "100%",
+                        "name": "regcNumAdherent"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcNumAdherentTextField",
+                    "designerId": "da7d5d37-4d72-493c-9809-bbe80cfa342c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Type convention",
+                        "layout|anchor": "100%",
+                        "name": "regcTypeConv"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcTypeConvTextField",
+                    "designerId": "63fe5137-ab98-4fb1-84ee-a145e16fd9ad"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Attestation présenté",
+                        "layout|anchor": "100%",
+                        "name": "regcAttestationPresentee"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcAttestationPresenteeTextField",
+                    "designerId": "b28d8672-da3c-4744-9bb1-ef5cfa4d0e56"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Indice traitement",
+                        "layout|anchor": "100%",
+                        "name": "regcIndicTraitement"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcIndicTraitementTextField",
+                    "designerId": "749706ea-19b9-45f5-b67b-864ca26957ab"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Aiguillage STS",
+                        "layout|anchor": "100%",
+                        "name": "regcSts"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcStsTextField",
+                    "designerId": "39d96fd2-c8a7-4f25-a53f-2a22a4bab828"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Routage",
+                        "layout|anchor": "100%",
+                        "name": "regcRoutage"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcRoutageTextField",
+                    "designerId": "a7f20b33-bd2e-4712-a561-c1da0fdead10"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Hote",
+                        "layout|anchor": "100%",
+                        "name": "regcHote"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcHoteTextField",
+                    "designerId": "b7d52e21-dcfc-4145-8573-72c81f136dbd"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Domaine",
+                        "layout|anchor": "100%",
+                        "name": "regcDomaine"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcDomaineTextField",
+                    "designerId": "73a5c386-ef33-415c-a323-85b90ae1354c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Critère secondaire",
+                        "layout|anchor": "100%",
+                        "name": "regcCritereSecondaire"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcCritereSecondaireTextField",
+                    "designerId": "a56c8c51-4309-4572-a0f7-fcba86474ce1"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Garanties mutuelle",
+                        "layout|anchor": "100%",
+                        "name": "regcGarantieMut"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcGarantieMutTextField",
+                    "designerId": "5d2e313c-0ac8-4673-9f49-83b9e1c69fc3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "PEC AMC",
+                        "layout|anchor": "100%",
+                        "name": "regcPecAMC"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcPecAMCTextField",
+                    "designerId": "4413f3f1-372e-4ea6-a801-d4b4764c1442"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Identification assuré AMC",
+                        "layout|anchor": "100%",
+                        "name": "regcAssureAMC"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyregcAssureAMCTextField",
+                    "designerId": "e0febdf2-c175-481e-8992-dda7c664d201"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRecFormIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onRecFormIdBoxReady",
+            "designerId": "b2ec9141-d74e-43dd-85d9-7870c90b6606"
+        }
+    ]
+}

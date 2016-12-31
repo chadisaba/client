@@ -205,6 +205,7 @@
             "codeClass": null,
             "userConfig": {
                 "bodyPadding": null,
+                "collapsed": false,
                 "header": false,
                 "layout": "border",
                 "scrollable": null,
@@ -215,7 +216,8 @@
                 "bodyPadding": "auto",
                 "header": "boolean",
                 "layout": "string",
-                "title": "string"
+                "title": "string",
+                "collapsed": "boolean"
             },
             "name": "MyForm1",
             "designerId": "8388bf1d-cf03-409d-9983-76940767859e",
@@ -479,28 +481,33 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.FieldSet",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "collapsible": true,
-                        "layout|flex": 1,
+                        "animCollapse": null,
+                        "collapsed": null,
+                        "flex": 1,
+                        "header": false,
+                        "itemId": "regcFormItemId",
                         "layout|region": "west",
-                        "title": "AMC",
-                        "width": 150
+                        "layout|split": true
                     },
                     "configAlternates": {
-                        "collapsible": "boolean",
-                        "layout|flex": "number",
+                        "animCollapse": "boolean",
+                        "collapsed": "boolean",
+                        "flex": "number",
+                        "header": "boolean",
+                        "itemId": "string",
                         "layout|region": "string",
-                        "title": "string",
-                        "width": "auto"
+                        "layout|split": "boolean"
                     },
-                    "name": "MyFieldSet12",
-                    "designerId": "5249b807-d92f-4f1f-879a-791e3f8eae87"
+                    "name": "recform",
+                    "designerId": "d374ecae-43eb-45ad-9163-6062e231d656",
+                    "masterInstanceId": "a4ff2b4f-7eee-4150-a3b4-4319afd900fa"
                 }
             ]
         }
