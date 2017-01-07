@@ -47,6 +47,10 @@ Ext.define('MyApp.view.AccueilPatientPanelViewController', {
 
     onAmoFormItemIdAfterRender: function(component, eOpts) {
 
+    },
+
+    onRecFormIdAfterRender: function(component, eOpts) {
+
     }
 
 });

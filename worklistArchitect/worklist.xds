@@ -1,8 +1,10 @@
 {
-    "name": "generateArchitect",
+    "name": "worklist",
     "settings": {
         "cmd": {
-            "license": "commercial"
+            "license": "commercial",
+            "cmdVersion": "6.2.1.29",
+            "frameworkVersion": "5.1.3.228"
         },
         "canvasControls": {
             "viewportSize": {
@@ -13,7 +15,7 @@
             }
         },
         "urlPrefix": "http://localhost:81/nodejs_extjs_project/clientCh/pub_workflow/",
-        "exportPath": "../pub_workflow/",
+        "exportPath": "",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -23,7 +25,8 @@
         "genTimestamps": false,
         "cacheBust": false,
         "installStatus": "Not Installed",
-        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "sdkPath": ""
     },
     "xdsVersion": "4.1.0",
     "xdsBuild": 91,
@@ -129,6 +132,7 @@
             "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
             "9bee4efc-c63b-47f8-a0fa-00866346a21c",
             "a1dbffd8-cc7e-4c3a-b920-1186d307aaa9",
+            "69cbcffa-f87e-4b2b-b33f-7a734ff80f7e",
             "da771e08-f167-4ae6-8517-af5d743359b9",
             "298f1b8d-0f4d-4140-aed9-0d773aac986e",
             "b3b628f2-2c0b-4f18-b9d5-45adb4275f43",

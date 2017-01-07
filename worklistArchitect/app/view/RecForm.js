@@ -22,8 +22,9 @@ Ext.define('MyApp.view.RecForm', {
         'MyApp.view.RecFormViewController',
         'Ext.form.FieldSet',
         'Ext.ux.inputs.AdvancedCombobox',
+        'Ext.form.RadioGroup',
         'Ext.form.field.Radio',
-        'Ext.toolbar.Spacer'
+        'Ext.form.field.Date'
     ],
 
     controller: 'recform',
@@ -52,15 +53,22 @@ Ext.define('MyApp.view.RecForm', {
                     xtype: 'advancedCombobox',
                     anchor: '100%',
                     itemId: 'amcIdComboBoxEditorItemId',
+                    margin: '0 2 2 0',
                     fieldLabel: 'Organisme AMC',
+                    labelAlign: 'top',
                     name: 'amcId',
+                    emptyText: 'Organisme AMC',
                     selectOnFocus: true,
-                    displayField: 'amcId',
+                    displayField: 'mutuelleName',
                     forceSelection: true,
                     queryMode: 'local',
-                    valueField: 'amcName',
+                    valueField: 'mutuelleId',
                     bind: {
                         store: '{AmcIdComboStore}'
+                    },
+                    listeners: {
+                        change: 'onAmcIdComboBoxEditorItemIdChange',
+                        select: 'onAmcIdComboBoxEditorItemIdSelect'
                     }
                 },
                 {
@@ -71,135 +79,205 @@ Ext.define('MyApp.view.RecForm', {
                     },
                     items: [
                         {
-                            xtype: 'radiofield',
-                            fieldLabel: 'Mode',
-                            name: 'regcMode',
-                            value: 'U',
-                            boxLabel: 'Unique'
-                        },
-                        {
-                            xtype: 'tbspacer',
-                            width: 10
-                        },
-                        {
-                            xtype: 'radiofield',
+                            xtype: 'radiogroup',
+                            flex: 1,
+                            width: 400,
                             fieldLabel: '',
-                            name: 'regcMode',
-                            value: 'S',
-                            boxLabel: 'Séparé'
+                            items: [
+                                {
+                                    xtype: 'radiofield',
+                                    itemId: 'gestionUniqueRb',
+                                    name: 'regcMode',
+                                    boxLabel: 'Unique',
+                                    inputValue: 'U'
+                                },
+                                {
+                                    xtype: 'radiofield',
+                                    itemId: 'gestionSepareRb',
+                                    name: 'regcMode',
+                                    boxLabel: 'Séparé',
+                                    inputValue: 'S'
+                                }
+                            ],
+                            listeners: {
+                                change: 'onRadiogroupChange'
+                            }
                         }
                     ]
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'N° mutuelle',
-                    name: 'regcNumMutuelle'
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Numéro de mutuelle',
+                    labelAlign: 'top',
+                    name: 'regcNumMutuelle',
+                    emptyText: 'N° mutuelle',
+                    maskRe: /[a-zA-Z0-9]/,
+                    maxLength: 8
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'N° AMC',
-                    name: 'regcNumAMC'
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Numéro AMC',
+                    labelAlign: 'top',
+                    name: 'regcNumAMC',
+                    emptyText: 'Numero AMC',
+                    maskRe: /[a-zA-Z0-9]/,
+                    maxLength: 10
                 },
                 {
                     xtype: 'combobox',
                     anchor: '100%',
                     itemId: 'regcFormuleComboBoxEditorItemId',
-                    fieldLabel: 'Formule',
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Formule AMC',
+                    labelAlign: 'top',
                     name: 'regcFormule',
+                    emptyText: 'Formule',
                     selectOnFocus: true,
-                    displayField: 'regcFormule',
                     forceSelection: true,
                     queryMode: 'local',
                     valueField: 'id',
                     bind: {
                         store: '{RegcFormuleComboStore}'
+                    },
+                    listeners: {
+                        select: 'onRegcFormuleComboBoxEditorItemIdSelect'
                     }
                 },
                 {
-                    xtype: 'textfield',
+                    xtype: 'datefield',
                     anchor: '100%',
-                    fieldLabel: 'Du ',
-                    name: 'regcDu'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcDu',
+                    emptyText: 'Du'
+                },
+                {
+                    xtype: 'datefield',
+                    anchor: '100%',
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcAu',
+                    emptyText: 'Au'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Au',
-                    name: 'regcAu'
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Numéro adhérent',
+                    labelAlign: 'top',
+                    name: 'regcNumAdherent',
+                    emptyText: 'N° Adherent'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'N° Adherent',
-                    name: 'regcNumAdherent'
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Type de convention',
+                    labelAlign: 'top',
+                    name: 'regcTypeConv',
+                    emptyText: 'Type convention'
+                },
+                {
+                    xtype: 'checkboxfield',
+                    anchor: '100%',
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Attestation présentée',
+                    labelWidth: 130,
+                    name: 'regcAttestationPresentee',
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'indicateurTraitementComboItemId',
+                    margin: '0 2 2 0',
+                    fieldLabel: 'Indicateur traiement',
+                    labelAlign: 'top',
+                    name: 'regcIndicTraitement',
+                    emptyText: 'Indicateur traitement',
+                    selectOnFocus: true,
+                    queryMode: 'local',
+                    typeAhead: true,
+                    valueField: 'id',
+                    bind: {
+                        store: '{RegcIndicateurComboStore}'
+                    }
+                }
+            ]
+        },
+        {
+            xtype: 'fieldset',
+            collapsed: true,
+            collapsible: true,
+            title: 'Flux AMC',
+            items: [
+                {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcSts',
+                    emptyText: 'Aiguillage STS'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Type convention',
-                    name: 'regcTypeConv'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcRoutage',
+                    emptyText: 'Routage'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Attestation présenté',
-                    name: 'regcAttestationPresentee'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcHote',
+                    emptyText: 'Hote'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Indice traitement',
-                    name: 'regcIndicTraitement'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcDomaine',
+                    emptyText: 'Domaine'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Aiguillage STS',
-                    name: 'regcSts'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcCritereSecondaire',
+                    emptyText: 'Critère secondaire'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Routage',
-                    name: 'regcRoutage'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcGarantieMut',
+                    emptyText: 'Garanties mutuelle'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Hote',
-                    name: 'regcHote'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcPecAMC',
+                    emptyText: 'PEC AMC'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Domaine',
-                    name: 'regcDomaine'
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Critère secondaire',
-                    name: 'regcCritereSecondaire'
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Garanties mutuelle',
-                    name: 'regcGarantieMut'
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'PEC AMC',
-                    name: 'regcPecAMC'
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Identification assuré AMC',
-                    name: 'regcAssureAMC'
+                    margin: '0 2 2 0',
+                    fieldLabel: '',
+                    name: 'regcAssureAMC',
+                    emptyText: 'Identification assuré AMC'
                 }
             ]
         }

@@ -55,8 +55,9 @@ Ext.application({
         'RegoModel',
         'AmoComboModel',
         'RegcModel',
-        'AmcIdComboModel',
-        'RegcFormuleComboModel'
+        'MutuelleComboModel',
+        'RegcFormuleComboModel',
+        'DefaultComboModel'
     ],
     views: [
         'WorklistGrid',

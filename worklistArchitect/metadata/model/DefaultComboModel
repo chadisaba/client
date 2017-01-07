@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "AmcIdComboModel"
+        "designer|userClassName": "DefaultComboModel"
     },
     "configAlternates": {
         "designer|userClassName": "string"
     },
-    "name": "MyModelAmcIdComboModel",
-    "designerId": "ea12fbdf-7b02-439c-a9c0-9ac407f55bcf",
+    "name": "VisitPdsComboModel1",
+    "designerId": "69cbcffa-f87e-4b2b-b33f-7a734ff80f7e",
     "cn": [
         {
             "type": "Ext.data.field.Field",
@@ -22,13 +22,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "amcName"
+                "name": "id"
             },
             "configAlternates": {
                 "name": "string"
             },
             "name": "MyField1",
-            "designerId": "3160a481-a9d1-4082-af75-c9d00283dd0b"
+            "designerId": "35e1888a-d9c0-4839-9b3a-dfefe4148d30"
         },
         {
             "type": "Ext.data.field.Field",
@@ -38,13 +38,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "amcId"
+                "name": "text"
             },
             "configAlternates": {
                 "name": "string"
             },
             "name": "MyField2",
-            "designerId": "757590ce-3f4f-4a3b-a60c-c780f956316c"
+            "designerId": "6e497bcb-26ed-44a2-9093-d04ee2e9dce9"
         }
     ]
 }

@@ -23,7 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "RegcFormuleComboModel",
+                "model": "DefaultComboModel",
                 "name": "RegcFormuleComboStore"
             },
             "configAlternates": {
@@ -41,7 +41,25 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "AmcIdComboModel",
+                "model": "DefaultComboModel",
+                "name": "RegcIndicateurComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "RegcFormuleComboStore1",
+            "designerId": "13b18fb1-50af-4d81-8371-fafb889c0f0f"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "MutuelleComboModel",
                 "name": "AmcIdComboStore"
             },
             "configAlternates": {

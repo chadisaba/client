@@ -23,10 +23,13 @@ Ext.define('MyApp.view.RecFormViewModel', {
 
     stores: {
         RegcFormuleComboStore: {
-            model: 'MyApp.model.RegcFormuleComboModel'
+            model: 'MyApp.model.DefaultComboModel'
+        },
+        RegcIndicateurComboStore: {
+            model: 'MyApp.model.DefaultComboModel'
         },
         AmcIdComboStore: {
-            model: 'MyApp.model.AmcIdComboModel'
+            model: 'MyApp.model.MutuelleComboModel'
         }
     }
 

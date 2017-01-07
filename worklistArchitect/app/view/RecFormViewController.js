@@ -41,6 +41,22 @@ Ext.define('MyApp.view.RecFormViewController', {
 
     },
 
+    onAmcIdComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onAmcIdComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onRadiogroupChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onRegcFormuleComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     onRecFormIdBoxReady: function(component, width, height, eOpts) {
 
     }

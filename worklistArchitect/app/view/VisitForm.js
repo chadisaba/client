@@ -174,10 +174,6 @@ Ext.define('MyApp.view.VisitForm', {
                             ]
                         },
                         {
-                            xtype: 'tbspacer',
-                            height: 5
-                        },
-                        {
                             xtype: 'container',
                             layout: {
                                 type: 'hbox',
@@ -210,6 +206,7 @@ Ext.define('MyApp.view.VisitForm', {
                                     enableSearchBtn: true,
                                     flex: 1,
                                     itemId: 'establishmentComboBoxEditorItemId',
+                                    margin: '2 0 2 0',
                                     fieldLabel: 'Etablissement',
                                     name: 'establishmentId',
                                     selectOnFocus: true,
@@ -228,6 +225,7 @@ Ext.define('MyApp.view.VisitForm', {
                                     xtype: 'advancedCombobox',
                                     flex: 1,
                                     itemId: 'estHasServComboBoxEditorItemId',
+                                    margin: '2 0 2 0',
                                     fieldLabel: 'Service',
                                     name: 'estHasServId',
                                     selectOnFocus: true,
@@ -297,6 +295,7 @@ Ext.define('MyApp.view.VisitForm', {
                     items: [
                         {
                             xtype: 'container',
+                            margin: '0 2 2 0',
                             layout: {
                                 type: 'hbox',
                                 align: 'stretch'
@@ -349,37 +348,13 @@ Ext.define('MyApp.view.VisitForm', {
                             ]
                         },
                         {
-                            xtype: 'tbspacer',
-                            height: 5
-                        },
-                        {
                             xtype: 'container',
+                            margin: '0 2 2 0',
                             layout: {
                                 type: 'hbox',
                                 align: 'stretch'
                             },
                             items: [
-                                {
-                                    xtype: 'combobox',
-                                    flex: 1,
-                                    itemId: 'visitPdsComboBoxEditorItemId',
-                                    fieldLabel: 'Parcours soins',
-                                    name: 'visitPds',
-                                    selectOnFocus: true,
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    valueField: 'id',
-                                    bind: {
-                                        store: '{VisitPdsComboStore}'
-                                    },
-                                    listeners: {
-                                        select: 'onVisitPdsComboBoxEditorItemIdSelect'
-                                    }
-                                },
-                                {
-                                    xtype: 'tbspacer',
-                                    width: 10
-                                },
                                 {
                                     xtype: 'combobox',
                                     flex: 1,
@@ -419,6 +394,25 @@ Ext.define('MyApp.view.VisitForm', {
                                     }
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'combobox',
+                            itemId: 'visitPdsComboBoxEditorItemId',
+                            margin: '0 2 2 0',
+                            width: 369,
+                            fieldLabel: 'P.D.S',
+                            labelWidth: 50,
+                            name: 'visitPds',
+                            selectOnFocus: true,
+                            forceSelection: true,
+                            queryMode: 'local',
+                            valueField: 'id',
+                            bind: {
+                                store: '{VisitPdsComboStore}'
+                            },
+                            listeners: {
+                                select: 'onVisitPdsComboBoxEditorItemIdSelect'
+                            }
                         }
                     ]
                 },
@@ -437,6 +431,7 @@ Ext.define('MyApp.view.VisitForm', {
                 pluginId: 'gridediting',
                 onlyADM: true
             },
+            margin: '0 2 2 0',
             header: false,
             listeners: {
                 studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent',

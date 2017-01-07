@@ -41,6 +41,18 @@ Ext.define('MyApp.view.AmoFormViewController', {
 
     },
 
+    onAmoComboItemIdComboAddEvent: function() {
+
+    },
+
+    onAmoComboItemIdComboEditEvent: function() {
+
+    },
+
+    onAmoComboItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
     onQualiteBenefComboChange: function(field, newValue, oldValue, eOpts) {
 
     },

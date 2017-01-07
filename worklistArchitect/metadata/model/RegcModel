@@ -14,361 +14,445 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "RegcModel",
     "designerId": "50320b1e-a909-4e6a-ada7-69792462a946",
     "cn": [
-       
         {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcId"
-                },
-                "name": "MyregcId",
-                "designerId": "29d545e6-7bec-4a1d-9ea9-faa5dcfa7aea"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcId",
+            "designerId": "29d545e6-7bec-4a1d-9ea9-faa5dcfa7aea"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "patientId"
-                },
-                "name": "MypatientId",
-                "designerId": "ae5812cc-1188-4f53-978e-d0d22dff70ef"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypatientId",
+            "designerId": "ae5812cc-1188-4f53-978e-d0d22dff70ef"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "visitId"
-                },
-                "name": "MyvisitId",
-                "designerId": "a4c695c1-779c-4fcf-8ee2-9d31cda5104a"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyvisitId",
+            "designerId": "a4c695c1-779c-4fcf-8ee2-9d31cda5104a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcMode"
-                },
-                "name": "MyregcMode",
-                "designerId": "f42b7fdd-411a-4c34-b1fc-f515c6c38dd0"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcMode",
+            "designerId": "f42b7fdd-411a-4c34-b1fc-f515c6c38dd0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcNumMutuelle"
-                },
-                "name": "MyregcNumMutuelle",
-                "designerId": "dc6447e4-9ae3-448b-808f-e06bc1af93ab"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcNumMutuelle",
+            "designerId": "dc6447e4-9ae3-448b-808f-e06bc1af93ab"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcNumAMC"
-                },
-                "name": "MyregcNumAMC",
-                "designerId": "bb4dbbbc-99c5-4a53-abbd-0aff3803243c"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcNumAMC",
+            "designerId": "bb4dbbbc-99c5-4a53-abbd-0aff3803243c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcNumAdherent"
-                },
-                "name": "MyregcNumAdherent",
-                "designerId": "1d9321ad-13b1-4636-928b-72855731b90d"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcNumAdherent",
+            "designerId": "1d9321ad-13b1-4636-928b-72855731b90d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcIndicTraitement"
-                },
-                "name": "MyregcIndicTraitement",
-                "designerId": "51fe067f-8a1c-43ec-9292-73b127e94795"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcIndicTraitement",
+            "designerId": "51fe067f-8a1c-43ec-9292-73b127e94795"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcSts"
-                },
-                "name": "MyregcSts",
-                "designerId": "38b23b36-1be1-474a-b3cf-08dd39ae147c"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcSts",
+            "designerId": "38b23b36-1be1-474a-b3cf-08dd39ae147c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcRoutage"
-                },
-                "name": "MyregcRoutage",
-                "designerId": "7be9bb63-003b-4fe6-a0ad-2e7be4228032"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcRoutage",
+            "designerId": "7be9bb63-003b-4fe6-a0ad-2e7be4228032"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcHote"
-                },
-                "name": "MyregcHote",
-                "designerId": "ddd28144-f9ce-49da-adf5-06b76aa3ff62"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcHote",
+            "designerId": "ddd28144-f9ce-49da-adf5-06b76aa3ff62"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcDomaine"
-                },
-                "name": "MyregcDomaine",
-                "designerId": "652d6999-7749-4a8d-baef-a858ce0dbdc5"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcDomaine",
+            "designerId": "652d6999-7749-4a8d-baef-a858ce0dbdc5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcTypeConv"
-                },
-                "name": "MyregcTypeConv",
-                "designerId": "995f1f8a-a445-4d24-aae7-ef08b6d91f88"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcTypeConv",
+            "designerId": "995f1f8a-a445-4d24-aae7-ef08b6d91f88"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcCritereSecondaire"
-                },
-                "name": "MyregcCritereSecondaire",
-                "designerId": "41f0e3bc-301c-4946-8a84-d855f46d1adf"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcCritereSecondaire",
+            "designerId": "41f0e3bc-301c-4946-8a84-d855f46d1adf"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcGarantieMut"
-                },
-                "name": "MyregcGarantieMut",
-                "designerId": "61e953a9-ee80-4c0d-be12-73b4dd0516ae"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcGarantieMut",
+            "designerId": "61e953a9-ee80-4c0d-be12-73b4dd0516ae"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcPecAMC"
-                },
-                "name": "MyregcPecAMC",
-                "designerId": "6876e5ac-6540-4210-8ce7-8ec45de4eaee"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcPecAMC",
+            "designerId": "6876e5ac-6540-4210-8ce7-8ec45de4eaee"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcTypeContrat"
-                },
-                "name": "MyregcTypeContrat",
-                "designerId": "7ca4ccd4-bed0-4606-923d-bfd4f716234b"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcTypeContrat",
+            "designerId": "7ca4ccd4-bed0-4606-923d-bfd4f716234b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcAssureAMC"
-                },
-                "name": "MyregcAssureAMC",
-                "designerId": "65bda558-692f-4290-a7d3-0e2e05ff5cf5"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcAssureAMC",
+            "designerId": "65bda558-692f-4290-a7d3-0e2e05ff5cf5"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcDeVitale"
-                },
-                "name": "MyregcDeVitale",
-                "designerId": "051af95c-d8e1-48e1-b452-7771aa2fd175"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcDeVitale",
+            "designerId": "051af95c-d8e1-48e1-b452-7771aa2fd175"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcRefusAMO"
-                },
-                "name": "MyregcRefusAMO",
-                "designerId": "af498c56-976a-43f4-b4b6-3ea6bf4a3382"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcRefusAMO",
+            "designerId": "af498c56-976a-43f4-b4b6-3ea6bf4a3382"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcAttestationPresentee"
-                },
-                "name": "MyregcAttestationPresentee",
-                "designerId": "3e08a01b-8b59-4dab-857e-cd5d3ef0bab5"
             },
-                    {
-                "type": "Ext.data.field.Number",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcAttestationPresentee",
+            "designerId": "3e08a01b-8b59-4dab-857e-cd5d3ef0bab5"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcTauxRemboursement"
-                },
-                "name": "MyregcTauxRemboursement",
-                "designerId": "a9330c27-e0b1-4bce-bda4-b94c4a15515a"
             },
-                    {
-                "type": "Ext.data.field.Date",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcTauxRemboursement",
+            "designerId": "a9330c27-e0b1-4bce-bda4-b94c4a15515a"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcDu"
-                },
-                "name": "MyregcDu",
-                "designerId": "f96129ae-1359-4a41-afd8-eab1a74acb12"
             },
-                    {
-                "type": "Ext.data.field.Date",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcDu",
+            "designerId": "f96129ae-1359-4a41-afd8-eab1a74acb12"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcAu"
-                },
-                "name": "MyregcAu",
-                "designerId": "70a7ba48-f662-421b-a05d-e17ecdf4dbe6"
             },
-                    {
-                "type": "Ext.data.field.Boolean",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcAu",
+            "designerId": "70a7ba48-f662-421b-a05d-e17ecdf4dbe6"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "            active"
-                },
-                "name": "My            active",
-                "designerId": "d6f06152-fe00-4b1b-b668-331dee97b17b"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "My            active",
+            "designerId": "d6f06152-fe00-4b1b-b668-331dee97b17b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "regcFormule"
-                },
-                "name": "MyregcFormule",
-                "designerId": "4dc69dcf-1905-4b26-b595-616c26c15d7d"
             },
-                    {
-                "type": "Ext.data.field.Field",
-                "reference": {
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyregcFormule",
+            "designerId": "4dc69dcf-1905-4b26-b595-616c26c15d7d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
                 "name": "fields",
                 "type": "array"
-                },
-                "codeClass": null,
-                "userConfig": {
-                "name": "amcId"
-                },
-                "name": "MyamcId",
-                "designerId": "ac0c0f37-d11a-45b0-a9ac-e9f8468f8983"
             },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amcId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyamcId",
+            "designerId": "ac0c0f37-d11a-45b0-a9ac-e9f8468f8983"
+        },
         {
             "type": "Ext.data.field.Field",
             "reference": {
@@ -378,6 +462,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "21ee8e27-d99f-4ce3-8d31-1ced3909e6a0"
@@ -392,6 +479,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "8fa6fcff-ce91-481c-9d9b-e19735a6763f"
         },
@@ -404,6 +494,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "93669075-ff62-4b26-bde1-ed8e7afadba5"
@@ -418,6 +511,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "894d27b2-0851-42d9-8ab5-a0f2005e579e"
         },
@@ -430,6 +526,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "1c62f369-bf20-4a09-9198-8472b4010965"

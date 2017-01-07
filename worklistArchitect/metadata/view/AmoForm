@@ -38,7 +38,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "collapsible": true,
+                "collapsible": null,
                 "title": "A.M.O"
             },
             "configAlternates": {
@@ -72,9 +72,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Type assurance",
+                                "emptyText": "Type d'assurance",
+                                "fieldLabel": "Type",
                                 "itemId": "typeAssCombo",
                                 "layout|anchor": "100%",
+                                "margin": "0 2 2 0",
                                 "name": "typeAssurance",
                                 "queryMode": "local",
                                 "store": [
@@ -89,7 +91,9 @@
                                 "layout|anchor": "string",
                                 "name": "string",
                                 "queryMode": "string",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "emptyText": "string",
+                                "margin": "auto"
                             },
                             "name": "MyComboBox2",
                             "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
@@ -124,9 +128,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Prise en charge",
+                                "emptyText": "Prise en charge",
+                                "fieldLabel": "PEC",
                                 "itemId": "pecCombo",
                                 "layout|anchor": "100%",
+                                "margin": "0 2 2 0",
                                 "name": "pec",
                                 "queryMode": "local",
                                 "store": [
@@ -141,7 +147,9 @@
                                 "layout|anchor": "string",
                                 "name": "string",
                                 "queryMode": "string",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "emptyText": "string",
+                                "margin": "auto"
                             },
                             "name": "MyTagField1",
                             "designerId": "c90bb820-c70b-4cb5-9a8c-d456ff780c3c",
@@ -237,9 +245,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "boxLabel": "",
-                                        "fieldLabel": "Forçage fin maternité",
+                                        "fieldLabel": "Forçage  fin mater.",
                                         "itemId": "forcageMaterniteCb",
-                                        "labelWidth": 130,
+                                        "labelWidth": 110,
+                                        "layout|margins": "0 2 2 0",
                                         "name": "regoForcageMaternite"
                                     },
                                     "configAlternates": {
@@ -247,7 +256,8 @@
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
                                         "name": "string",
-                                        "itemId": "string"
+                                        "itemId": "string",
+                                        "layout|margins": "string"
                                     },
                                     "name": "MyCheckbox3",
                                     "designerId": "05ef9e0f-bd5b-4d17-8cb2-f8494511668b"
@@ -260,16 +270,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Date maternité",
+                                        "fieldLabel": "Date mater.",
                                         "itemId": "dateMaterniteField",
                                         "labelWidth": null,
+                                        "layout|flex": 1,
                                         "name": "regoDateMaternite"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
                                         "name": "string",
-                                        "itemId": "string"
+                                        "itemId": "string",
+                                        "layout|flex": "number"
                                     },
                                     "name": "MyDateField4",
                                     "designerId": "b04b8d43-532f-42e2-b2df-b2eaa89922fe"
@@ -288,6 +300,7 @@
                                 "fieldLabel": "Forçage A.L.D",
                                 "itemId": "forcageAldItemId",
                                 "labelWidth": 120,
+                                "margin": "0 2 2 0",
                                 "name": "regoForcageAld"
                             },
                             "configAlternates": {
@@ -295,7 +308,8 @@
                                 "fieldLabel": "string",
                                 "itemId": "string",
                                 "labelWidth": "number",
-                                "name": "string"
+                                "name": "string",
+                                "margin": "auto"
                             },
                             "name": "MyCheckbox2",
                             "designerId": "fe87c579-52c2-4888-9c25-6af7ef76e550"
@@ -311,13 +325,15 @@
                                 "fieldLabel": "Droit commun",
                                 "itemId": "droitCommunDateItemId",
                                 "labelWidth": null,
+                                "margin": "0 2 2 0",
                                 "name": "regoDateAccDroitCommun"
                             },
                             "configAlternates": {
                                 "fieldLabel": "string",
                                 "itemId": "string",
                                 "labelWidth": "number",
-                                "name": "string"
+                                "name": "string",
+                                "margin": "auto"
                             },
                             "name": "MyDateField5",
                             "designerId": "648f9947-7656-472d-b565-19b6ea90260a"
@@ -352,6 +368,7 @@
                                         "fieldLabel": "Code couverture",
                                         "hideTrigger": null,
                                         "layout|flex": 1,
+                                        "layout|margins": "0 2 2 0",
                                         "maskRe": "/[0-9]/",
                                         "maxLength": 5,
                                         "name": "regoCodeCouverture",
@@ -365,7 +382,8 @@
                                         "maskRe": "regex",
                                         "maxLength": "number",
                                         "name": "string",
-                                        "repeatTriggerClick": "boolean"
+                                        "repeatTriggerClick": "boolean",
+                                        "layout|margins": "string"
                                     },
                                     "name": "MyTextField13",
                                     "designerId": "6a5f935d-ed47-4c16-bdb9-49d20f98cca0"
@@ -381,13 +399,15 @@
                                         "boxLabel": "",
                                         "fieldLabel": "Alsace-Moselle",
                                         "labelWidth": null,
+                                        "layout|margins": "0 2 2 0",
                                         "name": "regoRegimeAlsace"
                                     },
                                     "configAlternates": {
                                         "boxLabel": "string",
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "layout|margins": "string"
                                     },
                                     "name": "MyCheckbox",
                                     "designerId": "c4940913-a4ab-4eba-8f33-179a4dc4c1e8"
@@ -425,9 +445,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Du:",
-                                "labelWidth": 40,
+                                "emptyText": "Du",
+                                "fieldLabel": "Du",
+                                "labelWidth": 30,
                                 "layout|flex": 1,
+                                "layout|margins": "0 2 2 0",
                                 "name": "regoDu"
                             },
                             "configAlternates": {
@@ -435,10 +457,30 @@
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "layout|flex": "number",
-                                "name": "string"
+                                "name": "string",
+                                "emptyText": "string",
+                                "layout|margins": "string"
                             },
                             "name": "MyDateField2",
                             "designerId": "f6a550d8-917e-4fd0-a79e-1b2c3e850551"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer",
+                            "designerId": "7a97a35a-227e-4a6c-932a-c461368b85ce"
                         },
                         {
                             "type": "Ext.form.field.Date",
@@ -449,9 +491,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Au:",
-                                "labelWidth": 40,
+                                "emptyText": "Au",
+                                "fieldLabel": "Au",
+                                "labelWidth": 30,
                                 "layout|flex": 1,
+                                "layout|margins": "0 2 2 0",
                                 "name": "regoAu"
                             },
                             "configAlternates": {
@@ -459,7 +503,9 @@
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "layout|flex": "number",
-                                "name": "string"
+                                "name": "string",
+                                "emptyText": "string",
+                                "layout|margins": "string"
                             },
                             "name": "MyDateField3",
                             "designerId": "d374cdbc-fe92-4748-a31a-3cc6cb50ab09"
@@ -497,9 +543,44 @@
                                 "fieldLabel": "Nom",
                                 "itemId": "amoComboItemId",
                                 "layout|anchor": "100%",
+                                "margin": "0 2 2 0",
+                                "proxyUrl": "Server.GridFilter.getResultData",
+                                "searchFields": [
+                                    "[",
+                                    "                                        {",
+                                    "                                            text: translate('name'),",
+                                    "                                            name: 'amoName'",
+                                    "                                        },",
+                                    "                                        {",
+                                    "                                            text: translate('Regime'),",
+                                    "                                            name: 'amoCodeRegime'",
+                                    "                                        },",
+                                    "                                        {",
+                                    "                                            text: translate('Caisse'),",
+                                    "                                            name: 'amoCodeCaisse'",
+                                    "                                        },",
+                                    "                                        {",
+                                    "                                            text: translate('Centre'),",
+                                    "                                            name: 'amoCodeCentre',",
+                                    "                                            colWidth: 200",
+                                    "                                        },",
+                                    "                                         {",
+                                    "                                            text: translate('zip code'),",
+                                    "                                            name: 'amoZipCode',",
+                                    "                                            colWidth: 200",
+                                    "                                        },",
+                                    "                                        ",
+                                    "                                         {",
+                                    "                                            text: translate('city'),",
+                                    "                                            name: 'amoCity',",
+                                    "                                            colWidth: 200",
+                                    "                                        }",
+                                    "                                    ]"
+                                ],
                                 "store": [
                                     "{AmoComboStore}"
                                 ],
+                                "tableName": "AMO",
                                 "valueField": "amoId"
                             },
                             "configAlternates": {
@@ -509,7 +590,11 @@
                                 "fieldLabel": "string",
                                 "itemId": "string",
                                 "layout|anchor": "string",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "searchFields": "array",
+                                "proxyUrl": "string",
+                                "tableName": "string",
+                                "margin": "auto"
                             },
                             "name": "MyadvancedCombobox5",
                             "designerId": "967e47d0-f7e7-4073-b09e-123412857a7d",
@@ -517,6 +602,26 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "enableSearchBtn",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "searchFields",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "proxyUrl",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "mainTableObject",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "tableName",
                                     "type": "string"
                                 }
                             ],
@@ -540,6 +645,66 @@
                                     },
                                     "name": "onAmoComboItemIdChange",
                                     "designerId": "f194e963-694b-4f32-931b-f001bee9a9a9"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAmoComboItemIdComboAddEvent",
+                                        "name": "comboAddEvent",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAmoComboItemIdComboAddEvent",
+                                    "designerId": "1823af17-e2c5-4cd2-bf35-1bec9b425c61"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAmoComboItemIdComboEditEvent",
+                                        "name": "comboEditEvent",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAmoComboItemIdComboEditEvent",
+                                    "designerId": "5503f4b6-1f2f-4651-b7a7-8a3d2a12ca1a"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAmoComboItemIdSelect",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAmoComboItemIdSelect",
+                                    "designerId": "f2d6acfd-09a6-45c7-996f-9fc5d4d0e688"
                                 }
                             ]
                         },
@@ -552,11 +717,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": "0 2 2 0"
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer4",
                             "designerId": "f3fb4c18-8a48-421b-ad87-1369ee5c9415",
@@ -572,8 +739,10 @@
                                         "allowBlank": false,
                                         "enforceMaxLength": true,
                                         "fieldLabel": "Régime",
+                                        "itemId": "codeRegimeItemId",
                                         "labelWidth": 50,
                                         "layout|flex": 1,
+                                        "margin": "0 2 2 0",
                                         "maskRe": "/[0-9]/",
                                         "maxLength": 2,
                                         "minLength": 2,
@@ -588,7 +757,9 @@
                                         "maskRe": "regex",
                                         "maxLength": "number",
                                         "minLength": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
                                     },
                                     "name": "MyTextField5",
                                     "designerId": "719d77ef-7dc9-4e01-b788-816a562ee6c8"
@@ -604,8 +775,10 @@
                                         "allowBlank": false,
                                         "enforceMaxLength": true,
                                         "fieldLabel": "Caisse",
+                                        "itemId": "codeCaisseItemId",
                                         "labelWidth": 40,
                                         "layout|flex": 1,
+                                        "margin": "0 2 2 0",
                                         "maskRe": "/[0-9]/",
                                         "maxLength": 3,
                                         "name": "regoCodeCaisse"
@@ -618,7 +791,9 @@
                                         "layout|flex": "number",
                                         "maskRe": "regex",
                                         "maxLength": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
                                     },
                                     "name": "MyTextField6",
                                     "designerId": "a8bfab12-6bd2-4198-ab6c-b6b770e234e3"
@@ -634,8 +809,10 @@
                                         "allowBlank": false,
                                         "enforceMaxLength": true,
                                         "fieldLabel": "Centre",
+                                        "itemId": "codeCentreItemId",
                                         "labelWidth": 40,
                                         "layout|flex": 1,
+                                        "margin": "0 2 2 0",
                                         "maskRe": "/[0-9]/",
                                         "maxLength": 4,
                                         "name": "regoCodeCentre"
@@ -648,7 +825,9 @@
                                         "layout|flex": "number",
                                         "maskRe": "regex",
                                         "maxLength": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
                                     },
                                     "name": "MyTextField7",
                                     "designerId": "2c1b7047-1855-4df7-8fbc-50e5dd62c53f"
@@ -685,6 +864,7 @@
                                 "fieldLabel": "Qualité bénéf.",
                                 "itemId": "qualiteBenefCombo",
                                 "layout|anchor": "100%",
+                                "margin": "0 2 2 0",
                                 "name": "regoQualiteBenef",
                                 "queryMode": "local",
                                 "store": [
@@ -700,7 +880,8 @@
                                 "valueField": "datafield",
                                 "itemId": "string",
                                 "allowBlank": "boolean",
-                                "queryMode": "string"
+                                "queryMode": "string",
+                                "margin": "auto"
                             },
                             "name": "MyComboBox9",
                             "designerId": "f32c050a-d329-4ad3-8438-1339e831f215",
@@ -736,11 +917,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": "0 2 2 0"
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer8",
                             "designerId": "2ac20123-2d99-40bd-9a50-f0f2ec967c04",
@@ -755,9 +938,10 @@
                                     "userConfig": {
                                         "allowBlank": false,
                                         "enforceMaxLength": true,
-                                        "fieldLabel": "Rang gémelaire bénéf",
+                                        "fieldLabel": "Rang gémelaire",
                                         "labelWidth": null,
                                         "layout|flex": 1,
+                                        "margin": "0 2 2 0",
                                         "maxLength": 1,
                                         "minLength": 1,
                                         "name": "regoRangGemBenef",
@@ -772,7 +956,8 @@
                                         "minLength": "number",
                                         "name": "string",
                                         "layout|flex": "number",
-                                        "width": "auto"
+                                        "width": "auto",
+                                        "margin": "auto"
                                     },
                                     "name": "MyTextField8",
                                     "designerId": "bc249dda-602d-4e92-8f73-02952582b677"
@@ -787,9 +972,9 @@
                                     "userConfig": {
                                         "allowBlank": null,
                                         "enforceMaxLength": true,
-                                        "fieldLabel": "Rang gémelaire assuré",
+                                        "fieldLabel": "Rang gém. assuré",
                                         "itemId": "regoRangGemAssureTField",
-                                        "labelWidth": null,
+                                        "labelWidth": 120,
                                         "layout|flex": 1,
                                         "maxLength": 1,
                                         "minLength": 1,
@@ -823,6 +1008,7 @@
                                 "fieldLabel": "Nom assuré",
                                 "itemId": "regoNomAssureTField",
                                 "labelWidth": null,
+                                "margin": "0 2 2 0",
                                 "maxLength": null,
                                 "name": "regoNomAssure"
                             },
@@ -832,7 +1018,8 @@
                                 "labelWidth": "number",
                                 "maxLength": "number",
                                 "name": "string",
-                                "itemId": "string"
+                                "itemId": "string",
+                                "margin": "auto"
                             },
                             "name": "MyTextField10",
                             "designerId": "cd14075b-4cc1-44ec-9317-e58473c1076d"
@@ -849,6 +1036,7 @@
                                 "fieldLabel": "Prenom assuré",
                                 "itemId": "regoPrenomAssureTField",
                                 "labelWidth": null,
+                                "margin": "0 2 2 0",
                                 "maxLength": null,
                                 "name": "regoPrenomAssure"
                             },
@@ -858,7 +1046,8 @@
                                 "labelWidth": "number",
                                 "maxLength": "number",
                                 "name": "string",
-                                "itemId": "string"
+                                "itemId": "string",
+                                "margin": "auto"
                             },
                             "name": "MyTextField11",
                             "designerId": "0d80cdc7-8024-4c08-8023-b88f5ebd8c1a"
@@ -875,6 +1064,7 @@
                                 "fieldLabel": "Date naissance ",
                                 "itemId": "regoDateNaissAssTField",
                                 "labelWidth": null,
+                                "margin": "0 2 2 0",
                                 "maxLength": null,
                                 "name": "regoDateNaissAss"
                             },
@@ -884,7 +1074,8 @@
                                 "labelWidth": "number",
                                 "maxLength": "number",
                                 "name": "string",
-                                "itemId": "string"
+                                "itemId": "string",
+                                "margin": "auto"
                             },
                             "name": "MyTextField12",
                             "designerId": "59dda4a0-7994-447b-aff7-94a41fa3a2be"

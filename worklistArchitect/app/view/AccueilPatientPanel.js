@@ -93,6 +93,7 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     xtype: 'visitform',
                     noPlugin: true,
                     flex: 3,
+                    margin: '0 0 0 0',
                     scrollable: true,
                     header: false,
                     region: 'center',
@@ -108,19 +109,27 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     noPlugin: true,
                     flex: 2,
                     itemId: 'amoFormItemId',
+                    margin: '0 0 0 0',
                     header: false,
+                    margins: '0 0 0 0',
                     region: 'west',
+                    splitterResize: false,
                     listeners: {
                         afterrender: 'onAmoFormItemIdAfterRender'
                     }
                 },
                 {
                     xtype: 'recform',
-                    region: 'west',
-                    split: true,
                     flex: 1,
                     itemId: 'regcFormItemId',
-                    header: false
+                    margin: '0 0 0 0',
+                    header: false,
+                    region: 'west',
+                    splitterResize: false,
+                    noPlugin: true,
+                    listeners: {
+                        afterrender: 'onRecFormIdAfterRender'
+                    }
                 }
             ],
             dockedItems: [

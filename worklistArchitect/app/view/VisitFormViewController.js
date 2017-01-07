@@ -61,11 +61,11 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     },
 
-    onVisitPdsComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
+    onDoctorComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
 
-    onDoctorComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+    onVisitPdsComboBoxEditorItemIdSelect: function(combo, record, eOpts) {
 
     },
 

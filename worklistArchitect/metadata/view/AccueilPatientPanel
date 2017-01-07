@@ -234,6 +234,7 @@
                         "header": false,
                         "layout|region": "center",
                         "layout|split": true,
+                        "margin": "0 0 0 0",
                         "noPlugin": true,
                         "scrollable": true
                     },
@@ -243,7 +244,8 @@
                         "flex": "number",
                         "header": "boolean",
                         "layout|region": "string",
-                        "layout|split": "boolean"
+                        "layout|split": "boolean",
+                        "margin": "auto"
                     },
                     "name": "visitform",
                     "designerId": "07ba1a08-7f7c-4355-8643-c4e6481c0082",
@@ -437,7 +439,11 @@
                         "flex": 2,
                         "header": false,
                         "itemId": "amoFormItemId",
+                        "layout|margins": "0 0 0 0",
                         "layout|region": "west",
+                        "layout|split": null,
+                        "layout|splitterResize": false,
+                        "margin": "0 0 0 0",
                         "noPlugin": true
                     },
                     "configAlternates": {
@@ -445,7 +451,11 @@
                         "flex": "number",
                         "header": "boolean",
                         "itemId": "string",
-                        "layout|region": "string"
+                        "layout|region": "string",
+                        "layout|margins": "string",
+                        "layout|split": "boolean",
+                        "layout|splitterResize": "boolean",
+                        "margin": "auto"
                     },
                     "name": "amoform",
                     "designerId": "e20fc22b-c4a0-4235-bf62-0bebf2dde185",
@@ -494,7 +504,10 @@
                         "header": false,
                         "itemId": "regcFormItemId",
                         "layout|region": "west",
-                        "layout|split": true
+                        "layout|split": null,
+                        "layout|splitterResize": false,
+                        "margin": "0 0 0 0",
+                        "noPlugin": true
                     },
                     "configAlternates": {
                         "animCollapse": "boolean",
@@ -503,11 +516,43 @@
                         "header": "boolean",
                         "itemId": "string",
                         "layout|region": "string",
-                        "layout|split": "boolean"
+                        "layout|split": "boolean",
+                        "noPlugin": "boolean",
+                        "layout|splitterResize": "boolean",
+                        "margin": "auto"
                     },
                     "name": "recform",
                     "designerId": "d374ecae-43eb-45ad-9163-6062e231d656",
-                    "masterInstanceId": "a4ff2b4f-7eee-4150-a3b4-4319afd900fa"
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "noPlugin",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "a4ff2b4f-7eee-4150-a3b4-4319afd900fa",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRecFormIdAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRecFormIdAfterRender",
+                            "designerId": "fbbe42bc-d323-4f8a-a2b4-bb24bd4c611f"
+                        }
+                    ]
                 }
             ]
         }

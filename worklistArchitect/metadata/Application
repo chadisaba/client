@@ -38,8 +38,9 @@
             "RegoModel",
             "AmoComboModel",
             "RegcModel",
-            "AmcIdComboModel",
-            "RegcFormuleComboModel"
+            "MutuelleComboModel",
+            "RegcFormuleComboModel",
+            "DefaultComboModel"
         ],
         "name": "MyApp",
         "requires": [

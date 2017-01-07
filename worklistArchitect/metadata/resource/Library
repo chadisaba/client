@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "basePath": "ext/build/",
         "designer|userClassName": "Library",
         "libraryRequires": [
             "ux"
@@ -15,7 +16,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "libraryRequires": "typedarray",
-        "theme": "string"
+        "theme": "string",
+        "basePath": "uri"
     },
     "name": "Library",
     "designerId": "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5"
