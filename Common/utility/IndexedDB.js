@@ -31,8 +31,10 @@ var IndexedDB={
                         REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle,referringPhysicianSearch",
                         DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
                         SITE: "++id,siteId,siteCode,siteName",
-                        TFIELD:'++id,tfieldName,tfieldDbName'
-
+                        TFIELD:'++id,tfieldName,tfieldDbName',
+                        ESTABLISHMENT:'++id,establishmentId,establishmentCode,establishmentName',
+                        EST_HAS_SERV:'++id,estHasServId,establishmentId,estHasServCode,estHasServName',
+                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigPCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin'
                     });
                     me.db.open();
                     resolve();

@@ -9,5 +9,63 @@
         "designer|userAlias": "addstudyform",
         "designer|userClassName": "AddStudyFormViewModel"
     },
-    "designerId": "624fd4af-71f2-45b3-bb18-4401ae95fe2c"
+    "designerId": "624fd4af-71f2-45b3-bb18-4401ae95fe2c",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyComboModel",
+                "name": "StudyComboStore"
+            },
+            "name": "MyStore",
+            "designerId": "81a3536b-3857-4245-b832-c8ac85c4e0e9"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DeviceComboModel",
+                "name": "DeviceComboStore"
+            },
+            "name": "MyStore2",
+            "designerId": "b6d36346-6498-42db-bdb4-be9de29a4471"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ReferringPhysicianNameComboModel",
+                "name": "ReferringPhysicianNameComboStore"
+            },
+            "name": "MyStore1",
+            "designerId": "9d2e5949-9d6f-46ed-8569-53f663aaf984"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "TechnicianComboModel",
+                "name": "TechnicianComboStore"
+            },
+            "name": "MyStore3",
+            "designerId": "dd4c5cef-4f97-4dcb-8486-ab74ca922d1b"
+        }
+    ]
 }

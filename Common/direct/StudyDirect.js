@@ -65,6 +65,7 @@ var StudyDirect={
                         store.clearFilter();
                         store.removeAll();
                         store.loadData(_resultData);
+                        console.log('docHasstudyAutoComplete');
 
                         store.filterBy(
                             function(_rec)

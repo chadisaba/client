@@ -15,5 +15,30 @@
 
 Ext.define('MyApp.view.AddStudyFormViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.addstudyform'
+    alias: 'controller.addstudyform',
+
+    requires: [
+        'MyApp.view.override.AddStudyFormViewController'
+    ],
+
+    onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onStudyComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onTechnicianComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onDeviceComboboxItemIdSelect: function(combo, record, eOpts) {
+
+    },
+
+    onAddStudyButtonClick: function(button, e, eOpts) {
+
+    }
+
 });

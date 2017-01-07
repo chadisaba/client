@@ -19,12 +19,26 @@
             },
             "codeClass": null,
             "userConfig": {
-                "groupField": "studyName",
+                "groupField": "studyVisitId",
                 "model": "StudyVisitHasActeModel",
                 "name": "StudyVisitHasActeStore"
             },
             "name": "StudyVisitHasActeStore",
             "designerId": "75c60dcd-b234-4fc0-85e7-3165d0ce5864"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StudyComboModel",
+                "name": "studyComboStore"
+            },
+            "name": "MyStore4",
+            "designerId": "b6429584-6542-41da-bf91-24e71dc4e082"
         }
     ]
 }

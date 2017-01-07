@@ -15,6 +15,25 @@
 
 Ext.define('MyApp.view.AddStudyFormViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.addstudyform'
+    alias: 'viewmodel.addstudyform',
+
+    requires: [
+        'Ext.data.Store'
+    ],
+
+    stores: {
+        StudyComboStore: {
+            model: 'MyApp.model.StudyComboModel'
+        },
+        DeviceComboStore: {
+            model: 'MyApp.model.DeviceComboModel'
+        },
+        ReferringPhysicianNameComboStore: {
+            model: 'MyApp.model.ReferringPhysicianNameComboModel'
+        },
+        TechnicianComboStore: {
+            model: 'MyApp.model.TechnicianComboModel'
+        }
+    }
 
 });

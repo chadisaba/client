@@ -36,7 +36,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyCode",
-                "text": null
+                "text": "Code"
             },
             "name": "MystudyVisitHasActeTypeCol",
             "designerId": "e5366c2f-9125-495c-9c73-edc549b09ef7",
@@ -49,10 +49,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "displayField": "studyCode",
                         "itemId": "studyCodeComboBox",
-                        "queryMode": "local"
+                        "queryMode": "local",
+                        "store": [
+                            "{studyComboStore}"
+                        ],
+                        "valueField": "studyCode"
                     },
                     "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
                     "designerId": "1996245e-d471-49c6-8208-008518a8066c"
                 }
             ]
@@ -66,7 +74,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyId",
-                "text": null
+                "hidden": true,
+                "text": "studyId A cacher"
             },
             "name": "MystudyVisitHasActeTypeCol2",
             "designerId": "814f5014-c4b0-496f-a338-de9ade4ff2c5",
@@ -95,10 +104,25 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeType",
+                "hidden": true,
                 "text": "Type"
             },
             "name": "MystudyVisitHasActeTypeCol1",
-            "designerId": "0dc4efd1-718c-4d42-b9ee-08b1555a5e3e",
+            "designerId": "0dc4efd1-718c-4d42-b9ee-08b1555a5e3e"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitHasActeCode",
+                "text": "Code"
+            },
+            "name": "MystudyVisitHasActeCodeCol",
+            "designerId": "885caadc-18a5-49b3-a8bf-da7ec1fc4dd1",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -108,10 +132,40 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "studyVisitHAsActeTypeTextFieldItemId"
+                        "allowBlank": false,
+                        "itemId": "studyVisitHasActeCodeTextFieldItemId"
                     },
-                    "name": "MyTextField1",
-                    "designerId": "7b594ac8-7c13-4086-a06b-702e41556962"
+                    "name": "MystudyVisitHasActeCodeTextField",
+                    "designerId": "00d245f5-1031-40fc-b23c-be9027ae35b9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitHasActeAmount",
+                "text": "Mt"
+            },
+            "name": "MystudyVisitHasActeAmountCol",
+            "designerId": "26d3ebca-68bb-4b69-aac0-8c1c325a10d4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyVisitHasActeAmountTextFieldItemId"
+                    },
+                    "name": "MystudyVisitHasActeAmountTextField",
+                    "designerId": "2d1de079-29c6-4fad-a46b-18dd9b4935ce"
                 }
             ]
         },
@@ -124,6 +178,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeSuppCharge",
+                "hidden": true,
                 "text": "supplement charge"
             },
             "name": "MystudyVisitHasActeSuppChargeCol",
@@ -227,6 +282,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeRefundingCode",
+                "hidden": true,
                 "text": "Code remboursement"
             },
             "name": "MystudyVisitHasActeRefundingCodeCol",
@@ -574,6 +630,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeExoParticuliere",
+                "hidden": true,
                 "text": "Exonération particuliers"
             },
             "name": "MystudyVisitHasActeExoParticuliereCol",
@@ -603,6 +660,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeExceptionalRefunding",
+                "hidden": true,
                 "text": "Remboursement exceptionnel"
             },
             "name": "MystudyVisitHasActeExceptionalRefundingCol",
@@ -654,6 +712,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeDepense",
+                "hidden": true,
                 "text": "Qualificatif dépense"
             },
             "name": "MystudyVisitHasActeDepenseCol",
@@ -743,6 +802,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCoefficient",
+                "hidden": true,
                 "text": "Coefficient"
             },
             "name": "MystudyVisitHasActeCoefficientCol",
@@ -820,36 +880,6 @@
                     },
                     "name": "MystudyVisitHasActeCodeAccEntentePrealableTextField",
                     "designerId": "da0599e9-298c-47c8-88f3-5a5fbe9ba2df"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitHasActeCode",
-                "text": "Code"
-            },
-            "name": "MystudyVisitHasActeCodeCol",
-            "designerId": "885caadc-18a5-49b3-a8bf-da7ec1fc4dd1",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false,
-                        "itemId": "studyVisitHasActeCodeTextFieldItemId"
-                    },
-                    "name": "MystudyVisitHasActeCodeTextField",
-                    "designerId": "00d245f5-1031-40fc-b23c-be9027ae35b9"
                 }
             ]
         },
@@ -960,35 +990,6 @@
                     },
                     "name": "MystudyVisitHasActeAmountDepassementTextField",
                     "designerId": "efef19a8-7336-494e-9f3a-e1a1551217ea"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitHasActeAmount",
-                "text": "Mt"
-            },
-            "name": "MystudyVisitHasActeAmountCol",
-            "designerId": "26d3ebca-68bb-4b69-aac0-8c1c325a10d4",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "studyVisitHasActeAmountTextFieldItemId"
-                    },
-                    "name": "MystudyVisitHasActeAmountTextField",
-                    "designerId": "2d1de079-29c6-4fad-a46b-18dd9b4935ce"
                 }
             ]
         },
@@ -1469,6 +1470,117 @@
                     },
                     "name": "groupHeaderTpl",
                     "designerId": "0e858183-fd6d-4c2f-aa59-f65e09b72c37"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar4",
+            "designerId": "e5f04f2f-a799-4cee-9b2c-36d0621e1a6e",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "replaceStudyButton",
+                        "layout|flex": null,
+                        "text": "Replace"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "2f151d1e-807c-431a-b042-7fc9625a1bab",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReplaceStudyButtonClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onReplaceStudyButtonClick",
+                            "designerId": "415be691-e6c8-4216-8cd3-ed7fb647bda8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "validateButton",
+                        "layout|flex": null,
+                        "text": "Validate"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "ff369f8d-b12c-4024-ac81-846472007b4e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onValidateButtonClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onValidateButtonClick",
+                            "designerId": "99a3c72f-8124-4d3d-9c56-5621816e0e67"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "devalidateButton",
+                        "layout|flex": null,
+                        "text": "Dévalidate"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "01b120b7-5e1c-4832-bee4-87b6f4f9317f",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDevalidateButtonClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onDevalidateButtonClick",
+                            "designerId": "bf17c9f1-72ea-4997-ad8d-3ffdd994ce1e"
+                        }
+                    ]
                 }
             ]
         }
