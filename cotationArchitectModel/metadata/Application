@@ -9,16 +9,20 @@
         "controllers": [
             "MainController"
         ],
-            "models": [
-                "StudyVisitHasActeModel"
-            ],
-            "name": "MyApp",
-            "views": [
-                "StudyVisitHasActeGrid",
-                "MyPanelCotation",
-                "AddStudyForm"
-            ]
-        },
+        "models": [
+            "ReferringPhysicianNameComboModel",
+            "StudyComboModel",
+            "DeviceComboModel",
+            "TechnicianComboModel",
+            "StudyVisitHasActeModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "StudyVisitHasActeGrid",
+            "MyPanelCotation",
+            "AddStudyForm"
+        ]
+    },
     "name": "Application",
     "designerId": "application"
 }

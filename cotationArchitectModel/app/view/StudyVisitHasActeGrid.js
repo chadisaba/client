@@ -27,7 +27,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         'Ext.grid.plugin.RowEditing',
         'Ext.selection.RowModel',
         'Ext.grid.feature.GroupingSummary',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Button'
     ],
 
     controller: 'studyvisithasactegrid',
@@ -47,15 +49,23 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyCode',
+            text: 'Code',
             editor: {
                 xtype: 'combobox',
                 itemId: 'studyCodeComboBox',
-                queryMode: 'local'
+                displayField: 'studyCode',
+                queryMode: 'local',
+                valueField: 'studyCode',
+                bind: {
+                    store: '{studyComboStore}'
+                }
             }
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyId',
+            text: 'studyId A cacher',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyIdTextField'
@@ -63,11 +73,27 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeType',
-            text: 'Type',
+            text: 'Type'
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyVisitHasActeCode',
+            text: 'Code',
             editor: {
                 xtype: 'textfield',
-                itemId: 'studyVisitHAsActeTypeTextFieldItemId'
+                itemId: 'studyVisitHasActeCodeTextFieldItemId',
+                allowBlank: false
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyVisitHasActeAmount',
+            text: 'Mt',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyVisitHasActeAmountTextFieldItemId'
             }
         },
         {
@@ -75,6 +101,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeSuppCharge',
             text: 'supplement charge',
             editor: {
@@ -95,6 +122,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeRefundingCode',
             text: 'Code remboursement',
             editor: {
@@ -182,6 +210,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeExoParticuliere',
             text: 'Exonération particuliers',
             editor: {
@@ -194,6 +223,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyVisitHasActeExceptionalRefunding',
             text: 'Remboursement exceptionnel',
             editor: {
@@ -202,6 +232,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeDepense',
             text: 'Qualificatif dépense',
             editor: {
@@ -231,6 +262,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyVisitHasActeCoefficient',
             text: 'Coefficient',
             editor: {
@@ -256,16 +288,6 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyVisitHasActeCodeAccEntentePrealableTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeCode',
-            text: 'Code',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeCodeTextFieldItemId',
-                allowBlank: false
             }
         },
         {
@@ -296,15 +318,6 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyVisitHasActeAmountDepassementTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeAmount',
-            text: 'Mt',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeAmountTextFieldItemId'
             }
         },
         {
@@ -364,7 +377,40 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             ftype: 'groupingsummary',
             groupHeaderTpl: [
-                ' {name}'
+                '{[values.rows[0].data.studyCode]}'
+            ]
+        }
+    ],
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            itemId: 'editingtoolbar',
+            items: [
+                {
+                    xtype: 'button',
+                    itemId: 'replaceStudyButton',
+                    text: 'Replace',
+                    listeners: {
+                        click: 'onReplaceStudyButtonClick'
+                    }
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'validateButton',
+                    text: 'Validate',
+                    listeners: {
+                        click: 'onValidateButtonClick'
+                    }
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'devalidateButton',
+                    text: 'Dévalidate',
+                    listeners: {
+                        click: 'onDevalidateButtonClick'
+                    }
+                }
             ]
         }
     ],

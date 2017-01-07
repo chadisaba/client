@@ -25,6 +25,10 @@ Ext.define('MyApp.view.MyPanelCotationViewController', {
             items:{
                 region: 'center',
                 xtype:'studyvisithasactegrid',
+                externalEditingPlugin:
+                    {
+                        onlyADM:true
+                    },
 
                 listeners:{
                     afterrender:function(_comp)

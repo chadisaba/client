@@ -21,6 +21,10 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
+        'ReferringPhysicianNameComboModel',
+        'StudyComboModel',
+        'DeviceComboModel',
+        'TechnicianComboModel',
         'StudyVisitHasActeModel'
     ],
     views: [

@@ -19,21 +19,92 @@ Ext.define('MyApp.view.AddStudyForm', {
 
     requires: [
         'MyApp.view.AddStudyFormViewModel',
-        'MyApp.view.StudyVisitGrid',
-        'Ext.grid.Panel'
+        'MyApp.view.AddStudyFormViewController',
+        'Ext.form.field.ComboBox',
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Button'
     ],
 
+    controller: 'addstudyform',
     viewModel: {
         type: 'addstudyform'
     },
     height: 250,
     width: 400,
     bodyPadding: 10,
-    title: 'My Form',
+    title: 'Add study',
 
     items: [
         {
-            xtype: 'studyvisitgrid'
+            xtype: 'combobox',
+            anchor: '100%',
+            itemId: 'studyComboboxItemId',
+            fieldLabel: 'Study',
+            name: 'studyId',
+            allowBlank: false,
+            displayField: 'studyCode',
+            queryMode: 'local',
+            typeAhead: true,
+            valueField: 'studyId',
+            bind: {
+                store: '{StudyComboStore}'
+            },
+            listeners: {
+                change: 'onStudyComboboxItemIdChange',
+                select: 'onStudyComboboxItemIdSelect'
+            }
+        },
+        {
+            xtype: 'combobox',
+            anchor: '100%',
+            itemId: 'technicianComboboxItemId',
+            fieldLabel: 'technician',
+            name: 'userId',
+            displayField: 'userLName',
+            minChars: 4,
+            queryDelay: 500,
+            queryMode: 'local',
+            typeAhead: true,
+            valueField: 'userId',
+            bind: {
+                store: '{TechnicianComboStore}'
+            },
+            listeners: {
+                change: 'onTechnicianComboboxItemIdChange'
+            }
+        },
+        {
+            xtype: 'combobox',
+            anchor: '100%',
+            itemId: 'deviceComboboxItemId',
+            fieldLabel: 'Device',
+            name: 'deviceId',
+            allowBlank: false,
+            displayField: 'deviceName',
+            valueField: 'deviceId',
+            bind: {
+                store: '{DeviceComboStore}'
+            },
+            listeners: {
+                select: 'onDeviceComboboxItemIdSelect'
+            }
+        }
+    ],
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'bottom',
+            items: [
+                {
+                    xtype: 'button',
+                    formBind: true,
+                    itemId: 'AddStudyButton',
+                    text: 'Save',
+                    listeners: {
+                        click: 'onAddStudyButtonClick'
+                    }
+                }
+            ]
         }
     ]
 

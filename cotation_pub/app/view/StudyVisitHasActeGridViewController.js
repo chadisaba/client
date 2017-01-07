@@ -100,6 +100,18 @@ Ext.define('MyApp.view.StudyVisitHasActeGridViewController', {
 
     onStudyVisitHasActeGridIdValidateedit: function(editor, context) {
 
+    },
+
+    onReplaceStudyButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onValidateButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onDevalidateButtonClick: function(button, e, eOpts) {
+
     }
 
 });
