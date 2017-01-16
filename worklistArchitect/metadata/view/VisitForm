@@ -264,6 +264,7 @@
                                         "fieldLabel": "",
                                         "labelWidth": null,
                                         "layout|flex": 1,
+                                        "margin": null,
                                         "name": "visitIsAmo"
                                     },
                                     "configAlternates": {
@@ -271,7 +272,8 @@
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
                                         "layout|flex": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "margin": "auto"
                                     },
                                     "name": "MyvisitIsAmoCheckBox",
                                     "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
@@ -447,11 +449,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": null
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer6",
                             "designerId": "094e944f-a7a3-4c52-b53e-df511b7b24c8",
@@ -575,22 +579,6 @@
                             ]
                         },
                         {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 5
-                            },
-                            "configAlternates": {
-                                "height": "auto"
-                            },
-                            "name": "MySpacer4",
-                            "designerId": "edadd378-83fb-4e97-95d2-a56dcdf0cbcd"
-                        },
-                        {
                             "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
@@ -599,11 +587,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": null
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer21",
                             "designerId": "6ec766d8-f734-4bae-8ef4-a17d2f901556",
@@ -622,6 +612,7 @@
                                         "itemId": "establishmentComboBoxEditorItemId",
                                         "labelWidth": null,
                                         "layout|flex": 1,
+                                        "margin": "2 0 2 0",
                                         "name": "establishmentId",
                                         "proxyUrl": "Server.GridFilter.getResultData",
                                         "queryMode": "local",
@@ -665,7 +656,8 @@
                                         "queryMode": "string",
                                         "selectOnFocus": "boolean",
                                         "tableName": "string",
-                                        "valueField": "datafield"
+                                        "valueField": "datafield",
+                                        "margin": "auto"
                                     },
                                     "name": "MyadvancedCombobox",
                                     "designerId": "d8d81848-a3cd-4a05-aed3-c632e5f16c07",
@@ -755,6 +747,7 @@
                                         "itemId": "estHasServComboBoxEditorItemId",
                                         "labelWidth": null,
                                         "layout|flex": 1,
+                                        "margin": "2 0 2 0",
                                         "name": "estHasServId",
                                         "queryMode": "local",
                                         "selectOnFocus": true,
@@ -773,7 +766,8 @@
                                         "name": "string",
                                         "queryMode": "string",
                                         "selectOnFocus": "boolean",
-                                        "valueField": "datafield"
+                                        "valueField": "datafield",
+                                        "margin": "auto"
                                     },
                                     "name": "MyadvancedCombobox3",
                                     "designerId": "ddaee674-1957-4706-a01f-231281134cc2"
@@ -951,11 +945,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": "0 2 2 0"
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer",
                             "designerId": "f472369b-27d6-4e4e-86b1-354c525781a0",
@@ -1111,22 +1107,6 @@
                             ]
                         },
                         {
-                            "type": "Ext.toolbar.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 5
-                            },
-                            "configAlternates": {
-                                "height": "auto"
-                            },
-                            "name": "MySpacer3",
-                            "designerId": "5a9e9636-3a84-47b1-9e14-6e588b3eae2d"
-                        },
-                        {
                             "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
@@ -1135,99 +1115,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
-                                "layout": "hbox"
+                                "layout": "hbox",
+                                "margin": "0 2 2 0"
                             },
                             "configAlternates": {
                                 "container|align": "string",
-                                "layout": "string"
+                                "layout": "string",
+                                "margin": "auto"
                             },
                             "name": "MyContainer2",
                             "designerId": "95776d49-e563-4459-9f17-1e2e057f8511",
                             "cn": [
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Parcours soins",
-                                        "forceSelection": true,
-                                        "itemId": "visitPdsComboBoxEditorItemId",
-                                        "labelWidth": null,
-                                        "layout|flex": 1,
-                                        "name": "visitPds",
-                                        "queryMode": "local",
-                                        "selectOnFocus": true,
-                                        "store": [
-                                            "{VisitPdsComboStore}"
-                                        ],
-                                        "valueField": "id"
-                                    },
-                                    "configAlternates": {
-                                        "store": "binding",
-                                        "plugins": "array",
-                                        "fieldLabel": "string",
-                                        "forceSelection": "boolean",
-                                        "itemId": "string",
-                                        "labelWidth": "number",
-                                        "layout|flex": "number",
-                                        "name": "string",
-                                        "queryMode": "string",
-                                        "selectOnFocus": "boolean",
-                                        "valueField": "datafield"
-                                    },
-                                    "name": "MyvisitPdsComboBox",
-                                    "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "plugins",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onVisitPdsComboBoxEditorItemIdSelect",
-                                                "name": "select",
-                                                "scope": "me"
-                                            },
-                                            "configAlternates": {
-                                                "fn": "string",
-                                                "name": "string",
-                                                "scope": "string"
-                                            },
-                                            "name": "onVisitPdsComboBoxEditorItemIdSelect",
-                                            "designerId": "adbc6006-ff17-44bf-8c8a-e59272f894b6"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.toolbar.Spacer",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "width": 10
-                                    },
-                                    "configAlternates": {
-                                        "layout|flex": "number",
-                                        "width": "auto"
-                                    },
-                                    "name": "MySpacer14",
-                                    "designerId": "a60411df-1f38-489d-8636-9cb1f538f60a"
-                                },
                                 {
                                     "type": "Ext.form.field.ComboBox",
                                     "reference": {
@@ -1345,6 +1243,77 @@
                                     "designerId": "eaa33bbb-c15a-4abe-a15f-37aca7599393"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "P.D.S",
+                                "flex": null,
+                                "forceSelection": true,
+                                "itemId": "visitPdsComboBoxEditorItemId",
+                                "labelWidth": 50,
+                                "margin": "0 2 2 0",
+                                "name": "visitPds",
+                                "queryMode": "local",
+                                "selectOnFocus": true,
+                                "store": [
+                                    "{VisitPdsComboStore}"
+                                ],
+                                "valueField": "id",
+                                "width": 369
+                            },
+                            "configAlternates": {
+                                "store": "binding",
+                                "plugins": "array",
+                                "fieldLabel": "string",
+                                "forceSelection": "boolean",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|flex": "number",
+                                "name": "string",
+                                "queryMode": "string",
+                                "selectOnFocus": "boolean",
+                                "valueField": "datafield",
+                                "flex": "number",
+                                "margin": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyvisitPdsComboBox",
+                            "designerId": "e50d1863-6a3e-43e0-818e-728814bee2b7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "plugins",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onVisitPdsComboBoxEditorItemIdSelect",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onVisitPdsComboBoxEditorItemIdSelect",
+                                    "designerId": "adbc6006-ff17-44bf-8c8a-e59272f894b6"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1391,11 +1360,13 @@
                     "{pluginId: 'gridediting',",
                     "                onlyADM: true}"
                 ],
-                "header": false
+                "header": false,
+                "margin": "0 2 2 0"
             },
             "configAlternates": {
                 "externalEditingPlugin": "object",
-                "header": "boolean"
+                "header": "boolean",
+                "margin": "auto"
             },
             "name": "studyvisitgrid",
             "designerId": "3cfb1b92-280a-4dd2-8165-4421d85681b6",

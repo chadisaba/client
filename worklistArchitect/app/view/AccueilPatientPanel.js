@@ -120,13 +120,13 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                 },
                 {
                     xtype: 'recform',
+                    noPlugin: true,
                     flex: 1,
                     itemId: 'regcFormItemId',
                     margin: '0 0 0 0',
                     header: false,
                     region: 'west',
                     splitterResize: false,
-                    noPlugin: true,
                     listeners: {
                         afterrender: 'onRecFormIdAfterRender'
                     }

@@ -110,7 +110,7 @@ Ext.define('MyApp.model.RegcModel', {
         },
         {
             type: 'boolean',
-            name: '            active'
+            name: 'active'
         },
         {
             name: 'regcFormule'

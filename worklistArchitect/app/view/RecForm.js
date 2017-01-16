@@ -56,11 +56,10 @@ Ext.define('MyApp.view.RecForm', {
                     margin: '0 2 2 0',
                     fieldLabel: 'Organisme AMC',
                     labelAlign: 'top',
-                    name: 'amcId',
+                    name: 'mutuelleId',
                     emptyText: 'Organisme AMC',
                     selectOnFocus: true,
                     displayField: 'mutuelleName',
-                    forceSelection: true,
                     queryMode: 'local',
                     valueField: 'mutuelleId',
                     bind: {
