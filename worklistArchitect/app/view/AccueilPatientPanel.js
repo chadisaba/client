@@ -101,7 +101,9 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     listeners: {
                         afterrender: 'onVisitFormIdAfterRender',
                         studyVisitGridEndEditEvent: 'onVisitFormIdStudyVisitGridEndEditEvent',
-                        StudyVisitGridStartEditEvent: 'onVisitFormIdStudyVisitGridStartEditEvent'
+                        StudyVisitGridStartEditEvent: 'onVisitFormIdStudyVisitGridStartEditEvent',
+                        tpAmoChangeEvent: 'onVisitFormIdTpAmoChangeEvent',
+                        tpAmcChangeEvent: 'onVisitFormIdTpAmcChangeEvent'
                     }
                 },
                 {
@@ -115,7 +117,8 @@ Ext.define('MyApp.view.AccueilPatientPanel', {
                     region: 'west',
                     splitterResize: false,
                     listeners: {
-                        afterrender: 'onAmoFormItemIdAfterRender'
+                        afterrender: 'onAmoFormItemIdAfterRender',
+                        pecChangeEvent: 'onAmoFormItemIdPecChangeEvent'
                     }
                 },
                 {

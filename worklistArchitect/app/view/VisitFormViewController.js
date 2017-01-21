@@ -45,6 +45,14 @@ Ext.define('MyApp.view.VisitFormViewController', {
 
     },
 
+    onVisitIsAmoCbChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
+    onVisitIsAmcCbChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     onVisitIsHospitalizedCbItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

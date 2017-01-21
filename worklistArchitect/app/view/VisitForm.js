@@ -80,16 +80,24 @@ Ext.define('MyApp.view.VisitForm', {
                                 {
                                     xtype: 'checkboxfield',
                                     flex: 1,
+                                    itemId: 'visitIsAmoCb',
                                     fieldLabel: '',
                                     name: 'visitIsAmo',
-                                    boxLabel: 'AMO'
+                                    boxLabel: 'AMO',
+                                    listeners: {
+                                        change: 'onVisitIsAmoCbChange'
+                                    }
                                 },
                                 {
                                     xtype: 'checkboxfield',
                                     flex: 1,
+                                    itemId: 'visitIsAmcCb',
                                     fieldLabel: '',
                                     name: 'visitIsAmc',
-                                    boxLabel: 'AMC'
+                                    boxLabel: 'AMC',
+                                    listeners: {
+                                        change: 'onVisitIsAmcCbChange'
+                                    }
                                 }
                             ]
                         },

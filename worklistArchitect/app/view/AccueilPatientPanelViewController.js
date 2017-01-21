@@ -41,11 +41,23 @@ Ext.define('MyApp.view.AccueilPatientPanelViewController', {
 
     },
 
+    onVisitFormIdTpAmoChangeEvent: function(form) {
+
+    },
+
+    onVisitFormIdTpAmcChangeEvent: function(form) {
+
+    },
+
     onSaveVisitBtnClick: function(button, e, eOpts) {
 
     },
 
     onAmoFormItemIdAfterRender: function(component, eOpts) {
+
+    },
+
+    onAmoFormItemIdPecChangeEvent: function(form, pecObject, isTpAmo, isTpAmc) {
 
     },
 

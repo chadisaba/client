@@ -262,6 +262,7 @@
                                     "userConfig": {
                                         "boxLabel": "AMO",
                                         "fieldLabel": "",
+                                        "itemId": "visitIsAmoCb",
                                         "labelWidth": null,
                                         "layout|flex": 1,
                                         "margin": null,
@@ -273,10 +274,33 @@
                                         "labelWidth": "number",
                                         "layout|flex": "number",
                                         "name": "string",
-                                        "margin": "auto"
+                                        "margin": "auto",
+                                        "itemId": "string"
                                     },
                                     "name": "MyvisitIsAmoCheckBox",
-                                    "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1"
+                                    "designerId": "18daa4ea-fc92-459f-b1ff-6fb24ebe30e1",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVisitIsAmoCbChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onVisitIsAmoCbChange",
+                                            "designerId": "07692fb8-04ec-4dad-ae3d-26f703659bb6"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -288,6 +312,7 @@
                                     "userConfig": {
                                         "boxLabel": "AMC",
                                         "fieldLabel": "",
+                                        "itemId": "visitIsAmcCb",
                                         "labelWidth": null,
                                         "layout|flex": 1,
                                         "name": "visitIsAmc"
@@ -297,10 +322,33 @@
                                         "fieldLabel": "string",
                                         "labelWidth": "number",
                                         "layout|flex": "number",
-                                        "name": "string"
+                                        "name": "string",
+                                        "itemId": "string"
                                     },
                                     "name": "MyvisitIsAmcCheckBox",
-                                    "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b"
+                                    "designerId": "e7d7c7c1-6bfb-41a2-885a-8293fab8c93b",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVisitIsAmcCbChange",
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onVisitIsAmcCbChange",
+                                            "designerId": "ff1fa178-be7c-44f9-a154-d97952d76bab"
+                                        }
+                                    ]
                                 }
                             ]
                         },

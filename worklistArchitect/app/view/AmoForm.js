@@ -54,13 +54,15 @@ Ext.define('MyApp.view.AmoForm', {
                             fieldLabel: 'Type',
                             name: 'typeAssurance',
                             emptyText: 'Type d\'assurance',
+                            forceSelection: true,
                             queryMode: 'local',
                             valueField: 'id',
                             bind: {
                                 store: '{TypeAssStore}'
                             },
                             listeners: {
-                                change: 'onTypeAssComboChange'
+                                change: 'onTypeAssComboChange',
+                                select: 'onTypeAssComboSelect'
                             }
                         },
                         {

@@ -74,6 +74,7 @@
                             "userConfig": {
                                 "emptyText": "Type d'assurance",
                                 "fieldLabel": "Type",
+                                "forceSelection": true,
                                 "itemId": "typeAssCombo",
                                 "layout|anchor": "100%",
                                 "margin": "0 2 2 0",
@@ -93,7 +94,8 @@
                                 "queryMode": "string",
                                 "valueField": "datafield",
                                 "emptyText": "string",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "forceSelection": "boolean"
                             },
                             "name": "MyComboBox2",
                             "designerId": "570f103b-fe26-43c1-b1a7-1f76baa957ee",
@@ -117,6 +119,26 @@
                                     },
                                     "name": "onTypeAssComboChange",
                                     "designerId": "c2699ad2-619a-43e8-b092-23159340b83d"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTypeAssComboSelect",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTypeAssComboSelect",
+                                    "designerId": "f3d667e7-223c-4f10-9b4e-cd10cd4675c5"
                                 }
                             ]
                         },

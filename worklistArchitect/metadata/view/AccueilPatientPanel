@@ -325,6 +325,54 @@
                             },
                             "name": "onVisitFormIdStudyVisitGridStartEditEvent",
                             "designerId": "f3e2f06a-bd45-4248-bec0-157a497c3a6f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "form"
+                                ],
+                                "fn": "onVisitFormIdTpAmoChangeEvent",
+                                "name": "tpAmoChangeEvent",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onVisitFormIdTpAmoChangeEvent",
+                            "designerId": "da348f33-ca8c-47a7-aef4-0f6a23b7106e"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "form"
+                                ],
+                                "fn": "onVisitFormIdTpAmcChangeEvent",
+                                "name": "tpAmcChangeEvent",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onVisitFormIdTpAmcChangeEvent",
+                            "designerId": "38faaa99-da1e-4d4a-b5ea-7c1ae0b03e64"
                         }
                     ]
                 },
@@ -487,6 +535,33 @@
                             },
                             "name": "onAmoFormItemIdAfterRender",
                             "designerId": "8a1af017-3fef-42f6-8a91-660dc827284f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "form",
+                                    "pecObject",
+                                    "isTpAmo",
+                                    "isTpAmc"
+                                ],
+                                "fn": "onAmoFormItemIdPecChangeEvent",
+                                "name": "pecChangeEvent",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onAmoFormItemIdPecChangeEvent",
+                            "designerId": "b8c45879-92b3-4780-9564-23dbfaf8f2aa"
                         }
                     ]
                 },
