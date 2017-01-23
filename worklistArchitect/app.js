@@ -86,7 +86,8 @@ Ext.application({
         'VisitRefPhGrid',
         'AccueilPatientPanel',
         'AmoForm',
-        'RecForm'
+        'RecForm',
+        'PatientSearchCreteriaForm'
     ],
     controllers: [
         'MainController'

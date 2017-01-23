@@ -93,10 +93,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Historique patients"
+                "itemId": "patientSearchItemId",
+                "title": "Annuaire patient"
             },
             "configAlternates": {
-                "title": "string"
+                "title": "string",
+                "itemId": "string"
             },
             "name": "patientdetailsearchform",
             "designerId": "167a698f-bf44-4680-b373-679970d58f21",
@@ -111,6 +113,37 @@
                     "codeClass": null,
                     "name": "TabConfig7",
                     "designerId": "c104bb06-24db-4f39-b900-122814227dcd"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "patientHprimItemId",
+                "title": "Accueil Hprim"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "patientdetailsearchform1",
+            "designerId": "0cee123d-bdf5-49ef-896b-ee88986f9c28",
+            "masterInstanceId": "af6447b8-8c41-4643-a8f8-mx7brpkahtq7",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "582a14ee-c83b-490a-a251-58b4b359db75"
                 }
             ]
         }

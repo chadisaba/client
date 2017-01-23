@@ -73,7 +73,8 @@
             "VisitRefPhGrid",
             "AccueilPatientPanel",
             "AmoForm",
-            "RecForm"
+            "RecForm",
+            "PatientSearchCreteriaForm"
         ]
     },
     "configAlternates": {

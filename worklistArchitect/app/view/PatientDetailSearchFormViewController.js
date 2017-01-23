@@ -21,27 +21,7 @@ Ext.define('MyApp.view.PatientDetailSearchFormViewController', {
         'MyApp.view.override.PatientDetailSearchFormViewController'
     ],
 
-    onTextfieldSpecialkey: function(field, e, eOpts) {
-
-    },
-
-    onTextfieldSpecialkey: function(field, e, eOpts) {
-
-    },
-
-    onDatefieldSpecialkey: function(field, e, eOpts) {
-
-    },
-
-    onTextfieldSpecialkey: function(field, e, eOpts) {
-
-    },
-
-    onTextfieldSpecialkey: function(field, e, eOpts) {
-
-    },
-
-    onPatientSearchBtnItemIdClick: function(button, e, eOpts) {
+    onFormPatientSearchEvent: function(form, mainFiltersArray) {
 
     },
 

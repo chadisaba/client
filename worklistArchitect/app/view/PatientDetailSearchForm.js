@@ -20,22 +20,22 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
     requires: [
         'MyApp.view.PatientDetailSearchFormViewModel',
         'MyApp.view.PatientDetailSearchFormViewController',
-        'Ext.form.FieldSet',
-        'Ext.toolbar.Spacer',
-        'Ext.form.field.Date',
-        'Ext.button.Button',
+        'MyApp.view.PatientSearchCreteriaForm',
+        'Ext.form.Panel',
         'Ext.grid.Panel',
         'Ext.view.Table',
         'Ext.grid.column.Template',
         'Ext.XTemplate',
-        'Ext.toolbar.Toolbar'
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Button',
+        'Ext.toolbar.Spacer'
     ],
 
     controller: 'patientdetailsearchform',
     viewModel: {
         type: 'patientdetailsearchform'
     },
-    itemId: 'patientDetailSearchFormId',
+    itemId: 'patientDetailSearchFormId1',
     bodyPadding: 10,
     header: false,
     title: 'Recherche patient',
@@ -46,120 +46,11 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
     },
     items: [
         {
-            xtype: 'fieldset',
-            collapsible: true,
-            title: 'Cliquer sur la touche "Entrée" pour lancer la recherche',
-            items: [
-                {
-                    xtype: 'container',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'textfield',
-                            flex: 1,
-                            fieldLabel: '',
-                            name: 'patientLName',
-                            emptyText: 'Nom',
-                            listeners: {
-                                specialkey: 'onTextfieldSpecialkey'
-                            }
-                        },
-                        {
-                            xtype: 'tbspacer',
-                            width: 10
-                        },
-                        {
-                            xtype: 'textfield',
-                            flex: 1,
-                            fieldLabel: '',
-                            name: 'patientFname',
-                            emptyText: 'Prenom',
-                            listeners: {
-                                specialkey: 'onTextfieldSpecialkey'
-                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: 'tbspacer',
-                    height: 5
-                },
-                {
-                    xtype: 'container',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'datefield',
-                            flex: 1,
-                            fieldLabel: '',
-                            name: 'patientBirthday',
-                            emptyText: 'Date de naissance',
-                            format: 'd/m/Y',
-                            submitFormat: 'Y-m-d',
-                            listeners: {
-                                specialkey: 'onDatefieldSpecialkey'
-                            }
-                        },
-                        {
-                            xtype: 'tbspacer',
-                            width: 10
-                        },
-                        {
-                            xtype: 'textfield',
-                            flex: 1,
-                            fieldLabel: '',
-                            name: 'patientSocialNumber',
-                            emptyText: 'Numéro s.s',
-                            listeners: {
-                                specialkey: 'onTextfieldSpecialkey'
-                            }
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 50,
-                            fieldLabel: '',
-                            name: 'patientSocialKey',
-                            emptyText: 'Clé',
-                            listeners: {
-                                specialkey: 'onTextfieldSpecialkey'
-                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: 'tbspacer',
-                    height: 10
-                },
-                {
-                    xtype: 'container',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'tbspacer',
-                            flex: 1
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'patientSearchBtnItemId',
-                            icon: '',
-                            iconCls: 'fa fa-search',
-                            text: 'Rechercher',
-                            listeners: {
-                                click: 'onPatientSearchBtnItemIdClick'
-                            }
-                        }
-                    ]
-                }
-            ]
+            xtype: 'patientsearchcreteriaform',
+            header: false,
+            listeners: {
+                patientSearchEvent: 'onFormPatientSearchEvent'
+            }
         },
         {
             xtype: 'gridpanel',

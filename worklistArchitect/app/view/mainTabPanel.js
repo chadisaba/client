@@ -44,7 +44,13 @@ Ext.define('MyApp.view.mainTabPanel', {
         },
         {
             xtype: 'patientdetailsearchform',
-            title: 'Historique patients'
+            itemId: 'patientSearchItemId',
+            title: 'Annuaire patient'
+        },
+        {
+            xtype: 'patientdetailsearchform',
+            itemId: 'patientHprimItemId',
+            title: 'Accueil Hprim'
         }
     ]
 
