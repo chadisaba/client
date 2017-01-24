@@ -1,0 +1,121 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patienthprimpanel",
+        "designer|userClassName": "PatientHprimPanel",
+        "height": null,
+        "layout": "border",
+        "title": "My Panel",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel1",
+    "designerId": "d3494659-eb59-4c3e-8581-00ebe9796983",
+    "viewControllerInstanceId": "9bf91f4a-db9d-491f-820e-606c35111a2b",
+    "viewModelInstanceId": "44101d99-093e-4562-aca1-b99a20a3bc5d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "header": false,
+                "itemId": "patientSearchForm",
+                "layout|region": "north"
+            },
+            "configAlternates": {
+                "header": "boolean",
+                "itemId": "string",
+                "layout|region": "string"
+            },
+            "name": "patientsearchcreteriaform1",
+            "designerId": "be2c3572-5124-4179-9deb-2ee7af391032",
+            "masterInstanceId": "bc11f91b-6034-4e94-bd20-661e07b8c70a",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form",
+                            "mainFiltersArray"
+                        ],
+                        "fn": "onFormPatientSearchEvent",
+                        "name": "patientSearchEvent",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFormPatientSearchEvent",
+                    "designerId": "2e075d7b-4978-4857-a398-12ea6cbae043"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFormPatientSearchBoxReady",
+                        "name": "boxready",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFormPatientSearchBoxReady",
+                    "designerId": "72bc0198-a5af-460c-8212-07f9c298a7b3"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": null,
+                "itemId": "patientSearchGrid",
+                "layout|region": "center",
+                "width": 150
+            },
+            "configAlternates": {
+                "flex": "number",
+                "itemId": "string",
+                "layout|region": "string",
+                "width": "auto"
+            },
+            "name": "patientsearchgridpanel",
+            "designerId": "8eea1d8a-2fed-4571-b969-685cdf77d199",
+            "masterInstanceId": "c0db9c90-6522-4027-8666-7011d3542324"
+        }
+    ]
+}

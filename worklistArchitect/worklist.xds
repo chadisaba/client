@@ -28,8 +28,8 @@
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
         "sdkPath": ""
     },
-    "xdsVersion": "4.1.0",
-    "xdsBuild": 91,
+    "xdsVersion": "4.1.1",
+    "xdsBuild": 123,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -121,7 +121,13 @@
             "667ca9a8-cb97-41c0-86fb-3baacf4b4b21",
             "bc11f91b-6034-4e94-bd20-661e07b8c70a",
             "00e04b82-a9f0-4c5c-a24f-50ea8ab8aef1",
-            "e4400638-975c-481a-9a93-3100f379e05d"
+            "e4400638-975c-481a-9a93-3100f379e05d",
+            "c0db9c90-6522-4027-8666-7011d3542324",
+            "9fef07f9-2bb7-463f-9ccd-9908c8dc7d92",
+            "c621a96d-0d3d-4be8-a050-7f2bb7ab791a",
+            "d3494659-eb59-4c3e-8581-00ebe9796983",
+            "44101d99-093e-4562-aca1-b99a20a3bc5d",
+            "9bf91f4a-db9d-491f-820e-606c35111a2b"
         ],
         "store": [],
         "controller": [

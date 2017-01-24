@@ -124,16 +124,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "patientHprimItemId",
-                "title": "Accueil Hprim"
+                "title": "Accueil Hospitalisés"
             },
             "configAlternates": {
-                "itemId": "string",
                 "title": "string"
             },
-            "name": "patientdetailsearchform1",
-            "designerId": "0cee123d-bdf5-49ef-896b-ee88986f9c28",
-            "masterInstanceId": "af6447b8-8c41-4643-a8f8-mx7brpkahtq7",
+            "name": "patienthprimpanel",
+            "designerId": "e6dce312-2cfc-445a-9b1a-d3602f2aa29c",
+            "masterInstanceId": "d3494659-eb59-4c3e-8581-00ebe9796983",
             "cn": [
                 {
                     "type": "Ext.tab.Tab",
@@ -143,7 +141,7 @@
                     },
                     "codeClass": null,
                     "name": "TabConfig",
-                    "designerId": "582a14ee-c83b-490a-a251-58b4b359db75"
+                    "designerId": "3d25211a-4cf0-479f-99ce-2f5a06288666"
                 }
             ]
         }

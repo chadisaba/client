@@ -13,25 +13,5 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "0f511f8c-8a5d-4154-8917-67bmi9nxs1ms",
-    "cn": [
-        {
-            "type": "Ext.data.Store",
-            "reference": {
-                "name": "stores",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "model": "PatientSearchDetailModel",
-                "name": "PatientSearchDetailStore"
-            },
-            "configAlternates": {
-                "model": "model",
-                "name": "string"
-            },
-            "name": "MyStore1",
-            "designerId": "8000e35c-8a98-4d2d-8975-1a02bf77c96a"
-        }
-    ]
+    "designerId": "0f511f8c-8a5d-4154-8917-67bmi9nxs1ms"
 }

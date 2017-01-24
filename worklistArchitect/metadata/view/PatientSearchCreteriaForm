@@ -395,7 +395,7 @@
                         "emptyText": "Numéro de séjour",
                         "fieldLabel": "",
                         "margin": "5 0 0 0 0",
-                        "name": "patientNmSejour"
+                        "name": "patientVisitNumber"
                     },
                     "configAlternates": {
                         "emptyText": "string",
@@ -405,29 +405,7 @@
                         "margin": "auto"
                     },
                     "name": "MypatientSocialNumberTextField1",
-                    "designerId": "f91e1cb4-ac98-4b8b-b2e6-c6015c0ca833",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onTextfieldSpecialkey1",
-                                "name": "specialkey",
-                                "scope": "me"
-                            },
-                            "configAlternates": {
-                                "fn": "string",
-                                "name": "string",
-                                "scope": "string"
-                            },
-                            "name": "onTextfieldSpecialkey1",
-                            "designerId": "7ded6c6f-b98c-4145-a67c-62b09cb0553c"
-                        }
-                    ]
+                    "designerId": "f91e1cb4-ac98-4b8b-b2e6-c6015c0ca833"
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -441,7 +419,7 @@
                         "fieldLabel": "",
                         "layout|anchor": "100%",
                         "margin": "5 0 0 0",
-                        "name": "etablissement",
+                        "name": "establishmentId",
                         "queryMode": "local"
                     },
                     "configAlternates": {
@@ -538,6 +516,26 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onFormBoxReady",
+            "designerId": "0da758a8-e1aa-4317-b910-b979b54088c8"
         }
     ]
 }
