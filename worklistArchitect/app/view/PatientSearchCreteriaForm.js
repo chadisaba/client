@@ -140,7 +140,12 @@ Ext.define('MyApp.view.PatientSearchCreteriaForm', {
                     fieldLabel: '',
                     name: 'establishmentId',
                     emptyText: 'Etablissement emetteur',
-                    queryMode: 'local'
+                    displayField: 'establishmentCode',
+                    queryMode: 'local',
+                    valueField: 'establishmentId',
+                    bind: {
+                        store: '{EtablissementsHprimStore}'
+                    }
                 },
                 {
                     xtype: 'container',
