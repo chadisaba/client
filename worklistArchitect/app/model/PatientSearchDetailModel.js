@@ -35,32 +35,33 @@ Ext.define('MyApp.model.PatientSearchDetailModel', {
             name: 'patientLName'
         },
         {
+            name: 'patientHl7LName'
+        },
+        {
             name: 'patientFname'
+        },
+        {
+            name: 'patientHl7Fname'
         },
         {
             type: 'date',
             name: 'patientBirthday'
         },
         {
+            type: 'date',
+            name: 'patientHl7Birthday'
+        },
+        {
             name: 'patientSocialNumber'
+        },
+        {
+            name: 'patientHl7SocialNumber'
         },
         {
             name: 'patientSocialKey'
         },
         {
-            name: 'toDelete'
-        },
-        {
-            name: 'added'
-        },
-        {
-            name: 'modified'
-        },
-        {
-            name: 'notValid'
-        },
-        {
-            name: 'addedAndValidated'
+            name: 'patientHl7SocialKey'
         }
     ]
 });

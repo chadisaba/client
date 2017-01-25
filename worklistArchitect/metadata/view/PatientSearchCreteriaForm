@@ -415,12 +415,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "displayField": "establishmentCode",
                         "emptyText": "Etablissement emetteur",
                         "fieldLabel": "",
                         "layout|anchor": "100%",
                         "margin": "5 0 0 0",
                         "name": "establishmentId",
-                        "queryMode": "local"
+                        "queryMode": "local",
+                        "store": [
+                            "{EtablissementsHprimStore}"
+                        ],
+                        "valueField": "establishmentId"
                     },
                     "configAlternates": {
                         "emptyText": "string",
@@ -428,7 +433,10 @@
                         "layout|anchor": "string",
                         "margin": "auto",
                         "name": "string",
-                        "queryMode": "string"
+                        "queryMode": "string",
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "valueField": "datafield"
                     },
                     "name": "MyComboBox4",
                     "designerId": "5227ae2f-fdb3-478f-829d-ebeb6e72810c"

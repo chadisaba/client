@@ -51,8 +51,8 @@ Ext.define('MyApp.view.PatientDetailSearchForm', {
         },
         {
             xtype: 'patientsearchgridpanel',
-            flex: 1,
-            itemId: 'patientSearchGrid'
+            itemId: 'patientSearchGrid',
+            flex: 1
         }
     ],
     listeners: {

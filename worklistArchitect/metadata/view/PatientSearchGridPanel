@@ -55,53 +55,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "patientLName",
-                "flex": 1,
-                "text": "Résultats de la recherche"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "flex": "number",
-                "text": "string"
-            },
-            "name": "MyTemplateColumn",
-            "designerId": "3c5bc837-c1a6-466d-a0c7-a0a5c06ff9e6",
-            "cn": [
-                {
-                    "type": "Ext.XTemplate",
-                    "reference": {
-                        "name": "tpl",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "tpl",
-                        "implHandler": [
-                            "<img src=\"../Common/resources/images/{patientGender}.png\"/>  ",
-                            "                                <span style=\"font-weight:bold\"> {patientLName} {patientFname}",
-                            "                                {[Ext.Date.format(values.patientBirthday, \"d/m/Y\")]}",
-                            "</span><br />Adresse : {patientAddress}<br/>{patientZipCode} {cityName}",
-                            "  "
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|displayName": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "tpl",
-                    "designerId": "96c40b3a-bff0-46d9-a5b9-5d51f8e34b4e"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Template",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "patientLName",
+                "dataIndex": "patientHl7LName",
                 "flex": 1,
                 "text": "Résultats de la recherche"
             },

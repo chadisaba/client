@@ -47,26 +47,13 @@ Ext.define('MyApp.view.PatientSearchGridPanel', {
             xtype: 'templatecolumn',
             flex: 1,
             tpl: [
-                '<img src="../Common/resources/images/{patientGender}.png"/>  ',
-                '                                <span style="font-weight:bold"> {patientLName} {patientFname}',
-                '                                {[Ext.Date.format(values.patientBirthday, "d/m/Y")]}',
-                '</span><br />Adresse : {patientAddress}<br/>{patientZipCode} {cityName}',
-                '  '
-            ],
-            dataIndex: 'patientLName',
-            text: 'Résultats de la recherche'
-        },
-        {
-            xtype: 'templatecolumn',
-            flex: 1,
-            tpl: [
                 '<img src="../Common/resources/images/{patientHl7Gender}.png"/>  ',
                 '                                <span style="font-weight:bold"> {patientHl7LName} {patientHl7Fname}',
                 '                                {[Ext.Date.format(values.patientHl7Birthday, "d/m/Y")]}',
                 '</span><br />Adresse : {patientHl7Address}<br/>{patientHl7ZipCode} {patientHl7cityName}',
                 '  '
             ],
-            dataIndex: 'patientLName',
+            dataIndex: 'patientHl7LName',
             text: 'Résultats de la recherche'
         }
     ],

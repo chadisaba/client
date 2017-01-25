@@ -117,7 +117,7 @@
                 "itemId": "string",
                 "layout|flex": "number"
             },
-            "name": "PatientSearchGridPanel",
+            "name": "patientsearchgridpanel",
             "designerId": "13a695cc-1564-41d5-9c1d-7e761078916d",
             "masterInstanceId": "c0db9c90-6522-4027-8666-7011d3542324"
         },
