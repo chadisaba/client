@@ -27,6 +27,10 @@ Ext.define('MyApp.view.PatientHprimPanelViewController', {
 
     onFormPatientSearchBoxReady: function(component, width, height, eOpts) {
 
+    },
+
+    onGridpanelBoxReady: function(component, width, height, eOpts) {
+
     }
 
 });

@@ -48,7 +48,10 @@ Ext.define('MyApp.view.PatientHprimPanel', {
             xtype: 'patientsearchgridpanel',
             itemId: 'patientSearchGrid',
             width: 150,
-            region: 'center'
+            region: 'center',
+            listeners: {
+                boxready: 'onGridpanelBoxReady'
+            }
         }
     ]
 

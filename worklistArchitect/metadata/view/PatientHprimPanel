@@ -115,7 +115,29 @@
             },
             "name": "patientsearchgridpanel",
             "designerId": "8eea1d8a-2fed-4571-b969-685cdf77d199",
-            "masterInstanceId": "c0db9c90-6522-4027-8666-7011d3542324"
+            "masterInstanceId": "c0db9c90-6522-4027-8666-7011d3542324",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelBoxReady",
+                        "name": "boxready",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelBoxReady",
+                    "designerId": "769dde4e-6652-4638-a2c0-46ea745487d8"
+                }
+            ]
         }
     ]
 }
