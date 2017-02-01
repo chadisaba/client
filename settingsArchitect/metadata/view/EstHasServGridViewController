@@ -9,5 +9,9 @@
         "designer|userAlias": "esthasservgrid",
         "designer|userClassName": "EstHasServGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "08bdaebf-ca9c-4c40-8f6c-933afe04f9c2"
 }

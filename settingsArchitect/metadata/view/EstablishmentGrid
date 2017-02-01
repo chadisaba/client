@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "359fa9f9-bb12-4582-b6d9-b30be5d4b96c",
     "viewControllerInstanceId": "2fed9375-620d-4a0f-80b8-cb625e624ea6",
     "viewModelInstanceId": "82399751-ef66-4166-ae95-7dff2509f02d",
@@ -38,6 +45,10 @@
                 "dataIndex": "cityId",
                 "text": "cityId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MycityIdCol",
             "designerId": "886c6371-bacc-449c-ae7f-756d0e0c298a",
             "cn": [
@@ -50,6 +61,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "cityIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MycityIdTextField",
                     "designerId": "087db929-1bcc-4d24-9ef7-9cf20e068526"
@@ -66,6 +80,10 @@
             "userConfig": {
                 "dataIndex": "city",
                 "text": "city"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MycityCol",
             "designerId": "8c7fa7b8-b0ab-4644-abf0-1d9748c5cce9",
@@ -89,10 +107,17 @@
                         ],
                         "valueField": null
                     },
-                    "name": "MycityComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MycityComboBox",
                     "designerId": "8f3efc95-afdb-4fb4-9f4f-b5eac3bdebe2",
                     "cn": [
                         {
@@ -106,6 +131,11 @@
                                 "fn": "onCityComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onCityComboBoxEditorItemIdSelect",
                             "designerId": "929bf33f-47cd-492a-8cc4-c9ee3e012839"
@@ -125,6 +155,10 @@
                 "dataIndex": "establishmentCode",
                 "text": "code"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentCodeCol",
             "designerId": "48ab4a86-9765-4192-806b-3c30ef0e649e",
             "cn": [
@@ -138,6 +172,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "establishmentCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentCodeTextField",
                     "designerId": "c65f71df-f4f9-4f53-b3cd-c87814b5e285"
@@ -155,6 +193,10 @@
                 "dataIndex": "establishmentName",
                 "text": "name"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentNameCol",
             "designerId": "c614dede-f7b7-4490-903d-233ffd7fb516",
             "cn": [
@@ -168,6 +210,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "establishmentNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentNameTextField",
                     "designerId": "581e5419-f8c9-4e77-a465-cfb5a364f14f"
@@ -185,6 +231,10 @@
                 "dataIndex": "establishmentZipCode",
                 "text": "zip code"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentZipCodeCol",
             "designerId": "788d0be6-1ad2-45a0-9a77-fb30e4ed5cd4",
             "cn": [
@@ -198,6 +248,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "establishmentZipCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentZipCodeTextField",
                     "designerId": "8a4a87b1-ab82-49bd-b3c9-562079aad18f"
@@ -215,6 +269,10 @@
                 "dataIndex": "establishmentAddress",
                 "text": "address"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentAddressCol",
             "designerId": "678f4ef5-3774-4676-a9a5-fae16315308f",
             "cn": [
@@ -227,6 +285,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "establishmentAddressTextTextAreaItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentAddressTextArea",
                     "designerId": "e1f01b9b-3472-4bf9-a1d6-2355e80bb4f2"
@@ -244,6 +305,10 @@
                 "dataIndex": "establishmentPhoneNumber",
                 "text": "phone"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentPhoneNumberCol",
             "designerId": "e9ebda59-4d6c-4607-81a8-6a56be640255",
             "cn": [
@@ -256,6 +321,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "establishmentPhoneNumberTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentPhoneNumberTextField",
                     "designerId": "60dd3100-5ee1-4ab5-8b7f-ec51b114f610"
@@ -273,6 +341,10 @@
                 "dataIndex": "establishmentFaxNumber",
                 "text": "fax"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentFaxNumberCol",
             "designerId": "6718518c-112f-43e5-87a3-70d9925c9907",
             "cn": [
@@ -285,6 +357,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "establishmentFaxNumberTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentFaxNumberTextField",
                     "designerId": "2b88ea94-837b-4342-9ac5-4ace0a9d41d1"
@@ -302,6 +377,10 @@
                 "dataIndex": "establishmentEmail",
                 "text": "email"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyestablishmentEmailCol",
             "designerId": "4ab62150-07f8-4fef-8065-a564b6c342c9",
             "cn": [
@@ -314,6 +393,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "establishmentEmailTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyestablishmentEmailTextField",
                     "designerId": "b91d7208-9cc8-4f7d-b18c-bbb5c92642bf"
@@ -349,6 +431,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "73c9b6ff-1ed1-4dd1-a886-edda78815718"
         },
@@ -364,6 +452,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "33cd6f66-8872-41b2-9978-eea05129b1bb"
@@ -385,6 +479,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processEstablishmentGrid",
             "designerId": "b15257ed-a59a-4fe8-99c1-6d794a670322"
         },
@@ -402,6 +501,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdChHist",
             "designerId": "0f7b9aba-ecd6-4198-8152-f65251351c09"
@@ -422,6 +527,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdAfterRender",
             "designerId": "09cacd7f-d0d7-44e1-89a4-f72bf34898ba"
         },
@@ -441,6 +552,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdInEdit",
             "designerId": "6af09964-26c4-44c2-be8d-945cdec2468a"
         },
@@ -459,6 +576,12 @@
                 "fn": "onEstablishmentGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdResetEdit",
             "designerId": "ede8985e-6abe-461c-97f6-f65f16482755"
@@ -480,6 +603,12 @@
                 "fn": "onEstablishmentGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdSaveEdit",
             "designerId": "36f19689-bad2-4400-9308-497f2379ca81"
@@ -503,6 +632,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdAddItem",
             "designerId": "7f2d0502-9374-4f02-9525-9aa8b864e380"
         },
@@ -518,6 +654,11 @@
                 "name": "deleteItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdDeleteItem",
             "designerId": "ed35be5a-df77-4682-ab22-025f30fb3900"
         },
@@ -532,6 +673,11 @@
                 "fn": "onEstablishmentGridIdDuplicateItem",
                 "name": "duplicateItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdDuplicateItem",
             "designerId": "4c36c4a7-eef1-4d8f-a36f-2966a7d21c2b"
@@ -550,6 +696,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdModifyItem",
             "designerId": "4645593c-d73a-4be7-8c69-1450ef7e4bdd"
@@ -573,6 +725,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdQuitEdit",
             "designerId": "b5d86e86-cde9-4793-b947-9e66a3e48bd0"
         },
@@ -585,6 +744,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "0d651589-80b0-4c30-bc48-6ecd29802b33"
@@ -605,6 +767,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdBeforeEdit",
             "designerId": "3f855c2e-f4b8-4a5f-992b-8bc9fe71d67b"
         },
@@ -624,6 +792,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdCanceledit",
             "designerId": "223c835d-1061-4cba-b1a1-8c227eb4730d"
         },
@@ -638,6 +812,11 @@
                 "fn": "onEstablishmentGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdContainerClick",
             "designerId": "1bf48705-0f04-42d6-a9e8-873d596a06a5"
@@ -658,6 +837,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentGridIdEdit",
             "designerId": "d1ac08eb-1acc-4560-bbf4-8c6743ed8594"
         },
@@ -672,6 +857,11 @@
                 "fn": "onEstablishmentGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdBeforeCellClick",
             "designerId": "$96af6279-9089-484f-b7fc-0db2c8bcbfe0"
@@ -691,6 +881,12 @@
                 "fn": "onEstablishmentGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentGridIdValidateedit",
             "designerId": "a5017c9f-3339-413a-bfe0-ca693298fce7"

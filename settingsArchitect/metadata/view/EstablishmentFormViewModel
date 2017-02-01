@@ -9,6 +9,10 @@
         "designer|userAlias": "establishmentform",
         "designer|userClassName": "EstablishmentFormViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "065790c0-6151-4298-abe8-42e8a067b546",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "CityNameComboModel",
                 "name": "CityComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "CityComboStore",
             "designerId": "de2febf2-aaa2-4c96-ba56-7ae501202b02"

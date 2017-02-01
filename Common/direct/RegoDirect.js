@@ -19,4 +19,5 @@ saveRego:function(_regoObject)
 });
 return promise;
 }
+
 };

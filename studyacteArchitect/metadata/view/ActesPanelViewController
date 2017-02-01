@@ -9,5 +9,9 @@
         "designer|userAlias": "actespanel",
         "designer|userClassName": "ActesPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "e25d1717-d758-4230-b9c8-83dbcddfaae0"
 }

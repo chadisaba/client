@@ -9,6 +9,9 @@
         "designer|userAlias": "establishmentform",
         "designer|userClassName": "EstablishmentFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "0d8269d5-5a68-4778-a645-5e6b3db1e533"
- 
 }

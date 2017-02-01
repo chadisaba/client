@@ -19,18 +19,22 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "gb5lm884-8c41-4643-a8f8-71l93wftpm8s",
     "viewControllerInstanceId": "2bhgxcxj-4ace-45f2-b4ee-9rujlv2s4v1b",
     "viewModelInstanceId": "1uymc3vu-8a5d-4154-8917-swlrprkwduf9",
     "cn": [
-  
-     
-     
-             {
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -40,11 +44,14 @@
             "userConfig": {
                 "dataIndex": "acteOtherName",
                 "text": "Name"
-        
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyacteOtherNameCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-3175bneduwqq"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-3175bneduwqq",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -53,16 +60,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "acteOtherNameTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "acteOtherNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyacteOtherNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-hjces2la2q3y"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -72,11 +82,14 @@
             "userConfig": {
                 "dataIndex": "acteOtherCode",
                 "text": "Code"
-        
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyacteOtherCodeCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-gccefik5yva5"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-gccefik5yva5",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -85,16 +98,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "acteOtherCodeTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "acteOtherCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyacteOtherCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-7298q872rpsd"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -104,11 +120,14 @@
             "userConfig": {
                 "dataIndex": "acteOtherAmount",
                 "text": "Amount"
-        
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyacteOtherAmountCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-5lv3u49gqjdv"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-5lv3u49gqjdv",
+            "cn": [
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -117,16 +136,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-        
-                         "itemId": "acteOtherAmountTextFieldItemId"
-                           ,"allowBlank": false
+                        "allowBlank": false,
+                        "itemId": "acteOtherAmountTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyacteOtherAmountTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-e7ni15yu2qd6"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -136,11 +158,14 @@
             "userConfig": {
                 "dataIndex": "acteOtherIsNgap",
                 "text": "Is NGAP"
-        
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyacteOtherIsNgapCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-f2q38e75tak6"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-f2q38e75tak6",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -148,11 +173,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MyacteOtherIsNgapCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-xr8csatjqpb2"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -174,12 +198,17 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-7g7c6hhni36a"
                 }
-            ]  },
-                   
-             {
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
@@ -189,11 +218,14 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
-        
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyactiveCol",
-            "designerId": "7c6bec59-5c6a-4872-9cec-lk82pfdkhjka"
-                 ,"cn": [
+            "designerId": "7c6bec59-5c6a-4872-9cec-lk82pfdkhjka",
+            "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
                     "reference": {
@@ -201,11 +233,10 @@
                         "type": "object"
                     },
                     "codeClass": null,
-        
                     "name": "MyactiveCheckBox",
                     "designerId": "73e1ef6a-05db-4aa6-cacc-nr83c58lmyia"
                 },
-                           {
+                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -227,11 +258,17 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-paicl4p8mqmd"
                 }
-            ]  },
-       {
+            ]
+        },
+        {
             "type": "Ext.view.Table",
             "reference": {
                 "name": "viewConfig",
@@ -241,7 +278,6 @@
             "name": "MyTable",
             "designerId": "pv97wk4p-ccc7-232C-1245-pn8naxecyk77"
         },
-        
         {
             "type": "viewcontrollereventbinding",
             "reference": {
@@ -261,6 +297,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "3kp9dspa-f393-483a-8425-ws6i4qda1r55"
         },
@@ -276,6 +318,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "1gb6rl4m-ccc7-465c-8662-v7vdh5eg1etm"
@@ -299,6 +347,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processActeOtherGrid",
             "designerId": "2xkfmmqy-2054-459b-a4aa-dqnvhv75x6wa"
         },
@@ -316,6 +369,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdChHist",
             "designerId": "1dxgayc7-1d4f-4fb9-9364-6l9dsi9hmc84"
@@ -336,6 +395,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdAfterRender",
             "designerId": "37emfuhv-1f65-4972-a6e1-v32py6f9j6k4"
         },
@@ -355,6 +420,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdInEdit",
             "designerId": "cc9kd16a-1a08-4be0-b287-6hqkxxpxi458"
         },
@@ -373,6 +444,12 @@
                 "fn": "onActeOtherGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdResetEdit",
             "designerId": "3v666ul6-2c80-456a-a5c5-exl3pv7a58qj"
@@ -394,6 +471,12 @@
                 "fn": "onActeOtherGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdSaveEdit",
             "designerId": "yu28jhbk-f0d5-4d89-a1bb-6y5uifsku5wp"
@@ -417,6 +500,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdAddItem",
             "designerId": "j6f67sxp-ffc4-4ede-a9db-ympdwj2kbv39"
         },
@@ -431,6 +521,11 @@
                 "fn": "onActeOtherGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdDeleteItem",
             "designerId": "hq11brsc-ac56-469a-895f-6f4d58xhcvsl"
@@ -449,6 +544,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdModifyItem",
             "designerId": "xjae22rh-6b6f-4377-998f-el3reu1vrrs9"
@@ -472,6 +573,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdQuitEdit",
             "designerId": "u5hcdp7c-746f-4da4-9f4d-fwd4tq6xklnx"
         },
@@ -484,6 +592,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-73bwbt2fd4hk"
@@ -504,6 +615,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdBeforeEdit",
             "designerId": "nvjir38l-4019-4a61-8c79-jtwyjet9ljh3"
         },
@@ -523,6 +640,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdCanceledit",
             "designerId": "yhnk7py4-6686-46dd-bfe7-4tusxhmjt893"
         },
@@ -537,6 +660,11 @@
                 "fn": "onActeOtherGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdContainerClick",
             "designerId": "ytjfrrs7-3079-420b-87bf-6ypwd2ri6fqb"
@@ -557,6 +685,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onActeOtherGridIdEdit",
             "designerId": "up9c984p-47bf-4b29-bb1d-8tw71jmq4l5m"
         },
@@ -571,6 +705,11 @@
                 "fn": "onActeOtherGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdBeforeCellClick",
             "designerId": "$xi3ndfp6-6a9c-488e-8122-j6ux8wnh77tm"
@@ -590,6 +729,12 @@
                 "fn": "onActeOtherGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onActeOtherGridIdValidateedit",
             "designerId": "3ce6eqqf-b2ec-4782-a56f-g2cgbucj36ag"

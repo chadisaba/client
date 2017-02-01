@@ -10,7 +10,8 @@ Ext.define('Plugins.form.ResetComboTrigger', {
         comboboxes.forEach(
             function(_combo)
         {
-            var triggers= _combo.getTriggers();
+            _combo.inputType="search";
+         /*   var triggers= _combo.getTriggers();
             triggers.clear= {
                 cls: Ext.baseCSSPrefix + 'form-clear-trigger',
                 weight: -2, // negative to place before default triggers
@@ -31,7 +32,7 @@ Ext.define('Plugins.form.ResetComboTrigger', {
                     _combo.getTrigger('clear').show();
                 else
                     _combo.getTrigger('clear').hide();
-            })
+            })*/
         });
 
 

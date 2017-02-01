@@ -22,10 +22,11 @@
         "lineEnding": "CRLF",
         "genTimestamps": false,
         "cacheBust": false,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "3.2.0",
-    "xdsBuild": 339,
+    "xdsVersion": "4.1.1",
+    "xdsBuild": 123,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -60,7 +61,7 @@
             "vfq6p39h-1d4f-4fb9-9364-pnlec12av7l9"
         ],
         "resource": [
-            "bffb51b3-5880-4871-9d0d-48adfc49c721"
+            "2761353f-256d-4702-a003-c605be5536be"
         ],
         "app": [
             "application"

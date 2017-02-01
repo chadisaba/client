@@ -12,10 +12,11 @@ Ext.define('Plugins.form.ResetTextFieldTrigger', {
             function(_textField)
             {
                 if(!_textField.noReset) {
-                    var triggers = _textField.getTriggers() || {};
+                    _textField.inputType="search";
+                  /*  var triggers = _textField.getTriggers() || {};
                     triggers.clear = {
                         cls: Ext.baseCSSPrefix + 'form-clear-trigger',
-                        weight: -2, // negative to place before default triggers
+                        weight: -1, // negative to place before default triggers
                         hidden: true,
                         handler: function () {
                             var me = this;
@@ -32,7 +33,7 @@ Ext.define('Plugins.form.ResetTextFieldTrigger', {
                             _textField.getTrigger('clear').show();
                         else
                             _textField.getTrigger('clear').hide();
-                    })
+                    })*/
                 }
             });
 

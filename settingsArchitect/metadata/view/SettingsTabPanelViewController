@@ -9,5 +9,9 @@
         "designer|userAlias": "settingstabpanel",
         "designer|userClassName": "SettingsTabPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "42e6506d-82cc-413b-980c-4c008a353b07"
 }

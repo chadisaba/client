@@ -14,6 +14,15 @@
         "title": "My Form",
         "width": 500
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "94e83516-f6e6-41e3-9bb9-8afdd1c91a5c",
     "viewControllerInstanceId": "afa7009b-999e-47d9-8537-d7eafbb891f8",
@@ -35,6 +44,11 @@
                     "FormAddPlugins.addPlugins(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processEstHasServForm",
             "designerId": "0b2b6fef-71e4-4832-b1fd-b24a6ab8302e"
         },
@@ -53,6 +67,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstHasServFormItemIdBoxReady",
             "designerId": "069e5a99-848c-4350-abe9-caa93a4a6a9f"
         },
@@ -70,6 +90,12 @@
                 "fn": "onEstHasServFormItemIdInEdit",
                 "name": "inEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstHasServFormItemIdInEdit",
             "designerId": "7a49eb2a-a30c-46eb-a995-265f6540c15b"
@@ -91,6 +117,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstHasServFormItemIdSaveEdit",
             "designerId": "$0e492017-0dbd-4644-8a80-53b94a80b97f"
         },
@@ -110,6 +142,12 @@
                 "name": "resetEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstHasServFormItemIdResetEdit",
             "designerId": "1548c138-91ea-41fe-9c23-2c76fa52aa86"
         },
@@ -127,6 +165,12 @@
                 "fn": "onEstHasServFormItemIdChHist",
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstHasServFormItemIdChHist",
             "designerId": "53ef045f-4032-4aa0-b49a-721a41f99f6c"
@@ -147,6 +191,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstHasServFormItemIdQuitEdit",
             "designerId": "0b640a8f-3e0f-43a4-85ab-466b859446ab"
         },
@@ -159,6 +209,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Service"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "MyFieldSet",
             "designerId": "e8a400a1-c553-4fab-9f26-c061cd48c7f5",
@@ -176,6 +229,12 @@
                         "layout|anchor": "100%",
                         "name": "estHasServCode"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyestHasServCodeTextField",
                     "designerId": "4af0b2db-87bc-4c2c-9e88-ca36a4cb19ca"
                 },
@@ -191,6 +250,12 @@
                         "fieldLabel": "name",
                         "layout|anchor": "100%",
                         "name": "estHasServName"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyestHasServNameTextField",
                     "designerId": "be6bea80-1426-4175-ad4e-6e1a718ccf22"

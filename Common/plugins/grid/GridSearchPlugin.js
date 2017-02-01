@@ -273,7 +273,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 			var searchGridColumns=[];
 			// creating the searchGrid Store
 			var searchGridStoreModelFields=[];
-			masterGrid.columns.forEach(
+			masterGrid.getColumns().forEach(
 				function(_column)
 				{
 					if(_column.dataIndex)
@@ -289,7 +289,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				xtype: 'rownumberer'
 			};
 			searchGridColumns.push(newColumnTemp);
-			masterGrid.columns.forEach(
+			masterGrid.getColumns().forEach(
 				function(_column)
 				{
 					if(_column.createFilter)

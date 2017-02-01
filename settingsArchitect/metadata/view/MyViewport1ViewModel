@@ -9,5 +9,9 @@
         "designer|userAlias": "myviewport1",
         "designer|userClassName": "MyViewport1ViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "e4c81814-a7a1-4d7e-953c-ca2804168436"
 }

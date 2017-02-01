@@ -9,6 +9,10 @@
         "designer|userAlias": "studyactegrid",
         "designer|userClassName": "StudyActeGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "wxfmctti-8a5d-4154-8917-kxagub8py2vg",
     "cn": [
         {
@@ -22,9 +26,12 @@
                 "model": "StudyActeModel",
                 "name": "StudyActeStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "StudyActeStore",
             "designerId": "8kvhln6y-c056-4140-9039-1qx5kmdk67v4"
         }
-        
     ]
 }

@@ -9,5 +9,9 @@
         "designer|userAlias": "establishmentgrid",
         "designer|userClassName": "EstablishmentGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "2fed9375-620d-4a0f-80b8-cb625e624ea6"
 }

@@ -25,8 +25,8 @@
         "installStatus": "Not Installed",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.0.2",
-    "xdsBuild": 209,
+    "xdsVersion": "4.1.1",
+    "xdsBuild": 123,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -71,9 +71,7 @@
             "533c44c0-8110-409f-b73d-b86305ae3c23"
         ],
         "resource": [
-            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
-            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
-            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+            "992ffc7b-6e5e-4d1e-a6d8-ae0d5a51f5ec"
         ],
         "app": [
             "application"

@@ -1,7 +1,20 @@
 var CommonDirect={
+    convertDateToString:function(_filtersArray)
+    {
+        _filtersArray.forEach(function(_filter)
+        {
+         if(_filter.value instanceof Date)
+             if(_filter.isTime)
+                _filter.value=Ext.Date.format(_filter.value,'Y-m-d H:i:s');
+            else
+                 _filter.value=Ext.Date.format(_filter.value,'Y-m-d');
+        });
+        return _filtersArray;
+
+    },
     saveData:function(_dataObject,_tableName,_comment)
     {
-        var promise = new Promise(
+        return new Promise(
             function (resolve, reject) {
                 var params={};
                 params.table=_tableName;
@@ -19,7 +32,7 @@ var CommonDirect={
                     }
                 );
             });
-        return promise;
+
     },
 
     saveDataArray:function(_dataToBySaved,_tableName,_idName,_comment)
@@ -208,16 +221,23 @@ var CommonDirect={
     getData:function(_tableName,_filtersArray,_limit)
     {
         //Creating a promise
+        var me=this;
         var promise=new Promise(
+
             function(resolve, reject) {
 
                 var params;
+
+
                 params={
                     table:_tableName,
                     limit:_limit||100
                 };
                 if(_filtersArray)
-                params.filters=_filtersArray;
+                    params.filters=me.convertDateToString(_filtersArray);
+                   // _filtersArray=
+
+
                 Server.CommonQueries.read(params,
                     function(res){
                         if(res.success){
@@ -235,6 +255,7 @@ var CommonDirect={
     getDataWidthJoin:function(mainTableObject,joinTablesArray)
     {
         //Creating a promise
+        var me=this;
         var promise=new Promise(
             function(resolve, reject) {
                 var params = {
@@ -242,6 +263,17 @@ var CommonDirect={
                     joinTablesArray: joinTablesArray
 
                 };
+                if(params.mainTableObject.filters)
+                    params.mainTableObject.filters=me.convertDateToString(params.mainTableObject.filters);
+
+                joinTablesArray.forEach(function(_joinTable)
+                {
+                    if(_joinTable.filtersArray)
+                        _joinTable.filtersArray=me.convertDateToString(_joinTable.filtersArray);
+                });
+                if(params.mainTableObject.filters)
+                    params.mainTableObject.filters=me.convertDateToString(params.mainTableObject.filters);
+
                 Server.CommonQueries.readJoin(params,
                     function (res) {
                         if (res.success) {
@@ -308,7 +340,7 @@ var CommonDirect={
                     });
             }
             else{
-                var filtersArray=[{name:_searchFieldName,value:_searchValue}];
+                var filtersArray=[{name:_searchFieldName,value:_searchValue.replace('_',""),compare:'startBy'}];
               this.getData(_tableName,filtersArray)
                 .then(
                     function(_resultData)
@@ -321,7 +353,7 @@ var CommonDirect={
                             store.filter({
                                 property: _searchFieldName,
                                 anyMatch: true,
-                                value   : _searchValue
+                                value   : _searchValue.replace('_',"")
                             });
                             _field.expand();
                         }

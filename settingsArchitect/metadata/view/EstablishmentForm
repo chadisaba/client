@@ -15,6 +15,16 @@
         "title": "My Form",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "7048a089-8f9c-40ac-9154-ff9195f342ac",
     "viewControllerInstanceId": "0d8269d5-5a68-4778-a645-5e6b3db1e533",
@@ -36,6 +46,11 @@
                     "FormAddPlugins.addPlugins(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processEstablishmentForm",
             "designerId": "76c9131e-6aee-4732-b8fc-7c924b2603b7"
         },
@@ -53,6 +68,12 @@
                 "fn": "onEstablishmentFormItemIdInEdit",
                 "name": "inEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentFormItemIdInEdit",
             "designerId": "7665cdd3-6f7a-480b-866d-0e7fc6569b8d"
@@ -74,6 +95,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentFormItemIdSaveEdit",
             "designerId": "$d560bc8a-ef4f-423c-9074-5df62343273b"
         },
@@ -93,6 +120,12 @@
                 "name": "resetEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentFormItemIdResetEdit",
             "designerId": "fa9b5704-535b-4c4a-8b00-e11896fe222d"
         },
@@ -110,6 +143,12 @@
                 "fn": "onEstablishmentFormItemIdChHist",
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentFormItemIdChHist",
             "designerId": "6da0a533-8c8a-4a57-b148-c1058c9ee309"
@@ -130,6 +169,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onEstablishmentFormItemIdQuitEdit",
             "designerId": "a148d271-f881-4d4d-89d0-48b5e19457fc"
         },
@@ -142,6 +187,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Establishment informations"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "MyFieldSet",
             "designerId": "8a7a8589-9539-4218-b469-d6ad16e29c7e",
@@ -159,6 +207,12 @@
                         "layout|anchor": "100%",
                         "name": "establishmentCode"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyestablishmentCodeTextField",
                     "designerId": "e7936bee-3e55-4dd6-95e7-3e89a7215e15"
                 },
@@ -174,6 +228,12 @@
                         "fieldLabel": "name",
                         "layout|anchor": "100%",
                         "name": "establishmentName"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyestablishmentNameTextField",
                     "designerId": "f0db3863-b57e-4312-97ec-f5642fd463f6"
@@ -192,6 +252,13 @@
                         "layout|anchor": "100%",
                         "name": "establishmentZipCode"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyestablishmentZipCodeTextField",
                     "designerId": "2b928d5f-75ea-4404-9833-eb148e779910",
                     "cn": [
@@ -206,6 +273,11 @@
                                 "fn": "onZipCodeTextFieldChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onZipCodeTextFieldChange",
                             "designerId": "bc107377-dcde-499f-ab52-82d5b87068a9"
@@ -234,10 +306,20 @@
                         ],
                         "valueField": "cityId"
                     },
-                    "name": "MycityComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MycityComboBox",
                     "designerId": "2aeaeed1-6b6a-4864-a287-39992b2c455f"
                 },
                 {
@@ -251,6 +333,11 @@
                         "fieldLabel": "address",
                         "layout|anchor": "100%",
                         "name": "establishmentAddress"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyestablishmentAddressTextArea",
                     "designerId": "c1bede61-38e3-4d79-a859-c034f7de2040"
@@ -267,6 +354,11 @@
                         "layout|anchor": "100%",
                         "name": "establishmentPhoneNumber"
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyestablishmentPhoneNumberTextField",
                     "designerId": "4b835c39-cdad-4c56-9c5f-50d6e7d7b15d"
                 },
@@ -282,6 +374,11 @@
                         "layout|anchor": "100%",
                         "name": "establishmentFaxNumber"
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyestablishmentFaxNumberTextField",
                     "designerId": "7826fe53-55e7-4841-9e18-9dd5fa4c01cc"
                 },
@@ -296,6 +393,11 @@
                         "fieldLabel": "email",
                         "layout|anchor": "100%",
                         "name": "establishmentEmail"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyestablishmentEmailTextField",
                     "designerId": "46a6c67f-7f8f-4acb-b877-8d69c2235e54"
@@ -313,6 +415,11 @@
                 "fn": "onEstablishmentFormIdBoxReady",
                 "name": "boxready",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onEstablishmentFormIdBoxReady",
             "designerId": "e0b464eb-64c9-4ff9-8f4e-6fbd78d9affc"

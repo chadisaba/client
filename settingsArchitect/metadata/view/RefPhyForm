@@ -15,6 +15,16 @@
         "title": "Create Referring physician",
         "width": 500
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "bf186447-2b5b-46b9-aae1-7981efc7a6ed",
     "viewControllerInstanceId": "52c0d078-a201-4159-aa70-e2747d23e8db",
@@ -36,6 +46,11 @@
                     "FormAddPlugins.addPlugins(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processRefPhyForm",
             "designerId": "fea625b3-a6ed-46b7-a68e-cefe9cd40720"
         },
@@ -54,6 +69,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyFormItemIdAfterRender",
             "designerId": "f026e7a3-6397-4932-a6d0-ebdfb2d8f4d3"
         },
@@ -71,6 +92,12 @@
                 "fn": "onRefPhyFormItemIdInEdit",
                 "name": "inEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyFormItemIdInEdit",
             "designerId": "3eae6734-9e7c-4e23-9141-015f9a9fc9d0"
@@ -92,6 +119,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyFormItemIdSaveEdit",
             "designerId": "$e8d91879-3a9f-4455-a37e-715a377d50db"
         },
@@ -111,6 +144,12 @@
                 "name": "resetEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyFormItemIdResetEdit",
             "designerId": "4b69333a-3f23-43de-82fe-338039987ca5"
         },
@@ -128,6 +167,12 @@
                 "fn": "onRefPhyFormItemIdChHist",
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyFormItemIdChHist",
             "designerId": "8c0b4a96-6dc8-426f-8828-d5cbb2b2dc82"
@@ -148,6 +193,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyFormItemIdQuitEdit",
             "designerId": "98229c2e-6a7d-4b76-b72f-cac251275f8c"
         },
@@ -160,6 +211,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "identifying referring physician"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "MyFieldSet",
             "designerId": "a3ce07eb-f9ca-4faf-bb6e-8162ee8337f0",
@@ -177,6 +231,12 @@
                         "layout|anchor": "100%",
                         "name": "referringPhysicianFName"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyreferringPhysicianFNameTextField",
                     "designerId": "ac849ff7-3ae2-4623-bcd3-e8cc74c629e4"
                 },
@@ -192,6 +252,12 @@
                         "fieldLabel": "last name",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianLName"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyreferringPhysicianLNameTextField",
                     "designerId": "87ece4a6-792b-45d1-b3cb-18787ebf2d09"
@@ -218,10 +284,20 @@
                         ],
                         "valueField": "genderId"
                     },
-                    "name": "MyreferringPhysicianGenderComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyreferringPhysicianGenderComboBox",
                     "designerId": "45074354-89d3-4f6d-b606-b263316d031a"
                 },
                 {
@@ -246,10 +322,20 @@
                         ],
                         "valueField": "titleId"
                     },
-                    "name": "MyreferringPhysicianTitleComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyreferringPhysicianTitleComboBox",
                     "designerId": "90aa00df-bf2c-4630-b67f-1a8d8c46a92a"
                 },
                 {
@@ -263,6 +349,11 @@
                         "fieldLabel": "address",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianAddress"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyTextArea",
                     "designerId": "2a89bbcb-c15b-49ae-902c-432b46cea887"
@@ -280,6 +371,12 @@
                         "layout|anchor": "100%",
                         "name": "referringPhysicianZipCode"
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyreferringPhysicianZipCodeTextField",
                     "designerId": "bed0a39e-5345-45c4-9e90-70aa11715c08",
                     "cn": [
@@ -294,6 +391,11 @@
                                 "fn": "onRefPhyZipCodeChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onRefPhyZipCodeChange",
                             "designerId": "e1d9efc5-008c-4276-9b0b-af8775419965"
@@ -321,10 +423,19 @@
                         ],
                         "valueField": "cityId"
                     },
-                    "name": "MycityNameComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MycityNameComboBox",
                     "designerId": "7482ebb6-42a8-48c2-835e-a77d61598f6d"
                 },
                 {
@@ -338,6 +449,11 @@
                         "fieldLabel": "phone",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianPhoneNumber"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyreferringPhysicianPhoneNumberTextField",
                     "designerId": "25010c5a-4f5b-48d5-88ff-31d779f8edf4"
@@ -354,6 +470,11 @@
                         "layout|anchor": "100%",
                         "name": "referringPhysicianFaxNumber"
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
                     "name": "MyreferringPhysicianFaxNumberTextField",
                     "designerId": "96a25232-a21f-40dc-8d0e-6d5fb5937641"
                 },
@@ -368,6 +489,11 @@
                         "fieldLabel": "email",
                         "layout|anchor": "100%",
                         "name": "referringPhysicianEmail"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
                     },
                     "name": "MyreferringPhysicianEmailTextField",
                     "designerId": "ef8d2145-cd9a-4996-b959-490c08302461"
@@ -385,6 +511,11 @@
                 "fn": "onRefPhyFormIdBoxReady",
                 "name": "boxready",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyFormIdBoxReady",
             "designerId": "0b34ee10-c4fb-488e-8657-2962b7e72cc0"

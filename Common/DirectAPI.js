@@ -1,4 +1,4 @@
-Ext.define('MyApp.DirectAPI', {
+Ext.define('Common.DirectAPI', {
     /*
      Require Ext.Direct classes
      */

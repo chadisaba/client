@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "qgpq475u-8c41-4643-a8f8-1x7bvhkehlhx",
     "viewControllerInstanceId": "4iuyiwcs-4ace-45f2-b4ee-32aetnbkydhs",
     "viewModelInstanceId": "wxfmctti-8a5d-4154-8917-kxagub8py2vg",
@@ -38,6 +45,10 @@
                 "dataIndex": "studyActeCode",
                 "text": "Code"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-puvui56vflpp",
             "cn": [
@@ -50,6 +61,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-xd4sgluci14f"
@@ -67,6 +81,10 @@
                 "dataIndex": "studyActeType",
                 "text": "Type"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeTypeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-nxjnxjy2jf59",
             "cn": [
@@ -80,6 +98,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "studyActeTypeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MystudyActeTypeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-p63cajkab5sh"
@@ -97,6 +119,10 @@
                 "dataIndex": "studyActeAmount",
                 "text": "Montant"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeAmountCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-laskspdynveq",
             "cn": [
@@ -110,6 +136,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "studyActeAmountTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MystudyActeAmountTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-tduh4dmphhq3"
@@ -127,6 +157,10 @@
                 "dataIndex": "studyActeAmountDepassement",
                 "text": "Mt. dépassement"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeAmountDepassementCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-utlmgdqmyfeh",
             "cn": [
@@ -139,6 +173,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeAmountDepassementTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeAmountDepassementTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-fh46h1lkxdgs"
@@ -156,6 +193,10 @@
                 "dataIndex": "studyActeAssociationNonPrevu",
                 "text": "A.N.P."
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeAssociationNonPrevuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-d4xuiskepfpv",
             "cn": [
@@ -168,6 +209,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeAssociationNonPrevuTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeAssociationNonPrevuTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-1e1weeef14cq"
@@ -185,6 +229,10 @@
                 "dataIndex": "studyActeModificators",
                 "text": "Modificateurs"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeModificatorsCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vk2q1f3w3paw",
             "cn": [
@@ -197,6 +245,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeModificatorsTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeModificatorsTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-7dtfmq8iwumx"
@@ -214,6 +265,10 @@
                 "dataIndex": "studyActeDepense",
                 "text": "Qalificatif"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeDepenseCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-wxtcnq7eipb7",
             "cn": [
@@ -226,6 +281,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeDepenseTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeDepenseTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-37xv29l8xkdc"
@@ -243,6 +301,10 @@
                 "dataIndex": "studyActeQuantity",
                 "text": "Quantité"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeQuantityCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-asfauyh7e2jb",
             "cn": [
@@ -255,6 +317,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeQuantityTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeQuantityTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-rvhilujwe24p"
@@ -272,6 +337,10 @@
                 "dataIndex": "studyActeAdditionalAmount",
                 "text": "Dép"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeAdditionalAmountCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-w1l267buub55",
             "cn": [
@@ -284,6 +353,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeAdditionalAmountTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeAdditionalAmountTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-gpgp6jnd6c26"
@@ -302,6 +374,11 @@
                 "hidden": true,
                 "text": "Modificateurs"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MystudyActeAcceptedModificatorsCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-mw8d3skujxi3",
             "cn": [
@@ -314,6 +391,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeAcceptedModificatorsTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeAcceptedModificatorsTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-4xdybq1vvu4y"
@@ -331,6 +411,10 @@
                 "dataIndex": "studyActeCoefficient",
                 "text": "Coefficient"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyActeCoefficientCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gd9i6rc4nss9",
             "cn": [
@@ -343,6 +427,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeCoefficientTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeCoefficientTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-e2pns8ppsiyp"
@@ -359,6 +446,10 @@
             "userConfig": {
                 "dataIndex": "studyActeEntentePrealable",
                 "text": "E.P."
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MystudyActeEntentePrealableCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-eq65evt68nue",
@@ -395,6 +486,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-9qb16gk6gwxv"
                 }
@@ -412,6 +508,11 @@
                 "hidden": true,
                 "text": "Refundable"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MystudyActeRefundableCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-9rq5ksmhhfvc",
             "cn": [
@@ -424,6 +525,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyActeRefundableTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyActeRefundableTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-9vrx37jsawxt"
@@ -440,6 +544,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": ""
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-umx1phhxa3gs",
@@ -476,6 +584,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-u85n9rkib7xv"
                 }
@@ -510,6 +623,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "4d24wlcl-f393-483a-8425-3etp65ds31pm"
         },
@@ -525,6 +644,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "xxif3huv-ccc7-465c-8662-yj2emm7x7p96"
@@ -548,6 +673,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processStudyActeGrid",
             "designerId": "gwq4tg85-2054-459b-a4aa-g4ap5bbeys1f"
         },
@@ -565,6 +695,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdChHist",
             "designerId": "wikjlvys-1d4f-4fb9-9364-s6cdaykemxt2"
@@ -585,6 +721,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdAfterRender",
             "designerId": "fgv5b6d7-1f65-4972-a6e1-x4vljfhs5898"
         },
@@ -604,6 +746,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdInEdit",
             "designerId": "hgbvkfd2-1a08-4be0-b287-7fdg2bvdjphw"
         },
@@ -622,6 +770,12 @@
                 "fn": "onStudyActeGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdResetEdit",
             "designerId": "gehaakql-2c80-456a-a5c5-99em6rui655r"
@@ -644,6 +798,12 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdSaveEdit",
             "designerId": "s92fl6ki-f0d5-4d89-a1bb-8yyc4d469esa"
         },
@@ -658,6 +818,11 @@
                 "fn": "onStudyActeGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdDeleteItem",
             "designerId": "aabjehax-ac56-469a-895f-5gsy7knhqjfl"
@@ -676,6 +841,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdModifyItem",
             "designerId": "39sy1gye-6b6f-4377-998f-59ycgbst4k7v"
@@ -699,6 +870,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdQuitEdit",
             "designerId": "hptbq4ky-746f-4da4-9f4d-un4vv6ghpf4p"
         },
@@ -711,6 +889,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-gy1id6aagpvv"
@@ -731,6 +912,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdBeforeEdit",
             "designerId": "6mljhsjb-4019-4a61-8c79-sh6b9822dmdg"
         },
@@ -750,6 +937,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdCanceledit",
             "designerId": "ssvfpu3w-6686-46dd-bfe7-xvnwulqrkux1"
         },
@@ -764,6 +957,11 @@
                 "fn": "onStudyActeGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdContainerClick",
             "designerId": "5twb5hye-3079-420b-87bf-63jbsmyythlp"
@@ -784,6 +982,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyActeGridIdEdit",
             "designerId": "tvw5dwc5-47bf-4b29-bb1d-k5q4tqymcigb"
         },
@@ -798,6 +1002,11 @@
                 "fn": "onStudyActeGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdBeforeCellClick",
             "designerId": "$ee8fqild-6a9c-488e-8122-39ful23pqkxy"
@@ -817,6 +1026,12 @@
                 "fn": "onStudyActeGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyActeGridIdValidateedit",
             "designerId": "l9qaajea-b2ec-4782-a56f-ij8dgd619xew"

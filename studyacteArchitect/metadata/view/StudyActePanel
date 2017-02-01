@@ -14,6 +14,15 @@
         "title": "Les Actes",
         "width": null
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "reference": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyPanel",
     "designerId": "727e1b21-2264-4c8f-9763-dc072cc5e3fc",
     "viewControllerInstanceId": "71de6392-b415-455f-9928-2390bd0b1434",
@@ -31,6 +40,12 @@
                 "layout|flex": 5,
                 "layout|region": "center",
                 "layout|split": true
+            },
+            "configAlternates": {
+                "collapsible": "boolean",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "layout|split": "boolean"
             },
             "name": "studyactegrid1",
             "designerId": "0dd06622-1fed-4463-9c52-6579b0a4d44e",
@@ -50,6 +65,13 @@
                 "layout|region": "east",
                 "width": 50
             },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "width": "auto"
+            },
             "name": "MyContainer",
             "designerId": "afcfe651-c21e-47ad-a4f1-9c6133c80a5d",
             "cn": [
@@ -65,6 +87,11 @@
                         "layout|flex": 1,
                         "text": "<-"
                     },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
                     "name": "MyButton",
                     "designerId": "728db4ef-dbc4-4ce5-bbb9-d69e7900d5b5",
                     "cn": [
@@ -79,6 +106,11 @@
                                 "fn": "onAddActeButtonClick",
                                 "name": "click",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onAddActeButtonClick",
                             "designerId": "ed716714-14c5-480d-a928-dee7b4fd3d57"
@@ -98,6 +130,11 @@
                 "header": false,
                 "layout|flex": 3,
                 "layout|region": "east"
+            },
+            "configAlternates": {
+                "header": "boolean",
+                "layout|flex": "number",
+                "layout|region": "string"
             },
             "name": "actespanel",
             "designerId": "ff35008d-4574-46b1-8e0d-0cb2f7833616",

@@ -199,6 +199,106 @@ var ComboData= {
         {
             id:'9',text :'Autre ayant-droit'
         }
-    ]
+    ],
+    formulesAMC:[
+
+        {
+            id:'010$0',text :'Frais Réels (010)'
+        },
+        {
+            id:'02A$1$3$9000',text :'90% TR-MRO (02A)'
+        },
+        {
+            id:'02A$1$3$32000',text :'320% TR-MRO (02A)'
+        },
+        {
+            id:'02A$1$3$50000',text :'500% TR-MRO (02A)'
+        },
+        {
+            id:'02A$1$3$11000',text :'110% TR-MRO (02A)'
+        },
+        {
+            id:'052$0',text :'100% TM (052)'
+        },
+        {
+            id:'021$1$3$3000',text :'30% TR (021)'
+        },
+        {
+            id:'050$1$6$10000',text :'100% TM (050)'
+        },
+        {
+            id:'050$1$6$5000',text :'550% TM (050)'
+        },
+        {
+            id:'012$1$2$10000',text :'100% Dépense Réelle (012)'
+        },
+        {
+            id:'012$1$2$5000',text :'50% Dépense Réelle (012)'
+        },
+        {
+            id:'021$1$3$10000',text :'100% TR (021)'
+        },
+        {
+            id:'021$1$3$5000',text :'50% TR (021)'
+        }
+    ],
+    indicateurTraitementAMC:[
+
+        {
+            id:'00',text :'Pas de DRE - pas de rectification[00]'
+        },
+        {
+            id:'12',text :'DRE en HTP - pas de rectification[12]'
+        },
+        {
+            id:'13',text :'DRE en HTP - rectification[13]'
+        },
+        {
+            id:'22',text :'DRE en TP - pas de rectification[22]'
+        },
+        {
+            id:'23',text :'DRE en TP - rectification[23]'
+        },
+        {
+            id:'32',text :'DRE en TP et HTP - pas de rectif.[32]'
+        },
+        {
+            id:'33',text :'DRE en TP et HTP - rectification[33]'
+        },
+        {
+            id:'60',text :'CMU C - pas de DRE - pas de rectif.[60]'
+        },
+        {
+            id:'62',text :'CMU C - DRE - pas de rectification[62]'
+        },
+        {
+            id:'63',text :'CMU C - DRE - rectification[63]'
+        },
+        {
+            id:'72',text :'Sortant de CMU - DRE - pas de rectif.[72]'
+        },
+        {
+            id:'73',text :'Sortant de CMU - DRE - rectification[73]'
+        }
+    ],
+    indicateurTraitementMtuelle:[
+
+        {
+            id:'00',text :'Pas de TP compl.[00]'
+        },
+        {
+            id:'01',text :'TP comp. selon accord PS-AMC[01]'
+        },
+        {
+            id:'02',text :'TP compl. selon réglementation[02]'
+        },
+        {
+            id:'62',text :"CMU TP régl. - pas d'éclatement[62]"
+        },
+        {
+            id:'71',text :"Sortant de CMU - pas d'éclatement[71]"
+        },
+
+    ],
 
 };

@@ -9,6 +9,10 @@
         "designer|userAlias": "actegrid",
         "designer|userClassName": "ActeGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "kthnpp32-8a5d-4154-8917-x479hs3tettf",
     "cn": [
         {
@@ -22,9 +26,12 @@
                 "model": "ActeModel",
                 "name": "ActeStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "ActeStore",
             "designerId": "vmguc3jf-c056-4140-9039-j7ct7qd6rxpp"
         }
-        
     ]
 }

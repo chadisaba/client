@@ -21,10 +21,19 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "stateId": "string",
+        "stateful": "boolean",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "419cb704-c086-41cf-b5db-d03d0d916cf0",
     "viewControllerInstanceId": "b1e95721-c6b7-470b-ad6b-fd859060ef69",
     "viewModelInstanceId": "455b1a7a-3569-4ce4-a4a3-440be9416758",
@@ -41,6 +50,11 @@
                 "hidden": true,
                 "text": "cityId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MycityIdCol",
             "designerId": "c8599932-fa8e-4302-9c9d-19f7f95890b5",
             "cn": [
@@ -55,6 +69,11 @@
                         "hidden": true,
                         "itemId": "cityIdTextFieldItemId",
                         "readOnly": false
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "readOnly": "boolean"
                     },
                     "name": "MycityIdTextField",
                     "designerId": "6cb4875c-bd61-43d5-836e-ab5c36e81405"
@@ -75,6 +94,13 @@
                 "text": "last name",
                 "width": 120
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianLNameCol",
             "designerId": "06c89993-53f9-4e22-94b7-844f10e4b079",
             "cn": [
@@ -87,6 +113,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianLNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianLNameTextField",
                     "designerId": "808562e6-eab0-4e55-a3f6-cff4112dd167"
@@ -107,6 +136,13 @@
                 "text": "first name",
                 "width": 120
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianFNameCol",
             "designerId": "77cf99b1-754f-40e3-a504-1ed69ad0aa71",
             "cn": [
@@ -119,6 +155,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianFNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianFNameTextField",
                     "designerId": "f49a2f62-04d2-4e0b-ad0b-13850c5bd375"
@@ -137,6 +176,12 @@
                 "minWidth": null,
                 "text": "gender",
                 "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyreferringPhysicianGenderCol",
             "designerId": "da540126-b22e-41d9-b9ca-133ebfa37167",
@@ -159,10 +204,16 @@
                         ],
                         "valueField": "genderId"
                     },
-                    "name": "MyreferringPhysicianGenderComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyreferringPhysicianGenderComboBox",
                     "designerId": "95cab4d6-5a5a-4401-9907-33ac7ff275f3",
                     "cn": [
                         {
@@ -176,6 +227,11 @@
                                 "fn": "onReferringPhysicianGenderComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onReferringPhysicianGenderComboBoxEditorItemIdSelect",
                             "designerId": "8ea8e093-b412-40f9-ac01-617de29d1cd7"
@@ -203,6 +259,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "9d42c8c2-62a8-40ba-ac6d-292406a8bff7"
                 }
@@ -220,6 +282,12 @@
                 "minWidth": null,
                 "text": "title",
                 "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyreferringPhysicianTitleCol",
             "designerId": "672b560f-594d-4336-b7f5-d7203ff73bd2",
@@ -242,10 +310,16 @@
                         ],
                         "valueField": "titleId"
                     },
-                    "name": "MyreferringPhysicianTitleComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyreferringPhysicianTitleComboBox",
                     "designerId": "90967c6c-0f81-4ecd-83a1-461b06b6454b",
                     "cn": [
                         {
@@ -259,6 +333,11 @@
                                 "fn": "onReferringPhysicianTitleComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onReferringPhysicianTitleComboBoxEditorItemIdSelect",
                             "designerId": "8e6b377d-fb9a-4d53-9229-8ae8efab5151"
@@ -286,6 +365,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "25801982-1994-49db-90d9-d527256706ec"
                 }
@@ -304,6 +389,12 @@
                 "text": "zip code",
                 "width": null
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianZipCodeCol",
             "designerId": "0fca1d1b-f98c-4405-b442-dad0c2d2308c",
             "cn": [
@@ -316,6 +407,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianZipCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianZipCodeTextField",
                     "designerId": "ffcad6f5-800e-474e-95ad-03d001b5a180",
@@ -331,6 +425,11 @@
                                 "fn": "onReferringPhysicianZipCodeTextFieldItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onReferringPhysicianZipCodeTextFieldItemIdChange",
                             "designerId": "1554f5d8-8e97-4460-8228-5d037bdcc5f8"
@@ -351,6 +450,12 @@
                 "minWidth": null,
                 "text": "city",
                 "width": 120
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MycityNameCol",
             "designerId": "24eb502b-8e01-4458-87a8-6c9b7762bec1",
@@ -373,10 +478,16 @@
                         ],
                         "valueField": "cityName"
                     },
-                    "name": "MycityNameComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MycityNameComboBox",
                     "designerId": "ea5947b7-31a2-4f6f-bf67-e7b011462bad",
                     "cn": [
                         {
@@ -390,6 +501,11 @@
                                 "fn": "onCityNameComboBoxEditorItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onCityNameComboBoxEditorItemIdChange",
                             "designerId": "1f5bcbca-4e4e-4076-9666-02e42f894528"
@@ -412,6 +528,13 @@
                 "text": "address",
                 "width": 150
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianAddressCol",
             "designerId": "f36be30e-54af-405e-89e1-ad146009a8ff",
             "cn": [
@@ -424,6 +547,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianAddressTextTextAreaItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianAddressTextArea",
                     "designerId": "086e4250-3f57-47f9-b7d5-2d5cf4a64a0b"
@@ -443,6 +569,12 @@
                 "text": "phone",
                 "width": 120
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianPhoneNumberCol",
             "designerId": "5e45c2a1-0051-4785-bdb1-cf1ea992a697",
             "cn": [
@@ -455,6 +587,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianPhoneNumberTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianPhoneNumberTextField",
                     "designerId": "70fede76-0508-4f14-aa8a-f0bc3cf532bf"
@@ -474,6 +609,12 @@
                 "text": "fax",
                 "width": 120
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianFaxNumberCol",
             "designerId": "f4bdc18b-b4b0-4376-abd9-90993ace9a94",
             "cn": [
@@ -486,6 +627,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "referringPhysicianFaxNumberTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyreferringPhysicianFaxNumberTextField",
                     "designerId": "9bbab300-c1c3-4e11-8eb8-80b03ab5d741"
@@ -506,6 +650,13 @@
                 "text": "email",
                 "width": 150
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreferringPhysicianEmailCol",
             "designerId": "237cb2f3-c9f7-4f8b-8a23-567612200d18",
             "cn": [
@@ -519,6 +670,10 @@
                     "userConfig": {
                         "itemId": "referringPhysicianEmailTextFieldItemId",
                         "vtype": "email"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "vtype": "string"
                     },
                     "name": "MyreferringPhysicianEmailTextField",
                     "designerId": "38053e9e-ba27-4562-8298-3e07680a84aa"
@@ -554,6 +709,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "e7bf4804-9775-4b8c-bb8b-ec40070109f4"
         },
@@ -569,6 +730,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "1bf39471-2076-44d8-b9cd-022715f2f045"
@@ -590,6 +757,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processRefPhyGrid",
             "designerId": "dcb75fc1-74c1-4f84-beb6-6380cdda69a8"
         },
@@ -607,6 +779,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdChHist",
             "designerId": "cdeebe4d-6cef-4e09-b944-19b40e592a95"
@@ -627,6 +805,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdInEdit",
             "designerId": "bca92ad5-a624-4d26-8c97-155e7ac34072"
         },
@@ -645,6 +829,12 @@
                 "fn": "onRefPhyGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdResetEdit",
             "designerId": "9db479fc-cf4c-454f-887e-f12ee50772ca"
@@ -666,6 +856,12 @@
                 "fn": "onRefPhyGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdSaveEdit",
             "designerId": "e8e63dc2-2a49-40c2-b1ca-1ea8042284cd"
@@ -689,6 +885,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdAddItem",
             "designerId": "cb22a47e-928e-4e76-9a2c-210681b918a5"
         },
@@ -703,6 +906,11 @@
                 "fn": "onRefPhyGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdDeleteItem",
             "designerId": "e3ec0b1c-31fa-4ff4-98e9-0801150e2287"
@@ -721,6 +929,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdModifyItem",
             "designerId": "e1752e7e-66de-400c-875c-93c541433c8d"
@@ -744,6 +958,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdQuitEdit",
             "designerId": "1e69e0eb-307f-45da-8e44-763f53dc3d79"
         },
@@ -756,6 +977,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "31702bbe-fe4d-4947-89f4-5188b605e253"
@@ -776,6 +1000,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdBeforeEdit",
             "designerId": "9adbd234-efd7-4c72-965f-ac1913aa5e88"
         },
@@ -795,6 +1025,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdCanceledit",
             "designerId": "4d973c9a-26ba-4380-8f0c-922b45b1e9b9"
         },
@@ -809,6 +1045,11 @@
                 "fn": "onRefPhyGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdContainerClick",
             "designerId": "dbd0a713-0cfe-4cff-996d-01dcaa4a7e98"
@@ -829,6 +1070,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdEdit",
             "designerId": "bb34926a-099d-48cd-ba24-7585631cdbd8"
         },
@@ -843,6 +1090,11 @@
                 "fn": "onRefPhyGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdBeforeCellClick",
             "designerId": "$0110e134-66b2-4584-96b2-0b44832bfc1a"
@@ -863,6 +1115,12 @@
                 "name": "validateedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRefPhyGridIdValidateedit",
             "designerId": "f82f4beb-f66c-403d-8ff5-a8818c252714"
         },
@@ -877,6 +1135,11 @@
                 "fn": "onRefPhyGridIdBoxReady",
                 "name": "boxready",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdBoxReady",
             "designerId": "3f1c3b52-6e7f-4967-be2b-8691c6aa883f"
@@ -895,6 +1158,12 @@
                 "fn": "onRefPhyGridIdDuplicateItem",
                 "name": "duplicateItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onRefPhyGridIdDuplicateItem",
             "designerId": "0e59d4fe-d686-4466-92d2-2169ec723e3d"

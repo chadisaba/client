@@ -2,7 +2,7 @@ var translateUtil={
     transGrid:function(_comp)
     {
         _comp.setTitle(translate(_comp.title));
-        _comp.columns.forEach(
+        _comp.getColumns().forEach(
             function(_column)
             {
                 _column.setText(translate(_column.text));

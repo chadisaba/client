@@ -9,5 +9,9 @@
         "designer|userAlias": "studyactegrid",
         "designer|userClassName": "StudyActeGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "4iuyiwcs-4ace-45f2-b4ee-32aetnbkydhs"
 }

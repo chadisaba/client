@@ -12,6 +12,13 @@
         "height": null,
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "56584666-c853-4fe0-ac5c-6bfe1e61674e",
     "viewControllerInstanceId": "42e6506d-82cc-413b-980c-4c008a353b07",
@@ -26,6 +33,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "the referring physicians"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "refphygrid",
             "designerId": "06dc2d5b-f78d-4cae-98b7-6496c96efb91",
@@ -53,6 +63,11 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onRefPhyGridIdAfterRender",
                     "designerId": "2cd841e5-72f4-4a07-9235-cc7a1bc0a188"
                 }
@@ -69,6 +84,11 @@
                 "fn": "onTabpanelAfterRender",
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onTabpanelAfterRender",
             "designerId": "5a48543f-6074-4c86-991d-14d17806f6d4"

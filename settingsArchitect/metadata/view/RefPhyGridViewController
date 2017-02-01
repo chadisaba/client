@@ -9,5 +9,9 @@
         "designer|userAlias": "refphygrid",
         "designer|userClassName": "RefPhyGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "b1e95721-c6b7-470b-ad6b-fd859060ef69"
 }

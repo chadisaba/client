@@ -9,6 +9,10 @@
         "designer|userAlias": "esthasservgrid",
         "designer|userClassName": "EstHasServGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "6fa53409-2342-4adf-98fd-68a38cae74e0",
     "cn": [
         {
@@ -22,10 +26,14 @@
                 "model": "EstbHasServModel",
                 "name": "EstHasServStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "EstHasServStore",
             "designerId": "b9c6f999-6456-4434-a0e3-04420384cce7"
-        }
-        ,{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -36,9 +44,12 @@
                 "model": "EstablishmentCodeComboModel",
                 "name": "EstablishmentCodeComboStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "EstablishmentCodeComboStore",
             "designerId": "dfa31400-51f8-449b-879b-a0e47d49d496"
         }
-               
     ]
 }

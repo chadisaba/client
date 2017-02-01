@@ -139,28 +139,5 @@ return promise;
                     });
              });
          return promise;
-    },
-
-    saveStudyVisitHasActe:function(_studiesVisitHasActeArray,_visitId,_status)
-    {
-    return new Promise(
-        function (resolve, reject) {
-            var params={
-
-                studyVisitHasActeDataToBeSaved:_studiesVisitHasActeArray,
-                visitId:_visitId,
-                status:_status
-            };
-            Server.Visit.saveStudyVisiteHasActe(params,
-                function(_result){
-                    if(_result.success){
-                        resolve(_result.data);
-                    }
-                    else{
-                        console.error(_result.msg);
-                        reject(_result.msg);
-                    }
-                }
-            );
-        }); }
+    }
 };

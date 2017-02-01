@@ -233,7 +233,19 @@ function translate(text)
         "quot. waiting":"En Attente",
         "quot. saved":"Enregistrée",
         "quot. approved":"Validée",
-        "quot.disapproved":"Dévalidée"
+        "quot.disapproved":"Dévalidée",
+
+        /***** patient receiving****/
+        "IPP":"IPP",
+        "Visit number":"Numéro de séjour",
+        /***** patient search grid****/
+
+        "Choose from among the found patients":"Choisir parmi les patients trouvés",
+        "Patient not found":"Patient introuvable",
+        "Receive as new patient":"Accueillir comme nouveau patient",
+        "Patient recieving from hl7":"Accueil patient dpuis le lien Hprim",
+        "Vis. number":"Num. séjour",
+        "Visit date":"Date séjour"
 
 
         };

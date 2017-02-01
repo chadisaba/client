@@ -9,5 +9,9 @@
         "designer|userAlias": "studyactepanel",
         "designer|userClassName": "StudyActePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "71de6392-b415-455f-9928-2390bd0b1434"
 }

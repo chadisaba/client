@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "StudyActeModel",
     "designerId": "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MystudyActeId",
             "designerId": "e96f8d89-803f-419a-a346-enenejrf11a9"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "studyId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger",
             "designerId": "e96f8d89-803f-419a-a346-7lb991mhm4xw"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString",
             "designerId": "e96f8d89-803f-419a-a346-qykdw285ej5i"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "studyActeType"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger1",
             "designerId": "e96f8d89-803f-419a-a346-ucl3jprsdscy"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeAmount"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyNumber",
             "designerId": "e96f8d89-803f-419a-a346-ht9ibf797e4p"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "studyActeAmountDepassement"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyNumber1",
             "designerId": "e96f8d89-803f-419a-a346-i6nmqhvkfla7"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeAssociationNonPrevu"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger2",
             "designerId": "e96f8d89-803f-419a-a346-xbacmtxynfwp"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "studyActeModificators"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString1",
             "designerId": "e96f8d89-803f-419a-a346-n6j4jfspixhb"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeDepense"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString2",
             "designerId": "e96f8d89-803f-419a-a346-jmmtsj9j38vc"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "studyActeQuantity"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger3",
             "designerId": "e96f8d89-803f-419a-a346-c7dbx1vpqnwu"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeAdditionalAmount"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyNumber2",
             "designerId": "e96f8d89-803f-419a-a346-wf51cpfvckc4"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "studyActeAcceptedModificators"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString3",
             "designerId": "e96f8d89-803f-419a-a346-v5j6dd52fxa1"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeCoefficient"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger4",
             "designerId": "e96f8d89-803f-419a-a346-1n23ikajei3b"
@@ -196,6 +239,9 @@
             "userConfig": {
                 "name": "studyActeEntentePrealable"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean",
             "designerId": "e96f8d89-803f-419a-a346-s3v492uidx9n"
         },
@@ -208,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyActeRefundable"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger5",
             "designerId": "e96f8d89-803f-419a-a346-le4ldymhw5hp"
@@ -222,6 +271,9 @@
             "userConfig": {
                 "name": "active"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean1",
             "designerId": "e96f8d89-803f-419a-a346-gv48ui9xrmev"
         },
@@ -234,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "i74en91u-1f65-4972-a6e1-jcjlsfn9gsjn"
@@ -248,6 +303,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "25vv5yg8-1a08-4be0-b287-yadx7vhwja6q"
         },
@@ -260,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "2k9qjev9-2c80-456a-a5c5-sw47axdtlkb6"
@@ -274,6 +335,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "u74hna93-f0d5-4d89-a1bb-jqfv2slhir89"
         },
@@ -286,6 +350,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "y3y6warc-ac56-469a-895f-vuibrpldehns"

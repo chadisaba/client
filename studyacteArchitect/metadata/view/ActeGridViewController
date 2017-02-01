@@ -9,5 +9,9 @@
         "designer|userAlias": "actegrid",
         "designer|userClassName": "ActeGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "2fwimhrd-4ace-45f2-b4ee-tl9529lryii4"
 }

@@ -13,6 +13,14 @@
         "reference": "actePanetRef",
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "reference": "string",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "b3a739cc-f2f8-407f-866f-b7c6c8be1872",
     "viewControllerInstanceId": "e25d1717-d758-4230-b9c8-83dbcddfaae0",
@@ -28,6 +36,10 @@
             "userConfig": {
                 "reference": "acteGridReference",
                 "title": "CCAM"
+            },
+            "configAlternates": {
+                "reference": "string",
+                "title": "string"
             },
             "name": "actegrid3",
             "designerId": "f0168699-2cce-4cbc-b5ba-995cbfb74273",
@@ -54,6 +66,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Others"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "acteothergrid1",
             "designerId": "2b91c992-7219-4e14-a665-60f30791de70",

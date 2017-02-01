@@ -22,6 +22,12 @@
             "SettingsTabPanel"
         ]
     },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "views": "typedarray"
+    },
     "name": "Application",
     "designerId": "application",
     "cn": [
@@ -37,6 +43,10 @@
                 "implHandler": [
                     "Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());"
                 ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "launch",
             "designerId": "24ea72fd-3870-4014-87df-61b9a2eb69fe"
