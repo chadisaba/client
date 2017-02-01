@@ -1,0 +1,82 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studyactemainview",
+        "designer|userClassName": "StudyActeMainView",
+        "height": null,
+        "layout": "border",
+        "title": "My Panel",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel",
+    "designerId": "a55457a1-ee22-4afa-adba-3f652cba7adf",
+    "viewControllerInstanceId": "1d2f02e3-d2d0-4496-a267-635529509ec3",
+    "viewModelInstanceId": "a7a2d42e-7d3c-4a95-a0b3-be543366dd7d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": false,
+                "collapsible": false,
+                "flex": 2,
+                "layout|region": "center"
+            },
+            "configAlternates": {
+                "collapsed": "boolean",
+                "collapsible": "boolean",
+                "flex": "number",
+                "layout|region": "string"
+            },
+            "name": "studyactepanel",
+            "designerId": "15389c5a-470e-408b-a414-49cbd84d68f1",
+            "masterInstanceId": "727e1b21-2264-4c8f-9763-dc072cc5e3fc"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": true,
+                "collapsible": true,
+                "flex": null,
+                "layout|region": "west",
+                "layout|split": false,
+                "split": true,
+                "width": 200
+            },
+            "configAlternates": {
+                "animCollapse": "boolean",
+                "collapsible": "boolean",
+                "flex": "number",
+                "layout|region": "string",
+                "layout|split": "boolean",
+                "split": "boolean",
+                "width": "auto"
+            },
+            "name": "studysearchgrid",
+            "designerId": "c5dd8b3c-0c16-4f7d-91c9-69989a57924a",
+            "masterInstanceId": "3d4a03ff-9430-4f42-a124-b682c16474f2"
+        }
+    ]
+}

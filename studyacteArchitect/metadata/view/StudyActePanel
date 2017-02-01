@@ -37,7 +37,7 @@
             "codeClass": null,
             "userConfig": {
                 "collapsible": false,
-                "layout|flex": 5,
+                "layout|flex": 1,
                 "layout|region": "center",
                 "layout|split": true
             },
@@ -128,7 +128,7 @@
             "codeClass": null,
             "userConfig": {
                 "header": false,
-                "layout|flex": 3,
+                "layout|flex": 1,
                 "layout|region": "east"
             },
             "configAlternates": {

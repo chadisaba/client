@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost:8888/clientch/studyacte_pub/",
-        "exportPath": "/Applications/MAMP/htdocs/clientch/studyacte_pub",
+        "exportPath": "../studyacte_pub",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -23,7 +23,8 @@
         "genTimestamps": false,
         "cacheBust": false,
         "installStatus": "Not Installed",
-        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "displayfield-ExtBox1-1492-inputEl": "a new version of the framework is available"
     },
     "xdsVersion": "4.1.1",
     "xdsBuild": 123,
@@ -49,7 +50,13 @@
             "1uymc3vu-8a5d-4154-8917-swlrprkwduf9",
             "b3a739cc-f2f8-407f-866f-b7c6c8be1872",
             "cb128949-be46-4c40-92c7-8a9ce18059d6",
-            "e25d1717-d758-4230-b9c8-83dbcddfaae0"
+            "e25d1717-d758-4230-b9c8-83dbcddfaae0",
+            "3d4a03ff-9430-4f42-a124-b682c16474f2",
+            "cd52e4c9-5342-4b69-98b2-36a187c0c36e",
+            "5678c356-13ed-4e8f-866c-a9cf61d5323f",
+            "a55457a1-ee22-4afa-adba-3f652cba7adf",
+            "a7a2d42e-7d3c-4a95-a0b3-be543366dd7d",
+            "1d2f02e3-d2d0-4496-a267-635529509ec3"
         ],
         "store": [],
         "controller": [
@@ -57,11 +64,12 @@
         ],
         "model": [
             "4pic2ec3-1d4f-4fb9-9364-aiub6enn6gdp",
+            "142f116f-6fbf-4410-80b2-a172bf808eaf",
             "dp66fbdn-1d4f-4fb9-9364-4a4l9w8b3286",
             "vfq6p39h-1d4f-4fb9-9364-pnlec12av7l9"
         ],
         "resource": [
-            "2761353f-256d-4702-a003-c605be5536be"
+            "60b2d772-b814-49fe-87e1-48a7b852cf1f"
         ],
         "app": [
             "application"

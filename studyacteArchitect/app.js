@@ -23,14 +23,17 @@ Ext.application({
     models: [
         'ActeModel',
         'ActeOtherModel',
-        'StudyActeModel'
+        'StudyActeModel',
+        'StudySearchModel'
     ],
     views: [
         'StudyActeGrid',
         'ActeOtherGrid',
         'ActeGrid',
         'StudyActePanel',
-        'ActesPanel'
+        'ActesPanel',
+        'StudySearchGrid',
+        'StudyActeMainView'
     ],
     controllers: [
         'MainController'

@@ -124,7 +124,7 @@ Ext.define('MyApp.view.ActeOtherGrid', {
     ],
     selModel: {
         selType: 'rowmodel',
-        mode: 'MULTI'
+        mode: 'SINGLE'
     },
 
     initConfig: function(instanceConfig) {

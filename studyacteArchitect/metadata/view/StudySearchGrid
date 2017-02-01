@@ -1,0 +1,106 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studysearchgrid",
+        "designer|userClassName": "StudySearchGrid",
+        "height": null,
+        "store": [
+            "{StudyStore}"
+        ],
+        "title": "Studies",
+        "width": null
+    },
+    "configAlternates": {
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyGridPanel",
+    "designerId": "3d4a03ff-9430-4f42-a124-b682c16474f2",
+    "viewControllerInstanceId": "5678c356-13ed-4e8f-866c-a9cf61d5323f",
+    "viewModelInstanceId": "cd52e4c9-5342-4b69-98b2-36a187c0c36e",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable1",
+            "designerId": "e73a7427-8267-4c88-b108-579353bdc006"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyTypeCode",
+                "text": "Study Type Code"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "e041a7af-b73a-4385-9b9f-d46d621840e0"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyCode",
+                "text": "Study Code"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn3",
+            "designerId": "c35d334f-6e60-4147-b9f6-17d2d99c976f"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyName",
+                "text": "Study Name"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn4",
+            "designerId": "59e6c973-28e8-4998-9f9c-452fcc0d3309"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature",
+            "designerId": "9eadff64-f07a-4df9-bcc1-6e4ab63c4d2b"
+        }
+    ]
+}

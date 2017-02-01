@@ -79,8 +79,8 @@ Ext.define('MyApp.store.NavigationTree', {
           {
                 text: 'actes ',
                 iconCls: 'x-fa fa-users',
-                viewType: 'studyactepanel',
-                routeId: 'studyactepanel',
+                viewType: 'studyactemainview',
+                routeId: 'studyactemainview',
                 leaf: true
             }, {
                 text: 'Cotations ',

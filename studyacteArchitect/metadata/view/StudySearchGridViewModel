@@ -1,0 +1,39 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "studysearchgrid",
+        "designer|userClassName": "StudySearchGridViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "cd52e4c9-5342-4b69-98b2-36a187c0c36e",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "groupField": "studyTypeCode",
+                "model": "StudySearchModel",
+                "name": "StudyStore"
+            },
+            "configAlternates": {
+                "groupField": "datafield",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "fff3dd20-5d6e-4daf-b566-2c80666295cb"
+        }
+    ]
+}

@@ -43,11 +43,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "acteCode",
-                "text": "Code"
+                "minWidth": null,
+                "text": "Code",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MyacteCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-72r9vrsqvrk1",
@@ -81,11 +85,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "acteDescription",
+                "flex": 1,
+                "tdCls": "wrap-text",
                 "text": "Description"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "flex": "number",
+                "tdCls": "string"
             },
             "name": "MyacteDescriptionCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gyhp26pgvet7",
@@ -105,6 +113,36 @@
                     },
                     "name": "MyacteDescriptionTextArea",
                     "designerId": "73y1ef6a-05cb-5aa6-aacc-yb3mbr7amvj3"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '<div style=\"white-space:normal\">' + value + '</div>';"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "1566cfa2-b57a-4f93-aa6b-4cd59ed8a713"
                 }
             ]
         },
@@ -117,11 +155,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "acteCodeGroupement",
-                "text": "Code groupement"
+                "text": "Groupement",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyacteCodeGroupementCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-1316wawvu8bk",
@@ -153,11 +193,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "actePrix",
-                "text": "Prix"
+                "text": "Prix",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyactePrixCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-qre8i7x4pjut",
@@ -189,11 +231,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "acteModificateurs",
-                "text": "Modificateurs"
+                "hidden": true,
+                "text": "Modificateurs",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean",
+                "width": "auto"
             },
             "name": "MyacteModificateursCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-cvv8gkci5qey",
@@ -225,11 +271,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "acteVersion",
+                "hidden": true,
                 "text": "Version"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MyacteVersionCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ic8yr2llrhxq",
@@ -261,11 +309,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
+                "hidden": true,
                 "text": "Active"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-1g8ik62nqgfa",
@@ -432,7 +482,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "mode": "MULTI"
+                "mode": "SINGLE"
             },
             "configAlternates": {
                 "mode": "string"

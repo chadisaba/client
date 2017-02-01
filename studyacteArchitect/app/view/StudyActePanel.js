@@ -39,7 +39,7 @@ Ext.define('MyApp.view.StudyActePanel', {
         {
             xtype: 'studyactegrid',
             collapsible: false,
-            flex: 5,
+            flex: 1,
             region: 'center',
             split: true
         },
@@ -66,7 +66,7 @@ Ext.define('MyApp.view.StudyActePanel', {
         {
             xtype: 'actespanel',
             header: false,
-            flex: 3,
+            flex: 1,
             region: 'east'
         }
     ]

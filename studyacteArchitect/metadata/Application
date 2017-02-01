@@ -12,7 +12,8 @@
         "models": [
             "ActeModel",
             "ActeOtherModel",
-            "StudyActeModel"
+            "StudyActeModel",
+            "StudySearchModel"
         ],
         "name": "MyApp",
         "views": [
@@ -20,7 +21,9 @@
             "ActeOtherGrid",
             "ActeGrid",
             "StudyActePanel",
-            "ActesPanel"
+            "ActesPanel",
+            "StudySearchGrid",
+            "StudyActeMainView"
         ]
     },
     "configAlternates": {
