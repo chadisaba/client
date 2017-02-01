@@ -320,7 +320,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'filterCheckbox',
 				listeners: {
 					change: function (field){
-						me.liveSearchCtn.setValue("");
+						if(me.liveSearchCtn)
+							me.liveSearchCtn.setValue("");
 						var gridStore=me.grid.getStore();
 						var result;
 						gridStore.clearFilter();
@@ -345,9 +346,17 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		var me = this;
 		me.liveSearchCtn = Ext.create('Ext.form.TextField',
 		{
-			fieldStyle : 'font-family: FontAwesome',
+
+			inputType:'search',
 			emptyText: translate('liveSearch'),//'\uF002 Recherche rapide',
 			listeners: {
+                change:function(_comp,_value)
+                {
+                    if(!_value)
+                    {
+                        me.grid.getStore().clearFilter();
+                    }
+                },
 				specialkey: function (field,e){
 					var value=field.getValue();
 					if (e.getKey() === e.ENTER) {
@@ -372,17 +381,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 						}
 					}
 			}
-		},
-			triggers: {
-				mytrigger2: {
-					handler: function(field, trigger, e) {
-						field.setValue("");
-						me.grid.getStore().clearFilter();
-					},
-					cls: 'x-form-clear-trigger'
-				}
-
-			}
+		}
 		});
 	},
 

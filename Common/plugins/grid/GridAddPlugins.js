@@ -1,5 +1,5 @@
 var GridAddPlugins={
-    addPlugins:function(_scope)
+    addPlugins:function(_scope,_confObject)
         {
             _scope.plugins=[{
                 ptype: 'rowediting',
@@ -12,9 +12,10 @@ var GridAddPlugins={
             Plugins.grid.GridEditingPlugin.configure(_scope);
             if(!_scope.initialConfig.externalEditingPlugin)
             {
-
+                var confObject=_confObject||{};
+                confObject.pluginId='gridediting';
                 _scope.plugins.push (
-                    new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
+                    new Plugins.grid.GridEditingPlugin(confObject));
             }
             else
             {
@@ -43,5 +44,10 @@ var GridAddPlugins={
     {
         _scope.plugins=_scope.plugins||[];
         Plugins.grid.GridInfoColumnPlugin.configure(_scope);
+    },
+    addGridLiveSearchPlugin:function(_scope)
+    {
+        _scope.plugins=_scope.plugins||[];
+        _scope.plugins.push (new Plugins.grid.GridLiveSearchPlugin({pluginId: 'livesearchgrid'}));
     }
 };

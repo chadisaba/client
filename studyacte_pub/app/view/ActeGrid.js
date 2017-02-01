@@ -150,10 +150,7 @@ Ext.define('MyApp.view.ActeGrid', {
     },
 
     processActeGrid: function(config) {
-        Plugins.grid.GridEditingPlugin.configure(this);
-        this.plugins.push (
-                           new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
-
+        GridAddPlugins.addGridLiveSearchPlugin(this);
     }
 
 });

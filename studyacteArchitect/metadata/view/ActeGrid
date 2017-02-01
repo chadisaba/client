@@ -435,10 +435,7 @@
                 ],
                 "fn": "processActeGrid",
                 "implHandler": [
-                    "Plugins.grid.GridEditingPlugin.configure(this);",
-                    "this.plugins.push (",
-                    "                   new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));",
-                    ""
+                    "GridAddPlugins.addGridLiveSearchPlugin(this);"
                 ]
             },
             "configAlternates": {

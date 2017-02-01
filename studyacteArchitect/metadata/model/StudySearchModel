@@ -77,22 +77,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "acteCodeGroupement"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyString6",
-            "designerId": "85e4c521-a3f7-43d7-905c-dcc2cd7aa112"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "studyCode"
             },
             "configAlternates": {

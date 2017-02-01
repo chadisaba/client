@@ -138,10 +138,7 @@ Ext.define('MyApp.view.ActeOtherGrid', {
     },
 
     processActeOtherGrid: function(config) {
-        Plugins.grid.GridEditingPlugin.configure(this);
-        this.plugins.push (
-                           new Plugins.grid.GridEditingPlugin({pluginId: 'gridediting'}));
-
+         GridAddPlugins.addPlugins(this);
     }
 
 });

@@ -5,16 +5,16 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
 
     },
 
-    onStudyActeGridIdAfterRender: function(component, eOpts) {
-        component.getPlugin('gridediting').lockGrid(false);
+    initGrid: function(_filters,_readOnlyGrid) {
+        var view=this.getView();
+         if (!_readOnlyGrid)
+                view.getPlugin('gridediting').lockGrid(false);
+      this.getResultArray(me.filters).then(
+                    function (data) {
+                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('StudyActeStore'));
 
-    var params;
-            
-   
-        this.getResultArray(
-        	    function(data){
-        	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('StudyActeStore'));
-        	        });
+                    }
+                );
     },
 
     onStudyActeGridIdInEdit: function() {
@@ -110,32 +110,27 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
         
         return(Utility.grid.validateedit(editor,context,check));
     },
-    getResultArray:function(callback)
+    getResultArray:function(filters)
     {
-        var me=this;
+          var me = this;
 
-        var filters=[{name:'studyId',value:'1'}];
+        var promise = new Promise(
+            function (resolve, reject) {
+            
+                CommonDirect.getData('STUDY_ACTE',filters)
+                    .then(
+                        function (_result) {
+                         
+                            resolve(_result);
+                        })
+                    .catch(function (_err) {
+                        console.error(_err);
+                        reject(_err);
+                    });
 
-
-     //   var params={table:'STUDY_ACTE',filters:filters};
-        var params={table:'STUDY_ACTE'};
-
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
-                    }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
-    },
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
-    
- 
-    
+            }
+        );
+        return promise;
+    } 
 
 });

@@ -12,7 +12,7 @@
         "store": [
             "{StudyStore}"
         ],
-        "title": "Studies",
+        "title": "studies",
         "width": null
     },
     "configAlternates": {
@@ -37,24 +37,6 @@
             "codeClass": null,
             "name": "MyTable1",
             "designerId": "e73a7427-8267-4c88-b108-579353bdc006"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyTypeCode",
-                "text": "Study Type Code"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "text": "string"
-            },
-            "name": "MyColumn2",
-            "designerId": "e041a7af-b73a-4385-9b9f-d46d621840e0"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -100,7 +82,73 @@
             },
             "codeClass": null,
             "name": "MyGroupingFeature",
-            "designerId": "9eadff64-f07a-4df9-bcc1-6e4ab63c4d2b"
+            "designerId": "9eadff64-f07a-4df9-bcc1-6e4ab63c4d2b",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            " {name}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "06f9415b-8748-4603-918e-c151d9f5a55b"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridpanelBoxReady",
+            "designerId": "f0140a54-655b-4842-ab34-dfff56690264"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processStudySearchGrid",
+                "implHandler": [
+                    "GridAddPlugins.addGridLiveSearchPlugin(this);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "processStudySearchGrid",
+            "designerId": "c3375222-c577-4075-8bfb-3c4997f728a0"
         }
     ]
 }

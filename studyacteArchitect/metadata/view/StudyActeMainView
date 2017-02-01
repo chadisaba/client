@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userAlias": "studyactemainview",
         "designer|userClassName": "StudyActeMainView",
+        "header": false,
         "height": null,
         "layout": "border",
         "title": "My Panel",
@@ -19,7 +20,8 @@
         "height": "auto",
         "layout": "string",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "header": "boolean"
     },
     "name": "MyPanel",
     "designerId": "a55457a1-ee22-4afa-adba-3f652cba7adf",

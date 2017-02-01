@@ -6,7 +6,6 @@ Ext.define('MyApp.view.override.ActeGridViewController', {
     },
 
     onActeGridIdAfterRender: function(component, eOpts) {
-        component.getPlugin('gridediting').lockGrid(true);
         this.getResultArray(
         	    function(data){
         	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('ActeStore'));
@@ -31,7 +30,6 @@ Ext.define('MyApp.view.override.ActeGridViewController', {
                     }
                 });
     }
-    /*********************** renderers****************************************************/
-  /**xxComboboxRenderer**/
+  
     
 });

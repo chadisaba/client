@@ -28,24 +28,25 @@ Ext.define('MyApp.view.StudyActeMainView', {
         type: 'studyactemainview'
     },
     layout: 'border',
+    header: false,
     title: 'My Panel',
 
     items: [
         {
             xtype: 'studyactepanel',
-            region: 'center',
             flex: 2,
             collapsed: false,
-            collapsible: false
+            collapsible: false,
+            region: 'center'
         },
         {
             xtype: 'studysearchgrid',
-            region: 'west',
-            split: false,
             width: 200,
             animCollapse: true,
             collapsible: true,
-            split: true
+            split: true,
+            region: 'west',
+            split: false
         }
     ]
 

@@ -19,25 +19,23 @@ Ext.define('MyApp.view.StudySearchGrid', {
 
     requires: [
         'MyApp.view.StudySearchGridViewModel',
+        'MyApp.view.StudySearchGridViewController',
         'Ext.view.Table',
         'Ext.grid.column.Column',
-        'Ext.grid.feature.Grouping'
+        'Ext.grid.feature.Grouping',
+        'Ext.XTemplate'
     ],
 
+    controller: 'studysearchgrid',
     viewModel: {
         type: 'studysearchgrid'
     },
-    title: 'Studies',
+    title: 'studies',
 
     bind: {
         store: '{StudyStore}'
     },
     columns: [
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyTypeCode',
-            text: 'Study Type Code'
-        },
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyCode',
@@ -51,8 +49,28 @@ Ext.define('MyApp.view.StudySearchGrid', {
     ],
     features: [
         {
-            ftype: 'grouping'
+            ftype: 'grouping',
+            groupHeaderTpl: [
+                ' {name}'
+            ]
         }
-    ]
+    ],
+    listeners: {
+        boxready: 'onGridpanelBoxReady'
+    },
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processStudySearchGrid(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processStudySearchGrid: function(config) {
+        GridAddPlugins.addGridLiveSearchPlugin(this);
+    }
 
 });

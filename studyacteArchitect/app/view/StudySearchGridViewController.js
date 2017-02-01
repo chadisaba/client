@@ -15,5 +15,14 @@
 
 Ext.define('MyApp.view.StudySearchGridViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.studysearchgrid'
+    alias: 'controller.studysearchgrid',
+
+    requires: [
+        'MyApp.view.override.StudySearchGridViewController'
+    ],
+
+    onGridpanelBoxReady: function(component, width, height, eOpts) {
+
+    }
+
 });

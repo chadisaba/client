@@ -43,10 +43,6 @@ Ext.define('MyApp.model.StudySearchModel', {
         },
         {
             type: 'string',
-            name: 'acteCodeGroupement'
-        },
-        {
-            type: 'string',
             name: 'studyCode'
         },
         {
