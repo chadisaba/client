@@ -60,7 +60,7 @@ Ext.define('Plugins.grid.GridLiveSearchPlugin', {
                                     var data=rec.getData();
                                     for (var key in data) {
                                         if(data[key]){
-                                            if (data[key].toString().indexOf(value.toString()) >= 0)
+                                            if (data[key].toString().toUpperCase().indexOf(value.toString().toUpperCase()) >= 0)
                                                 result=true;
                                         }
                                     }
