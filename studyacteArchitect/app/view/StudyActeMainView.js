@@ -19,11 +19,13 @@ Ext.define('MyApp.view.StudyActeMainView', {
 
     requires: [
         'MyApp.view.StudyActeMainViewViewModel',
+        'MyApp.view.StudyActeMainViewViewController',
         'MyApp.view.StudyActePanel',
         'MyApp.view.StudySearchGrid',
         'Ext.grid.Panel'
     ],
 
+    controller: 'studyactemainview',
     viewModel: {
         type: 'studyactemainview'
     },
@@ -35,19 +37,27 @@ Ext.define('MyApp.view.StudyActeMainView', {
         {
             xtype: 'studyactepanel',
             flex: 2,
+            itemId: 'actesPanel',
             collapsed: false,
             collapsible: false,
             region: 'center'
         },
         {
             xtype: 'studysearchgrid',
+            itemId: 'studiesPanel',
             width: 200,
             animCollapse: true,
             collapsible: true,
             split: true,
             region: 'west',
-            split: false
+            split: false,
+            listeners: {
+                selectionchange: 'onStudiespanelSelectionChange'
+            }
         }
-    ]
+    ],
+    listeners: {
+        afterrender: 'onPanelAfterRender'
+    }
 
 });

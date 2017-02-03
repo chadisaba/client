@@ -2,6 +2,16 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
     override: 'MyApp.view.StudyActePanelViewController',
 
 
+     getStudyActes:function(_studyId)
+    {
+        var me=this;
+        var view=me.getView();
+        me.studyId=_studyId;
+        var studyActeGrid=view.down('#studyActeGridItemId');
+        studyActeGrid.getController().initGrid([{name:"studyId",value:_studyId}]);
+        
+    },
+    
     onAddActeButtonClick: function(button, e, eOpts) {
 
         var me=this;
@@ -18,38 +28,33 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
 
         var selectedRecordArray=activeTab.getSelection();
 
-        var studyActeRec=new MyApp.model.StudyActeModel();
+        var studyActeRec;
 
         var studyActeStore=studyActePanel.getStore();
 
+        
         selectedRecordArray.forEach(function(recActe)
 
         {
-
-            if(activeTab.itemId=='acteGridId'){
-            studyActeRec.set('studyActeCode',recActe.get('acteCode'));
-            studyActeRec.set('studyId',1);
-            studyActeRec.set('studyActeType',1);
-            studyActeRec.set('studyActeAmount',recActe.get('actePrix'));
-            studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
-            studyActeRec.set('added',true);
-            studyActeRec.set('modified',false);
-            }else{
-
-                studyActeRec.set('studyActeCode',recActe.get('acteOtherCode'));
-                studyActeRec.set('studyId',1);
-               // if(recActe.get('acteOtherIsNgap'))
-
+           studyActeRec=new MyApp.model.StudyActeModel({
+               studyId:me.studyId,
+               modified:false,
+               added:true,
+               active:true
+           }); 
+            if(recActe.get('acteCode'))
+                {
+                  studyActeRec.set('studyActeCode',recActe.get('acteCode'));
+                    studyActeRec.set('studyActeType',1);
+                    studyActeRec.set('studyActeAmount',recActe.get('actePrix'));
+                    studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
+                     
+                }
+            else{
+                  studyActeRec.set('studyActeCode',recActe.get('acteOtherCode'));
                 studyActeRec.set('studyActeType',2);
                 studyActeRec.set('studyActeAmount',recActe.get('acteOtherAmount'));
-              //  studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
-                studyActeRec.set('added',true);
-                studyActeRec.set('modified',false);
-
-
-
-
-
+                
             }
 
         /*    studyActeRec.set('studyActeDepense',recActe.get('acteCode'));
@@ -64,10 +69,10 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
 */
 
 
-
             studyActeStore.add(studyActeRec);
 
-        })
+        });
+        studyActePanel.getPlugin('gridediting').fillInInterfaceOff();
 
     }
     

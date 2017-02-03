@@ -37,6 +37,7 @@
             "codeClass": null,
             "userConfig": {
                 "collapsible": false,
+                "itemId": "studyActeGridItemId",
                 "layout|flex": 1,
                 "layout|region": "center",
                 "layout|split": true
@@ -45,7 +46,8 @@
                 "collapsible": "boolean",
                 "layout|flex": "number",
                 "layout|region": "string",
-                "layout|split": "boolean"
+                "layout|split": "boolean",
+                "itemId": "string"
             },
             "name": "studyactegrid1",
             "designerId": "0dd06622-1fed-4463-9c52-6579b0a4d44e",
@@ -84,13 +86,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "addActeButton",
-                        "layout|flex": 1,
-                        "text": "<-"
+                        "layout|flex": null,
+                        "text": "<-",
+                        "width": 50
                     },
                     "configAlternates": {
                         "itemId": "string",
                         "layout|flex": "number",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyButton",
                     "designerId": "728db4ef-dbc4-4ce5-bbb9-d69e7900d5b5",

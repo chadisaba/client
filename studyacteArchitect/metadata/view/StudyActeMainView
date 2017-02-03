@@ -39,13 +39,15 @@
                 "collapsed": false,
                 "collapsible": false,
                 "flex": 2,
+                "itemId": "actesPanel",
                 "layout|region": "center"
             },
             "configAlternates": {
                 "collapsed": "boolean",
                 "collapsible": "boolean",
                 "flex": "number",
-                "layout|region": "string"
+                "layout|region": "string",
+                "itemId": "string"
             },
             "name": "studyactepanel",
             "designerId": "15389c5a-470e-408b-a414-49cbd84d68f1",
@@ -62,6 +64,7 @@
                 "animCollapse": true,
                 "collapsible": true,
                 "flex": null,
+                "itemId": "studiesPanel",
                 "layout|region": "west",
                 "layout|split": false,
                 "split": true,
@@ -74,11 +77,54 @@
                 "layout|region": "string",
                 "layout|split": "boolean",
                 "split": "boolean",
-                "width": "auto"
+                "width": "auto",
+                "itemId": "string"
             },
             "name": "studysearchgrid",
             "designerId": "c5dd8b3c-0c16-4f7d-91c9-69989a57924a",
-            "masterInstanceId": "3d4a03ff-9430-4f42-a124-b682c16474f2"
+            "masterInstanceId": "3d4a03ff-9430-4f42-a124-b682c16474f2",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onStudiespanelSelectionChange",
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onStudiespanelSelectionChange",
+                    "designerId": "ecfafe12-c2fb-4a89-980f-8c97a293c149"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "21d40eb0-961f-478a-9d9b-42a41fc4ce16"
         }
     ]
 }

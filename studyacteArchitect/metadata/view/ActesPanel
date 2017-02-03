@@ -34,12 +34,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "actesGridItemId",
                 "reference": "acteGridReference",
                 "title": "CCAM"
             },
             "configAlternates": {
                 "reference": "string",
-                "title": "string"
+                "title": "string",
+                "itemId": "string"
             },
             "name": "actegrid3",
             "designerId": "f0168699-2cce-4cbc-b5ba-995cbfb74273",

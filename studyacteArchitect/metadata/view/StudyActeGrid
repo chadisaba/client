@@ -43,11 +43,19 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeCode",
-                "text": "Code"
+                "flex": 1,
+                "maxWidth": 100,
+                "minWidth": null,
+                "text": "Code",
+                "width": null
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "flex": "number",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MystudyActeCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-puvui56vflpp",
@@ -79,11 +87,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeType",
+                "hidden": true,
                 "text": "Type"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeTypeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-nxjnxjy2jf59",
@@ -117,11 +127,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeAmount",
-                "text": "Montant"
+                "maxWidth": 70,
+                "text": "Montant",
+                "width": 70
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "maxWidth": "number",
+                "width": "auto"
             },
             "name": "MystudyActeAmountCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-laskspdynveq",
@@ -155,11 +169,17 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeAmountDepassement",
-                "text": "Mt. dépassement"
+                "maxWidth": 70,
+                "minWidth": 70,
+                "text": "Mt. dépassement",
+                "width": 70
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MystudyActeAmountDepassementCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-utlmgdqmyfeh",
@@ -191,11 +211,17 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeAssociationNonPrevu",
-                "text": "A.N.P."
+                "maxWidth": 70,
+                "minWidth": 70,
+                "text": "A.N.P.",
+                "width": 50
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MystudyActeAssociationNonPrevuCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-d4xuiskepfpv",
@@ -227,11 +253,17 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeModificators",
-                "text": "Modificateurs"
+                "maxWidth": 80,
+                "minWidth": 80,
+                "text": "Modificateurs",
+                "width": null
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "maxWidth": "number",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MystudyActeModificatorsCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-vk2q1f3w3paw",
@@ -263,11 +295,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeDepense",
+                "hidden": true,
                 "text": "Qalificatif"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeDepenseCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-wxtcnq7eipb7",
@@ -299,11 +333,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeQuantity",
+                "hidden": true,
                 "text": "Quantité"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeQuantityCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-asfauyh7e2jb",
@@ -335,11 +371,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeAdditionalAmount",
+                "hidden": true,
                 "text": "Dép"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeAdditionalAmountCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-w1l267buub55",
@@ -409,11 +447,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeCoefficient",
+                "hidden": true,
                 "text": "Coefficient"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeCoefficientCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gd9i6rc4nss9",
@@ -445,11 +485,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyActeEntentePrealable",
+                "hidden": true,
                 "text": "E.P."
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MystudyActeEntentePrealableCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-eq65evt68nue",
@@ -543,11 +585,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "active",
+                "hidden": true,
                 "text": ""
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-umx1phhxa3gs",
@@ -667,7 +711,7 @@
                 ],
                 "fn": "processStudyActeGrid",
                 "implHandler": [
-                    "GridAddPlugins.addPlugins(this,{liveSearch:false,preferences:false});"
+                    "GridAddPlugins.addPlugins(this,{liveSearch:false,preferences:false,noAdd:true});"
                 ]
             },
             "configAlternates": {

@@ -35,6 +35,7 @@ Ext.define('MyApp.view.ActesPanel', {
         {
             xtype: 'actegrid',
             reference: 'acteGridReference',
+            itemId: 'actesGridItemId',
             title: 'CCAM'
         },
         {
