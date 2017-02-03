@@ -38,6 +38,7 @@ Ext.define('MyApp.view.StudyActePanel', {
     items: [
         {
             xtype: 'studyactegrid',
+            itemId: 'studyActeGridItemId',
             collapsible: false,
             flex: 1,
             region: 'center',
@@ -54,8 +55,8 @@ Ext.define('MyApp.view.StudyActePanel', {
             items: [
                 {
                     xtype: 'button',
-                    flex: 1,
                     itemId: 'addActeButton',
+                    width: 50,
                     text: '<-',
                     listeners: {
                         click: 'onAddActeButtonClick'

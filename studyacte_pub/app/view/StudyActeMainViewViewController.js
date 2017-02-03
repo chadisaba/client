@@ -15,5 +15,18 @@
 
 Ext.define('MyApp.view.StudyActeMainViewViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.studyactemainview'
+    alias: 'controller.studyactemainview',
+
+    requires: [
+        'MyApp.view.override.StudyActeMainViewViewController'
+    ],
+
+    onStudiespanelSelectionChange: function(model, selected, eOpts) {
+
+    },
+
+    onPanelAfterRender: function(component, eOpts) {
+
+    }
+
 });

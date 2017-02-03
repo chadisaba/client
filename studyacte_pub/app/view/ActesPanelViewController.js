@@ -15,5 +15,9 @@
 
 Ext.define('MyApp.view.ActesPanelViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.actespanel'
+    alias: 'controller.actespanel',
+
+    requires: [
+        'MyApp.view.override.ActesPanelViewController'
+    ]
 });

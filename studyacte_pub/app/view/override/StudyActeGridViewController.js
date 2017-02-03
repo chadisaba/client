@@ -4,19 +4,28 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
     onStudyActeGridIdChHist: function() {
 
     },
-
     initGrid: function(_filters,_readOnlyGrid) {
         var view=this.getView();
+        var me=this;
          if (!_readOnlyGrid)
                 view.getPlugin('gridediting').lockGrid(false);
+        me.filters=_filters;
+        var myMask = new Ext.LoadMask({
+    msg    : translate('chargementEnCours...'),
+    target : view
+});
+
+myMask.show();
+        
       this.getResultArray(me.filters).then(
                     function (data) {
                         Utility.grid.loadGrid(view, data, view.getViewModel().getStore('StudyActeStore'));
 
+                    view.getPlugin('gridediting').enterEditMode();
+                        myMask.hide();
                     }
                 );
     },
-
     onStudyActeGridIdInEdit: function() {
 
     },
@@ -25,34 +34,26 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
         Utility.grid.resetEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyActeStore'),promptWin);
 
     },
-
    onStudyActeGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
-	     var me=this;
-	     var params={};
-	            params.table="STUDY_ACTE";
-	            params.idName="studyActeId";
-	            params.dataToBeSaved=dataToBeSaved;
-	            params.comment=comment;
-	            var result=[];
-	            Server.CommonQueries.saveRecords(params,
-	                function(_result){
-	                    if(_result.success){
-	                        var resultArray=[];
-	                        this.getResultArray(function(data){
-	                            Utility.grid.saveEdit(me.getView(),data,me.getView().getViewModel().getStore('StudyActeStore'),promptWin);
-	                        },this);
-	                    }
-	                    else{
-	                        console.error(_result.msg);
-	                        Ext.MessageBox.alert("Error","save Error "+_result.msg);
-	                    }
-	                },me
-	            );
-     
+        var me=this;
+        CommonDirect.saveDataArray(dataToBeSaved, "STUDY_ACTE", comment)
+            .then(function(_result)
+            {
+                promptWin.close();
+                gridpanel.getPlugin('gridediting').quitEditMode();
+	            me.refreshGrid();
+             
+            })
+            .catch(function(_err)
+            {
+                console.error(_err);
+            });
         
     },
-
+     refreshGrid: function () {
+        this.initGrid(this.filters);
+    },
     onStudyActeGridIdAddItem: function() {
 
         var rec = new MyApp.model.StudyActeModel({
@@ -64,24 +65,18 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
         });
         Utility.grid.addItem(this.getView(),rec);
     },
-
     onStudyActeGridIdDeleteItem: function() {
         Utility.grid.deleteItem(this.getView());
     },
-
     onStudyActeGridIdModifyItem: function() {
         Utility.grid.modifyItem(this.getView());
     },
-
     onStudyActeGridIdQuitEdit: function(gridpanel,promptWin) {
         Utility.grid.quitEdit(this.getView(),this.getResultArray(),this.getView().getViewModel().getStore('StudyActeStore'),promptWin);
     },
     onStudyActeGridIdBeforeEdit: function(editor,context) {
         return (Utility.grid.beforeEdit(editor,context));
     },
-
- 
-
     onStudyActeGridIdCanceledit: function(editor,context) {
         return(Utility.grid.cancelEdit(editor,context));
     },
@@ -91,7 +86,6 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
     },
 
     onStudyActeGridIdEdit: function(editor,context) {
- // var columnsName=['name','text'];
     	
     	var columnsName=['studyActeCode','studyActeType','studyActeAmount','studyActeAmountDepassement','studyActeAssociationNonPrevu','studyActeModificators','studyActeDepense','studyActeQuantity','studyActeAdditionalAmount','studyActeAcceptedModificators','studyActeCoefficient','studyActeEntentePrealable','studyActeRefundable','active'];
         Utility.grid.edit(editor, context, columnsName);
@@ -106,8 +100,6 @@ Ext.define('MyApp.view.override.StudyActeGridViewController', {
         
         var check;
         check=true;
-        // check= checkFunction(); check if all required data in the form editor
-        
         return(Utility.grid.validateedit(editor,context,check));
     },
     getResultArray:function(filters)

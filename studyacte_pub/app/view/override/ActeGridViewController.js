@@ -6,30 +6,43 @@ Ext.define('MyApp.view.override.ActeGridViewController', {
     },
 
     onActeGridIdAfterRender: function(component, eOpts) {
-        this.getResultArray(
-        	    function(data){
-        	            Utility.grid.loadGrid(component,data,component.getViewModel().getStore('ActeStore'));
-        	        });
+        
+         var view=this.getView();
+        var me=this;
+        me.filters=[];
+      this.getResultArray(me.filters).then(
+                    function (data) {
+                        Utility.grid.loadGrid(view, data, view.getViewModel().getStore('ActeStore'));
+
+                    }
+                );
+       
     },
 
     getResultArray:function(callback)
     {
-        var me=this;
-        var params={
-        		table:"ACTE"
-        };
-        var result=[];
-        Server.CommonQueries.read(params,
-                function(res){
-                    if(res.success){
-                    	callback(res.data);
-                    }
-                    else{
-                        console.error(res.msg);
-                        callback(res.msg);
-                    }
-                });
+        
+          var me = this;
+
+        var promise = new Promise(
+            function (resolve, reject) {
+            
+                CommonDirect.getData('ACTE',[],'no')
+                    .then(
+                        function (_result) {
+                         
+                            resolve(_result);
+                        })
+                    .catch(function (_err) {
+                        console.error(_err);
+                        reject(_err);
+                    });
+
+            }
+        );
+        return promise;
     }
+       
   
     
 });

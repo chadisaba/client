@@ -44,6 +44,8 @@ Ext.define('MyApp.view.StudyActeGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            flex: 1,
+            maxWidth: 100,
             dataIndex: 'studyActeCode',
             text: 'Code',
             editor: {
@@ -53,6 +55,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeType',
             text: 'Type',
             editor: {
@@ -63,6 +66,8 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            maxWidth: 70,
+            width: 70,
             dataIndex: 'studyActeAmount',
             text: 'Montant',
             editor: {
@@ -73,6 +78,9 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            maxWidth: 70,
+            minWidth: 70,
+            width: 70,
             dataIndex: 'studyActeAmountDepassement',
             text: 'Mt. dépassement',
             editor: {
@@ -82,6 +90,9 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            maxWidth: 70,
+            minWidth: 70,
+            width: 50,
             dataIndex: 'studyActeAssociationNonPrevu',
             text: 'A.N.P.',
             editor: {
@@ -91,6 +102,8 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            maxWidth: 80,
+            minWidth: 80,
             dataIndex: 'studyActeModificators',
             text: 'Modificateurs',
             editor: {
@@ -100,6 +113,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeDepense',
             text: 'Qalificatif',
             editor: {
@@ -109,6 +123,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeQuantity',
             text: 'Quantité',
             editor: {
@@ -118,6 +133,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeAdditionalAmount',
             text: 'Dép',
             editor: {
@@ -137,6 +153,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'studyActeCoefficient',
             text: 'Coefficient',
             editor: {
@@ -149,6 +166,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'studyActeEntentePrealable',
             text: 'E.P.',
             editor: {
@@ -170,6 +188,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
+            hidden: true,
             dataIndex: 'active',
             text: '',
             editor: {
@@ -219,7 +238,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
     },
 
     processStudyActeGrid: function(config) {
-        GridAddPlugins.addPlugins(this,{liveSearch:false,preferences:false});
+        GridAddPlugins.addPlugins(this,{liveSearch:false,preferences:false,noAdd:true});
     }
 
 });
