@@ -7,11 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
-        "designer|userAlias": "addstudyform",
-        "designer|userClassName": "AddStudyForm",
+        "designer|userAlias": "cotationaddstudyform",
+        "designer|userClassName": "CotationAddStudyForm",
         "height": 250,
         "title": "Add study",
         "width": 400
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
     },
     "name": "MyForm",
     "designerId": "299f2421-e9ef-4246-98f0-7145130838ac",
@@ -39,10 +47,19 @@
                 "typeAhead": true,
                 "valueField": "studyId"
             },
-            "name": "MyComboBox5",
             "configAlternates": {
-                "store": "binding"
+                "store": "binding",
+                "allowBlank": "boolean",
+                "displayField": "datafield",
+                "fieldLabel": "string",
+                "itemId": "string",
+                "layout|anchor": "string",
+                "name": "string",
+                "queryMode": "string",
+                "typeAhead": "boolean",
+                "valueField": "datafield"
             },
+            "name": "MyComboBox5",
             "designerId": "1fbb5b89-4595-4cca-a014-cb15763068da",
             "cn": [
                 {
@@ -56,6 +73,11 @@
                         "fn": "onStudyComboboxItemIdChange",
                         "name": "change",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onStudyComboboxItemIdChange",
                     "designerId": "7f785da8-7585-4ef5-8dbc-51750150b23d"
@@ -71,6 +93,11 @@
                         "fn": "onStudyComboboxItemIdSelect",
                         "name": "select",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onStudyComboboxItemIdSelect",
                     "designerId": "00458ced-d479-4cd1-ae60-3c29eecdeb3d"
@@ -99,10 +126,20 @@
                 "typeAhead": true,
                 "valueField": "userId"
             },
-            "name": "MyComboBox2",
             "configAlternates": {
-                "store": "binding"
+                "store": "binding",
+                "displayField": "datafield",
+                "fieldLabel": "string",
+                "itemId": "string",
+                "layout|anchor": "string",
+                "minChars": "number",
+                "name": "string",
+                "queryDelay": "number",
+                "queryMode": "string",
+                "typeAhead": "boolean",
+                "valueField": "datafield"
             },
+            "name": "MyComboBox2",
             "designerId": "ed849cad-b156-4882-8264-c6bbf7743c74",
             "cn": [
                 {
@@ -116,6 +153,11 @@
                         "fn": "onTechnicianComboboxItemIdChange",
                         "name": "change",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onTechnicianComboboxItemIdChange",
                     "designerId": "c63357c9-ead2-4f49-b9c3-2dc02112a8d6"
@@ -136,15 +178,24 @@
                 "itemId": "deviceComboboxItemId",
                 "layout|anchor": "100%",
                 "name": "deviceId",
+                "queryMode": "local",
                 "store": [
                     "{DeviceComboStore}"
                 ],
                 "valueField": "deviceId"
             },
-            "name": "MyComboBox4",
             "configAlternates": {
-                "store": "binding"
+                "store": "binding",
+                "allowBlank": "boolean",
+                "displayField": "datafield",
+                "fieldLabel": "string",
+                "itemId": "string",
+                "layout|anchor": "string",
+                "name": "string",
+                "valueField": "datafield",
+                "queryMode": "string"
             },
+            "name": "MyComboBox4",
             "designerId": "67ede7c1-d153-4d01-9418-0b090b14a713",
             "cn": [
                 {
@@ -158,6 +209,11 @@
                         "fn": "onDeviceComboboxItemIdSelect",
                         "name": "select",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onDeviceComboboxItemIdSelect",
                     "designerId": "25e3605e-ac22-46e8-b110-f7e8f277571b"
@@ -173,6 +229,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar",
             "designerId": "876b31b0-c0f0-4703-b4d4-95e409d85e50",
@@ -190,6 +249,12 @@
                         "layout|flex": null,
                         "text": "Save"
                     },
+                    "configAlternates": {
+                        "formBind": "boolean",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
                     "name": "MyButton1",
                     "designerId": "0e8135ec-9e01-450b-a18d-f3cac10f725e",
                     "cn": [
@@ -204,6 +269,11 @@
                                 "fn": "onAddStudyButtonClick",
                                 "name": "click",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onAddStudyButtonClick",
                             "designerId": "6fb04ec7-8590-46ec-a25b-2ca17a35abf7"

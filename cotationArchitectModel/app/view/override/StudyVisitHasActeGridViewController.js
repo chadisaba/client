@@ -12,7 +12,7 @@ Ext.define('MyApp.view.override.StudyVisitHasActeGridViewController', {
         var me = this;
 
         me.visitId = _visitId;
-        var _visitId="dd2826d3-7791-48cc-a116-335c41b9723c";
+       
 
         var params;
         var resultCCAMConfig;

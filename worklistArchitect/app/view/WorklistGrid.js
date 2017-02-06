@@ -167,7 +167,7 @@ Ext.define('MyApp.view.WorklistGrid', {
             createFilter: true,
             filterType: 'combobox',
             hidden: true,
-            dataIndex: 'worklistLastDictationStatus',
+            dataIndex: 'visitCotationStatus',
             text: 'worklist quotation'
         },
         {

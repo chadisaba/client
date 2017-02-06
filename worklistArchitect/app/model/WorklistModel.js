@@ -61,7 +61,7 @@ Ext.define('MyApp.model.WorklistModel', {
             name: 'worklistLastCrStatus'
         },
         {
-            name: 'worklistLastDictationStatus'
+            name: 'visitCotationStatus'
         },
         {
             name: 'worklistFTNum'

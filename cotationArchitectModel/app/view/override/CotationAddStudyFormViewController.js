@@ -1,5 +1,5 @@
-Ext.define('MyApp.view.override.AddStudyFormViewController', {
-    override: 'MyApp.view.AddStudyFormViewController',
+Ext.define('MyApp.view.override.CotationAddStudyFormViewController', {
+    override: 'MyApp.view.CotationAddStudyFormViewController',
 
     initForm: function(_visitId,_replacedStudyVisitId,_studyId) {
 
@@ -117,7 +117,7 @@ Ext.define('MyApp.view.override.AddStudyFormViewController', {
             .catch(function(_err)
             {
                 console.error(_err);
-            })
+            });
 
     }
 

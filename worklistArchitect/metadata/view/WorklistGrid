@@ -837,7 +837,7 @@
             "codeClass": null,
             "userConfig": {
                 "createFilter": true,
-                "dataIndex": "worklistLastDictationStatus",
+                "dataIndex": "visitCotationStatus",
                 "filterType": "combobox",
                 "filterValues": [
                     "[ComboData.quotationStatus]"

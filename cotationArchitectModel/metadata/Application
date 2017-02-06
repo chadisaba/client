@@ -20,8 +20,14 @@
         "views": [
             "StudyVisitHasActeGrid",
             "MyPanelCotation",
-            "AddStudyForm"
+            "CotationAddStudyForm"
         ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

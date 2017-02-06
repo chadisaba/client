@@ -9,6 +9,10 @@
         "designer|userAlias": "myviewport1",
         "designer|userClassName": "MyViewport1ViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "fae57581-31ab-468c-9676-c119bb73d702",
     "cn": [
         {
@@ -30,6 +34,12 @@
                     "Utility.routes.setCurrentView(node,mainCardView,navigationTreeList);"
                 ],
                 "url": ":node"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
             },
             "name": "onChangeView",
             "designerId": "aaf3202f-d6ad-4dc1-817c-0b54a6bab001"

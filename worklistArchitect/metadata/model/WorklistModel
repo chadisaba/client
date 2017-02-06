@@ -189,7 +189,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "worklistLastDictationStatus"
+                "name": "visitCotationStatus"
             },
             "configAlternates": {
                 "name": "string"

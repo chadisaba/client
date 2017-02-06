@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewModel",
+    "type": "Ext.app.ViewController",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "mypanelcotation",
-        "designer|userClassName": "MyPanelCotationViewModel"
+        "designer|userAlias": "cotationaddstudyform",
+        "designer|userClassName": "CotationAddStudyFormViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "314b8adf-4aec-420c-8c39-b824c6c3fd81"
+    "designerId": "ab4a7f07-9d6c-43d3-b877-77859ffdd5f7"
 }

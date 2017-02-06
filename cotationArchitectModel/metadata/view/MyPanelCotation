@@ -12,6 +12,13 @@
         "title": "My Panel",
         "width": 400
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyPanel",
     "designerId": "0dd4d087-ac5c-46db-a574-37cdf506c4e0",
     "viewControllerInstanceId": "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03",
@@ -26,6 +33,9 @@
             "codeClass": null,
             "userConfig": {
                 "text": "Cotation"
+            },
+            "configAlternates": {
+                "text": "string"
             },
             "name": "MyButton",
             "designerId": "f1f14f8d-9533-4a2e-a307-a72cdbd69d34",
@@ -51,7 +61,7 @@
                             "        listeners:{",
                             "            afterrender:function(_comp)",
                             "            {",
-                            "                _comp.getController().initGrid([],true,'dd2826d3-7791-48cc-a116-335c41b9723c');",
+                            "                _comp.getController().initGrid([],true,'be593ee4-3307-4c3c-bddc-9caebcc8c9e8');",
                             "            }",
                             "        }",
                             "        /*plugins:[",
@@ -66,6 +76,12 @@
                         ],
                         "name": "click",
                         "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
                     },
                     "name": "onButtonClick",
                     "designerId": "a5b53bc1-3b84-4dca-8d3a-fe0edef1faec"

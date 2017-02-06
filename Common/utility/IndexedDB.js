@@ -34,7 +34,9 @@ var IndexedDB={
                         TFIELD:'++id,tfieldName,tfieldDbName',
                         ESTABLISHMENT:'++id,establishmentId,establishmentCode,establishmentName',
                         EST_HAS_SERV:'++id,estHasServId,establishmentId,estHasServCode,estHasServName',
-                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin'
+                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin',
+                        CCAM_CONFIG:'++id,CCAMConfigId,CCAMConfigCode,CCAMConfigDescription',
+                        CCAM_MODIFICATEURS:'++id,CCAMModificateurId,CCAMModificateurCode,CCAMModificateurCoef,CCAMModificateurAmount'
                     });
                     me.db.open();
                     resolve();
@@ -44,8 +46,8 @@ var IndexedDB={
                 }
 
 
-             });
-         return promise;
+            });
+        return promise;
 
 
     },
@@ -89,20 +91,20 @@ var IndexedDB={
         return db.transaction("rw", table, function () {
             return me.findById(_tableName,_idName,_idValue)
                 .then (function(_result)
-                {
-                    if(_result && (_dataObject.id || isNaN(_dataObject.id)))
-                        _dataObject.id=_result.id;
-                    return table.put(_dataObject);
-                }
+                    {
+                        if(_result && (_dataObject.id || isNaN(_dataObject.id)))
+                            _dataObject.id=_result.id;
+                        return table.put(_dataObject);
+                    }
                 )
         })
             .catch(function (e) {
-            console.error("Error: "+e);
-        });
+                console.error("Error: "+e);
+            });
     },
-     populateData:function(_tableName,_dataArray) {
-         var db=this.db;
-         var table=db[_tableName];
+    populateData:function(_tableName,_dataArray) {
+        var db=this.db;
+        var table=db[_tableName];
         return db.transaction("rw", table, function () {
             return table.clear().
             then(function()
@@ -110,12 +112,12 @@ var IndexedDB={
                 return table.bulkAdd(_dataArray);
             });
 
-        // Log data from DB:
-       /* db.friends.orderBy('name').each(function (friend) {
-            log(JSON.stringify(friend));
-        });*/
-    }).catch(function (e) {
-        console.error("Error: "+e);
-    });
-}
+            // Log data from DB:
+            /* db.friends.orderBy('name').each(function (friend) {
+             log(JSON.stringify(friend));
+             });*/
+        }).catch(function (e) {
+            console.error("Error: "+e);
+        });
+    }
 };

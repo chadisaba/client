@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "ReferringPhysicianNameComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelReferringPhysicianNameComboModel",
     "designerId": "5e68eca7-549b-4a4f-8b34-98efdf35272d",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField1",
             "designerId": "d27ec811-3b73-46b3-b31c-7ac3a0a68bc6"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "referringPhysicianName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField2",
             "designerId": "664b019c-e179-4391-a50a-233b29838bf5"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianSearch"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField8",
             "designerId": "1cd2942d-5874-4c48-b76e-3a33d64bb2f3"

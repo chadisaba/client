@@ -13,10 +13,10 @@ var InitApp={
         var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
 
 
-         mainTableObject={
+        mainTableObject={
             tableName:"DOCTOR"
         };
-         joinTablesArray=[{
+        joinTablesArray=[{
             tableName:"USER"
         }];
 
@@ -26,12 +26,12 @@ var InitApp={
         var p4=CommonDirect.getData("CITY",false,100);
 
         /* mainTableObject={
-            tableName:"ROOM_HAS_DEVICE"
-        };
+         tableName:"ROOM_HAS_DEVICE"
+         };
          joinTablesArray=[{
-            tableName:"DEVICE"
-        }];
-        var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
+         tableName:"DEVICE"
+         }];
+         var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
 
         var p6=CommonDirect.getData("DEVICE");
         var p7=CommonDirect.getData("ROOM");
@@ -51,7 +51,9 @@ var InitApp={
         var p13=CommonDirect.getData('ESTABLISHMENT');
         var p14=CommonDirect.getData('EST_HAS_SERV');
         var p15=CommonDirect.getData("SITE_CONFIG");
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15])
+        var p16=CommonDirect.getData("CCAM_CONFIG");
+        var p17=CommonDirect.getData("CCAM_MODIFICATEURS");
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -70,11 +72,11 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('DOC_HAS_STUDY',docHasStduiesArray));
 
                         // Populating ROOM_HAS_DEVICE DOC_HAS_STUDY table
-                       /* for (var i = 0; i < roomHasDeviceArray.length; i++) {
-                            roomHasDeviceArray[i].deviceCode=roomHasDeviceArray[i]['Device.deviceCode'];
-                            roomHasDeviceArray[i].deviceName=roomHasDeviceArray[i]['Device.deviceName'];
-                        }
-                        indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
+                        /* for (var i = 0; i < roomHasDeviceArray.length; i++) {
+                         roomHasDeviceArray[i].deviceCode=roomHasDeviceArray[i]['Device.deviceCode'];
+                         roomHasDeviceArray[i].deviceName=roomHasDeviceArray[i]['Device.deviceName'];
+                         }
+                         indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
 
                         // Populating  USER table
                         var usersArray=values[2];
@@ -125,7 +127,7 @@ var InitApp={
 
                         for (var i = 0; i < deviceHasStudyArray.length; i++) {
                             deviceHasStudyArray[i].deviceName=deviceHasStudyArray[i]['Device.deviceName'];
-                             deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
+                            deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
 
@@ -141,6 +143,12 @@ var InitApp={
                         var siteConfigArray=values[13];
                         indexDBPromiseArray.push(IndexedDB.populateData('SITE_CONFIG',siteConfigArray));
 
+                        var ccamConfigArray=values[14];
+                        indexDBPromiseArray.push(IndexedDB.populateData('CCAM_CONFIG',ccamConfigArray));
+
+                        var ccamModificateursArray=values[15];
+                        indexDBPromiseArray.push(IndexedDB.populateData('CCAM_MODIFICATEURS',ccamModificateursArray));
+
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
                             {
@@ -150,11 +158,11 @@ var InitApp={
                                     window.open("../pub_workflow/indexOffice.html",'_self');
 
                                 }
-                               else
-                                window.open("../pub_workflow/#maintabpanel",'_self');
+                                else
+                                    window.open("../pub_workflow/#maintabpanel",'_self');
                                 _myMask.hide();
                             }).
-                            catch(function(_err)
+                        catch(function(_err)
                         {
                             console.error(_err);
                         })

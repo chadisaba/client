@@ -36,17 +36,14 @@
         "displayfield-ExtBox1-1613-inputEl": "a new version of the framework is available",
         "displayfield-ExtBox1-1126-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "4.0.2",
-    "xdsBuild": 209,
+    "xdsVersion": "4.1.1",
+    "xdsBuild": 123,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
     "viewOrderMap": {
         "view": [
             "04066d1c-7822-46e5-825a-1d1d52b03901",
-            "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
-            "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm",
-            "nmp5j5vd-8c41-4643-a8f8-81qed2vjjgm9",
             "754eb02b-d1c8-48ad-8e88-b50fda0247d2",
             "857b6e6f-e979-497f-a731-fa35215185f4",
             "4702aeb1-429b-45af-b394-40a06bf904db",
@@ -64,15 +61,15 @@
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
         "model": [
+            "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
             "5e68eca7-549b-4a4f-8b34-98efdf35272d",
             "f8c4ef8d-71de-4b32-89c0-9f1a3cfac98c",
-            "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
             "298f1b8d-0f4d-4140-aed9-0d773aac986e",
             "d0053432-ba71-4633-92df-e6edfabc950a",
             "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f"
         ],
         "resource": [
-            "43afb4f6-cf2b-444c-917a-7c06e0852da9"
+            "83c844ca-551a-4f1e-b487-0c801353b961"
         ],
         "app": [
             "application"

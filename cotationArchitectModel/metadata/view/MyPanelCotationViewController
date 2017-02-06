@@ -9,5 +9,9 @@
         "designer|userAlias": "mypanelcotation",
         "designer|userClassName": "MyPanelCotationViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "bc3030ab-6e1c-4ae2-bd59-6a8f47e99c03"
 }
