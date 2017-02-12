@@ -166,6 +166,22 @@
             "designerId": "e96f8d89-803f-419a-a346-jmmtsj9j38vc"
         },
         {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyActeCodeGroupement"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString11",
+            "designerId": "1d60c4c5-7906-4939-be24-7aea3043f185"
+        },
+        {
             "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",

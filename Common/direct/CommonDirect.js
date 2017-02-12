@@ -218,7 +218,7 @@ var CommonDirect={
             });
         return promise;
     },
-    getData:function(_tableName,_filtersArray,_limit)
+    getData:function(_tableName,_filtersArray,_limit,_fieldsArray,_order)
     {
         //Creating a promise
         var me=this;
@@ -235,6 +235,10 @@ var CommonDirect={
                 };
                 if(_filtersArray)
                     params.filters=me.convertDateToString(_filtersArray);
+                if(_fieldsArray && _fieldsArray.length>0)
+                    params.fieldsArray=_fieldsArray;
+                if(_order)
+                    params.order=_order;
                    // _filtersArray=
 
 
@@ -252,7 +256,7 @@ var CommonDirect={
             });
         return promise;
     },
-    getDataWidthJoin:function(mainTableObject,joinTablesArray)
+    getDataWidthJoin:function(mainTableObject,joinTablesArray,_limit)
     {
         //Creating a promise
         var me=this;
@@ -263,6 +267,8 @@ var CommonDirect={
                     joinTablesArray: joinTablesArray
 
                 };
+                if(_limit) params.limit=_limit;
+
                 if(params.mainTableObject.filters)
                     params.mainTableObject.filters=me.convertDateToString(params.mainTableObject.filters);
 

@@ -39,11 +39,12 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
         ];
         var pSite=CommonDirect.getDataWidthJoin(mainTableObject,joinTableArray);
         var pUser= CommonDirect.getData("USER",filters);
-
-        Promise.all([pSite,pUser])
+ var pActeVersion=CommonDirect.getData("ACTE_VERSION",[],1,[],[['acteVersionId', 'DESC']]);
+        Promise.all([pSite,pUser,pActeVersion])
             .then(function(_values)
             {
                 var userResult=_values[1];
+                var acteVersion=_values[2];
                 if(userResult.length>0){
                     user=userResult[0];
 
@@ -59,6 +60,8 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
 
                         window.localStorage.setItem('smartmed-siteConfigAmoDefault', site['SiteConfig.siteConfigAmoDefault']);
                         window.localStorage.setItem('smartmed-siteConfigAmcDefault', site['SiteConfig.siteConfigAmcDefault']);
+                        window.localStorage.setItem('smartmed-siteConfigPdsMandatory', site['SiteConfig.siteConfigPdsMandatory']);
+
 
 
                         StateProvider.restoreState(user.userId)
@@ -78,7 +81,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                                 InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
                                 InitApp.userId= user.userId;
 
-                                InitApp.initIndexedDB(myMask,appType);
+                                InitApp.initIndexedDB(myMask,appType,acteVersion[0].acteVersionId);
                                 /*  }*/
 
 

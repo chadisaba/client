@@ -48,7 +48,7 @@ function translate(text)
         "clickToCancelModifications":"Annuler les modifications",
         "gridEdit.quitEditionTitle":"Quitter l'édition",
         "gridEdit.quitEditionMsg":"Voulez vous quittez le mode d'édition?",
-        "displayModifiedRows":"Afficher seulement les modifications",
+        "displayModifiedRows":"Suelement Modification",
         "applyChTitle":"Confirmation",
         "ApplyModification":"Appliquer les modifications?",
         "submitMsg":"Enregistrer",
@@ -90,7 +90,7 @@ function translate(text)
         'VerificationEnCours':"Vérification en cours, veuillez patienter....",
         'Saving':"Enregistrement en cours...",
         'loadingIndexedDB':"Chargement des données en cache,veuillez patienter....",
-
+        'chargementEnCours':"Chargement en cours, veuillez patienter....",
 
         /*******Confirm messages*****/
 

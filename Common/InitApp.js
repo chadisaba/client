@@ -1,59 +1,66 @@
 var InitApp={
     siteId:null,
-    initIndexedDB:function(_myMask,_appType)
+    initIndexedDB:function(_myMask,_appType,_acteVersionId)
     {
         // retreive data from server db to update indexedDB
 
         var mainTableObject={
             tableName:"DOC_HAS_STUDY"
+
         };
         var joinTablesArray=[{
             tableName:"STUDY"
         }];
-        var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
 
-        mainTableObject={
-            tableName:"DOCTOR"
+         mainTableObject={
+            tableName:"DOCTOR",
+             limit:'no'
         };
-        joinTablesArray=[{
+         joinTablesArray=[{
             tableName:"USER"
         }];
 
-        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
-        var p3=CommonDirect.getData("USER");
+        var p3=CommonDirect.getData("USER",[],'no');
         var p4=CommonDirect.getData("CITY",false,100);
 
         /* mainTableObject={
-         tableName:"ROOM_HAS_DEVICE"
-         };
+            tableName:"ROOM_HAS_DEVICE"
+        };
          joinTablesArray=[{
-         tableName:"DEVICE"
-         }];
-         var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
+            tableName:"DEVICE"
+        }];
+        var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
 
-        var p6=CommonDirect.getData("DEVICE");
-        var p7=CommonDirect.getData("ROOM");
-        var p8=CommonDirect.getData("STUDY");
-        var p9=CommonDirect.getData("REFERRING_PHYSICIAN");
+        var p6=CommonDirect.getData("DEVICE",[],'no');
+        var p7=CommonDirect.getData("ROOM",[],'no');
+        var p8=CommonDirect.getData("STUDY",[],'no');
+        var p9=CommonDirect.getData("REFERRING_PHYSICIAN",[],'no');
 
         mainTableObject={
-            tableName:"DEVICE_HAS_STUDY"
+            tableName:"DEVICE_HAS_STUDY",
+            limit:'no'
         };
         var joinTablesArray=[{
             tableName:"DEVICE"
         }];
-        var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
-        var p11=CommonDirect.getData("SITE");
-        var p12=CommonDirect.getData('TFIELD');
-        var p13=CommonDirect.getData('ESTABLISHMENT');
-        var p14=CommonDirect.getData('EST_HAS_SERV');
-        var p15=CommonDirect.getData("SITE_CONFIG");
-        var p16=CommonDirect.getData("CCAM_CONFIG");
-        var p17=CommonDirect.getData("CCAM_MODIFICATEURS");
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17])
+        var p11=CommonDirect.getData("SITE",[],'no');
+        var p12=CommonDirect.getData('TFIELD',[],'no');
+        var p13=CommonDirect.getData('ESTABLISHMENT',[],'no');
+        var p14=CommonDirect.getData('EST_HAS_SERV',[],'no');
+        var p15=CommonDirect.getData("SITE_CONFIG",[],'no');
+        var p16=CommonDirect.getData("CCAM_CONFIG",[],'no');
+        var p17=CommonDirect.getData("CCAM_MODIFICATEURS",[],'no');
+        var p18=CommonDirect.getData("APP_CONFIG",[],'no');
+        var p19=CommonDirect.getData("ACTE",[{name:'acteVersionId',value:_acteVersionId}],'no',['acteId','acteCode','acteVersionId','actePrix']);
+        var p20=CommonDirect.getData("ACTE_VERSION",[{name:'acteVersionId',value:_acteVersionId}],1);
+
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -72,11 +79,11 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('DOC_HAS_STUDY',docHasStduiesArray));
 
                         // Populating ROOM_HAS_DEVICE DOC_HAS_STUDY table
-                        /* for (var i = 0; i < roomHasDeviceArray.length; i++) {
-                         roomHasDeviceArray[i].deviceCode=roomHasDeviceArray[i]['Device.deviceCode'];
-                         roomHasDeviceArray[i].deviceName=roomHasDeviceArray[i]['Device.deviceName'];
-                         }
-                         indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
+                       /* for (var i = 0; i < roomHasDeviceArray.length; i++) {
+                            roomHasDeviceArray[i].deviceCode=roomHasDeviceArray[i]['Device.deviceCode'];
+                            roomHasDeviceArray[i].deviceName=roomHasDeviceArray[i]['Device.deviceName'];
+                        }
+                        indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
 
                         // Populating  USER table
                         var usersArray=values[2];
@@ -127,7 +134,7 @@ var InitApp={
 
                         for (var i = 0; i < deviceHasStudyArray.length; i++) {
                             deviceHasStudyArray[i].deviceName=deviceHasStudyArray[i]['Device.deviceName'];
-                            deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
+                             deviceHasStudyArray[i].siteId=deviceHasStudyArray[i]['Device.siteId'];
                         }
                         indexDBPromiseArray.push(IndexedDB.populateData('DEVICE_HAS_STUDY',deviceHasStudyArray));
 
@@ -149,6 +156,15 @@ var InitApp={
                         var ccamModificateursArray=values[15];
                         indexDBPromiseArray.push(IndexedDB.populateData('CCAM_MODIFICATEURS',ccamModificateursArray));
 
+                        var appConfigArray=values[16];
+                        indexDBPromiseArray.push(IndexedDB.populateData('APP_CONFIG',appConfigArray));
+
+                        var acteArray=values[17];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ACTE',acteArray));
+
+                        var acteVersionArray=values[18];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ACTE_VERSION',acteVersionArray));
+
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
                             {
@@ -158,11 +174,11 @@ var InitApp={
                                     window.open("../pub_workflow/indexOffice.html",'_self');
 
                                 }
-                                else
-                                    window.open("../pub_workflow/#maintabpanel",'_self');
+                               else
+                                window.open("../pub_workflow/#maintabpanel",'_self');
                                 _myMask.hide();
                             }).
-                        catch(function(_err)
+                            catch(function(_err)
                         {
                             console.error(_err);
                         })

@@ -14,6 +14,11 @@
             "MyViewport"
         ]
     },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string",
+        "views": "typedarray"
+    },
     "name": "Application",
     "designerId": "application",
     "cn": [
@@ -29,6 +34,10 @@
                 "implHandler": [
                     "Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());"
                 ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "launch",
             "designerId": "081baa18-ea73-41db-a37b-320ca83e9a13"

@@ -16,6 +16,15 @@
             "\"background-image: url(../Common/resources/images/background.jpg);\""
         ]
     },
+    "configAlternates": {
+        "container|align": "string",
+        "container|pack": "string",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "style": "object"
+    },
     "name": "MyViewport",
     "designerId": "3657ce41-a071-4b07-bf47-dbfe31c06de2",
     "viewControllerInstanceId": "5bd17e86-85e9-44dd-ac9d-5d0ba67fbf9b",
@@ -42,6 +51,16 @@
                 "title": "Connection",
                 "width": 459
             },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "bodyStyle": "object",
+                "height": "auto",
+                "itemId": "string",
+                "layout|flex": "number",
+                "margin": "auto",
+                "title": "string",
+                "width": "auto"
+            },
             "name": "MyForm",
             "designerId": "9042a75e-7a02-41ab-a485-4e40d46d9c24",
             "cn": [
@@ -65,6 +84,19 @@
                         "name": "username",
                         "regexText": "Enter your username."
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "blankText": "string",
+                        "enableKeyEvents": "boolean",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelAlign": "string",
+                        "labelStyle": "string",
+                        "margin": "auto",
+                        "msgTarget": "string",
+                        "name": "string",
+                        "regexText": "string"
+                    },
                     "name": "MyTextField",
                     "designerId": "efa5c9ec-7163-4120-8c82-18b18a8b803a",
                     "cn": [
@@ -79,6 +111,11 @@
                                 "fn": "onUsernameItemIdKeydown",
                                 "name": "keydown",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onUsernameItemIdKeydown",
                             "designerId": "2f6aae4b-64b0-457c-a1ab-d2c39f6b79a6"
@@ -104,6 +141,18 @@
                         "msgTarget": "title",
                         "name": "password"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "blankText": "string",
+                        "enableKeyEvents": "boolean",
+                        "fieldLabel": "string",
+                        "inputType": "string",
+                        "itemId": "string",
+                        "labelAlign": "string",
+                        "margin": "auto",
+                        "msgTarget": "string",
+                        "name": "string"
+                    },
                     "name": "MyTextField1",
                     "designerId": "c9874a86-4786-48a3-b82e-83c619a1c210",
                     "cn": [
@@ -118,6 +167,11 @@
                                 "fn": "onPasswordItemIdKeydown",
                                 "name": "keydown",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onPasswordItemIdKeydown",
                             "designerId": "39614a08-d3c7-44ad-8203-d5efe089b86a"
@@ -134,6 +188,9 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
                     "name": "MyToolbar",
                     "designerId": "51d7d550-01de-46e4-8142-c850812e9374",
                     "cn": [
@@ -146,6 +203,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
                             },
                             "name": "MyFill",
                             "designerId": "fb9db510-31a3-4e3e-ae68-6094abec6a1c"
@@ -165,6 +225,14 @@
                                 "scale": "medium",
                                 "text": "Se connecter"
                             },
+                            "configAlternates": {
+                                "formBind": "boolean",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "scale": "string",
+                                "text": "string"
+                            },
                             "name": "MyButton3",
                             "designerId": "528f9810-0fa2-40de-b1d8-10c89c69db60",
                             "cn": [
@@ -179,6 +247,11 @@
                                         "fn": "onLoginBtnClick",
                                         "name": "click",
                                         "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
                                     },
                                     "name": "onLoginBtnClick",
                                     "designerId": "0e1f1170-d962-4840-966f-0c8e606ef0d9"

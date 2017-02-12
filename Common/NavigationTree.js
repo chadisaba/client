@@ -73,10 +73,10 @@ Ext.define('MyApp.store.NavigationTree', {
                         routeId: 'fiscalyeargrid', // routeId defaults to viewType
                         leaf: true
                     }
-                ]
+                    ]
 
             },
-            {
+          {
                 text: 'actes ',
                 iconCls: 'x-fa fa-users',
                 viewType: 'studyactemainview',

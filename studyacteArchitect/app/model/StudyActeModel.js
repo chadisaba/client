@@ -66,6 +66,10 @@ Ext.define('MyApp.model.StudyActeModel', {
             name: 'studyActeDepense'
         },
         {
+            type: 'string',
+            name: 'studyActeCodeGroupement'
+        },
+        {
             type: 'int',
             name: 'studyActeQuantity'
         },

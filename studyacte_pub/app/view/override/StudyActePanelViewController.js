@@ -43,11 +43,13 @@ Ext.define('MyApp.view.override.StudyActePanelViewController', {
                active:true
            }); 
             if(recActe.get('acteCode'))
-                {
+                { // ccam
                   studyActeRec.set('studyActeCode',recActe.get('acteCode'));
-                    studyActeRec.set('studyActeType',1);
-                    studyActeRec.set('studyActeAmount',recActe.get('actePrix'));
-                    studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
+                  studyActeRec.set('studyActeType',1);
+                  studyActeRec.set('studyActeCodeGroupement',recActe.get('acteCodeGroupement'));
+                  studyActeRec.set('studyActeAmount',recActe.get('actePrix'));
+                  studyActeRec.set('studyActeModificators',recActe.get('acteModificateurs'));
+                 
                      
                 }
             else{

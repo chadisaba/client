@@ -114,7 +114,7 @@ Ext.define('MyApp.view.StudyActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
-            dataIndex: 'studyActeDepense',
+            dataIndex: 'studyActeCodeGroupement',
             text: 'Qalificatif',
             editor: {
                 xtype: 'textfield',

@@ -294,7 +294,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyActeDepense",
+                "dataIndex": "studyActeCodeGroupement",
                 "hidden": true,
                 "text": "Qalificatif"
             },

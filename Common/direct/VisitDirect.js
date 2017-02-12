@@ -20,7 +20,27 @@ saveVisit:function(_visitObject)
 });
 return promise;
 },
-
+    saveStudyVisitAndActe:function(_studyVisitObj)
+    {
+        var promise = new Promise(
+            function (resolve, reject) {
+                var params={
+                    studyVisitObj:_studyVisitObj
+                };
+                Server.Visit.saveStudyVisitAndActe(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+        return promise;
+    },
     saveVisitAndStudyVisit:function(_visitObject,_studiesVisitArray,_studiesArray,_worklistDoctor)
     {
         var promise = new Promise(
