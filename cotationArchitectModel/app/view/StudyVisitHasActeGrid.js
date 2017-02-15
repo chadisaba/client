@@ -294,8 +294,8 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            dataIndex: 'studyVisitHasActeArchivingActeAddedAuto',
             hidden: true,
+            dataIndex: 'studyVisitHasActeArchivingActeAddedAuto',
             text: 'Auto'
         },
         {
@@ -309,8 +309,8 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeAcceptedModificators',
             hidden: true,
+            dataIndex: 'studyVisitHasActeAcceptedModificators',
             text: 'AcceptedModificators'
         },
         {
