@@ -21,7 +21,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         'MyApp.view.StudyVisitHasActeGridViewModel',
         'MyApp.view.StudyVisitHasActeGridViewController',
         'Ext.grid.column.Column',
-        'Ext.form.field.ComboBox',
+        'Ext.form.field.Text',
         'Ext.form.field.Checkbox',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
@@ -49,17 +49,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyCode',
-            text: 'Code',
-            editor: {
-                xtype: 'combobox',
-                itemId: 'studyCodeComboBox',
-                displayField: 'studyCode',
-                queryMode: 'local',
-                valueField: 'studyCode',
-                bind: {
-                    store: '{studyComboStore}'
-                }
-            }
+            text: 'Examen'
         },
         {
             xtype: 'gridcolumn',
@@ -80,12 +70,12 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyVisitHasActeCode',
-            text: 'Code',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeCodeTextFieldItemId',
-                allowBlank: false
-            }
+            text: 'Acte'
+        },
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'studyVisitHasActeUnitPrice',
+            text: 'Prix Unitaire'
         },
         {
             xtype: 'gridcolumn',
@@ -304,12 +294,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            hidden: true,
             dataIndex: 'studyVisitHasActeArchivingActeAddedAuto',
-            text: 'Auto',
-            editor: {
-                xtype: 'checkboxfield'
-            }
+            hidden: true,
+            text: 'Auto'
         },
         {
             xtype: 'gridcolumn',
@@ -323,11 +310,8 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'studyVisitHasActeAcceptedModificators',
-            text: 'AcceptedModificators',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeAcceptedModificatorsTextFieldItemId'
-            }
+            hidden: true,
+            text: 'AcceptedModificators'
         },
         {
             xtype: 'gridcolumn',

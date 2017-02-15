@@ -23,7 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "groupField": "studyVisitId",
+                "groupField": "visitId",
                 "model": "StudyVisitHasActeModel",
                 "name": "StudyVisitHasActeStore"
             },

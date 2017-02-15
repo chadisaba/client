@@ -38,6 +38,22 @@
             "designerId": "febdf02e-b08f-468c-9b95-0e1c9a5aea87"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MystudyVisitId1",
+            "designerId": "8a6f463b-b963-4ed3-a0f0-60710b2dc68f"
+        },
+        {
             "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
@@ -374,7 +390,7 @@
             "designerId": "f525e056-38ae-4da9-a99b-9392f0274961"
         },
         {
-            "type": "Ext.data.field.Integer",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -386,7 +402,7 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MystudyVisitHasActeAssociationNonPrevu",
+            "name": "MyField",
             "designerId": "76cdb5c6-a107-43aa-b328-8980479c31c4"
         },
         {
@@ -436,6 +452,22 @@
             },
             "name": "MystudyVisitHasActeAmount",
             "designerId": "20250eae-bb67-4814-b3b5-51f707fb9542"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyVisitHasActeUnitPrice"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MystudyVisitHasActeAmount1",
+            "designerId": "9dd28ca5-d06a-47da-a995-8f92af4d0783"
         },
         {
             "type": "Ext.data.field.String",

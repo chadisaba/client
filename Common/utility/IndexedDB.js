@@ -38,7 +38,7 @@ var IndexedDB={
                         CCAM_CONFIG:'++id,CCAMConfigId,CCAMConfigCode,CCAMConfigDescription',
                         CCAM_MODIFICATEURS:'++id,CCAMModificateurId,CCAMModificateurCode,CCAMModificateurCoef,CCAMModificateurAmount',
                         ACTE:'++id,acteId,acteCode,acteVersionId,actePrix',
-                        ACTE_VERSION:'++id,acteVersionId,acteVersionCode,acteVersionStartDate,acteEndStartDate',
+                        ACTE_VERSION:'++id,acteVersionId,acteVersionCode,acteVersionStartDate,acteVersionEndDate',
                         APP_CONFIG:'++id,appConfigId,appConfigSeuilPav',
                     });
                     me.db.open();
