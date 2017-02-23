@@ -29,7 +29,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         'Ext.grid.feature.GroupingSummary',
         'Ext.XTemplate',
         'Ext.toolbar.Toolbar',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.toolbar.Spacer',
+        'Ext.toolbar.Separator'
     ],
 
     controller: 'studyvisithasactegrid',
@@ -372,28 +374,98 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             itemId: 'editingtoolbar',
             items: [
                 {
-                    xtype: 'button',
-                    itemId: 'replaceStudyButton',
-                    text: 'Remplacer',
-                    listeners: {
-                        click: 'onReplaceStudyButtonClick'
-                    }
+                    xtype: 'container',
+                    itemId: 'addDeleteReplaceContainer',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'addStudyButton',
+                            text: 'Ajouter',
+                            listeners: {
+                                click: 'onAddStudyButtonClick'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'deleteStudyButton',
+                            text: 'Supprimer',
+                            listeners: {
+                                click: 'onDeleteStudyButtonClick'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'replaceStudyButton',
+                            text: 'Remplacer',
+                            listeners: {
+                                click: 'onReplaceStudyButtonClick'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        }
+                    ]
                 },
                 {
-                    xtype: 'button',
-                    itemId: 'validateButton',
-                    text: 'Valider',
-                    listeners: {
-                        click: 'onValidateButtonClick'
-                    }
+                    xtype: 'tbseparator'
                 },
                 {
-                    xtype: 'button',
-                    itemId: 'devalidateButton',
-                    text: 'Dévalider',
-                    listeners: {
-                        click: 'onDevalidateButtonClick'
-                    }
+                    xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'saveButton',
+                            text: 'Enregistrer',
+                            listeners: {
+                                click: 'onSaveButtonClick'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'validateButton',
+                            text: 'Valider',
+                            listeners: {
+                                click: 'onValidateButtonClick'
+                            }
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 10
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'devalidateButton',
+                            text: 'Dévalider',
+                            listeners: {
+                                click: 'onDevalidateButtonClick'
+                            }
+                        }
+                    ]
                 }
             ]
         }
@@ -410,7 +482,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
     },
 
     processStudyVisitHasActeGrid: function(config) {
-        GridAddPlugins.addPlugins(this);
+        GridAddPlugins.addPlugins(this,{onlyModifyWithoutEdit:true,liveSearch:false});
 
     }
 

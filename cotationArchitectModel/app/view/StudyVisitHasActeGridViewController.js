@@ -91,7 +91,19 @@ Ext.define('MyApp.view.StudyVisitHasActeGridViewController', {
 
     },
 
+    onAddStudyButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onDeleteStudyButtonClick: function(button, e, eOpts) {
+
+    },
+
     onReplaceStudyButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onSaveButtonClick: function(button, e, eOpts) {
 
     },
 

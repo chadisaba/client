@@ -1333,7 +1333,7 @@
                 ],
                 "fn": "processStudyVisitHasActeGrid",
                 "implHandler": [
-                    "GridAddPlugins.addPlugins(this);",
+                    "GridAddPlugins.addPlugins(this,{onlyModifyWithoutEdit:true,liveSearch:false});",
                     ""
                 ]
             },
@@ -1780,128 +1780,412 @@
             "designerId": "e5f04f2f-a799-4cee-9b2c-36d0621e1a6e",
             "cn": [
                 {
-                    "type": "Ext.button.Button",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "replaceStudyButton",
-                        "layout|flex": null,
-                        "text": "Remplacer"
+                        "container|align": "stretch",
+                        "itemId": "addDeleteReplaceContainer",
+                        "layout": "hbox",
+                        "layout|flex": null
                     },
                     "configAlternates": {
+                        "container|align": "string",
                         "itemId": "string",
-                        "layout|flex": "number",
-                        "text": "string"
+                        "layout": "string",
+                        "layout|flex": "number"
                     },
-                    "name": "MyButton2",
-                    "designerId": "2f151d1e-807c-431a-b042-7fc9625a1bab",
+                    "name": "MyContainer",
+                    "designerId": "79bd6369-b7b5-407d-857b-32e9ce52c83f",
                     "cn": [
                         {
-                            "type": "viewcontrollereventbinding",
+                            "type": "Ext.button.Button",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onReplaceStudyButtonClick",
-                                "name": "click",
-                                "scope": "me"
+                                "itemId": "addStudyButton",
+                                "layout|flex": null,
+                                "text": "Ajouter"
                             },
                             "configAlternates": {
-                                "fn": "string",
-                                "name": "string",
-                                "scope": "string"
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
                             },
-                            "name": "onReplaceStudyButtonClick",
-                            "designerId": "415be691-e6c8-4216-8cd3-ed7fb647bda8"
+                            "name": "MyButton5",
+                            "designerId": "e69e5104-64c8-4b60-be5a-0c1c0e795e7d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAddStudyButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAddStudyButtonClick",
+                                    "designerId": "f13f6284-c3ed-4871-b061-c853ef68ec73"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MySpacer",
+                            "designerId": "07bde9ea-1c2a-43d8-b72d-87f609ea44f3"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "deleteStudyButton",
+                                "layout|flex": null,
+                                "text": "Supprimer"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "af74a4f6-db28-481d-bbae-f4b7fa37a988",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteStudyButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onDeleteStudyButtonClick",
+                                    "designerId": "75e31c3e-94c7-4916-98f0-8ba9024b67ec"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MySpacer4",
+                            "designerId": "21265a4f-57ff-4e24-8a67-a3ea8ed97ecf"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "replaceStudyButton",
+                                "layout|flex": null,
+                                "text": "Remplacer"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "2f151d1e-807c-431a-b042-7fc9625a1bab",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onReplaceStudyButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onReplaceStudyButtonClick",
+                                    "designerId": "415be691-e6c8-4216-8cd3-ed7fb647bda8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MySpacer1",
+                            "designerId": "2f282d37-cea6-49e6-ae5d-711f9e701ae4"
                         }
                     ]
                 },
                 {
-                    "type": "Ext.button.Button",
+                    "type": "Ext.toolbar.Separator",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "validateButton",
-                        "layout|flex": null,
-                        "text": "Valider"
+                        "layout|flex": null
                     },
                     "configAlternates": {
-                        "itemId": "string",
-                        "layout|flex": "number",
-                        "text": "string"
+                        "layout|flex": "number"
                     },
-                    "name": "MyButton3",
-                    "designerId": "ff369f8d-b12c-4024-ac81-846472007b4e",
-                    "cn": [
-                        {
-                            "type": "viewcontrollereventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onValidateButtonClick",
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "configAlternates": {
-                                "fn": "string",
-                                "name": "string",
-                                "scope": "string"
-                            },
-                            "name": "onValidateButtonClick",
-                            "designerId": "99a3c72f-8124-4d3d-9c56-5621816e0e67"
-                        }
-                    ]
+                    "name": "MySeparator",
+                    "designerId": "934cb285-2308-4ec0-806a-a31e457d3412"
                 },
                 {
-                    "type": "Ext.button.Button",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "devalidateButton",
-                        "layout|flex": null,
-                        "text": "Dévalider"
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null
                     },
                     "configAlternates": {
-                        "itemId": "string",
-                        "layout|flex": "number",
-                        "text": "string"
+                        "container|align": "string",
+                        "layout": "string",
+                        "layout|flex": "number"
                     },
-                    "name": "MyButton4",
-                    "designerId": "01b120b7-5e1c-4832-bee4-87b6f4f9317f",
+                    "name": "MyContainer1",
+                    "designerId": "3acece3c-4438-48c8-ace3-0d94e09d195c",
                     "cn": [
                         {
-                            "type": "viewcontrollereventbinding",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onDevalidateButtonClick",
-                                "name": "click",
-                                "scope": "me"
+                                "width": 10
                             },
                             "configAlternates": {
-                                "fn": "string",
-                                "name": "string",
-                                "scope": "string"
+                                "width": "auto"
                             },
-                            "name": "onDevalidateButtonClick",
-                            "designerId": "bf17c9f1-72ea-4997-ad8d-3ffdd994ce1e"
+                            "name": "MySpacer2",
+                            "designerId": "05c7ae81-22ae-43a1-904f-7f4cbb4360a1"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveButton",
+                                "layout|flex": null,
+                                "text": "Enregistrer"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "6af84c31-dfc6-40c7-9ed0-417acc471696",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSaveButtonClick",
+                                    "designerId": "3c68e225-c68e-4ed9-a6b1-674308527ae3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MySpacer3",
+                            "designerId": "1f32a0c8-9f15-4490-8a81-232d18b481c3"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "validateButton",
+                                "layout|flex": null,
+                                "text": "Valider"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "ff369f8d-b12c-4024-ac81-846472007b4e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onValidateButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onValidateButtonClick",
+                                    "designerId": "99a3c72f-8124-4d3d-9c56-5621816e0e67"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 10
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MySpacer1",
+                            "designerId": "4dd52ebe-a4d1-4269-8806-d24a909bbae1"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "devalidateButton",
+                                "layout|flex": null,
+                                "text": "Dévalider"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "01b120b7-5e1c-4832-bee4-87b6f4f9317f",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDevalidateButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onDevalidateButtonClick",
+                                    "designerId": "bf17c9f1-72ea-4997-ad8d-3ffdd994ce1e"
+                                }
+                            ]
                         }
                     ]
                 }
