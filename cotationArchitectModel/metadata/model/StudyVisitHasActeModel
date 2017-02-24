@@ -326,7 +326,7 @@
             "designerId": "576646e1-0dcd-4687-a7bf-4a13b9f9286e"
         },
         {
-            "type": "Ext.data.field.Integer",
+            "type": "Ext.data.field.Number",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -338,7 +338,7 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MystudyVisitHasActeCoefficient",
+            "name": "MyNumber1",
             "designerId": "142a7c94-17a3-414e-ad73-522ee8470292"
         },
         {
@@ -390,7 +390,7 @@
             "designerId": "f525e056-38ae-4da9-a99b-9392f0274961"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -402,7 +402,7 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField",
+            "name": "MyInteger3",
             "designerId": "76cdb5c6-a107-43aa-b328-8980479c31c4"
         },
         {

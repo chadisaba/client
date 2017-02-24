@@ -9,9 +9,11 @@
         "bodyPadding": 10,
         "designer|userAlias": "cotationaddstudyform",
         "designer|userClassName": "CotationAddStudyForm",
-        "height": 250,
+        "header": false,
+        "height": null,
+        "itemId": "cotationVisitStudyForm",
         "title": "Add study",
-        "width": 400
+        "width": null
     },
     "configAlternates": {
         "bodyPadding": "auto",
@@ -19,7 +21,9 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "header": "boolean",
+        "itemId": "string"
     },
     "name": "MyForm",
     "designerId": "299f2421-e9ef-4246-98f0-7145130838ac",
@@ -27,236 +31,122 @@
     "viewModelInstanceId": "624fd4af-71f2-45b3-bb18-4401ae95fe2c",
     "cn": [
         {
-            "type": "Ext.form.field.ComboBox",
+            "type": "processcfgfunction",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "allowBlank": false,
-                "displayField": "studyCode",
-                "fieldLabel": "Study",
-                "itemId": "studyComboboxItemId",
-                "layout|anchor": "100%",
-                "name": "studyId",
-                "queryMode": "local",
-                "store": [
-                    "{StudyComboStore}"
+                "designer|params": [
+                    "config"
                 ],
-                "typeAhead": true,
-                "valueField": "studyId"
+                "fn": "processCotationAddStudyForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
             },
             "configAlternates": {
-                "store": "binding",
-                "allowBlank": "boolean",
-                "displayField": "datafield",
-                "fieldLabel": "string",
-                "itemId": "string",
-                "layout|anchor": "string",
-                "name": "string",
-                "queryMode": "string",
-                "typeAhead": "boolean",
-                "valueField": "datafield"
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
-            "name": "MyComboBox5",
-            "designerId": "1fbb5b89-4595-4cca-a014-cb15763068da",
-            "cn": [
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onStudyComboboxItemIdChange",
-                        "name": "change",
-                        "scope": "me"
-                    },
-                    "configAlternates": {
-                        "fn": "string",
-                        "name": "string",
-                        "scope": "string"
-                    },
-                    "name": "onStudyComboboxItemIdChange",
-                    "designerId": "7f785da8-7585-4ef5-8dbc-51750150b23d"
-                },
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onStudyComboboxItemIdSelect",
-                        "name": "select",
-                        "scope": "me"
-                    },
-                    "configAlternates": {
-                        "fn": "string",
-                        "name": "string",
-                        "scope": "string"
-                    },
-                    "name": "onStudyComboboxItemIdSelect",
-                    "designerId": "00458ced-d479-4cd1-ae60-3c29eecdeb3d"
-                }
-            ]
+            "name": "processCotationAddStudyForm",
+            "designerId": "3f19fbf7-085b-4cae-b84c-78c9dfbd64fb"
         },
         {
-            "type": "Ext.form.field.ComboBox",
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCotationVisitStudyFormBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCotationVisitStudyFormBoxReady",
+            "designerId": "5a6a9d5e-e4b6-4148-9a59-87fd694dcf02"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCotationVisitStudyFormAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCotationVisitStudyFormAfterRender",
+            "designerId": "ad49647f-1a9d-4be8-99b4-af3b2767313c"
+        },
+        {
+            "type": "Ext.form.FieldSet",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "displayField": "userLName",
-                "fieldLabel": "technician",
-                "itemId": "technicianComboboxItemId",
-                "layout|anchor": "100%",
-                "minChars": 4,
-                "name": "userId",
-                "queryDelay": 500,
-                "queryMode": "local",
-                "store": [
-                    "{TechnicianComboStore}"
-                ],
-                "typeAhead": true,
-                "valueField": "userId"
+                "title": "Informations examen"
             },
             "configAlternates": {
-                "store": "binding",
-                "displayField": "datafield",
-                "fieldLabel": "string",
-                "itemId": "string",
-                "layout|anchor": "string",
-                "minChars": "number",
-                "name": "string",
-                "queryDelay": "number",
-                "queryMode": "string",
-                "typeAhead": "boolean",
-                "valueField": "datafield"
+                "title": "string"
             },
-            "name": "MyComboBox2",
-            "designerId": "ed849cad-b156-4882-8264-c6bbf7743c74",
+            "name": "MyFieldSet",
+            "designerId": "657ec229-0c13-4034-a217-dd1e600c9b5b",
             "cn": [
                 {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onTechnicianComboboxItemIdChange",
-                        "name": "change",
-                        "scope": "me"
-                    },
-                    "configAlternates": {
-                        "fn": "string",
-                        "name": "string",
-                        "scope": "string"
-                    },
-                    "name": "onTechnicianComboboxItemIdChange",
-                    "designerId": "c63357c9-ead2-4f49-b9c3-2dc02112a8d6"
-                }
-            ]
-        },
-        {
-            "type": "Ext.form.field.ComboBox",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "allowBlank": false,
-                "displayField": "deviceName",
-                "fieldLabel": "Device",
-                "itemId": "deviceComboboxItemId",
-                "layout|anchor": "100%",
-                "name": "deviceId",
-                "queryMode": "local",
-                "store": [
-                    "{DeviceComboStore}"
-                ],
-                "valueField": "deviceId"
-            },
-            "configAlternates": {
-                "store": "binding",
-                "allowBlank": "boolean",
-                "displayField": "datafield",
-                "fieldLabel": "string",
-                "itemId": "string",
-                "layout|anchor": "string",
-                "name": "string",
-                "valueField": "datafield",
-                "queryMode": "string"
-            },
-            "name": "MyComboBox4",
-            "designerId": "67ede7c1-d153-4d01-9418-0b090b14a713",
-            "cn": [
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onDeviceComboboxItemIdSelect",
-                        "name": "select",
-                        "scope": "me"
-                    },
-                    "configAlternates": {
-                        "fn": "string",
-                        "name": "string",
-                        "scope": "string"
-                    },
-                    "name": "onDeviceComboboxItemIdSelect",
-                    "designerId": "25e3605e-ac22-46e8-b110-f7e8f277571b"
-                }
-            ]
-        },
-        {
-            "type": "Ext.toolbar.Toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "bottom"
-            },
-            "configAlternates": {
-                "dock": "string"
-            },
-            "name": "MyToolbar",
-            "designerId": "876b31b0-c0f0-4703-b4d4-95e409d85e50",
-            "cn": [
-                {
-                    "type": "Ext.button.Button",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "formBind": true,
-                        "itemId": "AddStudyButton",
-                        "layout|flex": null,
-                        "text": "Save"
+                        "allowBlank": false,
+                        "displayField": "studyCode",
+                        "fieldLabel": "Examen",
+                        "itemId": "studyComboboxItemId",
+                        "layout|anchor": "100%",
+                        "name": "studyId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{StudyComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "studyId"
                     },
                     "configAlternates": {
-                        "formBind": "boolean",
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
                         "itemId": "string",
-                        "layout|flex": "number",
-                        "text": "string"
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "typeAhead": "boolean",
+                        "valueField": "datafield",
+                        "selectOnFocus": "boolean"
                     },
-                    "name": "MyButton1",
-                    "designerId": "0e8135ec-9e01-450b-a18d-f3cac10f725e",
+                    "name": "MyComboBox5",
+                    "designerId": "1fbb5b89-4595-4cca-a014-cb15763068da",
                     "cn": [
                         {
                             "type": "viewcontrollereventbinding",
@@ -266,8 +156,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onAddStudyButtonClick",
-                                "name": "click",
+                                "fn": "onStudyComboboxItemIdChange",
+                                "name": "change",
                                 "scope": "me"
                             },
                             "configAlternates": {
@@ -275,12 +165,339 @@
                                 "name": "string",
                                 "scope": "string"
                             },
-                            "name": "onAddStudyButtonClick",
-                            "designerId": "6fb04ec7-8590-46ec-a25b-2ca17a35abf7"
+                            "name": "onStudyComboboxItemIdChange",
+                            "designerId": "7f785da8-7585-4ef5-8dbc-51750150b23d"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStudyComboboxItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onStudyComboboxItemIdSelect",
+                            "designerId": "00458ced-d479-4cd1-ae60-3c29eecdeb3d"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "configAlternates": {
+                                "itemSelector": "string"
+                            },
+                            "name": "MyBoundList",
+                            "designerId": "48eb74fc-838f-4868-bbd8-c8a38e298e29",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "{studyCode} : {studyName}"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "6291047e-8000-46f0-bc9c-98ec799f68c3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    " <tpl for=\".\">{studyCode} : {studyName}</tpl>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "displayTpl",
+                            "designerId": "cc4759e3-8bef-440d-a311-8ca1e0899a48"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "userLName",
+                        "fieldLabel": "Manipulateur",
+                        "itemId": "technicianComboboxItemId",
+                        "layout|anchor": "100%",
+                        "minChars": 4,
+                        "name": "userId",
+                        "queryDelay": 500,
+                        "queryMode": "local",
+                        "store": [
+                            "{TechnicianComboStore}"
+                        ],
+                        "typeAhead": true,
+                        "valueField": "userId"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "minChars": "number",
+                        "name": "string",
+                        "queryDelay": "number",
+                        "queryMode": "string",
+                        "typeAhead": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "ed849cad-b156-4882-8264-c6bbf7743c74",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTechnicianComboboxItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTechnicianComboboxItemIdChange",
+                            "designerId": "c63357c9-ead2-4f49-b9c3-2dc02112a8d6"
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "displayTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayTpl",
+                                "implHandler": [
+                                    " <tpl for=\".\">{userLName} : {userFName}</tpl>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "displayTpl",
+                            "designerId": "eefeb0a0-8fda-465e-ad96-5da1ffc2f6fa"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "div"
+                            },
+                            "configAlternates": {
+                                "itemSelector": "string"
+                            },
+                            "name": "MyBoundList1",
+                            "designerId": "9a025638-d740-4375-a3a2-84b8bcfce0f9",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "{userLName} {userFName}"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "585d3285-ee94-4b24-8832-203c56949b9f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "deviceName",
+                        "fieldLabel": "Appareil",
+                        "itemId": "deviceComboboxItemId",
+                        "layout|anchor": "100%",
+                        "name": "deviceId",
+                        "queryMode": "local",
+                        "store": [
+                            "{DeviceComboStore}"
+                        ],
+                        "valueField": "deviceId"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "valueField": "datafield",
+                        "queryMode": "string"
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "67ede7c1-d153-4d01-9418-0b090b14a713",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeviceComboboxItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDeviceComboboxItemIdSelect",
+                            "designerId": "25e3605e-ac22-46e8-b110-f7e8f277571b"
                         }
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "from"
+                ],
+                "fn": "onCotationVisitStudyFormInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCotationVisitStudyFormInEdit",
+            "designerId": "9cb7a15f-e0e4-475b-bade-cbd6bedfb5f5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onCotationVisitStudyFormSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCotationVisitStudyFormSaveEdit",
+            "designerId": "45dcf90d-4af5-43e0-bc5d-403d69373226"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onCotationVisitStudyFormQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCotationVisitStudyFormQuitEdit",
+            "designerId": "2a6a5278-4045-4a15-a31b-1858b9f9ad95"
         }
     ]
 }

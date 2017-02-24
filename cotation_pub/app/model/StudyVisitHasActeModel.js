@@ -35,6 +35,9 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
             name: 'studyVisitId'
         },
         {
+            name: 'visitId'
+        },
+        {
             type: 'string',
             name: 'studyVisitHasActeType'
         },
@@ -101,7 +104,7 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
             name: 'studyVisitHasActeDateEntentePrealable'
         },
         {
-            type: 'int',
+            type: 'float',
             name: 'studyVisitHasActeCoefficient'
         },
         {
@@ -131,6 +134,10 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
         {
             type: 'float',
             name: 'studyVisitHasActeAmount'
+        },
+        {
+            type: 'float',
+            name: 'studyVisitHasActeUnitPrice'
         },
         {
             type: 'string',

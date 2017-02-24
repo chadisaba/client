@@ -26,12 +26,13 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
         'Ext.selection.RowModel',
-        'Ext.grid.feature.GroupingSummary',
-        'Ext.XTemplate',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.toolbar.Spacer',
-        'Ext.toolbar.Separator'
+        'Ext.toolbar.Separator',
+        'Ext.grid.feature.Summary',
+        'Ext.grid.feature.Grouping',
+        'Ext.XTemplate'
     ],
 
     controller: 'studyvisithasactegrid',
@@ -39,10 +40,11 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         type: 'studyvisithasactegrid'
     },
     reference: 'studyVisitHasActeGridRef',
+    stateId: 'cotation-grid',
+    stateful: true,
     itemId: 'studyVisitHasActeGridId',
-    resizable: false,
     title: '',
-    forceFit: true,
+    forceFit: false,
 
     bind: {
         store: '{StudyVisitHasActeStore}'
@@ -50,6 +52,8 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
     columns: [
         {
             xtype: 'gridcolumn',
+            flex: 1,
+            hidden: true,
             dataIndex: 'studyCode',
             text: 'Examen'
         },
@@ -71,21 +75,63 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            summaryType: 'count',
+            flex: 1,
+            width: 80,
             dataIndex: 'studyVisitHasActeCode',
             text: 'Acte'
         },
         {
             xtype: 'gridcolumn',
+            width: 60,
             dataIndex: 'studyVisitHasActeUnitPrice',
             text: 'Prix Unitaire'
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeAmount',
-            text: 'Mt',
+            width: 60,
+            dataIndex: 'studyVisitHasActeAssociationNonPrevu',
+            text: 'A.N.P.',
             editor: {
                 xtype: 'textfield',
-                itemId: 'studyVisitHasActeAmountTextFieldItemId'
+                itemId: 'studyVisitHasActeAssociationNonPrevuTextFieldItemId',
+                enforceMaxLength: true,
+                maskRe: /[0-9]/,
+                maxLength: 1
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var nf = new Intl.NumberFormat('fr', {style: "currency", currency: "EUR"});
+                return '<span>' + nf.format(value) + '</span>';
+            },
+            summaryType: 'sum',
+            width: 80,
+            align: 'right',
+            dataIndex: 'studyVisitHasActeAmount',
+            text: 'Mt. acte',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyVisitHasActeAmountTextFieldItemId',
+                maskRe: /[.0-9]/
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var nf = new Intl.NumberFormat('fr', {style: "currency", currency: "EUR"});
+                return '<span>' + nf.format(value) + '</span>';
+            },
+            summaryType: 'sum',
+            width: 80,
+            align: 'right',
+            dataIndex: 'studyVisitHasActeAmountDepassement',
+            text: 'Mt.Dép.',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyVisitHasActeAmountDepassementTextFieldItemId',
+                maskRe: /[.0-9]/
             }
         },
         {
@@ -124,15 +170,20 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         },
         {
             xtype: 'gridcolumn',
+            width: 80,
             dataIndex: 'studyVisitHasActeQuantity',
             text: 'Quantité',
             editor: {
                 xtype: 'textfield',
-                itemId: 'studyVisitHasActeQuantityTextFieldItemId'
+                itemId: 'studyVisitHasActeQuantityTextFieldItemId',
+                enforceMaxLength: true,
+                maskRe: /[1-9]/,
+                maxLength: 2
             }
         },
         {
             xtype: 'gridcolumn',
+            width: 60,
             dataIndex: 'studyVisitHasActeModificators',
             text: 'Modif.',
             editor: {
@@ -145,7 +196,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            width: 60,
+            width: 40,
             dataIndex: 'studyVisitHasActeIsNight',
             text: 'N.',
             editor: {
@@ -158,6 +209,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             hidden: true,
+            width: 60,
             dataIndex: 'studyVisitHasActeIsMultiple',
             text: 'Multiple',
             editor: {
@@ -169,7 +221,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            width: 60,
+            width: 40,
             dataIndex: 'studyVisitHasActeIsHoliday',
             text: 'F.',
             editor: {
@@ -181,7 +233,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                 return Utility.renderer.checkBoxRenderer(value);
             },
-            width: 60,
+            width: 40,
             dataIndex: 'studyVisitHasActeIsEmergency',
             text: 'U.',
             editor: {
@@ -194,6 +246,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             hidden: true,
+            width: 80,
             dataIndex: 'studyVisitHasActeIsDomicile',
             text: 'Domicile',
             editor: {
@@ -203,8 +256,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
+            width: 80,
             dataIndex: 'studyVisitHasActeExoParticuliere',
-            text: 'Exonération particuliers',
+            text: 'Exo. particulière',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyVisitHasActeExoParticuliereTextFieldItemId'
@@ -216,8 +270,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             hidden: true,
+            width: 80,
             dataIndex: 'studyVisitHasActeExceptionalRefunding',
-            text: 'Remboursement exceptionnel',
+            text: 'Remb. exceptionnel',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -225,6 +280,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
+            width: 60,
             dataIndex: 'studyVisitHasActeDepense',
             text: 'Qualificatif dépense',
             editor: {
@@ -235,11 +291,23 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
+            width: 60,
             dataIndex: 'studyVisitHasActeDenombrement',
             text: 'Denombrement',
             editor: {
                 xtype: 'textfield',
                 itemId: 'studyVisitHasActeDenombrementTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            width: 60,
+            dataIndex: 'studyVisitHasActeCodeAccEntentePrealable',
+            text: 'Acc. entente préalable',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyVisitHasActeCodeAccEntentePrealableTextFieldItemId'
             }
         },
         {
@@ -255,6 +323,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
+            width: 60,
             dataIndex: 'studyVisitHasActeCoefficient',
             text: 'Coefficient',
             editor: {
@@ -265,6 +334,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
+            width: 60,
             dataIndex: 'studyVisitHasActeCodeAffine',
             text: 'Code affine',
             editor: {
@@ -275,57 +345,9 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
-            dataIndex: 'studyVisitHasActeCodeAccEntentePrealable',
-            text: 'acc entente prealable',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeCodeAccEntentePrealableTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeAssociationNonPrevu',
-            text: 'A.N.P.',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeAssociationNonPrevuTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return Utility.renderer.checkBoxRenderer(value);
-            },
-            hidden: true,
-            dataIndex: 'studyVisitHasActeArchivingActeAddedAuto',
-            text: 'Auto'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'studyVisitHasActeAmountDepassement',
-            text: 'Mt.Dép.',
-            editor: {
-                xtype: 'textfield',
-                itemId: 'studyVisitHasActeAmountDepassementTextFieldItemId'
-            }
-        },
-        {
-            xtype: 'gridcolumn',
-            hidden: true,
+            width: 80,
             dataIndex: 'studyVisitHasActeAcceptedModificators',
-            text: 'AcceptedModificators'
-        },
-        {
-            xtype: 'gridcolumn',
-            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                return Utility.renderer.checkBoxRenderer(value);
-            },
-            hidden: true,
-            dataIndex: 'active',
-            text: 'Active',
-            editor: {
-                xtype: 'checkboxfield'
-            }
+            text: 'Modificateurs possibles'
         }
     ],
     listeners: {
@@ -359,14 +381,6 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
         selType: 'rowmodel',
         mode: 'MULTI'
     },
-    features: [
-        {
-            ftype: 'groupingsummary',
-            groupHeaderTpl: [
-                '{[values.rows[0].data.studyCode]}'
-            ]
-        }
-    ],
     dockedItems: [
         {
             xtype: 'toolbar',
@@ -384,6 +398,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'addStudyButton',
+                            glyph: 'xf067@FontAwesome',
                             text: 'Ajouter',
                             listeners: {
                                 click: 'onAddStudyButtonClick'
@@ -396,6 +411,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'deleteStudyButton',
+                            glyph: 'xf014@FontAwesome',
                             text: 'Supprimer',
                             listeners: {
                                 click: 'onDeleteStudyButtonClick'
@@ -408,6 +424,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'replaceStudyButton',
+                            glyph: 'xf0ec@FontAwesome',
                             text: 'Remplacer',
                             listeners: {
                                 click: 'onReplaceStudyButtonClick'
@@ -436,6 +453,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'saveButton',
+                            glyph: 'xf0c7@FontAwesome',
                             text: 'Enregistrer',
                             listeners: {
                                 click: 'onSaveButtonClick'
@@ -448,6 +466,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'validateButton',
+                            glyph: 'xf00c@FontAwesome',
                             text: 'Valider',
                             listeners: {
                                 click: 'onValidateButtonClick'
@@ -460,6 +479,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         {
                             xtype: 'button',
                             itemId: 'devalidateButton',
+                            glyph: 'xf127@FontAwesome',
                             text: 'Dévalider',
                             listeners: {
                                 click: 'onDevalidateButtonClick'
@@ -467,6 +487,17 @@ Ext.define('MyApp.view.StudyVisitHasActeGrid', {
                         }
                     ]
                 }
+            ]
+        }
+    ],
+    features: [
+        {
+            ftype: 'summary'
+        },
+        {
+            ftype: 'grouping',
+            groupHeaderTpl: [
+                '{[values.rows[0].data.studyCode]}'
             ]
         }
     ],

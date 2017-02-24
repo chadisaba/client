@@ -21,6 +21,14 @@ Ext.define('MyApp.view.CotationAddStudyFormViewController', {
         'MyApp.view.override.CotationAddStudyFormViewController'
     ],
 
+    onCotationVisitStudyFormBoxReady: function(component, width, height, eOpts) {
+
+    },
+
+    onCotationVisitStudyFormAfterRender: function(component, eOpts) {
+
+    },
+
     onStudyComboboxItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
@@ -37,7 +45,15 @@ Ext.define('MyApp.view.CotationAddStudyFormViewController', {
 
     },
 
-    onAddStudyButtonClick: function(button, e, eOpts) {
+    onCotationVisitStudyFormInEdit: function(from) {
+
+    },
+
+    onCotationVisitStudyFormSaveEdit: function(form, promptWin, comment) {
+
+    },
+
+    onCotationVisitStudyFormQuitEdit: function(form, promptWin) {
 
     }
 

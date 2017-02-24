@@ -104,7 +104,7 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
             name: 'studyVisitHasActeDateEntentePrealable'
         },
         {
-            type: 'int',
+            type: 'float',
             name: 'studyVisitHasActeCoefficient'
         },
         {
@@ -120,6 +120,7 @@ Ext.define('MyApp.model.StudyVisitHasActeModel', {
             name: 'studyVisitHasActeCode'
         },
         {
+            type: 'int',
             name: 'studyVisitHasActeAssociationNonPrevu'
         },
         {

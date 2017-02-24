@@ -20,93 +20,125 @@ Ext.define('MyApp.view.CotationAddStudyForm', {
     requires: [
         'MyApp.view.CotationAddStudyFormViewModel',
         'MyApp.view.CotationAddStudyFormViewController',
+        'Ext.form.FieldSet',
         'Ext.form.field.ComboBox',
-        'Ext.toolbar.Toolbar',
-        'Ext.button.Button'
+        'Ext.view.BoundList',
+        'Ext.XTemplate'
     ],
 
     controller: 'cotationaddstudyform',
     viewModel: {
         type: 'cotationaddstudyform'
     },
-    height: 250,
-    width: 400,
+    itemId: 'cotationVisitStudyForm',
     bodyPadding: 10,
+    header: false,
     title: 'Add study',
 
+    listeners: {
+        boxready: 'onCotationVisitStudyFormBoxReady',
+        afterrender: 'onCotationVisitStudyFormAfterRender',
+        inEdit: 'onCotationVisitStudyFormInEdit',
+        saveEdit: 'onCotationVisitStudyFormSaveEdit',
+        quitEdit: 'onCotationVisitStudyFormQuitEdit'
+    },
     items: [
         {
-            xtype: 'combobox',
-            anchor: '100%',
-            itemId: 'studyComboboxItemId',
-            fieldLabel: 'Study',
-            name: 'studyId',
-            allowBlank: false,
-            displayField: 'studyCode',
-            queryMode: 'local',
-            typeAhead: true,
-            valueField: 'studyId',
-            bind: {
-                store: '{StudyComboStore}'
-            },
-            listeners: {
-                change: 'onStudyComboboxItemIdChange',
-                select: 'onStudyComboboxItemIdSelect'
-            }
-        },
-        {
-            xtype: 'combobox',
-            anchor: '100%',
-            itemId: 'technicianComboboxItemId',
-            fieldLabel: 'technician',
-            name: 'userId',
-            displayField: 'userLName',
-            minChars: 4,
-            queryDelay: 500,
-            queryMode: 'local',
-            typeAhead: true,
-            valueField: 'userId',
-            bind: {
-                store: '{TechnicianComboStore}'
-            },
-            listeners: {
-                change: 'onTechnicianComboboxItemIdChange'
-            }
-        },
-        {
-            xtype: 'combobox',
-            anchor: '100%',
-            itemId: 'deviceComboboxItemId',
-            fieldLabel: 'Device',
-            name: 'deviceId',
-            allowBlank: false,
-            displayField: 'deviceName',
-            queryMode: 'local',
-            valueField: 'deviceId',
-            bind: {
-                store: '{DeviceComboStore}'
-            },
-            listeners: {
-                select: 'onDeviceComboboxItemIdSelect'
-            }
-        }
-    ],
-    dockedItems: [
-        {
-            xtype: 'toolbar',
-            dock: 'bottom',
+            xtype: 'fieldset',
+            title: 'Informations examen',
             items: [
                 {
-                    xtype: 'button',
-                    formBind: true,
-                    itemId: 'AddStudyButton',
-                    text: 'Save',
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'studyComboboxItemId',
+                    fieldLabel: 'Examen',
+                    name: 'studyId',
+                    allowBlank: false,
+                    selectOnFocus: true,
+                    displayField: 'studyCode',
+                    displayTpl: [
+                        ' <tpl for=".">{studyCode} : {studyName}</tpl>'
+                    ],
+                    queryMode: 'local',
+                    typeAhead: true,
+                    valueField: 'studyId',
+                    bind: {
+                        store: '{StudyComboStore}'
+                    },
                     listeners: {
-                        click: 'onAddStudyButtonClick'
+                        change: 'onStudyComboboxItemIdChange',
+                        select: 'onStudyComboboxItemIdSelect'
+                    },
+                    listConfig: {
+                        xtype: 'boundlist',
+                        itemSelector: 'div',
+                        itemTpl: [
+                            '{studyCode} : {studyName}'
+                        ]
+                    }
+                },
+                {
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'technicianComboboxItemId',
+                    fieldLabel: 'Manipulateur',
+                    name: 'userId',
+                    displayField: 'userLName',
+                    displayTpl: [
+                        ' <tpl for=".">{userLName} : {userFName}</tpl>'
+                    ],
+                    minChars: 4,
+                    queryDelay: 500,
+                    queryMode: 'local',
+                    typeAhead: true,
+                    valueField: 'userId',
+                    bind: {
+                        store: '{TechnicianComboStore}'
+                    },
+                    listeners: {
+                        change: 'onTechnicianComboboxItemIdChange'
+                    },
+                    listConfig: {
+                        xtype: 'boundlist',
+                        itemSelector: 'div',
+                        itemTpl: [
+                            '{userLName} {userFName}'
+                        ]
+                    }
+                },
+                {
+                    xtype: 'combobox',
+                    anchor: '100%',
+                    itemId: 'deviceComboboxItemId',
+                    fieldLabel: 'Appareil',
+                    name: 'deviceId',
+                    allowBlank: false,
+                    displayField: 'deviceName',
+                    queryMode: 'local',
+                    valueField: 'deviceId',
+                    bind: {
+                        store: '{DeviceComboStore}'
+                    },
+                    listeners: {
+                        select: 'onDeviceComboboxItemIdSelect'
                     }
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processCotationAddStudyForm(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processCotationAddStudyForm: function(config) {
+        FormAddPlugins.addPlugins(this);
+    }
 
 });

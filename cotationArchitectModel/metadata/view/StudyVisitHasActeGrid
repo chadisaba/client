@@ -8,12 +8,12 @@
     "userConfig": {
         "designer|userAlias": "studyvisithasactegrid",
         "designer|userClassName": "StudyVisitHasActeGrid",
-        "forceFit": true,
+        "forceFit": false,
         "itemId": "studyVisitHasActeGridId",
         "reference": "studyVisitHasActeGridRef",
-        "resizable": [
-            "false"
-        ],
+        "resizable": null,
+        "stateId": "cotation-grid",
+        "stateful": true,
         "store": [
             "{StudyVisitHasActeStore}"
         ],
@@ -27,7 +27,9 @@
         "itemId": "string",
         "reference": "string",
         "resizable": "object",
-        "title": "string"
+        "title": "string",
+        "stateId": "string",
+        "stateful": "boolean"
     },
     "name": "MyGridPanel",
     "designerId": "04066d1c-7822-46e5-825a-1d1d52b03901",
@@ -43,11 +45,15 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyCode",
+                "flex": 1,
+                "hidden": true,
                 "text": "Examen"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "flex": "number",
+                "hidden": "boolean"
             },
             "name": "MystudyVisitHasActeTypeCol",
             "designerId": "e5366c2f-9125-495c-9c73-edc549b09ef7"
@@ -119,11 +125,17 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCode",
-                "text": "Acte"
+                "flex": 1,
+                "summaryType": "count",
+                "text": "Acte",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "flex": "number",
+                "summaryType": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeCodeCol",
             "designerId": "885caadc-18a5-49b3-a8bf-da7ec1fc4dd1"
@@ -137,11 +149,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeUnitPrice",
-                "text": "Prix Unitaire"
+                "text": "Prix Unitaire",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeAmountCol",
             "designerId": "26d3ebca-68bb-4b69-aac0-8c1c325a10d4"
@@ -154,15 +168,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyVisitHasActeAmount",
-                "text": "Mt"
+                "dataIndex": "studyVisitHasActeAssociationNonPrevu",
+                "text": "A.N.P.",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
-            "name": "MystudyVisitHasActeAmountCol1",
-            "designerId": "57ae2d53-8a12-4c2a-b3c8-035d1372dc2e",
+            "name": "MystudyVisitHasActeAssociationNonPrevuCol",
+            "designerId": "0d889caf-addf-4055-b1a3-7b7a635f64de",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -172,13 +188,178 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "studyVisitHasActeAmountTextFieldItemId"
+                        "enforceMaxLength": true,
+                        "itemId": "studyVisitHasActeAssociationNonPrevuTextFieldItemId",
+                        "maskRe": "/[0-9]/",
+                        "maxLength": 1
                     },
                     "configAlternates": {
-                        "itemId": "string"
+                        "itemId": "string",
+                        "enforceMaxLength": "boolean",
+                        "maskRe": "regex",
+                        "maxLength": "number"
+                    },
+                    "name": "MystudyVisitHasActeAssociationNonPrevuTextField",
+                    "designerId": "65b0c534-9eb9-49f1-9cea-5d1aeef920af"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "right",
+                "dataIndex": "studyVisitHasActeAmount",
+                "summaryRenderer": null,
+                "summaryType": "sum",
+                "text": "Mt. acte",
+                "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "summaryRenderer": "object",
+                "align": "string",
+                "summaryType": "string",
+                "width": "auto"
+            },
+            "name": "MystudyVisitHasActeAmountCol1",
+            "designerId": "57ae2d53-8a12-4c2a-b3c8-035d1372dc2e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "summaryRenderer",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyVisitHasActeAmountTextFieldItemId",
+                        "maskRe": "/[.0-9]/"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "maskRe": "regex"
                     },
                     "name": "MystudyVisitHasActeAmountTextField",
                     "designerId": "105f2159-fcb9-4544-a53e-c814ba946cdb"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "  var nf = new Intl.NumberFormat('fr', {style: \"currency\", currency: \"EUR\"});",
+                            "                return '<span>' + nf.format(value) + '</span>';"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "7f6c693b-0fe4-4536-bbc6-cdc549c4336e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "right",
+                "dataIndex": "studyVisitHasActeAmountDepassement",
+                "summaryType": "sum",
+                "text": "Mt.Dép.",
+                "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "align": "string",
+                "summaryType": "string",
+                "width": "auto"
+            },
+            "name": "MystudyVisitHasActeAmountDepassementCol",
+            "designerId": "79750dae-c243-4257-9511-94d5bda61310",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyVisitHasActeAmountDepassementTextFieldItemId",
+                        "maskRe": "/[.0-9]/"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "maskRe": "regex"
+                    },
+                    "name": "MystudyVisitHasActeAmountDepassementTextField",
+                    "designerId": "efef19a8-7336-494e-9f3a-e1a1551217ea"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "  var nf = new Intl.NumberFormat('fr', {style: \"currency\", currency: \"EUR\"});",
+                            "                return '<span>' + nf.format(value) + '</span>';"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "3819b2cf-15b0-4da3-ae23-06745f0c0e60"
                 }
             ]
         },
@@ -353,11 +534,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeQuantity",
-                "text": "Quantité"
+                "text": "Quantité",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeQuantityCol",
             "designerId": "84a29c62-175e-4d93-ba6a-df2293b89f87",
@@ -370,10 +553,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "studyVisitHasActeQuantityTextFieldItemId"
+                        "enforceMaxLength": true,
+                        "itemId": "studyVisitHasActeQuantityTextFieldItemId",
+                        "maskRe": "/[1-9]/",
+                        "maxLength": 2
                     },
                     "configAlternates": {
-                        "itemId": "string"
+                        "itemId": "string",
+                        "enforceMaxLength": "boolean",
+                        "maskRe": "regex",
+                        "maxLength": "number"
                     },
                     "name": "MystudyVisitHasActeQuantityTextField",
                     "designerId": "814ffe54-1024-4fd3-ba37-681099523062"
@@ -389,11 +578,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "studyVisitHasActeModificators",
-                "text": "Modif."
+                "text": "Modif.",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeModificatorsCol",
             "designerId": "fd22afeb-0d7e-4cc0-82d6-77ac2a2d9698",
@@ -426,7 +617,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsNight",
                 "text": "N.",
-                "width": 60
+                "width": 40
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -488,12 +679,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsMultiple",
                 "hidden": true,
-                "text": "Multiple"
+                "text": "Multiple",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeIsMultipleCol",
             "designerId": "1b7d528d-6cdb-4594-a6c7-569f01bfb326",
@@ -550,7 +743,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsHoliday",
                 "text": "F.",
-                "width": 60
+                "width": 40
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -612,7 +805,7 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsEmergency",
                 "text": "U.",
-                "width": 60
+                "width": 40
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -674,12 +867,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeIsDomicile",
                 "hidden": true,
-                "text": "Domicile"
+                "text": "Domicile",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeIsDomicileCol",
             "designerId": "607754ab-d368-410f-ba48-942fe4e0481e",
@@ -736,12 +931,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeExoParticuliere",
                 "hidden": true,
-                "text": "Exonération particuliers"
+                "text": "Exo. particulière",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeExoParticuliereCol",
             "designerId": "b6ea61c3-d762-4a93-b8c3-c162d29a225c",
@@ -774,12 +971,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeExceptionalRefunding",
                 "hidden": true,
-                "text": "Remboursement exceptionnel"
+                "text": "Remb. exceptionnel",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeExceptionalRefundingCol",
             "designerId": "23a7b098-319b-4ae6-80ea-90693c185c0d",
@@ -836,12 +1035,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeDepense",
                 "hidden": true,
-                "text": "Qualificatif dépense"
+                "text": "Qualificatif dépense",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeDepenseCol",
             "designerId": "34b774a2-7f83-43a3-8f88-ae501fccbbf6",
@@ -874,12 +1075,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeDenombrement",
                 "hidden": true,
-                "text": "Denombrement"
+                "text": "Denombrement",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeDenombrementCol",
             "designerId": "e043e9c1-f3fd-466a-b7cc-25a1d55e502a",
@@ -899,6 +1102,46 @@
                     },
                     "name": "MystudyVisitHasActeDenombrementTextField",
                     "designerId": "b4272538-69ba-4835-88ae-6ac51ba8c098"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyVisitHasActeCodeAccEntentePrealable",
+                "hidden": true,
+                "text": "Acc. entente préalable",
+                "width": 60
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MystudyVisitHasActeCodeAccEntentePrealableCol",
+            "designerId": "a7afd28b-e68b-4352-aa3d-936e8a8bee1d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyVisitHasActeCodeAccEntentePrealableTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MystudyVisitHasActeCodeAccEntentePrealableTextField",
+                    "designerId": "da0599e9-298c-47c8-88f3-5a5fbe9ba2df"
                 }
             ]
         },
@@ -950,12 +1193,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCoefficient",
                 "hidden": true,
-                "text": "Coefficient"
+                "text": "Coefficient",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeCoefficientCol",
             "designerId": "30914807-ac1e-461d-b17b-1b7ee583a5f3",
@@ -988,12 +1233,14 @@
             "userConfig": {
                 "dataIndex": "studyVisitHasActeCodeAffine",
                 "hidden": true,
-                "text": "Code affine"
+                "text": "Code affine",
+                "width": 60
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "hidden": "boolean",
-                "text": "string"
+                "text": "string",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeCodeAffineCol",
             "designerId": "48bda4ba-4450-4d79-b3f0-fb71dc0ac09d",
@@ -1024,241 +1271,19 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyVisitHasActeCodeAccEntentePrealable",
-                "hidden": true,
-                "text": "acc entente prealable"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "hidden": "boolean",
-                "text": "string"
-            },
-            "name": "MystudyVisitHasActeCodeAccEntentePrealableCol",
-            "designerId": "a7afd28b-e68b-4352-aa3d-936e8a8bee1d",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "studyVisitHasActeCodeAccEntentePrealableTextFieldItemId"
-                    },
-                    "configAlternates": {
-                        "itemId": "string"
-                    },
-                    "name": "MystudyVisitHasActeCodeAccEntentePrealableTextField",
-                    "designerId": "da0599e9-298c-47c8-88f3-5a5fbe9ba2df"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitHasActeAssociationNonPrevu",
-                "text": "A.N.P."
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "text": "string"
-            },
-            "name": "MystudyVisitHasActeAssociationNonPrevuCol",
-            "designerId": "0d889caf-addf-4055-b1a3-7b7a635f64de",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "studyVisitHasActeAssociationNonPrevuTextFieldItemId"
-                    },
-                    "configAlternates": {
-                        "itemId": "string"
-                    },
-                    "name": "MystudyVisitHasActeAssociationNonPrevuTextField",
-                    "designerId": "65b0c534-9eb9-49f1-9cea-5d1aeef920af"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitHasActeArchivingActeAddedAuto",
-                "hidden": true,
-                "text": "Auto"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "hidden": "boolean",
-                "text": "string"
-            },
-            "name": "MystudyVisitHasActeArchivingActeAddedAutoCol",
-            "designerId": "f606a133-85ac-4138-95ad-ac7b19c62e21",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "fn": "renderer",
-                        "implHandler": [
-                            "return Utility.renderer.checkBoxRenderer(value);"
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|params": "typedarray",
-                        "fn": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "renderer",
-                    "designerId": "f79c49fa-da7a-40de-bf39-af34897e5059"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "studyVisitHasActeAmountDepassement",
-                "text": "Mt.Dép."
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "text": "string"
-            },
-            "name": "MystudyVisitHasActeAmountDepassementCol",
-            "designerId": "79750dae-c243-4257-9511-94d5bda61310",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "studyVisitHasActeAmountDepassementTextFieldItemId"
-                    },
-                    "configAlternates": {
-                        "itemId": "string"
-                    },
-                    "name": "MystudyVisitHasActeAmountDepassementTextField",
-                    "designerId": "efef19a8-7336-494e-9f3a-e1a1551217ea"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "dataIndex": "studyVisitHasActeAcceptedModificators",
                 "hidden": true,
-                "text": "AcceptedModificators"
+                "text": "Modificateurs possibles",
+                "width": 80
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "text": "string",
-                "hidden": "boolean"
+                "hidden": "boolean",
+                "width": "auto"
             },
             "name": "MystudyVisitHasActeAcceptedModificatorsCol",
             "designerId": "f43e7fd7-cf5e-4c34-8480-63cf28b6ed37"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "active",
-                "hidden": true,
-                "text": "Active"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "hidden": "boolean",
-                "text": "string"
-            },
-            "name": "MyactiveCol",
-            "designerId": "db5edca3-6df0-46fe-bb9a-fb1049e2c05d",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "name": "MyactiveCheckBox",
-                    "designerId": "8c57187e-49fa-4d32-982e-07daa1e95979"
-                },
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "fn": "renderer",
-                        "implHandler": [
-                            "return Utility.renderer.checkBoxRenderer(value);"
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|params": "typedarray",
-                        "fn": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "renderer",
-                    "designerId": "8e39b6ba-4feb-408c-949e-aeb5df69e447"
-                }
-            ]
         },
         {
             "type": "Ext.view.Table",
@@ -1730,38 +1755,6 @@
             "designerId": "562af1d2-55e3-46b2-ac0e-5769a0593853"
         },
         {
-            "type": "Ext.grid.feature.GroupingSummary",
-            "reference": {
-                "name": "features",
-                "type": "array"
-            },
-            "codeClass": null,
-            "name": "MyGroupingSummaryFeature",
-            "designerId": "849223bc-78f6-4783-82e6-b3d20cc356d0",
-            "cn": [
-                {
-                    "type": "Ext.XTemplate",
-                    "reference": {
-                        "name": "groupHeaderTpl",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "groupHeaderTpl",
-                        "implHandler": [
-                            "{[values.rows[0].data.studyCode]}"
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|displayName": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "groupHeaderTpl",
-                    "designerId": "0e858183-fd6d-4c2f-aa59-f65e09b72c37"
-                }
-            ]
-        },
-        {
             "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -1809,6 +1802,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf067@FontAwesome",
                                 "itemId": "addStudyButton",
                                 "layout|flex": null,
                                 "text": "Ajouter"
@@ -1816,7 +1810,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton5",
                             "designerId": "e69e5104-64c8-4b60-be5a-0c1c0e795e7d",
@@ -1867,6 +1862,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf014@FontAwesome",
                                 "itemId": "deleteStudyButton",
                                 "layout|flex": null,
                                 "text": "Supprimer"
@@ -1874,7 +1870,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton7",
                             "designerId": "af74a4f6-db28-481d-bbae-f4b7fa37a988",
@@ -1925,6 +1922,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf0ec@FontAwesome",
                                 "itemId": "replaceStudyButton",
                                 "layout|flex": null,
                                 "text": "Remplacer"
@@ -1932,7 +1930,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton2",
                             "designerId": "2f151d1e-807c-431a-b042-7fc9625a1bab",
@@ -2037,6 +2036,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf0c7@FontAwesome",
                                 "itemId": "saveButton",
                                 "layout|flex": null,
                                 "text": "Enregistrer"
@@ -2044,7 +2044,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton6",
                             "designerId": "6af84c31-dfc6-40c7-9ed0-417acc471696",
@@ -2095,6 +2096,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf00c@FontAwesome",
                                 "itemId": "validateButton",
                                 "layout|flex": null,
                                 "text": "Valider"
@@ -2102,7 +2104,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton3",
                             "designerId": "ff369f8d-b12c-4024-ac81-846472007b4e",
@@ -2153,6 +2156,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": "xf127@FontAwesome",
                                 "itemId": "devalidateButton",
                                 "layout|flex": null,
                                 "text": "Dévalider"
@@ -2160,7 +2164,8 @@
                             "configAlternates": {
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "glyph": "auto"
                             },
                             "name": "MyButton4",
                             "designerId": "01b120b7-5e1c-4832-bee4-87b6f4f9317f",
@@ -2188,6 +2193,54 @@
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.feature.Summary",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MySummaryFeature",
+            "designerId": "d37087a6-d521-45d8-b043-605a2750b05e"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature",
+            "designerId": "a46acafc-35a7-4c04-a9d2-47269d6769c8",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            "{[values.rows[0].data.studyCode]}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "401e5770-400f-4f59-a8ae-9ef420652f35"
                 }
             ]
         }

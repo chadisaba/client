@@ -23,7 +23,7 @@ Ext.define('MyApp.view.StudyVisitHasActeGridViewModel', {
 
     stores: {
         StudyVisitHasActeStore: {
-            groupField: 'studyVisitId',
+            groupField: 'studyCode',
             model: 'MyApp.model.StudyVisitHasActeModel'
         },
         studyComboStore: {
