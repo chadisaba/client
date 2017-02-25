@@ -144,6 +144,29 @@
                     "designerId": "3d25211a-4cf0-479f-99ce-2f5a06288666"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "dashboardpanel",
+            "designerId": "03034f9d-1947-4dcd-ba13-a5631b82b6bb",
+            "masterInstanceId": "82f0daf4-9148-4dd7-85fa-2f4a3b5e8322",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "111a8e6b-377a-4a91-a076-4d1261f4b6ef"
+                }
+            ]
         }
     ]
 }

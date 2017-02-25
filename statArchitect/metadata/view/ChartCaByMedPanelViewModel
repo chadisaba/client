@@ -1,0 +1,38 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chartcabymedpanel",
+        "designer|userClassName": "ChartCaByMedPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ChartStudiesNbrPanelViewModel1",
+    "designerId": "49de4797-e0b7-4ce1-8107-00c2e1f9afa7",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Stat1Model",
+                "name": "CaByMedStore"
+            },
+            "configAlternates": {
+                "name": "string",
+                "model": "model"
+            },
+            "name": "MyStore",
+            "designerId": "a676cec3-5229-4c33-a550-742a961f6092"
+        }
+    ]
+}

@@ -9,11 +9,21 @@
         "controllers": [
             "MainController"
         ],
-        "name": "MyApp"
+        "models": [
+            "StudyBySiteNumberModel",
+            "Stat1Model"
+        ],
+        "name": "MyApp",
+        "views": [
+            "ChartStudiesNbrPanel",
+            "ChartCaByMedPanel"
+        ]
     },
     "configAlternates": {
         "controllers": "typedarray",
-        "name": "string"
+        "name": "string",
+        "models": "typedarray",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

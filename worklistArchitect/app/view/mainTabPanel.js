@@ -23,6 +23,7 @@ Ext.define('MyApp.view.mainTabPanel', {
         'MyApp.view.WorklistHistoryPanel',
         'MyApp.view.PatientDetailSearchForm',
         'MyApp.view.PatientHprimPanel',
+        'MyApp.view.dashboardPanel',
         'Ext.tab.Tab',
         'Ext.form.Panel'
     ],
@@ -51,6 +52,9 @@ Ext.define('MyApp.view.mainTabPanel', {
         {
             xtype: 'patienthprimpanel',
             title: 'Accueil Hospitalisés'
+        },
+        {
+            xtype: 'dashboardpanel'
         }
     ]
 

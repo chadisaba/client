@@ -13,7 +13,7 @@
             }
         },
         "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
-        "exportPath": "../generate_pub_model",
+        "exportPath": "",
         "projectHasEnabledWebServer": false,
         "lockUrlPrefix": false,
         "buildShouldOverwriteIndex": false,
@@ -35,13 +35,21 @@
         "view": [
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "e4c81814-a7a1-4d7e-953c-ca2804168436",
-            "fae57581-31ab-468c-9676-c119bb73d702"
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "1702bcfb-eb23-4365-9140-633046b270b6",
+            "84db931a-ba15-4c1e-a67b-4edc7ef38064",
+            "0f8e9e50-189c-4cbf-9cd7-6b4877634c5a",
+            "49de4797-e0b7-4ce1-8107-00c2e1f9afa7",
+            "e03ab6d6-2100-47a3-aa29-e125dc4027b5",
+            "b728ff18-826a-4aa5-83fa-d42ac2710868"
         ],
         "store": [],
         "controller": [
             "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         ],
-        "model": [],
+        "model": [
+            "1e9b2313-4787-4276-a6e4-65610e9ac22f"
+        ],
         "resource": [
             "88a501f7-6a05-455c-92f9-bdd153a81b0d"
         ],

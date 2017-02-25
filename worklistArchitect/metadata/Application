@@ -76,7 +76,8 @@
             "RecForm",
             "PatientSearchCreteriaForm",
             "PatientSearchGridPanel",
-            "PatientHprimPanel"
+            "PatientHprimPanel",
+            "dashboardPanel"
         ]
     },
     "configAlternates": {

@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "myviewport1",
-        "designer|userClassName": "MyViewport1ViewModel"
+        "designer|userAlias": "dashboardpanel",
+        "designer|userClassName": "dashboardPanelViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "e4c81814-a7a1-4d7e-953c-ca2804168436"
+    "designerId": "63a2dda0-2127-4519-b44c-b25d5c2a2fc1"
 }

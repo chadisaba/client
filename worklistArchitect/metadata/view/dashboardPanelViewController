@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewModel",
+    "type": "Ext.app.ViewController",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "myviewport1",
-        "designer|userClassName": "MyViewport1ViewModel"
+        "designer|userAlias": "dashboardpanel",
+        "designer|userClassName": "dashboardPanelViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "e4c81814-a7a1-4d7e-953c-ca2804168436"
+    "designerId": "28f99c6e-5d86-443c-813c-00baaa4dde70"
 }

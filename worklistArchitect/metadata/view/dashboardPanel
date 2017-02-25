@@ -1,0 +1,26 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dashboardpanel",
+        "designer|userClassName": "dashboardPanel",
+        "height": null,
+        "title": "Dashboard",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel",
+    "designerId": "82f0daf4-9148-4dd7-85fa-2f4a3b5e8322",
+    "viewControllerInstanceId": "28f99c6e-5d86-443c-813c-00baaa4dde70",
+    "viewModelInstanceId": "63a2dda0-2127-4519-b44c-b25d5c2a2fc1"
+}

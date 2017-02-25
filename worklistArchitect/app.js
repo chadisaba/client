@@ -89,7 +89,8 @@ Ext.application({
         'RecForm',
         'PatientSearchCreteriaForm',
         'PatientSearchGridPanel',
-        'PatientHprimPanel'
+        'PatientHprimPanel',
+        'dashboardPanel'
     ],
     controllers: [
         'MainController'

@@ -1,0 +1,212 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chartstudiesnbrpanel",
+        "designer|userClassName": "ChartStudiesNbrPanel",
+        "itemId": "StudiesNumberBySitePanel",
+        "title": "Studies Number"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "itemId": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "1702bcfb-eb23-4365-9140-633046b270b6",
+    "viewControllerInstanceId": "e03ab6d6-2100-47a3-aa29-e125dc4027b5",
+    "viewModelInstanceId": "0f8e9e50-189c-4cbf-9cd7-6b4877634c5a",
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": null,
+                "height": 250,
+                "insetPadding": [
+                    "20"
+                ],
+                "store": [
+                    "{StudyNumberBySiteStore}"
+                ],
+                "width": null
+            },
+            "configAlternates": {
+                "height": "auto",
+                "insetPadding": "object",
+                "width": "auto",
+                "store": "binding",
+                "flex": "number"
+            },
+            "name": "ColumnChart3D",
+            "designerId": "4bb8f7d0-8718-4017-add2-45f51b3ade33",
+            "isBuiltIn": true,
+            "iconCls": "icon-column-chart",
+            "autoName": "ColumnChart3D",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "name"
+                        ],
+                        "position": "bottom",
+                        "title": [
+                            "Centre"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "object"
+                    },
+                    "name": "My3DCategoryAxis1",
+                    "designerId": "ff679285-9ef2-4397-a6ec-1a9f7c6df604"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "count"
+                        ],
+                        "position": "left",
+                        "title": [
+                            "Nombre d'examens"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "object"
+                    },
+                    "name": "My3DNumericAxis1",
+                    "designerId": "2b01498e-0cfb-461a-9202-226ce4f7a20e"
+                },
+                {
+                    "type": "Ext.chart.series.Bar3D",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": [
+                            "{ field: 'count',",
+                            "  display: 'insideEnd'}"
+                        ],
+                        "xField": "name",
+                        "yField": [
+                            "count"
+                        ]
+                    },
+                    "configAlternates": {
+                        "xField": "datafield",
+                        "yField": "typedarray",
+                        "label": "object"
+                    },
+                    "name": "My3DBarSeries1",
+                    "designerId": "4d3c6aab-767d-4c8e-b6fb-f50e2045a2a2"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStudiesNumberBySitePanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStudiesNumberBySitePanelAfterRender",
+            "designerId": "ec579745-2a7c-4f9b-be3b-45ab14023652"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "deb510ae-8dfa-4e86-94de-04a4374326d8",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "Refresh"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "32ba233e-a4f9-4a65-a5e0-56e74f27a80b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "b5b3a864-1ea4-4710-978f-a51a14d7348d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chartcabymedpanel",
+        "designer|userClassName": "ChartCaByMedPanelViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ChartStudiesNbrPanelViewController1",
+    "designerId": "b728ff18-826a-4aa5-83fa-d42ac2710868"
+}

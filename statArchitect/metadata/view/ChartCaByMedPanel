@@ -1,0 +1,217 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chartcabymedpanel",
+        "designer|userClassName": "ChartCaByMedPanel",
+        "itemId": "chartCaByMedPanel",
+        "title": "Chiffre d'affaire par médecin"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "itemId": "string"
+    },
+    "name": "ChartStudiesNbrPanel1",
+    "designerId": "84db931a-ba15-4c1e-a67b-4edc7ef38064",
+    "viewControllerInstanceId": "b728ff18-826a-4aa5-83fa-d42ac2710868",
+    "viewModelInstanceId": "49de4797-e0b7-4ce1-8107-00c2e1f9afa7",
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": null,
+                "height": 250,
+                "insetPadding": [
+                    "20"
+                ],
+                "store": [
+                    "{CaByMedStore}"
+                ],
+                "width": null
+            },
+            "configAlternates": {
+                "height": "auto",
+                "insetPadding": "object",
+                "width": "auto",
+                "store": "binding",
+                "flex": "number"
+            },
+            "name": "ColumnChart3D",
+            "designerId": "8b486b07-47fe-44a9-9764-85a187a7af7a",
+            "isBuiltIn": true,
+            "iconCls": "icon-column-chart",
+            "autoName": "ColumnChart3D",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "name"
+                        ],
+                        "position": "bottom",
+                        "title": [
+                            "Médecin"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "object"
+                    },
+                    "name": "My3DCategoryAxis1",
+                    "designerId": "411980fc-f511-4787-b33a-436d27a69b89"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "amount"
+                        ],
+                        "position": "left",
+                        "title": [
+                            "C.A"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "object"
+                    },
+                    "name": "My3DNumericAxis1",
+                    "designerId": "c566dc4d-38fe-4089-a460-60fe03ba1c51"
+                },
+                {
+                    "type": "Ext.chart.series.Bar3D",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": [
+                            "  {field: 'amount',",
+                            "                                display: 'insideEnd',",
+                            "                                renderer: function (v) {",
+                            "                                     var nf = new Intl.NumberFormat('fr', {style: \"currency\", currency: \"EUR\"});",
+                            "                return  nf.format(v);",
+                            "                                }",
+                            "                                }"
+                        ],
+                        "xField": "name",
+                        "yField": [
+                            "amount"
+                        ]
+                    },
+                    "configAlternates": {
+                        "xField": "datafield",
+                        "yField": "typedarray",
+                        "label": "object"
+                    },
+                    "name": "My3DBarSeries1",
+                    "designerId": "bf3ba86d-2305-4d60-8e8e-032393f6c10d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "28aed716-9bd4-4832-91a0-af813fd63c5c",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "Refresh"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "9b942293-876e-4154-a6b8-b27c159e7f47",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "292e2556-7b02-40d6-90e1-1e84ac29ef95"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onChartCaByMedPanelAfterRender",
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onChartCaByMedPanelAfterRender",
+            "designerId": "ebe58b9e-bf9e-4436-a858-3c8e8ab87aa0"
+        }
+    ]
+}

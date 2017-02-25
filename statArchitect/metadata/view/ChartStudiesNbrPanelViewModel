@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chartstudiesnbrpanel",
+        "designer|userClassName": "ChartStudiesNbrPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "0f8e9e50-189c-4cbf-9cd7-6b4877634c5a",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Stat1Model",
+                "name": "StudyNumberBySiteStore"
+            },
+            "configAlternates": {
+                "name": "string",
+                "model": "model"
+            },
+            "name": "MyStore",
+            "designerId": "a67c0337-69ad-431c-838d-376b2455dc6c"
+        }
+    ]
+}
