@@ -1,0 +1,265 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "caparsiteevolutionchartpanel",
+        "designer|userClassName": "CaParSiteEvolutionChartPanel",
+        "height": null,
+        "title": "Evolution Chiffre d'affaire  par site",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "CaEvolutionChartPanel1",
+    "designerId": "715617be-0c20-4881-8308-b5f7ca38fb7d",
+    "viewControllerInstanceId": "1c6da313-d0ea-4fa0-addf-ec6a5dce5391",
+    "viewModelInstanceId": "c4b43b68-283c-4b32-869e-934475a4bb6c",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "5abfe121-039e-4799-b59b-6e980b0d7edc",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Du",
+                        "labelWidth": 30,
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyDateField",
+                    "designerId": "3f130170-497c-4a5c-a6eb-a609ebdc78df"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Au",
+                        "labelWidth": 30,
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyDateField1",
+                    "designerId": "eeb1febb-233b-47f3-b106-4704bfc11705"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Périodicité",
+                        "layout|flex": null,
+                        "store": [
+                            "{PeriodicityStore}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "store": "binding"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "424ff40e-d001-40eb-abe2-c85d1363da1d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-refresh",
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": ""
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "e0072e11-ffd3-4cf0-802c-92dd12ef84a1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "3aa2f69f-b767-40cb-8e52-8299c9e873c7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                ],
+                "height": 250,
+                "store": [
+                    "{ChartStore}"
+                ],
+                "width": null
+            },
+            "configAlternates": {
+                "colors": "array",
+                "height": "auto",
+                "width": "auto",
+                "store": "binding"
+            },
+            "name": "MyAreaChart",
+            "designerId": "85734ab7-b4d9-4cf5-81d0-01d7142b21cd",
+            "isBuiltIn": true,
+            "iconCls": "icon-area-chart",
+            "autoName": "MyAreaChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "x"
+                        ],
+                        "title": null
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "title": "object"
+                    },
+                    "name": "MyCategoryAxis",
+                    "designerId": "1c40d3c5-f93d-4624-9110-47ef6ec362e8"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "y1",
+                            "y2",
+                            "y3"
+                        ],
+                        "grid": [
+                            "{",
+                            "    odd: {",
+                            "        fill: '#e8e8e8'",
+                            "    }",
+                            "}"
+                        ],
+                        "position": "left"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "position": "string"
+                    },
+                    "name": "MyNumericAxis",
+                    "designerId": "4620b63d-efcc-45c5-a931-b945aab49bd8"
+                },
+                {
+                    "type": "Ext.chart.series.Area",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xField": "x",
+                        "yField": [
+                            "y1",
+                            "y2",
+                            "y3"
+                        ]
+                    },
+                    "configAlternates": {
+                        "xField": "datafield",
+                        "yField": "typedarray"
+                    },
+                    "name": "MyAreaSeries",
+                    "designerId": "db2198dc-98fe-474f-92c7-e1026f22863d"
+                },
+                {
+                    "type": "Ext.chart.interactions.PanZoom",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPanZoomInteraction",
+                    "designerId": "0a8afccb-19e0-4788-a429-57e6fc403713"
+                }
+            ]
+        }
+    ]
+}

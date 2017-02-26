@@ -11,12 +11,17 @@
         ],
         "models": [
             "StudyBySiteNumberModel",
-            "Stat1Model"
+            "Stat1Model",
+            "PeriodicityModel"
         ],
         "name": "MyApp",
         "views": [
             "ChartStudiesNbrPanel",
-            "ChartCaByMedPanel"
+            "ChartCaByMedPanel",
+            "CaEvolutionChartPanel",
+            "CaParSiteEvolutionChartPanel",
+            "VisitNumberEvolutionChartPanel",
+            "VisitNumberBySiteEvolutionChartPanel"
         ]
     },
     "configAlternates": {

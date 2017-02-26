@@ -1,0 +1,56 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "caparsiteevolutionchartpanel",
+        "designer|userClassName": "CaParSiteEvolutionChartPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "CaEvolutionChartPanelViewModel1",
+    "designerId": "c4b43b68-283c-4b32-869e-934475a4bb6c",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Stat1Model",
+                "name": "ChartStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore2",
+            "designerId": "7e304c2f-bdf9-4ba4-b0ab-ef2ed198ebeb"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PeriodicityModel",
+                "name": "PeriodicityStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore6",
+            "designerId": "81f0d893-cb8d-4bd8-a7db-1aa644d89d76"
+        }
+    ]
+}

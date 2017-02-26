@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitnumberbysiteevolutionchartpanel",
+        "designer|userClassName": "VisitNumberBySiteEvolutionChartPanelViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "VisitNumberEvolutionChartPanelViewController1",
+    "designerId": "f3b73cb4-a7d6-49d7-87ca-58bab09c48fa"
+}

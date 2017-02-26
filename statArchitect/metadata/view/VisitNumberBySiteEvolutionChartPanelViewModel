@@ -1,0 +1,56 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "visitnumberbysiteevolutionchartpanel",
+        "designer|userClassName": "VisitNumberBySiteEvolutionChartPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "VisitNumberEvolutionChartPanelViewModel1",
+    "designerId": "1cb1e97c-5f84-4664-a91d-a14a345ab136",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Stat1Model",
+                "name": "ChartStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore3",
+            "designerId": "ff068ea0-ae3d-4ec1-b5d3-ff6fd8844ca0"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PeriodicityModel",
+                "name": "PeriodicityStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore7",
+            "designerId": "7e1eb963-c3bd-47a2-a5fd-0caac5e4ff73"
+        }
+    ]
+}

@@ -150,6 +150,50 @@
             "designerId": "28aed716-9bd4-4832-91a0-af813fd63c5c",
             "cn": [
                 {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Du",
+                        "itemId": "startDateDateField",
+                        "labelWidth": 30,
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyDateField2",
+                    "designerId": "993bc2e1-607e-41f5-b546-93adc7dbcc4b"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Au",
+                        "itemId": "EndDateDateField",
+                        "labelWidth": 30,
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyDateField3",
+                    "designerId": "339602b2-9026-49af-898a-2b3ff596b2f0"
+                },
+                {
                     "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
@@ -159,7 +203,7 @@
                     "userConfig": {
                         "itemId": "refreshBtn",
                         "layout|flex": null,
-                        "text": "Refresh"
+                        "text": "Actualiser"
                     },
                     "configAlternates": {
                         "itemId": "string",

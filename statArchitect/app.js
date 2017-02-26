@@ -21,12 +21,17 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        null,
-        'Stat1Model'
+        'StudyBySiteNumberModel',
+        'Stat1Model',
+        'PeriodicityModel'
     ],
     views: [
         'ChartStudiesNbrPanel',
-        'ChartCaByMedPanel'
+        'ChartCaByMedPanel',
+        'CaEvolutionChartPanel',
+        'CaParSiteEvolutionChartPanel',
+        'VisitNumberEvolutionChartPanel',
+        'VisitNumberBySiteEvolutionChartPanel'
     ],
     controllers: [
         'MainController'

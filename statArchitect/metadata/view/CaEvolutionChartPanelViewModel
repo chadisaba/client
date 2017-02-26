@@ -1,0 +1,55 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "caevolutionchartpanel",
+        "designer|userClassName": "CaEvolutionChartPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "317abf64-d105-41f7-82b9-ed160e614652",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "Stat1Model",
+                "name": "ChartStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore1",
+            "designerId": "734484ce-a947-4f96-aeef-981d4dd05985"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PeriodicityModel",
+                "name": "PeriodicityStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore5",
+            "designerId": "758f6260-631f-4be4-a14e-938c396c9597"
+        }
+    ]
+}

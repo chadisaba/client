@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "caparsiteevolutionchartpanel",
+        "designer|userClassName": "CaParSiteEvolutionChartPanelViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "CaEvolutionChartPanelViewController1",
+    "designerId": "1c6da313-d0ea-4fa0-addf-ec6a5dce5391"
+}

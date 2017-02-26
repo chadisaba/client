@@ -25,6 +25,7 @@ Ext.define('MyApp.view.ChartCaByMedPanel', {
         'Ext.chart.axis.Numeric3D',
         'Ext.chart.series.Bar3D',
         'Ext.toolbar.Toolbar',
+        'Ext.form.field.Date',
         'Ext.button.Button'
     ],
 
@@ -86,9 +87,21 @@ Ext.define('MyApp.view.ChartCaByMedPanel', {
             dock: 'top',
             items: [
                 {
+                    xtype: 'datefield',
+                    itemId: 'startDateDateField',
+                    fieldLabel: 'Du',
+                    labelWidth: 30
+                },
+                {
+                    xtype: 'datefield',
+                    itemId: 'EndDateDateField',
+                    fieldLabel: 'Au',
+                    labelWidth: 30
+                },
+                {
                     xtype: 'button',
                     itemId: 'refreshBtn',
-                    text: 'Refresh',
+                    text: 'Actualiser',
                     listeners: {
                         click: 'onRefreshBtnClick'
                     }

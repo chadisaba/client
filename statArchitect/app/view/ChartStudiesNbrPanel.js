@@ -25,6 +25,7 @@ Ext.define('MyApp.view.ChartStudiesNbrPanel', {
         'Ext.chart.axis.Numeric3D',
         'Ext.chart.series.Bar3D',
         'Ext.toolbar.Toolbar',
+        'Ext.form.field.Date',
         'Ext.button.Button'
     ],
 
@@ -85,9 +86,21 @@ Ext.define('MyApp.view.ChartStudiesNbrPanel', {
             dock: 'top',
             items: [
                 {
+                    xtype: 'datefield',
+                    itemId: 'startDateDateField',
+                    fieldLabel: 'Du',
+                    labelWidth: 30
+                },
+                {
+                    xtype: 'datefield',
+                    itemId: 'endDateDateField',
+                    fieldLabel: 'Au',
+                    labelWidth: 30
+                },
+                {
                     xtype: 'button',
                     itemId: 'refreshBtn',
-                    text: 'Refresh',
+                    text: 'Actualiser',
                     listeners: {
                         click: 'onRefreshBtnClick'
                     }
