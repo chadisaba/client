@@ -806,8 +806,8 @@
             "id": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         },
         "resource": true,
-        "7a790ee1-0caf-48fc-a71c-ee5a24160b66": {
-            "id": "7a790ee1-0caf-48fc-a71c-ee5a24160b66"
+        "83c844ca-551a-4f1e-b487-0c801353b961": {
+            "id": "83c844ca-551a-4f1e-b487-0c801353b961"
         }
     },
     "tabState": {
@@ -826,8 +826,8 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "299f2421-e9ef-4246-98f0-7145130838ac",
-        "selectedInstance": "299f2421-e9ef-4246-98f0-7145130838ac"
+        "topInstance": "04066d1c-7822-46e5-825a-1d1d52b03901",
+        "selectedInstance": "04066d1c-7822-46e5-825a-1d1d52b03901"
     },
     "editMode": "code",
     "userSettings": {

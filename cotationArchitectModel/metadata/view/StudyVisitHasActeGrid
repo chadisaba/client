@@ -214,7 +214,6 @@
             "userConfig": {
                 "align": "right",
                 "dataIndex": "studyVisitHasActeAmount",
-                "summaryRenderer": null,
                 "summaryType": "sum",
                 "text": "Mt. acte",
                 "width": 80
@@ -229,13 +228,6 @@
             },
             "name": "MystudyVisitHasActeAmountCol1",
             "designerId": "57ae2d53-8a12-4c2a-b3c8-035d1372dc2e",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "summaryRenderer",
-                    "type": "string"
-                }
-            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
