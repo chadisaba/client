@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statsactivitygridpanel",
+        "designer|userClassName": "StatsActivityGridPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "202be867-7282-45ed-9931-0e1b8c61d34c",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "StatActivityModel",
+                "name": "StatsActivityStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore9",
+            "designerId": "0e3e25d6-0496-48ad-bf49-26ef26bd5fa4"
+        }
+    ]
+}

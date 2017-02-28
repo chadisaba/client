@@ -1,0 +1,260 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statsactivitygridpanel",
+        "designer|userClassName": "StatsActivityGridPanel",
+        "height": null,
+        "store": [
+            "{StatsActivityStore}"
+        ],
+        "title": "Activités",
+        "width": null
+    },
+    "configAlternates": {
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyGridPanel",
+    "designerId": "5d0c5972-6454-474b-b398-460c2ab96b75",
+    "viewControllerInstanceId": "a62ded5a-acc1-42e2-824a-93456d9c9ac1",
+    "viewModelInstanceId": "202be867-7282-45ed-9931-0e1b8c61d34c",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "site",
+                "flex": 1,
+                "text": "SIte"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
+            "name": "MyColumn",
+            "designerId": "fb8c7a3c-7cf7-4557-aeb5-ca14f8f54155"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "doctor",
+                "flex": 1,
+                "text": "Médecin"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "flex": "number"
+            },
+            "name": "MyColumn1",
+            "designerId": "605d5f11-f532-4882-94e2-52b8f107828a"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyNumber",
+                "text": "Nb. Examens"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyNumberColumn",
+            "designerId": "e0ec34c7-f0cb-4909-940e-22ec6ef993e2"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitNumber",
+                "text": "Nb. Visites"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyNumberColumn3",
+            "designerId": "d8132396-852c-4912-8778-115b14ee0957"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "ca",
+                "text": "C.A"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "4d314cbb-b8f8-41b4-aacb-b83b78af0c95"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "moyenne",
+                "text": "Moyenne"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyNumberColumn2",
+            "designerId": "934c37a1-ef54-4df6-bc7b-12dc8ff66035"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "7b3e37ea-0d87-4053-9e3c-6a9b19884447"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar2",
+            "designerId": "4a985e15-e391-4c1b-a1a2-ff2cbd00e130",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Du",
+                        "labelWidth": 30,
+                        "layout|flex": null,
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyDateField6",
+                    "designerId": "caf4d763-6b9e-4d88-8b01-97f334de6727"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Au",
+                        "labelWidth": 30,
+                        "layout|flex": null,
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyDateField7",
+                    "designerId": "aebcb590-0aef-45bc-bae0-ea9aea7a589d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-refresh",
+                        "itemId": "refreshBtn1",
+                        "layout|flex": null,
+                        "text": ""
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "94b3512e-ce7f-4abf-90f3-f1dcd5a86051",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick1",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshBtnClick1",
+                            "designerId": "c261cf90-d09a-4665-b554-69276b67bbec"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

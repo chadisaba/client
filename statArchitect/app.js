@@ -23,7 +23,8 @@ Ext.application({
     models: [
         'StudyBySiteNumberModel',
         'Stat1Model',
-        'PeriodicityModel'
+        'PeriodicityModel',
+        'StatActivityModel'
     ],
     views: [
         'ChartStudiesNbrPanel',
@@ -31,7 +32,8 @@ Ext.application({
         'CaEvolutionChartPanel',
         'CaParSiteEvolutionChartPanel',
         'VisitNumberEvolutionChartPanel',
-        'VisitNumberBySiteEvolutionChartPanel'
+        'VisitNumberBySiteEvolutionChartPanel',
+        'StatsActivityGridPanel'
     ],
     controllers: [
         'MainController'

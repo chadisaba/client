@@ -12,7 +12,8 @@
         "models": [
             "StudyBySiteNumberModel",
             "Stat1Model",
-            "PeriodicityModel"
+            "PeriodicityModel",
+            "StatActivityModel"
         ],
         "name": "MyApp",
         "views": [
@@ -21,7 +22,8 @@
             "CaEvolutionChartPanel",
             "CaParSiteEvolutionChartPanel",
             "VisitNumberEvolutionChartPanel",
-            "VisitNumberBySiteEvolutionChartPanel"
+            "VisitNumberBySiteEvolutionChartPanel",
+            "StatsActivityGridPanel"
         ]
     },
     "configAlternates": {
