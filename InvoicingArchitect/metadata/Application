@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "PaymentModel",
+            "CashBoxCodeComboModel",
+            "PaymentMethodCodeComboModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "PaymentForm",
+            "PaymentGrid",
+            "InvoicingForm",
+            "MyForm",
+            "MyPanel"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

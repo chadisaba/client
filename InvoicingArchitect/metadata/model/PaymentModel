@@ -1,0 +1,361 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PaymentModel",
+        "validators": [
+            "[{",
+            "            type: 'presence',",
+            "            field: 'xxFieldNameRequired'",
+            "        }]"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
+    "name": "PaymentModel",
+    "designerId": "8f6dc487-20c2-46ab-981c-7e8b0605765a",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentMethodCode"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentMethodCode",
+            "designerId": "dd063424-0004-43b8-b4a1-614f231d13fd"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cashBoxCode"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MycashBoxCode",
+            "designerId": "f96bb5c6-fb01-4eed-aa4f-843279802724"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentDate"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentDate",
+            "designerId": "2d4ebe1a-c697-4abd-aa33-14481bbd9702"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentAmount"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentAmount",
+            "designerId": "9e9450c5-d75e-4bc5-8d2a-5930ef206ab5"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentEntryDate"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentEntryDate",
+            "designerId": "3f558b64-8155-4e26-9b72-2afab0c29918"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentReceivedAmount"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentReceivedAmount",
+            "designerId": "88204dcf-f264-424e-9e80-b5cf0b784138"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentAmountReturned"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentAmountReturned",
+            "designerId": "1bfa38d2-2477-4355-857d-aec39787bde5"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentIsMnagementFees"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentIsMnagementFees",
+            "designerId": "3502320d-9b41-443f-bf8d-6daf42fffc2f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentComment"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentComment",
+            "designerId": "e5fc2193-4b37-4ae8-8aac-512441d0c00f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentId",
+            "designerId": "ec489d82-a271-4bcc-ad6d-3d0d36e76a5b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "invoiceId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyinvoiceId",
+            "designerId": "bc260e46-978c-4f82-81bc-3bf0984ace45"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siteId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MysiteId",
+            "designerId": "5e5719cb-fe1a-4375-9b32-2f0ce929eb1f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentCheckBankLabel"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentCheckBankLabel",
+            "designerId": "d5458a86-8455-436e-a93d-a942ec9037bc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentCheckNumber"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentCheckNumber",
+            "designerId": "7fd9f338-5c2f-44ed-a92c-56a9013c2be5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentCheckHolder"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentCheckHolder",
+            "designerId": "ff8b7bf6-e4e4-44fc-ab46-c84c32264f99"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "paymentCheckIsUnpaid"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypaymentCheckIsUnpaid",
+            "designerId": "0b42f58c-c688-4f0d-938f-302363e8cb60"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField27",
+            "designerId": "72c06f0a-941e-4458-8b29-133e4172734b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField28",
+            "designerId": "6c7478f6-a8f5-447a-bed9-a54e95fad013"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "7c99a085-dbd6-4ea0-a781-c09c3e44829c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "notValid"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "682b8c09-c93e-466b-883b-f29cd1b90750"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField31",
+            "designerId": "60fe296b-b40d-4d6b-8a07-5da0625732e3"
+        }
+    ]
+}

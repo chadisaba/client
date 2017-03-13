@@ -1,0 +1,971 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "controller": null,
+        "designer|userAlias": "invoicingform",
+        "designer|userClassName": "InvoicingForm",
+        "header": false,
+        "height": null,
+        "layout": "border",
+        "requires": [
+            "MyApp.view.InvoicingFormViewController"
+        ],
+        "title": "My Form",
+        "width": null
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "controller": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto",
+        "requires": "typedarray"
+    },
+    "name": "MyForm",
+    "designerId": "eb7f27cc-47b7-4c3f-bc5d-b6d25112b39a",
+    "viewControllerInstanceId": "35cbaceb-5ad3-4b2b-b241-49f8b6a0e88c",
+    "viewModelInstanceId": "e4e63e77-e486-45ee-9d6c-29bebc5c972e",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "a4206396-033b-4416-8e11-7bb32e2ff00b",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "0d2319df-ad5f-4d82-a1e2-a4034bde8c75",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-file-text",
+                                "layout|flex": 1,
+                                "text": "Créer Facture"
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "b52f2ff7-d580-426d-b1ab-488e4d4c76aa"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer",
+                            "designerId": "0dbf4061-5109-4079-b5a7-bbc933d4a395"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-rss",
+                                "layout|flex": 1,
+                                "text": "Créer F.T B2"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "b62be9ec-757d-42bf-9101-6bbc52870c32"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer1",
+                            "designerId": "22aadb45-13b8-4e55-a92e-7b825715dc76"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-check",
+                                "layout|flex": 1,
+                                "text": "Valider"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "5273fcf0-a52b-43a9-8f06-ea9e76af8992"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer2",
+                            "designerId": "3d93d7f4-6ead-48ba-b1bb-7513c867b580"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-print",
+                                "layout|flex": 1,
+                                "text": "Cerfa F.S"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "cda80f1d-abdd-45f7-9705-f0be43ba7d61"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer5",
+                            "designerId": "8bd211d1-6de7-4821-9d42-1f7dcb026e59"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-euro",
+                                "layout|flex": 1,
+                                "text": "Dépassement"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "4697c405-26bf-441b-889f-c7e8ddbdc2e9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "769c8589-cd76-48b6-882c-06365dd20c6a"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "a2f17a36-1e6b-4f55-b345-cc4ee287d680",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer",
+                            "designerId": "ba82bb86-d4c2-4430-b116-a5fd51e62a1b"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-share",
+                                "layout|flex": 1,
+                                "text": "Annuler Facture"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "b87ab1d2-5a90-4ca7-aaf6-bf6900783d1e"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 15
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer1",
+                            "designerId": "137e5354-8d38-4f8f-862c-5dd660eb739c"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "fa fa-times",
+                                "layout|flex": 1,
+                                "text": "Quitter"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "d2a18731-6136-4298-9875-af9fd3e8deeb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 2,
+                "layout|region": "center",
+                "scrollable": true
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "layout|region": "string",
+                "scrollable": "auto"
+            },
+            "name": "MyContainer2",
+            "designerId": "879f4c04-946e-435a-a6f3-4018baebd696",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "title": "Actes",
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "title": "string",
+                        "width": "auto",
+                        "controller": "object"
+                    },
+                    "name": "MyFieldSet3",
+                    "designerId": "2fbbbde1-4eae-4929-b241-53894fba4372",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": null
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "studyvisithasactegrid",
+                            "designerId": "cbd98c4d-b1de-4468-9ec3-c7ab404b07b0",
+                            "masterInstanceId": "04066d1c-7822-46e5-825a-1d1d52b03901"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "layout": "column",
+                        "title": "Montants",
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "title": "string",
+                        "width": "auto",
+                        "layout": "string"
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "8ecb610c-d567-4a41-9284-025e097cc7aa",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Patient",
+                                "labelWidth": 190,
+                                "layout|columnWidth": 0.5,
+                                "readOnly": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "dc6e1ee2-e1ac-4786-ae2e-179dba2ff69d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": " Dépassement patient",
+                                "labelWidth": 170,
+                                "layout|columnWidth": 0.5,
+                                "readOnly": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "labelWidth": "number",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "5e4e9369-eb7c-41d6-9e76-f5914ca764fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Régime complémentaire (A.M.C)",
+                                "labelWidth": 190,
+                                "layout|columnWidth": 0.5,
+                                "readOnly": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "5079e9c0-4dc0-4b54-9454-c2402ec8b9fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Dépassement A.M.C",
+                                "labelWidth": 170,
+                                "layout|columnWidth": 0.5,
+                                "readOnly": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "3fc3ec1f-63c3-44e0-b43c-90a641235312"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Régime obligatoire (A.MO)",
+                                "labelWidth": 190,
+                                "layout|columnWidth": 0.5,
+                                "readOnly": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "labelWidth": "number",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyTextField4",
+                            "designerId": "5c546b97-fa64-4fc7-9ac7-c2dbcfb9dd67"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Remise",
+                                "labelWidth": 170,
+                                "layout|columnWidth": 0.5
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField6",
+                            "designerId": "2e384428-e1a1-4022-af37-96b3a1238200"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "title": "Règlements",
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "title": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyFieldSet5",
+                    "designerId": "9288f988-706c-41fa-bb05-a482bf31c153",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "externalEditingPlugin": [
+                                    "{",
+                                    "                        pluginId: 'gridediting',",
+                                    "                        onlyADM: true",
+                                    "                    }"
+                                ]
+                            },
+                            "configAlternates": {
+                                "externalEditingPlugin": "object"
+                            },
+                            "name": "paymentgrid",
+                            "designerId": "2807376e-b043-4b78-930e-c5ea5ced527e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "externalEditingPlugin",
+                                    "type": "string"
+                                }
+                            ],
+                            "masterInstanceId": "c51e12c3-0049-476e-b644-dd2ace34ec30"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "west",
+                "scrollable": "vertical",
+                "width": 286
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "layout|region": "string",
+                "scrollable": "auto",
+                "width": "auto"
+            },
+            "name": "MyContainer3",
+            "designerId": "c6fee465-ce79-4fdc-974d-ffa524b6bb11",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "html": [
+                            "test<br>test"
+                        ],
+                        "itemId": "patientFieldSet",
+                        "title": "Patient"
+                    },
+                    "configAlternates": {
+                        "html": "object",
+                        "title": "string",
+                        "flex": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyFieldSet1",
+                    "designerId": "3c3ce916-b756-4b94-8d08-3e9b7fba041e"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "test<br>test"
+                        ],
+                        "itemId": "doctorFieldSet",
+                        "title": "Médecin"
+                    },
+                    "configAlternates": {
+                        "html": "object",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "3b0df998-9602-4061-825e-824ef964f310"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": null,
+                        "title": "Informations facturations"
+                    },
+                    "configAlternates": {
+                        "html": "object",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet2",
+                    "designerId": "e0521968-9f5f-492c-8df2-4cde6ebb6bc6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "modeFacturationLabel",
+                                "text": "Mode de facturation"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "text": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "4d7997b1-1132-430c-9ec9-3755c2cd419b"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "F.S.E",
+                                "fieldLabel": "",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "b2f93afe-931a-4138-b4a9-7dcc3075f210"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Passer en mode dégradé (FSE sans carte vitale)",
+                                "fieldLabel": "",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyCheckbox2",
+                            "designerId": "8988f570-bec7-419e-9100-f783d62c1ca5"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Consultation gratuite",
+                                "fieldLabel": "",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyCheckbox4",
+                            "designerId": "e2ed876a-d635-4483-9f74-5c3dda72fc26"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
+                            },
+                            "name": "MyContainer5",
+                            "designerId": "d66e7014-957d-4941-b34c-f96aedfc1085",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Tiers-payant obligatoire   ",
+                                        "fieldLabel": ""
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "layout|anchor": "string"
+                                    },
+                                    "name": "MyCheckbox1",
+                                    "designerId": "cc678fdc-9c04-40cb-a2c9-b11ac95ee645"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 44
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "width": "auto"
+                                    },
+                                    "name": "MySpacer3",
+                                    "designerId": "387e0eb7-1ec9-44d9-9a2b-e341565bf4a2"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Pourcentage",
+                                        "layout|flex": 1
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "9df54165-9c17-4a46-ae61-acb065078ad6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
+                            },
+                            "name": "MyContainer6",
+                            "designerId": "809285fe-3fc5-4444-8b89-ab32e3baf0b9",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Tiers-payant complémentaire",
+                                        "fieldLabel": ""
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "layout|anchor": "string"
+                                    },
+                                    "name": "MyCheckbox1",
+                                    "designerId": "f46467d4-54d0-4f24-91d4-88ea729dcf4f"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": 10
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "width": "auto"
+                                    },
+                                    "name": "MySpacer4",
+                                    "designerId": "72fdd68c-95e7-4de2-b909-c7785ea5ce5d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Pourcentage",
+                                        "layout|flex": 1
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "4359a1b3-5e32-4018-bf2a-1064d352f7ae"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Facturation complémentaire (A.M.C)",
+                                "fieldLabel": "",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyCheckbox5",
+                            "designerId": "e52941c6-a621-4f82-b7ac-b4a45e1b6250"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

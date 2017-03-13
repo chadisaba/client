@@ -1,0 +1,464 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "paymentform",
+        "designer|userClassName": "PaymentForm",
+        "height": 500,
+        "itemId": "paymentFormId",
+        "scrollable": "vertical",
+        "title": "My Form",
+        "width": 500
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto",
+        "scrollable": "auto"
+    },
+    "name": "MyForm",
+    "designerId": "4689ff35-f9c8-4417-aa85-57a66bd8e76c",
+    "viewControllerInstanceId": "d840f7bd-008f-46d1-9b95-38cc022ad42b",
+    "viewModelInstanceId": "35fd6334-9196-4b8a-9998-7a79dd0bef6f",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processPaymentForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "processPaymentForm",
+            "designerId": "c22456fb-6943-4b09-b529-a9479adb5b79"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onPaymentFormItemIdBoxReady",
+                "name": "boxReady",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdBoxReady",
+            "designerId": "4e57cdf2-f79e-4ae6-af50-a95d84c6264e"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onPaymentFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdInEdit",
+            "designerId": "a787924e-7c2c-4e52-8c07-fa0e93c714fb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onPaymentFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdSaveEdit",
+            "designerId": "$6c3ade93-21d9-4e88-9818-b6f5e13ee9f6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onPaymentFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdResetEdit",
+            "designerId": "ed664a08-b48f-49f6-82f0-645281e76ffa"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onPaymentFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdChHist",
+            "designerId": "8419bce4-ad8d-4ab3-98ae-4c100b3bb85b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onPaymentFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentFormItemIdQuitEdit",
+            "designerId": "f58d0f74-958e-46b4-914f-be1d9a98e758"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Fields"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "MyFieldSet",
+            "designerId": "62380c11-5d26-46f2-9502-dce9bbfa8a10",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "paymentMethodCode",
+                        "fieldLabel": "Payment method",
+                        "forceSelection": true,
+                        "itemId": "paymentMethodCodeComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "paymentMethodCode",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PaymentMethodCodeComboStore}"
+                        ],
+                        "valueField": "paymentMethodId"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MypaymentMethodCodeComboBox",
+                    "designerId": "41d8e049-b47e-4e7b-9cba-65bef33f3203"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "cashBoxCode",
+                        "fieldLabel": "Cash box",
+                        "forceSelection": true,
+                        "itemId": "cashBoxCodeComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "cashBoxCode",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CashBoxCodeComboStore}"
+                        ],
+                        "valueField": "cashBoxId"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MycashBoxCodeComboBox",
+                    "designerId": "99768a64-007a-40c6-b23b-5ed8a651592d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Payment date",
+                        "layout|anchor": "100%",
+                        "name": "paymentDate"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentDateTextField",
+                    "designerId": "00644369-b0fd-4823-9d3e-381d1f0d044e"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Payment amount",
+                        "layout|anchor": "100%",
+                        "name": "paymentAmount"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentAmountTextField",
+                    "designerId": "acc37870-d81f-4e40-8b80-40f7832fee5c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Payment entry date",
+                        "layout|anchor": "100%",
+                        "name": "paymentEntryDate"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentEntryDateTextField",
+                    "designerId": "1864a989-b131-4f9d-b8a8-38b30da058e4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Received amount",
+                        "layout|anchor": "100%",
+                        "name": "paymentReceivedAmount"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentReceivedAmountTextField",
+                    "designerId": "60d0b68e-d6ff-4e50-bfa4-1c5fe2571756"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Returned amount",
+                        "layout|anchor": "100%",
+                        "name": "paymentAmountReturned"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentAmountReturnedTextField",
+                    "designerId": "27e95505-1bbc-4d22-81b5-87225069d1ab"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Ouverpayment",
+                        "layout|anchor": "100%",
+                        "name": "paymentIsOverpayment"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentIsOverpaymentTextField",
+                    "designerId": "7bb6b14f-6392-4490-ab31-efbda66673ba"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Management Fees",
+                        "layout|anchor": "100%",
+                        "name": "paymentIsMnagementFees"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentIsMnagementFeesTextField",
+                    "designerId": "da1a4aad-0c69-438c-8c33-e52b1dfbbf85"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Comment",
+                        "layout|anchor": "100%",
+                        "name": "paymentComment"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypaymentCommentTextField",
+                    "designerId": "b9f25f7a-683c-460b-bd48-38c0f3f52e8f"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1115 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "paymentgrid",
+        "designer|userClassName": "PaymentGrid",
+        "forceFit": true,
+        "itemId": "paymentGridId",
+        "reference": "paymentGridRef",
+        "resizable": [
+            "false"
+        ],
+        "store": [
+            "{PaymentStore}"
+        ],
+        "title": ""
+    },
+    "configAlternates": {
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
+    },
+    "name": "MyGridPanel",
+    "designerId": "c51e12c3-0049-476e-b644-dd2ace34ec30",
+    "viewControllerInstanceId": "5484ad0b-6289-4970-b83c-240e4c31ef92",
+    "viewModelInstanceId": "ea34b5a5-b461-42af-a221-feb673de9f66",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentMethodCode",
+                "text": "Payment method"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentMethodCodeCol",
+            "designerId": "d83b19a5-ef36-44b7-a229-2727f85d0ce7",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "paymentMethodCode",
+                        "forceSelection": true,
+                        "itemId": "paymentMethodCodeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PaymentMethodCodeComboStore}"
+                        ],
+                        "valueField": "paymentMethodCode"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MypaymentMethodCodeComboBox",
+                    "designerId": "9fbd129c-fdbb-4449-9a5f-b375705dcd3c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPaymentMethodCodeComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onPaymentMethodCodeComboBoxEditorItemIdSelect",
+                            "designerId": "10904304-3bdb-4d2c-8286-8267e7318c22"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "cashBoxCode",
+                "text": "Cash box"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MycashBoxCodeCol",
+            "designerId": "16065200-4d18-40d7-8475-0ee29e2c18cf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "cashBoxCode",
+                        "forceSelection": true,
+                        "itemId": "cashBoxCodeComboBoxEditorItemId",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{CashBoxCodeComboStore}"
+                        ],
+                        "valueField": "cashBoxCode"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MycashBoxCodeComboBox",
+                    "designerId": "5e9180dc-5cc2-4d1b-93a2-7654b5e9c7c7",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCashBoxCodeComboBoxEditorItemIdSelect",
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onCashBoxCodeComboBoxEditorItemIdSelect",
+                            "designerId": "d5c227c4-54bd-49ff-82fc-1bb19d77ff70"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentDate",
+                "text": "Payment date"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentDateCol",
+            "designerId": "54723e48-cd8a-4ad9-a30b-a337acae6e7d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "paymentDateTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyDateField",
+                    "designerId": "6b9d9009-268c-4414-a6f2-e425af550b99"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentAmount",
+                "text": "Payment amount"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentAmountCol",
+            "designerId": "9ed965b9-b55b-4e97-8ad0-4d1973e74093",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "paymentAmountTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentAmountTextField",
+                    "designerId": "959d6936-dcc6-4781-942c-2a40622bd087"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentEntryDate",
+                "hidden": true,
+                "text": "Payment entry date"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
+            "name": "MypaymentEntryDateCol",
+            "designerId": "2993bf4e-2bd3-4b5d-b8ef-34ff45fdd785",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "itemId": "paymentEntryDateTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentEntryDateTextField",
+                    "designerId": "a10be809-c23d-48ac-a6d4-04d667f111b2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentReceivedAmount",
+                "text": "Received amount"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentReceivedAmountCol",
+            "designerId": "b8fd6b39-5158-4286-bce6-b7d10bf3f247",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentReceivedAmountTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentReceivedAmountTextField",
+                    "designerId": "de6a852e-45e4-433a-8ff1-c15aa2bc1011"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentAmountReturned",
+                "text": "Returned amount"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentAmountReturnedCol",
+            "designerId": "47080fcf-37f9-4cc5-9995-f6ea58cfa0cd",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentAmountReturnedTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentAmountReturnedTextField",
+                    "designerId": "57eb1476-e63b-4978-a8dc-b7f298bd8867"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentIsMnagementFees",
+                "text": "Management Fees"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentIsMnagementFeesCol",
+            "designerId": "77aacf29-9779-462b-bf8e-06b79ba91fe3",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "3d7e40ab-a8f5-463f-9904-57a7c07606af"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentComment",
+                "text": "Comment"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentCommentCol",
+            "designerId": "086f4923-039f-441c-b577-7c6cb389c57a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentCommentTextTextAreaItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentCommentTextArea",
+                    "designerId": "1049896c-42ed-4ff8-b735-e75046f58bf7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentCheckBankLabel",
+                "text": "Check label"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentCheckBankLabelCol",
+            "designerId": "5043d116-9c39-4f9b-a62f-3406e328d591",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentCheckBankLabelTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentCheckBankLabelTextField",
+                    "designerId": "7142ec84-d0ad-4259-809f-af0a18dfd2cf"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentCheckNumber",
+                "text": "Check number"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentCheckNumberCol",
+            "designerId": "a9adcc51-1bb1-41c2-b2ee-6b960c8062af",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentCheckNumberTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentCheckNumberTextField",
+                    "designerId": "6ca8d50e-d1e3-4366-bff8-42a3d346484d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentCheckHolder",
+                "text": "Check holder"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentCheckHolderCol",
+            "designerId": "a98ea569-d1da-43f2-9695-80b002b6bbaf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "paymentCheckHolderTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MypaymentCheckHolderTextField",
+                    "designerId": "e0e5e6dc-45fa-4db0-9667-027f4253d4dc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "paymentCheckIsUnpaid",
+                "text": "Check unpaid"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MypaymentCheckIsUnpaidCol",
+            "designerId": "ace9d582-7940-404c-945f-4a86b55e5b1f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MypaymentCheckIsUnpaidCheckBox",
+                    "designerId": "71de701c-42b8-48ab-93e3-d2edba3ff096"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "42668c45-e049-453b-a8c2-dbbef174cbfb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "b33a3728-c690-45d5-b2c6-18b14c6986af"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "//this.getViewModel().set('record', record);",
+                    "",
+                    "// Show details",
+                    "//this.showView('details');"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "select",
+            "designerId": "12a69e1f-ab7f-4f45-bdaf-98eebac4960a"
+        },
+        {
+            "type": "Ext.grid.plugin.RowEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCancel": false,
+                "clicksToMoveEditor": 0,
+                "errorSummary": false,
+                "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
+            },
+            "name": "MyRowEditingPlugin",
+            "designerId": "c05b54df-d0f4-4899-97e6-a38876c6ce11"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processPaymentGrid",
+                "implHandler": [
+                    "GridAddPlugins.addPlugins(this);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "processPaymentGrid",
+            "designerId": "3ac73adc-5735-44f9-9fb6-2b856e0bd227"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdChHist",
+                "implHandler": [
+                    ""
+                ],
+                "name": "chHist",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdChHist",
+            "designerId": "0ebc3aa1-a4ae-4a7d-a192-8e323be03bda"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdAfterRender",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdAfterRender",
+            "designerId": "2ac361dc-fa92-4106-8080-55a6b01de676"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPaymentGridIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdInEdit",
+            "designerId": "d6caaaf5-d157-4383-bc5c-c5ed5013a6d3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onPaymentGridIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdResetEdit",
+            "designerId": "ce04e7b0-520d-4bd7-93fa-72cea4c4af07"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin",
+                    "dataToBeSaved",
+                    "comment"
+                ],
+                "fn": "onPaymentGridIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdSaveEdit",
+            "designerId": "1df97c32-db54-4411-b6c9-15029e13e008"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid"
+                ],
+                "fn": "onPaymentGridIdAddItem",
+                "implHandler": [
+                    "",
+                    ""
+                ],
+                "name": "addItem",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdAddItem",
+            "designerId": "32d0acad-8a76-4083-a64a-134b252ee89c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdDeleteItem",
+                "name": "deleteItem",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdDeleteItem",
+            "designerId": "0977e8be-9e11-4be1-be31-2f04c4f366ac"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdDuplicateItem",
+                "name": "duplicateItem",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdDuplicateItem",
+            "designerId": "f680a268-6b29-4772-a542-a23764287fd5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdModifyItem",
+                "implHandler": [
+                    ""
+                ],
+                "name": "modifyItem",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdModifyItem",
+            "designerId": "d9cd2a23-7d83-4f2b-9099-524c71eb497b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "gridpanel",
+                    "promptWin"
+                ],
+                "fn": "onPaymentGridIdQuitEdit",
+                "implHandler": [
+                    ""
+                ],
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdQuitEdit",
+            "designerId": "8fd283f1-f187-4de4-a838-ddf1491815dc"
+        },
+        {
+            "type": "Ext.selection.RowModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
+            },
+            "name": "MyRowSelectionModel",
+            "designerId": "c580a868-efc5-4328-a4f0-02a28f62b6cb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPaymentGridIdBeforeEdit",
+                "name": "beforeedit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdBeforeEdit",
+            "designerId": "5f11985d-b9d8-419c-ac24-884098f58ecc"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPaymentGridIdCanceledit",
+                "name": "canceledit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdCanceledit",
+            "designerId": "1fe28132-9e8d-4094-8815-4bee9028c0f8"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdContainerClick",
+                "name": "containerclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdContainerClick",
+            "designerId": "ec92432b-8e1e-4d70-a0b2-d72f87f79f27"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPaymentGridIdEdit",
+                "name": "edit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdEdit",
+            "designerId": "7a1d77f4-74a3-41a3-aff8-d6a6c95c0767"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentGridIdBeforeCellClick",
+                "name": "beforecellclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdBeforeCellClick",
+            "designerId": "$b7331351-2687-4ce5-9f46-f6cbbebd8ca2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onPaymentGridIdValidateedit",
+                "name": "validateedit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPaymentGridIdValidateedit",
+            "designerId": "3f638623-62ef-4ca8-bd2f-660f4653ec22"
+        }
+    ]
+}

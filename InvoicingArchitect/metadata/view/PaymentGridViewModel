@@ -1,0 +1,73 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "paymentgrid",
+        "designer|userClassName": "PaymentGridViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "ea34b5a5-b461-42af-a221-feb673de9f66",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PaymentModel",
+                "name": "PaymentStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "PaymentStore",
+            "designerId": "8c982dc7-002a-4f18-b98e-3b593c661ead"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PaymentMethodCodeComboModel",
+                "name": "PaymentMethodCodeComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "PaymentMethodCodeComboStore",
+            "designerId": "82056fca-0420-4fc5-bcff-f6d8a202f9a2"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CashBoxCodeComboModel",
+                "name": "CashBoxCodeComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "CashBoxCodeComboStore",
+            "designerId": "9f18ebc4-50ba-433c-b926-6fbe24529b12"
+        }
+    ]
+}

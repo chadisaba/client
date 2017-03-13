@@ -1,0 +1,55 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "paymentform",
+        "designer|userClassName": "PaymentFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "35fd6334-9196-4b8a-9998-7a79dd0bef6f",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PaymentMethodCodeComboModel",
+                "name": "PaymentMethodCodeComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "PaymentMethodCodeComboStore",
+            "designerId": "32fbfeef-30f9-4b4e-b8f0-3a8883178ad7"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CashBoxCodeComboModel",
+                "name": "CashBoxCodeComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "CashBoxCodeComboStore",
+            "designerId": "a84432c2-df2e-4caf-bb0c-6580c514e78a"
+        }
+    ]
+}
