@@ -1,0 +1,210 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "speechrecognitionpanel",
+        "designer|userClassName": "SpeechRecognitionPanel",
+        "height": null,
+        "itemId": "microImg",
+        "title": "Reconnaissace vocale",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel",
+    "designerId": "bc104918-0474-468d-9121-b7450ff8b9a8",
+    "viewControllerInstanceId": "b61dcd7e-92ed-4b73-9d2b-97956927956c",
+    "viewModelInstanceId": "bf30e745-f783-4a8e-bd30-60c6e94c3bf4",
+    "cn": [
+        {
+            "type": "Ext.form.field.HtmlEditor",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null,
+                "fieldLabel": "",
+                "flex": null,
+                "height": 600,
+                "itemId": "htmlEditor"
+            },
+            "configAlternates": {
+                "dock": "string",
+                "fieldLabel": "string",
+                "flex": "number",
+                "height": "auto",
+                "itemId": "string"
+            },
+            "name": "MyHtmlEditor",
+            "designerId": "aaa6286c-226c-4190-917f-299f0e9e0848"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "a1d3fbad-9a98-4afa-b4a4-9656a03da59d",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "24375636-5d13-4a1c-8d87-90751ec1b8bd",
+                    "cn": [
+                        {
+                            "type": "Ext.Component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<img src=\"../Common/resources/images/mic.gif\" height=\"24\" width=\"24\"/>",
+                                "itemId": "microImg",
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "html": "string",
+                                "itemId": "string",
+                                "layout|flex": "number"
+                            },
+                            "name": "MyComponent1",
+                            "designerId": "deb54100-5842-4fad-91ee-93e7d7f998c8"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 20
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer",
+                            "designerId": "2a49a41e-21b3-4458-9960-81505bc12e1b"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "recBtn",
+                                "layout|flex": null,
+                                "text": "Enregistrer"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "f2996825-709f-4086-9600-3c2df497fc1a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRecBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRecBtnClick",
+                                    "designerId": "7bc1ae81-a1fc-4cca-8eaa-11111c6a32db"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "width": 20
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySpacer1",
+                            "designerId": "95f77b8a-6660-45c5-bb76-86e44e93abca"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "Valider"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "7ec0c8f9-9bdf-4876-a9ba-3ce58e50518e"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
