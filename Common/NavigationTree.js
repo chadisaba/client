@@ -14,7 +14,7 @@ Ext.define('MyApp.store.NavigationTree', {
                 viewType: 'maintabpanel',
                 routeId: 'maintabpanel', // routeId defaults to viewType
                 leaf: true,
-                href:'../pub_workflow/#maintabpanel'
+                href:'../../clientNew/MyApp/#maintabpanel'
             },
             {
                 iconCls: 'x-fa fa-cogs',

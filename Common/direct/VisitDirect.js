@@ -20,14 +20,14 @@ saveVisit:function(_visitObject)
 });
 return promise;
 },
-    saveStudyVisitAndActe:function(_studyVisitObj)
+    createOrReplaceStudyVisit:function(_studyVisitObj)
     {
-        var promise = new Promise(
+        return  new Promise(
             function (resolve, reject) {
                 var params={
                     studyVisitObj:_studyVisitObj
                 };
-                Server.Visit.saveStudyVisitAndActe(params,
+                Server.Visit.createOrReplaceStudyVisit(params,
                     function(_result){
                         if(_result.success){
                             resolve(_result.data);
@@ -39,7 +39,29 @@ return promise;
                     }
                 );
             });
-        return promise;
+
+    },
+    deleteStudyVisit:function(_studyVisitId,_visitId)
+    {
+        return new Promise(
+            function (resolve, reject) {
+                var params={
+                    studyVisitId:_studyVisitId,
+                    visitId:_visitId
+                };
+                Server.Visit.deleteStudyVisit(params,
+                    function(_result){
+                        if(_result.success){
+                            resolve(_result.data);
+                        }
+                        else{
+                            console.error(_result.msg);
+                            reject(_result.msg);
+                        }
+                    }
+                );
+            });
+
     },
     saveVisitAndStudyVisit:function(_visitObject,_studiesVisitArray,_studiesArray,_worklistDoctor)
     {

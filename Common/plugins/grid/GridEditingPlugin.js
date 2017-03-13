@@ -47,6 +47,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	liveSearch:true,
 	preferences:true,
 
+    // display only modify button without displaying edit button
+    onlyModifyWithoutEdit: false,
+
 	// Add, Delete, Save, Cancel, Quit and Edit
 	noModif: false,
 
@@ -57,8 +60,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	onlyADM: false, 
 	
 	// Modify action only
-	onlyModify: false, 
-	
+	onlyModify: false,
+
 	// Delete action only
 	onlyDelete: false,
 	
@@ -71,6 +74,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	inEditing:false,
 
 	enableDuplicate:true,
+	enableModificationsOnlyCheckBox:true,
 
 	pluginId: 'gridediting',
 	
@@ -86,6 +90,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			grid.inEdition=true;	
 		if(this.onlyADM)
 			grid.inEdition = true;
+        if(this.onlyModifyWithoutEdit)
+            grid.inEdition = true;
 
 		var toolbars = grid.query('#editingtoolbar');	
 		if (toolbars.length==1){
@@ -200,6 +206,15 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
           modifyButtonVisible=true;
           duplicateButtonVisible=true;
 		}
+		if(me.onlyModifyWithoutEdit)
+		{
+            editButtonVisible=false;
+            chHistButtonVisible=false;
+            addButtonVisible=false;
+            deleteButtonVisible=false;
+            modifyButtonVisible=true;
+            duplicateButtonVisible=false;
+		}
             me.editBtnCtn.hide();
             me.deleteBtnCtn.hide();
             me.addBtnCtn.hide();
@@ -248,8 +263,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
-		
-			this.createFilterCheckboxCtn();
+
+
+
 			if(this.liveSearch){
 				this.createLiveSearchCtn();
 				this.tb.add(this.liveSearchCtn);
@@ -269,7 +285,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add(this.duplicateBtnCtn);
 			this.tb.add({xtype:'tbfill'});
-			this.tb.add(this.filterCheckBoxCtn);
+        if(this.enableModificationsOnlyCheckBox){
+            this.createFilterCheckboxCtn();
+            this.tb.add(this.filterCheckBoxCtn);
+        }
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -602,7 +621,18 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				tooltip: translate('clickToSavePreference'),//'Cliquer ici pour enregistrer vos préférences',
 				listeners: {
 					click: function (button, e, options){
-						StateProvider.saveState( window.localStorage.getItem('smartmed-userId'));
+                        Utility.loading.start(button);
+                        StateProvider.saveState( window.localStorage.getItem('smartmed-userId'))
+                            .then(function(_result)
+                            {
+                                Ext.Msg.alert(translate('Info'),translate('preferenceSavedSuccessfully'));
+                                Utility.loading.end(button);
+                            })
+                            .catch(function(_err)
+                            {
+                                Ext.Msg.alert('Error',translate(('savePreferenceError')));
+                                Utility.loading.end(button);
+                            });
 					}
 				}
 			}

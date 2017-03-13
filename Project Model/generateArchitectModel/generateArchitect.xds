@@ -30,7 +30,7 @@
     "xdsBuild": 123,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
-    "framework": "ext60",
+    "framework": "ext62",
     "viewOrderMap": {
         "view": [
             "4702aeb1-429b-45af-b394-40a06bf904db",
@@ -43,7 +43,7 @@
         ],
         "model": [],
         "resource": [
-            "88a501f7-6a05-455c-92f9-bdd153a81b0d"
+            "70660864-7b22-46be-b34c-346962bf6d02"
         ],
         "app": [
             "application"

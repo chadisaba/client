@@ -171,11 +171,11 @@ var InitApp={
 
                                 if(_appType=="office")
                                 {
-                                    window.open("../pub_workflow/indexOffice.html",'_self');
+                                    window.open("../../clientNew/MyApp/indexOffice.html#indexOffice.html#maintabpanel",'_self');
 
                                 }
                                else
-                                window.open("../pub_workflow/#maintabpanel",'_self');
+                                window.open("../../clientNew/MyApp/#maintabpanel",'_self');
                                 _myMask.hide();
                             }).
                             catch(function(_err)
