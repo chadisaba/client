@@ -26,8 +26,8 @@
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
         "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "4.1.1",
-    "xdsBuild": 123,
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext60",
