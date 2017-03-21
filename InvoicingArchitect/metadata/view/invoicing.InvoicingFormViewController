@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewModel",
+    "type": "Ext.app.ViewController",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "invoicingform",
-        "designer|userClassName": "InvoicingFormViewModel"
+        "designer|userAlias": "invoicing.invoicingform",
+        "designer|userClassName": "invoicing.InvoicingFormViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "e4e63e77-e486-45ee-9d6c-29bebc5c972e"
+    "designerId": "35cbaceb-5ad3-4b2b-b241-49f8b6a0e88c"
 }

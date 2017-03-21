@@ -6,33 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "paymentgrid",
-        "designer|userClassName": "PaymentGridViewModel"
+        "designer|userAlias": "invoicing.paymentform",
+        "designer|userClassName": "invoicing.PaymentFormViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "ea34b5a5-b461-42af-a221-feb673de9f66",
+    "designerId": "35fd6334-9196-4b8a-9998-7a79dd0bef6f",
     "cn": [
-        {
-            "type": "Ext.data.Store",
-            "reference": {
-                "name": "stores",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "model": "PaymentModel",
-                "name": "PaymentStore"
-            },
-            "configAlternates": {
-                "model": "model",
-                "name": "string"
-            },
-            "name": "PaymentStore",
-            "designerId": "8c982dc7-002a-4f18-b98e-3b593c661ead"
-        },
         {
             "type": "Ext.data.Store",
             "reference": {
@@ -49,7 +31,7 @@
                 "name": "string"
             },
             "name": "PaymentMethodCodeComboStore",
-            "designerId": "82056fca-0420-4fc5-bcff-f6d8a202f9a2"
+            "designerId": "32fbfeef-30f9-4b4e-b8f0-3a8883178ad7"
         },
         {
             "type": "Ext.data.Store",
@@ -67,7 +49,7 @@
                 "name": "string"
             },
             "name": "CashBoxCodeComboStore",
-            "designerId": "9f18ebc4-50ba-433c-b926-6fbe24529b12"
+            "designerId": "a84432c2-df2e-4caf-bb0c-6580c514e78a"
         }
     ]
 }

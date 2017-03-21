@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "paymentgrid",
-        "designer|userClassName": "PaymentGrid",
+        "designer|userAlias": "invoicing.paymentgrid",
+        "designer|userClassName": "invoicing.PaymentGrid",
         "forceFit": true,
         "itemId": "paymentGridId",
         "reference": "paymentGridRef",
@@ -693,7 +693,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processPaymentGrid",
+                "fn": "processInvoicingPaymentGrid",
                 "implHandler": [
                     "GridAddPlugins.addPlugins(this);",
                     ""
@@ -704,7 +704,7 @@
                 "fn": "string",
                 "implHandler": "code"
             },
-            "name": "processPaymentGrid",
+            "name": "processInvoicingPaymentGrid",
             "designerId": "3ac73adc-5735-44f9-9fb6-2b856e0bd227"
         },
         {

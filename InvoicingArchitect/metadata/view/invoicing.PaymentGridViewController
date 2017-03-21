@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "invoicingform",
-        "designer|userClassName": "InvoicingFormViewController"
+        "designer|userAlias": "invoicing.paymentgrid",
+        "designer|userClassName": "invoicing.PaymentGridViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "35cbaceb-5ad3-4b2b-b241-49f8b6a0e88c"
+    "designerId": "5484ad0b-6289-4970-b83c-240e4c31ef92"
 }

@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewController",
+    "type": "Ext.app.ViewModel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "paymentgrid",
-        "designer|userClassName": "PaymentGridViewController"
+        "designer|userAlias": "invoicing.invoicingform",
+        "designer|userClassName": "invoicing.InvoicingFormViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "5484ad0b-6289-4970-b83c-240e4c31ef92"
+    "designerId": "e4e63e77-e486-45ee-9d6c-29bebc5c972e"
 }

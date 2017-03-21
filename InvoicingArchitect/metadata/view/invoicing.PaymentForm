@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
-        "designer|userAlias": "paymentform",
-        "designer|userClassName": "PaymentForm",
+        "designer|userAlias": "invoicing.paymentform",
+        "designer|userClassName": "invoicing.PaymentForm",
         "height": 500,
         "itemId": "paymentFormId",
         "scrollable": "vertical",
@@ -41,7 +41,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processPaymentForm",
+                "fn": "processInvoicingPaymentForm",
                 "implHandler": [
                     "FormAddPlugins.addPlugins(this);"
                 ]
@@ -51,7 +51,7 @@
                 "fn": "string",
                 "implHandler": "code"
             },
-            "name": "processPaymentForm",
+            "name": "processInvoicingPaymentForm",
             "designerId": "c22456fb-6943-4b09-b529-a9479adb5b79"
         },
         {

@@ -8,13 +8,13 @@
     "userConfig": {
         "bodyPadding": 10,
         "controller": null,
-        "designer|userAlias": "invoicingform",
-        "designer|userClassName": "InvoicingForm",
+        "designer|userAlias": "invoicing.invoicingform",
+        "designer|userClassName": "invoicing.InvoicingForm",
         "header": false,
         "height": null,
         "layout": "border",
         "requires": [
-            "MyApp.view.InvoicingFormViewController"
+            "MyApp.view.invoicing.InvoicingFormViewController"
         ],
         "title": "My Form",
         "width": null
@@ -431,7 +431,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "flex": 1,
-                        "layout": "column",
+                        "layout": null,
                         "title": "Montants",
                         "width": null
                     },
@@ -445,134 +445,282 @@
                     "designerId": "8ecb610c-d567-4a41-9284-025e097cc7aa",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Patient",
-                                "labelWidth": 190,
-                                "layout|columnWidth": 0.5,
-                                "readOnly": true
+                                "container|align": "stretch",
+                                "layout": "hbox"
                             },
                             "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "layout|columnWidth": "auto",
-                                "readOnly": "boolean"
+                                "container|align": "string",
+                                "layout": "string"
                             },
-                            "name": "MyTextField1",
-                            "designerId": "dc6e1ee2-e1ac-4786-ae2e-179dba2ff69d"
+                            "name": "MyContainer4",
+                            "designerId": "80109eb8-3266-4c11-a27c-215a6a5568f6",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Patient",
+                                        "labelWidth": 80,
+                                        "name": "invoiceAmountPatient",
+                                        "readOnly": true,
+                                        "width": 150
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|columnWidth": "auto",
+                                        "readOnly": "boolean",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyNumberField",
+                                    "designerId": "dc6e1ee2-e1ac-4786-ae2e-179dba2ff69d"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MySpacer6",
+                                    "designerId": "2da543a3-36bd-442f-a1cb-2e20bd5dbbc3"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Remise",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "invoicePatientAmountRemise",
+                                        "width": 180
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|columnWidth": "auto",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number",
+                                        "width": "auto",
+                                        "name": "string"
+                                    },
+                                    "name": "MyNumberField1",
+                                    "designerId": "2e384428-e1a1-4022-af37-96b3a1238200"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MySpacer7",
+                                    "designerId": "f15a4ca6-1afa-46c4-813b-608b70f1cf33"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": " Dépassement patient",
+                                        "labelWidth": 170,
+                                        "layout|flex": null,
+                                        "name": "invoicePatientAdditionalAmount",
+                                        "readOnly": true,
+                                        "width": 250
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|columnWidth": "auto",
+                                        "labelWidth": "number",
+                                        "readOnly": "boolean",
+                                        "layout|flex": "number",
+                                        "width": "auto",
+                                        "name": "string"
+                                    },
+                                    "name": "MyNumberField2",
+                                    "designerId": "5e4e9369-eb7c-41d6-9e76-f5914ca764fe"
+                                }
+                            ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": " Dépassement patient",
-                                "labelWidth": 170,
-                                "layout|columnWidth": 0.5,
-                                "readOnly": true
+                                "height": 10
                             },
                             "configAlternates": {
-                                "fieldLabel": "string",
-                                "layout|columnWidth": "auto",
-                                "labelWidth": "number",
-                                "readOnly": "boolean"
+                                "height": "auto"
                             },
-                            "name": "MyTextField3",
-                            "designerId": "5e4e9369-eb7c-41d6-9e76-f5914ca764fe"
+                            "name": "MySpacer8",
+                            "designerId": "7d68204d-37ea-4983-8e30-825e28ecbf6f"
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Régime complémentaire (A.M.C)",
-                                "labelWidth": 190,
-                                "layout|columnWidth": 0.5,
-                                "readOnly": true
+                                "container|align": "stretch",
+                                "layout": "hbox"
                             },
                             "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "layout|columnWidth": "auto",
-                                "readOnly": "boolean"
+                                "container|align": "string",
+                                "layout": "string"
                             },
-                            "name": "MyTextField2",
-                            "designerId": "5079e9c0-4dc0-4b54-9454-c2402ec8b9fe"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Dépassement A.M.C",
-                                "labelWidth": 170,
-                                "layout|columnWidth": 0.5,
-                                "readOnly": true
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "layout|columnWidth": "auto",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField5",
-                            "designerId": "3fc3ec1f-63c3-44e0-b43c-90a641235312"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Régime obligatoire (A.MO)",
-                                "labelWidth": 190,
-                                "layout|columnWidth": 0.5,
-                                "readOnly": true
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "layout|columnWidth": "auto",
-                                "labelWidth": "number",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField4",
-                            "designerId": "5c546b97-fa64-4fc7-9ac7-c2dbcfb9dd67"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Remise",
-                                "labelWidth": 170,
-                                "layout|columnWidth": 0.5
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "layout|columnWidth": "auto",
-                                "labelWidth": "number"
-                            },
-                            "name": "MyTextField6",
-                            "designerId": "2e384428-e1a1-4022-af37-96b3a1238200"
+                            "name": "MyContainer7",
+                            "designerId": "972d9188-d6d1-441d-931f-40279698e01b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "A.M.O",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "invoiceRegoAmount",
+                                        "readOnly": true,
+                                        "width": 150
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|columnWidth": "auto",
+                                        "labelWidth": "number",
+                                        "readOnly": "boolean",
+                                        "layout|flex": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField4",
+                                    "designerId": "5c546b97-fa64-4fc7-9ac7-c2dbcfb9dd67"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MySpacer6",
+                                    "designerId": "e5937c9f-71e4-4f05-810d-1bbfff0c5afa"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "A.M.C",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "invoiceRegcAmount",
+                                        "readOnly": true,
+                                        "width": 180
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|columnWidth": "auto",
+                                        "readOnly": "boolean",
+                                        "layout|flex": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField2",
+                                    "designerId": "5079e9c0-4dc0-4b54-9454-c2402ec8b9fe"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Spacer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MySpacer7",
+                                    "designerId": "724458e4-4f17-4f56-bd36-75eef144cdb4"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Dépassement A.M.C",
+                                        "labelWidth": 170,
+                                        "layout|flex": null,
+                                        "name": "invoiceAdditionalRegcAmount",
+                                        "readOnly": true,
+                                        "width": 250
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|columnWidth": "auto",
+                                        "readOnly": "boolean",
+                                        "layout|flex": "number",
+                                        "name": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField5",
+                                    "designerId": "3fc3ec1f-63c3-44e0-b43c-90a641235312"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -614,7 +762,7 @@
                             "configAlternates": {
                                 "externalEditingPlugin": "object"
                             },
-                            "name": "paymentgrid",
+                            "name": "invoicing.PaymentGrid",
                             "designerId": "2807376e-b043-4b78-930e-c5ea5ced527e",
                             "customConfigs": [
                                 {
@@ -743,12 +891,14 @@
                             "userConfig": {
                                 "boxLabel": "F.S.E",
                                 "fieldLabel": "",
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "name": "isFse"
                             },
                             "configAlternates": {
                                 "boxLabel": "string",
                                 "fieldLabel": "string",
-                                "layout|anchor": "string"
+                                "layout|anchor": "string",
+                                "name": "string"
                             },
                             "name": "MyCheckbox",
                             "designerId": "b2f93afe-931a-4138-b4a9-7dcc3075f210"
@@ -761,7 +911,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "boxLabel": "Passer en mode dégradé (FSE sans carte vitale)",
+                                "boxLabel": "Créer une FSE sans carte vitale  (mode dégradé)",
                                 "fieldLabel": "",
                                 "layout|anchor": "100%"
                             },

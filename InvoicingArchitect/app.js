@@ -23,14 +23,13 @@ Ext.application({
     models: [
         'PaymentModel',
         'CashBoxCodeComboModel',
-        'PaymentMethodCodeComboModel'
+        'PaymentMethodCodeComboModel',
+        'InvoiceModel'
     ],
     views: [
-        'PaymentForm',
-        'PaymentGrid',
-        'InvoicingForm',
-        'MyForm',
-        'MyPanel'
+        'invoicing.PaymentForm',
+        'invoicing.PaymentGrid',
+        'InvoicingForm'
     ],
     controllers: [
         'MainController'
