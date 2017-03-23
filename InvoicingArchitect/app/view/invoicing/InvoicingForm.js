@@ -309,6 +309,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                             xtype: 'checkboxfield',
                             anchor: '100%',
                             fieldLabel: '',
+                            name: 'visitIsFree',
                             boxLabel: 'Consultation gratuite'
                         },
                         {
@@ -321,6 +322,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                                 {
                                     xtype: 'checkboxfield',
                                     fieldLabel: '',
+                                    name: 'visitIsAmo',
                                     boxLabel: 'Tiers-payant obligatoire   '
                                 },
                                 {
@@ -330,7 +332,8 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                                 {
                                     xtype: 'textfield',
                                     flex: 1,
-                                    fieldLabel: 'Pourcentage'
+                                    fieldLabel: 'Pourcentage',
+                                    name: 'InvoiceRegoRate'
                                 }
                             ]
                         },
@@ -344,6 +347,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                                 {
                                     xtype: 'checkboxfield',
                                     fieldLabel: '',
+                                    name: 'visitIsAmc',
                                     boxLabel: 'Tiers-payant complémentaire'
                                 },
                                 {
@@ -353,7 +357,8 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                                 {
                                     xtype: 'textfield',
                                     flex: 1,
-                                    fieldLabel: 'Pourcentage'
+                                    fieldLabel: 'Pourcentage',
+                                    name: 'InvoiceRegcRate'
                                 }
                             ]
                         },
@@ -361,6 +366,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                             xtype: 'checkboxfield',
                             anchor: '100%',
                             fieldLabel: '',
+                            name: 'visitIsBillingAMC',
                             boxLabel: 'Facturation complémentaire (A.M.C)'
                         }
                     ]

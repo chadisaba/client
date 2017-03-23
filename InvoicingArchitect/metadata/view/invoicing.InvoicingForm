@@ -762,7 +762,7 @@
                             "configAlternates": {
                                 "externalEditingPlugin": "object"
                             },
-                            "name": "invoicing.PaymentGrid",
+                            "name": "invoicing.paymentgrid",
                             "designerId": "2807376e-b043-4b78-930e-c5ea5ced527e",
                             "customConfigs": [
                                 {
@@ -933,12 +933,14 @@
                             "userConfig": {
                                 "boxLabel": "Consultation gratuite",
                                 "fieldLabel": "",
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "name": "visitIsFree"
                             },
                             "configAlternates": {
                                 "boxLabel": "string",
                                 "fieldLabel": "string",
-                                "layout|anchor": "string"
+                                "layout|anchor": "string",
+                                "name": "string"
                             },
                             "name": "MyCheckbox4",
                             "designerId": "e2ed876a-d635-4483-9f74-5c3dda72fc26"
@@ -970,12 +972,14 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "boxLabel": "Tiers-payant obligatoire   ",
-                                        "fieldLabel": ""
+                                        "fieldLabel": "",
+                                        "name": "visitIsAmo"
                                     },
                                     "configAlternates": {
                                         "boxLabel": "string",
                                         "fieldLabel": "string",
-                                        "layout|anchor": "string"
+                                        "layout|anchor": "string",
+                                        "name": "string"
                                     },
                                     "name": "MyCheckbox1",
                                     "designerId": "cc678fdc-9c04-40cb-a2c9-b11ac95ee645"
@@ -1007,11 +1011,13 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fieldLabel": "Pourcentage",
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "name": "InvoiceRegoRate"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
-                                        "layout|flex": "number"
+                                        "layout|flex": "number",
+                                        "name": "string"
                                     },
                                     "name": "MyTextField",
                                     "designerId": "9df54165-9c17-4a46-ae61-acb065078ad6"
@@ -1045,12 +1051,14 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "boxLabel": "Tiers-payant complémentaire",
-                                        "fieldLabel": ""
+                                        "fieldLabel": "",
+                                        "name": "visitIsAmc"
                                     },
                                     "configAlternates": {
                                         "boxLabel": "string",
                                         "fieldLabel": "string",
-                                        "layout|anchor": "string"
+                                        "layout|anchor": "string",
+                                        "name": "string"
                                     },
                                     "name": "MyCheckbox1",
                                     "designerId": "f46467d4-54d0-4f24-91d4-88ea729dcf4f"
@@ -1082,11 +1090,13 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fieldLabel": "Pourcentage",
-                                        "layout|flex": 1
+                                        "layout|flex": 1,
+                                        "name": "InvoiceRegcRate"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
-                                        "layout|flex": "number"
+                                        "layout|flex": "number",
+                                        "name": "string"
                                     },
                                     "name": "MyTextField",
                                     "designerId": "4359a1b3-5e32-4018-bf2a-1064d352f7ae"
@@ -1103,12 +1113,14 @@
                             "userConfig": {
                                 "boxLabel": "Facturation complémentaire (A.M.C)",
                                 "fieldLabel": "",
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "name": "visitIsBillingAMC"
                             },
                             "configAlternates": {
                                 "boxLabel": "string",
                                 "fieldLabel": "string",
-                                "layout|anchor": "string"
+                                "layout|anchor": "string",
+                                "name": "string"
                             },
                             "name": "MyCheckbox5",
                             "designerId": "e52941c6-a621-4f82-b7ac-b4a45e1b6250"
