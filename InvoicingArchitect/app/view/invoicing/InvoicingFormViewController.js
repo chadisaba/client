@@ -19,5 +19,22 @@ Ext.define('MyApp.view.invoicing.InvoicingFormViewController', {
 
     requires: [
         'MyApp.view.override.invoicing.InvoicingFormViewController'
-    ]
+    ],
+
+    onCreateInvoiceBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onValidateInvoiceBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onCancelInvoiceBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onQuitInvoiceBtnClick: function(button, e, eOpts) {
+
+    }
+
 });

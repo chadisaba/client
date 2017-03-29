@@ -19,6 +19,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
 
     requires: [
         'MyApp.view.invoicing.InvoicingFormViewModel',
+        'MyApp.view.invoicing.InvoicingFormViewController',
         'MyApp.view.StudyVisitHasActeGrid',
         'MyApp.view.invoicing.PaymentGrid',
         'Ext.toolbar.Toolbar',
@@ -29,10 +30,10 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
         'Ext.grid.Panel',
         'Ext.form.field.Number',
         'Ext.form.Label',
-        'Ext.form.field.Checkbox',
-        'MyApp.view.invoicing.InvoicingFormViewController'
+        'Ext.form.field.Checkbox'
     ],
 
+    controller: 'invoicing.invoicingform',
     viewModel: {
         type: 'invoicing.invoicingform'
     },
@@ -56,8 +57,12 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                         {
                             xtype: 'button',
                             flex: 1,
+                            itemId: 'createInvoiceBtn',
                             iconCls: 'fa fa-file-text',
-                            text: 'Créer Facture'
+                            text: 'Créer Facture',
+                            listeners: {
+                                click: 'onCreateInvoiceBtnClick'
+                            }
                         },
                         {
                             xtype: 'tbspacer',
@@ -78,8 +83,12 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                         {
                             xtype: 'button',
                             flex: 1,
+                            itemId: 'validateInvoiceBtn',
                             iconCls: 'fa fa-check',
-                            text: 'Valider'
+                            text: 'Valider',
+                            listeners: {
+                                click: 'onValidateInvoiceBtnClick'
+                            }
                         },
                         {
                             xtype: 'tbspacer',
@@ -123,8 +132,12 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                         {
                             xtype: 'button',
                             flex: 1,
+                            itemId: 'cancelInvoiceBtn',
                             iconCls: 'fa fa-share',
-                            text: 'Annuler Facture'
+                            text: 'Annuler Facture',
+                            listeners: {
+                                click: 'onCancelInvoiceBtnClick'
+                            }
                         },
                         {
                             xtype: 'tbspacer',
@@ -134,8 +147,12 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                         {
                             xtype: 'button',
                             flex: 1,
+                            itemId: 'quitInvoiceBtn',
                             iconCls: 'fa fa-times',
-                            text: 'Quitter'
+                            text: 'Quitter',
+                            listeners: {
+                                click: 'onQuitInvoiceBtnClick'
+                            }
                         }
                     ]
                 }

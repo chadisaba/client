@@ -81,16 +81,40 @@
                             "codeClass": null,
                             "userConfig": {
                                 "iconCls": "fa fa-file-text",
+                                "itemId": "createInvoiceBtn",
                                 "layout|flex": 1,
                                 "text": "Créer Facture"
                             },
                             "configAlternates": {
                                 "iconCls": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "itemId": "string"
                             },
                             "name": "MyButton",
-                            "designerId": "b52f2ff7-d580-426d-b1ab-488e4d4c76aa"
+                            "designerId": "b52f2ff7-d580-426d-b1ab-488e4d4c76aa",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCreateInvoiceBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCreateInvoiceBtnClick",
+                                    "designerId": "61955aff-1f48-4fd2-8522-8cbc4c7384a3"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.toolbar.Spacer",
@@ -157,16 +181,40 @@
                             "codeClass": null,
                             "userConfig": {
                                 "iconCls": "fa fa-check",
+                                "itemId": "validateInvoiceBtn",
                                 "layout|flex": 1,
                                 "text": "Valider"
                             },
                             "configAlternates": {
                                 "layout|flex": "number",
                                 "text": "string",
-                                "iconCls": "string"
+                                "iconCls": "string",
+                                "itemId": "string"
                             },
                             "name": "MyButton2",
-                            "designerId": "5273fcf0-a52b-43a9-8f06-ea9e76af8992"
+                            "designerId": "5273fcf0-a52b-43a9-8f06-ea9e76af8992",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onValidateInvoiceBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onValidateInvoiceBtnClick",
+                                    "designerId": "1a35e9bb-8ab2-4816-a25b-8ccb96aed3a7"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.toolbar.Spacer",
@@ -309,16 +357,40 @@
                             "codeClass": null,
                             "userConfig": {
                                 "iconCls": "fa fa-share",
+                                "itemId": "cancelInvoiceBtn",
                                 "layout|flex": 1,
                                 "text": "Annuler Facture"
                             },
                             "configAlternates": {
                                 "layout|flex": "number",
                                 "text": "string",
-                                "iconCls": "string"
+                                "iconCls": "string",
+                                "itemId": "string"
                             },
                             "name": "MyButton1",
-                            "designerId": "b87ab1d2-5a90-4ca7-aaf6-bf6900783d1e"
+                            "designerId": "b87ab1d2-5a90-4ca7-aaf6-bf6900783d1e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelInvoiceBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCancelInvoiceBtnClick",
+                                    "designerId": "60587f62-acc6-4ed4-9a0b-a64d67e1ccb7"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.toolbar.Spacer",
@@ -347,16 +419,40 @@
                             "codeClass": null,
                             "userConfig": {
                                 "iconCls": "fa fa-times",
+                                "itemId": "quitInvoiceBtn",
                                 "layout|flex": 1,
                                 "text": "Quitter"
                             },
                             "configAlternates": {
                                 "layout|flex": "number",
                                 "text": "string",
-                                "iconCls": "string"
+                                "iconCls": "string",
+                                "itemId": "string"
                             },
                             "name": "MyButton2",
-                            "designerId": "d2a18731-6136-4298-9875-af9fd3e8deeb"
+                            "designerId": "d2a18731-6136-4298-9875-af9fd3e8deeb",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onQuitInvoiceBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onQuitInvoiceBtnClick",
+                                    "designerId": "97aaa9fb-ebe8-485e-9970-bf50b36fbfbd"
+                                }
+                            ]
                         }
                     ]
                 }
