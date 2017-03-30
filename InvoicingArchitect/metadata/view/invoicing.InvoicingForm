@@ -987,6 +987,7 @@
                             "userConfig": {
                                 "boxLabel": "F.S.E",
                                 "fieldLabel": "",
+                                "itemId": "isFseCb",
                                 "layout|anchor": "100%",
                                 "name": "isFse"
                             },
@@ -994,7 +995,8 @@
                                 "boxLabel": "string",
                                 "fieldLabel": "string",
                                 "layout|anchor": "string",
-                                "name": "string"
+                                "name": "string",
+                                "itemId": "string"
                             },
                             "name": "MyCheckbox",
                             "designerId": "b2f93afe-931a-4138-b4a9-7dcc3075f210"

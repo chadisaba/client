@@ -312,6 +312,7 @@ Ext.define('MyApp.view.invoicing.InvoicingForm', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
+                            itemId: 'isFseCb',
                             fieldLabel: '',
                             name: 'isFse',
                             boxLabel: 'F.S.E'
