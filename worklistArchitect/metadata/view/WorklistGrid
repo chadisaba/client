@@ -1047,7 +1047,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistPatientDu",
+                "dataIndex": "visitBalancePatient",
                 "minWidth": null,
                 "text": "P. due"
             },
@@ -1076,7 +1076,7 @@
                             "store",
                             "view"
                         ],
-                        "designer|viewControllerFn": "duRenderer",
+                        "designer|viewControllerFn": "duPatientRenderer",
                         "fn": "renderer",
                         "implHandler": null
                     },
@@ -1099,7 +1099,111 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "worklistFtDu",
+                "dataIndex": "visitBalanceRego",
+                "minWidth": null,
+                "text": "AMO due"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
+            },
+            "name": "MyworklistPatientDuCol1",
+            "designerId": "4c70d9dc-cf45-47c1-ab7a-8c13f21961ab",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "duRegoRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "6c778a5c-bc8f-48df-9511-2669fe247fb4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitBalanceRegc",
+                "minWidth": null,
+                "text": "AMC due"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
+            },
+            "name": "MyworklistPatientDuCol2",
+            "designerId": "c991b81d-0036-48b7-b0bd-45bf443ef963",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "duRegcRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "4d247002-9628-4672-8647-df8305b3569d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitBalancePatientFt",
                 "hidden": true,
                 "minWidth": null,
                 "text": "Dû F.T"
@@ -1130,7 +1234,7 @@
                             "store",
                             "view"
                         ],
-                        "designer|viewControllerFn": "duRenderer",
+                        "designer|viewControllerFn": "duFtPatientRenderer",
                         "fn": "renderer",
                         "implHandler": null
                     },
@@ -1141,7 +1245,61 @@
                         "implHandler": "code"
                     },
                     "name": "renderer",
-                    "designerId": "855daf04-737c-4b5d-9009-9ec7a354bf15"
+                    "designerId": "7f117018-f2d1-40ac-a668-abf407c7fc53"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "visitBalanceRegoFt",
+                "hidden": true,
+                "minWidth": null,
+                "text": "Dû  F.T AMO"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "minWidth": "number",
+                "text": "string"
+            },
+            "name": "MyworklistFtDuCol1",
+            "designerId": "4c69d30d-3337-4cee-a22a-e1a87012afe0",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "duFtRego",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "e8f0b878-599e-415a-bcad-c4b1b532e16c"
                 }
             ]
         },
@@ -1521,7 +1679,7 @@
                 "dataIndex": "visitInvoiceType",
                 "hidden": true,
                 "minWidth": null,
-                "text": "Invoice type"
+                "text": "Invoice Worklist"
             },
             "configAlternates": {
                 "dataIndex": "datafield",

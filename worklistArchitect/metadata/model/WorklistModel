@@ -317,70 +317,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "worklistPatientDu"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyworklistPatientDu",
-            "designerId": "e96f8d89-803f-419a-a346-5bh111i7tq5a"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "worklisPatientPaid"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyworklisPatientPaid",
-            "designerId": "e96f8d89-803f-419a-a346-ddfeyhi1ji5m"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "worklistFtDu"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyworklistFtDu",
-            "designerId": "e96f8d89-803f-419a-a346-cnm1pdlenyv8"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "worklistFtPaid"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyworklistFtPaid",
-            "designerId": "e96f8d89-803f-419a-a346-8ihk2y3eqxe1"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "worklisCrEmailedTo"
             },
             "configAlternates": {
@@ -820,6 +756,86 @@
             },
             "name": "MyInteger9",
             "designerId": "c4e2a1be-b07b-43b8-965c-42fd5cde7ad2"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitBalancePatient"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber",
+            "designerId": "05669b60-36a0-4856-b443-62f44c5989ab"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitBalancePatientFt"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber3",
+            "designerId": "0dfe8b8c-cb35-4a07-8c26-4cba697b3e95"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitBalanceRegoFt"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber4",
+            "designerId": "47f98fc7-f8a1-4065-b52d-311e22c11947"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitBalanceRego"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber1",
+            "designerId": "313946be-6d94-47a0-ba97-dd68c0eae5eb"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitBalanceRegc"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber2",
+            "designerId": "70a4b344-0c98-44f5-887f-f4466a04667d"
         }
     ]
 }
