@@ -1,0 +1,55 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.schedulerpanel",
+        "designer|userClassName": "scheduler.SchedulerPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "8e49a9b6-39e3-4b9b-a7f3-3d8e640ee664",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.ResourceModel",
+                "name": "ResourceStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "0cde92ce-22e2-4b8d-9f8a-750abe1049c3"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.EventModel",
+                "name": "EventStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore1",
+            "designerId": "303e14c9-6275-4ea1-b5be-49e29775274b"
+        }
+    ]
+}

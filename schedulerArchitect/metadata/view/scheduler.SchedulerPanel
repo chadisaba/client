@@ -1,0 +1,168 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.schedulerpanel",
+        "designer|userClassName": "scheduler.SchedulerPanel",
+        "layout": "border",
+        "title": "Scheduler"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel3",
+    "designerId": "8a205f04-7d81-4b6c-a5f8-eb4eb696fe5d",
+    "viewControllerInstanceId": "565fc9e4-18d5-4a52-8a73-cf18cf7f057b",
+    "viewModelInstanceId": "8e49a9b6-39e3-4b9b-a7f3-3d8e640ee664",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": "schedulergrid",
+                "endDate": null,
+                "header": false,
+                "layout|region": "center",
+                "mode": "vertical",
+                "startDate": null,
+                "title": "SchedulerPanel",
+                "viewPreset": "hourAndDay"
+            },
+            "configAlternates": {
+                "endDate": "object",
+                "startDate": "object",
+                "designer|createAlias": "string",
+                "header": "boolean",
+                "layout|region": "string",
+                "mode": "string",
+                "title": "string",
+                "viewPreset": "string"
+            },
+            "name": "MyPanel4",
+            "designerId": "e120e080-bcf2-4045-8280-fccabd09f4f3",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "viewPreset",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "mode",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "startDate",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "endDate",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processSchedulerPanel",
+                        "implHandler": [
+                            "return Ext.apply(config,{",
+                            "    columns                 : [",
+                            "        {",
+                            "            text      : 'Name',",
+                            "            width     : 200,",
+                            "            sortable  : true,",
+                            "            dataIndex : 'Name'",
+                            "        }",
+                            "    ],",
+                            "   startDate : new Date(),",
+                            "",
+                            "",
+                            "     // Store holding all the resources",
+                            "  bind: {",
+                            "        store: '{Resource}'",
+                            "    },",
+                            "    resourceStore     : new Sch.data.ResourceStore({",
+                            "",
+                            "",
+                            "        data   : [",
+                            "            {Id : 'MadMike', Name : 'Mike'},",
+                            "            {Id : 'JakeTheSnake', Name : 'Jake'},",
+                            "            {Id : 'KingFu', Name : 'King'},",
+                            "            {Id : 'BeerBrian', Name : 'Brian'},",
+                            "            {Id : 'LindaAnderson', Name : 'Linda'},",
+                            "            {Id : 'DonJohnson', Name : 'Don'},",
+                            "            {Id : 'KarenJohnson', Name : 'Karen'},",
+                            "            {Id : 'DougHendricks', Name : 'Doug'},",
+                            "            {Id : 'PeterPan', Name : 'Peter'}",
+                            "        ]",
+                            "    }),",
+                            "",
+                            "         eventStore     : new Sch.data.EventStore({",
+                            "",
+                            "        data   : [",
+                            "            {",
+                            "                ResourceId : 'MadMike',",
+                            "                Type       : 'Call',",
+                            "                Title      : 'Assignment 1',",
+                            "                StartDate  : \"2015-03-01 10:00\",",
+                            "                EndDate    : \"2015-03-01 11:00\"",
+                            "            },",
+                            "            {",
+                            "                ResourceId : 'KarenJohnson',",
+                            "                Type       : 'Call',",
+                            "                Title      : 'Customer call',",
+                            "                StartDate  : \"2015-03-01 14:00\",",
+                            "                EndDate    : \"2015-03-01 16:00\"",
+                            "            },",
+                            "            {",
+                            "                ResourceId : 'LindaAnderson',",
+                            "                Type       : 'Meeting',",
+                            "                Title      : 'Assignment 2',",
+                            "                StartDate  : \"2015-03-01 10:00\",",
+                            "                EndDate    : \"2015-03-01 12:00\"",
+                            "            }",
+                            "        ]",
+                            "    })",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "});",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "processSchedulerPanel",
+                    "designerId": "cf369f6d-238f-4380-bbfc-f5984433c5e5"
+                }
+            ]
+        }
+    ]
+}

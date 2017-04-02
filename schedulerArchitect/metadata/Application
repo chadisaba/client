@@ -1,0 +1,21 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "scheduler.ResourceModel",
+            "scheduler.EventModel"
+        ],
+        "name": "MyApp"
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string"
+    },
+    "name": "Application",
+    "designerId": "application"
+}
