@@ -51,13 +51,21 @@ Ext.define('Utility.renderer', {
 			' </button>';
 			return {renderer:result,tooltip:tooltip}
 		},
-		positiveNegativeRenderer:function(value,htmlTagType)
+		positiveNegativeRenderer:function(value,htmlTagType,isMoney)
 		{
 		      var color="#d43f3a";
 		      var htmlTag="a href='#'"||htmlTagType;
         		if(value>=0)
             			color="#27b6af";
-			return '<'+htmlTag+' onclick="return;" style="color:'+color+';font-size:13px;">'+Math.abs(value)+'</'+htmlTag+'>';
+
+
+			let result=Math.abs(value);
+            if(isMoney){
+            	let nf=new Intl.NumberFormat('fr',{style:'currency',currency:"EUR"});
+                result=nf.format(result);
+			}
+
+			return '<'+htmlTag+' onclick="return;" style="color:'+color+';font-size:13px;">'+result+'</'+htmlTag+'>';
 		},
 		hrefRenderer:function(color,icon)
 		{

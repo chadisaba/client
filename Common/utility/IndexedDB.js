@@ -39,7 +39,9 @@ var IndexedDB={
                         CCAM_MODIFICATEURS:'++id,CCAMModificateurId,CCAMModificateurCode,CCAMModificateurCoef,CCAMModificateurAmount',
                         ACTE:'++id,acteId,acteCode,acteVersionId,actePrix',
                         ACTE_VERSION:'++id,acteVersionId,acteVersionCode,acteVersionStartDate,acteVersionEndDate',
-                        APP_CONFIG:'++id,appConfigId,appConfigSeuilPav',
+                        APP_CONFIG:'++id,appConfigId,appConfigSeuilPav,appConfigHorsParcoursSoinsAmount',
+                        GROUP_ROOM:'++id,groupRoomId,groupRoomName,groupRoomCode,groupRoomSchedulerZoom',
+                        GROUP_ROOM_HAS_ROOM:'++id,groupRoomHasRoomId,groupRoomId,roomId'
                     });
                     me.db.open();
                     resolve();

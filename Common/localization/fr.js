@@ -174,6 +174,7 @@ function translate(text)
 
         "actions":"Actions",
         "print":"Imprimer",
+        "Invoice Worklist":"Fact.",
 
         /**** device component****/
 

@@ -182,11 +182,18 @@ Ext.define('menu.MenuPlugin', {
                 {
 
 
-                    href: '#appointementScheduler',
-                    hrefTarget: '_blank',
+                  //  href: '#appointementScheduler',
+                   // hrefTarget: '_blank',
                     tooltip: 'Accéder à la prise de  rendez-vous',
-                    html: '<img src="../Common/resources/images/calendar.png" height="24" width="24"/>'
-
+                    html: '<img src="../Common/resources/images/calendar.png" height="24" width="24"/>',
+                    handler:function () {
+                        Ext.create('Common.ux.window.FullScreenWindow', {
+                            items: {
+                                region: 'center',
+                                xtype: 'scheduler.schedulerpanel'
+                            }
+                        }).show();
+                    }
                 },
                 '->',
                 {

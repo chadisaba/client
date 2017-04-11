@@ -40,7 +40,7 @@ var InitApp={
         var p8=CommonDirect.getData("STUDY",[],'no');
         var p9=CommonDirect.getData("REFERRING_PHYSICIAN",[],'no');
 
-        mainTableObject={
+        var mainTableObject={
             tableName:"DEVICE_HAS_STUDY",
             limit:'no'
         };
@@ -59,8 +59,10 @@ var InitApp={
         var p18=CommonDirect.getData("APP_CONFIG",[],'no');
         var p19=CommonDirect.getData("ACTE",[{name:'acteVersionId',value:_acteVersionId}],'no',['acteId','acteCode','acteVersionId','actePrix']);
         var p20=CommonDirect.getData("ACTE_VERSION",[{name:'acteVersionId',value:_acteVersionId}],1);
+        var p21=CommonDirect.getData("GROUP_ROOM",[],'no');
+        var p22=CommonDirect.getData("GROUP_ROOM_HAS_ROOM",[],'no');
 
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20])
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -164,6 +166,12 @@ var InitApp={
 
                         var acteVersionArray=values[18];
                         indexDBPromiseArray.push(IndexedDB.populateData('ACTE_VERSION',acteVersionArray));
+
+                        var groupRoomArray=values[19];
+                        indexDBPromiseArray.push(IndexedDB.populateData('GROUP_ROOM',groupRoomArray));
+
+                        var groupRoomHasRoomArray=values[20];
+                        indexDBPromiseArray.push(IndexedDB.populateData('GROUP_ROOM_HAS_ROOM',groupRoomHasRoomArray));
 
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)

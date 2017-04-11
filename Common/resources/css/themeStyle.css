@@ -7,36 +7,6 @@ background: #f5f5f5;
 
 .x-panel-header-title-default > .x-title-text-default{text-transform:none;padding:0; color:#A9A6A6;  font-weight: bold;  font-family: "Montserrat", sans-serif;}
 
-/*.x-tree-icon-parent {
-    font-size: 16px;
-    font-family: FontAwesome;
-    color: #2ccbc3;
-}
-
-.x-tree-icon-parent-expanded {
-    font-size: 16px;
-    font-family: FontAwesome;
-    color: #2ccbc3;
-}
-
-.x-tree-elbow-plus, .x-tree-elbow-end-plus {
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: #2ccbc3;
-}
-
-.x-grid-tree-node-expanded .x-tree-elbow-plus, .x-grid-tree-node-expanded .x-tree-elbow-end-plus {
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: #2ccbc3;
-}
-
-.x-tree-icon-leaf {
-    font-size: 16px;
-    font-family: FontAwesome;
-    color: #5fa2dd;
-}*/
-
 .x-btn-default-small {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;

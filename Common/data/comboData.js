@@ -1,4 +1,13 @@
 var ComboData= {
+
+    schedulerZoom:[
+        {id:20, text:'5 Minutes'},
+        {id:19, text:'10 Minutes'},
+        {id:18, text:'15 Minutes'},
+        {id:17, text:'20 Minutes'},
+        {id:16, text:'30 Minutes'},
+    ],
+
    categorieSite:[
        {siteCategory:1, siteCategoryName:'Accueil'},
        {siteCategory:2, siteCategoryName:'Virtuel'}
