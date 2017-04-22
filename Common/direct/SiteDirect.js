@@ -62,35 +62,6 @@ return promise;
             });
         return promise;
     },
-
-
-    getSiteConfigByIdFromIndexDb:function(_siteId)
-    {
-        //Creating a promise
-        var promise=new Promise(
-            function(resolve, reject) {
-                IndexedDB.openDB()
-                    .then(
-                        function()
-                        {
-
-                            IndexedDB.db.SITE_CONFIG.where("siteId")
-                                .equals(_siteId)
-                                .toArray (function (_resultsArray) {
-                                    resolve(_resultsArray);
-                                });
-
-
-                        }
-                    );
-            });
-        return promise;
-    },
-
-
-
-
-
     getSites:function()
     {
         //Creating a promise

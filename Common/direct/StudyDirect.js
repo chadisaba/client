@@ -47,7 +47,7 @@ var StudyDirect={
             });
         return promise;
     },
-     docHasstudyAutoComplete:function(_scope,_searchValue,_studyComboStoreName,_field,_fromIndexedDB,_searchLengh,_doctorId)
+      docHasstudyAutoComplete:function(_scope,_searchValue,_studyComboStoreName,_field,_fromIndexedDB,_searchLengh,_doctorId)
     {
         var me=_scope;
         var searchLengh=_searchLengh||4;
@@ -65,7 +65,6 @@ var StudyDirect={
                         store.clearFilter();
                         store.removeAll();
                         store.loadData(_resultData);
-                        console.log('docHasstudyAutoComplete');
 
                         store.filterBy(
                             function(_rec)

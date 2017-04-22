@@ -47,15 +47,21 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	liveSearch:true,
 	preferences:true,
 
+    // display only modify button without displaying edit button
+    onlyModifyWithoutEdit: false,
+
 	// Add, Delete, Save, Cancel, Quit and Edit
 	noModif: false,
-	
+
+    // Modify, Delete, Save, Cancel, Quit and Edit
+    noAdd: false,
+
 	// Add, Delete and Modify actions only
 	onlyADM: false, 
 	
 	// Modify action only
-	onlyModify: false, 
-	
+	onlyModify: false,
+
 	// Delete action only
 	onlyDelete: false,
 	
@@ -68,6 +74,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	inEditing:false,
 
 	enableDuplicate:true,
+	enableModificationsOnlyCheckBox:true,
 
 	pluginId: 'gridediting',
 	
@@ -83,6 +90,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			grid.inEdition=true;	
 		if(this.onlyADM)
 			grid.inEdition = true;
+        if(this.onlyModifyWithoutEdit)
+            grid.inEdition = true;
 
 		var toolbars = grid.query('#editingtoolbar');	
 		if (toolbars.length==1){
@@ -132,35 +141,33 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		
 		return {dataToBeSaved:dataToBeSaved,errors:errors}
 	},
-	
+    /**
+	 * Manage visibility of delete, duplicate and modify butonns on select event
+     * @param rowmodel
+     * @param record
+     * @param index
+     * @param eOpts
+     */
 	gridOnSelect : function(rowmodel,record,index,eOpts){
 		var me = this;
-		if (!me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
-			// Disable Delete & Modify btns when record locked or toDelete
-			if (record.get('locked') || record.get('toDelete')){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-				me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(true);
-			} else {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-				me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(false);
-			}
-		} else if (me.onlyModify){
-			// Disable Modify btn when record locked
-			if (record.get('locked')){
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			} else {
-				me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-			}
-		} else if (me.onlyDelete || me.onlyAD|| me.noModif){
-			// Disable Delete btn when record locked or toDelete
-			if (record.get('locked') || record.get('toDelete')){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			} else {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-			}
-		}
+		var deleteButtonDisabled=false;
+        var modifyButtonDisabled=false;
+        var duplicateButtonDisabled=false;
+        if (record.get('locked') || record.get('toDelete')){
+            deleteButtonDisabled=true;
+            modifyButtonDisabled=true;
+			duplicateButtonDisabled=true;
+        }
+
+        if(me.deleteBtnCtn.down('#deleteBtn'))
+        	me.deleteBtnCtn.down('#deleteBtn').setDisabled(deleteButtonDisabled);
+
+        if( me.modifyBtnCtn.down('#modifyBtn'))
+       		 me.modifyBtnCtn.down('#modifyBtn').setDisabled(modifyButtonDisabled);
+
+        if( me.modifyBtnCtn.down('#duplicateBtn'))
+        	me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(duplicateButtonDisabled);
+
 	},
 	
 	gridOnColumnMove : function(headerCt, column, fromIdx, toIdx, eOpts){
@@ -179,86 +186,67 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	
 	restoreGrid: function (){
 			var me = this;
-			me.editBtnCtn.hide();
-			me.deleteBtnCtn.hide();
-			me.addBtnCtn.hide();
-			me.modifyBtnCtn.hide();
-			me.duplicateBtnCtn.hide();
-			me.saveBtnCtn.hide();
-			me.cancelBtnCtn.hide();
-			me.quitBtnCtn.hide();
-			me.chHistBtnCtn.hide();
 
-			me.editBtnCtn.down('#editBtn').setDisabled(false);
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-			me.addBtnCtn.down('#addBtn').setDisabled(false);
-			me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-			me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(true);
+       		 var editButtonVisible=true;
+			var addButtonVisible=false;
 
-			me.saveBtnCtn.down('#saveBtn').setDisabled(false);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(false);
-			me.quitBtnCtn.down('#quitBtn').setDisabled(false);
-			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
-			
-		if (!me.onlyADM && !me.onlyECSQ && !me.onlyModify && !me.onlyDelete && !me.onlyAD && !me.noModif){
-			me.editBtnCtn.show();
-			me.chHistBtnCtn.show();
+			var deleteButtonVisible=false;
+        var modifyButtonVisible=false;
+        var duplicateButtonVisible=false;
+			var saveButtonVisible=false;
+			var cancelButtonVisible=false;
+			var quitButtonVisible=false;
+			var chHistButtonVisible=true;
 
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-	
-		} else if (me.onlyECSQ) {
-			me.editBtnCtn.show();
-			me.chHistBtnCtn.show();
-			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		
-		} else if (me.onlyADM) {
-			me.deleteBtnCtn.show();
-			me.addBtnCtn.show();
-			me.modifyBtnCtn.show();
-			me.chHistBtnCtn.show();
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-		
-		} else if (me.onlyModify){
-			me.editBtnCtn.show();
-			me.chHistBtnCtn.show();
-		
-			me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-	
-		} else if (me.onlyDelete){
-			me.editBtnCtn.show();
-			me.chHistBtnCtn.show();
-		
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-				
-		} else if (me.onlyAD) {
-			me.deleteBtnCtn.show();
-			me.addBtnCtn.show();
-			me.chHistBtnCtn.show();
-			
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-	
-		} else if (me.noModif){
-			me.editBtnCtn.show();
-		
-			me.chHistBtnCtn.show();
-		
-			me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-		
-			me.saveBtnCtn.down('#saveBtn').setDisabled(true);
-			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		
+	 if (me.onlyADM) {
+          editButtonVisible=false;
+          chHistButtonVisible=false;
+          addButtonVisible=true;
+          deleteButtonVisible=true;
+          modifyButtonVisible=true;
+          duplicateButtonVisible=true;
 		}
+		if(me.onlyModifyWithoutEdit)
+		{
+            editButtonVisible=false;
+            chHistButtonVisible=false;
+            addButtonVisible=false;
+            deleteButtonVisible=false;
+            modifyButtonVisible=true;
+            duplicateButtonVisible=false;
+		}
+            me.editBtnCtn.hide();
+            me.deleteBtnCtn.hide();
+            me.addBtnCtn.hide();
+            me.modifyBtnCtn.hide();
+            me.duplicateBtnCtn.hide();
+            me.saveBtnCtn.hide();
+            me.cancelBtnCtn.hide();
+            me.quitBtnCtn.hide();
+            me.chHistBtnCtn.hide();
+
+		if(editButtonVisible)
+        	me.editBtnCtn.show();
+        if(deleteButtonVisible)
+        	me.deleteBtnCtn.show();
+        if(addButtonVisible)
+        	me.addBtnCtn.show();
+
+        if(modifyButtonVisible)
+        	me.modifyBtnCtn.show();
+        if(duplicateButtonVisible)
+        	me.duplicateBtnCtn.show();
+        if(saveButtonVisible)
+        	me.saveBtnCtn.show();
+        if(cancelButtonVisible)
+       		 me.cancelBtnCtn.show();
+        if(quitButtonVisible)
+        		me.quitBtnCtn.show();
+        if(chHistButtonVisible)
+        	me.chHistBtnCtn.show();
+
 		if(me.filterCheckBoxCtn)
-			me.filterCheckBoxCtn.hide();
+			me.filterCheckBoxCtn.show();
 
 		if(me.enableDuplicate)
 			me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(false);
@@ -275,8 +263,9 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		return toolbar;
 	},
 	fillToolbar: function (){
-		
-			this.createFilterCheckboxCtn();
+
+
+
 			if(this.liveSearch){
 				this.createLiveSearchCtn();
 				this.tb.add(this.liveSearchCtn);
@@ -296,7 +285,10 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 			this.tb.add(this.modifyBtnCtn);
 			this.tb.add(this.duplicateBtnCtn);
 			this.tb.add({xtype:'tbfill'});
-			this.tb.add(this.filterCheckBoxCtn);
+        if(this.enableModificationsOnlyCheckBox){
+            this.createFilterCheckboxCtn();
+            this.tb.add(this.filterCheckBoxCtn);
+        }
 			this.tb.add(this.saveBtnCtn);
 			this.tb.add(this.cancelBtnCtn);
 			this.tb.add(this.quitBtnCtn);
@@ -320,7 +312,8 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				itemId: 'filterCheckbox',
 				listeners: {
 					change: function (field){
-						me.liveSearchCtn.setValue("");
+						if(me.liveSearchCtn)
+							me.liveSearchCtn.setValue("");
 						var gridStore=me.grid.getStore();
 						var result;
 						gridStore.clearFilter();
@@ -345,9 +338,17 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 		var me = this;
 		me.liveSearchCtn = Ext.create('Ext.form.TextField',
 		{
-			fieldStyle : 'font-family: FontAwesome',
+
+			inputType:'search',
 			emptyText: translate('liveSearch'),//'\uF002 Recherche rapide',
 			listeners: {
+                change:function(_comp,_value)
+                {
+                    if(!_value)
+                    {
+                        me.grid.getStore().clearFilter();
+                    }
+                },
 				specialkey: function (field,e){
 					var value=field.getValue();
 					if (e.getKey() === e.ENTER) {
@@ -361,7 +362,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 							var data=rec.getData();
 							for (var key in data) {
 								if(data[key]){
-								if (data[key].toString().indexOf(value.toString()) >= 0)
+								if (data[key].toString().toUpperCase().indexOf(value.toString().toUpperCase()) >= 0)
 									result=true;
 								}
 
@@ -372,17 +373,7 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 						}
 					}
 			}
-		},
-			triggers: {
-				mytrigger2: {
-					handler: function(field, trigger, e) {
-						field.setValue("");
-						me.grid.getStore().clearFilter();
-					},
-					cls: 'x-form-clear-trigger'
-				}
-
-			}
+		}
 		});
 	},
 
@@ -630,7 +621,18 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 				tooltip: translate('clickToSavePreference'),//'Cliquer ici pour enregistrer vos préférences',
 				listeners: {
 					click: function (button, e, options){
-						StateProvider.saveState( window.localStorage.getItem('smartmed-userId'));
+                        Utility.loading.start(button);
+                        StateProvider.saveState( window.localStorage.getItem('smartmed-userId'))
+                            .then(function(_result)
+                            {
+                                Ext.Msg.alert(translate('Info'),translate('preferenceSavedSuccessfully'));
+                                Utility.loading.end(button);
+                            })
+                            .catch(function(_err)
+                            {
+                                Ext.Msg.alert('Error',translate(('savePreferenceError')));
+                                Utility.loading.end(button);
+                            });
 					}
 				}
 			}
@@ -680,84 +682,67 @@ Ext.define('Plugins.grid.GridEditingPlugin', {
 	enterEditMode: function () {
 		var me = this;
 
-			me.grid.inEdition = true;
-
+		me.grid.inEdition = true;
 		me.editBtnCtn.hide();
-		
 		me.cancelBtnCtn.show();
 		me.saveBtnCtn.show();
 		me.quitBtnCtn.show();
 		me.filterCheckBoxCtn.show();
-		me.duplicateBtnCtn.show();
+
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		
-			if(me.grid.getSelectionModel().hasSelection())
-			{
-				var selectedRec=me.grid.getSelectionModel().getSelection()[0];	
-			}
-			
-		if (!this.onlyECSQ && !this.onlyModify && !this.onlyDelete && !this.onlyAD && !this.noModif){
-			
-			me.deleteBtnCtn.show();
-			me.addBtnCtn.show();
-			me.modifyBtnCtn.show();
-			
-			if(me.grid.getSelectionModel().hasSelection())
-			{
-				if (selectedRec.get('locked')|| selectedRec.get('toDelete')){
-					me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-					me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-					me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(true);
-				} else if (!selectedRec.get('locked') && !selectedRec.get('locked')) {
-					me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-					me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-					me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(false);
-				}
-			}
 
-		} else if (this.onlyModify === true){
-			me.modifyBtnCtn.show();
-			if(me.grid.getSelectionModel().hasSelection())
-			{
-				if (selectedRec.get('locked')){
-					me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
-				}
-				 else if (!selectedRec.get('locked')) {
-					me.modifyBtnCtn.down('#modifyBtn').setDisabled(false);
-				}
-			}
+        me.deleteBtnCtn.show();
+        me.addBtnCtn.show();
+        me.modifyBtnCtn.show();
+        if(me.enableDuplicate)
+       		 me.duplicateBtnCtn.show();
+        else
+            me.duplicateBtnCtn.hide();
 
-		} else if (this.onlyDelete === true || this.onlyAD === true){
-			me.deleteBtnCtn.show();
+        var deleteButtonDisabled=false;
+        var modifyButtonDisabled=false;
+        var duplicateButtonDisabled=false;
 
 			if(me.grid.getSelectionModel().hasSelection())
 			{
-				if (selectedRec.get('locked') || selectedRec.get('toDelete')){
-					me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-				}
-				else if (!selectedRec.get('locked')&& !selectedRec.get('toDelete')) {
-					me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-				}
+				var selectedRec=me.grid.getSelectionModel().getSelection()[0];
+                if (selectedRec.get('locked')|| selectedRec.get('toDelete')){
+                    deleteButtonDisabled=true;
+                    modifyButtonDisabled=true;
+                    duplicateButtonDisabled=true
+                }
 			}
 
-		} else if (this.noModif === true){
-			me.deleteBtnCtn.show();
-			me.addBtnCtn.show();
-			
-			if (me.grid.getSelectionModel().hasSelection() 
-				&& (me.grid.getSelectionModel().getSelection()[0].data.locked
-				|| me.grid.getSelectionModel().getSelection()[0].data.toDelete)){
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
-			} else if (me.grid.getSelectionModel().hasSelection() 
-				&& (!me.grid.getSelectionModel().getSelection()[0].data.locked 
-				&& !me.grid.getSelectionModel().getSelection()[0].data.toDelete)) {
-				me.deleteBtnCtn.down('#deleteBtn').setDisabled(false);
-			}
+       /* me.deleteBtnCtn.down('#deleteBtn').setDisabled(true);
+        me.modifyBtnCtn.down('#modifyBtn').setDisabled(true);
+        me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(true);*/
+		  if (me.onlyModify === true){
+              me.deleteBtnCtn.hide();
+              me.addBtnCtn.hide();
+		} else if (me.onlyDelete === true){
+			me.addBtnCtn.hide();
+			me.modifyBtnCtn.hide();
 		}
+          else if (me.onlyAD === true){
+              me.modifyBtnCtn.hide();
+
+          } else if (me.noModif === true){
+              me.modifyBtnCtn.hide();
+		}
+          else if (me.noAdd === true){
+              me.addBtnCtn.hide();
+          }
+
+          if(me.deleteBtnCtn.down('#deleteBtn'))
+		 		me.deleteBtnCtn.down('#deleteBtn').setDisabled(deleteButtonDisabled);
+        if(me.deleteBtnCtn.down('#modifyBtn'))
+		 	me.modifyBtnCtn.down('#modifyBtn').setDisabled(modifyButtonDisabled);
+
+        if(me.deleteBtnCtn.down('#duplicateBtn'))
+		 	me.duplicateBtnCtn.down('#duplicateBtn').setDisabled(duplicateButtonDisabled);
 
 	},
-	
 	quitEditMode: function () {
 		var me = this;
 		me.grid.inEdition = false;

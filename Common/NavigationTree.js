@@ -14,7 +14,7 @@ Ext.define('MyApp.store.NavigationTree', {
                 viewType: 'maintabpanel',
                 routeId: 'maintabpanel', // routeId defaults to viewType
                 leaf: true,
-                href:'../pub_workflow/#maintabpanel'
+                href:'#maintabpanel'
             },
             {
                 iconCls: 'x-fa fa-cogs',
@@ -79,8 +79,8 @@ Ext.define('MyApp.store.NavigationTree', {
           {
                 text: 'actes ',
                 iconCls: 'x-fa fa-users',
-                viewType: 'studyactepanel',
-                routeId: 'studyactepanel',
+                viewType: 'studyactemainview',
+                routeId: 'studyactemainview',
                 leaf: true
             }, {
                 text: 'Cotations ',

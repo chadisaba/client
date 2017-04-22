@@ -1,11 +1,10 @@
 var FormAddPlugins={
     addPlugins:function(_scope)
         {
-
             _scope.plugins=[];
             if(_scope.initialConfig.noPlugin)
             {
-
+                FormAddPlugins.addCheckDirtyPlugin(_scope);
             }
             else if(!_scope.initialConfig.externalEditingPlugin)
             {
@@ -22,6 +21,34 @@ var FormAddPlugins={
             {
                 _scope.plugins.push (new Plugins.form.FormPlugin(_scope.initialConfig.externalEditingPlugin));
             }
+            FormAddPlugins.addResetComboPlugin(_scope);
+            FormAddPlugins.addResetTextField(_scope);
+           // FormAddPlugins.addAsterixPlugin(_scope);
+        },
 
-        }
+    addCheckDirtyPlugin:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.CheckDirtyPlugin()
+        );
+    },
+
+    addResetComboPlugin:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.ResetComboTrigger()
+        );
+    },
+    addResetTextField:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.ResetTextFieldTrigger()
+        );
+    },
+    addAsterixPlugin:function(_scope)
+    {
+        _scope.plugins.push (
+            new Plugins.form.AddAsterixPlugin()
+        );
+    }
 };

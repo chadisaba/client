@@ -21,7 +21,7 @@ var IndexedDB={
                     me.db.version(1).stores({
                         STATUS: "++id,lastUpdate",
                         DOC_HAS_STUDY: "++id,docHasStudyId,studyId,studyCode,studyName,doctorId",
-                        USER: "++id,userId,userFName,userLName,userCatId",
+                        USER: "++id,userId,userFName,userLName,userCatId,userCatName,userCatSchColor",
                         CITY: "++id,cityId,cityName,cityZipCode",
                         DEVICE: "++id,deviceId,deviceName,modalityId,siteId",
                         STUDY: "++id,studyId,studyCode,studyName",
@@ -34,7 +34,14 @@ var IndexedDB={
                         TFIELD:'++id,tfieldName,tfieldDbName',
                         ESTABLISHMENT:'++id,establishmentId,establishmentCode,establishmentName',
                         EST_HAS_SERV:'++id,estHasServId,establishmentId,estHasServCode,estHasServName',
-                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigPCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin'
+                        SITE_CONFIG:'++id,siteConfigId,siteId,siteConfigStartHour,siteConfigEndHour,siteConfigPyxMode,siteConfigFseIsChecked,siteConfigUidSenolog,siteConfigSenologType,siteConfigAmoDefault,siteConfigAmcDefault,siteConfigPdsMandatory,siteConfigCotFerieAuto,siteConfigCotUrgenceAuto,siteConfigCotEnfantAuto,siteConfigCotNuitAuto,siteConfigCotNuitHeureDebut,siteConfigCotNuitHeureFin',
+                        CCAM_CONFIG:'++id,CCAMConfigId,CCAMConfigCode,CCAMConfigDescription',
+                        CCAM_MODIFICATEURS:'++id,CCAMModificateurId,CCAMModificateurCode,CCAMModificateurCoef,CCAMModificateurAmount',
+                        ACTE:'++id,acteId,acteCode,acteVersionId,actePrix',
+                        ACTE_VERSION:'++id,acteVersionId,acteVersionCode,acteVersionStartDate,acteVersionEndDate',
+                        APP_CONFIG:'++id,appConfigId,appConfigSeuilPav,appConfigHorsParcoursSoinsAmount',
+                        GROUP_ROOM:'++id,groupRoomId,groupRoomName,groupRoomCode,groupRoomSchedulerZoom',
+                        GROUP_ROOM_HAS_ROOM:'++id,groupRoomHasRoomId,groupRoomId,roomId'
                     });
                     me.db.open();
                     resolve();

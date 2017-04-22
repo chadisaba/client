@@ -4,14 +4,14 @@ Ext.define('Common.ux.window.FullScreenWindow', {
         type: 'border',
         padding: 5
     },
-    tools:[
+   /* tools:[
         {
             type:'help',
             tooltip: 'Get Help',
             callback: function(panel, tool, event) {
                 // show help here
             }
-        }],
+        }],*/
     maximizable: true,
     maximized:true,
     height:500,

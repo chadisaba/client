@@ -6,3 +6,32 @@
     border-style:none; 
     background:none;
 }
+/* Mark modifications in editing grids ERGO-CCP-021 */
+.dirty-cell-edited {
+    font-weight: bold !important;
+    color: #1111ff !important;
+}
+
+/* use dirty-checkbox-cell-edited in checkbox cells to mark changes*/
+.dirty-cell-edited .dirty-checkbox-cell-edited {
+    background-color: none !important;
+    background-image: url('ux/images/dirty_blue.gif') !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Mark modifications in forms ERGO-CCP-021 */
+.dirty-form-field .x-form-item-label {
+    font-weight: bold !important;
+    color: #1111ff !important;
+}
+
+.dirty-form-field .x-form-cb-wrap .x-form-cb-label {
+    font-weight: bold !important;
+    color: #1111ff !important;
+}
+
+.dirty-form-field {
+    font-weight: bold !important;
+    color: #1111ff !important;
+}

@@ -1,28 +1,38 @@
 var InitApp={
     siteId:null,
-    initIndexedDB:function(_myMask,_appType)
+    initIndexedDB:function(_myMask,_appType,_acteVersionId)
     {
         // retreive data from server db to update indexedDB
 
         var mainTableObject={
             tableName:"DOC_HAS_STUDY"
+
         };
         var joinTablesArray=[{
             tableName:"STUDY"
         }];
-        var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p1=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
 
          mainTableObject={
-            tableName:"DOCTOR"
+            tableName:"DOCTOR",
+             limit:'no'
         };
          joinTablesArray=[{
             tableName:"USER"
         }];
 
-        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p2=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
-        var p3=CommonDirect.getData("USER");
+        mainTableObject={
+            tableName:"USER",
+            limit:'no'
+        };
+        joinTablesArray=[{
+            tableName:"USER_CAT"
+        }];
+        var p3=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
+
         var p4=CommonDirect.getData("CITY",false,100);
 
         /* mainTableObject={
@@ -33,26 +43,34 @@ var InitApp={
         }];
         var p5=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);*/
 
-        var p6=CommonDirect.getData("DEVICE");
-        var p7=CommonDirect.getData("ROOM");
-        var p8=CommonDirect.getData("STUDY");
-        var p9=CommonDirect.getData("REFERRING_PHYSICIAN");
+        var p6=CommonDirect.getData("DEVICE",[],'no');
+        var p7=CommonDirect.getData("ROOM",[],'no');
+        var p8=CommonDirect.getData("STUDY",[],'no');
+        var p9=CommonDirect.getData("REFERRING_PHYSICIAN",[],'no');
 
-        mainTableObject={
-            tableName:"DEVICE_HAS_STUDY"
+        var mainTableObject={
+            tableName:"DEVICE_HAS_STUDY",
+            limit:'no'
         };
         var joinTablesArray=[{
             tableName:"DEVICE"
         }];
-        var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray);
+        var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
 
-        var p11=CommonDirect.getData("SITE");
+        var p11=CommonDirect.getData("SITE",[],'no');
+        var p12=CommonDirect.getData('TFIELD',[],'no');
+        var p13=CommonDirect.getData('ESTABLISHMENT',[],'no');
+        var p14=CommonDirect.getData('EST_HAS_SERV',[],'no');
+        var p15=CommonDirect.getData("SITE_CONFIG",[],'no');
+        var p16=CommonDirect.getData("CCAM_CONFIG",[],'no');
+        var p17=CommonDirect.getData("CCAM_MODIFICATEURS",[],'no');
+        var p18=CommonDirect.getData("APP_CONFIG",[],'no');
+        var p19=CommonDirect.getData("ACTE",[{name:'acteVersionId',value:_acteVersionId}],'no',['acteId','acteCode','acteVersionId','actePrix']);
+        var p20=CommonDirect.getData("ACTE_VERSION",[{name:'acteVersionId',value:_acteVersionId}],1);
+        var p21=CommonDirect.getData("GROUP_ROOM",[],'no');
+        var p22=CommonDirect.getData("GROUP_ROOM_HAS_ROOM",[],'no');
 
-        var p12=CommonDirect.getData('TFIELD');
-        var p13=CommonDirect.getData('ESTABLISHMENT');
-        var p14=CommonDirect.getData('EST_HAS_SERV');
-        var p15=CommonDirect.getData("SITE_CONFIG");
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15])
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -79,6 +97,10 @@ var InitApp={
 
                         // Populating  USER table
                         var usersArray=values[2];
+                        for (let i = 0; i < usersArray.length; i++) {
+                            usersArray[i].userCatName=usersArray[i]['UserCat.userCatName'];
+                            usersArray[i].userCatSchColor=usersArray[i]['UserCat.userCatSchColor'];
+                        }
                         indexDBPromiseArray.push(IndexedDB.populateData('USER',usersArray));
 
                         // Populating  CITY table
@@ -142,17 +164,38 @@ var InitApp={
                         var siteConfigArray=values[13];
                         indexDBPromiseArray.push(IndexedDB.populateData('SITE_CONFIG',siteConfigArray));
 
+                        var ccamConfigArray=values[14];
+                        indexDBPromiseArray.push(IndexedDB.populateData('CCAM_CONFIG',ccamConfigArray));
+
+                        var ccamModificateursArray=values[15];
+                        indexDBPromiseArray.push(IndexedDB.populateData('CCAM_MODIFICATEURS',ccamModificateursArray));
+
+                        var appConfigArray=values[16];
+                        indexDBPromiseArray.push(IndexedDB.populateData('APP_CONFIG',appConfigArray));
+
+                        var acteArray=values[17];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ACTE',acteArray));
+
+                        var acteVersionArray=values[18];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ACTE_VERSION',acteVersionArray));
+
+                        var groupRoomArray=values[19];
+                        indexDBPromiseArray.push(IndexedDB.populateData('GROUP_ROOM',groupRoomArray));
+
+                        var groupRoomHasRoomArray=values[20];
+                        indexDBPromiseArray.push(IndexedDB.populateData('GROUP_ROOM_HAS_ROOM',groupRoomHasRoomArray));
+
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
                             {
 
                                 if(_appType=="office")
                                 {
-                                    window.open("../pub_workflow/indexOffice.html",'_self');
+                                    window.open("../../clientNew/MyApp/indexOffice.html#indexOffice.html#maintabpanel",'_self');
 
                                 }
                                else
-                                window.open("../pub_workflow/#maintabpanel",'_self');
+                                window.open("../../clientNew/MyApp/#maintabpanel",'_self');
                                 _myMask.hide();
                             }).
                             catch(function(_err)

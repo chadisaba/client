@@ -26,7 +26,7 @@ function translate(text)
         "last name":"Nom",
         "gender":"Sexe",
         "title":"Civilité",
-        "city":"Ville",
+        "city":"Commune",
         "zip code":"C.P",
         "phone":"Tél.",
         "fax":"Fax",
@@ -48,7 +48,7 @@ function translate(text)
         "clickToCancelModifications":"Annuler les modifications",
         "gridEdit.quitEditionTitle":"Quitter l'édition",
         "gridEdit.quitEditionMsg":"Voulez vous quittez le mode d'édition?",
-        "displayModifiedRows":"Afficher seulement les modifications",
+        "displayModifiedRows":"Suelement Modification",
         "applyChTitle":"Confirmation",
         "ApplyModification":"Appliquer les modifications?",
         "submitMsg":"Enregistrer",
@@ -90,7 +90,7 @@ function translate(text)
         'VerificationEnCours':"Vérification en cours, veuillez patienter....",
         'Saving':"Enregistrement en cours...",
         'loadingIndexedDB':"Chargement des données en cache,veuillez patienter....",
-
+        'chargementEnCours':"Chargement en cours, veuillez patienter....",
 
         /*******Confirm messages*****/
 
@@ -108,7 +108,6 @@ function translate(text)
         "allStudy":"Tous les examens",
         "Doctor":"Médecin",
         "patientIdentity":"Identité patient",
-        "gender":"Sexe",
         "civility":"Civilité",
         "recieving": "Accueil de ",
 
@@ -123,9 +122,8 @@ function translate(text)
         "address":"Adresse",
         "zipCode":"Code postal",
         "city ":"Commune",
-        "phone":"Tél",
         "mobile":"Portable",
-        "email":"E-mail",
+
          "contactInformation":"Coordonnées",
 
 
@@ -134,10 +132,10 @@ function translate(text)
         "date":"Date",
         "hour":"Heure",
         "addStudy":"Ajouter un examen",
-        "free":"Gratuit",
+
         "hospitalized":"Hospitalisé",
         "emergency":"Urgence",
-        "studies":"Les examens",
+        "the studies":"Les examens",
         "price":"Prix",
         "device":"Appareil",
         "hospitVisitNumber":"N° séjour",
@@ -153,7 +151,7 @@ function translate(text)
         "C. Info":"C.info",
         "P.Info":"P.Info",
 
-        "birthday":"Naissance",
+        "birthdayAbrev":"Naissance",
         "studies":"Examens",
         "worklistDoctor":"Méd.",
         "consultant Ph.":"Traitant",
@@ -176,6 +174,7 @@ function translate(text)
 
         "actions":"Actions",
         "print":"Imprimer",
+        "Invoice Worklist":"Fact.",
 
         /**** device component****/
 
@@ -235,7 +234,19 @@ function translate(text)
         "quot. waiting":"En Attente",
         "quot. saved":"Enregistrée",
         "quot. approved":"Validée",
-        "quot.disapproved":"Dévalidée"
+        "quot.disapproved":"Dévalidée",
+
+        /***** patient receiving****/
+        "IPP":"IPP",
+        "Visit number":"Numéro de séjour",
+        /***** patient search grid****/
+
+        "Choose from among the found patients":"Choisir parmi les patients trouvés",
+        "Patient not found":"Patient introuvable",
+        "Receive as new patient":"Accueillir comme nouveau patient",
+        "Patient recieving from hl7":"Accueil patient dpuis le lien Hprim",
+        "Vis. number":"Num. séjour",
+        "Visit date":"Date séjour"
 
 
         };

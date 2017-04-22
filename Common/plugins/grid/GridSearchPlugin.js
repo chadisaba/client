@@ -2,7 +2,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 	extend:'Ext.AbstractPlugin',
 	alias:'widget.plugin.searchgrid',
 
-		statics:{
+	statics:{
 		getRemoteFilter:function(searchGrid)
 		{
 			var searchGridStore=searchGrid.getStore();
@@ -21,8 +21,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					if(data[key]){
 						if (key!='id')
 						{
-							 filterValue=data[key].filterValue;
-							 filterOp=data[key].filterOp;
+							filterValue=data[key].filterValue;
+							filterOp=data[key].filterOp;
 							filterName=key;
 
 							if(filterValue!="all")
@@ -34,8 +34,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 										break;
 									case 'eqBool':
 
-											filterValue=="no"?boolValue=false:boolValue=true;
-											resultArray[i].push({name:filterName,value:boolValue,compare:'eq'});
+										filterValue=="no"?boolValue=false:boolValue=true;
+										resultArray[i].push({name:filterName,value:boolValue,compare:'eq'});
 
 										break;
 									case 'diff': // string
@@ -114,233 +114,255 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 				return ;
 			masterGridStore.filterBy(
 				function(_masterRec)
-			{
-				var result=false;
-				searchGridStore.each(function(_searchRec)
 				{
-					var resultFilter=true;
-					var data=_searchRec.getData();
-					for (var key in data) {
-						if(data[key]){
-							if (key!='id' && (_masterRec.get(key)===false|| _masterRec.get(key)==0 || _masterRec.get(key)))
-							{
-								var filterValue=data[key].filterValue;
-								var filterOp=data[key].filterOp;
-								var recValue=_masterRec.get(key);
-
-								switch (filterOp)
+					var result=false;
+					var dateStringOnly;
+					searchGridStore.each(function(_searchRec)
+					{
+						var resultFilter=true;
+						var data=_searchRec.getData();
+						for (var key in data) {
+							if(data[key]){
+								if (key!='id' && (_masterRec.get(key)===false|| _masterRec.get(key)==0 || _masterRec.get(key)))
 								{
-									case 'eq':
-										if(filterValue.toUpperCase() != recValue.toUpperCase())
-											resultFilter=false;
-										break;
-									case 'eqBool':
-										var all=filterValue=="all";
-										if(!all && filterValue=="yes" && recValue===false)
-											resultFilter=false;
-										if(!all && filterValue=="no" && recValue===true)
-											resultFilter=false;
-										break;
-									case 'diff':
-										if(filterValue.toUpperCase()== recValue.toUpperCase())
-											resultFilter=false;
-										break;
-									case 'start':
-										if(!Ext.String.startsWith(recValue,filterValue,true))
-											resultFilter=false;
-										break;
-									case 'contains':
-										if(recValue.toUpperCase().indexOf(filterValue.toUpperCase())<0)
-											resultFilter=false;
-										break;
-									case 'end':
-										if(!Ext.String.endsWith(recValue,filterValue,true))
-											resultFilter=false;
-										break;
+									var filterValue=data[key].filterValue;
+									var filterOp=data[key].filterOp;
+									var recValue=_masterRec.get(key);
 
-									case 'eqDate':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)!=0)
-											resultFilter=false;
-										break;
+									if(recValue){
+									switch (filterOp)
+									{
+										case 'eq':
+											var all=filterValue=="all";
 
-									case 'gtDate':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>=0)
-											resultFilter=false;
+												if(typeof recValue==='string')
+													recValue=recValue.toUpperCase();
+												if(!all && (filterValue.toUpperCase() != recValue))
+													resultFilter=false;
 
-										break;
-									case 'lteDate':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<0)
-											resultFilter=false;
+											break;
+										case 'eqBool':
+											var all=filterValue=="all";
+											if(!all && filterValue=="yes" && recValue===false)
+												resultFilter=false;
+											if(!all && filterValue=="no" && recValue===true)
+												resultFilter=false;
+											break;
+										case 'diff':
+											var all=filterValue=="all";
 
-										break;
-									case 'gteDate':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>0)
-											resultFilter=false;
+											if(typeof recValue==='string')
+												recValue=recValue.toUpperCase();
+											if(!all && (filterValue.toUpperCase() == recValue))
+												resultFilter=false;
+											break;
+										case 'start':
+											if(!Ext.String.startsWith(recValue,filterValue,true))
+												resultFilter=false;
+											break;
+										case 'contains':
+											if(recValue.toUpperCase().indexOf(filterValue.toUpperCase())<0)
+												resultFilter=false;
+											break;
+										case 'end':
+											if(!Ext.String.endsWith(recValue,filterValue,true))
+												resultFilter=false;
+											break;
 
-										break;
-									case 'ltDate':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<=0)
-											resultFilter=false;
-										break;
+										case 'eqDate':
+											if(Ext.Date.diff(DateUtil.convertIsoToDate(recValue),filterValue,Ext.Date.SECOND)!=0)
+												resultFilter=false;
+											break;
 
-									case 'eqTime':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)!=0)
-											resultFilter=false;
-										break;
+										case 'gtDate':
+											if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>=0)
+												resultFilter=false;
 
-									case 'gtTime':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>=0)
-											resultFilter=false;
+											break;
+										case 'lteDate':
+											if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<0)
+												resultFilter=false;
 
-										break;
-									case 'lteTime':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<0)
-											resultFilter=false;
+											break;
+										case 'gteDate':
+											if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>0)
+												resultFilter=false;
 
-										break;
-									case 'gteTime':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)>0)
-											resultFilter=false;
+											break;
+										case 'ltDate':
+											if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<=0)
+												resultFilter=false;
+											break;
 
-										break;
-									case 'ltTime':
-										if(Ext.Date.diff(new Date(recValue),filterValue,Ext.Date.SECOND)<=0)
-											resultFilter=false;
-										break;
+										case 'eqTime':
+											dateStringOnly=recValue.getFullYear()+"-"+ (recValue.getMonth()+1)+"-"+recValue.getDate();
+											filterValue=dateStringOnly+'T'+filterValue;
+											if(Ext.Date.diff(recValue,DateUtil.convertIsoToDate(filterValue),Ext.Date.SECOND)!=0)
+												resultFilter=false;
+											break;
+
+										case 'gtTime':
+											dateStringOnly=recValue.getFullYear()+"-"+ (recValue.getMonth()+1)+"-"+recValue.getDate();
+											filterValue=dateStringOnly+'T'+filterValue;
+											if(Ext.Date.diff(DateUtil.convertIsoToDate(filterValue),recValue,Ext.Date.SECOND)<=0)
+												resultFilter=false;
+
+											break;
+										case 'lteTime':
+											dateStringOnly=recValue.getFullYear()+"-"+ (recValue.getMonth()+1)+"-"+recValue.getDate();
+											filterValue=dateStringOnly+'T'+filterValue;
+											if(Ext.Date.diff(DateUtil.convertIsoToDate(filterValue),recValue,Ext.Date.SECOND)>0)
+												resultFilter=false;
+
+											break;
+										case 'gteTime':
+											dateStringOnly=recValue.getFullYear()+"-"+ (recValue.getMonth()+1)+"-"+recValue.getDate();
+											filterValue=dateStringOnly+'T'+filterValue;
+											if(Ext.Date.diff(DateUtil.convertIsoToDate(filterValue),recValue,Ext.Date.SECOND)<0)
+												resultFilter=false;
+
+											break;
+										case 'ltTime':
+											dateStringOnly=recValue.getFullYear()+"-"+ (recValue.getMonth()+1)+"-"+recValue.getDate();
+											filterValue=dateStringOnly+'T'+filterValue;
+											if(Ext.Date.diff(DateUtil.convertIsoToDate(filterValue),recValue,Ext.Date.SECOND)>=0)
+												resultFilter=false;
+											break;
 
 
 
 
-									case 'eqNbr':
-										if(filterValue() != recValue)
-											resultFilter=false;
-										break;
-									case 'gtNbr':
-										if(filterValue() <= recValue)
-											resultFilter=false;
-										break;
-									case 'lteNbr':
-										if(filterValue() > recValue)
-											resultFilter=false;
-										break;
-									case 'gteNbr':
-										if(filterValue() < recValue)
-											resultFilter=false;
-										break;
-									case 'ltNbr':
-										if(filterValue() >= recValue)
-											resultFilter=false;
-										break;
-									case 'diffNbr':
-										if(filterValue() == recValue)
-											resultFilter=false;
-										break;
+										case 'eqNbr':
+											if(filterValue() != recValue)
+												resultFilter=false;
+											break;
+										case 'gtNbr':
+											if(filterValue() <= recValue)
+												resultFilter=false;
+											break;
+										case 'lteNbr':
+											if(filterValue() > recValue)
+												resultFilter=false;
+											break;
+										case 'gteNbr':
+											if(filterValue() < recValue)
+												resultFilter=false;
+											break;
+										case 'ltNbr':
+											if(filterValue() >= recValue)
+												resultFilter=false;
+											break;
+										case 'diffNbr':
+											if(filterValue() == recValue)
+												resultFilter=false;
+											break;
+									}
+									}
 								}
-							}
 
+							}
 						}
-					}
 						if(resultFilter)
 							result=true;
+					});
+					return result;
 				});
-				return result;
-			});
-			},
+		},
 		configure: function(masterGrid,searchGrid){
 			searchGrid.searchObj={};
-		var searchGridColumns=[];
-		// creating the searchGrid Store
-        	var searchGridStoreModelFields=[];
-		masterGrid.columns.forEach(
-		function(_column)
-		{
-			if(_column.dataIndex)
+			var searchGridColumns=[];
+			// creating the searchGrid Store
+			var searchGridStoreModelFields=[];
+			masterGrid.getColumns().forEach(
+				function(_column)
 				{
-				searchGridStoreModelFields.push({name:_column.dataIndex});	
-				}
-		});
-		var searchGridStore=new Ext.data.Store({
-              fields:searchGridStoreModelFields
-        	});
-		var newColumnTemp;
+					if(_column.dataIndex)
+					{
+						searchGridStoreModelFields.push({name:_column.dataIndex});
+					}
+				});
+			var searchGridStore=new Ext.data.Store({
+				fields:searchGridStoreModelFields
+			});
+			var newColumnTemp;
 			newColumnTemp={
 				xtype: 'rownumberer'
 			};
 			searchGridColumns.push(newColumnTemp);
-		masterGrid.columns.forEach(
-		function(_column)
-		{
-			if(_column.createFilter)
-			{
-				newColumnTemp={};
-				newColumnTemp.dataIndex=_column.dataIndex;
-				newColumnTemp.initFilterValue=_column.initFilterValue||null;
-				newColumnTemp.width=_column.filterWidth||_column.width;
-				if(_column.filterFlex)
-					newColumnTemp.flex=_column.filterFlex;
-
-				newColumnTemp.xtype='widgetcolumn';
-				/*if(_column.editor.xtype="combo")
-				 newColumnTemp.widget={
-				 xtype:	_column.xtype
-				 }*/
-				if(_column.bind){
-					newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
-					//newColumnTemp.bind.text=_column.bind.text;
-				}
-				else
+			masterGrid.getColumns().forEach(
+				function(_column)
 				{
-					newColumnTemp.text=_column.text;
-				}
-				newColumnTemp.widget={};
-				newColumnTemp.widget.xtype='textfilter';
-				switch(_column.filterType)
-				{
-					case "combobox":
-						newColumnTemp.widget.xtype='combofilter';
+					if(_column.createFilter)
+					{
+						newColumnTemp={};
+						newColumnTemp.dataIndex=_column.dataIndex;
+						newColumnTemp.initFilterValue=_column.initFilterValue||null;
+						newColumnTemp.width=_column.filterWidth||_column.width;
+						if(_column.filterFlex)
+							newColumnTemp.flex=_column.filterFlex;
 
-						if(_column.filterValues)
-							newColumnTemp.widget.filterValues=_column.filterValues;
+						newColumnTemp.xtype='widgetcolumn';
+						/*if(_column.editor.xtype="combo")
+						 newColumnTemp.widget={
+						 xtype:	_column.xtype
+						 }*/
+						if(_column.bind){
+							newColumnTemp.text=translate(_column.config.bind.text.substring(7,_column.config.bind.text.length-1));
+							//newColumnTemp.bind.text=_column.bind.text;
+						}
+						else
+						{
+							newColumnTemp.text=_column.text;
+						}
+						newColumnTemp.widget={};
+						newColumnTemp.widget.xtype='textfilter';
+						switch(_column.filterType)
+						{
+							case "combobox":
+								newColumnTemp.widget.xtype='combofilter';
 
-						break;
-					case "boolean":
-						newColumnTemp.widget.xtype='booleanfilter';
-						break;
-					case "numeric":
-						newColumnTemp.widget.xtype='numericfilter';
-						break;
-					case "date":
-					newColumnTemp.widget.xtype='datefilter';
-					break;
-					case "time":
-						newColumnTemp.widget.xtype='timefilter';
-						break;
-				}
-				newColumnTemp.onWidgetAttach= function (column, container, record) {
-					var widgetComp = container;
-					var initValue={};
-					if(column.initFilterValue){
-						initValue=_column.initFilterValue;
-						widgetComp.setValue(initValue);
+								if(_column.filterValues)
+									newColumnTemp.widget.filterValues=_column.filterValues;
+
+								break;
+							case "boolean":
+								newColumnTemp.widget.xtype='booleanfilter';
+								break;
+							case "numeric":
+								newColumnTemp.widget.xtype='numericfilter';
+								break;
+							case "date":
+								newColumnTemp.widget.xtype='datefilter';
+								break;
+							case "time":
+								newColumnTemp.widget.xtype='timefilter';
+								break;
+						}
+						newColumnTemp.onWidgetAttach= function (column, container, record) {
+							var widgetComp = container;
+							var initValue={};
+							if(column.initFilterValue){
+								initValue=_column.initFilterValue;
+								widgetComp.setValue(initValue);
+							}
+
+							/*if(record.get(_column.dataIndex))
+							 initValue.value=record.get(_column.dataIndex);*/
+
+
+
+
+						};
+						newColumnTemp.widget.dataIndex=newColumnTemp.dataIndex;
+						searchGridColumns.push(newColumnTemp);
 					}
 
-					/*if(record.get(_column.dataIndex))
-						initValue.value=record.get(_column.dataIndex);*/
 
 
 
+				});
+			searchGrid.reconfigure(searchGridStore,searchGridColumns);
 
-				};
-				newColumnTemp.widget.dataIndex=newColumnTemp.dataIndex;
-				searchGridColumns.push(newColumnTemp);
-			}
-
-
-
-			
-		});
-		searchGrid.reconfigure(searchGridStore,searchGridColumns);
-				
 		}
 	},
 	config:{
@@ -394,7 +416,7 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					click: function (){
 						me.grid.getStore().removeAll();
 					}
-				}    			
+				}
 			}
 			]
 		});
@@ -440,8 +462,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 						gridStore.insert(gridStore.getCount(), {});
 						//me.grid.fireEvent('addSearchCriteria', rec);
 
-					}	
-				}    			
+					}
+				}
 			}
 			]
 		});
@@ -461,8 +483,8 @@ Ext.define('Plugins.grid.GridSearchPlugin', {
 					click: function (button, e, options){
 
 						me.grid.getStore().remove(me.grid.getSelectionModel().getSelection());
-					}	
-				}    			
+					}
+				}
 			}
 			]
 		});

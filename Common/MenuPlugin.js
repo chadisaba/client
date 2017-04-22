@@ -4,7 +4,7 @@ Ext.define("Patient", {
     fields: [
         {name: 'patientId'},
         {name: 'patientLName'},
-        {name: 'patientFName'},
+        {name: 'patientFname'},
         {name: 'patientBirthday',type:'date'},
         {name: 'lastupdated'}
     ]
@@ -110,6 +110,7 @@ Ext.define('menu.MenuPlugin', {
                     html: '<div class="main-logo"><img src="../Common/resources/images/logo-small.png" width="62"  height="40">Smart Med</div>',
                     width: 250
                 },
+
                 {
                     margin: '0 0 0 0',
                     ui: 'header',
@@ -181,11 +182,19 @@ Ext.define('menu.MenuPlugin', {
                 {
 
 
-                    href: '#appointementScheduler',
-                    hrefTarget: '_blank',
+                  //  href: '#appointementScheduler',
+                   // hrefTarget: '_blank',
                     tooltip: 'Accéder à la prise de  rendez-vous',
-                    html: '<img src="../Common/resources/images/calendar.png" height="24" width="24"/>'
-
+                    html: '<img src="../Common/resources/images/calendar.png" height="24" width="24"/>',
+                    handler:function () {
+                        Ext.create('Common.ux.window.FullScreenWindow', {
+                            items: {
+                                region: 'center',
+                               // xtype: 'scheduler.schedulerpanel'
+                                xtype: 'scheduler.resource-scheduler-panel'
+                            }
+                        }).show();
+                    }
                 },
                 '->',
                 {
@@ -246,25 +255,6 @@ Ext.define('menu.MenuPlugin', {
                         }
                     }
 
-                },
-                {
-                    iconCls:'x-fa fa-search-plus',
-                    ui: 'header',
-                    tooltip: 'Recherche patient détaillée',
-                    listeners: {
-                        click: function () {
-
-                            Ext.create('Common.ux.window.FullScreenWindow',{
-
-                                title:"Recherche patient",
-                                itemId:"searchPatientWindowItemId",
-                                items:{
-                                    region: 'center',
-                                    xtype:'patientdetailsearchform'
-                                }
-                            }).show();
-                        }
-                    }
                 },
                 {
                     xtype: 'checkbox'

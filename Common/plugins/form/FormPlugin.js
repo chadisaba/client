@@ -32,8 +32,9 @@ Ext.define('Plugins.form.FormPlugin', {
 			this.fillToolbar();
 			form.addDocked(this.tb);
 		}
+
 	},
-	
+
 	lockForm: function (lockStatus){		
 		this.restoreForm();
 		if (lockStatus){
@@ -280,9 +281,9 @@ Ext.define('Plugins.form.FormPlugin', {
 		me.saveBtnCtn.down('#saveBtn').setDisabled(true);
 		if(me.showCancelBtn)
 			me.cancelBtnCtn.down('#cancelBtn').setDisabled(true);
-		
-		
-		var elements = me.form.query('[readOnly=true]');
+
+
+		/*var elements = me.form.query('[readOnly=true]');
 		var fieldsets = me.form.query('fieldset');
 		// All fields enabled for edition
 		for (var i=0; i < elements.length; i++){
@@ -305,7 +306,7 @@ Ext.define('Plugins.form.FormPlugin', {
 				fieldsets[i].addCls('grey-fieldset');
 		}
 		me.form.addBodyCls('editFormPanel');
-		me.form.removeBodyCls('readOnlyFormPanel');
+		me.form.removeBodyCls('readOnlyFormPanel');*/
 	},
 
 	quitEditMode: function (){
@@ -330,7 +331,7 @@ Ext.define('Plugins.form.FormPlugin', {
 		if(me.showHistoryBtn)
 			me.chHistBtnCtn.down('#chHistBtn').setDisabled(false);
 		
-		var elements = me.form.query('[readOnly=false]');
+		/*var elements = me.form.query('[readOnly=false]');
 		var fieldsets = me.form.query('fieldset');
 		
 		// Disable edition on fields
@@ -365,7 +366,7 @@ Ext.define('Plugins.form.FormPlugin', {
 		}
 
 		this.form.addBodyCls('readOnlyFormPanel');
-		this.form.removeBodyCls('editFormPanel');
+		this.form.removeBodyCls('editFormPanel');*/
 	},
 	
 	cancelEdit: function () {

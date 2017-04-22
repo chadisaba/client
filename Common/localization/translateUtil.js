@@ -2,7 +2,7 @@ var translateUtil={
     transGrid:function(_comp)
     {
         _comp.setTitle(translate(_comp.title));
-        _comp.columns.forEach(
+        _comp.getColumns().forEach(
             function(_column)
             {
                 _column.setText(translate(_column.text));
@@ -52,22 +52,28 @@ var translateUtil={
     },
     transInputs:function(_comp)
     {
-        var comboArray=_comp.query('combobox');
-        var textfiledArray=_comp.query('textfield');
-        comboArray.forEach(function(_btn)
+       /* var comboArray=_comp.query('combobox');
+        var textfiledArray=_comp.query('textfield');/*/
+
+        var fieldsArray=_comp.query('field');
+        fieldsArray.forEach(function(_field)
         {
-            if(_btn.fieldLabel)
-                _btn.setFieldLabel(translate(_btn.fieldLabel));
-            if(_btn.emptyText)
-                _btn.setEmptyText(translate(_btn.emptyText));
+            if(_field.fieldLabel)
+            {
+                if(_field.allowBlank===false)
+                {
+                    var asterisk='<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
+                    _field.setFieldLabel(translate(_field.fieldLabel)+ asterisk);
+                }
+                else
+                    _field.setFieldLabel(translate(_field.fieldLabel));
+            }
+
+
+            if(_field.emptyText)
+                _field.setEmptyText(translate(_field.emptyText));
         });
-        textfiledArray.forEach(function(_btn)
-        {
-            if(_btn.fieldLabel)
-                _btn.setFieldLabel(translate(_btn.fieldLabel));
-            if(_btn.emptyText)
-                _btn.setEmptyText(translate(_btn.emptyText));
-        });
+
     },
     transPanel:function(_comp)
     {

@@ -1,7 +1,20 @@
 var CommonDirect={
+    convertDateToString:function(_filtersArray)
+    {
+        _filtersArray.forEach(function(_filter)
+        {
+         if(_filter.value instanceof Date)
+             if(_filter.isTime)
+                _filter.value=Ext.Date.format(_filter.value,'Y-m-d H:i:s');
+            else
+                 _filter.value=Ext.Date.format(_filter.value,'Y-m-d');
+        });
+        return _filtersArray;
+
+    },
     saveData:function(_dataObject,_tableName,_comment)
     {
-        var promise = new Promise(
+        return new Promise(
             function (resolve, reject) {
                 var params={};
                 params.table=_tableName;
@@ -19,7 +32,7 @@ var CommonDirect={
                     }
                 );
             });
-        return promise;
+
     },
 
     saveDataArray:function(_dataToBySaved,_tableName,_idName,_comment)
@@ -111,6 +124,27 @@ var CommonDirect={
             });
         return promise;
     },
+    gethDataFromIndexedDBWithWhere:function(_tableName,_searchFieldName,_searchValue)
+    {
+        //Creating a promise
+        var promise=new Promise(
+            function(resolve, reject) {
+                IndexedDB.openDB()
+                    .then(
+                        function()
+                        {
+                            IndexedDB.db[_tableName]
+                                .where(_searchFieldName)
+                                .equals(_searchValue)
+                                .toArray (function (_resultsArray) {
+                                    resolve(_resultsArray);
+                                });
+                        }
+                    );
+
+            });
+        return promise;
+    },
 
     getAssociatedAndAvailable:function(params)
     {
@@ -184,19 +218,30 @@ var CommonDirect={
             });
         return promise;
     },
-    getData:function(_tableName,_filtersArray,_limit)
+    getData:function(_tableName,_filtersArray,_limit,_fieldsArray,_order)
     {
         //Creating a promise
+        var me=this;
         var promise=new Promise(
+
             function(resolve, reject) {
 
                 var params;
+
+
                 params={
                     table:_tableName,
                     limit:_limit||100
                 };
                 if(_filtersArray)
-                params.filters=_filtersArray;
+                    params.filters=me.convertDateToString(_filtersArray);
+                if(_fieldsArray && _fieldsArray.length>0)
+                    params.fieldsArray=_fieldsArray;
+                if(_order)
+                    params.order=_order;
+                   // _filtersArray=
+
+
                 Server.CommonQueries.read(params,
                     function(res){
                         if(res.success){
@@ -211,9 +256,10 @@ var CommonDirect={
             });
         return promise;
     },
-    getDataWidthJoin:function(mainTableObject,joinTablesArray)
+    getDataWidthJoin:function(mainTableObject,joinTablesArray,_limit)
     {
         //Creating a promise
+        var me=this;
         var promise=new Promise(
             function(resolve, reject) {
                 var params = {
@@ -221,6 +267,19 @@ var CommonDirect={
                     joinTablesArray: joinTablesArray
 
                 };
+                if(_limit) params.limit=_limit;
+
+                if(params.mainTableObject.filters)
+                    params.mainTableObject.filters=me.convertDateToString(params.mainTableObject.filters);
+
+                joinTablesArray.forEach(function(_joinTable)
+                {
+                    if(_joinTable.filtersArray)
+                        _joinTable.filtersArray=me.convertDateToString(_joinTable.filtersArray);
+                });
+                if(params.mainTableObject.filters)
+                    params.mainTableObject.filters=me.convertDateToString(params.mainTableObject.filters);
+
                 Server.CommonQueries.readJoin(params,
                     function (res) {
                         if (res.success) {
@@ -235,37 +294,16 @@ var CommonDirect={
          return promise;
     },
 
-
-    getSiteConfigByIdFromIndexDb:function(_siteId)
-    {
-        //Creating a promise
-        var promise=new Promise(
-            function(resolve, reject) {
-                IndexedDB.openDB()
-                    .then(
-                        function()
-                        {
-
-                            IndexedDB.db.SITE_CONFIG.where("siteId")
-                                .equals(_siteId)
-                                .toArray (function (_resultsArray) {
-                                    resolve(_resultsArray);
-                                });
-
-
-                        }
-                    );
-            });
-        return promise;
-    },
-
-
-
-      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh,_searchFieldName2)
+      autoComplete:function(_scope,_tableName,_searchValue,_searchFieldName,_comboStoreName,_field,_fromIndexedDB,_searchLengh,_searchFieldName2,_inGridEditor)
         {
         var me=_scope;
         var searchLengh=_searchLengh||4;
-        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue))
+            var inGridEditor=_inGridEditor||false;
+            var newCond=true;
+            if(inGridEditor)
+                 newCond=(_field.getRawValue().indexOf(":")<0);
+
+        if(_searchValue&& isNaN(_searchValue) && !stringUtil.isUUID4(_searchValue)&&newCond)
         {
         if(_searchValue.length>=searchLengh)
         {
@@ -308,7 +346,7 @@ var CommonDirect={
                     });
             }
             else{
-                var filtersArray=[{name:_searchFieldName,value:_searchValue}];
+                var filtersArray=[{name:_searchFieldName,value:_searchValue.replace('_',""),compare:'startBy'}];
               this.getData(_tableName,filtersArray)
                 .then(
                     function(_resultData)
@@ -321,7 +359,7 @@ var CommonDirect={
                             store.filter({
                                 property: _searchFieldName,
                                 anyMatch: true,
-                                value   : _searchValue
+                                value   : _searchValue.replace('_',"")
                             });
                             _field.expand();
                         }

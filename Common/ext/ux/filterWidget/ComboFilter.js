@@ -41,12 +41,14 @@ Ext.define('Ext.ux.filterWidget.ComboFilter',
                     ]
                 });
             filterStore.loadData(me.filterValues[0]);//filterValues[0] is array of objects (ex:[{id:10,text:'search1'},{id:11:text:'search2'}])
-            filterStore.insert(0,{id:50000,text:translate('All')});
+            filterStore.insert(0,{id:'all',text:translate('All')});
             me.filterCombo=Ext.create('Ext.form.field.ComboBox',
                 {
                     fieldLabel: '',
                     height:15,
                     queryMode: 'local',
+                    valueField:'id',
+                    displayField:'text',
                     store:filterStore,
                     matchFieldWidth:true,
                     forceSelection:true
