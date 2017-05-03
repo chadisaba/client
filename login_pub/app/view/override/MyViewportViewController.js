@@ -61,20 +61,30 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                             {
                                 myMask.hide();
                                 /*if(appType=="office")
-                                {
-                                    window.open("../pub_workflow/indexOffice.html",'_self');
+                                 {
+                                 window.open("../pub_workflow/indexOffice.html",'_self');
 
-                                }*/
-                               /* else
-                                {*/
-                                     myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
+                                 }*/
+                                /* else
+                                 {*/
+                                myMask = new Ext.LoadMask({msg:translate("loadingIndexedDB"),target:view});
 
-                                    InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
-                                     InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
-                                     InitApp.userId= user.userId;
+                                InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
+                                InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
+                                InitApp.userId= user.userId;
+                                CommonDirect.getData("ACTE_VERSION")
+                                    .then(function(_resultArray)
+                                    {
+                                        let acteVersion=0;
+                                        _resultArray.forEach(function(_versionActe)
+                                        {
+                                            if(_versionActe.acteVersionId>acteVersion)
+                                                acteVersion=_versionActe.acteVersionId
+                                        })
+                                        InitApp.initIndexedDB(myMask,appType,acteVersion);
+                                    })
 
-                                    InitApp.initIndexedDB(myMask,appType);
-                              /*  }*/
+                                /*  }*/
 
 
                             })
@@ -101,7 +111,7 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
             })
             .catch(function(_err)
             {
-              console.error(_err);
+                console.error(_err);
             });
 
     },
@@ -118,5 +128,5 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
     onPasswordItemIdKeydown: function(textfield, e, eOpts) {
         this.onEnterKey(e);
     }
-    
+
 });

@@ -72,8 +72,18 @@ Ext.define('MyApp.view.override.MyViewportViewController', {
                                 InitApp.jsDavUrl= site['SiteConfig.siteConfigJSDavUrl'];
                                 InitApp.wordPath= site['SiteConfig.siteConfigWordPath'];
                                 InitApp.userId= user.userId;
+                                CommonDirect.getData("ACTE_VERSION")
+                                    .then(function(_resultArray)
+                                    {
+                                        let acteVersion=0;
+                                        _resultArray.forEach(function(_versionActe)
+                                        {
+                                            if(_versionActe.acteVersionId>acteVersion)
+                                                acteVersion=_versionActe.acteVersionId
+                                        })
+                                        InitApp.initIndexedDB(myMask,appType,acteVersion);
+                                    })
 
-                                InitApp.initIndexedDB(myMask,appType);
                                 /*  }*/
 
 

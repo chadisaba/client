@@ -48,11 +48,11 @@ var InitApp={
         var p8=CommonDirect.getData("STUDY",[],'no');
         var p9=CommonDirect.getData("REFERRING_PHYSICIAN",[],'no');
 
-        var mainTableObject={
+         mainTableObject={
             tableName:"DEVICE_HAS_STUDY",
             limit:'no'
         };
-        var joinTablesArray=[{
+         joinTablesArray=[{
             tableName:"DEVICE"
         }];
         var p10=CommonDirect.getDataWidthJoin(mainTableObject,joinTablesArray,"no");
@@ -69,8 +69,8 @@ var InitApp={
         var p20=CommonDirect.getData("ACTE_VERSION",[{name:'acteVersionId',value:_acteVersionId}],1);
         var p21=CommonDirect.getData("GROUP_ROOM",[],'no');
         var p22=CommonDirect.getData("GROUP_ROOM_HAS_ROOM",[],'no');
-
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22])
+        var p23=CommonDirect.getData("AVAIL",[],'no');
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -96,7 +96,8 @@ var InitApp={
                         indexDBPromiseArray.push(IndexedDB.populateData('ROOM_HAS_DEVICE',docHasStduiesArray));*/
 
                         // Populating  USER table
-                        var usersArray=values[2];
+                        let usersArray=values[2];
+
                         for (let i = 0; i < usersArray.length; i++) {
                             usersArray[i].userCatName=usersArray[i]['UserCat.userCatName'];
                             usersArray[i].userCatSchColor=usersArray[i]['UserCat.userCatSchColor'];
@@ -185,6 +186,9 @@ var InitApp={
                         var groupRoomHasRoomArray=values[20];
                         indexDBPromiseArray.push(IndexedDB.populateData('GROUP_ROOM_HAS_ROOM',groupRoomHasRoomArray));
 
+                        var availArray=values[21];
+                        indexDBPromiseArray.push(IndexedDB.populateData('AVAIL',availArray));
+
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)
                             {
@@ -216,4 +220,4 @@ var InitApp={
                 console.error(_err);
             });
     }
-}
+};

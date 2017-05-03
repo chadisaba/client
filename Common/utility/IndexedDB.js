@@ -41,7 +41,8 @@ var IndexedDB={
                         ACTE_VERSION:'++id,acteVersionId,acteVersionCode,acteVersionStartDate,acteVersionEndDate',
                         APP_CONFIG:'++id,appConfigId,appConfigSeuilPav,appConfigHorsParcoursSoinsAmount',
                         GROUP_ROOM:'++id,groupRoomId,groupRoomName,groupRoomCode,groupRoomSchedulerZoom',
-                        GROUP_ROOM_HAS_ROOM:'++id,groupRoomHasRoomId,groupRoomId,roomId'
+                        GROUP_ROOM_HAS_ROOM:'++id,groupRoomHasRoomId,groupRoomId,roomId',
+                        AVAIL:'++id,availId,availCode,availName'
                     });
                     me.db.open();
                     resolve();
