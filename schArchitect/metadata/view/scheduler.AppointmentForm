@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "bodyPadding": 10,
-        "designer|userAlias": "appointmentform",
-        "designer|userClassName": "AppointmentForm",
+        "designer|userAlias": "scheduler.appointmentform",
+        "designer|userClassName": "scheduler.AppointmentForm",
         "height": 500,
         "itemId": "appointmentFormId",
         "title": "My Form",
@@ -39,7 +39,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processAppointmentForm",
+                "fn": "processSchedulerAppointmentForm",
                 "implHandler": [
                     "FormAddPlugins.addPlugins(this);"
                 ]
@@ -49,7 +49,7 @@
                 "fn": "string",
                 "implHandler": "code"
             },
-            "name": "processAppointmentForm",
+            "name": "processSchedulerAppointmentForm",
             "designerId": "bc9f9b85-6e3a-4f86-9246-8241e6dc0226"
         },
         {

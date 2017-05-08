@@ -26,7 +26,7 @@ Ext.application({
     ],
     views: [
         'scheduler.AvailableResourceGridPanel',
-        'AppointmentForm'
+        'scheduler.AppointmentForm'
     ],
     controllers: [
         'MainController'

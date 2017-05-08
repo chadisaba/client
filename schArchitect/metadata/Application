@@ -16,7 +16,7 @@
         "name": "MyApp",
         "views": [
             "scheduler.AvailableResourceGridPanel",
-            "AppointmentForm"
+            "scheduler.AppointmentForm"
         ]
     },
     "configAlternates": {

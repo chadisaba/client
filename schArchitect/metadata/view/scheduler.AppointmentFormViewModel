@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "appointmentform",
-        "designer|userClassName": "AppointmentFormViewModel"
+        "designer|userAlias": "scheduler.appointmentform",
+        "designer|userClassName": "scheduler.AppointmentFormViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
