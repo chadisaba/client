@@ -26,8 +26,8 @@
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
         "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "4.0.0",
-    "xdsBuild": 168,
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -43,9 +43,7 @@
         ],
         "model": [],
         "resource": [
-            "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5",
-            "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2",
-            "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+            "253ff34a-a906-471c-8746-d9f62ec378b9"
         ],
         "app": [
             "application"

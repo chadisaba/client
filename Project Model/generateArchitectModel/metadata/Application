@@ -11,6 +11,10 @@
         ],
         "name": "MyApp"
     },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string"
+    },
     "name": "Application",
     "designerId": "application"
 }
