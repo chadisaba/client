@@ -1,0 +1,402 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "appointmentform",
+        "designer|userClassName": "AppointmentForm",
+        "height": 500,
+        "itemId": "appointmentFormId",
+        "title": "My Form",
+        "width": 500
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyForm",
+    "designerId": "64dd02f2-e3c1-428f-aacb-77d56e30907b",
+    "viewControllerInstanceId": "10bc4873-9788-4c62-afdf-ae6ccb570338",
+    "viewModelInstanceId": "ae326816-5e79-48ae-addb-f9585ee31efe",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processAppointmentForm",
+                "implHandler": [
+                    "FormAddPlugins.addPlugins(this);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "processAppointmentForm",
+            "designerId": "bc9f9b85-6e3a-4f86-9246-8241e6dc0226"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form"
+                ],
+                "fn": "onAppointmentFormItemIdInEdit",
+                "name": "inEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentFormItemIdInEdit",
+            "designerId": "90dae84b-dbd9-4ac1-919d-6615d7834f2b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin",
+                    "comment"
+                ],
+                "fn": "onAppointmentFormItemIdSaveEdit",
+                "name": "saveEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentFormItemIdSaveEdit",
+            "designerId": "$4b91f125-50f2-49f1-ae84-d4b0e5fdc24a"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onAppointmentFormItemIdResetEdit",
+                "name": "resetEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentFormItemIdResetEdit",
+            "designerId": "c75c81aa-0aad-4bf8-a561-dcbc6987632e"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onAppointmentFormItemIdChHist",
+                "name": "chHist",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentFormItemIdChHist",
+            "designerId": "5123f738-bc4c-41b8-b941-f106dcc7a7a0"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form",
+                    "promptWin"
+                ],
+                "fn": "onAppointmentFormItemIdQuitEdit",
+                "name": "quitEdit",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentFormItemIdQuitEdit",
+            "designerId": "c234ad0e-48ac-4022-856d-ae814e8fed04"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Fields"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "MyFieldSet",
+            "designerId": "8609fe12-c06f-468b-9656-19de1f64e599",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "appointment date",
+                        "layout|anchor": "100%",
+                        "name": "appointmentDate"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentDateTextField",
+                    "designerId": "10d3b64b-de13-486c-9a4d-b2988fb0bee1"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment patient",
+                        "layout|anchor": "100%",
+                        "name": "patientId"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MypatientIdTextField",
+                    "designerId": "37e71a48-38a0-4dee-9ffe-683ad08804a0"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "appointment emergency",
+                        "layout|anchor": "100%",
+                        "name": "appointmentIsEmergency"
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentIsEmergencyCheckBox",
+                    "designerId": "8ba310cd-f397-42cc-8a72-425629311fe6"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "appointment Hospitalized",
+                        "layout|anchor": "100%",
+                        "name": "appointmentIsHospit"
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentIsHospitCheckBox",
+                    "designerId": "4fd69d37-aae3-4d65-bc92-abedd5083f3c"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "doctor required",
+                        "layout|anchor": "100%",
+                        "name": "appointmentMedIsRequired"
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentMedIsRequiredCheckBox",
+                    "designerId": "b6c803b9-6597-4a48-9b56-c82d93df9dbe"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment confirmation date",
+                        "layout|anchor": "100%",
+                        "name": "appointmentDateConfirmation"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentDateConfirmationTextField",
+                    "designerId": "5d8f76de-3cb0-4f15-9deb-e5b6148ca480"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment sms date",
+                        "layout|anchor": "100%",
+                        "name": "appointmentSmsSentDate"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentSmsSentDateTextField",
+                    "designerId": "ea92a4f1-ab3a-43e7-ad68-8706d8d670ca"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment patient confirmation date",
+                        "layout|anchor": "100%",
+                        "name": "appointmentDateConfirmationByPatient"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyappointmentDateConfirmationByPatientTextField",
+                    "designerId": "c2348ecd-76c0-4563-ab0e-0e943568b987"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "patientName",
+                        "fieldLabel": "patient",
+                        "forceSelection": true,
+                        "itemId": "patientNameComboBoxEditorItemId",
+                        "layout|anchor": "100%",
+                        "name": "patientName",
+                        "queryMode": "local",
+                        "selectOnFocus": true,
+                        "store": [
+                            "{PatientNameComboStore}"
+                        ],
+                        "valueField": "patientId"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
+                    },
+                    "name": "MypatientNameComboBox",
+                    "designerId": "01a1cc7a-6952-46e2-a5ac-fa4e6b270d7e"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "appointmentform",
+        "designer|userClassName": "AppointmentFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "ae326816-5e79-48ae-addb-f9585ee31efe",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "PatientNameComboModel",
+                "name": "PatientNameComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "PatientNameComboStore",
+            "designerId": "fa9b1af3-2c5e-4c7f-a2bb-4dfb4895d0b2"
+        }
+    ]
+}

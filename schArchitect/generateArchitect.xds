@@ -1,0 +1,61 @@
+{
+    "name": "generateArchitect",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/nodejs_extjs_project/client/generate_pub_model/",
+        "exportPath": "../generate_pub_model",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "64dd02f2-e3c1-428f-aacb-77d56e30907b",
+            "10bc4873-9788-4c62-afdf-ae6ccb570338",
+            "ae326816-5e79-48ae-addb-f9585ee31efe",
+            "4702aeb1-429b-45af-b394-40a06bf904db",
+            "e4c81814-a7a1-4d7e-953c-ca2804168436",
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "5927db0d-0a21-49fe-b5ae-4797c1f0fcce",
+            "299cbdbe-6a79-465e-9b53-b32dff068102",
+            "58c1856b-0458-469d-a894-e7ac5eeef26f"
+        ],
+        "store": [],
+        "controller": [
+            "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
+        ],
+        "model": [
+            "703280d1-a3a6-4423-b639-670dd78288d1",
+            "372f71f0-efaa-43e5-9666-45d956d574fd"
+        ],
+        "resource": [
+            "253ff34a-a906-471c-8746-d9f62ec378b9"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

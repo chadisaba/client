@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MainController"
+        ],
+        "models": [
+            "AppointmentModel",
+            "PatientNameComboModel"
+        ],
+        "name": "MyApp",
+        "views": [
+            "scheduler.AvailableResourceGridPanel",
+            "AppointmentForm"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}
