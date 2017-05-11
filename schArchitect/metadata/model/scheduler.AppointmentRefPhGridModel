@@ -1,0 +1,185 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "scheduler.AppointmentRefPhGridModel",
+        "validators": [
+            "[{",
+            "            type: 'presence',",
+            "            field: 'xxFieldNameRequired'",
+            "        }]"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
+    "name": "VisitRefPhGridModel",
+    "designerId": "dba35c72-1ed1-4112-b868-76f1f1bdf208",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitHasRphId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyvisitHasRphId",
+            "designerId": "34cb214c-40f1-4a45-b29c-2eb5e8761864"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyvisitId",
+            "designerId": "57d7f29e-4a3f-40cb-a9ea-ac4630cb5512"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "referringPhysicianId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyreferringPhysicianId",
+            "designerId": "1bcedd1d-dd1a-4a0a-b08d-8b80209a09b8"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "patientIsOrientedBy"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MypatientIsOrientedBy",
+            "designerId": "d77d37db-d698-4a64-b938-50708eb2f06f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "referringPhysicianSearch"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyreferringPhysicianSearch",
+            "designerId": "85aa70f1-bed0-4002-8402-0fc33d1bdfef"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField27",
+            "designerId": "93cad2bb-07ef-470b-9700-2d1668f40ea3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField28",
+            "designerId": "9e4b9036-41c9-4ecf-bf17-5e8a9eef14dc"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "60e46f70-cfa8-479b-9093-953fa4ae6ec9"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "notValid"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "2af8dd1c-ac75-4133-884e-120dc68a2c3b"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField31",
+            "designerId": "4e854fe6-65e1-4752-9a0c-f357916260dd"
+        }
+    ]
+}

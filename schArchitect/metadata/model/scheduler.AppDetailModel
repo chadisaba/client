@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "AppointmentModel",
+        "designer|userClassName": "scheduler.AppDetailModel",
         "validators": [
             "[{",
             "            type: 'presence',",
@@ -18,8 +18,8 @@
         "designer|userClassName": "string",
         "validators": "array"
     },
-    "name": "AppointmentModel",
-    "designerId": "703280d1-a3a6-4423-b639-670dd78288d1",
+    "name": "StudyVisitModel",
+    "designerId": "euvjt8t7-1d4f-4fb9-9364-vjmfy8c6yrnw",
     "cn": [
         {
             "type": "Ext.data.field.Field",
@@ -29,189 +29,227 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id"
+                "name": "studyVisitId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "Myid",
-            "designerId": "8c071de2-3d86-4777-ab59-954bf371f3b6"
+            "name": "MystudyVisitId",
+            "designerId": "e96f8d89-803f-419a-a346-f3xeqrkqe8rb"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentDate"
+                "name": "visitId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentDate",
-            "designerId": "07543713-d769-4392-9d21-31988ba43c9e"
+            "name": "MyvisitId",
+            "designerId": "e96f8d89-803f-419a-a346-nhxs58cbmf17"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "patientId"
+                "name": "deviceId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MypatientId",
-            "designerId": "af7f9098-e87a-400c-945e-c5b10277b8f2"
+            "name": "MyInteger",
+            "designerId": "e96f8d89-803f-419a-a346-91j81srlk5m7"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentIsEmergency"
+                "name": "deviceName"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentIsEmergency",
-            "designerId": "ed0f20f8-1a23-4dc7-90b0-953cc528c7d0"
+            "name": "MydeviceName",
+            "designerId": "e96f8d89-803f-419a-a346-sc24xhx2va63"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentIsHospit"
+                "name": "deviceCode"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentIsHospit",
-            "designerId": "5fd47b63-b8ce-4878-8af7-d617ff928a90"
+            "name": "MydeviceCode",
+            "designerId": "e96f8d89-803f-419a-a346-stl8qgwsebjf"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentMedIsRequired"
+                "name": "userId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentMedIsRequired",
-            "designerId": "ecf27455-741b-4f29-bffa-d9431f492eb6"
+            "name": "MyInteger1",
+            "designerId": "e96f8d89-803f-419a-a346-v58hsddhi6ji"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentCanceledByPatient"
+                "name": "userFName"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentCanceledByPatient",
-            "designerId": "e960ad6e-4449-4101-86b9-d582b98230df"
+            "name": "MyuserFName",
+            "designerId": "e96f8d89-803f-419a-a346-b6v3m3gm7ifi"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentCancelationDate"
+                "name": "userLName"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentCancelationDate",
-            "designerId": "f89cb8ca-3355-4562-bc92-6a34a53f6c19"
+            "name": "MyuserLastName",
+            "designerId": "e96f8d89-803f-419a-a346-4xhkjd194ni2"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentDateConfirmation"
+                "name": "studyVisitPacsId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentDateConfirmation",
-            "designerId": "48f91417-20c5-423d-a535-cb591c9006e1"
+            "name": "MystudyVisitPacsId",
+            "designerId": "e96f8d89-803f-419a-a346-b7mwl83wxib8"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentSmsSentDate"
+                "name": "studyVisitExternalId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentSmsSentDate",
-            "designerId": "caa1eb56-af95-4b83-8412-7409755914d6"
+            "name": "MystudyVisitExternalId",
+            "designerId": "e96f8d89-803f-419a-a346-u71jsyy9pta6"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "appointmentDateConfirmationByPatient"
+                "name": "studyId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentDateConfirmationByPatient",
-            "designerId": "e3dfcc71-68eb-483b-96db-4d29bd0549ad"
+            "name": "MyInteger2",
+            "designerId": "e96f8d89-803f-419a-a346-h734l2ldteet"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "patientName"
+                "name": "studyName"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MypatientName",
-            "designerId": "05eefbf2-2871-4779-8251-54a66495b254"
+            "name": "MystudyName",
+            "designerId": "e96f8d89-803f-419a-a346-i11cpb337gud"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyCode"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MystudyCode",
+            "designerId": "e96f8d89-803f-419a-a346-7fj8mxhv75pn"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "",
+                    "0",
+                    ""
+                ],
+                "name": "studyVisitPrice"
+            },
+            "configAlternates": {
+                "defaultValue": "object",
+                "name": "string"
+            },
+            "name": "MyNumber",
+            "designerId": "3789d437-eca8-4123-becd-c5daeb695fc6"
         },
         {
             "type": "Ext.data.field.Field",
@@ -227,7 +265,7 @@
                 "name": "string"
             },
             "name": "MyField27",
-            "designerId": "71eb4300-80fb-4009-8fb5-e8782ea1f9e9"
+            "designerId": "w81epgir-1f65-4972-a6e1-gmt53eksdn1w"
         },
         {
             "type": "Ext.data.field.Field",
@@ -243,7 +281,7 @@
                 "name": "string"
             },
             "name": "MyField28",
-            "designerId": "7dd77160-d8bd-417b-889b-e9d119468ab6"
+            "designerId": "wjl3snsf-1a08-4be0-b287-987bba33atmp"
         },
         {
             "type": "Ext.data.field.Field",
@@ -259,7 +297,7 @@
                 "name": "string"
             },
             "name": "MyField29",
-            "designerId": "9e7359e4-00f3-429c-ba57-b83c345de4a8"
+            "designerId": "jkpn3sbu-2c80-456a-a5c5-uv23rxmjj7q8"
         },
         {
             "type": "Ext.data.field.Field",
@@ -275,7 +313,7 @@
                 "name": "string"
             },
             "name": "MyField30",
-            "designerId": "2216ab84-0b01-4ebe-9bb9-9fc678f1cccb"
+            "designerId": "hrftfg6k-f0d5-4d89-a1bb-nt6ev7gyxyqb"
         },
         {
             "type": "Ext.data.field.Field",
@@ -291,7 +329,7 @@
                 "name": "string"
             },
             "name": "MyField31",
-            "designerId": "832303fa-b451-4258-be1b-5e4e1735fcf3"
+            "designerId": "mb89avg6-ac56-469a-895f-3jeckksqchkn"
         }
     ]
 }

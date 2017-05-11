@@ -11,7 +11,8 @@
     "requires": [],
 	"architect": {
         "compatFrameworks": [
-                "ext51"
+                "ext51",
+                "ext6"
         ],
         "classes": [{
                 "definition": "AdvancedCombobox.Definition.js",

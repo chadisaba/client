@@ -2,6 +2,7 @@ var InitApp={
     siteId:null,
     initIndexedDB:function(_myMask,_appType,_acteVersionId)
     {
+
         // retreive data from server db to update indexedDB
 
         var mainTableObject={
@@ -70,7 +71,8 @@ var InitApp={
         var p21=CommonDirect.getData("GROUP_ROOM",[],'no');
         var p22=CommonDirect.getData("GROUP_ROOM_HAS_ROOM",[],'no');
         var p23=CommonDirect.getData("AVAIL",[],'no');
-        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23])
+        var p24=CommonDirect.getData("ROOM_CAT",[],'no');
+        Promise.all([p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24])
             .then(function(values)
             {
                 // Populating the DOC_HAS_STUDY table
@@ -188,6 +190,9 @@ var InitApp={
 
                         var availArray=values[21];
                         indexDBPromiseArray.push(IndexedDB.populateData('AVAIL',availArray));
+
+                        var roomCatArray=values[22];
+                        indexDBPromiseArray.push(IndexedDB.populateData('ROOM_CAT',roomCatArray));
 
                         Promise.all(indexDBPromiseArray)
                             .then(function(_result)

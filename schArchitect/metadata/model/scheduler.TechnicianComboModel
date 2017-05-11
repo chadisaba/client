@@ -6,29 +6,29 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "PatientNameComboModel"
+        "designer|userClassName": "scheduler.TechnicianComboModel"
     },
     "configAlternates": {
         "designer|userClassName": "string"
     },
-    "name": "MyModelPatientNameComboModel",
-    "designerId": "372f71f0-efaa-43e5-9666-45d956d574fd",
+    "name": "MyModel",
+    "designerId": "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
     "cn": [
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "patientId"
+                "name": "userId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField1",
-            "designerId": "4c32cf23-3876-450b-84d8-26b5d06157fa"
+            "name": "MyInteger5",
+            "designerId": "22e21c99-cd52-4a1d-8701-b5b2c303618d"
         },
         {
             "type": "Ext.data.field.Field",
@@ -38,13 +38,29 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "patientName"
+                "name": "userLName"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField2",
-            "designerId": "ce4d8b23-d8ee-4c86-bc40-282544f581f7"
+            "name": "MyField12",
+            "designerId": "35f2a59c-671c-4fbe-a832-6f32246bb4f6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userFName"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField13",
+            "designerId": "c4e56089-80e0-41b7-ad48-3cc17834c83f"
         }
     ]
 }

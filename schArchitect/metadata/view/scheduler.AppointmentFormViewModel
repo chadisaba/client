@@ -23,7 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "PatientNameComboModel",
+                "model": "scheduler.PatientNameComboModel",
                 "name": "PatientNameComboStore"
             },
             "configAlternates": {

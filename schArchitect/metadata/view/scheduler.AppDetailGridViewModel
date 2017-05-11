@@ -1,0 +1,81 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "trans:{",
+            "studies:translate('studies')",
+            "}",
+            "}"
+        ],
+        "designer|userAlias": "scheduler.appdetailgrid",
+        "designer|userClassName": "scheduler.AppDetailGridViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "vxmp7dnb-8a5d-4154-8917-mw4lsssy8uwb",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.AppDetailModel",
+                "name": "AppDetailStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "StudyVisitStore",
+            "designerId": "ru6decju-c056-4140-9039-jrieewb521e8"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.StudyComboModel",
+                "name": "StudyComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore6",
+            "designerId": "402ca654-8122-4bb3-b758-b4b96b1ae0bb"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.TechnicianComboModel",
+                "name": "TechnicianComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore7",
+            "designerId": "37cb279f-651c-47e4-be81-df85dca9437d"
+        }
+    ]
+}

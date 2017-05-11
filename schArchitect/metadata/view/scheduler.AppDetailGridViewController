@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewModel",
+    "type": "Ext.app.ViewController",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "scheduler.availableresourcegridpanel",
-        "designer|userClassName": "scheduler.AvailableResourceGridPanelViewModel"
+        "designer|userAlias": "scheduler.appdetailgrid",
+        "designer|userClassName": "scheduler.AppDetailGridViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "299cbdbe-6a79-465e-9b53-b32dff068102"
+    "designerId": "hb89iybs-4ace-45f2-b4ee-7qp9n19l67tm"
 }

@@ -190,8 +190,7 @@ Ext.define('menu.MenuPlugin', {
                         Ext.create('Common.ux.window.FullScreenWindow', {
                             items: {
                                 region: 'center',
-                               // xtype: 'scheduler.schedulerpanel'
-                                xtype: 'scheduler.resource-scheduler-panel'
+                                xtype: 'scheduler.schedulerpanel'
                             }
                         }).show();
                     }

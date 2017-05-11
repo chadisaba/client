@@ -36,6 +36,9 @@ function translate(text)
         "add form":"Formulaire d'ajout",
         "edit form":"Formulaire de modification",
         "All":"Tous",
+        "previous":"Précédent",
+        "next":"Suivant",
+        "today":"Aujourd'hui",
 
         "the referring physicians":"Les Prescripteurs",
 
@@ -76,7 +79,7 @@ function translate(text)
         "menu.favorite":"Favoris",
         "menu.sites":"Sites",
         "menu.referring physicians":"Prescripteurs",
-
+        "menu.resources scheduler":"Planification Ressources",
 
         /**** Errors********/
         'error':"Erreur",
@@ -246,7 +249,17 @@ function translate(text)
         "Receive as new patient":"Accueillir comme nouveau patient",
         "Patient recieving from hl7":"Accueil patient dpuis le lien Hprim",
         "Vis. number":"Num. séjour",
-        "Visit date":"Date séjour"
+        "Visit date":"Date séjour",
+
+        /*****Scheduler*****/
+        "Scheduler":"Planning",
+        "Availablity":"Plages",
+        "sch.AM":"Matin",
+        "sch.PM":"Après midi",
+        "Availablity scheduler":"Planning des plages de disponibilités",
+        "menu.zones scheduler":"Plages de disponibilités",
+        "Scheduler appointment":"Planning R.D.V",
+
 
 
         };

@@ -20,7 +20,7 @@ var DateUtil={
         let format=_format||'d/m/Y';
         return Ext.Date.format(_date, format);
     },
-    dateIsoFormat:function(_dateIso,_format)  // convert a date in iso format yyyy-mm-ddThh:mm:ss into a date object
+    dateIsoFormat:function(_dateIso,_format)  // convert a iso date format yyyy-mm-ddThh:mm:ss into  a new date format
     {
         let date=DateUtil.convertIsoToDate(_dateIso);
         let format=_format||'d/m/Y';

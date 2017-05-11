@@ -10,13 +10,20 @@
             "MainController"
         ],
         "models": [
-            "AppointmentModel",
-            "PatientNameComboModel"
+            "scheduler.AppointmentModel",
+            "scheduler.PatientNameComboModel",
+            "scheduler.ReferringPhysicianSearchComboModel",
+            "scheduler.AppointmentRefPhGridModel",
+            "scheduler.StudyComboModel",
+            "scheduler.AppDetailModel",
+            "scheduler.TechnicianComboModel"
         ],
         "name": "MyApp",
         "views": [
             "scheduler.AvailableResourceGridPanel",
-            "scheduler.AppointmentForm"
+            "scheduler.AppointmentForm",
+            "VisitRefPhGrid",
+            "scheduler.AppDetailGrid"
         ]
     },
     "configAlternates": {

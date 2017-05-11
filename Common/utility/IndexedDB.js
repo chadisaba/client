@@ -27,7 +27,7 @@ var IndexedDB={
                         STUDY: "++id,studyId,studyCode,studyName",
                         DOCTOR: "++id,doctorId,userFName,userLName,userInitiales",
                         ROOM_HAS_DEVICE: "++id,roomHasDeviceId,deviceId,deviceName,siteId",
-                        ROOM: "++id,roomId,roomCode,roomName,siteId",
+                        ROOM: "++id,roomId,roomCatId,roomCode,roomName,siteId",
                         REFERRING_PHYSICIAN:"++id,referringPhysicianId,referringPhysicianFName,referringPhysicianLName,referringPhysicianTitle,referringPhysicianSearch",
                         DEVICE_HAS_STUDY: "++id,deviceHasStudyId,deviceId,studyId,siteId,deviceCode,deviceName",
                         SITE: "++id,siteId,siteCode,siteName",
@@ -42,7 +42,8 @@ var IndexedDB={
                         APP_CONFIG:'++id,appConfigId,appConfigSeuilPav,appConfigHorsParcoursSoinsAmount',
                         GROUP_ROOM:'++id,groupRoomId,groupRoomName,groupRoomCode,groupRoomSchedulerZoom',
                         GROUP_ROOM_HAS_ROOM:'++id,groupRoomHasRoomId,groupRoomId,roomId',
-                        AVAIL:'++id,availId,availCode,availName'
+                        AVAIL:'++id,availId,availCode,availName',
+                        ROOM_CAT:'++id,roomCatId,roomCatCode,roomCatName'
                     });
                     me.db.open();
                     resolve();

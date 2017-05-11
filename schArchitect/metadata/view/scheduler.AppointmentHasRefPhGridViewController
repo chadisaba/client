@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "scheduler.availableresourcegridpanel",
-        "designer|userClassName": "scheduler.AvailableResourceGridPanelViewController"
+        "designer|userAlias": "scheduler.appointmenthasrefphgrid",
+        "designer|userClassName": "scheduler.AppointmentHasRefPhGridViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "58c1856b-0458-469d-a894-e7ac5eeef26f"
+    "designerId": "bb7f4247-3adb-44fd-917b-031d240ad964"
 }

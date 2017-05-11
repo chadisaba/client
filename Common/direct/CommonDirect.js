@@ -5,7 +5,7 @@ var CommonDirect={
         {
          if(_filter.value instanceof Date)
              if(_filter.isTime)
-                _filter.value=Ext.Date.format(_filter.value,'Y-m-d H:i:s');
+                 _filter.value.toISOString();
             else
                  _filter.value=Ext.Date.format(_filter.value,'Y-m-d');
         });

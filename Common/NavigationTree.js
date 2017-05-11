@@ -64,6 +64,21 @@ Ext.define('MyApp.store.NavigationTree', {
                         routeId: 'settingstabpanel', // routeId defaults to viewType
                         leaf: true,
                         href:'../settings_pub/#settingstabpanel'
+                    }, {
+                        text: translate('menu.resources scheduler'),
+                        iconCls: 'x-fa fa-calendar',
+
+                        viewType: 'scheduler.resource-scheduler-panel',
+                        routeId: 'resource-scheduler-panel', // routeId defaults to viewType
+                        leaf: true
+                    },
+                    {
+                        text: translate('menu.zones scheduler'),
+                        iconCls: 'fa fa-calendar-check-o',
+
+                        viewType: 'scheduler.availschedulerpanel',
+                        routeId: 'availschedulerpanel', // routeId defaults to viewType
+                        leaf: true
                     },
                     {
                         text: 'Exercices fiscal',
