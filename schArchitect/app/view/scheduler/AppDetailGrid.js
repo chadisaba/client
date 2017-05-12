@@ -20,10 +20,10 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
     requires: [
         'MyApp.view.scheduler.AppDetailGridViewModel',
         'MyApp.view.scheduler.AppDetailGridViewController',
-        'Ext.grid.column.Column',
         'Ext.form.field.ComboBox',
         'Ext.view.BoundList',
         'Ext.XTemplate',
+        'Ext.grid.column.Date',
         'Ext.form.field.Number',
         'Ext.view.Table',
         'Ext.selection.RowModel'
@@ -34,18 +34,19 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
         type: 'scheduler.appdetailgrid'
     },
     reference: 'studyVisitGridRef',
-    itemId: 'studyVisitGridItemId',
+    itemId: 'appDetailGridItemId',
     resizable: false,
     forceFit: true,
 
     bind: {
         title: '{trans.studies}',
-        store: '{StudyVisitStore}'
+        store: '{AppDetailStore}'
     },
     columns: [
         {
             xtype: 'gridcolumn',
             flex: 1,
+            minWidth: 100,
             dataIndex: 'studyCode',
             text: 'study',
             editor: {
@@ -78,6 +79,24 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
+            minWidth: 70,
+            dataIndex: 'roomCode',
+            text: 'room'
+        },
+        {
+            xtype: 'datecolumn',
+            minWidth: 50,
+            width: 50,
+            dataIndex: 'appDetailStartTime',
+            text: 'start',
+            format: 'H:i'
+        },
+        {
+            xtype: 'gridcolumn',
+            minWidth: 60,
+            width: 60,
+            dataIndex: 'appDetailEndTime',
             text: 'duration',
             editor: {
                 xtype: 'numberfield',
@@ -89,7 +108,7 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
         {
             xtype: 'gridcolumn',
             hidden: true,
-            dataIndex: 'userId',
+            dataIndex: 'doctorId',
             text: '',
             editor: {
                 xtype: 'textfield',
@@ -98,7 +117,9 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'userLName',
+            minWidth: 80,
+            width: 100,
+            dataIndex: 'technicianId',
             text: 'technician',
             editor: {
                 xtype: 'combobox',

@@ -9,13 +9,13 @@
         "designer|userAlias": "scheduler.appdetailgrid",
         "designer|userClassName": "scheduler.AppDetailGrid",
         "forceFit": true,
-        "itemId": "studyVisitGridItemId",
+        "itemId": "appDetailGridItemId",
         "reference": "studyVisitGridRef",
         "resizable": [
             "false"
         ],
         "store": [
-            "{StudyVisitStore}"
+            "{AppDetailStore}"
         ],
         "title": [
             "{trans.studies}"
@@ -46,12 +46,14 @@
             "userConfig": {
                 "dataIndex": "studyCode",
                 "flex": 1,
+                "minWidth": 100,
                 "text": "study"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "flex": "number",
-                "text": "string"
+                "text": "string",
+                "minWidth": "number"
             },
             "name": "MystudyNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-8fnblkppdmre",
@@ -198,10 +200,62 @@
             },
             "codeClass": null,
             "userConfig": {
-                "text": "duration"
+                "dataIndex": "roomCode",
+                "flex": 1,
+                "minWidth": 70,
+                "text": "room"
             },
             "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
                 "text": "string"
+            },
+            "name": "MyColumn1",
+            "designerId": "64ba56d7-47b2-4a0d-93d3-4a714c783050"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "appDetailStartTime",
+                "format": "H:i",
+                "minWidth": 50,
+                "text": "start",
+                "width": 50
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "format": "string",
+                "minWidth": "number",
+                "width": "auto"
+            },
+            "name": "MyDateColumn",
+            "designerId": "6c7b74ab-3fbb-4ec0-a9ed-60e01995b737"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "appDetailEndTime",
+                "minWidth": 60,
+                "text": "duration",
+                "width": 60
+            },
+            "configAlternates": {
+                "text": "string",
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MyColumn",
             "designerId": "2a08cbee-e605-451c-88e2-9f2e44e161d7",
@@ -236,7 +290,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "userId",
+                "dataIndex": "doctorId",
                 "hidden": true,
                 "text": ""
             },
@@ -274,12 +328,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "userLName",
-                "text": "technician"
+                "dataIndex": "technicianId",
+                "minWidth": 80,
+                "text": "technician",
+                "width": 100
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "minWidth": "number",
+                "width": "auto"
             },
             "name": "MyuserLastNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-y695f42wmlb5",

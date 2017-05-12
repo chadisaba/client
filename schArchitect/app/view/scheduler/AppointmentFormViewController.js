@@ -41,6 +41,10 @@ Ext.define('MyApp.view.scheduler.AppointmentFormViewController', {
 
     },
 
+    onAppDetailGridItemIdSelectStudyEvent: function(gridpanel, studyId) {
+
+    },
+
     onPatientNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },

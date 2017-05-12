@@ -58,7 +58,14 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                     title: 'the studies',
                     items: [
                         {
-                            xtype: 'scheduler.appdetailgrid'
+                            xtype: 'scheduler.appdetailgrid',
+                            externalEditingPlugin: {
+                                pluginId: 'gridediting',
+                                onlyADM: true
+                            },
+                            listeners: {
+                                selectStudyEvent: 'onAppDetailGridItemIdSelectStudyEvent'
+                            }
                         }
                     ]
                 },
@@ -115,7 +122,6 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                             tableName: 'PATIENT',
                             proxyUrl: 'Server.GridFilter.getResultData',
                             enableSearchBtn: true,
-                            anchor: '100%',
                             advancedListConfig: {
                                 emptyText: 'Aucun résultat trouvé',
                                 // Custom rendering template for each item
@@ -129,6 +135,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                                                         
                                                                                         }
                             },
+                            anchor: '100%',
                             itemId: 'patientNameComboBoxEditorItemId',
                             fieldLabel: 'patient',
                             name: 'patientName',
@@ -173,7 +180,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                             queryMode: 'local',
                             valueField: 'patientId',
                             bind: {
-                                store: '{PatientNameComboStore}'
+                                store: '{DoctorNameComboStore}'
                             }
                         }
                     ]

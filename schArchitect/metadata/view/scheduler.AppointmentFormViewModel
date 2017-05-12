@@ -32,6 +32,24 @@
             },
             "name": "PatientNameComboStore",
             "designerId": "fa9b1af3-2c5e-4c7f-a2bb-4dfb4895d0b2"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "DoctorComboModel",
+                "name": "DoctorNameComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "PatientNameComboStore1",
+            "designerId": "ed44484a-2c28-41a6-ab39-a177af538aa9"
         }
     ]
 }

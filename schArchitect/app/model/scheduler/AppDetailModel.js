@@ -17,7 +17,8 @@ Ext.define('MyApp.model.scheduler.AppDetailModel', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Number'
+        'Ext.data.field.Integer',
+        'Ext.data.field.Date'
     ],
 
     validators: [
@@ -29,40 +30,29 @@ Ext.define('MyApp.model.scheduler.AppDetailModel', {
 
     fields: [
         {
-            name: 'studyVisitId'
+            name: 'appDetailId'
         },
         {
-            name: 'visitId'
-        },
-        {
-            type: 'int',
-            name: 'deviceId'
-        },
-        {
-            name: 'deviceName'
-        },
-        {
-            name: 'deviceCode'
+            name: 'appointmentId'
         },
         {
             type: 'int',
-            name: 'userId'
+            name: 'roomId'
         },
         {
-            name: 'userFName'
-        },
-        {
-            name: 'userLName'
-        },
-        {
-            name: 'studyVisitPacsId'
-        },
-        {
-            name: 'studyVisitExternalId'
+            name: 'roomCode'
         },
         {
             type: 'int',
             name: 'studyId'
+        },
+        {
+            type: 'int',
+            name: 'doctorId'
+        },
+        {
+            type: 'int',
+            name: 'technicianId'
         },
         {
             name: 'studyName'
@@ -71,9 +61,12 @@ Ext.define('MyApp.model.scheduler.AppDetailModel', {
             name: 'studyCode'
         },
         {
-            type: 'float',
-            defaultValue: 0,
-            name: 'studyVisitPrice'
+            type: 'date',
+            name: 'appDetailStartTime'
+        },
+        {
+            type: 'date',
+            name: 'appDetailEndTime'
         },
         {
             name: 'toDelete'

@@ -29,7 +29,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "studyVisitId"
+                "name": "appDetailId"
             },
             "configAlternates": {
                 "name": "string"
@@ -45,7 +45,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "visitId"
+                "name": "appointmentId"
             },
             "configAlternates": {
                 "name": "string"
@@ -61,7 +61,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "deviceId"
+                "name": "roomId"
             },
             "configAlternates": {
                 "name": "string"
@@ -77,109 +77,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "deviceName"
+                "name": "roomCode"
             },
             "configAlternates": {
                 "name": "string"
             },
             "name": "MydeviceName",
             "designerId": "e96f8d89-803f-419a-a346-sc24xhx2va63"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "deviceCode"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MydeviceCode",
-            "designerId": "e96f8d89-803f-419a-a346-stl8qgwsebjf"
-        },
-        {
-            "type": "Ext.data.field.Integer",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "userId"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyInteger1",
-            "designerId": "e96f8d89-803f-419a-a346-v58hsddhi6ji"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "userFName"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyuserFName",
-            "designerId": "e96f8d89-803f-419a-a346-b6v3m3gm7ifi"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "userLName"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyuserLastName",
-            "designerId": "e96f8d89-803f-419a-a346-4xhkjd194ni2"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "studyVisitPacsId"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MystudyVisitPacsId",
-            "designerId": "e96f8d89-803f-419a-a346-b7mwl83wxib8"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "studyVisitExternalId"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MystudyVisitExternalId",
-            "designerId": "e96f8d89-803f-419a-a346-u71jsyy9pta6"
         },
         {
             "type": "Ext.data.field.Integer",
@@ -196,6 +100,38 @@
             },
             "name": "MyInteger2",
             "designerId": "e96f8d89-803f-419a-a346-h734l2ldteet"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger1",
+            "designerId": "e96f8d89-803f-419a-a346-v58hsddhi6ji"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "technicianId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger3",
+            "designerId": "8f615e8c-d7e7-478c-aad1-444f18fe9197"
         },
         {
             "type": "Ext.data.field.Field",
@@ -230,26 +166,36 @@
             "designerId": "e96f8d89-803f-419a-a346-7fj8mxhv75pn"
         },
         {
-            "type": "Ext.data.field.Number",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "defaultValue": [
-                    "",
-                    "0",
-                    ""
-                ],
-                "name": "studyVisitPrice"
+                "name": "appDetailStartTime"
             },
             "configAlternates": {
-                "defaultValue": "object",
                 "name": "string"
             },
-            "name": "MyNumber",
-            "designerId": "3789d437-eca8-4123-becd-c5daeb695fc6"
+            "name": "MyDate1",
+            "designerId": "505337bc-2c44-4b61-b1db-ccb5ec2c8fbc"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "appDetailEndTime"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyDate2",
+            "designerId": "d7e616b1-e83d-4239-ae30-c848ce848f13"
         },
         {
             "type": "Ext.data.field.Field",
