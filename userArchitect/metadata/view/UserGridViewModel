@@ -9,6 +9,10 @@
         "designer|userAlias": "usergrid",
         "designer|userClassName": "UserGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "xbn4eshu-8a5d-4154-8917-u9v5cbi5iicn",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "UserModel",
                 "name": "UserStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "UserStore",
             "designerId": "rtnkqprw-c056-4140-9039-hs4p1fwhlyl9"
@@ -35,6 +43,10 @@
             "userConfig": {
                 "model": "CityModel",
                 "name": "CityComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore",
             "designerId": "fa9dc01d-c2b8-4eb2-84c3-291ecdafff25"

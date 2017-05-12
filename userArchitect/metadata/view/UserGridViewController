@@ -9,5 +9,9 @@
         "designer|userAlias": "usergrid",
         "designer|userClassName": "UserGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "rc79fthj-4ace-45f2-b4ee-479wnghcsd31"
 }

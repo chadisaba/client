@@ -11,6 +11,12 @@
         "designer|userClassName": "MyViewport1",
         "layout": "border"
     },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string"
+    },
     "name": "MyViewport1",
     "designerId": "4702aeb1-429b-45af-b394-40a06bf904db",
     "viewControllerInstanceId": "fae57581-31ab-468c-9676-c119bb73d702",
@@ -32,6 +38,11 @@
                     "this.plugins = [\"smartmenu\"];"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processMyViewport1",
             "designerId": "c6196def-8916-40d8-86ba-89c6e89a4004"
         },
@@ -49,6 +60,14 @@
                 "layout|split": true,
                 "reference": "display",
                 "title": null
+            },
+            "configAlternates": {
+                "bodyBorder": "boolean",
+                "layout": "string",
+                "layout|region": "string",
+                "layout|split": "boolean",
+                "reference": "string",
+                "title": "string"
             },
             "name": "MyPanel3",
             "designerId": "aa6d4549-6ab8-4a35-a31a-d898e2487ff0"

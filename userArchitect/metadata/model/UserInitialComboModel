@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "UserInitialComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelUserInitialComboModel",
     "designerId": "040092bf-b6f4-441b-b581-9qqtijsqvrlw",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "userId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-gi69ivgk8c7x"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userInitiales"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-b2wa9ar2d89k"

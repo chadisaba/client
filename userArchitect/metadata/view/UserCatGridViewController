@@ -9,5 +9,9 @@
         "designer|userAlias": "usercatgrid",
         "designer|userClassName": "UserCatGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "bdcl8n1e-4ace-45f2-b4ee-ehhdfsnmjkrx"
 }

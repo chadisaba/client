@@ -9,5 +9,9 @@
         "designer|userAlias": "doctorhasexamensviewassociatepanel",
         "designer|userClassName": "DoctorHasExamensViewAssociatePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "87dde4c1-1493-4d79-82fd-b3fe7f551540"
 }

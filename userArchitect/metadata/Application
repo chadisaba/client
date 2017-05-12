@@ -10,26 +10,31 @@
             "MainController"
         ],
         "models": [
-              "UserModel",
-                    "CityModel",
-                    "DoctorModel",
-                    "UserCatModel",
-                    "UserInitialComboModel",
-                    "DoctorHasExamensViewAssociateComboModel",
-                    "DoctorHasExamensViewTreeModel",
-
-                    "CityNaComboModel"
+            "UserModel",
+            "CityModel",
+            "DoctorModel",
+            "UserCatModel",
+            "UserInitialComboModel",
+            "DoctorHasExamensViewAssociateComboModel",
+            "DoctorHasExamensViewTreeModel",
+            "CityNaComboModel"
         ],
         "name": "MyApp",
         "views": [
-          "UserGrid",
-                  "UserTabPanel",
-                  "UserCatGrid",
-                  "DoctorGrid",
-                  "DoctorHasExamensViewAssociatePanel",
-                  "DoctorHasExamensViewAvailableTreePanel",
-                  "DoctorHasExamensViewSelectedTreePanel"
+            "UserGrid",
+            "UserTabPanel",
+            "UserCatGrid",
+            "DoctorGrid",
+            "DoctorHasExamensViewAssociatePanel",
+            "DoctorHasExamensViewAvailableTreePanel",
+            "DoctorHasExamensViewSelectedTreePanel"
         ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

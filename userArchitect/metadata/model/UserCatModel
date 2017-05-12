@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "UserCatModel",
     "designerId": "4le1ndmt-1d4f-4fb9-9364-k54pyp5fv6qx",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userCatId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger1",
             "designerId": "e96f8d89-803f-419a-a346-23axxq7cvnhd"
@@ -40,8 +47,27 @@
             "userConfig": {
                 "name": "userCatName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString3",
             "designerId": "e96f8d89-803f-419a-a346-2u3c83j3dmce"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userCatSchColor"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString12",
+            "designerId": "e8963d53-c94b-4dee-b145-66e9ca6dc4b1"
         },
         {
             "type": "Ext.data.field.Boolean",
@@ -52,6 +78,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userCatReadOnly"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean5",
             "designerId": "e96f8d89-803f-419a-a346-i4n3p7nrabal"
@@ -66,6 +95,9 @@
             "userConfig": {
                 "name": "active"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean6",
             "designerId": "e96f8d89-803f-419a-a346-9iqt6p7qjjkp"
         },
@@ -78,6 +110,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "yv5v8fjb-1f65-4972-a6e1-a1ecr6euej67"
@@ -92,6 +127,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "fr7mirl8-1a08-4be0-b287-v1wml33gwfap"
         },
@@ -104,6 +142,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "buru1g2g-2c80-456a-a5c5-f7mf4udbh18r"
@@ -118,6 +159,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "j3m5h9br-f0d5-4d89-a1bb-gicuqsuyjivm"
         },
@@ -130,6 +174,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "1uek4lyt-ac56-469a-895f-may7m23pekgn"

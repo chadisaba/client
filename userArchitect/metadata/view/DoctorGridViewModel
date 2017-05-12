@@ -9,6 +9,10 @@
         "designer|userAlias": "doctorgrid",
         "designer|userClassName": "DoctorGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "kh2qpp9a-8a5d-4154-8917-u6jij2qtuder",
     "cn": [
         {
@@ -22,10 +26,14 @@
                 "model": "DoctorModel",
                 "name": "DoctorStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "DoctorStore",
             "designerId": "6w81fbqi-c056-4140-9039-kk74dihnweve"
-        }
-        ,{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -35,6 +43,10 @@
             "userConfig": {
                 "model": "UserInitialComboModel",
                 "name": "UserInitialComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "UserInitialComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-uabh8cqjqp17"

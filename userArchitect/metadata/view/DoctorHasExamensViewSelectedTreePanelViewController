@@ -9,5 +9,9 @@
         "designer|userAlias": "doctorhasexamensviewselectedtreepanel",
         "designer|userClassName": "DoctorHasExamensViewSelectedTreePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "baf58a92-8a7e-4810-943c-c3a9287fd228"
 }

@@ -9,6 +9,10 @@
         "designer|userAlias": "usercatgrid",
         "designer|userClassName": "UserCatGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "t8b73ccq-8a5d-4154-8917-p51vh5xk6t8v",
     "cn": [
         {
@@ -22,9 +26,12 @@
                 "model": "UserCatModel",
                 "name": "UserCatStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "UserCatStore",
             "designerId": "5rlv24uq-c056-4140-9039-diqudrjedguj"
         }
-        
     ]
 }

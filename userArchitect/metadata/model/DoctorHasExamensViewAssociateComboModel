@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "DoctorHasExamensViewAssociateComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "DoctorHasExamensViewAssociateComboModel",
     "designerId": "06450da057ae-159e-428a-b6e8-1767e8438ff0",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField4",
             "designerId": "06450da057ae-572b-4376-bd2b-1767e8438ff0"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "userLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField5",
             "designerId": "06450da057ae-6de0-4b46-b8cd-1767e8438ff0"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userFName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField3",
             "designerId": "315643fa-a2ed-4838-a552-cbffa2769143"

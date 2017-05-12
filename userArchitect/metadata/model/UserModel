@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "UserModel",
     "designerId": "g4anqjce-1d4f-4fb9-9364-34117gmwg69s",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Myid",
             "designerId": "e96f8d89-803f-419a-a346-1l8uwcivg65x"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "userFName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString",
             "designerId": "e96f8d89-803f-419a-a346-4pclleuv3a7w"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userLName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString1",
             "designerId": "e96f8d89-803f-419a-a346-eccc3dylgxdm"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "userLogin"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString2",
             "designerId": "e96f8d89-803f-419a-a346-fu7c6grjnep6"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userPass"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString3",
             "designerId": "e96f8d89-803f-419a-a346-dmlf2pdtgfxt"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "userInitiales"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString4",
             "designerId": "e96f8d89-803f-419a-a346-495cg62uapus"
         },
@@ -105,8 +127,27 @@
             "userConfig": {
                 "name": "userZipCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString5",
             "designerId": "e96f8d89-803f-419a-a346-md1s37awfcju"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userSchResourceColor"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField6",
+            "designerId": "d1ab36cc-9348-48d4-8996-9f0712f2695e"
         },
         {
             "type": "Ext.data.field.Integer",
@@ -117,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger",
             "designerId": "e96f8d89-803f-419a-a346-b2kyehepqfa4"
@@ -131,6 +175,9 @@
             "userConfig": {
                 "name": "userAddress"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString6",
             "designerId": "e96f8d89-803f-419a-a346-x8p51t1jlrv2"
         },
@@ -143,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userPhone"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString7",
             "designerId": "e96f8d89-803f-419a-a346-eqr2i5qukqng"
@@ -157,6 +207,9 @@
             "userConfig": {
                 "name": "userFax"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString8",
             "designerId": "e96f8d89-803f-419a-a346-nkgahnfx5kd7"
         },
@@ -169,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "active"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean",
             "designerId": "e96f8d89-803f-419a-a346-luu68s3mbuh7"
@@ -183,6 +239,9 @@
             "userConfig": {
                 "name": "toDelete"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField27",
             "designerId": "6pqtjel7-1f65-4972-a6e1-v2ebweklkb8x"
         },
@@ -195,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField28",
             "designerId": "l71bdged-1a08-4be0-b287-pkl5649e4emj"
@@ -209,6 +271,9 @@
             "userConfig": {
                 "name": "modified"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField29",
             "designerId": "fwxaaajw-2c80-456a-a5c5-wilm73vs2pwl"
         },
@@ -221,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "notValid"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField30",
             "designerId": "k3pakrta-f0d5-4d89-a1bb-447n13riam6k"
@@ -235,6 +303,9 @@
             "userConfig": {
                 "name": "addedAndValidated"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField31",
             "designerId": "k765jkar-ac56-469a-895f-lgcuxun3f8d8"
         },
@@ -247,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString11",
             "designerId": "853752c7-d3ae-458e-9a9f-062111410d18"

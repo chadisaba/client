@@ -11,6 +11,9 @@
         "forceFit": false,
         "itemId": "userGridId",
         "reference": "userGridRef",
+        "requires": [
+            "Ext.ux.colorpick.Field"
+        ],
         "resizable": [
             "false"
         ],
@@ -19,10 +22,18 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "requires": "typedarray",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
     "viewControllerInstanceId": "rc79fthj-4ace-45f2-b4ee-479wnghcsd31",
     "viewModelInstanceId": "xbn4eshu-8a5d-4154-8917-u9v5cbi5iicn",
@@ -38,6 +49,10 @@
                 "dataIndex": "userFName",
                 "text": "Prénom"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserFNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-cq5yuqx5nllw",
             "cn": [
@@ -51,6 +66,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "userFNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyuserFNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-8w6rhtpd3i74"
@@ -68,6 +87,10 @@
                 "dataIndex": "userLName",
                 "text": "Nom"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserLNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-wp8fvb8q9f2l",
             "cn": [
@@ -81,6 +104,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "userLNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyuserLNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-23uja5pf4696"
@@ -98,6 +125,10 @@
                 "dataIndex": "userLogin",
                 "text": "Login"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserLoginCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-mpi3wk5rj7ju",
             "cn": [
@@ -111,6 +142,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "userLoginTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyuserLoginTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-rbeb8cant2xi"
@@ -128,6 +163,10 @@
                 "dataIndex": "userPass",
                 "text": "Mot de passe"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserPassCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-fiqjwj5x5jl8",
             "cn": [
@@ -141,6 +180,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "userPassTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyuserPassTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-7c1884bc9fjj"
@@ -159,6 +202,11 @@
                 "text": "Initiales",
                 "width": 70
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyuserInitialesCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-4qxw7xlv84cg",
             "cn": [
@@ -172,8 +220,63 @@
                     "userConfig": {
                         "itemId": "userInitialesTextFieldItemId"
                     },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
                     "name": "MyuserInitialesTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-gx4wvhrk9rej"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "userSchResourceColor",
+                "itemId": "rdvColorColItemId",
+                "text": "Couleur R.D.V"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "itemId": "string",
+                "text": "string"
+            },
+            "name": "MyColumn1",
+            "designerId": "410d207c-9865-48a5-89df-fd9a1a040995",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "rdvColorRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "121a69a7-96f5-49be-af17-c9193cebba07"
                 }
             ]
         },
@@ -190,6 +293,12 @@
                 "text": "C.P",
                 "width": 70
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "itemId": "string",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyuserZipCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-cvrl9rv26493",
             "cn": [
@@ -203,6 +312,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "userZipCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyuserZipCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-vkkhlv8jaf2p",
@@ -218,6 +331,11 @@
                                 "fn": "onUserZipCodeTextFieldItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onUserZipCodeTextFieldItemIdChange",
                             "designerId": "9d776877-1061-4103-9a50-50b47c38b9fd"
@@ -237,6 +355,11 @@
                 "dataIndex": "cityName",
                 "text": "Ville",
                 "width": 150
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MysiteCityIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-j66pj7a8ybr3",
@@ -260,10 +383,17 @@
                         "valueField": "cityName",
                         "width": null
                     },
-                    "name": "MyComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
+                    "name": "MyComboBox",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-sl972c6pekcr",
                     "cn": [
                         {
@@ -277,6 +407,11 @@
                                 "fn": "onUserCityComboBoxItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onUserCityComboBoxItemIdChange",
                             "designerId": "542a8393-741d-49e2-9d7b-d97461c677b5"
@@ -299,6 +434,13 @@
                 "text": "Adresse",
                 "width": null
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyuserAddressCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ucdkebt6dcf8",
             "cn": [
@@ -312,6 +454,10 @@
                     "userConfig": {
                         "itemId": "userAddressTextFieldItemId",
                         "width": null
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "width": "auto"
                     },
                     "name": "MyTextArea",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-3p8rr9celcfy"
@@ -329,6 +475,10 @@
                 "dataIndex": "userPhone",
                 "text": "Tél"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserPhoneCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-3cnh23yd1v35",
             "cn": [
@@ -341,6 +491,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "userPhoneTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyuserPhoneTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-hlglpgghb11b"
@@ -358,6 +511,10 @@
                 "dataIndex": "userFax",
                 "text": "Fax"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserFaxCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-brl6dpr1wn4k",
             "cn": [
@@ -370,6 +527,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "userFaxTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyuserFaxTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-3e5hwhvmrp9j"
@@ -387,6 +547,11 @@
                 "dataIndex": "active",
                 "text": "Active",
                 "width": 40
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-jljl9ni6ngdb",
@@ -423,6 +588,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-ldmwfp6txgxw"
                 }
@@ -457,6 +627,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "caiw2sra-f393-483a-8425-pvtmwej5h398"
         },
@@ -472,6 +648,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "6ytavxsj-ccc7-465c-8662-g1q7c2v2rj4j"
@@ -495,6 +677,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processUserGrid",
             "designerId": "b8fx2l15-2054-459b-a4aa-nc14gk62p8ii"
         },
@@ -512,6 +699,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdChHist",
             "designerId": "18si38hu-1d4f-4fb9-9364-wnak68iewae1"
@@ -532,6 +725,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdAfterRender",
             "designerId": "1u1d1hvx-1f65-4972-a6e1-4e58pg1ww4vc"
         },
@@ -551,6 +750,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdInEdit",
             "designerId": "4ebtcedq-1a08-4be0-b287-15bptt1sfhn6"
         },
@@ -569,6 +774,12 @@
                 "fn": "onUserGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdResetEdit",
             "designerId": "3tcbf838-2c80-456a-a5c5-9ywigjxutkxr"
@@ -590,6 +801,12 @@
                 "fn": "onUserGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdSaveEdit",
             "designerId": "vd6s1x5v-f0d5-4d89-a1bb-ua4udndqcm6d"
@@ -613,6 +830,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdAddItem",
             "designerId": "53qj3gil-ffc4-4ede-a9db-pl68ynh966sa"
         },
@@ -627,6 +851,11 @@
                 "fn": "onUserGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdDeleteItem",
             "designerId": "737i7hq4-ac56-469a-895f-ajkxeyqgbvnh"
@@ -645,6 +874,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdModifyItem",
             "designerId": "f4fyndq2-6b6f-4377-998f-esb8ar1my1wn"
@@ -668,6 +903,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdQuitEdit",
             "designerId": "lyskvxma-746f-4da4-9f4d-8pfhf7vknupx"
         },
@@ -680,6 +922,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-29dpdpvn3jwg"
@@ -700,6 +945,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdBeforeEdit",
             "designerId": "ej7vebv1-4019-4a61-8c79-8buhiqu7ux51"
         },
@@ -719,6 +970,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdCanceledit",
             "designerId": "td5fmdtk-6686-46dd-bfe7-vru974rl83iw"
         },
@@ -733,6 +990,11 @@
                 "fn": "onUserGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdContainerClick",
             "designerId": "9mx9dham-3079-420b-87bf-wcgm2j8ecm86"
@@ -753,6 +1015,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdEdit",
             "designerId": "xneid7qd-47bf-4b29-bb1d-fnewejy4kdg4"
         },
@@ -767,6 +1035,11 @@
                 "fn": "onUserGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserGridIdBeforeCellClick",
             "designerId": "$6vi17f9v-6a9c-488e-8122-4esmxyt8e3us"
@@ -787,6 +1060,12 @@
                 "name": "validateedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserGridIdValidateedit",
             "designerId": "wx38srl2-b2ec-4782-a56f-uhqedcbxvhyy"
         },
@@ -803,6 +1082,12 @@
                 "itemId": null,
                 "text": "city Id"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "itemId": "string",
+                "text": "string"
+            },
             "name": "MyColumn",
             "designerId": "26e1ebbf-52ed-4e0d-9c7c-08bf659e4c11",
             "cn": [
@@ -815,6 +1100,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "cityIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextField",
                     "designerId": "5fff09ad-0475-4f44-8da8-46d19d9e78a9"

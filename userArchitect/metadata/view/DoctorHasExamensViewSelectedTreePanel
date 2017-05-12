@@ -24,10 +24,19 @@
         "title": "Examens associés au médecin sélectionné",
         "width": 400
     },
-    "name": "MyTreePanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "itemId": "string",
+        "root": "object",
+        "rootVisible": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyTreePanel",
     "designerId": "05cb0f40-8271-4d2e-94fe-111d12193da6",
     "viewControllerInstanceId": "baf58a92-8a7e-4810-943c-c3a9287fd228",
     "viewModelInstanceId": "65bd0acb-a66f-4a8a-abfe-a98f05124899",
@@ -54,6 +63,11 @@
                 "flex": 1,
                 "text": "Examens par type"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MyTreeColumn1",
             "designerId": "1e603175-03ec-4a1d-a866-1767e8438ff0"
         },
@@ -68,6 +82,10 @@
                 "dataIndex": "duration",
                 "text": "Durée"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MydurationCol",
             "designerId": "0d69a601-a557-4e62-aa46-9810ff3ce473",
             "cn": [
@@ -80,6 +98,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "durationTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MydurationTextField",
                     "designerId": "79082ed3-27a6-486f-b399-9a98c2425d29"
@@ -96,6 +117,9 @@
             "userConfig": {
                 "mode": "MULTI"
             },
+            "configAlternates": {
+                "mode": "string"
+            },
             "name": "MyRowSelectionModel1",
             "designerId": "f3793d93-66b5-4721-9ad3-1767e8438ff0"
         },
@@ -108,6 +132,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar1",
             "designerId": "93b32834-a5c3-4f4a-a627-1767e8438ff0",
@@ -124,6 +151,11 @@
                         "itemId": "filterField",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyTextField1",
                     "designerId": "8145600e-ffce-432f-9f4b-1767e8438ff0",
                     "cn": [
@@ -137,6 +169,10 @@
                             "userConfig": {
                                 "cls": "x-form-clear-trigger",
                                 "name": "mytrigger1"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string"
                             },
                             "name": "MyTrigger1",
                             "designerId": "a42e5b5f-de45-4ac3-a516-1767e8438ff0",
@@ -159,6 +195,11 @@
                                             "field.setValue('');"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "handler",
                                     "designerId": "b9bc8687-49f5-4311-a10a-1767e8438ff0"
                                 }
@@ -179,6 +220,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onFilterFieldChange",
                             "designerId": "c9d966e5-13fe-4ee0-86cc-1767e8438ff0"
@@ -202,6 +249,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSelectedTreePanelSelect",
             "designerId": "fd1026bf-c095-48d4-990b-1767e8438ff0"
         },
@@ -220,6 +273,11 @@
                 "implHandler": [
                     "Utility.grid.addInfoCol(this);"
                 ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "processDoctorHasExamensViewSelectedTreePanel",
             "designerId": "b814da48-215d-4860-8e29-1767e8438ff0"
@@ -250,6 +308,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSelectedTreePanelEdit",
             "designerId": "ffe04aac-05c2-4efd-b1f2-ede22a323d86"
         },
@@ -268,6 +332,12 @@
                 "fn": "onSelectedTreePanelBeforeEdit",
                 "name": "beforeedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSelectedTreePanelBeforeEdit",
             "designerId": "c4a89395-9f27-4518-83c9-bf0805ce75ad"

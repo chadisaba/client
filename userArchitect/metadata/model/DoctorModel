@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "DoctorModel",
     "designerId": "6vv7glfl-1d4f-4fb9-9364-eqamw9wnhs6s",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Myid",
             "designerId": "e96f8d89-803f-419a-a346-bcedxj1c9ktq"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "userId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger",
             "designerId": "e96f8d89-803f-419a-a346-9tmgtc3wrlb7"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userInitiales"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString1",
             "designerId": "e96f8d89-803f-419a-a346-t7cqes74cw1k"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "doctorIsSubstitute"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean1",
             "designerId": "e96f8d89-803f-419a-a346-v5ujsr6c8qea"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctoHasOptionCoordination"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean2",
             "designerId": "e96f8d89-803f-419a-a346-ehh9fhmcfkgn"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "doctorSenologUID"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString2",
             "designerId": "e96f8d89-803f-419a-a346-54pmcitrqvsr"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctorHasSector2"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean3",
             "designerId": "e96f8d89-803f-419a-a346-upvbrk6n9m6b"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "active"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyBoolean4",
             "designerId": "e96f8d89-803f-419a-a346-rr2slelxpw28"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "ds36dnpr-1f65-4972-a6e1-evvad7pklqla"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "gam9ehv1-1a08-4be0-b287-6wbwutkd3nvv"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "awqh91jp-2c80-456a-a5c5-85y5r65ng7wh"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "juc8kyk1-f0d5-4d89-a1bb-cyins8ygwtqm"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "pfqiletu-ac56-469a-895f-n9si3al251vf"

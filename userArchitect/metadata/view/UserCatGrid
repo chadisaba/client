@@ -11,6 +11,9 @@
         "forceFit": true,
         "itemId": "userCatGridId",
         "reference": "userCatGridRef",
+        "requires": [
+            "Ext.ux.colorpick.Field"
+        ],
         "resizable": [
             "false"
         ],
@@ -19,10 +22,18 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "requires": "typedarray",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "i4x5yc8q-8c41-4643-a8f8-x84rrvapxjja",
     "viewControllerInstanceId": "bdcl8n1e-4ace-45f2-b4ee-ehhdfsnmjkrx",
     "viewModelInstanceId": "t8b73ccq-8a5d-4154-8917-p51vh5xk6t8v",
@@ -38,6 +49,10 @@
                 "dataIndex": "userCatName",
                 "text": "Nom"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyuserCatNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-m6kuybhrxtey",
             "cn": [
@@ -52,6 +67,10 @@
                         "allowBlank": false,
                         "itemId": "userCatNameTextFieldItemId"
                     },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
+                    },
                     "name": "MyuserCatNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-bu7tgbgkq3ex"
                 }
@@ -65,8 +84,64 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "userCatSchColor",
+                "itemId": "userCatSchColorCol",
+                "text": "Couleur Planning"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "itemId": "string",
+                "text": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "cbb9ed55-125f-4574-a149-b2a42c3aea41",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "userCatSchColorRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "16b273d1-cfcb-444d-9b4e-a38611010131"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "userCatReadOnly",
                 "text": "En lecture seulement"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyuserCatReadOnlyCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-gi9d5c8xtljl",
@@ -103,6 +178,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-fj659ds4iru6"
                 }
@@ -118,6 +198,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Active"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-h8k5qnsm11k4",
@@ -154,6 +238,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-q2q1ievi31cr"
                 }
@@ -188,6 +277,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "69kn272n-f393-483a-8425-giesibsdtgh1"
         },
@@ -203,6 +298,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "29pnswji-ccc7-465c-8662-8ffwcdgn6crs"
@@ -226,6 +327,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processUserCatGrid",
             "designerId": "958m7sdt-2054-459b-a4aa-welwg8lk58cv"
         },
@@ -243,6 +349,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdChHist",
             "designerId": "fkq3bdft-1d4f-4fb9-9364-drsbju6glun3"
@@ -263,6 +375,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdAfterRender",
             "designerId": "4gck921d-1f65-4972-a6e1-4fc4lhnbtaag"
         },
@@ -282,6 +400,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdInEdit",
             "designerId": "br5f2bd8-1a08-4be0-b287-n7r3utcxj5hx"
         },
@@ -300,6 +424,12 @@
                 "fn": "onUserCatGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdResetEdit",
             "designerId": "4bghsbrn-2c80-456a-a5c5-5q1vk3mxdcxi"
@@ -321,6 +451,12 @@
                 "fn": "onUserCatGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdSaveEdit",
             "designerId": "ruk57k3a-f0d5-4d89-a1bb-st7cijpygfv9"
@@ -344,6 +480,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdAddItem",
             "designerId": "eh3cd1br-ffc4-4ede-a9db-4v5rk5u4c84n"
         },
@@ -358,6 +501,11 @@
                 "fn": "onUserCatGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdDeleteItem",
             "designerId": "wm3txlfb-ac56-469a-895f-53wqcy37tga1"
@@ -376,6 +524,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdModifyItem",
             "designerId": "n9iygey3-6b6f-4377-998f-xbvy2wa5f7pq"
@@ -399,6 +553,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdQuitEdit",
             "designerId": "f9l8nhjj-746f-4da4-9f4d-apyt4f4ah31f"
         },
@@ -411,6 +572,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-41p7gbacvrt6"
@@ -431,6 +595,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdBeforeEdit",
             "designerId": "vqhi23pc-4019-4a61-8c79-3ilpd72vw861"
         },
@@ -450,6 +620,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdCanceledit",
             "designerId": "9xdjc2ti-6686-46dd-bfe7-ixc15aj4wjf6"
         },
@@ -464,6 +640,11 @@
                 "fn": "onUserCatGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdContainerClick",
             "designerId": "m4diiaak-3079-420b-87bf-b31u4fqxvq5m"
@@ -484,6 +665,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onUserCatGridIdEdit",
             "designerId": "akyh4ebs-47bf-4b29-bb1d-nexqv654b66c"
         },
@@ -498,6 +685,11 @@
                 "fn": "onUserCatGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdBeforeCellClick",
             "designerId": "$54f5qf75-6a9c-488e-8122-kjebs6ktdny4"
@@ -517,6 +709,12 @@
                 "fn": "onUserCatGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onUserCatGridIdValidateedit",
             "designerId": "991rf16h-b2ec-4782-a56f-icmv7vjk34bm"

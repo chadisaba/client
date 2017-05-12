@@ -9,5 +9,9 @@
         "designer|userAlias": "usertabpanel",
         "designer|userClassName": "UserTabPanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "a6f6bb49-038c-4c0c-960e-e45df84423c9"
 }

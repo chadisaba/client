@@ -25,10 +25,19 @@
         "title": "Tous les examens",
         "width": 400
     },
-    "name": "MyTreePanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "itemId": "string",
+        "root": "object",
+        "rootVisible": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyTreePanel",
     "designerId": "0ea51cfd-b671-47d3-b202-7da889bdbecf",
     "viewControllerInstanceId": "1d74758e-ebdd-4568-a57b-659a8a4e3220",
     "viewModelInstanceId": "f5aef5a2-7a4f-4de8-8ab8-79e2e2662615",
@@ -55,6 +64,11 @@
                 "flex": 1,
                 "text": "MyTreeColumn"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MyTreeColumn",
             "designerId": "45461d4c-0a53-463e-86f4-1767e8438ff0"
         },
@@ -67,6 +81,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "9d350cf7-95be-480d-a637-1767e8438ff0"
@@ -86,6 +103,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onAvailableTreePanelSelect",
             "designerId": "5dcc703c-1c7e-4146-acfb-1767e8438ff0"
         },
@@ -98,6 +121,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar",
             "designerId": "da00c0a0-9c06-4f90-997a-1767e8438ff0",
@@ -114,6 +140,11 @@
                         "itemId": "filterField",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyTextField",
                     "designerId": "87e3c12c-68ec-4d86-ab7b-1767e8438ff0",
                     "cn": [
@@ -127,6 +158,10 @@
                             "userConfig": {
                                 "cls": "x-form-clear-trigger",
                                 "name": "mytrigger"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string"
                             },
                             "name": "MyTrigger",
                             "designerId": "574c75d6-f66d-4371-a372-1767e8438ff0",
@@ -149,6 +184,11 @@
                                             "field.setValue('');"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "handler",
                                     "designerId": "7ff30b3f-c85d-4480-b523-1767e8438ff0"
                                 }
@@ -168,6 +208,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onFilterFieldChange",
                             "designerId": "a984a622-a270-4f76-afc2-1767e8438ff0"
@@ -191,6 +237,11 @@
                 "implHandler": [
                     "Utility.grid.addInfoCol(this);"
                 ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "processDoctorHasExamensViewAvailableTreePanel",
             "designerId": "66f24a49-854b-4654-813f-1767e8438ff0"

@@ -12,6 +12,13 @@
         "height": null,
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "b0d0fcbe-2b35-4387-88d3-68c6dce65e3d",
     "viewControllerInstanceId": "a6f6bb49-038c-4c0c-960e-e45df84423c9",
@@ -26,6 +33,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Types utilisateur"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "usercatgrid",
             "designerId": "212ddfda-b1d3-4b3f-9b5b-4341021d77db",
@@ -54,6 +64,10 @@
                 "flex": 1,
                 "title": "Utilisateurs"
             },
+            "configAlternates": {
+                "flex": "number",
+                "title": "string"
+            },
             "name": "usergrid",
             "designerId": "d72614ce-c4fb-427a-83ee-37a434f70f4a",
             "masterInstanceId": "xebr98pu-8c41-4643-a8f8-l1ptryirq122",
@@ -80,6 +94,9 @@
             "userConfig": {
                 "title": "Médecins"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "doctorgrid",
             "designerId": "2d4ab6b2-1a90-4f19-98e5-54c404e174e5",
             "masterInstanceId": "mjsgfsku-8c41-4643-a8f8-b1tfwisw8te4",
@@ -105,6 +122,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Médecins & Examens"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "doctorhasexamensviewassociatepanel",
             "designerId": "0ba13ed5-71ec-43f2-8457-db1edc087147",

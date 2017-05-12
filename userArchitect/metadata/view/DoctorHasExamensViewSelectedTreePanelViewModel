@@ -9,6 +9,10 @@
         "designer|userAlias": "doctorhasexamensviewselectedtreepanel",
         "designer|userClassName": "DoctorHasExamensViewSelectedTreePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "65bd0acb-a66f-4a8a-abfe-a98f05124899",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "DoctorHasExamensViewTreeModel",
                 "name": "SelectedTreeStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyTreeStore1",
             "designerId": "78bbf289-8469-410f-9714-1767e8438ff0"

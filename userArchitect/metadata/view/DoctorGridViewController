@@ -9,5 +9,9 @@
         "designer|userAlias": "doctorgrid",
         "designer|userClassName": "DoctorGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "4ygqabtd-4ace-45f2-b4ee-5kexw9c67jh7"
 }

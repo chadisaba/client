@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "CityModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModel",
     "designerId": "8a445cc5-bc9e-4d45-973c-351f68e2122a",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger1",
             "designerId": "a41e63f0-c29c-4a14-b138-8352716b96af"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "cityName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString10",
             "designerId": "e16cc4b2-c60e-4ee9-98bb-28a147f4001f"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityZipCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyString9",
             "designerId": "42c42b2b-a546-4755-bae1-2d04d7a3fc89"

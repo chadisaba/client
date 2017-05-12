@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "mjsgfsku-8c41-4643-a8f8-b1tfwisw8te4",
     "viewControllerInstanceId": "4ygqabtd-4ace-45f2-b4ee-5kexw9c67jh7",
     "viewModelInstanceId": "kh2qpp9a-8a5d-4154-8917-u6jij2qtuder",
@@ -39,6 +46,11 @@
                 "hidden": true,
                 "text": "UtilisateurId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MyuserIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-sl3pg537sf5t",
             "cn": [
@@ -51,6 +63,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "userIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyuserIdTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-rve8l6kjj4su"
@@ -67,6 +82,10 @@
             "userConfig": {
                 "dataIndex": "userInitiales",
                 "text": "Utilisateur"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyuserInitialesCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-p7l3swr94p9q",
@@ -90,10 +109,17 @@
                         ],
                         "valueField": "userInitiales"
                     },
-                    "name": "MyuserInitialComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyuserInitialComboBox",
                     "designerId": "ade60fcf-b3b2-4bae-jyir2m2e8923",
                     "cn": [
                         {
@@ -107,6 +133,11 @@
                                 "fn": "onUserInitialComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onUserInitialComboBoxEditorItemIdSelect",
                             "designerId": "f6794e37-f157-4902-85bf-330f15cf69ff"
@@ -125,6 +156,10 @@
             "userConfig": {
                 "dataIndex": "doctorIsSubstitute",
                 "text": "Substituté"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MydoctorIsSubstituteCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-tkhi5mfbnf4i",
@@ -161,6 +196,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-ypegs824r3lr"
                 }
@@ -176,6 +216,10 @@
             "userConfig": {
                 "dataIndex": "doctoHasOptionCoordination",
                 "text": "option coordination"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MydoctoHasOptionCoordinationCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-1nbe87myn2hh",
@@ -212,6 +256,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-t35qu475shgg"
                 }
@@ -228,6 +277,10 @@
                 "dataIndex": "doctorSenologUID",
                 "text": "Senolog UID"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MydoctorSenologUIDCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-p9cxnkgiq47y",
             "cn": [
@@ -240,6 +293,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "doctorSenologUIDTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MydoctorSenologUIDTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-rrqniy7ffh1x"
@@ -256,6 +312,10 @@
             "userConfig": {
                 "dataIndex": "doctorHasSector2",
                 "text": "Secteur 2"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MydoctorHasSector2Col",
             "designerId": "7c6bec59-5c6a-4872-9cec-suxv95dj871y",
@@ -292,6 +352,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-qj2g1rue2cpk"
                 }
@@ -307,6 +372,10 @@
             "userConfig": {
                 "dataIndex": "active",
                 "text": "Activé"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-4tid2wfxpnec",
@@ -343,6 +412,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-dxuqyu3w3rqq"
                 }
@@ -377,6 +451,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "r9f4cwnr-f393-483a-8425-a6cjbp79ydtb"
         },
@@ -392,6 +472,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "awvc4i1n-ccc7-465c-8662-dbe8yhjvshyw"
@@ -415,6 +501,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processDoctorGrid",
             "designerId": "nektq2vm-2054-459b-a4aa-uburg1aqgnmn"
         },
@@ -432,6 +523,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdChHist",
             "designerId": "v2bjtdkn-1d4f-4fb9-9364-4d2dtuijeqbu"
@@ -452,6 +549,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdAfterRender",
             "designerId": "w2aps9cr-1f65-4972-a6e1-r6qupewymstm"
         },
@@ -471,6 +574,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdInEdit",
             "designerId": "rjs9qc2e-1a08-4be0-b287-8dftsqvxbr6x"
         },
@@ -489,6 +598,12 @@
                 "fn": "onDoctorGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdResetEdit",
             "designerId": "8xf3yp5m-2c80-456a-a5c5-151cx6yjwt18"
@@ -510,6 +625,12 @@
                 "fn": "onDoctorGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdSaveEdit",
             "designerId": "m6qtkcad-f0d5-4d89-a1bb-wxbsy6ve6mf3"
@@ -533,6 +654,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdAddItem",
             "designerId": "eiw98bdt-ffc4-4ede-a9db-59hp5qqmmkqj"
         },
@@ -547,6 +675,11 @@
                 "fn": "onDoctorGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdDeleteItem",
             "designerId": "3slxd3jg-ac56-469a-895f-wgtuvgbhbjxb"
@@ -565,6 +698,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdModifyItem",
             "designerId": "kt5x32qd-6b6f-4377-998f-ew3l51ns2869"
@@ -588,6 +727,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdQuitEdit",
             "designerId": "dsjre8pf-746f-4da4-9f4d-s3wccl9j2dvs"
         },
@@ -600,6 +746,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-rdu18qkapiku"
@@ -620,6 +769,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdBeforeEdit",
             "designerId": "cjlyeev7-4019-4a61-8c79-y6ffl73f1x4v"
         },
@@ -639,6 +794,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdCanceledit",
             "designerId": "j1p9wq91-6686-46dd-bfe7-2tamfcibdt7v"
         },
@@ -653,6 +814,11 @@
                 "fn": "onDoctorGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdContainerClick",
             "designerId": "iqwqvn1p-3079-420b-87bf-m5kdxqqgqe79"
@@ -673,6 +839,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onDoctorGridIdEdit",
             "designerId": "jli5qp7s-47bf-4b29-bb1d-6ah91ltd6h8v"
         },
@@ -687,6 +859,11 @@
                 "fn": "onDoctorGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdBeforeCellClick",
             "designerId": "$2k642qrj-6a9c-488e-8122-l1vn6bqpcgbk"
@@ -706,6 +883,12 @@
                 "fn": "onDoctorGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onDoctorGridIdValidateedit",
             "designerId": "apiuwp2d-b2ec-4782-a56f-rj71hpr5ebwb"

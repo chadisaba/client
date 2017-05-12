@@ -9,6 +9,10 @@
         "designer|userClassName": "Library",
         "theme": "MyCrispTheme"
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "theme": "string"
+    },
     "name": "Library",
     "designerId": "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5"
 }
