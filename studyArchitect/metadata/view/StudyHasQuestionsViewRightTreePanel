@@ -24,10 +24,19 @@
         "title": "Les questions associées à l'examen",
         "width": 400
     },
-    "name": "MyTreePanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "itemId": "string",
+        "root": "object",
+        "rootVisible": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyTreePanel",
     "designerId": "37qxh5g6-1d4f-423d-9364-3rduhk5hd9wl",
     "viewControllerInstanceId": "mipldfxw-e4ba-4c1c-bd1c-9h1isf52wel3",
     "viewModelInstanceId": "3g77udty-1873-423d-bf99-fi1n4sscw5ut",
@@ -54,6 +63,11 @@
                 "flex": 1,
                 "text": "MyTreeColumn1"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MyTreeColumn1",
             "designerId": "1e603175-03ec-4a1d-a866-17g9qupiqtea"
         },
@@ -68,6 +82,10 @@
                 "dataIndex": "duration",
                 "text": "MyColumn1"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyColumn1",
             "designerId": "40b6517b-9020-4d3b-a46d-17g9qupiqtea"
         },
@@ -81,6 +99,9 @@
             "userConfig": {
                 "mode": "MULTI"
             },
+            "configAlternates": {
+                "mode": "string"
+            },
             "name": "MyRowSelectionModel1",
             "designerId": "f3793d93-66b5-4721-9ad3-17g9qupiqtea"
         },
@@ -93,6 +114,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar1",
             "designerId": "93b32834-a5c3-4f4a-a627-17g9qupiqtea",
@@ -109,6 +133,11 @@
                         "itemId": "filterField",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyTextField1",
                     "designerId": "8145600e-ffce-432f-9f4b-17g9qupiqtea",
                     "cn": [
@@ -122,6 +151,10 @@
                             "userConfig": {
                                 "cls": "x-form-clear-trigger",
                                 "name": "mytrigger1"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string"
                             },
                             "name": "MyTrigger1",
                             "designerId": "a42e5b5f-de45-4ac3-a516-17g9qupiqtea",
@@ -144,6 +177,11 @@
                                             "field.setValue('');"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "handler",
                                     "designerId": "b9bc8687-49f5-4311-a10a-17g9qupiqtea"
                                 }
@@ -164,6 +202,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onFilterFieldChange",
                             "designerId": "c9d966e5-13fe-4ee0-86cc-17g9qupiqtea"
@@ -187,6 +231,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onRightTreePanelSelect",
             "designerId": "fd1026bf-c095-48d4-990b-17g9qupiqtea"
         },
@@ -205,6 +255,11 @@
                 "implHandler": [
                     "Utility.grid.addInfoCol(this);"
                 ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "processStudyHasQuestionsViewRightTreePanel",
             "designerId": "b814da48-215d-4860-8e29-17g9qupiqtea"

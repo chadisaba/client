@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "DoctorComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelDoctorComboModel",
     "designerId": "ec5af962-8072-4469-a76a-79b4035cf24f",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "doctorId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "e91973ec-4c39-49d6-b3d7-680d06c8438b"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "doctor"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "5dbc2b6c-ac22-494b-89bd-db640928a40c"

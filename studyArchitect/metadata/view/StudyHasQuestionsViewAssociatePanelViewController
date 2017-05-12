@@ -9,5 +9,9 @@
         "designer|userAlias": "studyhasquestionsviewassociatepanel",
         "designer|userClassName": "StudyHasQuestionsViewAssociatePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "xfugykbm-518b-4d17-88a6-iguhae4e7tfy"
 }

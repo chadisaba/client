@@ -9,6 +9,10 @@
         "designer|userAlias": "studytemplateassociateviewavailabletreepanel",
         "designer|userClassName": "StudyTemplateAssociateViewAvailableTreePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "edfba29e-426f-4ea9-99cf-b3f804040e9d",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "StudyTemplateAssociateViewTreeModel",
                 "name": "AvailableTreeStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyTreeStore",
             "designerId": "0bc53a3c-9fa3-4e8a-a37d-39abfe367dd6"

@@ -9,5 +9,9 @@
         "designer|userAlias": "studyhasquestionsviewrighttreepanel",
         "designer|userClassName": "StudyHasQuestionsViewRightTreePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "mipldfxw-e4ba-4c1c-bd1c-9h1isf52wel3"
 }

@@ -9,6 +9,10 @@
         "designer|userAlias": "studyhasquestionsviewassociatepanel",
         "designer|userClassName": "StudyHasQuestionsViewAssociatePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "9mncvu2e-30f3-47f9-817b-7ikhwqculvwb",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "StudyHasQuestionsViewAssociateComboModel",
                 "name": "AssociateComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore",
             "designerId": "cdd33c48-43db-4d2c-ad6e-17g9qupiqtea"

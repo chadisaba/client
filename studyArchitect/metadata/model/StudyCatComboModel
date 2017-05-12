@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "StudyCatComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelStudyCatComboModel",
     "designerId": "040092bf-b6f4-441b-b581-i19st3q4ya8e",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "studyCatId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-gkw6sillu6vr"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyCatName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-d2sivkbf4dat"

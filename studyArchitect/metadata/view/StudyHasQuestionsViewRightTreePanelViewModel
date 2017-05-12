@@ -9,6 +9,10 @@
         "designer|userAlias": "studyhasquestionsviewrighttreepanel",
         "designer|userClassName": "StudyHasQuestionsViewRightTreePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "3g77udty-1873-423d-bf99-fi1n4sscw5ut",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "StudyHasQuestionsViewTreeModel",
                 "name": "RightTreeStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyTreeStore1",
             "designerId": "78bbf289-8469-410f-9714-17g9qupiqtea"

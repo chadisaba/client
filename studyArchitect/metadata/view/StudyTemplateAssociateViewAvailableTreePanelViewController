@@ -9,5 +9,9 @@
         "designer|userAlias": "studytemplateassociateviewavailabletreepanel",
         "designer|userClassName": "StudyTemplateAssociateViewAvailableTreePanelViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "93a62a75-edee-43e5-bb30-869799773e60"
 }

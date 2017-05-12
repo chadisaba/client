@@ -9,6 +9,10 @@
         "designer|userAlias": "studyquestiongrid",
         "designer|userClassName": "StudyQuestionGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "fdrhhkdr-8a5d-4154-8917-eqyb95rj7tiu",
     "cn": [
         {
@@ -22,9 +26,12 @@
                 "model": "StudyQuestionModel",
                 "name": "StudyQuestionStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "StudyQuestionStore",
             "designerId": "dq7qpmeu-c056-4140-9039-whlilh5g7lsk"
         }
-        
     ]
 }

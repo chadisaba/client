@@ -183,7 +183,12 @@ Ext.define('MyApp.view.override.StudyTypeGridViewController', {
                     callback(res.msg);
                 }
             });
-    }
+    },
+        /*********************** renderers****************************************************/
+ 
+  rdvColorRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+return ' <div style="line-height:30px;background-color:#'+value+';height:30px;width:100%;float:left;padding:5px;"></div>';
+  }
 
 
 

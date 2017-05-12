@@ -9,6 +9,10 @@
         "designer|userAlias": "studytemplateassociateviewselectedtreepanel",
         "designer|userClassName": "StudyTemplateAssociateViewSelectedTreePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "471ff1fc-b6e0-4eb1-8def-19261ccccc7d",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "StudyTemplateAssociateViewTreeModel",
                 "name": "SelectedTreeStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyTreeStore1",
             "designerId": "78bbf289-8469-410f-9714-39abfe367dd6"
@@ -35,6 +43,10 @@
             "userConfig": {
                 "model": "DoctorComboModel",
                 "name": "DoctorComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyStore1",
             "designerId": "5bba9d37-3ea8-447f-883d-5cd6057e82be"

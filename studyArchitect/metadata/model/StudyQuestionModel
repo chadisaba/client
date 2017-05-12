@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "StudyQuestionModel",
     "designerId": "x85ag7ld-1d4f-4fb9-9364-6m66qa452rwd",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyQuestId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MystudyQuestId",
             "designerId": "e96f8d89-803f-419a-a346-l44dd7t7s1h9"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "studyQuestText"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyString",
             "designerId": "e96f8d89-803f-419a-a346-255v1pkxpxiw"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "active"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyBoolean",
             "designerId": "e96f8d89-803f-419a-a346-8illphr6vsda"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "toDelete"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField27",
             "designerId": "3wm8ch8y-1f65-4972-a6e1-ka2bq8y6vr6t"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "added"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField28",
             "designerId": "ea8degi6-1a08-4be0-b287-apb29tjhsbxv"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "modified"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField29",
             "designerId": "hqid87hh-2c80-456a-a5c5-bnrdypqtnd52"
         },
@@ -105,6 +127,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "b5x843p3-f0d5-4d89-a1bb-kjinrv2ydemk"
         },
@@ -117,6 +142,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "p4u5vkgs-ac56-469a-895f-e35gbdft9wjp"

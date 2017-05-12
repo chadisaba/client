@@ -22,10 +22,18 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "requires": "typedarray",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
     "viewControllerInstanceId": "jl4lpbe4-4ace-45f2-b4ee-i3xtau7vi94k",
     "viewModelInstanceId": "r2gfmyh4-8a5d-4154-8917-q18yd6613th1",
@@ -42,6 +50,11 @@
                 "itemId": null,
                 "text": "Cat ID"
             },
+            "configAlternates": {
+                "hidden": "boolean",
+                "itemId": "string",
+                "text": "string"
+            },
             "name": "MyColumn2",
             "designerId": "f5ff7e8c-16b3-4876-81e8-8b8ef7b41c24",
             "cn": [
@@ -54,6 +67,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyCatTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextField3",
                     "designerId": "1aa24cce-1c91-4743-b196-2d198841c1b8"
@@ -70,6 +86,10 @@
             "userConfig": {
                 "dataIndex": "studyCatName",
                 "text": "Catégorie"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MystudyCatIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-y4b2ve4rsyuk",
@@ -93,10 +113,17 @@
                         ],
                         "valueField": "studyCatName"
                     },
-                    "name": "MystudyCatComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MystudyCatComboBox",
                     "designerId": "ade60fcf-b3b2-4bae-5hvas6p3jr61",
                     "cn": [
                         {
@@ -110,6 +137,11 @@
                                 "fn": "onStudyCatComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onStudyCatComboBoxEditorItemIdSelect",
                             "designerId": "ef8f31b8-c5a4-4d40-ab3a-131dad58e6cf"
@@ -129,6 +161,10 @@
                 "dataIndex": "studyTypeName",
                 "text": "Nom"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyTypeNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-mx7x25wjrnkj",
             "cn": [
@@ -141,6 +177,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyTypeNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyTypeNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-s5wskw8gv573"
@@ -158,6 +197,10 @@
                 "dataIndex": "studyTypeCode",
                 "text": "Code"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MystudyTypeCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ifgjb9jqlu8a",
             "cn": [
@@ -170,6 +213,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "studyTypeCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MystudyTypeCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-aahjrwdeawju"
@@ -187,6 +233,11 @@
                 "dataIndex": "studyTypeRdvColor",
                 "itemId": "rdvColorColItemId",
                 "text": "Couleur R.D.V"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "itemId": "string",
+                "text": "string"
             },
             "name": "MystudyTypeRdvColorCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-swij985xy3vt",
@@ -212,6 +263,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "cf2ad5da-0cb1-4f6d-b513-d15205a0d506"
                 }
@@ -228,6 +285,11 @@
                 "dataIndex": "active",
                 "text": "Active",
                 "width": 50
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-uh73i7dqekix",
@@ -264,6 +326,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-6smnw74gxjgu"
                 }
@@ -298,6 +365,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "l8krgkea-f393-483a-8425-espi5g6k1dbe"
         },
@@ -313,6 +386,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "4gt9j62w-ccc7-465c-8662-dektu5gp14hh"
@@ -336,6 +415,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processStudyTypeGrid",
             "designerId": "srgyr18t-2054-459b-a4aa-8hyeminy9lt5"
         },
@@ -353,6 +437,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdChHist",
             "designerId": "tc7bt43b-1d4f-4fb9-9364-gbintxd8pjwi"
@@ -373,6 +463,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdAfterRender",
             "designerId": "n3bah4gh-1f65-4972-a6e1-r9gey2r1v4yl"
         },
@@ -392,6 +488,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdInEdit",
             "designerId": "1gi59cuh-1a08-4be0-b287-e59b8n3wdjrf"
         },
@@ -410,6 +512,12 @@
                 "fn": "onStudyTypeGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdResetEdit",
             "designerId": "eti49dx5-2c80-456a-a5c5-qbk7fytdqdkg"
@@ -431,6 +539,12 @@
                 "fn": "onStudyTypeGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdSaveEdit",
             "designerId": "y1sw4a1e-f0d5-4d89-a1bb-la3ba4sbsnnx"
@@ -454,6 +568,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdAddItem",
             "designerId": "fv52vpa4-ffc4-4ede-a9db-v5lb6yr2yvkb"
         },
@@ -468,6 +589,11 @@
                 "fn": "onStudyTypeGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdDeleteItem",
             "designerId": "nktbxupa-ac56-469a-895f-bydcn5bnunjr"
@@ -486,6 +612,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdModifyItem",
             "designerId": "eea1397d-6b6f-4377-998f-fbnlh8m79aev"
@@ -509,6 +641,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdQuitEdit",
             "designerId": "ym7i1q9w-746f-4da4-9f4d-u5y9mplgy7n4"
         },
@@ -521,6 +660,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-3iskkp4mfamc"
@@ -541,6 +683,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdBeforeEdit",
             "designerId": "itfl4iv3-4019-4a61-8c79-da8nlj9ilqq4"
         },
@@ -560,6 +708,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdCanceledit",
             "designerId": "u5jp9g3k-6686-46dd-bfe7-86tk6lejquhq"
         },
@@ -574,6 +728,11 @@
                 "fn": "onStudyTypeGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdContainerClick",
             "designerId": "4yy488xs-3079-420b-87bf-ylmfcibqxkdd"
@@ -594,6 +753,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyTypeGridIdEdit",
             "designerId": "3selwnaq-47bf-4b29-bb1d-611ih3l5lea1"
         },
@@ -608,6 +773,11 @@
                 "fn": "onStudyTypeGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdBeforeCellClick",
             "designerId": "$akexxarw-6a9c-488e-8122-jlh4uplpav7c"
@@ -627,6 +797,12 @@
                 "fn": "onStudyTypeGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyTypeGridIdValidateedit",
             "designerId": "iyln4wi6-b2ec-4782-a56f-a8s58bu3d63t"

@@ -9,6 +9,10 @@
         "designer|userAlias": "studygrid",
         "designer|userClassName": "StudyGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "gpwdu53k-8a5d-4154-8917-ylwhsses23h5",
     "cn": [
         {
@@ -22,10 +26,14 @@
                 "model": "StudyModel",
                 "name": "StudyStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "StudyStore",
             "designerId": "kmn1xqah-c056-4140-9039-ldhpfva7q8t6"
-        }
-        ,{
+        },
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -35,6 +43,10 @@
             "userConfig": {
                 "model": "StudyTypeComboModel",
                 "name": "StudyTypeComboStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "StudyTypeComboStore",
             "designerId": "325a5ff4-f9a4-480d-9ccb-8txwks1yecw8"

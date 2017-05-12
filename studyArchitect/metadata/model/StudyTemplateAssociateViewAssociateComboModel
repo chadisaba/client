@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "StudyTemplateAssociateViewAssociateComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "StudyTemplateAssociateViewAssociateComboModel",
     "designerId": "3ab80332e492-159e-428a-b6e8-39abfe367dd6",
     "cn": [
@@ -20,6 +23,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField4",
             "designerId": "3ab80332e492-572b-4376-bd2b-39abfe367dd6"
@@ -34,6 +40,9 @@
             "userConfig": {
                 "name": "studyCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField5",
             "designerId": "3ab80332e492-6de0-4b46-b8cd-39abfe367dd6"
         },
@@ -46,6 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField8",
             "designerId": "edd61ad9-8859-4028-b370-dc59f0d59fe8"

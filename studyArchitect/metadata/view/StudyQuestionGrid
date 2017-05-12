@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "f2njjp4f-8c41-4643-a8f8-7w2at2cp459a",
     "viewControllerInstanceId": "tq8n245u-4ace-45f2-b4ee-ck35w9pgu4bk",
     "viewModelInstanceId": "fdrhhkdr-8a5d-4154-8917-eqyb95rj7tiu",
@@ -39,6 +46,11 @@
                 "flex": 1,
                 "text": "Questions"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MystudyQuestTextCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-tb9sjqfgaa6k",
             "cn": [
@@ -52,6 +64,10 @@
                     "userConfig": {
                         "allowBlank": false,
                         "itemId": "studyQuestTextTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "itemId": "string"
                     },
                     "name": "MyTextArea",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-1ktqkb1knuys"
@@ -69,6 +85,11 @@
                 "dataIndex": "active",
                 "text": "Activé",
                 "width": 75
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-yw58wchbjhif",
@@ -105,6 +126,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-fey7p45ufrt2"
                 }
@@ -139,6 +165,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "gggsnjf8-f393-483a-8425-9b8rfigwr6rx"
         },
@@ -154,6 +186,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "mbqph2s4-ccc7-465c-8662-v2vmm2xs6v1u"
@@ -177,6 +215,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processStudyQuestionGrid",
             "designerId": "9jr7ahaa-2054-459b-a4aa-eqyk6ff8ih9b"
         },
@@ -194,6 +237,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdChHist",
             "designerId": "py7r4g35-1d4f-4fb9-9364-1m646mbvw798"
@@ -214,6 +263,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdAfterRender",
             "designerId": "fa8elg81-1f65-4972-a6e1-1nmutn3nmmsg"
         },
@@ -233,6 +288,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdInEdit",
             "designerId": "msdr5a7n-1a08-4be0-b287-bdepmwmlng88"
         },
@@ -251,6 +312,12 @@
                 "fn": "onStudyQuestionGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdResetEdit",
             "designerId": "2yy2ubtd-2c80-456a-a5c5-7mnrnhdjat5s"
@@ -272,6 +339,12 @@
                 "fn": "onStudyQuestionGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdSaveEdit",
             "designerId": "mirbn4ik-f0d5-4d89-a1bb-yg2fu1jhslpw"
@@ -295,6 +368,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdAddItem",
             "designerId": "y74jxi1m-ffc4-4ede-a9db-bxavg2n7u1db"
         },
@@ -309,6 +389,11 @@
                 "fn": "onStudyQuestionGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdDeleteItem",
             "designerId": "iap9w3ed-ac56-469a-895f-pur3yfr2tvv5"
@@ -327,6 +412,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdModifyItem",
             "designerId": "4n66t3fc-6b6f-4377-998f-iuqtisduyv4h"
@@ -350,6 +441,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdQuitEdit",
             "designerId": "5hhh14e6-746f-4da4-9f4d-vgjp3yf8lsr1"
         },
@@ -362,6 +460,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-lte24wj6s9qh"
@@ -382,6 +483,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdBeforeEdit",
             "designerId": "wj5qmadf-4019-4a61-8c79-vudnnhfm4q6w"
         },
@@ -401,6 +508,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdCanceledit",
             "designerId": "fkgcnslk-6686-46dd-bfe7-v9wturayvhkt"
         },
@@ -415,6 +528,11 @@
                 "fn": "onStudyQuestionGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdContainerClick",
             "designerId": "u8q79d87-3079-420b-87bf-92qhu2f82sqk"
@@ -435,6 +553,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onStudyQuestionGridIdEdit",
             "designerId": "11xtis8p-47bf-4b29-bb1d-ctv5kjnjshec"
         },
@@ -449,6 +573,11 @@
                 "fn": "onStudyQuestionGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdBeforeCellClick",
             "designerId": "$g9d4wmr2-6a9c-488e-8122-y3yd9phdb7ha"
@@ -468,6 +597,12 @@
                 "fn": "onStudyQuestionGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onStudyQuestionGridIdValidateedit",
             "designerId": "l7ep88j9-b2ec-4782-a56f-fwjvqbim4tlb"

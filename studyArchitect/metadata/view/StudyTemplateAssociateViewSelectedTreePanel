@@ -24,10 +24,19 @@
         "title": "associated report template",
         "width": 400
     },
-    "name": "MyTreePanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "itemId": "string",
+        "root": "object",
+        "rootVisible": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyTreePanel",
     "designerId": "39fde463-f237-4137-949c-1cee24adcbb2",
     "viewControllerInstanceId": "ee4bcd12-5cc3-45ce-9e2f-5b819358a958",
     "viewModelInstanceId": "471ff1fc-b6e0-4eb1-8def-19261ccccc7d",
@@ -56,6 +65,13 @@
                 "text": "",
                 "width": null
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyTreeColumn1",
             "designerId": "1e603175-03ec-4a1d-a866-39abfe367dd6"
         },
@@ -72,6 +88,12 @@
                 "text": "template name",
                 "width": 136
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string",
+                "width": "auto"
+            },
             "name": "MyreportTemplateNameCol",
             "designerId": "b79c5da0-0270-4b82-ae8c-6da7a78f7786"
         },
@@ -87,6 +109,11 @@
                 "hidden": true,
                 "text": ""
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MydoctorIdCol",
             "designerId": "9e6498d0-4d3e-4b16-a4cc-a1ac18616adf",
             "cn": [
@@ -99,6 +126,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "doctorTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextField4",
                     "designerId": "bfa1999d-1f0e-43a4-928f-c5d8a48c3fb2"
@@ -115,6 +145,10 @@
             "userConfig": {
                 "dataIndex": "doctor",
                 "text": "doctor"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MydoctorCol",
             "designerId": "b2c26717-0104-4039-a7ea-137f0c3d447b",
@@ -137,10 +171,16 @@
                         ],
                         "valueField": "doctor"
                     },
-                    "name": "MydoctorComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MydoctorComboBox",
                     "designerId": "d3520d02-2f52-46d2-abba-ffe12ead674e",
                     "cn": [
                         {
@@ -154,6 +194,11 @@
                                 "fn": "onDoctorComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onDoctorComboBoxEditorItemIdSelect",
                             "designerId": "5383eaea-df79-4683-afd7-c6899d60e186"
@@ -174,6 +219,11 @@
                 "hidden": true,
                 "text": ""
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MyreportTemplateIdCol",
             "designerId": "0eb1a21e-1a77-4769-916e-512fb9f75876"
         },
@@ -189,6 +239,11 @@
                 "hidden": true,
                 "text": ""
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MystudyIdCol",
             "designerId": "c8572f2a-061d-4402-8297-5c0dfa5d4aea"
         },
@@ -202,6 +257,9 @@
             "userConfig": {
                 "mode": "MULTI"
             },
+            "configAlternates": {
+                "mode": "string"
+            },
             "name": "MyRowSelectionModel1",
             "designerId": "f3793d93-66b5-4721-9ad3-39abfe367dd6"
         },
@@ -214,6 +272,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar1",
             "designerId": "93b32834-a5c3-4f4a-a627-39abfe367dd6",
@@ -230,6 +291,11 @@
                         "itemId": "filterField",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyTextField1",
                     "designerId": "8145600e-ffce-432f-9f4b-39abfe367dd6",
                     "cn": [
@@ -243,6 +309,10 @@
                             "userConfig": {
                                 "cls": "x-form-clear-trigger",
                                 "name": "mytrigger1"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string"
                             },
                             "name": "MyTrigger1",
                             "designerId": "a42e5b5f-de45-4ac3-a516-39abfe367dd6",
@@ -265,6 +335,11 @@
                                             "field.setValue('');"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "handler",
                                     "designerId": "b9bc8687-49f5-4311-a10a-39abfe367dd6"
                                 }
@@ -285,6 +360,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onFilterFieldChange",
                             "designerId": "c9d966e5-13fe-4ee0-86cc-39abfe367dd6"
@@ -308,6 +389,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSelectedTreePanelSelect",
             "designerId": "fd1026bf-c095-48d4-990b-39abfe367dd6"
         },
@@ -326,6 +413,11 @@
                 "implHandler": [
                     "Utility.grid.addInfoCol(this);"
                 ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
             "name": "processStudyTemplateAssociateViewSelectedTreePanel",
             "designerId": "b814da48-215d-4860-8e29-39abfe367dd6"
@@ -352,6 +444,11 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSelectedTreePanelBeforeEdit",
             "designerId": "0d91e3fa-f276-46b7-9050-075f3913d69c"
         },
@@ -366,6 +463,11 @@
                 "fn": "onSelectedTreePanelEdit",
                 "name": "edit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSelectedTreePanelEdit",
             "designerId": "17b2c01b-a0cd-4b8e-90f4-7d7b7419046f"

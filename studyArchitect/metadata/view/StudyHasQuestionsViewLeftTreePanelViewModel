@@ -9,6 +9,10 @@
         "designer|userAlias": "studyhasquestionsviewlefttreepanel",
         "designer|userClassName": "StudyHasQuestionsViewLeftTreePanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "iseakbvs-1d4f-4ft9-9364-rgkgijmkx1df",
     "cn": [
         {
@@ -21,6 +25,10 @@
             "userConfig": {
                 "model": "StudyHasQuestionsViewTreeModel",
                 "name": "LeftTreeStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "MyTreeStore",
             "designerId": "0bc53a3c-9fa3-4e8a-a37d-17g9qupiqtea"

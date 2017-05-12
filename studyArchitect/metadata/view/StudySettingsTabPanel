@@ -12,6 +12,13 @@
         "height": null,
         "width": null
     },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
     "name": "MyTabPanel",
     "designerId": "f481c70a-d98c-4a87-beb8-b1922498d86a",
     "viewControllerInstanceId": "bb09ecb1-7c48-40e5-8c0f-b27ee98c2ad6",
@@ -26,6 +33,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Examens"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "studygrid",
             "designerId": "fbdac91c-db2b-40e3-abba-42c720a53045",
@@ -53,6 +63,9 @@
             "userConfig": {
                 "title": "Type"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "studytypegrid",
             "designerId": "90b2f489-f880-496d-bf38-8dca90681240",
             "masterInstanceId": "u3vlff5e-8c41-4643-a8f8-i3m56e8pq5kc",
@@ -78,6 +91,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Questions"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "studyquestiongrid",
             "designerId": "016b2abb-9c05-4dc2-b4d9-3563cf2e4dc4",
@@ -105,6 +121,9 @@
             "userConfig": {
                 "title": "Examens &Questions"
             },
+            "configAlternates": {
+                "title": "string"
+            },
             "name": "studyhasquestionsviewassociatepanel",
             "designerId": "79791448-a478-4f22-905d-5c373ec241d3",
             "masterInstanceId": "0de7100b-5720-4229-8215-17g9qupiqtea",
@@ -130,6 +149,9 @@
             "codeClass": null,
             "userConfig": {
                 "title": "Examens & Modèles"
+            },
+            "configAlternates": {
+                "title": "string"
             },
             "name": "studytemplateassociateviewassociatepanel",
             "designerId": "64a186a5-baa8-4ef2-95ac-ef72ca84b17d",

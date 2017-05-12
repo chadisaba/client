@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "StudyTypeComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelStudyTypeComboModel",
     "designerId": "040092bf-b6f4-441b-b581-278jd32dnp1n",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "studyTypeId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-ty9l8gk6s61a"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "studyTypeCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-ag22eww9fbnl"

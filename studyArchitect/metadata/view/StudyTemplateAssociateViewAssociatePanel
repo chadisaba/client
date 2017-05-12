@@ -16,6 +16,17 @@
         "title": "studies & templates",
         "width": null
     },
+    "configAlternates": {
+        "container|align": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "header": "boolean",
+        "height": "auto",
+        "itemId": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyPanel",
     "designerId": "79f36a5d-5720-4229-8215-39abfe367dd6",
     "viewControllerInstanceId": "5183fc41-ddcb-415a-8749-9cd06580bc39",
@@ -31,6 +42,10 @@
             "userConfig": {
                 "layout|flex": 1,
                 "reference": "selectedTreePanel"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "reference": "string"
             },
             "name": "studytemplateassociateviewselectedtreepanel",
             "designerId": "79f36a5d-7ccb-4f9e-8ae3-39abfe367dd6",
@@ -54,6 +69,13 @@
                         "name": "selectedTreeSelectEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onSelectedTreePanelSelectedTreeSelectEvent",
                     "designerId": "605e80ce-0012-4ca6-8011-39abfe367dd6"
                 }
@@ -73,6 +95,13 @@
                 "layout|flex": null,
                 "width": 60
             },
+            "configAlternates": {
+                "container|align": "string",
+                "container|pack": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "width": "auto"
+            },
             "name": "MyContainer",
             "designerId": "3b34fde4-d5c0-47bc-b8a8-39abfe367dd6",
             "cn": [
@@ -89,6 +118,13 @@
                         "maxWidth": 50,
                         "text": null,
                         "width": 50
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "maxWidth": "number",
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyButton",
                     "designerId": "f8aa75f1-d55d-44b3-bfff-39abfe367dd6",
@@ -109,6 +145,12 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onAllSelectedBtnClick",
                             "designerId": "d9ef3c40-b8cd-443d-abf2-39abfe367dd6"
                         }
@@ -124,6 +166,10 @@
                     "userConfig": {
                         "height": 10,
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|flex": "number"
                     },
                     "name": "MySpacer3",
                     "designerId": "8537a236-61e7-4cb4-b026-39abfe367dd6"
@@ -141,6 +187,13 @@
                         "maxWidth": 50,
                         "text": null,
                         "width": 50
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "maxWidth": "number",
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyButton1",
                     "designerId": "bacb9725-80ba-46d2-9623-39abfe367dd6",
@@ -160,6 +213,12 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onSelectedBtnClick",
                             "designerId": "6951a5e3-7d00-4440-8dfd-39abfe367dd6"
                         }
@@ -176,6 +235,10 @@
                         "height": 10,
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|flex": "number"
+                    },
                     "name": "MySpacer",
                     "designerId": "eb23373c-e1a4-4881-a928-39abfe367dd6"
                 },
@@ -189,6 +252,10 @@
                     "userConfig": {
                         "height": 30,
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|flex": "number"
                     },
                     "name": "MySpacer2",
                     "designerId": "73d4c0d9-82ae-4f68-9099-39abfe367dd6"
@@ -206,6 +273,13 @@
                         "maxWidth": 50,
                         "text": null,
                         "width": 50
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "maxWidth": "number",
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyButton2",
                     "designerId": "b40219b2-94ff-4631-aa2e-39abfe367dd6",
@@ -225,6 +299,12 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onAvailableBtnClick",
                             "designerId": "207731c5-58b1-4782-9818-39abfe367dd6"
                         }
@@ -240,6 +320,10 @@
                     "userConfig": {
                         "height": 10,
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|flex": "number"
                     },
                     "name": "MySpacer1",
                     "designerId": "b121a147-2ee0-4f4f-b424-39abfe367dd6"
@@ -257,6 +341,13 @@
                         "maxWidth": 50,
                         "text": null,
                         "width": 50
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "maxWidth": "number",
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyButton3",
                     "designerId": "9b4596b7-b7e0-46a5-a578-39abfe367dd6",
@@ -277,6 +368,12 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
                             "name": "onAllAvailableBtnClick",
                             "designerId": "1b917133-3e25-443c-8f1e-39abfe367dd6"
                         }
@@ -294,6 +391,10 @@
             "userConfig": {
                 "layout|flex": 1,
                 "reference": "availableTreePanel"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "reference": "string"
             },
             "name": "studytemplateassociateviewavailabletreepanel",
             "designerId": "9de396ea-8da9-44a1-80e3-39abfe367dd6",
@@ -317,6 +418,13 @@
                         "name": "availableTreeSelectEvent",
                         "scope": "me"
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
                     "name": "onAvailableTreePanelAvailableTreeSelectEvent",
                     "designerId": "81b7721b-1de5-4e6f-b27a-39abfe367dd6"
                 }
@@ -336,6 +444,12 @@
                 ],
                 "name": "afterrender",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onAssociatePanelAfterRender",
             "designerId": "d21cd2d6-0aa5-4acc-9d8c-39abfe367dd6"
@@ -361,6 +475,11 @@
                     "    "
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processStudyTemplateAssociateViewAssociatePanel",
             "designerId": "18844ba4-6f0e-4825-9a17-39abfe367dd6"
         },
@@ -379,6 +498,12 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onAssociatePanelQuitEdit",
             "designerId": "833e5d57-93c1-4d2a-ab73-39abfe367dd6"
         },
@@ -396,6 +521,12 @@
                 ],
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onAssociatePanelResetEdit",
             "designerId": "c0b8dd52-f705-4a42-aa27-39abfe367dd6"
@@ -422,6 +553,13 @@
                 "name": "saveEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onAssociatePanelSaveEdit",
             "designerId": "f5550e07-801e-4da4-b38d-39abfe367dd6"
         },
@@ -440,6 +578,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onAssociatePanelInEdit",
             "designerId": "93e1cc65-8d45-4aec-86fc-39abfe367dd6"
         },
@@ -453,6 +597,10 @@
             "userConfig": {
                 "dock": "top",
                 "layout|flex": 1
+            },
+            "configAlternates": {
+                "dock": "string",
+                "layout|flex": "number"
             },
             "name": "MyToolbar2",
             "designerId": "e018635d-5204-4577-8e08-39abfe367dd6",
@@ -478,10 +626,19 @@
                         "typeAhead": true,
                         "valueField": "studyId"
                     },
-                    "name": "MyComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number",
+                        "queryMode": "string",
+                        "typeAhead": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MyComboBox",
                     "designerId": "4c96fe47-6539-47bb-b739-39abfe367dd6",
                     "cn": [
                         {
@@ -498,6 +655,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onAssociateComboChange",
                             "designerId": "ed966afc-cf84-4152-9aff-39abfe367dd6"

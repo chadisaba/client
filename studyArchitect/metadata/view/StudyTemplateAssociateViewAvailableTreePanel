@@ -25,10 +25,19 @@
         "title": "all report templates",
         "width": 400
     },
-    "name": "MyTreePanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "itemId": "string",
+        "root": "object",
+        "rootVisible": "boolean",
+        "title": "string",
+        "width": "auto"
     },
+    "name": "MyTreePanel",
     "designerId": "b2b26701-9fd6-4b2f-a673-0ec863cd1787",
     "viewControllerInstanceId": "93a62a75-edee-43e5-bb30-869799773e60",
     "viewModelInstanceId": "edfba29e-426f-4ea9-99cf-b3f804040e9d",
@@ -55,6 +64,11 @@
                 "flex": 1,
                 "text": "MyTreeColumn"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "text": "string"
+            },
             "name": "MyTreeColumn",
             "designerId": "45461d4c-0a53-463e-86f4-39abfe367dd6"
         },
@@ -69,6 +83,10 @@
                 "dataIndex": "xXfields",
                 "text": "MyColumn"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MyColumn",
             "designerId": "4f46b797-6b9d-491f-9319-39abfe367dd6"
         },
@@ -81,6 +99,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "9d350cf7-95be-480d-a637-39abfe367dd6"
@@ -100,6 +121,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onAvailableTreePanelSelect",
             "designerId": "5dcc703c-1c7e-4146-acfb-39abfe367dd6"
         },
@@ -112,6 +139,9 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
             },
             "name": "MyToolbar",
             "designerId": "da00c0a0-9c06-4f90-997a-39abfe367dd6",
@@ -128,6 +158,11 @@
                         "itemId": "filterField",
                         "layout|flex": null
                     },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
                     "name": "MyTextField",
                     "designerId": "87e3c12c-68ec-4d86-ab7b-39abfe367dd6",
                     "cn": [
@@ -141,6 +176,10 @@
                             "userConfig": {
                                 "cls": "x-form-clear-trigger",
                                 "name": "mytrigger"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string"
                             },
                             "name": "MyTrigger",
                             "designerId": "574c75d6-f66d-4371-a372-39abfe367dd6",
@@ -163,6 +202,11 @@
                                             "field.setValue('');"
                                         ]
                                     },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
                                     "name": "handler",
                                     "designerId": "7ff30b3f-c85d-4480-b523-39abfe367dd6"
                                 }
@@ -182,6 +226,12 @@
                                 ],
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onFilterFieldChange",
                             "designerId": "a984a622-a270-4f76-afc2-39abfe367dd6"
@@ -206,6 +256,11 @@
                     "Utility.grid.addInfoCol(this);"
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processStudyTemplateAssociateViewAvailableTreePanel",
             "designerId": "66f24a49-854b-4654-813f-39abfe367dd6"
         },
@@ -220,6 +275,11 @@
                 "fn": "onAvailableTreePanelAvailableTreeSelectEvent",
                 "name": "availableTreeSelectEvent",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onAvailableTreePanelAvailableTreeSelectEvent",
             "designerId": "86c36a73-c2bb-489b-ae91-39abfe367dd6"

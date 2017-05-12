@@ -9,5 +9,9 @@
         "designer|userAlias": "studysettingstabpanel",
         "designer|userClassName": "StudySettingsTabPanelViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "f15fd268-99d6-461e-8ffc-e0e2dd7b492e"
 }

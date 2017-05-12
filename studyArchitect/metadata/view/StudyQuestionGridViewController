@@ -9,5 +9,9 @@
         "designer|userAlias": "studyquestiongrid",
         "designer|userClassName": "StudyQuestionGridViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "tq8n245u-4ace-45f2-b4ee-ck35w9pgu4bk"
 }
