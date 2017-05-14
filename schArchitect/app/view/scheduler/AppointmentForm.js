@@ -138,7 +138,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                             anchor: '100%',
                             itemId: 'patientNameComboBoxEditorItemId',
                             fieldLabel: 'patient',
-                            name: 'patientName',
+                            name: 'patientId',
                             selectOnFocus: true,
                             displayField: 'patientSearch',
                             minChars: 4,
@@ -162,26 +162,26 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                     title: 'doctors',
                     items: [
                         {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            itemId: 'doctorComboBoxEditorItemId',
+                            fieldLabel: 'doctor',
+                            name: 'doctorId',
+                            selectOnFocus: true,
+                            displayField: 'userInitiales',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            valueField: 'doctorId',
+                            bind: {
+                                store: '{DoctorNameComboStore}'
+                            }
+                        },
+                        {
                             xtype: 'checkboxfield',
                             anchor: '100%',
                             fieldLabel: 'sch doctor required',
                             name: 'appointmentMedIsRequired',
                             boxLabel: ''
-                        },
-                        {
-                            xtype: 'combobox',
-                            anchor: '100%',
-                            itemId: 'doctorComboBoxEditorItemId',
-                            fieldLabel: 'doctor',
-                            name: 'patientName',
-                            selectOnFocus: true,
-                            displayField: 'patientSearch',
-                            forceSelection: true,
-                            queryMode: 'local',
-                            valueField: 'patientId',
-                            bind: {
-                                store: '{DoctorNameComboStore}'
-                            }
                         }
                     ]
                 },

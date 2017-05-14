@@ -350,7 +350,7 @@
                                 "itemId": "patientNameComboBoxEditorItemId",
                                 "layout|anchor": "100%",
                                 "minChars": 4,
-                                "name": "patientName",
+                                "name": "patientId",
                                 "proxyUrl": "Server.GridFilter.getResultData",
                                 "queryDelay": 500,
                                 "queryMode": "local",
@@ -538,6 +538,42 @@
                     "designerId": "1bef2e94-4cd9-43cf-bdaf-50b36527ec10",
                     "cn": [
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "userInitiales",
+                                "fieldLabel": "doctor",
+                                "forceSelection": true,
+                                "itemId": "doctorComboBoxEditorItemId",
+                                "layout|anchor": "100%",
+                                "name": "doctorId",
+                                "queryMode": "local",
+                                "selectOnFocus": true,
+                                "store": [
+                                    "{DoctorNameComboStore}"
+                                ],
+                                "valueField": "doctorId"
+                            },
+                            "configAlternates": {
+                                "store": "binding",
+                                "displayField": "datafield",
+                                "fieldLabel": "string",
+                                "forceSelection": "boolean",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "name": "string",
+                                "queryMode": "string",
+                                "selectOnFocus": "boolean",
+                                "valueField": "datafield"
+                            },
+                            "name": "MypatientNameComboBox1",
+                            "designerId": "a0fe22ad-dd52-4e46-a3b2-7a27b5847e0d"
+                        },
+                        {
                             "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",
@@ -558,42 +594,6 @@
                             },
                             "name": "MyappointmentMedIsRequiredCheckBox",
                             "designerId": "b6c803b9-6597-4a48-9b56-c82d93df9dbe"
-                        },
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "displayField": "patientSearch",
-                                "fieldLabel": "doctor",
-                                "forceSelection": true,
-                                "itemId": "doctorComboBoxEditorItemId",
-                                "layout|anchor": "100%",
-                                "name": "patientName",
-                                "queryMode": "local",
-                                "selectOnFocus": true,
-                                "store": [
-                                    "{DoctorNameComboStore}"
-                                ],
-                                "valueField": "patientId"
-                            },
-                            "configAlternates": {
-                                "store": "binding",
-                                "displayField": "datafield",
-                                "fieldLabel": "string",
-                                "forceSelection": "boolean",
-                                "itemId": "string",
-                                "layout|anchor": "string",
-                                "name": "string",
-                                "queryMode": "string",
-                                "selectOnFocus": "boolean",
-                                "valueField": "datafield"
-                            },
-                            "name": "MypatientNameComboBox1",
-                            "designerId": "a0fe22ad-dd52-4e46-a3b2-7a27b5847e0d"
                         }
                     ]
                 },
