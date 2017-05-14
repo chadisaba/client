@@ -25,6 +25,16 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     onUserGridIdAfterRender: function(component) {
         component.getPlugin('gridediting').lockGrid(false);
         var me=this;
+          component.down('#rdvColorColItemId').setEditor({
+            xtype:'colorfield',
+            allowBlank: false,
+            width:200,
+            itemId:'bicEditor',
+            maxLength:8,
+            enableKeyEvents:true
+
+        });
+        
         var viewModel = me.getViewModel();
         this.getResultArray(
             function(data){
@@ -155,7 +165,7 @@ Ext.define('MyApp.view.override.UserGridViewController', {
     onUserGridIdEdit: function(editor,context) {
 
     	
-    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userZipCode','cityId','cityName','userAddress','userPhone','userFax','active'];
+    	var columnsName=['userFName','userLName','userLogin','userPass','userInitiales','userSchResourceColor','userZipCode','cityId','cityName','userAddress','userPhone','userFax','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -201,7 +211,12 @@ Ext.define('MyApp.view.override.UserGridViewController', {
                     callback(res.msg);
                 }
             }, me);
-    }
+    },
+            /*********************** renderers****************************************************/
+ 
+  rdvColorRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+return ' <div style="line-height:30px;background-color:#'+value+';height:30px;width:100%;float:left;padding:5px;"></div>';
+  }
 
 
 

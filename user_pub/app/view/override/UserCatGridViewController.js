@@ -7,6 +7,18 @@ Ext.define('MyApp.view.override.UserCatGridViewController', {
 
     onUserCatGridIdAfterRender: function(component, eOpts) {
         component.getPlugin('gridediting').lockGrid(false);
+        
+         component.down('#userCatSchColorCol').setEditor({
+            xtype:'colorfield',
+            allowBlank: false,
+            width:200,
+            itemId:'bicEditor',
+            maxLength:8,
+            enableKeyEvents:true
+
+        });
+
+        
 
     var params;
             
@@ -93,7 +105,7 @@ Ext.define('MyApp.view.override.UserCatGridViewController', {
     onUserCatGridIdEdit: function(editor,context) {
  // var columnsName=['name','text'];
     	
-    	var columnsName=['userCatName','userCatReadOnly','active'];
+    	var columnsName=['userCatName','userCatReadOnly','userCatSchColor','active'];
         Utility.grid.edit(editor, context, columnsName);
     },
 
@@ -131,7 +143,9 @@ Ext.define('MyApp.view.override.UserCatGridViewController', {
     /*********************** renderers****************************************************/
   /**xxComboboxRenderer**/
     
- 
+ userCatSchColorRenderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+return ' <div style="line-height:30px;background-color:#'+value+';height:30px;width:100%;float:left;padding:5px;"></div>';
+    },
     
 
 });
