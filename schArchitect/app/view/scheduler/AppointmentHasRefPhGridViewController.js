@@ -25,6 +25,10 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGridViewController', {
 
     },
 
+    onReferringPhysicianSearchComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
+
+    },
+
     select: function(rowmodel, record, index, eOpts) {
         // Set selected record
         //this.getViewModel().set('record', record);
@@ -37,65 +41,69 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGridViewController', {
 
     },
 
-    onVisitRefPhGridIdAfterRender: function(component, eOpts) {
+    onAppointmentHasRefPhGridIdAfterRender: function(component, eOpts) {
 
 
     },
 
-    onVisitRefPhGridIdInEdit: function(editor, context) {
+    onAppointmentHasRefPhGridIdInEdit: function(editor, context) {
 
     },
 
-    onVisitRefPhGridIdResetEdit: function(gridpanel, promptWin) {
+    onAppointmentHasRefPhGridIdResetEdit: function(gridpanel, promptWin) {
 
     },
 
-    onVisitRefPhGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
+    onAppointmentHasRefPhGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
 
     },
 
-    onVisitRefPhGridIdAddItem: function(grid) {
+    onAppointmentHasRefPhGridIdAddItem: function(grid) {
 
 
     },
 
-    onVisitRefPhGridIdDeleteItem: function() {
+    onAppointmentHasRefPhGridIdDeleteItem: function() {
 
     },
 
-    onVisitRefPhGridIdDuplicateItem: function() {
+    onAppointmentHasRefPhGridIdDuplicateItem: function() {
 
     },
 
-    onVisitRefPhGridIdModifyItem: function() {
+    onAppointmentHasRefPhGridIdModifyItem: function() {
 
     },
 
-    onVisitRefPhGridIdQuitEdit: function(gridpanel, promptWin) {
+    onAppointmentHasRefPhGridIdQuitEdit: function(gridpanel, promptWin) {
 
     },
 
-    onVisitRefPhGridIdBeforeEdit: function(editor, context) {
+    onAppointmentHasRefPhGridIdBeforeEdit: function(editor, context) {
 
     },
 
-    onVisitRefPhGridIdCanceledit: function(editor, context) {
+    onAppointmentHasRefPhGridIdCanceledit: function(editor, context) {
 
     },
 
-    onVisitRefPhGridIdContainerClick: function(dataview, e, eOpts) {
+    onAppointmentHasRefPhGridIdContainerClick: function(dataview, e, eOpts) {
 
     },
 
-    onVisitRefPhGridIdEdit: function(editor, context) {
+    onAppointmentHasRefPhGridIdEdit: function(editor, context) {
 
     },
 
-    onVisitRefPhGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+    onAppointmentHasRefPhGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
     },
 
-    onVisitRefPhGridIdValidateedit: function(editor, context) {
+    onAppointmentHasRefPhGridIdValidateedit: function(editor, context) {
+
+    },
+
+    onAppointmentHasRefPhGridIdBoxReady: function(component, width, height, eOpts) {
 
     }
 

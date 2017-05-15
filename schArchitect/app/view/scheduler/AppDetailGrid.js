@@ -33,7 +33,7 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
     viewModel: {
         type: 'scheduler.appdetailgrid'
     },
-    reference: 'studyVisitGridRef',
+    reference: 'appDetailGridRef',
     itemId: 'appDetailGridItemId',
     resizable: false,
     forceFit: true,
@@ -82,22 +82,22 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
             flex: 1,
             minWidth: 70,
             dataIndex: 'roomCode',
-            text: 'room'
+            text: 'appointment room'
         },
         {
             xtype: 'datecolumn',
             minWidth: 50,
             width: 50,
             dataIndex: 'appDetailStartTime',
-            text: 'start',
+            text: 'appointment start',
             format: 'H:i'
         },
         {
             xtype: 'gridcolumn',
             minWidth: 60,
             width: 60,
-            dataIndex: 'appDetailEndTime',
-            text: 'duration',
+            dataIndex: 'duration',
+            text: 'appointemnt duration',
             editor: {
                 xtype: 'numberfield',
                 itemId: 'durationNumberFieldItemId',
@@ -120,7 +120,7 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
             minWidth: 80,
             width: 100,
             dataIndex: 'technicianId',
-            text: 'technician',
+            text: 'appointment technician',
             editor: {
                 xtype: 'combobox',
                 itemId: 'technicianComboboxItemId',
@@ -160,23 +160,16 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
     ],
     listeners: {
         select: 'select',
-        chHist: 'onStudyVisitGridIdChHist',
-        afterrender: 'onStudyVisitGridIdAfterRender',
-        inEdit: 'onStudyVisitGridIdInEdit',
-        resetEdit: 'onStudyVisitGridIdResetEdit',
-        saveEdit: 'onStudyVisitGridIdSaveEdit',
-        addItem: 'onStudyVisitGridIdAddItem',
-        deleteItem: 'onStudyVisitGridIdDeleteItem',
-        modifyItem: 'onStudyVisitGridIdModifyItem',
-        quitEdit: 'onStudyVisitGridIdQuitEdit',
-        beforeedit: 'onStudyVisitGridIdBeforeEdit',
-        canceledit: 'onStudyVisitGridIdCanceledit',
-        containerclick: 'onStudyVisitGridIdContainerClick',
-        edit: 'onStudyVisitGridIdEdit',
-        beforecellclick: 'onStudyVisitGridIdBeforeCellClick',
-        validateedit: 'onStudyVisitGridIdValidateedit',
-        boxready: 'onStudyVisitGridItemIdBoxReady',
-        studyVisitGridEndEditEvent: 'onStudyVisitGridItemIdStudyVisitGridEndEditEvent'
+        addItem: 'onAppDetailGridIdAddItem',
+        deleteItem: 'onAppDetailGridIdDeleteItem',
+        modifyItem: 'onAppDetailGridIdModifyItem',
+        canceledit: 'onAppDetailGridIdCanceledit',
+        containerclick: 'onAppDetailGridIdContainerClick',
+        edit: 'onAppDetailGridIdEdit',
+        beforecellclick: 'onAppDetailGridIdBeforeCellClick',
+        validateedit: 'onAppDetailGridIdValidateedit',
+        boxready: 'onAppDetailGridItemIdBoxReady',
+        beforeedit: 'onAppDetailGridItemIdBeforeEdit'
     },
     selModel: {
         selType: 'rowmodel',

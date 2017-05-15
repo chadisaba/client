@@ -45,6 +45,14 @@ Ext.define('MyApp.view.scheduler.AppointmentFormViewController', {
 
     },
 
+    onAppDetailGridItemIdStartEditEvent: function(gridpanel) {
+
+    },
+
+    onAppDetailGridItemIdEndEditEvent: function(gridpanel) {
+
+    },
+
     onPatientNameComboBoxEditorItemIdChange: function(field, newValue, oldValue, eOpts) {
 
     },
@@ -58,6 +66,10 @@ Ext.define('MyApp.view.scheduler.AppointmentFormViewController', {
     },
 
     onAppointmentFormIdBoxReady: function(component, width, height, eOpts) {
+
+    },
+
+    onSaveAppointmentBtnClick: function(button, e, eOpts) {
 
     }
 

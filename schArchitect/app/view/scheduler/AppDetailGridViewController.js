@@ -41,73 +41,44 @@ Ext.define('MyApp.view.scheduler.AppDetailGridViewController', {
         //this.showView('details');
     },
 
-    onStudyVisitGridIdChHist: function() {
-
-    },
-
-    onStudyVisitGridIdAfterRender: function(component, eOpts) {
+    onAppDetailGridIdAddItem: function(grid) {
 
 
     },
 
-    onStudyVisitGridIdInEdit: function(editor, context) {
+    onAppDetailGridIdDeleteItem: function() {
 
     },
 
-    onStudyVisitGridIdResetEdit: function(gridpanel, promptWin) {
+    onAppDetailGridIdModifyItem: function() {
 
     },
 
-    onStudyVisitGridIdSaveEdit: function(gridpanel, promptWin, dataToBeSaved, comment) {
+    onAppDetailGridIdCanceledit: function(editor, context) {
 
     },
 
-    onStudyVisitGridIdAddItem: function(grid) {
-
-
-    },
-
-    onStudyVisitGridIdDeleteItem: function() {
+    onAppDetailGridIdContainerClick: function(dataview, e, eOpts) {
 
     },
 
-    onStudyVisitGridIdModifyItem: function() {
+    onAppDetailGridIdEdit: function(editor, context) {
 
     },
 
-    onStudyVisitGridIdQuitEdit: function(gridpanel, promptWin) {
+    onAppDetailGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
     },
 
-    onStudyVisitGridIdBeforeEdit: function(editor, context) {
+    onAppDetailGridIdValidateedit: function(editor, context) {
 
     },
 
-    onStudyVisitGridIdCanceledit: function(editor, context) {
+    onAppDetailGridItemIdBoxReady: function(component, width, height, eOpts) {
 
     },
 
-    onStudyVisitGridIdContainerClick: function(dataview, e, eOpts) {
-
-    },
-
-    onStudyVisitGridIdEdit: function(editor, context) {
-
-    },
-
-    onStudyVisitGridIdBeforeCellClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-
-    },
-
-    onStudyVisitGridIdValidateedit: function(editor, context) {
-
-    },
-
-    onStudyVisitGridItemIdBoxReady: function(component, width, height, eOpts) {
-
-    },
-
-    onStudyVisitGridItemIdStudyVisitGridEndEditEvent: function() {
+    onAppDetailGridItemIdBeforeEdit: function(editor, context) {
 
     }
 

@@ -33,17 +33,18 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
         type: 'scheduler.appointmenthasrefphgrid'
     },
     reference: 'visitRefPhGridRef',
-    itemId: 'visitRefPhGridId',
+    itemId: 'appointmentHasRefPhGridId',
     resizable: false,
     title: '',
     forceFit: true,
 
     bind: {
-        store: '{VisitRefPhStore}'
+        store: '{AppointmentRefPhStore}'
     },
     columns: [
         {
             xtype: 'gridcolumn',
+            hidden: true,
             dataIndex: 'referringPhysicianId',
             text: 'ID',
             editor: {
@@ -58,7 +59,7 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
                 return Utility.renderer.checkBoxRenderer(value);
             },
             dataIndex: 'patientIsOrientedBy',
-            text: 'Prescripteur?',
+            text: 'appointment is referring physician',
             editor: {
                 xtype: 'checkboxfield'
             }
@@ -66,7 +67,7 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
         {
             xtype: 'gridcolumn',
             dataIndex: 'referringPhysicianSearch',
-            text: 'Correspondants',
+            text: 'appointment  referring physicians',
             editor: {
                 xtype: 'combobox',
                 itemId: 'referringPhysicianSearchComboBoxEditorItemId',
@@ -80,7 +81,8 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
                     store: '{ReferringPhysicianSearchComboStore}'
                 },
                 listeners: {
-                    select: 'onReferringPhysicianSearchComboBoxEditorItemIdSelect'
+                    select: 'onReferringPhysicianSearchComboBoxEditorItemIdSelect',
+                    change: 'onReferringPhysicianSearchComboBoxEditorItemIdChange'
                 }
             }
         }
@@ -88,21 +90,22 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
     listeners: {
         select: 'select',
         chHist: 'onVisitRefPhGridIdChHist',
-        afterrender: 'onVisitRefPhGridIdAfterRender',
-        inEdit: 'onVisitRefPhGridIdInEdit',
-        resetEdit: 'onVisitRefPhGridIdResetEdit',
-        saveEdit: 'onVisitRefPhGridIdSaveEdit',
-        addItem: 'onVisitRefPhGridIdAddItem',
-        deleteItem: 'onVisitRefPhGridIdDeleteItem',
-        duplicateItem: 'onVisitRefPhGridIdDuplicateItem',
-        modifyItem: 'onVisitRefPhGridIdModifyItem',
-        quitEdit: 'onVisitRefPhGridIdQuitEdit',
-        beforeedit: 'onVisitRefPhGridIdBeforeEdit',
-        canceledit: 'onVisitRefPhGridIdCanceledit',
-        containerclick: 'onVisitRefPhGridIdContainerClick',
-        edit: 'onVisitRefPhGridIdEdit',
-        beforecellclick: 'onVisitRefPhGridIdBeforeCellClick',
-        validateedit: 'onVisitRefPhGridIdValidateedit'
+        afterrender: 'onAppointmentHasRefPhGridIdAfterRender',
+        inEdit: 'onAppointmentHasRefPhGridIdInEdit',
+        resetEdit: 'onAppointmentHasRefPhGridIdResetEdit',
+        saveEdit: 'onAppointmentHasRefPhGridIdSaveEdit',
+        addItem: 'onAppointmentHasRefPhGridIdAddItem',
+        deleteItem: 'onAppointmentHasRefPhGridIdDeleteItem',
+        duplicateItem: 'onAppointmentHasRefPhGridIdDuplicateItem',
+        modifyItem: 'onAppointmentHasRefPhGridIdModifyItem',
+        quitEdit: 'onAppointmentHasRefPhGridIdQuitEdit',
+        beforeedit: 'onAppointmentHasRefPhGridIdBeforeEdit',
+        canceledit: 'onAppointmentHasRefPhGridIdCanceledit',
+        containerclick: 'onAppointmentHasRefPhGridIdContainerClick',
+        edit: 'onAppointmentHasRefPhGridIdEdit',
+        beforecellclick: 'onAppointmentHasRefPhGridIdBeforeCellClick',
+        validateedit: 'onAppointmentHasRefPhGridIdValidateedit',
+        boxready: 'onAppointmentHasRefPhGridIdBoxReady'
     },
     plugins: [
         {

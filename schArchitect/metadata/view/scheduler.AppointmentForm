@@ -259,10 +259,12 @@
                                     "                        pluginId: 'gridediting',",
                                     "                        onlyADM: true",
                                     "                    }"
-                                ]
+                                ],
+                                "reference": "GridRef"
                             },
                             "configAlternates": {
-                                "externalEditingPlugin": "object"
+                                "externalEditingPlugin": "object",
+                                "reference": "string"
                             },
                             "name": "scheduler.appdetailgrid",
                             "designerId": "b16f6a08-abb8-497b-aba2-117cbc29e6ac",
@@ -299,6 +301,54 @@
                                     },
                                     "name": "onAppDetailGridItemIdSelectStudyEvent",
                                     "designerId": "140fd2b0-07e7-4627-9c7f-03a60554933a"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "gridpanel"
+                                        ],
+                                        "fn": "onAppDetailGridItemIdStartEditEvent",
+                                        "name": "startEditEvent",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAppDetailGridItemIdStartEditEvent",
+                                    "designerId": "da8b630f-bd52-423f-b94f-34e72f2801f2"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "gridpanel"
+                                        ],
+                                        "fn": "onAppDetailGridItemIdEndEditEvent",
+                                        "name": "endEditEvent",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onAppDetailGridItemIdEndEditEvent",
+                                    "designerId": "5617c175-8b8a-4e5c-9bad-db479906a8c0"
                                 }
                             ]
                         }
@@ -312,10 +362,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "patientContainer",
                         "title": "patient"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "itemId": "string"
                     },
                     "name": "MyFieldSet1",
                     "designerId": "2e2d90e7-836c-4680-8d88-c427254474fc",
@@ -343,6 +395,7 @@
                                     "                                                            }",
                                     "                            }"
                                 ],
+                                "allowBlank": false,
                                 "displayField": "patientSearch",
                                 "enableSearchBtn": true,
                                 "fieldLabel": "patient",
@@ -425,7 +478,8 @@
                                 "queryDelay": "number",
                                 "tableName": "string",
                                 "advancedListConfig": "object",
-                                "typeAhead": "boolean"
+                                "typeAhead": "boolean",
+                                "allowBlank": "boolean"
                             },
                             "name": "MyadvancedCombobox",
                             "designerId": "01a1cc7a-6952-46e2-a5ac-fa4e6b270d7e",
@@ -529,10 +583,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "doctorContainer",
                         "title": "doctors"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "itemId": "string"
                     },
                     "name": "MyFieldSet2",
                     "designerId": "1bef2e94-4cd9-43cf-bdaf-50b36527ec10",
@@ -606,13 +662,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "itemId": "otherContainer",
                         "layout": "hbox",
                         "title": "sch other"
                     },
                     "configAlternates": {
                         "title": "string",
                         "container|align": "string",
-                        "layout": "string"
+                        "layout": "string",
+                        "itemId": "string"
                     },
                     "name": "MyFieldSet5",
                     "designerId": "37719662-08fd-467f-9124-b513bc7d0d4c",
@@ -689,10 +747,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "rigthContainer",
                 "layout|region": "center"
             },
             "configAlternates": {
-                "layout|region": "string"
+                "layout|region": "string",
+                "itemId": "string"
             },
             "name": "MyContainer1",
             "designerId": "9da1dde1-0d54-4fe6-835e-db9d4c9d44d6",
@@ -720,8 +780,28 @@
                                 "type": "array"
                             },
                             "codeClass": null,
+                            "userConfig": {
+                                "externalEditingPlugin": [
+                                    "{",
+                                    "                                pluginId: 'gridediting',",
+                                    "                                onlyADM: true,",
+                                    "                                liveSearch:false,",
+                                    "                                preferences:false",
+                                    "                            }"
+                                ]
+                            },
+                            "configAlternates": {
+                                "externalEditingPlugin": "object"
+                            },
                             "name": "scheduler.appointmenthasrefphgrid",
                             "designerId": "18550615-39c3-47f5-b5f1-fa7ee7d515da",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "externalEditingPlugin",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "da3d5a57-98c8-4c9e-a44b-199bc8c1fb78"
                         }
                     ]
@@ -763,6 +843,102 @@
             },
             "name": "onAppointmentFormIdBoxReady",
             "designerId": "2a8b6303-4e71-4028-9471-3241b808eafd"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "ed457080-213e-4f08-a50b-9bdeb4e98833",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "76284837-f8de-4a0e-bcc9-708886e06ccf"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "a6af15ab-c4fa-4238-8436-283e48947583",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "glyph": "xf0c7@FontAwesome",
+                                "itemId": "saveAppointmentBtn",
+                                "text": "save"
+                            },
+                            "configAlternates": {
+                                "formBind": "boolean",
+                                "glyph": "auto",
+                                "itemId": "string",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "705faf33-d3e4-486f-b0e5-5751e7c910af",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveAppointmentBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSaveAppointmentBtnClick",
+                                    "designerId": "fd2a1242-812e-4523-bb71-c0afd792d113"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

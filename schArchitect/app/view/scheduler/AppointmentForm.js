@@ -26,7 +26,9 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
         'Ext.grid.Panel',
         'Ext.ux.inputs.AdvancedCombobox',
         'Ext.form.field.Checkbox',
-        'Ext.toolbar.Spacer'
+        'Ext.toolbar.Spacer',
+        'Ext.toolbar.Toolbar',
+        'Ext.button.Button'
     ],
 
     controller: 'scheduler.appointmentform',
@@ -63,14 +65,18 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                                 pluginId: 'gridediting',
                                 onlyADM: true
                             },
+                            reference: 'GridRef',
                             listeners: {
-                                selectStudyEvent: 'onAppDetailGridItemIdSelectStudyEvent'
+                                selectStudyEvent: 'onAppDetailGridItemIdSelectStudyEvent',
+                                startEditEvent: 'onAppDetailGridItemIdStartEditEvent',
+                                endEditEvent: 'onAppDetailGridItemIdEndEditEvent'
                             }
                         }
                     ]
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'patientContainer',
                     title: 'patient',
                     items: [
                         {
@@ -139,6 +145,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                             itemId: 'patientNameComboBoxEditorItemId',
                             fieldLabel: 'patient',
                             name: 'patientId',
+                            allowBlank: false,
                             selectOnFocus: true,
                             displayField: 'patientSearch',
                             minChars: 4,
@@ -159,6 +166,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'doctorContainer',
                     title: 'doctors',
                     items: [
                         {
@@ -187,6 +195,7 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'otherContainer',
                     title: 'sch other',
                     layout: {
                         type: 'hbox',
@@ -216,19 +225,53 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
         {
             xtype: 'container',
             region: 'center',
+            itemId: 'rigthContainer',
             items: [
                 {
                     xtype: 'fieldset',
                     title: 'the referring physicians',
                     items: [
                         {
-                            xtype: 'scheduler.appointmenthasrefphgrid'
+                            xtype: 'scheduler.appointmenthasrefphgrid',
+                            externalEditingPlugin: {
+                                pluginId: 'gridediting',
+                                onlyADM: true,
+                                liveSearch: false,
+                                preferences: false
+                            }
                         }
                     ]
                 },
                 {
                     xtype: 'fieldset',
                     title: 'the documents'
+                }
+            ]
+        }
+    ],
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [
+                {
+                    xtype: 'tbspacer',
+                    flex: 1
+                },
+                {
+                    xtype: 'container',
+                    items: [
+                        {
+                            xtype: 'button',
+                            formBind: true,
+                            itemId: 'saveAppointmentBtn',
+                            glyph: 'xf0c7@FontAwesome',
+                            text: 'save',
+                            listeners: {
+                                click: 'onSaveAppointmentBtnClick'
+                            }
+                        }
+                    ]
                 }
             ]
         }

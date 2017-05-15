@@ -19,7 +19,8 @@ Ext.define('MyApp.model.scheduler.AppointmentModel', {
     requires: [
         'Ext.data.field.Date',
         'Ext.data.field.String',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.Boolean',
+        'Ext.data.field.Integer'
     ],
 
     validators: [
@@ -58,24 +59,20 @@ Ext.define('MyApp.model.scheduler.AppointmentModel', {
             name: 'appointmentCanceledByPatient'
         },
         {
-            type: 'boolean',
+            type: 'date',
             name: 'appointmentCancelationDate'
         },
         {
             type: 'date',
-            name: 'appointmentDateConfirmation'
-        },
-        {
-            type: 'boolean',
             name: 'appointmentSmsSentDate'
-        },
-        {
-            type: 'date',
-            name: 'appointmentDateConfirmationByPatient'
         },
         {
             type: 'string',
             name: 'patientName'
+        },
+        {
+            type: 'int',
+            name: 'doctorId'
         },
         {
             name: 'toDelete'

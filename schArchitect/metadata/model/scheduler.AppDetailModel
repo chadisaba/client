@@ -276,6 +276,22 @@
             },
             "name": "MyField31",
             "designerId": "mb89avg6-ac56-469a-895f-3jeckksqchkn"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "duration"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField3",
+            "designerId": "ca079f2b-c814-45eb-b410-f23517ca4295"
         }
     ]
 }

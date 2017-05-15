@@ -134,7 +134,7 @@
             "designerId": "e960ad6e-4449-4101-86b9-d582b98230df"
         },
         {
-            "type": "Ext.data.field.Boolean",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -146,27 +146,11 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentCancelationDate",
+            "name": "MyDate3",
             "designerId": "f89cb8ca-3355-4562-bc92-6a34a53f6c19"
         },
         {
             "type": "Ext.data.field.Date",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "appointmentDateConfirmation"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyappointmentDateConfirmation",
-            "designerId": "48f91417-20c5-423d-a535-cb591c9006e1"
-        },
-        {
-            "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -178,24 +162,8 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyappointmentSmsSentDate",
+            "name": "MyDate4",
             "designerId": "caa1eb56-af95-4b83-8412-7409755914d6"
-        },
-        {
-            "type": "Ext.data.field.Date",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "appointmentDateConfirmationByPatient"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyappointmentDateConfirmationByPatient",
-            "designerId": "e3dfcc71-68eb-483b-96db-4d29bd0549ad"
         },
         {
             "type": "Ext.data.field.String",
@@ -212,6 +180,22 @@
             },
             "name": "MypatientName",
             "designerId": "05eefbf2-2871-4779-8251-54a66495b254"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "doctorId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger4",
+            "designerId": "f6a8f285-d58d-4fcd-a910-4af858f4dcf8"
         },
         {
             "type": "Ext.data.field.Field",

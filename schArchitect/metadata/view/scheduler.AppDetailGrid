@@ -10,7 +10,7 @@
         "designer|userClassName": "scheduler.AppDetailGrid",
         "forceFit": true,
         "itemId": "appDetailGridItemId",
-        "reference": "studyVisitGridRef",
+        "reference": "appDetailGridRef",
         "resizable": [
             "false"
         ],
@@ -203,7 +203,7 @@
                 "dataIndex": "roomCode",
                 "flex": 1,
                 "minWidth": 70,
-                "text": "room"
+                "text": "appointment room"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -225,7 +225,7 @@
                 "dataIndex": "appDetailStartTime",
                 "format": "H:i",
                 "minWidth": 50,
-                "text": "start",
+                "text": "appointment start",
                 "width": 50
             },
             "configAlternates": {
@@ -246,9 +246,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "appDetailEndTime",
+                "dataIndex": "duration",
                 "minWidth": 60,
-                "text": "duration",
+                "text": "appointemnt duration",
                 "width": 60
             },
             "configAlternates": {
@@ -330,7 +330,7 @@
             "userConfig": {
                 "dataIndex": "technicianId",
                 "minWidth": 80,
-                "text": "technician",
+                "text": "appointment technician",
                 "width": 100
             },
             "configAlternates": {
@@ -538,136 +538,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridIdChHist",
-                "implHandler": [
-                    ""
-                ],
-                "name": "chHist",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "fn": "string",
-                "implHandler": "code",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdChHist",
-            "designerId": "4xg1hwg9-1d4f-4fb9-9364-r359nugvmjcn"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onStudyVisitGridIdAfterRender",
-                "implHandler": [
-                    "",
-                    ""
-                ],
-                "name": "afterrender",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "fn": "string",
-                "implHandler": "code",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdAfterRender",
-            "designerId": "p5pr9cka-1f65-4972-a6e1-1ry4ue5idffw"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "editor",
-                    "context"
-                ],
-                "fn": "onStudyVisitGridIdInEdit",
-                "name": "inEdit",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "designer|params": "typedarray",
-                "fn": "string",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdInEdit",
-            "designerId": "446jj34w-1a08-4be0-b287-46umsm11jup3"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "gridpanel",
-                    "promptWin"
-                ],
-                "fn": "onStudyVisitGridIdResetEdit",
-                "name": "resetEdit",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "designer|params": "typedarray",
-                "fn": "string",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdResetEdit",
-            "designerId": "f1s5nw4r-2c80-456a-a5c5-2uv1vv2sugj2"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "gridpanel",
-                    "promptWin",
-                    "dataToBeSaved",
-                    "comment"
-                ],
-                "fn": "onStudyVisitGridIdSaveEdit",
-                "name": "saveEdit",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "designer|params": "typedarray",
-                "fn": "string",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdSaveEdit",
-            "designerId": "irf3n3us-f0d5-4d89-a1bb-gh8sxjy7jbcj"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|params": [
                     "grid"
                 ],
-                "fn": "onStudyVisitGridIdAddItem",
+                "fn": "onAppDetailGridIdAddItem",
                 "implHandler": [
                     "",
                     ""
@@ -682,7 +556,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdAddItem",
+            "name": "onAppDetailGridIdAddItem",
             "designerId": "82vtryp3-ffc4-4ede-a9db-kmegfw6ppy98"
         },
         {
@@ -693,7 +567,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridIdDeleteItem",
+                "fn": "onAppDetailGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
             },
@@ -702,7 +576,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdDeleteItem",
+            "name": "onAppDetailGridIdDeleteItem",
             "designerId": "p487mt5q-ac56-469a-895f-v22e6pj6kmmt"
         },
         {
@@ -713,7 +587,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridIdModifyItem",
+                "fn": "onAppDetailGridIdModifyItem",
                 "implHandler": [
                     ""
                 ],
@@ -726,37 +600,8 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdModifyItem",
+            "name": "onAppDetailGridIdModifyItem",
             "designerId": "cvmphx6f-6b6f-4377-998f-wcusfikpn1l4"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "gridpanel",
-                    "promptWin"
-                ],
-                "fn": "onStudyVisitGridIdQuitEdit",
-                "implHandler": [
-                    ""
-                ],
-                "name": "quitEdit",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "designer|params": "typedarray",
-                "fn": "string",
-                "implHandler": "code",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdQuitEdit",
-            "designerId": "t4p565sn-746f-4da4-9f4d-mqcruvc37bep"
         },
         {
             "type": "Ext.selection.RowModel",
@@ -786,32 +631,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onStudyVisitGridIdBeforeEdit",
-                "name": "beforeedit",
-                "scope": "me"
-            },
-            "configAlternates": {
-                "designer|params": "typedarray",
-                "fn": "string",
-                "name": "string",
-                "scope": "string"
-            },
-            "name": "onStudyVisitGridIdBeforeEdit",
-            "designerId": "y3jrtr76-4019-4a61-8c79-miu8jeuck7hn"
-        },
-        {
-            "type": "viewcontrollereventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "editor",
-                    "context"
-                ],
-                "fn": "onStudyVisitGridIdCanceledit",
+                "fn": "onAppDetailGridIdCanceledit",
                 "name": "canceledit",
                 "scope": "me"
             },
@@ -821,7 +641,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdCanceledit",
+            "name": "onAppDetailGridIdCanceledit",
             "designerId": "b6yumu23-6686-46dd-bfe7-tyv77idtttiv"
         },
         {
@@ -832,7 +652,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridIdContainerClick",
+                "fn": "onAppDetailGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
             },
@@ -841,7 +661,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdContainerClick",
+            "name": "onAppDetailGridIdContainerClick",
             "designerId": "4c7ldh29-3079-420b-87bf-b97x2t1hijer"
         },
         {
@@ -856,7 +676,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onStudyVisitGridIdEdit",
+                "fn": "onAppDetailGridIdEdit",
                 "name": "edit",
                 "scope": "me"
             },
@@ -866,7 +686,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdEdit",
+            "name": "onAppDetailGridIdEdit",
             "designerId": "4dqqwawt-47bf-4b29-bb1d-srfp42y87rl2"
         },
         {
@@ -877,7 +697,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridIdBeforeCellClick",
+                "fn": "onAppDetailGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
             },
@@ -886,7 +706,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdBeforeCellClick",
+            "name": "onAppDetailGridIdBeforeCellClick",
             "designerId": "$ehxfv34a-6a9c-488e-8122-iv2lyutt93si"
         },
         {
@@ -901,7 +721,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onStudyVisitGridIdValidateedit",
+                "fn": "onAppDetailGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
             },
@@ -911,7 +731,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridIdValidateedit",
+            "name": "onAppDetailGridIdValidateedit",
             "designerId": "pss6htsn-b2ec-4782-a56f-hii1i55sdcff"
         },
         {
@@ -947,7 +767,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridItemIdBoxReady",
+                "fn": "onAppDetailGridItemIdBoxReady",
                 "name": "boxready",
                 "scope": "me"
             },
@@ -956,7 +776,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridItemIdBoxReady",
+            "name": "onAppDetailGridItemIdBoxReady",
             "designerId": "983728e1-ecc7-4a36-9557-eb0cc9efa5ec"
         },
         {
@@ -967,17 +787,22 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
-                "name": "studyVisitGridEndEditEvent",
+                "designer|params": [
+                    "editor",
+                    "context"
+                ],
+                "fn": "onAppDetailGridItemIdBeforeEdit",
+                "name": "beforeedit",
                 "scope": "me"
             },
             "configAlternates": {
+                "designer|params": "typedarray",
                 "fn": "string",
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onStudyVisitGridItemIdStudyVisitGridEndEditEvent",
-            "designerId": "cb3ba10c-be11-4ce9-ad26-fa0d6672b28b"
+            "name": "onAppDetailGridItemIdBeforeEdit",
+            "designerId": "edf2ef8f-3ad7-4859-8f3c-55d69199ab23"
         }
     ]
 }

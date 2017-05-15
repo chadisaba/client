@@ -82,6 +82,9 @@ Ext.define('MyApp.model.scheduler.AppDetailModel', {
         },
         {
             name: 'addedAndValidated'
+        },
+        {
+            name: 'duration'
         }
     ]
 });

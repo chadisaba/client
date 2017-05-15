@@ -9,13 +9,13 @@
         "designer|userAlias": "scheduler.appointmenthasrefphgrid",
         "designer|userClassName": "scheduler.AppointmentHasRefPhGrid",
         "forceFit": true,
-        "itemId": "visitRefPhGridId",
+        "itemId": "appointmentHasRefPhGridId",
         "reference": "visitRefPhGridRef",
         "resizable": [
             "false"
         ],
         "store": [
-            "{VisitRefPhStore}"
+            "{AppointmentRefPhStore}"
         ],
         "title": ""
     },
@@ -43,11 +43,13 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianId",
+                "hidden": true,
                 "text": "ID"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
-                "text": "string"
+                "text": "string",
+                "hidden": "boolean"
             },
             "name": "MyreferringPhysicianIdCol",
             "designerId": "31ffc627-bf2e-4d83-a739-0165ce69082b",
@@ -81,7 +83,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "patientIsOrientedBy",
-                "text": "Prescripteur?"
+                "text": "appointment is referring physician"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -141,7 +143,7 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "referringPhysicianSearch",
-                "text": "Correspondants"
+                "text": "appointment  referring physicians"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -201,6 +203,26 @@
                             },
                             "name": "onReferringPhysicianSearchComboBoxEditorItemIdSelect",
                             "designerId": "8f0ff19c-dacb-4065-8c05-502b54b61675"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
+                            "designerId": "f52d7a53-220d-4a03-b78f-67121228a0fa"
                         }
                     ]
                 }
@@ -323,7 +345,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdAfterRender",
+                "fn": "onAppointmentHasRefPhGridIdAfterRender",
                 "implHandler": [
                     "",
                     ""
@@ -337,7 +359,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdAfterRender",
+            "name": "onAppointmentHasRefPhGridIdAfterRender",
             "designerId": "2b230945-523e-4f5e-9de0-3169212114bf"
         },
         {
@@ -352,7 +374,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onVisitRefPhGridIdInEdit",
+                "fn": "onAppointmentHasRefPhGridIdInEdit",
                 "name": "inEdit",
                 "scope": "me"
             },
@@ -362,7 +384,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdInEdit",
+            "name": "onAppointmentHasRefPhGridIdInEdit",
             "designerId": "5bd1dee0-8716-4911-82c8-8b044ac53531"
         },
         {
@@ -377,7 +399,7 @@
                     "gridpanel",
                     "promptWin"
                 ],
-                "fn": "onVisitRefPhGridIdResetEdit",
+                "fn": "onAppointmentHasRefPhGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
             },
@@ -387,7 +409,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdResetEdit",
+            "name": "onAppointmentHasRefPhGridIdResetEdit",
             "designerId": "395cc568-3534-4ef0-a849-430fa0e36937"
         },
         {
@@ -404,7 +426,7 @@
                     "dataToBeSaved",
                     "comment"
                 ],
-                "fn": "onVisitRefPhGridIdSaveEdit",
+                "fn": "onAppointmentHasRefPhGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
             },
@@ -414,7 +436,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdSaveEdit",
+            "name": "onAppointmentHasRefPhGridIdSaveEdit",
             "designerId": "18b24d82-e316-4a0c-863d-ed2ccd7971b4"
         },
         {
@@ -428,7 +450,7 @@
                 "designer|params": [
                     "grid"
                 ],
-                "fn": "onVisitRefPhGridIdAddItem",
+                "fn": "onAppointmentHasRefPhGridIdAddItem",
                 "implHandler": [
                     "",
                     ""
@@ -443,7 +465,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdAddItem",
+            "name": "onAppointmentHasRefPhGridIdAddItem",
             "designerId": "7843e50a-921a-42ad-8589-72eed7d45997"
         },
         {
@@ -454,7 +476,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdDeleteItem",
+                "fn": "onAppointmentHasRefPhGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
             },
@@ -463,7 +485,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdDeleteItem",
+            "name": "onAppointmentHasRefPhGridIdDeleteItem",
             "designerId": "e5c25936-7ecb-46ec-8dee-297422d57ca6"
         },
         {
@@ -474,7 +496,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdDuplicateItem",
+                "fn": "onAppointmentHasRefPhGridIdDuplicateItem",
                 "name": "duplicateItem",
                 "scope": "me"
             },
@@ -483,7 +505,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdDuplicateItem",
+            "name": "onAppointmentHasRefPhGridIdDuplicateItem",
             "designerId": "7ea766d3-510d-4efb-b0f6-708e99900785"
         },
         {
@@ -494,7 +516,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdModifyItem",
+                "fn": "onAppointmentHasRefPhGridIdModifyItem",
                 "implHandler": [
                     ""
                 ],
@@ -507,7 +529,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdModifyItem",
+            "name": "onAppointmentHasRefPhGridIdModifyItem",
             "designerId": "0d88c2bb-e9aa-4b27-8e29-304ead005260"
         },
         {
@@ -522,7 +544,7 @@
                     "gridpanel",
                     "promptWin"
                 ],
-                "fn": "onVisitRefPhGridIdQuitEdit",
+                "fn": "onAppointmentHasRefPhGridIdQuitEdit",
                 "implHandler": [
                     ""
                 ],
@@ -536,7 +558,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdQuitEdit",
+            "name": "onAppointmentHasRefPhGridIdQuitEdit",
             "designerId": "69da22c2-27c7-4936-b89b-801d521882c4"
         },
         {
@@ -567,7 +589,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onVisitRefPhGridIdBeforeEdit",
+                "fn": "onAppointmentHasRefPhGridIdBeforeEdit",
                 "name": "beforeedit",
                 "scope": "me"
             },
@@ -577,7 +599,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdBeforeEdit",
+            "name": "onAppointmentHasRefPhGridIdBeforeEdit",
             "designerId": "daca6f6f-c75e-446b-a3d1-1edee1a86f73"
         },
         {
@@ -592,7 +614,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onVisitRefPhGridIdCanceledit",
+                "fn": "onAppointmentHasRefPhGridIdCanceledit",
                 "name": "canceledit",
                 "scope": "me"
             },
@@ -602,7 +624,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdCanceledit",
+            "name": "onAppointmentHasRefPhGridIdCanceledit",
             "designerId": "f0eea0f3-d77f-4091-b734-ff6eb5129cfd"
         },
         {
@@ -613,7 +635,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdContainerClick",
+                "fn": "onAppointmentHasRefPhGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
             },
@@ -622,7 +644,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdContainerClick",
+            "name": "onAppointmentHasRefPhGridIdContainerClick",
             "designerId": "4c0dacdc-81ee-45b0-9ee7-881310481212"
         },
         {
@@ -637,7 +659,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onVisitRefPhGridIdEdit",
+                "fn": "onAppointmentHasRefPhGridIdEdit",
                 "name": "edit",
                 "scope": "me"
             },
@@ -647,7 +669,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdEdit",
+            "name": "onAppointmentHasRefPhGridIdEdit",
             "designerId": "160b4de0-9014-4f69-8c53-f301c233189d"
         },
         {
@@ -658,7 +680,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onVisitRefPhGridIdBeforeCellClick",
+                "fn": "onAppointmentHasRefPhGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
             },
@@ -667,7 +689,7 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdBeforeCellClick",
+            "name": "onAppointmentHasRefPhGridIdBeforeCellClick",
             "designerId": "$98b0a098-549b-46d7-90f3-176f010b6981"
         },
         {
@@ -682,7 +704,7 @@
                     "editor",
                     "context"
                 ],
-                "fn": "onVisitRefPhGridIdValidateedit",
+                "fn": "onAppointmentHasRefPhGridIdValidateedit",
                 "name": "validateedit",
                 "scope": "me"
             },
@@ -692,8 +714,28 @@
                 "name": "string",
                 "scope": "string"
             },
-            "name": "onVisitRefPhGridIdValidateedit",
+            "name": "onAppointmentHasRefPhGridIdValidateedit",
             "designerId": "4de19696-1cf8-4b11-8a99-67e06b1343b6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppointmentHasRefPhGridIdBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onAppointmentHasRefPhGridIdBoxReady",
+            "designerId": "c38e4663-a3f2-43c7-b3f5-8123852b551c"
         }
     ]
 }
