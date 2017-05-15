@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "SiteModel",
     "designerId": "5jbt8xe7-1d4f-4fb9-9364-5e5k7re89hgw",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Myid",
             "designerId": "e96f8d89-803f-419a-a346-v894f4vuifu5"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "siteId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger1",
             "designerId": "1b1ab37d-1a20-45d8-a86f-ca3d2b2f6ad4"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteGroupId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger",
             "designerId": "e96f8d89-803f-419a-a346-9kltjmippfu4"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "siteGroupName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField7",
             "designerId": "f36b4eee-b9a9-4931-a177-368cb867efad"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteName",
             "designerId": "e96f8d89-803f-419a-a346-jcsuvkpb15r2"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "siteCode"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteCode",
             "designerId": "e96f8d89-803f-419a-a346-652rrwjga1lt"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "sitePhone"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysitePhone",
             "designerId": "e96f8d89-803f-419a-a346-nse3ethtg14i"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "siteFax"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteFax",
             "designerId": "e96f8d89-803f-419a-a346-mu3apxehwcei"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteCategory"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteCategory",
             "designerId": "e96f8d89-803f-419a-a346-bdvskrsllr3u"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "siteAddress1"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MysiteAddress1",
             "designerId": "e96f8d89-803f-419a-a346-4vcftf12i824"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteZipCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MysiteZipCode",
             "designerId": "e96f8d89-803f-419a-a346-3udbdva59xpl"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "siteCityId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyInteger2",
             "designerId": "e96f8d89-803f-419a-a346-39vxyu7tijsh"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField8",
             "designerId": "7101a1e2-de03-4391-a4cf-2b12875adb95"
@@ -196,6 +239,9 @@
             "userConfig": {
                 "name": "active"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "Myactive",
             "designerId": "e96f8d89-803f-419a-a346-rdjg8yc9cfqk"
         },
@@ -208,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "eqf6pmgf-1f65-4972-a6e1-g4ixh4y81pxb"
@@ -222,6 +271,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "bqg1pvgp-1a08-4be0-b287-9yrp9iasbyrx"
         },
@@ -234,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "ln1nnhh2-2c80-456a-a5c5-st69nkvdric7"
@@ -248,6 +303,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "3qc2jcwq-f0d5-4d89-a1bb-4lx5lg48ncrb"
         },
@@ -260,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteConfigIsModified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField11",
             "designerId": "57fd037f-e689-49c9-86d7-e7ace4e0de8e"
@@ -274,6 +335,9 @@
             "userConfig": {
                 "name": "notValidTip"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField10",
             "designerId": "6752144e-8efd-454e-ae9b-41ce42a95dea"
         },
@@ -286,6 +350,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "ll5vktl1-ac56-469a-895f-se8wkxkjfxc2"

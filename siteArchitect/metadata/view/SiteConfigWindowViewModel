@@ -9,5 +9,9 @@
         "designer|userAlias": "siteconfigwindow",
         "designer|userClassName": "SiteConfigWindowViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "04dcbd37-926a-4032-86ff-662aa37b1f4d"
 }

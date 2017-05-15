@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "GroupIdComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelGroupIdComboModel",
     "designerId": "040092bf-b6f4-441b-b581-9igk4vlwdiy7",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "siteGroupId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "215t5e3d-c576-4ff2-rlnyhstr34tl"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "siteGroupName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "7a63r0f2-8de7-4e76-b5a2-7l1cqpiq87qg"

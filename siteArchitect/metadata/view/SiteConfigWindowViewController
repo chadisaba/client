@@ -9,5 +9,9 @@
         "designer|userAlias": "siteconfigwindow",
         "designer|userClassName": "SiteConfigWindowViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "d62e6046-a95b-4d47-b1d0-31fe58418f23"
 }

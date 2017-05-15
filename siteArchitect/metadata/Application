@@ -11,16 +11,13 @@
         ],
         "models": [
             "GroupIdComboModel",
-			"SiteCategoryComboModel",
+            "SiteCategoryComboModel",
             "SiteCityIdComboModel",
             "SiteModel",
             "SiteConfigModel",
             "SiteGroupModel"
         ],
         "name": "MyApp",
-        "requires": [
-            "MyApp.DirectAPI"
-        ],
         "views": [
             "SiteGrid",
             "SiteGroupGrid",
@@ -28,6 +25,13 @@
             "SiteConfigForm",
             "SitesConfigTabPanel"
         ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "requires": "typedarray",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

@@ -9,6 +9,10 @@
         "designer|userAlias": "sitegroupgrid",
         "designer|userClassName": "SiteGroupGridViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "lwng1fa4-8a5d-4154-8917-lwng1fa4wxsp",
     "cn": [
         {
@@ -22,9 +26,12 @@
                 "model": "SiteGroupModel",
                 "name": "SiteGroupStore"
             },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
             "name": "SiteGroupStore",
             "designerId": "2v6whn9i-c056-4140-9039-2v6whn9ixdac"
         }
-        
     ]
 }

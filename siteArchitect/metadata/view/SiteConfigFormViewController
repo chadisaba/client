@@ -9,5 +9,9 @@
         "designer|userAlias": "siteconfigform",
         "designer|userClassName": "SiteConfigFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "77cec713-d607-4b50-97df-bf459164ac1a"
 }

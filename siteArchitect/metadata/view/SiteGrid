@@ -19,10 +19,17 @@
         ],
         "title": ""
     },
-    "name": "MyGridPanel",
     "configAlternates": {
-        "store": "binding"
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "forceFit": "boolean",
+        "itemId": "string",
+        "reference": "string",
+        "resizable": "object",
+        "title": "string"
     },
+    "name": "MyGridPanel",
     "designerId": "6jnygfub-8c41-4643-a8f8-m5efipnesn2a",
     "viewControllerInstanceId": "drlkncjy-4ace-45f2-b4ee-mxvre6tuu53r",
     "viewModelInstanceId": "qyn7bn3h-8a5d-4154-8917-hb33uv6uu6ns",
@@ -39,6 +46,11 @@
                 "hidden": true,
                 "text": "GroupeId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MyColumn",
             "designerId": "223f7eb7-a0ed-4551-aa60-c38513db7d54",
             "cn": [
@@ -51,6 +63,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "groupIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextField",
                     "designerId": "9bb864e8-f1cc-457f-ac06-f43df244a8e3"
@@ -69,6 +84,11 @@
                 "hidden": true,
                 "text": "CityId"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
             "name": "MyColumn1",
             "designerId": "e58dc6a0-d16a-4e64-af4a-3e14be40751f",
             "cn": [
@@ -81,6 +101,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "cityIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextField",
                     "designerId": "5b9d2152-b384-4591-85a6-65f3df91d0c7"
@@ -97,6 +120,10 @@
             "userConfig": {
                 "dataIndex": "siteGroupName",
                 "text": "Groupe"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MygroupIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-aqyesi3fvici",
@@ -120,10 +147,17 @@
                         ],
                         "valueField": "siteGroupName"
                     },
-                    "name": "MygroupIdComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MygroupIdComboBox",
                     "designerId": "ade60fcf-b3b2-4bae-td96vegb155k",
                     "cn": [
                         {
@@ -137,6 +171,11 @@
                                 "fn": "onGroupIdComboBoxEditorItemIdSelect",
                                 "name": "select",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onGroupIdComboBoxEditorItemIdSelect",
                             "designerId": "375e0e6a-782d-4a5b-8cfa-dc0793d49b39"
@@ -155,6 +194,10 @@
             "userConfig": {
                 "dataIndex": "siteCategory",
                 "text": "Type"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
             },
             "name": "MysiteCategoryCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-jghw5i9hi1lv",
@@ -178,10 +221,17 @@
                         ],
                         "valueField": "siteCategory"
                     },
-                    "name": "MysiteCategoryComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MysiteCategoryComboBox",
                     "designerId": "ade60fcf-b3b2-4bae-6a35ksji8tb5"
                 },
                 {
@@ -205,6 +255,12 @@
                         "fn": "renderer",
                         "implHandler": null
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "c83f5b8e-8b0c-4abc-bb11-4b9b64903cb2"
                 }
@@ -221,6 +277,10 @@
                 "dataIndex": "siteName",
                 "text": "Nom"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MysiteNameCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-umpux8c2151b",
             "cn": [
@@ -233,6 +293,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "siteNameTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MysiteNameTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-4swi9xmvkp35"
@@ -250,6 +313,10 @@
                 "dataIndex": "siteCode",
                 "text": "Code"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MysiteCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-h6hunlswfglu",
             "cn": [
@@ -262,6 +329,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "siteCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MysiteCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-db4qwrkplmjs"
@@ -279,6 +349,10 @@
                 "dataIndex": "sitePhone",
                 "text": "Tél"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MysitePhoneCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-k1rqjcutfga1",
             "cn": [
@@ -291,6 +365,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "sitePhoneTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MysitePhoneTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-ux8cgyp45nf9"
@@ -308,6 +385,10 @@
                 "dataIndex": "siteFax",
                 "text": "Fax"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MysiteFaxCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-v4twllvpw321",
             "cn": [
@@ -320,6 +401,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "siteFaxTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MysiteFaxTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-6meyl7r5v3ey"
@@ -339,6 +423,12 @@
                 "minWidth": 150,
                 "text": "Adresse"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "flex": "number",
+                "minWidth": "number",
+                "text": "string"
+            },
             "name": "MysiteAddress1Col",
             "designerId": "7c6bec59-5c6a-4872-9cec-v49bnrv817tv",
             "cn": [
@@ -351,6 +441,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "siteAddress1TextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MyTextArea",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-2pjtget6b3jf"
@@ -368,6 +461,10 @@
                 "dataIndex": "siteZipCode",
                 "text": "C.P"
             },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
             "name": "MysiteZipCodeCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-k777d427r5aj",
             "cn": [
@@ -380,6 +477,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "siteZipCodeTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
                     },
                     "name": "MysiteZipCodeTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-uav1a68ktvtl",
@@ -395,6 +495,11 @@
                                 "fn": "onSiteZipCodeTextFieldItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onSiteZipCodeTextFieldItemIdChange",
                             "designerId": "4c024588-caf9-4ca4-9b94-749754b02b6f"
@@ -414,6 +519,11 @@
                 "dataIndex": "cityName",
                 "minWidth": 120,
                 "text": "Commune"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "minWidth": "number",
+                "text": "string"
             },
             "name": "MysiteCityIdCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-ldtbhdnxdg3a",
@@ -436,10 +546,16 @@
                         ],
                         "valueField": "cityName"
                     },
-                    "name": "MysiteCityIdComboBox",
                     "configAlternates": {
-                        "store": "binding"
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "selectOnFocus": "boolean",
+                        "valueField": "datafield"
                     },
+                    "name": "MysiteCityIdComboBox",
                     "designerId": "ade60fcf-b3b2-4bae-2g6jlxc9m7ap",
                     "cn": [
                         {
@@ -453,6 +569,11 @@
                                 "fn": "onSiteCityIdComboBoxEditorItemIdChange",
                                 "name": "change",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onSiteCityIdComboBoxEditorItemIdChange",
                             "designerId": "dd718f67-8dff-4780-a67d-77d23d52b735"
@@ -472,6 +593,11 @@
                 "dataIndex": "active",
                 "defaultWidth": 50,
                 "text": "Actif?"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "defaultWidth": "number",
+                "text": "string"
             },
             "name": "MyactiveCol",
             "designerId": "7c6bec59-5c6a-4872-9cec-rtn8w5err56y",
@@ -508,6 +634,11 @@
                             "return Utility.renderer.checkBoxRenderer(value);"
                         ]
                     },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
                     "name": "renderer",
                     "designerId": "2916280f-9t88-41ee-85ef-4efc6v1a9xyg"
                 }
@@ -542,6 +673,12 @@
                 "name": "select",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "select",
             "designerId": "7r6aegs9-f393-483a-8425-sap9lug6vn7v"
         },
@@ -557,6 +694,12 @@
                 "clicksToMoveEditor": 0,
                 "errorSummary": false,
                 "pluginId": "rowEdit"
+            },
+            "configAlternates": {
+                "autoCancel": "boolean",
+                "clicksToMoveEditor": "number",
+                "errorSummary": "boolean",
+                "pluginId": "string"
             },
             "name": "MyRowEditingPlugin",
             "designerId": "dxutscrb-ccc7-465c-8662-i3ejnk8hf1l9"
@@ -580,6 +723,11 @@
                     ""
                 ]
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
             "name": "processSiteGrid",
             "designerId": "69rdm345-2054-459b-a4aa-tr6gw2e5gx54"
         },
@@ -597,6 +745,12 @@
                 ],
                 "name": "chHist",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdChHist",
             "designerId": "x9h6tv7p-1d4f-4fb9-9364-ph7ds5bgvmqk"
@@ -617,6 +771,12 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdAfterRender",
             "designerId": "geiym7hu-1f65-4972-a6e1-lcvvrvk3ab3t"
         },
@@ -636,6 +796,12 @@
                 "name": "inEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdInEdit",
             "designerId": "1ibmrgcx-1a08-4be0-b287-vaav47kxbmqq"
         },
@@ -654,6 +820,12 @@
                 "fn": "onSiteGridIdResetEdit",
                 "name": "resetEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdResetEdit",
             "designerId": "gka6lec4-2c80-456a-a5c5-4srjc76qfm3y"
@@ -675,6 +847,12 @@
                 "fn": "onSiteGridIdSaveEdit",
                 "name": "saveEdit",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdSaveEdit",
             "designerId": "m8c1ey13-f0d5-4d89-a1bb-kgr8cbtgrs6m"
@@ -698,6 +876,13 @@
                 "name": "addItem",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdAddItem",
             "designerId": "63se27il-ffc4-4ede-a9db-v4sbhvuu43c2"
         },
@@ -712,6 +897,11 @@
                 "fn": "onSiteGridIdDeleteItem",
                 "name": "deleteItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdDeleteItem",
             "designerId": "kul8p2ic-ac56-469a-895f-7fnrw993sdx3"
@@ -730,6 +920,12 @@
                 ],
                 "name": "modifyItem",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdModifyItem",
             "designerId": "2h2xwyf6-6b6f-4377-998f-ah5gtmvy8ehb"
@@ -753,6 +949,13 @@
                 "name": "quitEdit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdQuitEdit",
             "designerId": "cc5beup3-746f-4da4-9f4d-irhap41msb6s"
         },
@@ -765,6 +968,9 @@
             "codeClass": null,
             "userConfig": {
                 "mode": "MULTI"
+            },
+            "configAlternates": {
+                "mode": "string"
             },
             "name": "MyRowSelectionModel",
             "designerId": "87956724-4a21-42c1-d9wq4l8myppg"
@@ -785,6 +991,12 @@
                 "name": "beforeedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdBeforeEdit",
             "designerId": "ache5h4e-4019-4a61-8c79-gcwwcr2vnmn8"
         },
@@ -804,6 +1016,12 @@
                 "name": "canceledit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdCanceledit",
             "designerId": "faqj5dtn-6686-46dd-bfe7-hx1mxtvselxx"
         },
@@ -818,6 +1036,11 @@
                 "fn": "onSiteGridIdContainerClick",
                 "name": "containerclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdContainerClick",
             "designerId": "rjg84cv2-3079-420b-87bf-vdap3eacg8q7"
@@ -838,6 +1061,12 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdEdit",
             "designerId": "7lpcfdxw-47bf-4b29-bb1d-ks4642c4hyx2"
         },
@@ -852,6 +1081,11 @@
                 "fn": "onSiteGridIdBeforeCellClick",
                 "name": "beforecellclick",
                 "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
             },
             "name": "onSiteGridIdBeforeCellClick",
             "designerId": "$vgbphd8k-6a9c-488e-8122-a2qi1gg7i5am"
@@ -872,6 +1106,12 @@
                 "name": "validateedit",
                 "scope": "me"
             },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
             "name": "onSiteGridIdValidateedit",
             "designerId": "bu5rgcry-b2ec-4782-a56f-5prsil29p7dv"
         },
@@ -887,6 +1127,11 @@
                 "iconCls": "fa fa-pencil fa-2x",
                 "text": "Config"
             },
+            "configAlternates": {
+                "defaultWidth": "number",
+                "iconCls": "string",
+                "text": "string"
+            },
             "name": "MyActionColumn",
             "designerId": "bbd33456-daf6-4b85-a426-340cec1058dd",
             "cn": [
@@ -900,6 +1145,10 @@
                     "userConfig": {
                         "icon": null,
                         "iconCls": "fa fa-cogs"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "iconCls": "string"
                     },
                     "name": "MyActionColumnItem",
                     "designerId": "52525ee1-ca67-4a3f-990c-fcc47bb34117",
@@ -924,6 +1173,12 @@
                                 "designer|viewControllerFn": "openConfigHandler",
                                 "fn": "handler",
                                 "implHandler": null
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
                             },
                             "name": "handler",
                             "designerId": "8e8dfc97-a025-4b8d-b88d-9634d1705c03"

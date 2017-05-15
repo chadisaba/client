@@ -14,6 +14,15 @@
         "title": "Configuration du site",
         "width": null
     },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
     "name": "MyForm",
     "designerId": "6c4c0da8-2f8d-4a3d-8218-2ec089ab1286",
     "viewControllerInstanceId": "77cec713-d607-4b50-97df-bf459164ac1a",
@@ -32,6 +41,12 @@
                 "labelWidth": null,
                 "name": "siteId"
             },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
+            },
             "name": "MyTextField4",
             "designerId": "c5309559-c3de-4e3b-bac6-4169e955810c"
         },
@@ -47,6 +62,12 @@
                 "hidden": true,
                 "labelWidth": null,
                 "name": "added"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
             },
             "name": "MyTextField9",
             "designerId": "9fdf6d3d-84b8-4c1e-9b84-5e3a75a234c8"
@@ -64,6 +85,12 @@
                 "labelWidth": null,
                 "name": "modified"
             },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
+            },
             "name": "MyTextField10",
             "designerId": "7734dda3-2177-4907-aeba-5b85048c5bc3"
         },
@@ -79,6 +106,12 @@
                 "hidden": true,
                 "labelWidth": null,
                 "name": "siteConfigId"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
             },
             "name": "MyTextField8",
             "designerId": "87815a5d-1e80-46ba-8583-208febebf38a"
@@ -97,6 +130,13 @@
                 "labelWidth": null,
                 "name": "siteConfigStartHour"
             },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "inputType": "string",
+                "labelWidth": "number",
+                "name": "string"
+            },
             "name": "MyTextField5",
             "designerId": "effcabe5-f536-485c-9171-a13d03bba2c8"
         },
@@ -113,6 +153,13 @@
                 "inputType": "time",
                 "labelWidth": null,
                 "name": "siteConfigEndHour"
+            },
+            "configAlternates": {
+                "allowBlank": "boolean",
+                "fieldLabel": "string",
+                "inputType": "string",
+                "labelWidth": "number",
+                "name": "string"
             },
             "name": "MyTextField6",
             "designerId": "add78e05-931e-47a7-97a9-674545ea36ef"
@@ -131,6 +178,13 @@
                 "name": "siteConfigFseIsChecked",
                 "width": 300
             },
+            "configAlternates": {
+                "boxLabel": "string",
+                "fieldLabel": "string",
+                "labelWidth": "number",
+                "name": "string",
+                "width": "auto"
+            },
             "name": "MyCheckbox1",
             "designerId": "5c4513e2-7f0b-4d28-b201-ab3db2752423"
         },
@@ -146,6 +200,12 @@
                 "hidden": true,
                 "labelWidth": null,
                 "name": "siteConfigUidSenolog"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
             },
             "name": "MyTextField7",
             "designerId": "dc3bcbe4-ea24-432f-9324-a4c8190ec806"
@@ -164,6 +224,13 @@
                 "name": "siteConfigJSDavUrl",
                 "vtype": "url"
             },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "itemId": "string",
+                "labelWidth": "number",
+                "name": "string",
+                "vtype": "string"
+            },
             "name": "MyTextField2",
             "designerId": "9a1204ee-3e49-40f4-8b14-6e706dda5b95"
         },
@@ -179,6 +246,12 @@
                 "labelWidth": null,
                 "name": "siteConfigWordPath",
                 "vtype": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "labelWidth": "number",
+                "name": "string",
+                "vtype": "string"
             },
             "name": "MyTextField3",
             "designerId": "25f803b6-b93d-40b0-be31-7bfc15c581aa"
@@ -196,6 +269,12 @@
                 "labelWidth": null,
                 "name": "siteConfigSenologType"
             },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "hidden": "boolean",
+                "labelWidth": "number",
+                "name": "string"
+            },
             "name": "MyComboBox",
             "designerId": "3760c99a-5296-48bc-b78e-ba62e33577b2"
         },
@@ -209,6 +288,9 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "configAlternates": {
+                "dock": "string"
+            },
             "name": "MyToolbar3",
             "designerId": "56473833-a5da-4177-b13a-64c034234233",
             "cn": [
@@ -221,6 +303,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
                     },
                     "name": "MyFill",
                     "designerId": "8b7e163f-892a-42a0-8a51-d1a4decfcc42"
@@ -239,10 +324,14 @@
                         "style": "color:red",
                         "text": "Annuler"
                     },
-                    "name": "MyButton4",
                     "configAlternates": {
-                        "style": "string"
+                        "style": "string",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
                     },
+                    "name": "MyButton4",
                     "designerId": "5cff5d14-1f69-424a-ae67-346e6ca37638",
                     "cn": [
                         {
@@ -259,6 +348,12 @@
                                 ],
                                 "name": "click",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onCancelBtnClick",
                             "designerId": "dcd349f3-0e21-4995-b03c-cbfc656c31d5"
@@ -281,10 +376,16 @@
                         "style": "color:green",
                         "text": "Valider"
                     },
-                    "name": "MyButton5",
                     "configAlternates": {
-                        "style": "string"
+                        "style": "string",
+                        "disabled": "boolean",
+                        "formBind": "boolean",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
                     },
+                    "name": "MyButton5",
                     "designerId": "f7fb161b-40bd-4a05-9d02-5dd02af3c673",
                     "cn": [
                         {
@@ -309,6 +410,12 @@
                                 ],
                                 "name": "click",
                                 "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
                             },
                             "name": "onValidateBtnClick",
                             "designerId": "3b20351c-c4c8-454a-9b38-3d3b3828ad1f"
