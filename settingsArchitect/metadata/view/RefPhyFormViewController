@@ -9,6 +9,9 @@
         "designer|userAlias": "refphyform",
         "designer|userClassName": "RefPhyFormViewController"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "52c0d078-a201-4159-aa70-e2747d23e8db"
- 
 }

@@ -453,14 +453,8 @@
             "id": "510a4bca-b82f-4906-9dc6-8fdcd5192cb7"
         },
         "resource": false,
-        "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5": {
-            "id": "6e8795d4-e1bd-48fa-9d7b-2f87af2f1ec5"
-        },
-        "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2": {
-            "id": "e48d60e1-c874-40c9-8a27-e7f6e49fa7d2"
-        },
-        "b3bd85f1-ba28-428d-91b2-9ebb4231dc35": {
-            "id": "b3bd85f1-ba28-428d-91b2-9ebb4231dc35"
+        "4924e154-2f6c-45b6-ab78-f59f87e9ad19": {
+            "id": "4924e154-2f6c-45b6-ab78-f59f87e9ad19"
         }
     },
     "tabState": {
@@ -481,8 +475,8 @@
         "topInstance": "bf186447-2b5b-46b9-aae1-7981efc7a6ed"
     },
     "inspectorState": {
-        "topInstance": "bf186447-2b5b-46b9-aae1-7981efc7a6ed",
-        "selectedInstance": "bf186447-2b5b-46b9-aae1-7981efc7a6ed"
+        "topInstance": null,
+        "selectedInstance": null
     },
     "editMode": "design",
     "userSettings": {

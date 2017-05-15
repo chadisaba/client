@@ -9,9 +9,12 @@
         "designer|userAlias": "refphyform",
         "designer|userClassName": "RefPhyFormViewModel"
     },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
     "designerId": "f41c01c9-9a8f-4120-9d02-dc5e4be4483f",
-      "cn": [
-       
+    "cn": [
         {
             "type": "Ext.data.Store",
             "reference": {
@@ -22,12 +25,15 @@
             "userConfig": {
                 "model": "ReferringPhysicianGenderComboModel",
                 "name": "ReferringPhysicianGenderComboStore"
-                    
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "ReferringPhysicianGenderComboStore",
             "designerId": "1ce3b101-6437-47be-96b5-c35f24a16d23"
         },
-                   {
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -37,12 +43,15 @@
             "userConfig": {
                 "model": "ReferringPhysicianTitleComboModel",
                 "name": "ReferringPhysicianTitleComboStore"
-                    
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "ReferringPhysicianTitleComboStore",
             "designerId": "b2f28082-6212-41e1-90d6-e475f05644f3"
         },
-                   {
+        {
             "type": "Ext.data.Store",
             "reference": {
                 "name": "stores",
@@ -52,7 +61,10 @@
             "userConfig": {
                 "model": "CityNameComboModel",
                 "name": "CityNameComboStore"
-                    
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
             },
             "name": "CityNameComboStore",
             "designerId": "dd46345f-4fff-471b-a2ba-8b778a1adc18"

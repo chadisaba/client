@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "ReferringPhysicianGenderComboModel"
     },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
     "name": "MyModelReferringPhysicianGenderComboModel",
     "designerId": "568b5eeb-6216-4e32-bfa5-657d9322373f",
     "cn": [
@@ -21,6 +24,9 @@
             "userConfig": {
                 "name": "genderId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField1",
             "designerId": "0c56c24d-8fc8-4989-a542-b52d329ae3f4"
         },
@@ -33,6 +39,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "gender"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField2",
             "designerId": "b8c69c9b-7e54-49dc-b30d-33a3bf756b64"

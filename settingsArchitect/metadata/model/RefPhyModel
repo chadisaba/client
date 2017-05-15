@@ -14,6 +14,10 @@
             "        }]"
         ]
     },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
     "name": "RefPhyModel",
     "designerId": "533c44c0-8110-409f-b73d-b86305ae3c23",
     "cn": [
@@ -26,6 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "Myid",
             "designerId": "653bc9e8-a923-4b02-b500-5ccfabddf4e5"
@@ -40,6 +47,9 @@
             "userConfig": {
                 "name": "referringPhysicianId"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianId",
             "designerId": "f60eca2d-3ad4-44b8-8bd0-1ebbe8979eaf"
         },
@@ -52,6 +62,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cityId"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyInteger",
             "designerId": "29405075-3219-49e0-89c5-5d7cbdf5e5d2"
@@ -66,6 +79,9 @@
             "userConfig": {
                 "name": "referringPhysicianSearch"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField",
             "designerId": "279013a4-bbc1-4ed4-99a4-825baa80058b"
         },
@@ -78,6 +94,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianFName"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyreferringPhysicianFName",
             "designerId": "ad3c1dd2-e745-4061-8106-c93e1b31efd7"
@@ -92,6 +111,9 @@
             "userConfig": {
                 "name": "referringPhysicianLName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianLName",
             "designerId": "173c9b12-567a-4eff-ad33-48b46a1256ca"
         },
@@ -104,6 +126,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianGender"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyreferringPhysicianGender",
             "designerId": "79e31f9b-3b48-4f0b-8c89-501b511574bf"
@@ -118,6 +143,9 @@
             "userConfig": {
                 "name": "referringPhysicianTitle"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianTitle",
             "designerId": "1ecb20c4-a967-459f-bc73-f3fa135f55be"
         },
@@ -130,6 +158,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianZipCode"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyreferringPhysicianZipCode",
             "designerId": "2cb184b5-dee5-48cf-a68a-6d781faa2377"
@@ -144,6 +175,9 @@
             "userConfig": {
                 "name": "referringPhysicianAddress"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianAddress",
             "designerId": "a5fbcfeb-791c-436b-afcb-4245a761f994"
         },
@@ -156,6 +190,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianPhoneNumber"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyreferringPhysicianPhoneNumber",
             "designerId": "1d004f8c-54f0-48fe-9084-23a1c47c5823"
@@ -170,6 +207,9 @@
             "userConfig": {
                 "name": "referringPhysicianFaxNumber"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyreferringPhysicianFaxNumber",
             "designerId": "55106c12-2279-401e-9116-1dd8de9213da"
         },
@@ -182,6 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "referringPhysicianEmail"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyreferringPhysicianEmail",
             "designerId": "32b3746d-ab68-42e9-97d5-9749a0c93080"
@@ -196,6 +239,9 @@
             "userConfig": {
                 "name": "cityName"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MycityName",
             "designerId": "65b4dce1-026e-4e4f-b1c1-13ba85e9c5ae"
         },
@@ -208,6 +254,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "toDelete"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField27",
             "designerId": "9621fff6-2c74-4989-ac3f-373f224a45fe"
@@ -222,6 +271,9 @@
             "userConfig": {
                 "name": "added"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField28",
             "designerId": "b2c1728f-d8d6-45e9-bf98-ef1c3f5ef384"
         },
@@ -234,6 +286,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "modified"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField29",
             "designerId": "f6f2dee5-b4e4-4ac5-b401-ceff71a13b15"
@@ -248,6 +303,9 @@
             "userConfig": {
                 "name": "notValid"
             },
+            "configAlternates": {
+                "name": "string"
+            },
             "name": "MyField30",
             "designerId": "85b62c35-5b00-4490-8226-49b279e98a9d"
         },
@@ -260,6 +318,9 @@
             "codeClass": null,
             "userConfig": {
                 "name": "addedAndValidated"
+            },
+            "configAlternates": {
+                "name": "string"
             },
             "name": "MyField31",
             "designerId": "63ccfc0f-0c37-447f-a576-66674a64cd9c"
