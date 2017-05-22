@@ -198,6 +198,22 @@
             "designerId": "f6a8f285-d58d-4fcd-a910-4af858f4dcf8"
         },
         {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger8",
+            "designerId": "81b94be1-4b96-4fb8-99b3-522a984650dc"
+        },
+        {
             "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",

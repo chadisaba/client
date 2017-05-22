@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DoctorComboModel"
+        "designer|userClassName": "scheduler.DoctorComboModel"
     },
     "configAlternates": {
         "designer|userClassName": "string"
@@ -29,6 +29,22 @@
             },
             "name": "MyInteger6",
             "designerId": "dda4120f-2ee7-4571-afc3-f845ceccd2f4"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger7",
+            "designerId": "a89e5a7b-d7e4-42a6-934e-bd2a8c7518e3"
         },
         {
             "type": "Ext.data.field.Field",

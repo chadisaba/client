@@ -174,12 +174,12 @@ Ext.define('MyApp.view.scheduler.AppointmentForm', {
                             anchor: '100%',
                             itemId: 'doctorComboBoxEditorItemId',
                             fieldLabel: 'doctor',
-                            name: 'doctorId',
+                            name: 'userId',
                             selectOnFocus: true,
                             displayField: 'userInitiales',
                             forceSelection: true,
                             queryMode: 'local',
-                            valueField: 'doctorId',
+                            valueField: 'userId',
                             bind: {
                                 store: '{DoctorNameComboStore}'
                             }

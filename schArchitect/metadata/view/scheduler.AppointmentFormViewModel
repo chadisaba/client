@@ -41,7 +41,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "model": "DoctorComboModel",
+                "model": "scheduler.DoctorComboModel",
                 "name": "DoctorNameComboStore"
             },
             "configAlternates": {

@@ -26,7 +26,7 @@ Ext.define('MyApp.view.scheduler.AppointmentFormViewModel', {
             model: 'MyApp.model.scheduler.PatientNameComboModel'
         },
         DoctorNameComboStore: {
-            model: 'MyApp.model.DoctorComboModel'
+            model: 'MyApp.model.scheduler.DoctorComboModel'
         }
     }
 

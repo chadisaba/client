@@ -606,13 +606,13 @@
                                 "forceSelection": true,
                                 "itemId": "doctorComboBoxEditorItemId",
                                 "layout|anchor": "100%",
-                                "name": "doctorId",
+                                "name": "userId",
                                 "queryMode": "local",
                                 "selectOnFocus": true,
                                 "store": [
                                     "{DoctorNameComboStore}"
                                 ],
-                                "valueField": "doctorId"
+                                "valueField": "userId"
                             },
                             "configAlternates": {
                                 "store": "binding",

@@ -75,6 +75,10 @@ Ext.define('MyApp.model.scheduler.AppointmentModel', {
             name: 'doctorId'
         },
         {
+            type: 'int',
+            name: 'userId'
+        },
+        {
             name: 'toDelete'
         },
         {
