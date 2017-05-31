@@ -348,23 +348,11 @@ Ext.define('Ext.ux.form.ItemSelector', {
     },
 
     onBindStore: function(store, initial) {
-        var me = this,
-            fromField = me.fromField,
-            toField = me.toField;
+        var me = this;
 
-        if (fromField) {
-            fromField.store.removeAll();
-            toField.store.removeAll();
-
-            if (store.autoCreated) {
-                fromField.resolveDisplayField();
-                toField.resolveDisplayField();
-                me.resolveDisplayField();
-            }
-
-            if (!Ext.isDefined(me.valueField)) {
-                me.valueField = me.displayField;
-            }
+        if (me.fromField) {
+            me.fromField.store.removeAll();
+            me.toField.store.removeAll();
 
             // Add everything to the from field as soon as the Store is loaded
             if (store.getCount()) {
@@ -411,7 +399,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
         });
     },
 
-    doDestroy: function(){
+    onDestroy: function(){
         this.bindStore(null);
         this.callParent();
     }
