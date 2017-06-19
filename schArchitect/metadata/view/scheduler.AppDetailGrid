@@ -329,6 +329,44 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "technicianId",
+                "hidden": true,
+                "text": ""
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
+            "name": "MyuserIdCol1",
+            "designerId": "d7fa6389-b9d4-45e7-bdac-1449439bf53b",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "technicianIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MyuserIdTextField",
+                    "designerId": "a26a32b8-ec6d-49b0-94a3-303313ddf327"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "userInitiales",
                 "minWidth": 80,
                 "text": "appointment technician",
                 "width": 100
@@ -489,6 +527,44 @@
                     },
                     "name": "MystudyIdTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-jh12u2nrbbx2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyId",
+                "hidden": true,
+                "text": ""
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string"
+            },
+            "name": "MystudyIdCol1",
+            "designerId": "bdf5d4dc-b0bf-437d-b5f5-db5fba54c81d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyIdTextFieldItemId"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MystudyIdTextField",
+                    "designerId": "6bfe113d-7e0b-46f5-a4fe-f03e9708e79c"
                 }
             ]
         },

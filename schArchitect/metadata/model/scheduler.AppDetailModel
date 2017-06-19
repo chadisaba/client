@@ -157,6 +157,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "userInitiales"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MystudyName1",
+            "designerId": "c59e59af-e7e4-4dc0-abe8-99c4749f68af"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "studyCode"
             },
             "configAlternates": {

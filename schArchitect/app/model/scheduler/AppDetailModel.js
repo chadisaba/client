@@ -58,6 +58,9 @@ Ext.define('MyApp.model.scheduler.AppDetailModel', {
             name: 'studyName'
         },
         {
+            name: 'userInitiales'
+        },
+        {
             name: 'studyCode'
         },
         {

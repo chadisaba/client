@@ -117,9 +117,19 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
         },
         {
             xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'technicianId',
+            text: '',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'technicianIdTextFieldItemId'
+            }
+        },
+        {
+            xtype: 'gridcolumn',
             minWidth: 80,
             width: 100,
-            dataIndex: 'technicianId',
+            dataIndex: 'userInitiales',
             text: 'appointment technician',
             editor: {
                 xtype: 'combobox',
@@ -145,6 +155,16 @@ Ext.define('MyApp.view.scheduler.AppDetailGrid', {
                 listeners: {
                     change: 'onTechnicianComboboxItemIdChange'
                 }
+            }
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            dataIndex: 'studyId',
+            text: '',
+            editor: {
+                xtype: 'textfield',
+                itemId: 'studyIdTextFieldItemId'
             }
         },
         {

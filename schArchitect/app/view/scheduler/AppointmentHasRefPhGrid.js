@@ -23,6 +23,7 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
         'Ext.grid.column.Column',
         'Ext.form.field.Checkbox',
         'Ext.form.field.ComboBox',
+        'Ext.XTemplate',
         'Ext.view.Table',
         'Ext.grid.plugin.RowEditing',
         'Ext.selection.RowModel'
@@ -74,7 +75,9 @@ Ext.define('MyApp.view.scheduler.AppointmentHasRefPhGrid', {
                 allowBlank: false,
                 selectOnFocus: true,
                 displayField: 'referringPhysicianSearch',
-                forceSelection: true,
+                displayTpl: [
+                    '<tpl for=".">{referringPhysicianSearch} :</tpl>'
+                ],
                 queryMode: 'local',
                 valueField: 'referringPhysicianSearch',
                 bind: {
