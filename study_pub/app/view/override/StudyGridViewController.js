@@ -137,12 +137,14 @@ Ext.define('MyApp.view.override.StudyGridViewController', {
         var me=this;
         var mainTableObject={};
         mainTableObject.tableName='STUDY';
+    
         var joinTablesArray=[];
         joinTablesArray.push({tableName:'STUDY_TYPE'});
 
         var params = {
             mainTableObject: mainTableObject,
-            joinTablesArray: joinTablesArray
+            joinTablesArray: joinTablesArray,
+            limit:'no'
 
         };
         Server.CommonQueries.readJoin(params,

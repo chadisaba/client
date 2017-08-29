@@ -593,6 +593,126 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "studyRequireDoctor",
+                "text": "Rad. <br/>Requis"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MystudyMultiSegmentCol1",
+            "designerId": "252a74e0-ae10-456c-8a65-2e73abca72b0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MystudyMultiSegmentCheckBox",
+                    "designerId": "b1f07d29-8510-4d60-9b30-45f1f795ac43"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "7eca8ac9-02e1-4495-897e-0598c8d44abc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyRequireTech",
+                "text": "Manip. <br/>Requis"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MystudyMultiSegmentCol2",
+            "designerId": "f229cec6-30f5-4cb2-8dd4-c3bd77f1d5ec",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MystudyMultiSegmentCheckBox",
+                    "designerId": "5563b637-b5f3-4ac0-9610-277d2ff6caa5"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Utility.renderer.checkBoxRenderer(value);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "b9a9f884-bc81-47b8-86be-716fa9ccc587"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dataIndex": "studyInvoiceCat",
                 "text": "Invoice Cat"
             },

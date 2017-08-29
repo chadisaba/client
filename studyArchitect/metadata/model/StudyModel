@@ -221,6 +221,38 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "studyRequireDoctor"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean6",
+            "designerId": "79b181b7-85ed-496d-ac29-ce8bceac9dec"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyRequireTech"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean7",
+            "designerId": "e744b4df-9418-4d79-b77d-d34c1b4ffb8b"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "active"
             },
             "configAlternates": {
