@@ -1,0 +1,122 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.appointmentautopanel",
+        "designer|userClassName": "scheduler.AppointmentAutoPanel",
+        "header": false,
+        "layout": "border",
+        "title": "Appointment Auto"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string",
+        "header": "boolean"
+    },
+    "name": "MyPanel",
+    "designerId": "05d484bd-575f-46cc-a9fb-c20c5e6e8fc9",
+    "viewControllerInstanceId": "e2a468a9-0343-4763-bad9-69e0a4e187c7",
+    "viewModelInstanceId": "4a1b5537-be18-4a2e-a686-5797954ec9e9",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "layout|region": "center"
+            },
+            "configAlternates": {
+                "flex": "number",
+                "layout|region": "string"
+            },
+            "name": "scheduler.appointmentautoform",
+            "designerId": "a0d39f63-2c34-4313-89d6-b8ffba1ffb11",
+            "masterInstanceId": "b39bd8b0-f946-485a-b36f-f9dd86188918",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form",
+                            "formValuesObj",
+                            "selectedStudyRecord"
+                        ],
+                        "fn": "onFormAppointmentAutoSearch",
+                        "name": "appointmentAutoSearch",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFormAppointmentAutoSearch",
+                    "designerId": "15149c7b-4c4b-4509-b16e-264e27855a0c"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "form"
+                        ],
+                        "fn": "onFormSearchFormChange",
+                        "name": "searchFormChange",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFormSearchFormChange",
+                    "designerId": "3bf27126-09ed-4936-9006-151d5fc1ebdd"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "itemId": "appointmentAutoResultGrid",
+                "layout|region": "east",
+                "split": true
+            },
+            "configAlternates": {
+                "flex": "number",
+                "itemId": "string",
+                "layout|region": "string",
+                "split": "boolean"
+            },
+            "name": "scheduler.appointmentautoresultgrid",
+            "designerId": "30065146-6f7b-4feb-8106-9838149ecc1b",
+            "masterInstanceId": "23783a6c-84d0-4c02-a8a2-5f273c750c60"
+        }
+    ]
+}

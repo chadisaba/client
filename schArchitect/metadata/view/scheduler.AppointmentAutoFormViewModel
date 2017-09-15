@@ -1,0 +1,91 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.appointmentautoform",
+        "designer|userClassName": "scheduler.AppointmentAutoFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "7e998f6b-cf5c-46f3-b02e-1fe7b1b6fdfc",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.DayNameModel",
+                "name": "DaysStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "eb5e29a5-b924-4870-8e00-bc9ea5f058b1"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "SiteComboModel",
+                "name": "SiteStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore1",
+            "designerId": "1bf67ed1-3013-4f5a-afd9-592c9f3056ce"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.TechnicianComboModel",
+                "name": "DoctorStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore2",
+            "designerId": "81674f93-caac-4148-8094-b1679abc6791"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "scheduler.StudyComboModel",
+                "name": "StudyStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore4",
+            "designerId": "96d9d454-8a5e-4ac5-8259-e8155b88891b"
+        }
+    ]
+}

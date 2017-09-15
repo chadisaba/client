@@ -26,8 +26,8 @@
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
         "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "4.1.2",
-    "xdsBuild": 188,
+    "xdsVersion": "4.2.1",
+    "xdsBuild": 224,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext60",
@@ -44,7 +44,16 @@
             "ae326816-5e79-48ae-addb-f9585ee31efe",
             "4702aeb1-429b-45af-b394-40a06bf904db",
             "e4c81814-a7a1-4d7e-953c-ca2804168436",
-            "fae57581-31ab-468c-9676-c119bb73d702"
+            "fae57581-31ab-468c-9676-c119bb73d702",
+            "05d484bd-575f-46cc-a9fb-c20c5e6e8fc9",
+            "4a1b5537-be18-4a2e-a686-5797954ec9e9",
+            "e2a468a9-0343-4763-bad9-69e0a4e187c7",
+            "b39bd8b0-f946-485a-b36f-f9dd86188918",
+            "7e998f6b-cf5c-46f3-b02e-1fe7b1b6fdfc",
+            "d43e136a-62a6-4ac2-84c8-be50df427680",
+            "23783a6c-84d0-4c02-a8a2-5f273c750c60",
+            "2eee925e-46c7-4916-a7bd-0cd02401b150",
+            "51d9995a-2c59-4b1f-9431-ce95ef31827c"
         ],
         "store": [],
         "controller": [
@@ -58,7 +67,10 @@
             "17a21afa-9d41-4b61-9531-af38fe8f0d40",
             "dba35c72-1ed1-4112-b868-76f1f1bdf208",
             "703280d1-a3a6-4423-b639-670dd78288d1",
-            "372f71f0-efaa-43e5-9666-45d956d574fd"
+            "372f71f0-efaa-43e5-9666-45d956d574fd",
+            "fd75c01f-3c9e-4518-8839-0ab340393b54",
+            "9d12509b-71be-4c74-8e94-8c832006b458",
+            "6ed0a276-0614-4456-a1b5-22203b9cc1a3"
         ],
         "resource": [
             "253ff34a-a906-471c-8746-d9f62ec378b9"

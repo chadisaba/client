@@ -16,14 +16,20 @@
             "scheduler.AppointmentRefPhGridModel",
             "scheduler.StudyComboModel",
             "scheduler.AppDetailModel",
-            "scheduler.TechnicianComboModel"
+            "scheduler.TechnicianComboModel",
+            "scheduler.DayNameModel",
+            "SiteComboModel",
+            "scheduler.AppointmentAutoResultModel"
         ],
         "name": "MyApp",
         "views": [
             "scheduler.AvailableResourceGridPanel",
             "scheduler.AppointmentForm",
             "VisitRefPhGrid",
-            "scheduler.AppDetailGrid"
+            "scheduler.AppDetailGrid",
+            "scheduler.AppointmentAutoPanel",
+            "scheduler.AppointmentAutoForm",
+            "scheduler.AppointmentAutoResultGrid"
         ]
     },
     "configAlternates": {

@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "scheduler.TechnicianComboModel"
+        "designer|userClassName": "DoctorComboModel"
     },
     "configAlternates": {
         "designer|userClassName": "string"
     },
     "name": "MyModel",
-    "designerId": "28a9f993-c7b7-40a9-9a2c-d2f0d254c76f",
+    "designerId": "01a74622-2866-4229-a2a8-eb5a5f527c41",
     "cn": [
         {
             "type": "Ext.data.field.Integer",
@@ -22,29 +22,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "userId"
+                "name": "doctorId"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyInteger5",
-            "designerId": "22e21c99-cd52-4a1d-8701-b5b2c303618d"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "userLName"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MyField12",
-            "designerId": "35f2a59c-671c-4fbe-a832-6f32246bb4f6"
+            "name": "MyInteger6",
+            "designerId": "dda4120f-2ee7-4571-afc3-f845ceccd2f4"
         },
         {
             "type": "Ext.data.field.Field",
@@ -59,8 +43,24 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField13",
-            "designerId": "c4e56089-80e0-41b7-ad48-3cc17834c83f"
+            "name": "MyField14",
+            "designerId": "08d99274-b665-4631-9934-d0b754e79fbc"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userLName"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField15",
+            "designerId": "6606b356-9a34-4f56-bd2d-c119d8348109"
         },
         {
             "type": "Ext.data.field.Field",
@@ -75,8 +75,8 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField22",
-            "designerId": "e569d437-a6a1-4236-aca1-6407b5ca43a8"
+            "name": "MyField18",
+            "designerId": "55db348f-1a1d-4c38-a1fd-0d8e305e1768"
         }
     ]
 }

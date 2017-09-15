@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.appointmentautoresultgrid",
+        "designer|userClassName": "scheduler.AppointmentAutoResultGridViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "51d9995a-2c59-4b1f-9431-ce95ef31827c"
+}

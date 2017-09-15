@@ -248,7 +248,7 @@
             "userConfig": {
                 "dataIndex": "duration",
                 "minWidth": 60,
-                "text": "appointemnt duration",
+                "text": "appointment duration",
                 "width": 60
             },
             "configAlternates": {
@@ -329,44 +329,6 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "technicianId",
-                "hidden": true,
-                "text": ""
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "hidden": "boolean",
-                "text": "string"
-            },
-            "name": "MyuserIdCol1",
-            "designerId": "d7fa6389-b9d4-45e7-bdac-1449439bf53b",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "technicianIdTextFieldItemId"
-                    },
-                    "configAlternates": {
-                        "itemId": "string"
-                    },
-                    "name": "MyuserIdTextField",
-                    "designerId": "a26a32b8-ec6d-49b0-94a3-303313ddf327"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "userInitiales",
                 "minWidth": 80,
                 "text": "appointment technician",
                 "width": 100
@@ -388,7 +350,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "userLName",
+                        "displayField": "userInitiales",
                         "itemId": "technicianComboboxItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
@@ -396,7 +358,7 @@
                             "{TechnicianComboStore}"
                         ],
                         "typeAhead": true,
-                        "valueField": "userLName"
+                        "valueField": "userId"
                     },
                     "configAlternates": {
                         "store": "binding",
@@ -410,64 +372,6 @@
                     "name": "MyComboBox3",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-65tfr615mn7k",
                     "cn": [
-                        {
-                            "type": "Ext.view.BoundList",
-                            "reference": {
-                                "name": "listConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemSelector": "div"
-                            },
-                            "configAlternates": {
-                                "itemSelector": "string"
-                            },
-                            "name": "MyBoundList2",
-                            "designerId": "bb130a31-9757-4573-bd00-60e0c61fb5b7",
-                            "cn": [
-                                {
-                                    "type": "Ext.XTemplate",
-                                    "reference": {
-                                        "name": "itemTpl",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "itemTpl",
-                                        "implHandler": [
-                                            "{userLName} {userFName}"
-                                        ]
-                                    },
-                                    "configAlternates": {
-                                        "designer|displayName": "string",
-                                        "implHandler": "code"
-                                    },
-                                    "name": "itemTpl",
-                                    "designerId": "cde6a472-bd7c-4843-ad6d-dc8f37c2ec83"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "displayTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "displayTpl",
-                                "implHandler": [
-                                    "<tpl for=\".\">{userLName} : {userFName}</tpl>"
-                                ]
-                            },
-                            "configAlternates": {
-                                "designer|displayName": "string",
-                                "implHandler": "code"
-                            },
-                            "name": "displayTpl",
-                            "designerId": "00e76025-9ff8-4211-8abc-a4f627804155"
-                        },
                         {
                             "type": "viewcontrollereventbinding",
                             "reference": {
@@ -520,10 +424,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "itemId": "studyIdTextFieldItemId"
                     },
                     "configAlternates": {
-                        "itemId": "string"
+                        "itemId": "string",
+                        "allowBlank": "boolean"
                     },
                     "name": "MystudyIdTextField",
                     "designerId": "73e1ef6a-05cb-4aa6-aacc-jh12u2nrbbx2"
@@ -538,8 +444,46 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "studyId",
-                "hidden": true,
+                "dataIndex": "studyRequireDoctor",
+                "text": "",
+                "width": 100
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "hidden": "boolean",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MystudyIdCol1",
+            "designerId": "7e3cde94-cd7e-4a6e-bacc-61cd3bdebd0d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "studyRequireDoctorCb"
+                    },
+                    "configAlternates": {
+                        "itemId": "string"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "c6bce445-3a29-4f7c-b357-07dafa5da807"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "studyRequireTech",
                 "text": ""
             },
             "configAlternates": {
@@ -547,24 +491,24 @@
                 "hidden": "boolean",
                 "text": "string"
             },
-            "name": "MystudyIdCol1",
-            "designerId": "bdf5d4dc-b0bf-437d-b5f5-db5fba54c81d",
+            "name": "MystudyIdCol2",
+            "designerId": "5b8caf80-35c6-437b-8ee7-6a5a117d50b8",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.field.Checkbox",
                     "reference": {
                         "name": "editor",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "studyIdTextFieldItemId"
+                        "itemId": "studyRequireTechCb"
                     },
                     "configAlternates": {
                         "itemId": "string"
                     },
-                    "name": "MystudyIdTextField",
-                    "designerId": "6bfe113d-7e0b-46f5-a4fe-f03e9708e79c"
+                    "name": "MyCheckbox1",
+                    "designerId": "860bf4cf-411d-425f-9c4a-5c8d6fcf9e10"
                 }
             ]
         },

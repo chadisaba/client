@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.appointmentautoresultgrid",
+        "designer|userClassName": "scheduler.AppointmentAutoResultGridViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "2eee925e-46c7-4916-a7bd-0cd02401b150",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "groupField": "date",
+                "model": "scheduler.AppointmentAutoResultModel",
+                "name": "AppointmentAutoResultStore"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string",
+                "groupField": "datafield"
+            },
+            "name": "MyStore3",
+            "designerId": "9ff80235-40a5-4b74-83ca-edba332a826b",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "time"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter",
+                    "designerId": "cf541f55-d3b9-4905-a705-f664e5f7ea88"
+                }
+            ]
+        }
+    ]
+}

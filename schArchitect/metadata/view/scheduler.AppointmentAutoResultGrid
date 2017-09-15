@@ -1,0 +1,366 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduler.appointmentautoresultgrid",
+        "designer|userClassName": "scheduler.AppointmentAutoResultGrid",
+        "store": [
+            "{AppointmentAutoResultStore}"
+        ],
+        "title": "appointment auto result"
+    },
+    "configAlternates": {
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyGridPanel1",
+    "designerId": "23783a6c-84d0-4c02-a8a2-5f273c750c60",
+    "viewControllerInstanceId": "51d9995a-2c59-4b1f-9431-ce95ef31827c",
+    "viewModelInstanceId": "2eee925e-46c7-4916-a7bd-0cd02401b150",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "date",
+                "text": "appointment auto date"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn3",
+            "designerId": "397d8285-8dac-4abc-aa11-3019b7c9a61c",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "dateRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "fd6bab89-e05d-4070-905d-06edefb2c1ff"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "time",
+                "text": "appointment auto time"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn4",
+            "designerId": "260ddaf2-b873-4c47-aac7-0eb0b90a2f71",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "designer|viewControllerFn": "timeRenderer",
+                        "fn": "renderer",
+                        "implHandler": null
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "designer|viewControllerFn": "string",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "19f6a69d-b919-4d21-9c8b-23e40f86423b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "room",
+                "text": "appointment auto room"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn5",
+            "designerId": "4f9dd478-dbfc-47bb-9e56-5a65562cf47c"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "doctor",
+                "text": "appointment auto doctor"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn7",
+            "designerId": "ecba69d8-9ff7-44c5-a0d6-820d4617e431"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "technician",
+                "text": "appointment auto tech"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn6",
+            "designerId": "d2e60f2c-ec45-4b55-a1ca-12defaaad4b4"
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable2",
+            "designerId": "70b859cb-a964-40e7-85b8-b20e02df57d5"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridpanelBoxReady",
+            "designerId": "0760347c-d983-4db7-bee9-bf91170dc098"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "a0d1c412-0fa0-4690-9e3a-11cb171dfed4",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "layout": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "4a70b9a8-57b9-4391-abbd-308669d176ce",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1
+                            },
+                            "configAlternates": {
+                                "flex": "number"
+                            },
+                            "name": "MySpacer3",
+                            "designerId": "c1cf2514-0a92-439e-9f4e-7f04304cde91"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "iconCls": "fa fa-check",
+                                "itemId": "validateBtn",
+                                "layout|flex": null,
+                                "text": "validate"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "57390cb2-2ecf-4731-928a-163d35a62c89",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onValidateBtnClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onValidateBtnClick",
+                                    "designerId": "ad5d3eed-c630-4fb2-9c36-b14d9d6f7384"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelectionChange",
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "acadb5df-4fc7-4dd9-a051-002f7d28665e"
+        },
+        {
+            "type": "Ext.grid.feature.Grouping",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyGroupingFeature",
+            "designerId": "b0e0bc1a-5de2-46fd-a8ac-d93cc9e68d0c",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
+                        "implHandler": [
+                            " {name}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "groupHeaderTpl",
+                    "designerId": "bd5a9424-2c5d-4b27-875c-2d24236da2ee"
+                }
+            ]
+        }
+    ]
+}

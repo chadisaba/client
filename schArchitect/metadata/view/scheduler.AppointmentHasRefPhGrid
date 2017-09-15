@@ -162,6 +162,7 @@
                     "userConfig": {
                         "allowBlank": false,
                         "displayField": "referringPhysicianSearch",
+                        "forceSelection": true,
                         "itemId": "referringPhysicianSearchComboBoxEditorItemId",
                         "queryMode": "local",
                         "selectOnFocus": true,
@@ -222,26 +223,6 @@
                             },
                             "name": "onReferringPhysicianSearchComboBoxEditorItemIdChange",
                             "designerId": "f52d7a53-220d-4a03-b78f-67121228a0fa"
-                        },
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "displayTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "displayTpl",
-                                "implHandler": [
-                                    "<tpl for=\".\">{referringPhysicianSearch} :</tpl>"
-                                ]
-                            },
-                            "configAlternates": {
-                                "designer|displayName": "string",
-                                "implHandler": "code"
-                            },
-                            "name": "displayTpl",
-                            "designerId": "00048102-d7d9-4663-831d-c80363b6e4c8"
                         }
                     ]
                 }

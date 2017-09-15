@@ -1,0 +1,488 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "scheduler.appointmentautoform",
+        "designer|userClassName": "scheduler.AppointmentAutoForm",
+        "title": "appointment auto select criteria",
+        "width": 583
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyForm",
+    "designerId": "b39bd8b0-f946-485a-b36f-f9dd86188918",
+    "viewControllerInstanceId": "d43e136a-62a6-4ac2-84c8-be50df427680",
+    "viewModelInstanceId": "7e998f6b-cf5c-46f3-b02e-1fe7b1b6fdfc",
+    "cn": [
+        {
+            "type": "Ext.form.field.Tag",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "displayField": "siteCode",
+                "fieldLabel": "Site",
+                "layout|anchor": "100%",
+                "name": "siteId",
+                "queryMode": "local",
+                "store": [
+                    "{SiteStore}"
+                ],
+                "typeAhead": true,
+                "valueField": "siteId"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "typeAhead": "boolean",
+                "store": "binding",
+                "allowBlank": "boolean",
+                "displayField": "datafield",
+                "name": "string",
+                "queryMode": "string",
+                "valueField": "datafield"
+            },
+            "name": "MyTagField",
+            "designerId": "78d85ff2-33e3-45dd-afc6-77346acbd55c"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "displayField": "studyName",
+                "fieldLabel": "study",
+                "itemId": "studyComboboxItemId",
+                "layout|anchor": "100%",
+                "name": "studyId",
+                "queryMode": "local",
+                "store": [
+                    "{StudyStore}"
+                ],
+                "typeAhead": true,
+                "valueField": "studyId"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "typeAhead": "boolean",
+                "store": "binding",
+                "allowBlank": "boolean",
+                "displayField": "datafield",
+                "name": "string",
+                "queryMode": "string",
+                "valueField": "datafield",
+                "itemId": "string"
+            },
+            "name": "MyComboBox4",
+            "designerId": "e169d85a-f028-4612-991f-4ec1826e50a8",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "displayTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "displayTpl",
+                        "implHandler": [
+                            "<tpl for=\".\">{studyCode} : {studyName}</tpl>"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "displayTpl",
+                    "designerId": "a1f5fa47-af9b-4605-a48a-023494b1c59a"
+                },
+                {
+                    "type": "Ext.view.BoundList",
+                    "reference": {
+                        "name": "listConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemSelector": "div"
+                    },
+                    "configAlternates": {
+                        "itemSelector": "string"
+                    },
+                    "name": "MyBoundList",
+                    "designerId": "0baedada-edff-4d0f-bb91-54aadafa9186",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "{studyCode} : {studyName}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "itemTpl",
+                            "designerId": "414ed134-a008-487b-bcbc-1a0c72b73841"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onStudyComboboxChange",
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onStudyComboboxChange",
+                    "designerId": "933ffe01-fbef-4ad6-b344-c4f6634ccbc0"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onStudyComboboxSelect",
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onStudyComboboxSelect",
+                    "designerId": "8d469b58-f202-429d-9579-dca24a814ae9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "appointment auto from date",
+                "itemId": "startDateItemId",
+                "layout|anchor": "100%",
+                "name": "fromDate",
+                "submitFormat": "Y-m-d"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "allowBlank": "boolean",
+                "name": "string",
+                "submitFormat": "string",
+                "itemId": "string"
+            },
+            "name": "MyDateField",
+            "designerId": "425e72bb-fe78-4309-b85a-181d22044a30"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "userInitiales",
+                "fieldLabel": "Doctor",
+                "hidden": true,
+                "itemId": "doctorComboBoxItemId",
+                "layout|anchor": "100%",
+                "name": "doctorId",
+                "queryMode": "local",
+                "store": [
+                    "{DoctorStore}"
+                ],
+                "valueField": "userId"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "store": "binding",
+                "displayField": "datafield",
+                "name": "string",
+                "queryMode": "string",
+                "valueField": "datafield",
+                "hidden": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyComboBox1",
+            "designerId": "6037c71a-7151-4cc8-b438-aaa69c8bd4bb"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "appointment auto technician",
+                "hidden": true,
+                "itemId": "technicianComboBoxItemId",
+                "layout|anchor": "100%",
+                "name": "technicianId",
+                "queryMode": "local"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "layout|anchor": "string",
+                "name": "string",
+                "queryMode": "string",
+                "hidden": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyComboBox2",
+            "designerId": "2b8266cd-427c-4701-a772-9cf43e00c177"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string"
+            },
+            "name": "MyContainer3",
+            "designerId": "95aad172-0192-4fac-b990-71c236826bc9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Time",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment auto start hour",
+                        "name": "fromHour"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTimeField",
+                    "designerId": "23018c4b-d851-4f1a-a09c-ff13e6827697"
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySpacer2",
+                    "designerId": "d3e69c26-96de-4265-b65b-6cdb58183840"
+                },
+                {
+                    "type": "Ext.form.field.Time",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "appointment auto end hour",
+                        "name": "toHour"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTimeField1",
+                    "designerId": "de6e4e35-dc2c-449e-a09c-7de43a523768"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "daysGridItemId",
+                "store": [
+                    "{DaysStore}"
+                ],
+                "title": ""
+            },
+            "configAlternates": {
+                "store": "binding",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyGridPanel",
+            "designerId": "95a92f20-407a-4aa0-90b8-bce8993c0541",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "text": "Days"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "7dea336a-8412-4911-bc1a-fff7a438f3e8"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable1",
+                    "designerId": "4752df3f-9a45-4948-a1ea-e2a018b42f15"
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "showHeaderCheckbox": true
+                    },
+                    "configAlternates": {
+                        "showHeaderCheckbox": "boolean"
+                    },
+                    "name": "MyCheckboxSelectionModel",
+                    "designerId": "68d50966-91e1-4105-9eb4-e09716b16650"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "formBind": true,
+                "itemId": "searchBtn",
+                "text": "appointment auto search"
+            },
+            "configAlternates": {
+                "formBind": "boolean",
+                "itemId": "string",
+                "text": "string"
+            },
+            "name": "MyButton1",
+            "designerId": "9efab3d2-0f0c-4809-858f-e7c648334912",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSearchBtnClick",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onSearchBtnClick",
+                    "designerId": "979a6a8d-e337-4125-a237-6df7621e0112"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormBoxReady",
+                "name": "boxready",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onFormBoxReady",
+            "designerId": "a5bf1496-9d7d-406f-81a0-09416ec6bc97"
+        }
+    ]
+}

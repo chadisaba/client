@@ -70,6 +70,22 @@
             "designerId": "e96f8d89-803f-419a-a346-91j81srlk5m7"
         },
         {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "roomCatId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger7",
+            "designerId": "5a2566e1-6a59-4cbb-bfd9-0640938a85b0"
+        },
+        {
             "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
@@ -157,22 +173,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "userInitiales"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
-            "name": "MystudyName1",
-            "designerId": "c59e59af-e7e4-4dc0-abe8-99c4749f68af"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "studyCode"
             },
             "configAlternates": {
@@ -212,6 +212,38 @@
             },
             "name": "MyDate2",
             "designerId": "d7e616b1-e83d-4239-ae30-c848ce848f13"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyRequireDoctor"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean",
+            "designerId": "339af295-6b8b-4724-adb7-c945d6a7356c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "studyRequireTech"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean1",
+            "designerId": "ecc7a154-aef1-447b-984b-eba757658357"
         },
         {
             "type": "Ext.data.field.Field",
